@@ -1,0 +1,40 @@
+@use "sass:map";
+
+.vuiHorizontalRule {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid;
+  width: 100%;
+}
+
+// Color
+$color: (
+  accent: (
+    "border-color": $colorAccent
+  ),
+  primary: (
+    "border-color": $colorPrimary
+  ),
+  success: (
+    "border-color": $colorSuccess
+  ),
+  danger: (
+    "border-color": $colorDanger
+  ),
+  warning: (
+    "border-color": $colorWarning
+  ),
+  neutral: (
+    "border-color": $borderColor
+  ),
+  subdued: (
+    "border-color": $borderColorLight
+  )
+);
+
+@each $colorName, $colorValue in $color {
+  .vuiHorizontalRule--#{$colorName} {
+    border-bottom-color: #{map.get($colorValue, "border-color")};
+  }
+}

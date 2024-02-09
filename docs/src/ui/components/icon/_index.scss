@@ -1,0 +1,25 @@
+.vuiIcon {
+  // Remove extra space at bottom of icon.
+  line-height: 0;
+}
+
+.vuiIcon--inline {
+  display: inline-block;
+}
+
+$colors: (
+  accent: $colorAccent,
+  primary: $colorPrimary,
+  success: $colorSuccess,
+  warning: $colorWarning,
+  danger: $colorDanger,
+  subdued: $colorSubdued,
+  neutral: $colorText,
+  empty: #ffffff
+);
+
+@each $colorName, $colorValue in $colors {
+  .vuiIcon--#{$colorName} {
+    color: $colorValue !important;
+  }
+}

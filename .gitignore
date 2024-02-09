@@ -1,0 +1,6 @@
+/node_modules
+/dist
+/docs/public/script.js
+/docs/public/script.js.map
+/coverage
+.DS_Store

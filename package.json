@@ -1,0 +1,69 @@
+{
+  "name": "@vectara/react-chat",
+  "version": "0.0.1",
+  "description": "A Vectara-powered Chatbot component",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && node build.js && tsc --emitDeclarationOnly --outDir dist",
+    "buildDocs": "node docs/build.js",
+    "docs": "node docs/docsServer.js",
+    "clean": "rimraf dist",
+    "test": "jest --coverage"
+  },
+  "author": {
+    "name": "Vectara, Inc.",
+    "url": "https://www.vectara.com"
+  },
+  "license": "MIT",
+  "homepage": "https://vectara.github.io/react-chat/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vectara/react-chat"
+  },
+  "keywords": [
+    "vectara",
+    "chat",
+    "chatbot",
+    "component",
+    "widget"
+  ],
+  "dependencies": {
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "classnames": "^2.3.2",
+    "lodash": "^4.17.21",
+    "prismjs": "^1.29.0",
+    "react-focus-on": "^3.9.1",
+    "uuid-by-string": "^4.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.2.0",
+    "@testing-library/react": "^14.1.2",
+    "@types/jest": "^29.5.11",
+    "@types/lodash": "^4.14.202",
+    "@types/prismjs": "^1.26.3",
+    "chokidar": "^3.5.3",
+    "cross-fetch": "^4.0.0",
+    "esbuild": "^0.19.9",
+    "esbuild-css-modules-plugin": "^3.1.0",
+    "esbuild-sass-plugin": "^2.16.0",
+    "jest": "^29.7.0",
+    "jest-css-modules": "^2.1.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "live-server": "^1.2.2",
+    "markdown-to-jsx": "^7.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "react-router-dom": "^6.8.2",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

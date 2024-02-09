@@ -1,0 +1,67 @@
+.vuiText {
+  overflow-wrap: break-word;
+  word-break: break-word;
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: auto;
+  }
+
+  ul,
+  ol {
+    margin-left: $sizeM;
+    margin-bottom: $sizeXs;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: $colorPrimary;
+  }
+}
+
+.vuiText--truncate {
+  @include truncateText;
+}
+
+@mixin defineTextStyles($fontSize) {
+  color: $colorText;
+  font-size: $fontSize;
+  line-height: 1.4;
+
+  p {
+    font-size: $fontSize;
+    line-height: 1.4;
+    margin-bottom: $sizeXs;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+$size: (
+  xs: $fontSizeSmall,
+  s: $fontSizeStandard,
+  m: $fontSizeMedium,
+  l: $fontSizeLarge
+);
+
+@each $sizeName, $fontSize in $size {
+  .vuiText--#{$sizeName} {
+    @include defineTextStyles($fontSize);
+  }
+}
+
+$align: left, center, right;
+
+@each $alignValue in $align {
+  .vuiText--#{$alignValue} {
+    text-align: #{$alignValue};
+  }
+}

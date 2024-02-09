@@ -1,0 +1,78 @@
+@use "sass:map";
+
+.vuiOptionsList {
+  display: flex;
+  flex-direction: column;
+  font-size: $fontSizeStandard;
+}
+
+.vuiOptionsList--scrollable {
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.vuiOptionsList--s {
+  .vuiOptionsListItem {
+    padding: ($sizeXxs + 1px) $sizeXs;
+  }
+}
+
+.vuiOptionsList--m {
+  .vuiOptionsListItem {
+    padding: ($sizeXxs + 1px) $sizeS;
+  }
+}
+
+.vuiOptionsList--l {
+  .vuiOptionsListItem {
+    padding: $sizeXs $sizeS;
+  }
+}
+
+.vuiOptionsListItem {
+  background-color: $colorEmptyShade;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Color
+$color: (
+  accent: (
+    "color": $colorAccent,
+    "selected-color": $colorAccentLightShade
+  ),
+  primary: (
+    "color": $colorPrimary,
+    "selected-color": $colorPrimaryLightShade
+  ),
+  success: (
+    "color": $colorSuccess,
+    "selected-color": $colorSuccessLightShade
+  ),
+  danger: (
+    "color": $colorDanger,
+    "selected-color": $colorDangerLightShade
+  ),
+  warning: (
+    "color": $colorWarning,
+    "selected-color": $colorWarningLightShade
+  ),
+  neutral: (
+    "color": $colorText,
+    "selected-color": $colorLightShade
+  )
+);
+
+@each $colorName, $colorValue in $color {
+  .vuiOptionsListItem--#{$colorName} {
+    color: #{map.get($colorValue, "color")};
+
+    &:hover {
+      color: #{map.get($colorValue, "color")};
+      background-color: #{map.get($colorValue, "selected-color")};
+    }
+  }
+}
