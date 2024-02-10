@@ -1,0 +1,52 @@
+.select {
+  position: relative;
+  max-width: $sizeL * 10;
+  width: 100%;
+
+  select {
+    background-color: $colorEmptyShade;
+    appearance: none;
+    border-radius: $sizeXxs;
+    border: 1px solid $colorMediumShade;
+    color: $colorFullShade;
+    width: 100%;
+  }
+}
+
+.select__caret {
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: auto;
+  right: 12px;
+}
+
+.select--m {
+  select {
+    padding: 8px 16px;
+    font-size: $fontSizeStandard;
+    padding-right: 32px;
+  }
+
+  .select__caret {
+    top: calc(50% - 10px);
+  }
+}
+
+.select--l {
+  select {
+    padding: $sizeS $sizeM;
+    font-size: $fontSizeLarge;
+    padding-right: 48px;
+  }
+
+  .select__caret {
+    top: calc(50% - 14px);
+  }
+}
+
+.select-isInvalid {
+  select {
+    border-color: $colorDanger;
+  }
+}

@@ -1,7 +1,9 @@
 import { VuiFlexContainer } from "./flex/FlexContainer";
 import { VuiFlexItem } from "./flex/FlexItem";
+import { VuiFormGroup } from "./formGroup/FormGroup";
 import { VuiPortal } from "./portal/Portal";
 import { VuiScreenBlock } from "./screenBlock/ScreenBlock";
+import { VuiSpacer } from "./spacer/Spacer";
 import { VuiSpinner } from "./spinner/Spinner";
 import { SPINNER_SIZE } from "./spinner/types";
 import { VuiText } from "./typography/Text";
@@ -16,8 +18,10 @@ export {
   TITLE_SIZE,
   VuiFlexContainer,
   VuiFlexItem,
+  VuiFormGroup,
   VuiPortal,
   VuiScreenBlock,
+  VuiSpacer,
   VuiSpinner,
   VuiText,
   VuiTextColor,
