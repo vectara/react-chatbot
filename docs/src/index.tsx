@@ -1,7 +1,7 @@
 import { ChangeEvent, useCallback, useState } from "react";
 import ReactDOM from "react-dom";
 import { BiLogoGithub } from "react-icons/bi";
-import { ReactChat } from "../../src";
+import { ReactChatbot } from "../../src";
 import {
   VuiAppContent,
   VuiAppHeader,
@@ -24,7 +24,7 @@ import "./index.scss";
 
 const generateCodeSnippet = (
   customerId?: string,
-  corpusId?: string,
+  corpusIds?: string[],
   apiKey?: string,
   placeholder?: string,
   isDeepLinkable: boolean = false,
@@ -42,7 +42,7 @@ const generateCodeSnippet = (
 
   const props = [
     `customerId="${customerId === "" ? "<Your Vectara customer ID>" : customerId}"`,
-    `corpusId="${corpusId === "" ? "<Your Vectara corpus ID>" : corpusId}"`,
+    `corpusId="${corpusIds?.length === 0 ? "<Your Vectara corpus ID>" : corpusIds}"`,
     `apiKey="${apiKey === "" ? "<Your Vectara API key>" : apiKey}"`
   ];
 
@@ -69,14 +69,14 @@ const generateCodeSnippet = (
   );`;
 };
 
-const DEFAULT_CORPUS_ID = "1";
+const DEFAULT_CORPUS_IDS = ["1"];
 const DEFAULT_CUSTOMER_ID = "1366999410";
 const DEFAULT_API_KEY = "zqt_UXrBcnI2UXINZkrv4g1tQPhzj02vfdtqYJIDiA";
 const DEFAULT_PLACEHOLDER = 'Try asking about "vectara" or "grounded generation"';
 
 const App = () => {
   const [isConfigurationDrawerOpen, setIsConfigurationDrawerOpen] = useState(false);
-  const [corpusId, setCorpusId] = useState<string>("");
+  const [corpusIds, setCorpusIds] = useState<string[]>([]);
   const [customerId, setCustomerId] = useState<string>("");
   const [apiKey, setApiKey] = useState<string>("");
   const [placeholder, setPlaceholder] = useState<string>(DEFAULT_PLACEHOLDER);
@@ -84,7 +84,7 @@ const App = () => {
   const [openResultsInNewTab, setOpenResultsInNewTab] = useState<boolean>(false);
 
   const onUpdateCorpusId = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    setCorpusId(e.target.value);
+    setCorpusIds(e.target.value.split(","));
   }, []);
 
   const onUpdateCustomerId = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -111,7 +111,7 @@ const App = () => {
             <VuiFlexItem grow={false} shrink={false}>
               <VuiTitle size="xs">
                 <h1>
-                  <strong>Vectara React-Chat</strong>
+                  <strong>Vectara React-Chatbot</strong>
                 </h1>
               </VuiTitle>
             </VuiFlexItem>
@@ -137,13 +137,13 @@ const App = () => {
         <VuiAppContent className="appExampleContent" padding="xl">
           <div className="content">
             <VuiTitle size="l">
-              <h1>Vectara React-Chat</h1>
+              <h1>Vectara React-Chatbot</h1>
             </VuiTitle>
 
             <VuiSpacer size="m" />
 
             <VuiText>
-              <p>React-Chat adds a Vectara-powered chatbot to your React applications with a few lines of code.</p>
+              <p>React-Chatbot instantly adds a Vectara-powered chatbot to your React applications.</p>
             </VuiText>
 
             <VuiSpacer size="m" />
@@ -152,11 +152,10 @@ const App = () => {
              * Here we ensure that if the field is blank, we use the default props that point to the docs page.
              * This ensures that we don't voluntarily display the docs corpus details in the text fields.
              */}
-            <ReactChat
-              corpusId={corpusId === "" ? DEFAULT_CORPUS_ID : corpusId}
+            <ReactChatbot
+              corpusIds={corpusIds.length === 0 ? DEFAULT_CORPUS_IDS : corpusIds}
               customerId={customerId === "" ? DEFAULT_CUSTOMER_ID : customerId}
               apiKey={apiKey === "" ? DEFAULT_API_KEY : apiKey}
-              placeholder={placeholder}
             />
 
             <VuiSpacer size="m" />
@@ -189,13 +188,13 @@ const App = () => {
             <VuiSpacer size="s" />
 
             <VuiCode language="tsx">
-              {generateCodeSnippet(customerId, corpusId, apiKey, placeholder, isDeeplinkable, openResultsInNewTab)}
+              {generateCodeSnippet(customerId, corpusIds, apiKey, placeholder, isDeeplinkable, openResultsInNewTab)}
             </VuiCode>
 
             <ConfigurationDrawer
               isOpen={isConfigurationDrawerOpen}
               setIsOpen={setIsConfigurationDrawerOpen}
-              corpusId={corpusId}
+              corpusIds={corpusIds}
               onUpdateCorpusId={onUpdateCorpusId}
               customerId={customerId}
               onUpdateCustomerId={onUpdateCustomerId}

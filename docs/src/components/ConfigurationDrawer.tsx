@@ -13,7 +13,7 @@ import {
 type Props = {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
-  corpusId: string;
+  corpusIds: string[];
   onUpdateCorpusId: (event: React.ChangeEvent<HTMLInputElement>) => void;
   customerId: string;
   onUpdateCustomerId: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -26,7 +26,7 @@ type Props = {
 export const ConfigurationDrawer = ({
   isOpen,
   setIsOpen,
-  corpusId,
+  corpusIds,
   onUpdateCorpusId,
   customerId,
   onUpdateCustomerId,
@@ -69,7 +69,7 @@ export const ConfigurationDrawer = ({
       <VuiSpacer size="xs" />
 
       <VuiFormGroup label="Corpus ID" labelFor="corpusId">
-        <VuiTextInput value={corpusId} onChange={onUpdateCorpusId} />
+        <VuiTextInput value={corpusIds.join(",")} onChange={onUpdateCorpusId} />
       </VuiFormGroup>
 
       <VuiSpacer size="xs" />

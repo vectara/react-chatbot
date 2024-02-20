@@ -1,5 +1,5 @@
-import { FC } from "react";
-import "./_index.scss";
+import { FC, ReactNode } from "react";
+import { ChatView } from "components/ChatView";
 
 export interface Props {
   // Vectara customer ID
@@ -8,37 +8,33 @@ export interface Props {
   // Vectara API key
   apiKey: string;
 
-  // Vectara corpus ID
-  corpusId: string;
+  // Vectara corpus IDs
+  corpusIds: string[];
 
-  // An optional API url to direct requests toward
-  apiUrl?: string;
+  // Title to be shown in the UI header
+  title?: string;
 
-  // The number of previous searches to cache.
-  // Default is 0.
-  historySize?: number;
-
-  // The search input placeholder.
+  // Text to be shown when the input field has no text
   placeholder?: string;
 
-  // Whether to enable deeplinking to a particular search.
-  isDeeplinkable?: boolean;
-
-  // Whether to open selected results in a new browser tab.
-  openResultsInNewTab?: boolean;
+  // Component to render into the messages display when there are no messages to show
+  EmptyStateDisplay?: () => ReactNode;
 }
 
 /**
- * A client-side search component that queries a specific corpus with a user-provided string.
+ * A client-side chat component that queries specific corpora with a user-provided message.
  */
-export const ReactChat: FC<Props> = ({
-  customerId,
-  apiKey,
-  corpusId,
-  apiUrl,
-  historySize = 10,
-  placeholder = "Search"
-}) => {
-  console.log(customerId, apiKey, corpusId, apiUrl, historySize, placeholder);
-  return <div>React-Chat</div>;
+export const ReactChatbot: FC<Props> = ({ customerId, apiKey, corpusIds, title, placeholder, EmptyStateDisplay }) => {
+  return (
+    <div>
+      <ChatView
+        customerId={customerId}
+        corpusIds={corpusIds}
+        apiKey={apiKey}
+        title={title}
+        placeholder={placeholder}
+        EmptyStateDisplay={EmptyStateDisplay}
+      />
+    </div>
+  );
 };
