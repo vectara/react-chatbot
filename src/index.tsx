@@ -17,6 +17,9 @@ export interface Props {
   // Text to be shown when the input field has no text
   placeholder?: string;
 
+  // Size of input. Defaults to "large".
+  inputSize?: "large" | "medium";
+
   // Content to render into the messages display when there are no messages to show
   emptyStateDisplay?: ReactNode;
 
@@ -36,6 +39,7 @@ export const ReactChatbot: FC<Props> = ({
   corpusIds,
   title,
   placeholder,
+  inputSize,
   emptyStateDisplay,
   isInitiallyOpen,
   zIndex
@@ -48,6 +52,7 @@ export const ReactChatbot: FC<Props> = ({
         apiKey={apiKey}
         title={title}
         placeholder={placeholder}
+        inputSize={inputSize}
         emptyStateDisplay={emptyStateDisplay}
         isInitiallyOpen={isInitiallyOpen}
         zIndex={zIndex}

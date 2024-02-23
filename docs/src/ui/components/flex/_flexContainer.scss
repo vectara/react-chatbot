@@ -70,10 +70,6 @@ $spacing: (
 
 @each $spacingName, $spacingValue in $spacing {
   .vuiFlexContainer--#{$spacingName} {
-    margin: -$spacingValue * 0.5;
-
-    & > .vuiFlexItem {
-      margin: $spacingValue * 0.5;
-    }
+    gap: $spacingValue;
   }
 }

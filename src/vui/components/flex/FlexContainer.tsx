@@ -7,14 +7,14 @@ const alignItemsToClassNameMap = {
   center: "vuiFlexContainer--alignItemsCenter",
   end: "vuiFlexContainer--alignItemsEnd",
   start: "vuiFlexContainer--alignItemsStart",
-  stretch: "vuiFlexContainer--alignItemsStretch",
+  stretch: "vuiFlexContainer--alignItemsStretch"
 } as const;
 
 const directionToClassNameMap = {
   column: "vuiFlexContainer--directionColumn",
   columnReverse: "vuiFlexContainer--directionColumnReverse",
   row: "vuiFlexContainer--directionRow",
-  rowReverse: "vuiFlexContainer--directionRowReverse",
+  rowReverse: "vuiFlexContainer--directionRowReverse"
 } as const;
 
 const justifyContentToClassNameMap = {
@@ -23,7 +23,7 @@ const justifyContentToClassNameMap = {
   start: "vuiFlexContainer--justifyContentStart",
   spaceAround: "vuiFlexContainer--justifyContentSpaceAround",
   spaceBetween: "vuiFlexContainer--justifyContentSpaceBetween",
-  spaceEvenly: "vuiFlexContainer--justifyContentSpaceEvenly",
+  spaceEvenly: "vuiFlexContainer--justifyContentSpaceEvenly"
 } as const;
 
 const spacingToClassNameMap: Record<FlexSpacing, string> = {
@@ -34,7 +34,7 @@ const spacingToClassNameMap: Record<FlexSpacing, string> = {
   m: "vuiFlexContainer--spacingM",
   l: "vuiFlexContainer--spacingL",
   xl: "vuiFlexContainer--spacingXl",
-  xxl: "vuiFlexContainer--spacingXxl",
+  xxl: "vuiFlexContainer--spacingXxl"
 } as const;
 
 export type Props = {
@@ -68,7 +68,7 @@ export const VuiFlexContainer = ({
     spacingToClassNameMap[spacing],
     {
       "vuiFlexContainer--wrap": wrap,
-      "vuiFlexContainer--fullWidth": fullWidth,
+      "vuiFlexContainer--fullWidth": fullWidth
     }
   );
 

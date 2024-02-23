@@ -8,12 +8,13 @@ type Props = {
   placeholder: string;
   buttonLabel: string;
   isDisabled?: boolean;
+  size: "l" | "m";
 };
 
 /**
  * The chat window input field and submit button.
  */
-export const QueryInput = ({ query, setQuery, onSubmit, placeholder, buttonLabel, isDisabled }: Props) => {
+export const QueryInput = ({ query, setQuery, onSubmit, placeholder, buttonLabel, isDisabled, size }: Props) => {
   const onSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
   };
@@ -24,10 +25,10 @@ export const QueryInput = ({ query, setQuery, onSubmit, placeholder, buttonLabel
   };
 
   return (
-    <VuiFlexContainer alignItems="center">
+    <VuiFlexContainer alignItems="center" spacing="xs">
       <VuiFlexItem grow={1}>
         <VuiSearchInput
-          size="m"
+          size={size}
           value={query}
           onChange={onSearchChange}
           onSubmit={onSearchSubmit}
@@ -38,7 +39,7 @@ export const QueryInput = ({ query, setQuery, onSubmit, placeholder, buttonLabel
       </VuiFlexItem>
 
       <VuiFlexItem>
-        <VuiButtonPrimary color="primary" size="m" onClick={() => onSubmit()} isDisabled={isDisabled}>
+        <VuiButtonPrimary color="primary" size={size} onClick={() => onSubmit()} isDisabled={isDisabled}>
           {buttonLabel}
         </VuiButtonPrimary>
       </VuiFlexItem>

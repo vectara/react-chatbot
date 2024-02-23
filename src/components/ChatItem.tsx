@@ -94,7 +94,7 @@ export const ChatItem = ({ question, answer, searchResults, onRetry }: Props) =>
     content = (
       <div className="vrcbChatMessageContainer vrcbChatMessageContainer--answer">
         <div className="vrcbChatMessage">
-          <VuiText size="m">
+          <VuiText size="s">
             <Markdown
               children={sanitizedAnswer}
               options={{

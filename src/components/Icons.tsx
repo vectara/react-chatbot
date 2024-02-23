@@ -1,53 +1,10 @@
-export const Minimize = () => (
-  <svg
-    fill="#ffffff"
-    height="12px"
-    width="12px"
-    version="1.1"
-    id="Capa_1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
-    viewBox="0 0 330 330"
-    xmlSpace="preserve"
-    stroke="#ffffff"
-  >
-    <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-
-    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
-
-    <g id="SVGRepo_iconCarrier">
-      {" "}
-      <g>
-        {" "}
-        <path d="M315,0H15C6.716,0,0,6.716,0,15v300c0,8.284,6.716,15,15,15h300c8.284,0,15-6.716,15-15V15C330,6.716,323.284,0,315,0z M300,300H30V30h270V300z" />{" "}
-        <path d="M95,180h140c8.284,0,15-6.716,15-15s-6.716-15-15-15H95c-8.284,0-15,6.716-15,15S86.716,180,95,180z" />{" "}
-      </g>{" "}
-    </g>
+export const MinimizeIcon = ({ size, color }: { size: string; color: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 329.26933 329" width={size} height={size} fill={color}>
+    <path d="m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0" />
   </svg>
 );
 
-export const Chat = () => (
-  <svg width="150px" height="150px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#69707d">
-    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-    <g id="SVGRepo_iconCarrier">
-      {" "}
-      <g id="Communication / Chat_Conversation">
-        {" "}
-        <path
-          id="Vector"
-          d="M16 8H20C20.5523 8 21 8.44772 21 9V20L17.667 17.231C17.4875 17.0818 17.2608 17 17.0273 17H9C8.44771 17 8 16.5523 8 16V13M16 8V5C16 4.44772 15.5523 4 15 4H4C3.44772 4 3 4.44772 3 5V16.0003L6.33301 13.2308C6.51255 13.0817 6.73924 13 6.97266 13H8M16 8V12C16 12.5523 15.5523 13 15 13H8"
-          stroke="#000000"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        ></path>{" "}
-      </g>{" "}
-    </g>
-  </svg>
-);
-
-export const ChatBubble = ({ size = "16px", color = "#ffffff" }: { size?: string; color?: string }) => (
+export const ChatBubbleIcon = ({ size = "16px", color = "#ffffff" }: { size?: string; color?: string }) => (
   <svg
     fill={color}
     version="1.1"
