@@ -1,0 +1,38 @@
+.vrcbLoader,
+.vrcbLoader:before,
+.vrcbLoader:after {
+  width: 8px;
+  aspect-ratio: 0.5;
+  display: grid;
+  background: radial-gradient(#000 68%, #0000 72%) center/100% 50% no-repeat;
+  animation: load 1.2s infinite linear calc(var(--_s, 0) * 0.4s);
+  transform: translate(calc(var(--_s, 0) * 150%));
+}
+.vrcbLoader {
+  opacity: 0.4;
+}
+.vrcbLoader:before,
+.vrcbLoader:after {
+  content: "";
+  grid-area: 1/1;
+  opacity: 1;
+}
+.vrcbLoader:before {
+  --_s: -1;
+}
+.vrcbLoader:after {
+  --_s: 1;
+}
+
+@keyframes load {
+  20% {
+    background-position: top;
+  }
+  40% {
+    background-position: center;
+  }
+
+  60% {
+    background-position: center;
+  }
+}

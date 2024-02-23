@@ -1,0 +1,162 @@
+@import "../vui/styleUtils/index.scss";
+@import "./variables.scss";
+
+.vrcbChatMessageContainer {
+  display: flex;
+}
+
+.vrcbChatMessage {
+  padding: $sizeS $sizeM;
+  border-radius: $sizeM;
+}
+
+.vrcbChatMessageContainer--question {
+  justify-content: flex-start;
+  padding: 0 $sizeXxl;
+  padding-left: $sizeS;
+
+  .vrcbChatMessage {
+    color: $colorLightShade;
+    font-size: $fontSizeStandard;
+    font-weight: $fontWeightBold;
+    background: $colorDarkShade;
+  }
+}
+
+.vrcbChatMessageContainer--thinking,
+.vrcbChatMessageContainer--answer {
+  padding: 0 $sizeXxl;
+  padding-right: $sizeS;
+
+  .vrcbChatMessage {
+    background-color: $colorLightShade;
+  }
+}
+
+.vrcbChatMessageContainer--error,
+.vrcbChatMessageContainer--answer {
+  justify-content: flex-start;
+}
+
+.vrcbChatMessageContainer--error {
+  padding: 0 $sizeL;
+  font-size: $fontSizeSmall;
+}
+
+.vrcbChatMessageContainer--thinking {
+  justify-content: flex-end;
+
+  .vrcbChatMessage {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+.vrcbChatMessageContainer--answer {
+  .vrcbChatMessage {
+    color: $colorFullShade;
+  }
+}
+
+.vrcbChatMessageContainer--error {
+  .vrcbChatMessage {
+    color: $colorDanger;
+  }
+}
+
+.vrcbChatInputContainer {
+  position: relative;
+}
+
+.vrcbChatSummaryCitation,
+.vrcbChatSearchResultPosition {
+  background-color: rgba($colorFullShade, 0.05);
+  color: $colorFullShade;
+  padding: $sizeXxxs $sizeXxs;
+  font-size: $fontSizeSmall;
+  border-radius: $sizeXxs;
+  font-weight: $fontWeightBold;
+  line-height: 1.4;
+}
+
+.vrcbChatSummaryCitation {
+  display: inline;
+}
+
+.vrcbChatbotWrapper {
+  align-items: stretch;
+  background-color: white;
+  border: 1px solid $colorMediumShade;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 9999;
+
+  .vrcbHeader {
+    &:hover {
+      background-color: $colorDarkerShade;
+    }
+  }
+
+  &.vrcbChatbotWrapper--isOpen {
+    height: 80%;
+    min-width: 320px;
+    width: 33.3%;
+
+    .vrcbHeader {
+      &:hover {
+        background-color: $colorDarkShade;
+      }
+    }
+  }
+}
+
+.vrcbChatbotInnerWrapper {
+  gap: 8px;
+  flex-basis: 100%;
+  min-height: 0;
+  padding: 8px;
+}
+
+.vrcbMessagesWrapper {
+  border: 1px solid $colorMediumShade;
+  border-radius: 8px;
+  flex-basis: 100%;
+  min-height: 0;
+
+  & > div {
+    height: 100%;
+    overflow: scroll;
+  }
+}
+
+.vrcbHeader {
+  background-color: $colorDarkShade;
+  color: $colorLightShade;
+  font-size: $fontSizeSmall;
+  font-weight: $fontWeightBold;
+  gap: 4px;
+  padding: 8px;
+
+  & > div {
+    flex-direction: row;
+  }
+}
+
+.vrcbEmptyMessages {
+  color: $colorFullShade;
+  font-weight: $fontWeightBold;
+  height: 100%;
+  opacity: 0.3;
+}
+
+.vrcbRetryButton {
+  color: $colorPrimary;
+  font-weight: $fontWeightBold;
+  padding: $sizeXxxs $sizeXxs;
+}

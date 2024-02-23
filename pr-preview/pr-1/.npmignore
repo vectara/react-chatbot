@@ -1,0 +1,12 @@
+/node_modules
+/src
+/docs
+/images
+buildConfigs.js
+build.js
+global.d.ts
+package-lock.json
+README.md
+tsconfig.json
+setupTests.ts
+jest.config.js

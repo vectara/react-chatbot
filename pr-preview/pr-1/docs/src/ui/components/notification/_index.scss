@@ -1,0 +1,99 @@
+.vuiNotificationList {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: $notificationsZIndex;
+  animation: popTop 0.4s cubic-bezier(0.5, 0, 0.5, 1) 1;
+}
+
+.vuiNotificationList__notifications {
+  padding: $sizeXxs;
+  border-bottom-left-radius: $sizeM;
+  transition: all $transitionSpeed;
+}
+
+.vuiNotificationList--hasMany {
+  .vuiNotificationList__notifications {
+    border-bottom-left-radius: $sizeXs;
+  }
+}
+
+.vuiNotificationContainer {
+  position: relative;
+}
+
+.vuiNotification {
+  position: relative;
+  z-index: 1;
+  border-radius: $sizeS;
+  padding: $sizeS;
+  font-size: $fontSizeStandard;
+  color: $colorText;
+  width: 420px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 0 0 0, rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: $colorEmptyShade;
+}
+
+.vuiNotificationPlaceholder {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+}
+
+.vuiNotificationPlaceholder1-isVisible {
+  bottom: -$sizeXxs;
+  animation: popBottom1 0.2s cubic-bezier(0.5, 0, 0.5, 1) 1;
+}
+
+.vuiNotificationPlaceholder2-isVisible {
+  bottom: -$sizeXxs * 1.75;
+  animation: popBottom2 0.2s cubic-bezier(0.5, 0, 0.5, 1) 1;
+}
+
+@keyframes popTop {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes popBottom1 {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(2px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes popBottom2 {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(8x);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
