@@ -49214,15 +49214,10 @@ fieldset {
     __toESM(require_jsx_runtime())
   );
   var formatStringProp = (value) => {
-    let quotedValue = value;
-    if (value) {
-      if (value.match('"')) {
-        quotedValue = `'${value}'`;
-      } else {
-        quotedValue = `"${value}"`;
-      }
+    if (!value) {
+      return;
     }
-    return quotedValue;
+    return value.match('"') ? `'${value}'` : `"${value}"`;
   };
   var generateCodeSnippet = (customerId, corpusIds, apiKey, title, placeholder, emptyStateDisplay) => {
     const props = [
