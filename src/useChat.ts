@@ -26,7 +26,7 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
         return [
           ...messageHistory,
           {
-            id: "0",
+            id: "placeholder-message-id",
             question: query,
             answer: "",
             results: []
