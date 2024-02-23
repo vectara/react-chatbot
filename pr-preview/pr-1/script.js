@@ -35898,7 +35898,7 @@
           return [
             ...messageHistory2,
             {
-              id: "0",
+              id: "placeholder-message-id",
               question: query,
               answer: "",
               results: []
