@@ -40584,9 +40584,10 @@
     apiKey,
     title = "My Chatbot",
     placeholder = "Chat with your AI Assistant",
-    emptyStateDisplay = /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(DefaultEmptyMessagesState, {})
+    emptyStateDisplay = /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(DefaultEmptyMessagesState, {}),
+    isOpened
   }) => {
-    const [isOpen, setIsOpen] = (0, import_react10.useState)(false);
+    const [isOpen, setIsOpen] = (0, import_react10.useState)(isOpened ?? false);
     const [query, setQuery] = (0, import_react10.useState)("");
     const { sendMessage, messageHistory, isLoading, error } = useChat(customerId, corpusIds, apiKey);
     const appLayoutRef = (0, import_react10.useRef)(null);
@@ -40602,6 +40603,11 @@
         }
       }, 0);
     };
+    (0, import_react10.useEffect)(() => {
+      if (isOpened !== void 0) {
+        setIsOpen(isOpened);
+      }
+    }, [isOpened]);
     (0, import_react10.useEffect)(() => {
       const layoutNode = appLayoutRef.current;
       const onScrollContent = () => {
@@ -40687,7 +40693,15 @@
 
   // src/index.tsx
   var import_jsx_runtime17 = __toESM(require_jsx_runtime());
-  var ReactChatbot = ({ customerId, apiKey, corpusIds, title, placeholder, emptyStateDisplay }) => {
+  var ReactChatbot = ({
+    customerId,
+    apiKey,
+    corpusIds,
+    title,
+    placeholder,
+    emptyStateDisplay,
+    isOpened
+  }) => {
     return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
       ChatView,
       {
@@ -40696,7 +40710,8 @@
         apiKey,
         title,
         placeholder,
-        emptyStateDisplay
+        emptyStateDisplay,
+        isOpened
       }
     ) });
   };
@@ -46066,7 +46081,7 @@ pre[class*="language-"] {
   var import_jsx_runtime97 = __toESM(require_jsx_runtime());
   var ConfigurationDrawer = ({
     isOpen,
-    setIsOpen,
+    onClose,
     corpusIds,
     onUpdateCorpusIds,
     customerId,
@@ -46085,7 +46100,7 @@ pre[class*="language-"] {
       {
         color: "primary",
         isOpen,
-        onClose: () => setIsOpen(false),
+        onClose,
         title: /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(VuiTitle2, { size: "s", children: /* @__PURE__ */ (0, import_jsx_runtime97.jsx)("h2", { children: "Search configuration" }) }),
         children: [
           /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(VuiTitle2, { size: "s", children: /* @__PURE__ */ (0, import_jsx_runtime97.jsx)("h3", { className: "header", children: "Connect to Vectara data" }) }),
@@ -46106,7 +46121,7 @@ pre[class*="language-"] {
           /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(VuiSpacer2, { size: "s" }),
           /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(VuiFormGroup, { label: "Empty messages content (JSX)", labelFor: "emptyMessagesContent", children: /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(VuiTextArea, { value: emptyMessagesContent, onChange: onUpdateEmptyMessagesContent, fullWidth: true }) }),
           /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(VuiSpacer2, { size: "l" }),
-          /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(VuiButtonPrimary2, { color: "primary", onClick: () => setIsOpen(false), children: "Close" })
+          /* @__PURE__ */ (0, import_jsx_runtime97.jsx)(VuiButtonPrimary2, { color: "primary", onClick: onClose, children: "Close" })
         ]
       }
     );
@@ -49222,6 +49237,7 @@ fieldset {
     if (emptyStateDisplay) {
       props.push(`emptyStateDisplay={${emptyStateDisplay.replace(/\s/g, "")}}`);
     }
+    props.push(`isOpened={ /* true, if the component should be initially opened */ }`);
     return `import { ReactChatbot } from "@vectara/react-chatbot";
 
   export const App = () => (
@@ -49236,9 +49252,10 @@ fieldset {
   var DEFAULT_CUSTOMER_ID = "1366999410";
   var DEFAULT_API_KEY = "zqt_UXrBcnI2UXINZkrv4g1tQPhzj02vfdtqYJIDiA";
   var DEFAULT_TITLE = "My Chatbot";
-  var DEFAULT_PLACEHOLDER = "Chat with your AI assistant";
+  var DEFAULT_PLACEHOLDER = 'Try "What is Vectara?" or "How does RAG work?"';
   var App = () => {
     const [isConfigurationDrawerOpen, setIsConfigurationDrawerOpen] = (0, import_react48.useState)(false);
+    const [isChatbotForcedOpen, setIsChatbotForcedOpen] = (0, import_react48.useState)(true);
     const [corpusIds, setCorpusIds] = (0, import_react48.useState)([]);
     const [customerId, setCustomerId] = (0, import_react48.useState)("");
     const [apiKey, setApiKey] = (0, import_react48.useState)("");
@@ -49301,11 +49318,22 @@ fieldset {
             apiKey: apiKey === "" ? DEFAULT_API_KEY : apiKey,
             title,
             placeholder,
-            emptyStateDisplay: emptyStateJsx === "" ? void 0 : /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(CustomEmptyStateDisplay, {})
+            emptyStateDisplay: emptyStateJsx === "" ? void 0 : /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(CustomEmptyStateDisplay, {}),
+            isOpened: isChatbotForcedOpen
           }
         ),
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiSpacer2, { size: "m" }),
-        /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiButtonSecondary2, { color: "primary", onClick: () => setIsConfigurationDrawerOpen(true), children: "Edit configuration" }),
+        /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(
+          VuiButtonSecondary2,
+          {
+            color: "primary",
+            onClick: () => {
+              setIsChatbotForcedOpen(false);
+              setIsConfigurationDrawerOpen(true);
+            },
+            children: "Edit configuration"
+          }
+        ),
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiSpacer2, { size: "xxl" }),
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiTitle2, { size: "m", children: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("h2", { children: "Use it in your code" }) }),
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiSpacer2, { size: "m" }),
@@ -49322,7 +49350,7 @@ fieldset {
           ConfigurationDrawer,
           {
             isOpen: isConfigurationDrawerOpen,
-            setIsOpen: setIsConfigurationDrawerOpen,
+            onClose: () => setIsConfigurationDrawerOpen(false),
             corpusIds,
             onUpdateCorpusIds,
             customerId,
