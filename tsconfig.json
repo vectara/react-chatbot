@@ -23,6 +23,6 @@
     "strict": true, // Enable all strict type checking options
     "target": "es6" // Specify ECMAScript target version
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["src/*.ts", "src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "**/*.test.ts", "**/*.test.tsx"]
 }
