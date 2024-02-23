@@ -183,17 +183,19 @@ $chatbotPosition: $sizeS;
   padding: $sizeXxxs $sizeXxs;
 }
 
-// Responsive Styles
 // Make the Chatbot window take the full screen at small screen widths.
-// @media (max-width: 480px) {
-//   .vrcbChatbotWrapper.vrcbChatbotWrapper-isOpen {
-//     bottom: 0;
-//     height: 100%;
-//     right: 0;
-//     width: 100%;
-//   }
+@media (max-width: 700px) {
+  .vrcbChatbotWrapper {
+    right: 0;
+    width: 100vw;
+    max-width: 100vw;
+  }
+}
 
-//   .vuiSearchInput--m.vuiSearchInput > .vuiSearchInput__input {
-//     font-size: $fontSizeMedium;
-//   }
-// }
+@media (max-height: 900px) {
+  .vrcbChatbotWrapper {
+    bottom: 0;
+    height: 100vh;
+    max-height: 100vh;
+  }
+}
