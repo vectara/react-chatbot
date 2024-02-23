@@ -1,10 +1,10 @@
 <p align="center">
-  <img style="max-width: 100%;" alt="Welcome to Create UI" src="https://raw.githubusercontent.com/vectara/react-search/main/images/projectLogo.png"/>
+  <img style="max-width: 100%;" alt="Welcome to React-Chatbot" src="https://raw.githubusercontent.com/vectara/react-chatbot/main/images/projectLogo.png"/>
 </p>
 
-# React-Chat
+# React-Chatbot
 
-React-Chat is a UI widget for adding [Vectara](https://vectara.com/)-powered chatbot to your React apps with a few lines of code.
+React-Chatbot is a UI widget for adding [Vectara](https://vectara.com/)-powered chatbot to your React apps with a few lines of code.
 
 > [!TIP]
 >
@@ -17,28 +17,36 @@ React-Chat is a UI widget for adding [Vectara](https://vectara.com/)-powered cha
 
 ## Demo
 
-**[Try out the demo!](https://vectara.github.io/react-chat/)**
+**[Try out the demo!](https://vectara.github.io/react-chatbot/)**
 
 ## UI
 
-...
+_Screenshots coming soon!_
 
 ## Use it in your application
 
-Install React-Chat:
+Install React-Chatbot:
 
 ```shell
-npm install --save @vectara/react-chat
+npm install --save @vectara/react-chatbot
 ```
 
 Then use it in your application like this:
 
 ```js
-import { ReactChat } from "@vectara/react-chat";
+import { ReactChatbot } from "@vectara/react-chatbot";
 
 /* snip */
 
-<ReactChat customerId="CUSTOMER_ID" corpusId="CORPUS_ID" apiKey="API_KEY" placeholder="Ask a question" />;
+<ReactChatbot
+  customerId="CUSTOMER_ID"
+  corpusId="CORPUS_ID"
+  apiKey="API_KEY"
+  title="My Chatbot"
+  placeholder="Chat with your AI assistant"
+  emptyStateDisplay={<MyEmptyStateDisplayComponent />}
+  isOpened={false}
+/>;
 ```
 
 ### Configuration options
@@ -47,7 +55,7 @@ import { ReactChat } from "@vectara/react-chat";
 
 Every Vectara account is associated with a customer ID. You can find your customer ID by logging into the [Vectara Console](https://console.vectara.com/) and opening your account dropdown in the top-right corner.
 
-#### `corpusId` (required)
+#### `corpusIds` (required)
 
 After you [create a corpus](https://docs.vectara.com/docs/console-ui/creating-a-corpus), you can find its ID by navigating to the corpus and looking in the top-left corner, next to the corpus name.
 
@@ -55,13 +63,21 @@ After you [create a corpus](https://docs.vectara.com/docs/console-ui/creating-a-
 
 API keys enable applications to access data inside of corpora. Learn how to [create a **QueryService** API key](https://docs.vectara.com/docs/console-ui/manage-api-access#create-an-api-key).
 
-#### `apiUrl` (optional)
+#### `title` (optional)
 
-By default, React-Chat sends query requests to the Vectara servers. If you want to use a proxy server, you can configure this option with the URL of your proxy.
+Configure the title in the header of the chatbot window.
 
 #### `placeholder` (optional)
 
 Configure the placeholder text in the chatbot's input.
+
+#### `emptyStateDisplay` (optional)
+
+Configure JSX content to render in the messages window when there are no messages to display.
+
+#### `isOpened` (optional)
+
+Configure initial open/closed state of the the chatbot component.
 
 ### Set up your data
 
@@ -103,4 +119,4 @@ Additionally, any changes to the development app source code at `/docs/index.tsx
 
 ## License
 
-Vectara React-Chat is an open-sourced software licensed under the [Apache 2.0 license](/LICENSE).
+Vectara React-Chatbot is an open-sourced software licensed under the [Apache 2.0 license](/LICENSE).

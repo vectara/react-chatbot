@@ -95,7 +95,6 @@
   position: fixed;
   bottom: 16px;
   right: 16px;
-  z-index: 9999;
 
   .vrcbHeader {
     &:hover {
@@ -106,7 +105,7 @@
   &.vrcbChatbotWrapper--isOpen {
     height: 80%;
     min-width: 320px;
-    width: 33.3%;
+    width: 40%;
 
     .vrcbHeader {
       &:hover {
