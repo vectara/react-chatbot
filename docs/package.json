@@ -1,0 +1,15 @@
+{
+  "name": "docs",
+  "version": "0.0.1",
+  "description": "Docs page for React-Chatbot",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "node docsServer.js",
+    "buildDocs": "node build.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vectara/react-chatbot": "file:.."
+  }
+}

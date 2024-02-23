@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: npm i && npm run build && npm run buildDocs
+      - run: npm i && npm run build && npm i --prefix docs/ && npm run buildDocs --prefix docs/
         if: github.event.action != 'closed'
       - uses: rossjrw/pr-preview-action@v1
         with:

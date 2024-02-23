@@ -2,7 +2,7 @@ import { ChangeEvent, ReactNode, useCallback, useState } from "react";
 import ReactDOM from "react-dom";
 import { BiLogoGithub } from "react-icons/bi";
 import JsxParser from "react-jsx-parser";
-import { ReactChatbot } from "../../src";
+import { ReactChatbot } from "@vectara/react-chatbot";
 import {
   VuiAppContent,
   VuiAppHeader,
@@ -43,7 +43,7 @@ const generateCodeSnippet = (
   const props = [
     `customerId="${customerId === "" ? "<Your Vectara customer ID>" : customerId}"`,
     `corpusIds=${
-      corpusIds?.length === 0 ? '"<Your Vectara corpus IDs>"' : `["${corpusIds?.join('","').replace(/\s/g, "")}"]`
+      corpusIds?.length === 0 ? '"<Your Vectara corpus IDs>"' : `{["${corpusIds?.join('","').replace(/\s/g, "")}"]}`
     }`,
     `apiKey="${apiKey === "" ? "<Your Vectara API key>" : apiKey}"`
   ];
@@ -61,7 +61,7 @@ const generateCodeSnippet = (
   }
 
   if (emptyStateDisplay) {
-    props.push(`emptyStateDisplay={${emptyStateDisplay.replace(/\s/g, "")}}`);
+    props.push(`emptyStateDisplay={${emptyStateDisplay.replace(/\n/g, "").replace(/\s+/g, " ")}}`);
   }
 
   props.push(`isInitiallyOpen={ /* (optional) true, if the component should be initially opened */ }`);
@@ -69,13 +69,13 @@ const generateCodeSnippet = (
 
   return `import { ReactChatbot } from "@vectara/react-chatbot";
 
-  export const App = () => (
-    <div>
-      <ReactChatbot
-        ${props.join("\n        ")}
-      />
-    </div>
-  );`;
+export const App = () => (
+  <div>
+    <ReactChatbot
+      ${props.join("\n      ")}
+    />
+  </div>
+);`;
 };
 
 const DEFAULT_CORPUS_IDS = ["1"];
@@ -96,7 +96,13 @@ const App = () => {
   const [emptyStateJsx, setEmptyStateJsx] = useState<string>("");
 
   const onUpdateCorpusIds = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    setCorpusIds(e.target.value.split(","));
+    const sanitizedValue = e.target.value.trim();
+
+    if (sanitizedValue === "") {
+      setCorpusIds([]);
+      return;
+    }
+    setCorpusIds(sanitizedValue.split(","));
   }, []);
 
   const onUpdateCustomerId = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -138,7 +144,7 @@ const App = () => {
             <VuiFlexItem grow={false} shrink={false}>
               <VuiTitle size="xs">
                 <h1>
-                  <strong>Vectara React-Chatbot</strong>
+                  <strong></strong>
                 </h1>
               </VuiTitle>
             </VuiFlexItem>

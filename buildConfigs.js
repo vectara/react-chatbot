@@ -7,11 +7,11 @@ const sharedConfig = {
   entryPoints: ["src/index.tsx", "src/useChat.ts"],
   logLevel: "info",
   treeShaking: true,
-  minify: true,
-  sourcemap: true,
+  minify: false,
+  sourcemap: false,
   external: [...Object.keys(dependencies), ...Object.keys(devDependencies), ...Object.keys(peerDependencies)],
   target: ["esnext", "node12.22.0"],
-  plugins: [cssPlugin(), sassPlugin({ type: "style" })],
+  plugins: [cssPlugin(), sassPlugin({ type: "css-text" })],
   outdir: "./lib",
   outbase: "./src"
 };

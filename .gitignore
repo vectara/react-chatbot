@@ -1,5 +1,6 @@
 /node_modules
 /lib
+/docs/node_modules
 /docs/public/script.js
 /docs/public/script.js.map
 /coverage

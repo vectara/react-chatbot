@@ -19,7 +19,9 @@ jobs:
           npm run build
 
       - name: Build Page Script
-        run: npm run buildDocs
+        run: |
+          npm i --prefix docs/
+          npm run buildDocs --prefix docs/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4

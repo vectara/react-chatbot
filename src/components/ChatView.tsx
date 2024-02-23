@@ -5,7 +5,6 @@ import { ChatItem } from "./ChatItem";
 import { useChat } from "../useChat";
 import { Loader } from "./Loader";
 import { ChatBubbleIcon, MinimizeIcon } from "./Icons";
-import "./chatView.scss";
 
 const inputSizeToQueryInputSize = {
   large: "l",

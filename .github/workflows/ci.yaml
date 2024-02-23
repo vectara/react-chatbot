@@ -29,7 +29,8 @@ jobs:
           cache: "npm"
       - run: npm install
       - run: npm run build
-      - run: npm run buildDocs
+      - run: npm install --prefix docs/
+      - run: npm run buildDocs --prefix docs/
 
   run-unit-tests:
     runs-on: ubuntu-latest
