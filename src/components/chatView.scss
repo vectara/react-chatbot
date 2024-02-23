@@ -190,6 +190,8 @@ $chatbotPosition: $sizeS;
     bottom: 0;
     width: 100vw;
     max-width: 100vw;
+    border: none;
+    border-top: 1px solid $borderColor;
   }
 }
 
@@ -199,5 +201,8 @@ $chatbotPosition: $sizeS;
     bottom: 0;
     height: 100vh;
     max-height: 100vh;
+    border-radius: 0;
+    border: none;
+    border-left: 1px solid $borderColor;
   }
 }
