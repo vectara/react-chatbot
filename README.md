@@ -44,8 +44,9 @@ import { ReactChatbot } from "@vectara/react-chatbot";
   apiKey="API_KEY"
   title="My Chatbot"
   placeholder="Chat with your AI assistant"
+  inputSize="large"
   emptyStateDisplay={<MyEmptyStateDisplayComponent />}
-  isOpened={false}
+  isInitiallyOpen={false}
 />;
 ```
 
@@ -75,9 +76,13 @@ Configure the placeholder text in the chatbot's input.
 
 Configure JSX content to render in the messages window when there are no messages to display.
 
-#### `isOpened` (optional)
+#### `isInitiallyOpen` (optional)
 
-Configure initial open/closed state of the the chatbot component.
+Set the chat window to be opened on initial render.
+
+#### `inputSize` (optional)
+
+Used to control the size of the input - either "large" (18px) or "medium" (14px)
 
 ### Set up your data
 

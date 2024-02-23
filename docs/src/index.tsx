@@ -175,10 +175,6 @@ const App = () => {
 
             <VuiSpacer size="m" />
 
-            <VuiText>
-              <p>Looking for it? It's in the lower-right corner of the screen. 😃</p>
-            </VuiText>
-
             {/**
              * Here we ensure that if the field is blank, we use the default props that point to the docs page.
              * This ensures that we don't voluntarily display the docs corpus details in the text fields.
