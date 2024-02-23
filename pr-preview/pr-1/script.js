@@ -36031,7 +36031,7 @@
     apiKey,
     title = "My Chatbot",
     placeholder = "Chat with your AI Assistant",
-    EmptyStateDisplay = DefaultEmptyMessagesState
+    emptyStateDisplay = /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(DefaultEmptyMessagesState, {})
   }) => {
     const [isOpen, setIsOpen] = (0, import_react10.useState)(false);
     const [query, setQuery] = (0, import_react10.useState)("");
@@ -36085,7 +36085,7 @@
         /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(VuiFlexItem, { alignItems: "center", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("button", { onClick: () => setIsOpen(false), children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(Minimize, {}) }) })
       ] }),
       /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(VuiFlexContainer, { direction: "column", spacing: "none", className: "vrcbChatbotInnerWrapper", children: [
-        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(VuiFlexItem, { className: "vrcbMessagesWrapper", basis: "fill", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { ref: appLayoutRef, children: !hasContent ? /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(EmptyStateDisplay, {}) : /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(import_jsx_runtime16.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(VuiFlexItem, { className: "vrcbMessagesWrapper", basis: "fill", children: /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { ref: appLayoutRef, children: !hasContent ? emptyStateDisplay : /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(import_jsx_runtime16.Fragment, { children: [
           /* @__PURE__ */ (0, import_jsx_runtime16.jsx)(VuiSpacer, { size: "xl" }),
           chatItems.map((item, index) => {
             let spacer;
@@ -36134,7 +36134,7 @@
 
   // src/index.tsx
   var import_jsx_runtime17 = __toESM(require_jsx_runtime());
-  var ReactChatbot = ({ customerId, apiKey, corpusIds, title, placeholder, EmptyStateDisplay }) => {
+  var ReactChatbot = ({ customerId, apiKey, corpusIds, title, placeholder, emptyStateDisplay }) => {
     return /* @__PURE__ */ (0, import_jsx_runtime17.jsx)("div", { children: /* @__PURE__ */ (0, import_jsx_runtime17.jsx)(
       ChatView,
       {
@@ -36143,7 +36143,7 @@
         apiKey,
         title,
         placeholder,
-        EmptyStateDisplay
+        emptyStateDisplay
       }
     ) });
   };
