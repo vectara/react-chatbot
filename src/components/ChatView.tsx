@@ -14,12 +14,14 @@ interface Props {
   apiKey: string;
   title?: string;
   placeholder?: string;
-  emptyStateDisplay: ReactNode;
+  emptyStateDisplay?: ReactNode;
+  isInitiallyOpen?: boolean;
+  zIndex?: number;
 }
 
 /**
  * The main chat view
- * Defaults to a minimized button at the bottom of the screen.
+ * Defaults to a minimized button at the bottom of the screen, unless specified otherwise by `isOpened` prop.
  * Expands to show a chat window consisting of a text input, submit button, and chat messages window.
  */
 export const ChatView = ({
@@ -28,9 +30,11 @@ export const ChatView = ({
   apiKey,
   title = "My Chatbot",
   placeholder = "Chat with your AI Assistant",
-  emptyStateDisplay = <DefaultEmptyMessagesState />
+  emptyStateDisplay = <DefaultEmptyMessagesState />,
+  isInitiallyOpen,
+  zIndex = 9999
 }: Props) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(isInitiallyOpen ?? false);
   const [query, setQuery] = useState<string>("");
   const { sendMessage, messageHistory, isLoading, error } = useChat(customerId, corpusIds, apiKey);
   const appLayoutRef = useRef<HTMLDivElement>(null);
@@ -47,6 +51,12 @@ export const ChatView = ({
       }
     }, 0);
   };
+
+  useEffect(() => {
+    if (isInitiallyOpen !== undefined) {
+      setIsOpen(isInitiallyOpen);
+    }
+  }, [isInitiallyOpen]);
 
   useEffect(() => {
     const layoutNode = appLayoutRef.current;
@@ -91,7 +101,7 @@ export const ChatView = ({
   useEffect(updateScrollPosition, [isLoading, messageHistory]);
 
   return (
-    <div className={`vrcbChatbotWrapper${isOpen ? " vrcbChatbotWrapper--isOpen" : ""}`}>
+    <div className={`vrcbChatbotWrapper${isOpen ? " vrcbChatbotWrapper--isOpen" : ""}`} style={{ zIndex }}>
       {isOpen ? (
         <>
           <VuiFlexContainer className="vrcbHeader" spacing="none" direction="row">
