@@ -83,9 +83,10 @@ export const ChatView = ({
   const hasContent = isLoading || messageHistory.length > 0;
 
   const onSendQuery = useCallback(() => {
+    if (isLoading) return;
     sendMessage({ query });
     setQuery("");
-  }, [setQuery, sendMessage]);
+  }, [setQuery, sendMessage, isLoading]);
 
   useEffect(updateScrollPosition, [isLoading, messageHistory]);
 
