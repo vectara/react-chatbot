@@ -36076,9 +36076,11 @@
     const chatInputClasses = (0, import_classnames11.default)("vrcbChatInputContainer");
     const hasContent = isLoading || messageHistory.length > 0;
     const onSendQuery = (0, import_react10.useCallback)(() => {
+      if (isLoading)
+        return;
       sendMessage({ query });
       setQuery("");
-    }, [setQuery, sendMessage]);
+    }, [setQuery, sendMessage, isLoading]);
     (0, import_react10.useEffect)(updateScrollPosition, [isLoading, messageHistory]);
     return /* @__PURE__ */ (0, import_jsx_runtime16.jsx)("div", { className: `vrcbChatbotWrapper${isOpen ? " vrcbChatbotWrapper--isOpen" : ""}`, children: isOpen ? /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(import_jsx_runtime16.Fragment, { children: [
       /* @__PURE__ */ (0, import_jsx_runtime16.jsxs)(VuiFlexContainer, { className: "vrcbHeader", spacing: "none", direction: "row", children: [
