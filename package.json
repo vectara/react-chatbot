@@ -1,15 +1,16 @@
 {
-  "name": "@vectara/react-chat",
+  "name": "@vectara/react-chatbot",
   "version": "0.0.1",
   "description": "A Vectara-powered Chatbot component",
-  "main": "dist/index.cjs.js",
+  "main": "lib/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "npm run clean && node build.js && tsc --emitDeclarationOnly --outDir dist",
+    "build": "npm run clean && node build.js && tsc --emitDeclarationOnly --outDir lib",
     "buildDocs": "node docs/build.js",
     "docs": "node docs/docsServer.js",
     "clean": "rimraf dist",
+    "lint": "eslint .",
     "test": "jest --coverage"
   },
   "author": {
@@ -17,10 +18,10 @@
     "url": "https://www.vectara.com"
   },
   "license": "MIT",
-  "homepage": "https://vectara.github.io/react-chat/",
+  "homepage": "https://vectara.github.io/react-chatbot/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vectara/react-chat"
+    "url": "https://github.com/vectara/react-chatbot"
   },
   "keywords": [
     "vectara",
@@ -44,16 +45,23 @@
     "@types/jest": "^29.5.11",
     "@types/lodash": "^4.14.202",
     "@types/prismjs": "^1.26.3",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "axios": "^1.6.7",
     "chokidar": "^3.5.3",
     "cross-fetch": "^4.0.0",
     "esbuild": "^0.19.9",
     "esbuild-css-modules-plugin": "^3.1.0",
     "esbuild-sass-plugin": "^2.16.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-react": "^7.33.2",
     "jest": "^29.7.0",
     "jest-css-modules": "^2.1.0",
     "jest-environment-jsdom": "^29.7.0",
     "live-server": "^1.2.2",
     "markdown-to-jsx": "^7.3.2",
+    "prettier": "2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
@@ -63,6 +71,7 @@
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
+    "axios": "^1.6.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
