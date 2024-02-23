@@ -14,7 +14,7 @@ interface Props {
   apiKey: string;
   title?: string;
   placeholder?: string;
-  EmptyStateDisplay?: () => ReactNode;
+  emptyStateDisplay: ReactNode;
 }
 
 /**
@@ -28,7 +28,7 @@ export const ChatView = ({
   apiKey,
   title = "My Chatbot",
   placeholder = "Chat with your AI Assistant",
-  EmptyStateDisplay = DefaultEmptyMessagesState
+  emptyStateDisplay = <DefaultEmptyMessagesState />
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [query, setQuery] = useState<string>("");
@@ -108,7 +108,7 @@ export const ChatView = ({
             <VuiFlexItem className="vrcbMessagesWrapper" basis="fill">
               <div ref={appLayoutRef}>
                 {!hasContent ? (
-                  <EmptyStateDisplay />
+                  emptyStateDisplay
                 ) : (
                   <>
                     <VuiSpacer size="xl" />

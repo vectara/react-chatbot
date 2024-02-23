@@ -17,14 +17,14 @@ export interface Props {
   // Text to be shown when the input field has no text
   placeholder?: string;
 
-  // Component to render into the messages display when there are no messages to show
-  EmptyStateDisplay?: () => ReactNode;
+  // Content to render into the messages display when there are no messages to show
+  emptyStateDisplay?: ReactNode;
 }
 
 /**
  * A client-side chat component that queries specific corpora with a user-provided message.
  */
-export const ReactChatbot: FC<Props> = ({ customerId, apiKey, corpusIds, title, placeholder, EmptyStateDisplay }) => {
+export const ReactChatbot: FC<Props> = ({ customerId, apiKey, corpusIds, title, placeholder, emptyStateDisplay }) => {
   return (
     <div>
       <ChatView
@@ -33,7 +33,7 @@ export const ReactChatbot: FC<Props> = ({ customerId, apiKey, corpusIds, title, 
         apiKey={apiKey}
         title={title}
         placeholder={placeholder}
-        EmptyStateDisplay={EmptyStateDisplay}
+        emptyStateDisplay={emptyStateDisplay}
       />
     </div>
   );

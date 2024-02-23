@@ -74,7 +74,6 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
           summaryNumSentences: 3,
           summaryPromptName: "vectara-summary-ext-v1.2.0",
           language: getLanguage(),
-
           chat: { conversationId }
         });
 
