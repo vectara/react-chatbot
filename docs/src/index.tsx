@@ -81,7 +81,7 @@ const generateCodeSnippet = (
 const DEFAULT_CORPUS_IDS = ["1"];
 const DEFAULT_CUSTOMER_ID = "1366999410";
 const DEFAULT_API_KEY = "zqt_UXrBcnI2UXINZkrv4g1tQPhzj02vfdtqYJIDiA";
-const DEFAULT_TITLE = "My Chatbot";
+const DEFAULT_TITLE = "Vectara Docs Chatbot";
 const DEFAULT_PLACEHOLDER = 'Try "What is Vectara?" or "How does RAG work?"';
 
 const App = () => {
