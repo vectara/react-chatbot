@@ -35889,7 +35889,7 @@
     const [conversationId, setConversationId] = (0, import_react9.useState)();
     const [error, setError] = (0, import_react9.useState)(false);
     const getLanguage = (languageValue) => languageValue ?? "auto";
-    const sendMessage = ({ query, isRetry = false }) => {
+    const sendMessage = async ({ query, isRetry = false }) => {
       if (isLoading)
         return;
       recentQuestion.current = query;
@@ -35908,9 +35908,6 @@
       } else {
         setError(false);
       }
-      fetchSearchResults(query);
-    };
-    const fetchSearchResults = async (query, language = getLanguage()) => {
       const baseSearchRequestParams = {
         filter: "",
         queryValue: query,
@@ -35943,7 +35940,7 @@
             summaryNumResults: 7,
             summaryNumSentences: 3,
             summaryPromptName: "vectara-summary-ext-v1.2.0",
-            language,
+            language: getLanguage(),
             chat: { conversationId }
           });
           setConversationId(response.summary[0].chat.conversationId);
