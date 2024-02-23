@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ChatTurn, SearchError, SummaryLanguage } from "types";
+import { ChatTurn, SummaryLanguage } from "types";
 import { deserializeSearchResponse } from "utils/deserializeSearchResponse";
 import { sendSearchRequest } from "utils/sendSearchRequest";
 
@@ -15,7 +15,7 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
   const [error, setError] = useState<boolean>(false);
   const getLanguage = (languageValue?: string): SummaryLanguage => (languageValue ?? "auto") as SummaryLanguage;
 
-  const sendMessage = ({ query, isRetry = false }: { query: string; isRetry?: boolean }) => {
+  const sendMessage = async ({ query, isRetry = false }: { query: string; isRetry?: boolean }) => {
     if (isLoading) return;
     recentQuestion.current = query;
 
@@ -37,10 +37,6 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
       setError(false);
     }
 
-    fetchSearchResults(query);
-  };
-
-  const fetchSearchResults = async (query: string, language: SummaryLanguage = getLanguage()) => {
     const baseSearchRequestParams = {
       filter: "",
       queryValue: query,
@@ -77,7 +73,7 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
           summaryNumResults: 7,
           summaryNumSentences: 3,
           summaryPromptName: "vectara-summary-ext-v1.2.0",
-          language,
+          language: getLanguage(),
 
           chat: { conversationId }
         });
