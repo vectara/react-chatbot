@@ -8,7 +8,9 @@ import {
   VuiFormGroup,
   VuiTextInput,
   VuiToggle,
-  VuiTextArea
+  VuiTextArea,
+  VuiRadioButton,
+  VuiLabel
 } from "../ui";
 
 type Props = {
@@ -24,6 +26,8 @@ type Props = {
   onUpdateTitle: (event: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder: string;
   onUpdatePlaceholder: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  inputSize: "large" | "medium";
+  onUpdateInputSize: (inputSize: "large" | "medium") => void;
   emptyMessagesContent: string;
   onUpdateEmptyMessagesContent: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 };
@@ -41,6 +45,8 @@ export const ConfigurationDrawer = ({
   onUpdateTitle,
   placeholder,
   onUpdatePlaceholder,
+  inputSize,
+  onUpdateInputSize,
   emptyMessagesContent,
   onUpdateEmptyMessagesContent
 }: Props) => {
@@ -69,19 +75,19 @@ export const ConfigurationDrawer = ({
         </p>
       </VuiText>
 
-      <VuiSpacer size="s" />
+      <VuiSpacer size="m" />
 
       <VuiFormGroup label="Customer ID" labelFor="customerId">
         <VuiTextInput value={customerId} onChange={onUpdateCustomerId} />
       </VuiFormGroup>
 
-      <VuiSpacer size="xs" />
+      <VuiSpacer size="m" />
 
       <VuiFormGroup label="Corpus IDs (comma-separated)" labelFor="corpusId">
         <VuiTextInput value={corpusIds.join(",")} onChange={onUpdateCorpusIds} />
       </VuiFormGroup>
 
-      <VuiSpacer size="xs" />
+      <VuiSpacer size="m" />
 
       <VuiFormGroup label="API key" labelFor="apiKey">
         <VuiTextInput value={apiKey} onChange={onUpdateApiKey} fullWidth />
@@ -93,19 +99,40 @@ export const ConfigurationDrawer = ({
         <h3 className="header">Customize appearance</h3>
       </VuiTitle>
 
-      <VuiSpacer size="s" />
+      <VuiSpacer size="m" />
 
       <VuiFormGroup label="Title text" labelFor="titleText">
         <VuiTextInput value={title} onChange={onUpdateTitle} fullWidth />
       </VuiFormGroup>
 
-      <VuiSpacer size="s" />
+      <VuiSpacer size="m" />
 
       <VuiFormGroup label="Placeholder text" labelFor="placeholderText">
         <VuiTextInput value={placeholder} onChange={onUpdatePlaceholder} fullWidth />
       </VuiFormGroup>
 
-      <VuiSpacer size="s" />
+      <VuiSpacer size="m" />
+
+      <VuiLabel>Input size</VuiLabel>
+
+      <VuiSpacer size="xs" />
+
+      <VuiRadioButton
+        groupName="inputSize"
+        label="Large"
+        onChange={() => onUpdateInputSize("large")}
+        checked={inputSize === "large"}
+      />
+
+      <VuiSpacer size="xs" />
+
+      <VuiRadioButton
+        groupName="inputSize"
+        label="Medium"
+        onChange={() => onUpdateInputSize("medium")}
+        checked={inputSize === "medium"}
+      />
+      <VuiSpacer size="m" />
 
       <VuiFormGroup label="Empty messages content (JSX)" labelFor="emptyMessagesContent">
         <VuiTextArea value={emptyMessagesContent} onChange={onUpdateEmptyMessagesContent} fullWidth />

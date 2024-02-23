@@ -37,6 +37,7 @@ const generateCodeSnippet = (
   apiKey?: string,
   title?: string,
   placeholder?: string,
+  inputSize?: string,
   emptyStateDisplay?: string
 ) => {
   const props = [
@@ -53,6 +54,10 @@ const generateCodeSnippet = (
 
   if (placeholder) {
     props.push(`placeholder=${formatStringProp(placeholder)}`);
+  }
+
+  if (inputSize) {
+    props.push(`inputSize="${inputSize}"`);
   }
 
   if (emptyStateDisplay) {
@@ -87,6 +92,7 @@ const App = () => {
   const [apiKey, setApiKey] = useState<string>("");
   const [title, setTitle] = useState<string>(DEFAULT_TITLE);
   const [placeholder, setPlaceholder] = useState<string>(DEFAULT_PLACEHOLDER);
+  const [inputSize, setInputSize] = useState<"large" | "medium">("large");
   const [emptyStateJsx, setEmptyStateJsx] = useState<string>("");
 
   const onUpdateCorpusIds = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -183,6 +189,7 @@ const App = () => {
               apiKey={apiKey === "" ? DEFAULT_API_KEY : apiKey}
               title={title}
               placeholder={placeholder}
+              inputSize={inputSize}
               emptyStateDisplay={emptyStateJsx === "" ? undefined : <CustomEmptyStateDisplay />}
               isInitiallyOpen={isChatbotForcedOpen}
               zIndex={9}
@@ -224,7 +231,7 @@ const App = () => {
             <VuiSpacer size="s" />
 
             <VuiCode language="tsx">
-              {generateCodeSnippet(customerId, corpusIds, apiKey, title, placeholder, emptyStateJsx)}
+              {generateCodeSnippet(customerId, corpusIds, apiKey, title, placeholder, inputSize, emptyStateJsx)}
             </VuiCode>
 
             <ConfigurationDrawer
@@ -240,6 +247,8 @@ const App = () => {
               onUpdateTitle={onUpdateTitle}
               placeholder={placeholder}
               onUpdatePlaceholder={onUpdatePlaceholder}
+              inputSize={inputSize}
+              onUpdateInputSize={setInputSize}
               emptyMessagesContent={emptyStateJsx}
               onUpdateEmptyMessagesContent={onUpdateEmptyMessagesContent}
             />

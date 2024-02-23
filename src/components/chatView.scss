@@ -1,6 +1,33 @@
 @import "../vui/styleUtils/index.scss";
 @import "./variables.scss";
 
+$chatbotPosition: $sizeS;
+
+.vrcbChatbotButton {
+  position: fixed;
+  bottom: $chatbotPosition;
+  right: $chatbotPosition;
+  z-index: 9999;
+  background-color: $colorPrimary;
+  color: $colorEmptyShade;
+  white-space: nowrap;
+  border-radius: $sizeXxs;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  box-shadow: $shadowLargeStart;
+  transition: all $transitionSpeed;
+  line-height: 1;
+  cursor: pointer;
+  font-size: $fontSizeMedium;
+  padding: $sizeXs $size;
+  height: 34px;
+
+  &:hover {
+    box-shadow: $shadowLargeEnd;
+  }
+}
+
 .vrcbChatMessageContainer {
   display: flex;
 }
@@ -12,14 +39,13 @@
 
 .vrcbChatMessageContainer--question {
   justify-content: flex-start;
-  padding: 0 $sizeXxl;
-  padding-left: $sizeS;
+  padding: 0 $sizeXxl 0 $sizeS;
 
   .vrcbChatMessage {
-    color: $colorLightShade;
-    font-size: $fontSizeStandard;
+    color: $colorText;
     font-weight: $fontWeightBold;
-    background: $colorDarkShade;
+    font-size: $fontSizeStandard;
+    padding-left: 0;
   }
 }
 
@@ -66,6 +92,17 @@
 
 .vrcbChatInputContainer {
   position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8));
+    pointer-events: none;
+  }
 }
 
 .vrcbChatSummaryCitation,
@@ -85,59 +122,45 @@
 
 .vrcbChatbotWrapper {
   align-items: stretch;
-  background-color: white;
-  border: 1px solid $colorMediumShade;
-  border-radius: 8px;
+  background-color: $colorEmptyShade;
+  border: 1px solid $borderColor;
+  box-shadow: $shadowLargeEnd;
+  border-radius: $sizeXxs;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   position: fixed;
-  bottom: 16px;
-  right: 16px;
-
-  .vrcbHeader {
-    &:hover {
-      background-color: $colorDarkerShade;
-    }
-  }
-
-  &.vrcbChatbotWrapper--isOpen {
-    height: 80%;
-    min-width: 320px;
-    width: 40%;
-
-    .vrcbHeader {
-      &:hover {
-        background-color: $colorDarkShade;
-      }
-    }
-  }
+  bottom: $chatbotPosition;
+  right: $chatbotPosition;
+  z-index: 9999;
+  max-width: 600px;
+  width: calc(100vw - $chatbotPosition * 2);
+  max-height: 800px;
+  height: calc(100vh - $chatbotPosition * 2);
 }
 
 .vrcbChatbotInnerWrapper {
-  gap: 8px;
+  gap: $sizeXs;
   flex-basis: 100%;
   min-height: 0;
-  padding: 8px;
+  padding: 0 $sizeXs $sizeXs;
 }
 
 .vrcbMessagesWrapper {
-  border: 1px solid $colorMediumShade;
-  border-radius: 8px;
   flex-basis: 100%;
   min-height: 0;
 
   & > div {
     height: 100%;
-    overflow: scroll;
+    overflow-y: auto;
   }
 }
 
 .vrcbHeader {
-  background-color: $colorDarkShade;
-  color: $colorLightShade;
-  font-size: $fontSizeSmall;
+  border-bottom: 1px solid $borderColorLight;
+  color: $colorText;
+  font-size: $fontSizeStandard;
   font-weight: $fontWeightBold;
   gap: 4px;
   padding: 8px;
@@ -162,15 +185,15 @@
 
 // Responsive Styles
 // Make the Chatbot window take the full screen at small screen widths.
-@media (max-width: 480px) {
-  .vrcbChatbotWrapper.vrcbChatbotWrapper--isOpen {
-    bottom: 0;
-    height: 100%;
-    right: 0;
-    width: 100%;
-  }
+// @media (max-width: 480px) {
+//   .vrcbChatbotWrapper.vrcbChatbotWrapper-isOpen {
+//     bottom: 0;
+//     height: 100%;
+//     right: 0;
+//     width: 100%;
+//   }
 
-  .vuiSearchInput--m.vuiSearchInput > .vuiSearchInput__input {
-    font-size: $fontSizeMedium;
-  }
-}
+//   .vuiSearchInput--m.vuiSearchInput > .vuiSearchInput__input {
+//     font-size: $fontSizeMedium;
+//   }
+// }
