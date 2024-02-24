@@ -46854,7 +46854,6 @@ fieldset {
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiSpacer2, { size: "m" }),
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiText2, { children: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("p", { children: "React-Chatbot instantly adds a Vectara-powered chatbot to your React applications." }) }),
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiSpacer2, { size: "m" }),
-        /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiText2, { children: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("p", { children: "Looking for it? It's in the lower-right corner of the screen. \u{1F603}" }) }),
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(
           ReactChatbot,
           {
