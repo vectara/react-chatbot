@@ -21,9 +21,29 @@ React-Chatbot is a UI widget for adding [Vectara](https://vectara.com/)-powered 
 
 ## UI
 
-_Screenshots coming soon!_
+React-Chatbot adds a button to the lower right corner of your application:
+
+<img alt="Chatbot toggle button" src="images/toggleButton.png" width=300></img>
+
+When the button is clicked, a chat window opens, where your users can start a conversation with your data:
+
+<img alt="Initial chat window state" src="images/emptyMessagesState.png" width=350></img>
+
+The Vectara platform responds to user messages and presents a list of references that support its answer:
+
+<img alt="Chat message answer" src="images/answerWithReferences.png" width=350></img>
+
+When the chat API returns an error, the UI allows the user to retry sending the message:
+
+<img alt="Retry message" src="images/messageWithError.png" width=350></img>
+
+Vectara's chatbot is also ready for use on mobile sites, taking the fullscreen when the chat window is opened:
+
+<img alt="Mobile-friendly chat window" src="images/responsiveDemo.gif" width=350></img>
 
 ## Use it in your application
+
+### Use the chatbot directly
 
 Install React-Chatbot:
 
@@ -40,53 +60,149 @@ import { ReactChatbot } from "@vectara/react-chatbot";
 
 <ReactChatbot
   customerId="CUSTOMER_ID"
-  corpusId="CORPUS_ID"
+  corpusId={["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"]}
   apiKey="API_KEY"
   title="My Chatbot"
   placeholder="Chat with your AI assistant"
   inputSize="large"
   emptyStateDisplay={<MyEmptyStateDisplayComponent />}
   isInitiallyOpen={false}
+  zIndex={ /* (optional) number representing the z-index the component should have */ }
 />;
 ```
 
-### Configuration options
+#### <u>Configuration Options</u>
 
-#### `customerId` (required)
+##### `customerId` (required)
 
 Every Vectara account is associated with a customer ID. You can find your customer ID by logging into the [Vectara Console](https://console.vectara.com/) and opening your account dropdown in the top-right corner.
 
-#### `corpusIds` (required)
+##### `corpusIds` (required)
 
 After you [create a corpus](https://docs.vectara.com/docs/console-ui/creating-a-corpus), you can find its ID by navigating to the corpus and looking in the top-left corner, next to the corpus name.
 
-#### `apiKey` (required)
+##### `apiKey` (required)
 
 API keys enable applications to access data inside of corpora. Learn how to [create a **QueryService** API key](https://docs.vectara.com/docs/console-ui/manage-api-access#create-an-api-key).
 
-#### `title` (optional)
+##### `title` (optional)
 
 Configure the title in the header of the chatbot window.
 
-#### `placeholder` (optional)
+##### `placeholder` (optional)
 
 Configure the placeholder text in the chatbot's input.
 
-#### `emptyStateDisplay` (optional)
+##### `emptyStateDisplay` (optional)
 
 Configure JSX content to render in the messages window when there are no messages to display.
 
-#### `isInitiallyOpen` (optional)
+##### `isInitiallyOpen` (optional)
 
 Set the chat window to be opened on initial render.
 
-#### `inputSize` (optional)
+##### `inputSize` (optional)
 
-Used to control the size of the input - either "large" (18px) or "medium" (14px)
+Control the size of the input - either "large" (18px) or "medium" (14px)
 
-### Set up your data
+##### `zIndex` (optional)
 
-React-Chat uses the data in your Vectara corpus to provide factual responses. To set this up:
+Customize the z-index of the chatbot widget
+
+### Use your own views with the useChat hook
+
+Install React-Chatbot:
+
+```shell
+npm install --save @vectara/react-chatbot
+```
+
+Then use the `useChat` hook in your application like this:
+
+```js
+import { useChat } from "@vectara/react-chatbot/lib";
+
+/* snip */
+
+const { sendMessage, messageHistory, isLoading, hasError } = useChat(
+  "CUSTOMER_ID",
+  ["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"],
+  "API_KEY"
+);
+```
+
+The values returned by the hook can be passed on to your custom components as props or used in any way you wish.
+
+#### <u>Hook Values</u>
+
+##### sendMessage: `async ({ query: string; isRetry?: boolean }) => void;`
+
+This is used to send a message to the chat API. Send `true` for the optional `isRetry` flag to if this is retrying a previously failed message. This allows the internal logic to correctly link the next successful answer to the failed query.
+
+##### messageHistory: `ChatTurn[]`
+
+This is an array of objects representing question and answer pairs from the entire conversation. Each pair is a `ChatTurn` object, which is typed as:
+
+```
+export type ChatTurn = {
+  // The ID of this turn
+  id: string;
+
+  // The question that the user asked
+  question: string;
+
+  // The answer to the question from the platform
+  answer: string;
+
+  // The results supporting the platform's answer
+  // In usage, you can surface these references to validate the answer given to your user.
+  // See below for the DeserializedSearchResult type definition
+  results: DeserializedSearchResult[];
+}
+
+export type DeserializedSearchResult = {
+  // The ID of this result
+  id: string;
+
+  // Relevant text snippets from the supporting article
+  snippet: {
+    // Text prior to the most relevant content - to help give context
+    pre: string;
+
+    // Relevant content from this article that supports the answer
+    text: string;
+
+    // Text after the most relevant content - to help give context
+    post: string;
+  };
+
+  // The ingestion source - See https://github.com/vectara/vectara-ingest for more details.
+  source: string;
+
+  // The URL of this search result - only defined if this reference was obtained by a webcrawler.
+  url?: string;
+
+  // The title of this reference
+  title?: string;
+
+  // Any other relevant data
+  metadata: Record<string, unknown>;
+};
+```
+
+_For more information on data ingestion, see our [vectara-ingest](https://github.com/vectara/vectara-ingest) repository._
+
+##### isLoading: boolean
+
+A boolean value indicating whether or not a chat API request is still pending
+
+##### hasError: boolean
+
+A boolean value indicating whether or not the most recent chat API request encountered an error
+
+#### <u>Set up your data</u>
+
+React-Chatbot uses the data in your Vectara corpus to provide factual responses. To set this up:
 
 1. [Create a free Vectara account](https://console.vectara.com/signup).
 2. [Create a corpus and add data to it](https://docs.vectara.com/docs/console-ui/creating-a-corpus).
@@ -94,7 +210,7 @@ React-Chat uses the data in your Vectara corpus to provide factual responses. To
 
 **Pro-tip:** After you create an API key, navigate to your corpus and click on the "Access control" tab. Find your API key on the bottom and select the "Copy all" option to copy your customer ID, corpus ID, and API key. This gives you all the data you need to configure your `<ReactChat />` instance.
 
-![Copy all option](https://raw.githubusercontent.com/vectara/react-chat/main/images/copyAll.jpg)
+![Copy all option](https://raw.githubusercontent.com/vectara/react-chatbot/main/images/copyAll.jpg)
 
 ## Maintenance
 

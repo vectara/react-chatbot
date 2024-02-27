@@ -54,12 +54,11 @@ export const ChatItem = ({ question, answer, searchResults, onRetry }: Props) =>
     content = (
       <div className="vrcbChatMessageContainer vrcbChatMessageContainer--error">
         <VuiSpacer size="m" />
-        <VuiFlexContainer alignItems="center">
+        <VuiFlexContainer alignItems="center" spacing="none">
           <VuiFlexContainer alignItems="center" spacing="xxs">
             <VuiFlexItem grow={false} shrink={true}>
               <Error />
             </VuiFlexItem>
-
             <VuiFlexItem grow={false}>Message not sent.</VuiFlexItem>
           </VuiFlexContainer>
           {onRetry && (

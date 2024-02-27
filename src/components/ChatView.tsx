@@ -54,7 +54,7 @@ export const ChatView = ({
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(isInitiallyOpen ?? false);
   const [query, setQuery] = useState<string>("");
-  const { sendMessage, messageHistory, isLoading, error } = useChat(customerId, corpusIds, apiKey);
+  const { sendMessage, messageHistory, isLoading, hasError } = useChat(customerId, corpusIds, apiKey);
   const appLayoutRef = useRef<HTMLDivElement>(null);
   const isScrolledToBottomRef = useRef(true);
 
@@ -98,7 +98,9 @@ export const ChatView = ({
   const chatItems = messageHistory.map((turn, index) => {
     const { question, answer, results } = turn;
     const onRetry =
-      error && index === messageHistory.length - 1 ? () => sendMessage({ query: question, isRetry: true }) : undefined;
+      hasError && index === messageHistory.length - 1
+        ? () => sendMessage({ query: question, isRetry: true })
+        : undefined;
 
     return <ChatItem key={index} question={question} answer={answer} searchResults={results} onRetry={onRetry} />;
   });

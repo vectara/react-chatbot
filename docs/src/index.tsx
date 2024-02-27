@@ -220,7 +220,7 @@ const App = () => {
             <VuiText>
               <p>
                 For help,{" "}
-                <VuiLink isAnchor href="https://github.com/vectara/react-chat">
+                <VuiLink isAnchor href="https://github.com/vectara/react-chatbot">
                   read the docs.
                 </VuiLink>
               </p>
@@ -235,6 +235,65 @@ const App = () => {
             <VuiCode language="tsx">
               {generateCodeSnippet(customerId, corpusIds, apiKey, title, placeholder, inputSize, emptyStateJsx)}
             </VuiCode>
+
+            <VuiSpacer size="xxl" />
+
+            <VuiTitle size="m">
+              <h2>Create your own view</h2>
+            </VuiTitle>
+
+            <VuiSpacer size="m" />
+
+            <VuiText>
+              <p>
+                React-Chatbot also exposes a useChat hook that sends and receives data to/from the chat API. This is
+                perfect for rolling your own components that are powered by Vectara's chat functionality.
+              </p>
+              <p>Check out the example below.</p>
+            </VuiText>
+
+            <VuiSpacer size="s" />
+
+            <VuiCode language="tsx">
+              {`
+import { useChat } from "@vectara/react-chatbot/lib";
+
+export const App = () => {
+  const { sendMessage, messageHistory, isLoading, hasError } = useChat(
+    DEFAULT_CUSTOMER_ID,
+    DEFAULT_CORPUS_IDS,
+    DEFAULT_API_KEY
+  );
+
+  /* You can pass the values returned by the hook to your custom components as props, or use them
+  however you wish. */
+};
+`}
+            </VuiCode>
+
+            <VuiSpacer size="m" />
+
+            <VuiText>
+              <p></p>
+              <p>The hook returns:</p>
+              <ul>
+                <li>sendMessage - a function that sends a string to the Chat API endpoint</li>
+                <li>messageHistory - an array of objects representing messages from the entire conversation</li>
+                <li>isLoading - a boolean value indicating whether or not a chat message request is pending</li>
+                <li>
+                  hasError - a boolean value indicating whether or not the previous message request returned an error
+                </li>
+              </ul>
+            </VuiText>
+
+            <VuiSpacer size="m" />
+
+            <VuiText>
+              For more details, including return value types,{" "}
+              <VuiLink isAnchor href="https://github.com/vectara/react-chatbot">
+                read the docs.
+              </VuiLink>
+            </VuiText>
 
             <ConfigurationDrawer
               isOpen={isConfigurationDrawerOpen}
