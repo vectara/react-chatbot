@@ -13,7 +13,7 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [conversationId, setConversationId] = useState<string | undefined>();
   const [error, setError] = useState<boolean>(false);
-  const getLanguage = (languageValue?: string): SummaryLanguage => (languageValue ?? "auto") as SummaryLanguage;
+  const getLanguage = (languageValue?: string): SummaryLanguage => (languageValue ?? "eng") as SummaryLanguage;
 
   const sendMessage = async ({ query, isRetry = false }: { query: string; isRetry?: boolean }) => {
     if (isLoading) return;
