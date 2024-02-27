@@ -37773,7 +37773,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const [isLoading, setIsLoading] = (0, import_react9.useState)(false);
     const [conversationId, setConversationId] = (0, import_react9.useState)();
     const [error, setError] = (0, import_react9.useState)(false);
-    const getLanguage = (languageValue) => languageValue ?? "auto";
+    const getLanguage = (languageValue) => languageValue ?? "eng";
     const sendMessage = async ({ query, isRetry = false }) => {
       if (isLoading)
         return;
