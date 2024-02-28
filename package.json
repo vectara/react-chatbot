@@ -2,13 +2,11 @@
   "name": "@vectara/react-chatbot",
   "version": "0.0.1",
   "description": "A Vectara-powered Chatbot component",
-  "main": "lib/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "npm run clean && node build.js && tsc --emitDeclarationOnly --outDir lib",
-    "buildDocs": "node docs/build.js",
-    "docs": "node docs/docsServer.js",
     "clean": "rimraf dist",
     "lint": "eslint .",
     "test": "jest --coverage"

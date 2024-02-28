@@ -8,10 +8,15 @@ const sharedConfig = {
   logLevel: "info",
   treeShaking: true,
   minify: true,
-  sourcemap: true,
+
+  // Removing source maps theoretically shaves around 100kb of the package size.
+  // Initially setting this to false and will verify the npm package size.
+  sourcemap: false,
   external: [...Object.keys(dependencies), ...Object.keys(devDependencies), ...Object.keys(peerDependencies)],
   target: ["esnext", "node12.22.0"],
-  plugins: [cssPlugin(), sassPlugin({ type: "style" })],
+  // css-text outputs CSS as a string which can be embedded as a stylesheet in a web component
+  // See for more info: https://github.com/glromeo/esbuild-sass-plugin?tab=readme-ov-file#type-css-text
+  plugins: [cssPlugin(), sassPlugin({ type: "css-text" })],
   outdir: "./lib",
   outbase: "./src"
 };
