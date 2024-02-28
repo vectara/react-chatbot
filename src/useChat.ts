@@ -12,7 +12,7 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
   const [recentAnswer, setRecentAnswer] = useState<ChatTurn | null>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [conversationId, setConversationId] = useState<string | undefined>();
-  const [error, setError] = useState<boolean>(false);
+  const [hasError, setHasError] = useState<boolean>(false);
   const getLanguage = (languageValue?: string): SummaryLanguage => (languageValue ?? "eng") as SummaryLanguage;
 
   const sendMessage = async ({ query, isRetry = false }: { query: string; isRetry?: boolean }) => {
@@ -34,7 +34,7 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
         ];
       });
     } else {
-      setError(false);
+      setHasError(false);
     }
 
     const baseSearchRequestParams = {
@@ -60,7 +60,7 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
     try {
       initialSearchResponse = await sendSearchRequest(baseSearchRequestParams);
     } catch (error) {
-      setError(true);
+      setHasError(true);
       setIsLoading(false);
       return [];
     }
@@ -109,6 +109,6 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
     sendMessage,
     messageHistory,
     isLoading,
-    error
+    hasError
   };
 };
