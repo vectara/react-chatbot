@@ -173,7 +173,7 @@ export const ChatView = ({
     </div>
   ) : (
     <button className="vrcbChatbotButton" onClick={() => setIsOpen(true)} style={{ zIndex }}>
-      Chat with your AI assistant
+      {title}
     </button>
   );
 };
