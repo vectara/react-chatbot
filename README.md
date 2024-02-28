@@ -200,7 +200,47 @@ A boolean value indicating whether or not a chat API request is still pending
 
 A boolean value indicating whether or not the most recent chat API request encountered an error
 
-#### <u>Set up your data</u>
+### Usage with SSR Frameworks
+
+Using React-chatbot with SSR frameworks may require additional infrastucture. Here are some common gotchas:
+
+#### Next.js
+
+Since React-chatbot requires a few browser-only features to function, we need to defer the rendering of the component to the client. In order to do this, you will need to:
+
+1. Use the `"use client"` directive in the file that imports ReactChatbot.
+2. Use a one-time `useEffect` call in ReactChatbot's consumer. The useEffect callback should set the rendered widget as a state on the consumer component.
+3. Include the rendered widget state value in the rendered consumer component.
+
+Example:
+
+```
+"use client";
+export const App = (props: Props): ReactNode => {
+  const [chatWidget, setChatWidget] = useState<ReactNode>(null);
+
+  /* the rest of your code */
+
+  useEffect(() => {
+    setChatWidget(
+      <ReactChatbot
+        customerId="CUSTOMER_ID"
+        corpusIds={["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"]}
+        apiKey="API_KEY"
+      />
+    );
+  }, []);
+
+  return (
+    <>
+      { /* other content */ }
+    </>
+  )
+};
+
+```
+
+### Set up your data
 
 React-Chatbot uses the data in your Vectara corpus to provide factual responses. To set this up:
 
