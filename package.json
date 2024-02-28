@@ -10,8 +10,7 @@
     "clean": "rimraf dist",
     "lint": "eslint .",
     "test": "jest --coverage",
-    "installAllDependencies": "npm install && npm run build && npm install --prefix docs",
-    "docs": "npm run docs --prefix docs"
+    "docs": "npm install && npm run build && npm install --prefix docs && npm run docs --prefix docs"
   },
   "author": {
     "name": "Vectara, Inc.",
