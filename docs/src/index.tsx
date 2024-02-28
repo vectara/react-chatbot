@@ -189,7 +189,7 @@ const App = () => {
               corpusIds={corpusIds.length === 0 ? DEFAULT_CORPUS_IDS : corpusIds}
               customerId={customerId === "" ? DEFAULT_CUSTOMER_ID : customerId}
               apiKey={apiKey === "" ? DEFAULT_API_KEY : apiKey}
-              title={title}
+              title={title === "" ? undefined : title}
               placeholder={placeholder}
               inputSize={inputSize}
               emptyStateDisplay={emptyStateJsx === "" ? undefined : <CustomEmptyStateDisplay />}
