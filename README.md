@@ -212,10 +212,16 @@ This codebase comes with a development environment to facilitate enhancements an
 From the root directory, run:
 
 ```
-npm install
+npm run installAllDependencies
 ```
 
-This will install all dependencies necessary for building the component and running the dev environment. Once this completes, run:
+This completes the following steps:
+
+- installs dependencies for React-Chatbot
+- builds React-Chatbot
+- installs the freshly-built React-Chatbot package in the docs site directory
+
+Once this completes, run:
 
 ```
 npm run docs

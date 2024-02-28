@@ -9,7 +9,8 @@
     "build": "npm run clean && node build.js && tsc --emitDeclarationOnly --outDir lib",
     "clean": "rimraf dist",
     "lint": "eslint .",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "docs": "npm install && npm run build && npm install --prefix docs && npm run docs --prefix docs"
   },
   "author": {
     "name": "Vectara, Inc.",
