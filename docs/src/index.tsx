@@ -144,7 +144,7 @@ const App = () => {
             <VuiFlexItem grow={false} shrink={false}>
               <VuiTitle size="xs">
                 <h1>
-                  <strong></strong>
+                  <strong>Vectara React-Chatbot</strong>
                 </h1>
               </VuiTitle>
             </VuiFlexItem>

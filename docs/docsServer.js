@@ -4,7 +4,7 @@ const liveServer = require("live-server");
 const { config: docsBuildConfig } = require("./buildConfigs");
 const { esm: packageBuildConfig } = require("../buildConfigs");
 
-// Update chat package directories since this script is executing in a subdirectory.
+// Point to different source/output directories since this script is executing in a subdirectory.
 // Also enable sourcemaps for easy debugging in the docs page.
 const normalizedPackageBuildConfig = {
   ...packageBuildConfig,
@@ -22,7 +22,7 @@ const normalizedPackageBuildConfig = {
   const docsPageBuilder = await esbuild.context(docsBuildConfig);
 
   chokidar
-    // Watch for changes to docs code or react-search src
+    // Watch for changes to docs code or component source
     .watch(["src/*.{ts,tsx,scss}", "../src/**/*.{ts,tsx,scss}"], {
       interval: 0 // No delay
     })
