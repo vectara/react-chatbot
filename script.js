@@ -37037,7 +37037,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var be2 = ({ question: e2, answer: t2, searchResults: r2, onRetry: o2 }) => {
     let [n2, i2] = (0, import_react10.useState)(false), a2;
     if (o2)
-      a2 = (0, import_jsx_runtime14.jsxs)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--error", children: [(0, import_jsx_runtime14.jsx)(k2, { size: "m" }), (0, import_jsx_runtime14.jsxs)(B2, { alignItems: "center", children: [(0, import_jsx_runtime14.jsxs)(B2, { alignItems: "center", spacing: "xxs", children: [(0, import_jsx_runtime14.jsx)(g2, { grow: false, shrink: true, children: (0, import_jsx_runtime14.jsx)(ue2, {}) }), (0, import_jsx_runtime14.jsx)(g2, { grow: false, children: "Message not sent." })] }), o2 && (0, import_jsx_runtime14.jsxs)(import_jsx_runtime14.Fragment, { children: [(0, import_jsx_runtime14.jsx)(k2, { size: "s" }), (0, import_jsx_runtime14.jsx)(B2, { alignItems: "center", spacing: "none", children: (0, import_jsx_runtime14.jsx)("button", { className: "vrcbRetryButton", onClick: () => o2(), children: "Try again" }) })] })] })] });
+      a2 = (0, import_jsx_runtime14.jsxs)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--error", children: [(0, import_jsx_runtime14.jsx)(k2, { size: "m" }), (0, import_jsx_runtime14.jsxs)(B2, { alignItems: "center", spacing: "none", children: [(0, import_jsx_runtime14.jsxs)(B2, { alignItems: "center", spacing: "xxs", children: [(0, import_jsx_runtime14.jsx)(g2, { grow: false, shrink: true, children: (0, import_jsx_runtime14.jsx)(ue2, {}) }), (0, import_jsx_runtime14.jsx)(g2, { grow: false, children: "Message not sent." })] }), o2 && (0, import_jsx_runtime14.jsxs)(import_jsx_runtime14.Fragment, { children: [(0, import_jsx_runtime14.jsx)(k2, { size: "s" }), (0, import_jsx_runtime14.jsx)(B2, { alignItems: "center", spacing: "none", children: (0, import_jsx_runtime14.jsx)("button", { className: "vrcbRetryButton", onClick: () => o2(), children: "Try again" }) })] })] })] });
     else if (t2) {
       let s2 = (r2 ? te2(r2, t2) : []).slice(0, 7), l2 = r2 ? oe2(t2) : t2, c2 = ut(l2);
       a2 = (0, import_jsx_runtime14.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--answer", children: (0, import_jsx_runtime14.jsxs)("div", { className: "vrcbChatMessage", children: [(0, import_jsx_runtime14.jsx)(A2, { size: "s", children: (0, import_jsx_runtime14.jsx)(index_modern_default, { children: c2, options: { forceBlock: true, overrides: { SummaryCitation: { component: ({ reference: x2 }) => (0, import_jsx_runtime14.jsxs)(import_jsx_runtime14.Fragment, { children: [" ", (0, import_jsx_runtime14.jsx)("button", { onClick: () => i2(true), children: (0, import_jsx_runtime14.jsx)("span", { className: "vrcbChatSummaryCitation", children: x2 }) })] }) } } } }) }), s2 && s2.length > 0 && (0, import_jsx_runtime14.jsxs)(import_jsx_runtime14.Fragment, { children: [(0, import_jsx_runtime14.jsx)(k2, { size: "s" }), (0, import_jsx_runtime14.jsx)(ve2, { searchResults: s2, isOpen: n2, setIsOpen: i2 })] })] }) });
@@ -37109,13 +37109,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         return;
       let p2 = [...o2.slice(0, -1), a2];
       n2(p2);
-    }, [a2]), { sendMessage: f2, messageHistory: o2, isLoading: l2, error: y2 };
+    }, [a2]), { sendMessage: f2, messageHistory: o2, isLoading: l2, hasError: y2 };
   };
   var Se2 = () => (0, import_jsx_runtime15.jsx)(import_jsx_runtime15.Fragment, { children: (0, import_jsx_runtime15.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--thinking", children: (0, import_jsx_runtime15.jsx)("div", { className: "vrcbChatMessage", children: (0, import_jsx_runtime15.jsx)("div", { className: "vrcbLoader" }) }) }) });
   var Ct = { large: "l", medium: "m" };
   var yt = () => (0, import_jsx_runtime16.jsxs)(B2, { className: "vrcbEmptyMessages", spacing: "none", alignItems: "center", justifyContent: "center", direction: "column", children: [(0, import_jsx_runtime16.jsx)(ce2, { size: "150px", color: "#000000" }), "Ask anything."] });
   var Be2 = ({ customerId: e2, corpusIds: t2, apiKey: r2, title: o2 = "My Chatbot", placeholder: n2 = "Chat with your AI Assistant", inputSize: i2 = "large", emptyStateDisplay: a2 = (0, import_jsx_runtime16.jsx)(yt, {}), isInitiallyOpen: s2, zIndex: l2 = 9999 }) => {
-    let [c2, d2] = (0, import_react4.useState)(s2 != null ? s2 : false), [x2, y2] = (0, import_react4.useState)(""), { sendMessage: v2, messageHistory: m2, isLoading: f2, error: p2 } = ye2(e2, t2, r2), S2 = (0, import_react4.useRef)(null), F2 = (0, import_react4.useRef)(true), E2 = () => {
+    let [c2, d2] = (0, import_react4.useState)(s2 != null ? s2 : false), [x2, y2] = (0, import_react4.useState)(""), { sendMessage: v2, messageHistory: m2, isLoading: f2, hasError: p2 } = ye2(e2, t2, r2), S2 = (0, import_react4.useRef)(null), F2 = (0, import_react4.useRef)(true), E2 = () => {
       setTimeout(() => {
         var w2, b2;
         F2.current && ((b2 = S2.current) == null || b2.scrollTo({ left: 0, top: (w2 = S2.current) == null ? void 0 : w2.scrollHeight, behavior: "smooth" }));
@@ -46996,12 +46996,51 @@ export const App = () => (
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiText, { children: /* @__PURE__ */ (0, import_jsx_runtime98.jsxs)("p", { children: [
           "For help,",
           " ",
-          /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiLink, { isAnchor: true, href: "https://github.com/vectara/react-chat", children: "read the docs." })
+          /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiLink, { isAnchor: true, href: "https://github.com/vectara/react-chatbot", children: "read the docs." })
         ] }) }),
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiSpacer, { size: "m" }),
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiCode, { children: "npm install @vectara/react-chatbot" }),
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiSpacer, { size: "s" }),
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiCode, { language: "tsx", children: generateCodeSnippet(customerId, corpusIds, apiKey, title, placeholder, inputSize, emptyStateJsx) }),
+        /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiSpacer, { size: "xxl" }),
+        /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiTitle, { size: "m", children: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("h2", { children: "Create your own view" }) }),
+        /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiSpacer, { size: "m" }),
+        /* @__PURE__ */ (0, import_jsx_runtime98.jsxs)(VuiText, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("p", { children: "React-Chatbot also exposes a useChat hook that sends and receives data to/from the chat API. This is perfect for rolling your own components that are powered by Vectara's chat functionality." }),
+          /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("p", { children: "Check out the example below." })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiSpacer, { size: "s" }),
+        /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiCode, { language: "tsx", children: `
+import { useChat } from "@vectara/react-chatbot/lib";
+
+export const App = () => {
+  const { sendMessage, messageHistory, isLoading, hasError } = useChat(
+    DEFAULT_CUSTOMER_ID,
+    DEFAULT_CORPUS_IDS,
+    DEFAULT_API_KEY
+  );
+
+  /* You can pass the values returned by the hook to your custom components as props, or use them
+  however you wish. */
+};
+` }),
+        /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiSpacer, { size: "m" }),
+        /* @__PURE__ */ (0, import_jsx_runtime98.jsxs)(VuiText, { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("p", {}),
+          /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("p", { children: "The hook returns:" }),
+          /* @__PURE__ */ (0, import_jsx_runtime98.jsxs)("ul", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("li", { children: "sendMessage - a function that sends a string to the Chat API endpoint" }),
+            /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("li", { children: "messageHistory - an array of objects representing messages from the entire conversation" }),
+            /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("li", { children: "isLoading - a boolean value indicating whether or not a chat message request is pending" }),
+            /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("li", { children: "hasError - a boolean value indicating whether or not the previous message request returned an error" })
+          ] })
+        ] }),
+        /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiSpacer, { size: "m" }),
+        /* @__PURE__ */ (0, import_jsx_runtime98.jsxs)(VuiText, { children: [
+          "For more details, including return value types,",
+          " ",
+          /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiLink, { isAnchor: true, href: "https://github.com/vectara/react-chatbot", children: "read the docs." })
+        ] }),
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(
           ConfigurationDrawer,
           {
