@@ -37151,7 +37151,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   bottom: 12px;
   right: 12px;
   z-index: 9999;
-  background-color: rgb(38, 76, 214);
+  background-color: #264cd6;
   color: #ffffff;
   white-space: nowrap;
   border-radius: 4px;
@@ -37293,9 +37293,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
 .vrcbHeader {
   border-bottom: 1px solid #e3e4f3;
-  color: #2c313a;
-  font-size: 14px;
-  font-weight: 600;
+  color: #69707d;
+  font-size: 12px;
+  font-weight: 500;
   gap: 4px;
   padding: 8px;
 }
@@ -37311,7 +37311,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 }
 
 .vrcbRetryButton {
-  color: rgb(38, 76, 214);
+  color: #264cd6;
   font-weight: 600;
   padding: 2px 4px;
 }
@@ -37677,8 +37677,8 @@ fieldset {
 
 .vuiButtonPrimary--primary {
   color: #ffffff;
-  background-color: rgb(38, 76, 214);
-  border: 1px solid rgb(38, 76, 214);
+  background-color: #264cd6;
+  border: 1px solid #264cd6;
 }
 .vuiButtonPrimary--primary.vuiButtonPrimary-isSelected {
   box-shadow: inset rgba(50, 50, 93, 0.25) 0px 6px 8px -2px, inset rgba(0, 0, 0, 0.3) 0px 3px 4px -3px;
@@ -37747,7 +37747,7 @@ fieldset {
 
 .vuiButtonSecondary--primary {
   border: 1px solid rgba(38, 76, 214, 0.5);
-  color: rgb(38, 76, 214);
+  color: #264cd6;
 }
 .vuiButtonSecondary--primary.vuiButtonSecondary-isSelected {
   box-shadow: inset rgba(0, 0, 0, 0.1) 0px 2px 2px;
@@ -38069,7 +38069,7 @@ fieldset {
   outline-offset: -1px !important;
 }
 .vuiSearchInput__input:focus-visible {
-  outline-color: rgb(38, 76, 214) !important;
+  outline-color: #264cd6 !important;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
@@ -38216,7 +38216,7 @@ fieldset {
   margin-bottom: 0;
 }
 .vuiText a {
-  color: rgb(38, 76, 214);
+  color: #264cd6;
 }
 
 .vuiText--truncate {
@@ -38303,7 +38303,7 @@ fieldset {
 }
 
 .vuiTextColor--primary {
-  color: rgb(38, 76, 214) !important;
+  color: #264cd6 !important;
 }
 
 .vuiTextColor--success {
