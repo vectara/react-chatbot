@@ -37,7 +37,7 @@ When the chat API returns an error, the UI allows the user to retry sending the 
 
 <img alt="Retry message" src="images/messageWithError.png" width=350></img>
 
-Vectara's chatbot is also ready for use on mobile sites, taking the fullscreen when the chat window is opened:
+React-Chatbot is also ready for use on mobile sites, taking the fullscreen when the chat window is opened:
 
 <img alt="Mobile-friendly chat window" src="images/responsiveDemo.gif" width=350></img>
 
@@ -141,72 +141,23 @@ This is used to send a message to the chat API. Send `true` for the optional `is
 
 ##### messageHistory: `ChatTurn[]`
 
-This is an array of objects representing question and answer pairs from the entire conversation. Each pair is a `ChatTurn` object, which is typed as:
+This is an array of objects representing question and answer pairs from the entire conversation. Each pair is a `ChatTurn` object. More information on types can be found [here](src/types.ts).
 
-```
-export type ChatTurn = {
-  // The ID of this turn
-  id: string;
-
-  // The question that the user asked
-  question: string;
-
-  // The answer to the question from the platform
-  answer: string;
-
-  // The results supporting the platform's answer
-  // In usage, you can surface these references to validate the answer given to your user.
-  // See below for the DeserializedSearchResult type definition
-  results: DeserializedSearchResult[];
-}
-
-export type DeserializedSearchResult = {
-  // The ID of this result
-  id: string;
-
-  // Relevant text snippets from the supporting article
-  snippet: {
-    // Text prior to the most relevant content - to help give context
-    pre: string;
-
-    // Relevant content from this article that supports the answer
-    text: string;
-
-    // Text after the most relevant content - to help give context
-    post: string;
-  };
-
-  // The ingestion source - See https://github.com/vectara/vectara-ingest for more details.
-  source: string;
-
-  // The URL of this search result - only defined if this reference was obtained by a webcrawler.
-  url?: string;
-
-  // The title of this reference
-  title?: string;
-
-  // Any other relevant data
-  metadata: Record<string, unknown>;
-};
-```
-
-_For more information on data ingestion, see our [vectara-ingest](https://github.com/vectara/vectara-ingest) repository._
-
-##### isLoading: boolean
+##### isLoading: `boolean`
 
 A boolean value indicating whether or not a chat API request is still pending
 
-##### hasError: boolean
+##### hasError: `boolean`
 
 A boolean value indicating whether or not the most recent chat API request encountered an error
 
 ### Usage with SSR Frameworks
 
-Using React-chatbot with SSR frameworks may require additional infrastucture. Here are some common gotchas:
+Using React-Chatbot with SSR frameworks may require additional infrastucture. Here are some common gotchas:
 
 #### Next.js
 
-Since React-chatbot requires a few browser-only features to function, we need to defer the rendering of the component to the client. In order to do this, you will need to:
+Since React-Chatbot requires a few browser-only features to function, we need to defer the rendering of the component to the client. In order to do this, you will need to:
 
 1. Use the `"use client"` directive in the file that imports ReactChatbot.
 2. Use a one-time `useEffect` call in ReactChatbot's consumer. The useEffect callback should set the rendered widget as a state on the consumer component.
