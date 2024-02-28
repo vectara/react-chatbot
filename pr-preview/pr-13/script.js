@@ -37144,7 +37144,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       var R2;
       let N2;
       return ((R2 = m2[b2]) == null ? void 0 : R2.answer) === "" ? N2 = null : N2 = b2 < z2.length - 1 ? (0, import_jsx_runtime16.jsx)(k2, { size: "m" }) : (0, import_jsx_runtime16.jsx)(k2, { size: "xl" }), (0, import_jsx_runtime16.jsxs)(import_react4.Fragment, { children: [w2, N2] }, b2);
-    })] }) : a2 }) }), (0, import_jsx_runtime16.jsx)(g2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime16.jsx)(he2, { placeholder: n2, buttonLabel: "Send", query: x2, setQuery: y2, isDisabled: f2, onSubmit: I2, size: Ct[i2] }) })] })] }) : (0, import_jsx_runtime16.jsx)("button", { className: "vrcbChatbotButton", onClick: () => d2(true), style: { zIndex: l2 }, children: "Chat with your AI assistant" });
+    })] }) : a2 }) }), (0, import_jsx_runtime16.jsx)(g2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime16.jsx)(he2, { placeholder: n2, buttonLabel: "Send", query: x2, setQuery: y2, isDisabled: f2, onSubmit: I2, size: Ct[i2] }) })] })] }) : (0, import_jsx_runtime16.jsx)("button", { className: "vrcbChatbotButton", onClick: () => d2(true), style: { zIndex: l2 }, children: o2 });
   };
   var Te2 = `.vrcbChatbotButton {
   position: fixed;
@@ -46970,7 +46970,7 @@ export const App = () => (
             corpusIds: corpusIds.length === 0 ? DEFAULT_CORPUS_IDS : corpusIds,
             customerId: customerId === "" ? DEFAULT_CUSTOMER_ID : customerId,
             apiKey: apiKey === "" ? DEFAULT_API_KEY : apiKey,
-            title,
+            title: title === "" ? void 0 : title,
             placeholder,
             inputSize,
             emptyStateDisplay: emptyStateJsx === "" ? void 0 : /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(CustomEmptyStateDisplay, {}),
