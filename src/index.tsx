@@ -148,7 +148,7 @@ class ReactChatbotWebComponent extends HTMLElement {
 
 window.customElements.get("react-chatbot") || window.customElements.define("react-chatbot", ReactChatbotWebComponent);
 
-export const ReactChatbot = (props: Props): ReactNode => {
+export const ReactChatbot = (props: Props) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
