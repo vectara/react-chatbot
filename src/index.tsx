@@ -97,9 +97,20 @@ class ReactChatbotWebComponent extends HTMLElement {
   constructor() {
     super();
     this.sr = this.attachShadow({ mode: "open" });
-    this.sheet = new CSSStyleSheet();
-    this.sheet.replaceSync(cssText);
-    this.sr.adoptedStyleSheets = [this.sheet];
+
+    // If the CSSStyleSheet constructor isn't supported, default to creating a style element.
+    // We prefer the CSSStyleSheet approach as it's a recommended way to style web components, and growing in support:
+    // https://webcomponents.guide/learn/components/styling/
+    try {
+      this.sheet = new CSSStyleSheet();
+      this.sheet.replaceSync(cssText);
+      this.sr.adoptedStyleSheets = [this.sheet];
+    } catch {
+      const styleElement = document.createElement("style");
+      styleElement.innerText = cssText;
+      this.sr.appendChild(styleElement);
+    }
+
     this.mountPoint = document.createElement("div");
     this.sr.appendChild(this.mountPoint);
   }
