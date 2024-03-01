@@ -34,7 +34,7 @@ export const QueryInput = ({ query, setQuery, onSubmit, placeholder, buttonLabel
           onSubmit={onSearchSubmit}
           placeholder={placeholder}
           autoFocus
-          data-testid="corpusSearchInput"
+          data-testid="queryInput"
         />
       </VuiFlexItem>
 

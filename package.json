@@ -30,8 +30,8 @@
     "widget"
   ],
   "dependencies": {
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.18",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "classnames": "^2.3.2",
     "lodash": "^4.17.21",
     "prismjs": "^1.29.0",
@@ -41,6 +41,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.2.0",
     "@testing-library/react": "^12.1.5",
+    "@testing-library/react-hooks": "^8.0.1",
     "@types/jest": "^29.5.11",
     "@types/lodash": "^4.14.202",
     "@types/prismjs": "^1.26.3",
@@ -67,6 +68,7 @@
     "react-jsx-parser": "^1.29.0",
     "react-router-dom": "^6.8.2",
     "rimraf": "^5.0.5",
+    "shadow-dom-testing-library": "^1.11.2",
     "ts-jest": "^29.1.1",
     "typescript": "^5.3.3"
   },

@@ -21,7 +21,8 @@
     "skipLibCheck": true, // Skip type checking of all declaration files
     "sourceMap": true, // Generate corrresponding .map file
     "strict": true, // Enable all strict type checking options
-    "target": "es6" // Specify ECMAScript target version
+    "target": "es6", // Specify ECMAScript target version
+    "types": ["@testing-library/jest-dom"]
   },
   "include": ["src/*.ts", "src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "**/*.test.ts", "**/*.test.tsx"]
