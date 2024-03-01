@@ -1,6 +1,6 @@
 {
   "name": "@vectara/react-chatbot",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A Vectara-powered Chatbot component",
   "main": "lib/index.js",
   "module": "lib/index.js",
