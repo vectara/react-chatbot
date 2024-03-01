@@ -112,7 +112,7 @@ export const ChatView = ({
   const hasContent = isLoading || messageHistory.length > 0;
 
   const onSendQuery = useCallback(() => {
-    if (isLoading) return;
+    if (isLoading || query.trim().length === 0) return;
     sendMessage({ query });
     setQuery("");
   }, [setQuery, sendMessage, isLoading]);
@@ -166,7 +166,7 @@ export const ChatView = ({
             buttonLabel="Send"
             query={query}
             setQuery={setQuery}
-            isDisabled={isLoading}
+            isButtonDisabled={isLoading || query.trim().length === 0}
             onSubmit={onSendQuery}
             size={inputSizeToQueryInputSize[inputSize]}
           />
