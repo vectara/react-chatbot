@@ -37000,7 +37000,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     t2(c2.target.value);
   }, onSubmit: (c2) => {
     c2.preventDefault(), r2();
-  }, placeholder: o2, autoFocus: true, "data-testid": "corpusSearchInput" }) }), (0, import_jsx_runtime12.jsx)(g2, { children: (0, import_jsx_runtime12.jsx)(J2, { color: "primary", size: a2, onClick: () => r2(), isDisabled: i2, children: n2 }) })] });
+  }, placeholder: o2, autoFocus: true, "data-testid": "queryInput" }) }), (0, import_jsx_runtime12.jsx)(g2, { children: (0, import_jsx_runtime12.jsx)(J2, { color: "primary", size: a2, onClick: () => r2(), isDisabled: i2, children: n2 }) })] });
   var te2 = (e2, t2) => {
     let r2 = [], o2 = t2.match(/\[\d+\]/g) || [], n2 = /* @__PURE__ */ new Set();
     for (let i2 = 0; i2 < o2.length; i2++) {
