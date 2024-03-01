@@ -110,12 +110,13 @@ export const ChatView = ({
   }
 
   const hasContent = isLoading || messageHistory.length > 0;
+  const isRequestDisabled = isLoading || query.trim().length === 0;
 
-  const onSendQuery = useCallback(() => {
-    if (isLoading) return;
+  const onSendQuery = () => {
+    if (isRequestDisabled) return;
     sendMessage({ query });
     setQuery("");
-  }, [setQuery, sendMessage, isLoading]);
+  };
 
   useEffect(updateScrollPosition, [isLoading, messageHistory]);
 
@@ -166,7 +167,7 @@ export const ChatView = ({
             buttonLabel="Send"
             query={query}
             setQuery={setQuery}
-            isDisabled={isLoading}
+            isButtonDisabled={isRequestDisabled}
             onSubmit={onSendQuery}
             size={inputSizeToQueryInputSize[inputSize]}
           />

@@ -1,3 +1,9 @@
+:host {
+  all: initial;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
 @import "./components/chatView.scss";
 @import "./components/loader.scss";
 @import "./vui/_index.scss";

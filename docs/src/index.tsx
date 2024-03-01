@@ -129,7 +129,7 @@ const App = () => {
     return (
       // @ts-ignore
       <JsxParser jsx={emptyStateJsx} />
-    ) as ReactNode;
+    );
   }, [emptyStateJsx]);
 
   return (
