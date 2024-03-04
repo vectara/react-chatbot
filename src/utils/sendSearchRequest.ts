@@ -117,7 +117,8 @@ export const sendSearchRequest = async ({
       Accept: "application/json",
       "customer-id": customerId,
       "x-api-key": apiKey,
-      "grpc-timeout": "60S"
+      "grpc-timeout": "60S",
+      "x-source": "react-chatbot"
     }
   };
 
