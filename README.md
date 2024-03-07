@@ -153,7 +153,7 @@ A boolean value indicating whether or not the most recent chat API request encou
 
 ### Usage with SSR Frameworks
 
-Using React-Chatbot with SSR frameworks may require additional infrastucture. Here are some common gotchas:
+Using React-Chatbot with SSR frameworks may require additional infrastructure. Here are some common gotchas:
 
 #### Next.js
 
