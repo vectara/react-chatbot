@@ -16,7 +16,7 @@
     "name": "Vectara, Inc.",
     "url": "https://www.vectara.com"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "homepage": "https://vectara.github.io/react-chatbot/",
   "repository": {
     "type": "git",
