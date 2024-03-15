@@ -80,4 +80,54 @@ describe("useChat", () => {
 
     expect(result.current.isLoading).toEqual(true);
   });
+
+  it("should reset the conversation", async () => {
+    const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key"));
+    (sendSearchRequest as jest.Mock).mockImplementation(() => Promise.resolve(MOCK_API_RESPONSE));
+
+    await act(async () => {
+      await result.current.sendMessage({ query: "mock-query" });
+      await result.current.sendMessage({ query: "mock-query-2" });
+    });
+
+    // Assert that the second request uses the current conversation id.
+    expect(sendSearchRequest).toHaveBeenCalledWith(
+      expect.objectContaining({
+        chat: {
+          conversationId: "mock-conversation-id"
+        }
+      })
+    );
+
+    (sendSearchRequest as jest.Mock).mockImplementation(() =>
+      Promise.resolve({
+        ...MOCK_API_RESPONSE,
+        summary: [
+          {
+            chat: {
+              conversationId: "mock-conversation-id-2",
+              turnId: "mock-turn-id",
+              text: "mock-answer"
+            }
+          }
+        ]
+      })
+    );
+
+    await act(async () => {
+      await result.current.resetConversation();
+    });
+
+    expect(result.current.messageHistory.length).toEqual(0);
+
+    await act(async () => {
+      await result.current.sendMessage({ query: "mock-query-3" });
+    });
+
+    const calls = (sendSearchRequest as jest.Mock).mock.calls;
+    const recentSendSearchRequestCall = calls[calls.length - 1][0];
+
+    // Assert that the request after reset is has no conversation id.
+    expect(recentSendSearchRequestCall.chat.conversationId).toEqual(undefined);
+  });
 });

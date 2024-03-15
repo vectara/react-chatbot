@@ -1,5 +1,5 @@
-import { Fragment, ReactNode, useCallback, useEffect, useRef, useState } from "react";
-import { VuiFlexContainer, VuiFlexItem, VuiSpacer } from "../vui";
+import { Fragment, ReactNode, useEffect, useRef, useState } from "react";
+import { VuiButtonSecondary, VuiFlexContainer, VuiFlexItem, VuiSpacer } from "../vui";
 import { QueryInput } from "./QueryInput";
 import { ChatItem } from "./ChatItem";
 import { useChat } from "../useChat";
@@ -54,7 +54,11 @@ export const ChatView = ({
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(isInitiallyOpen ?? false);
   const [query, setQuery] = useState<string>("");
-  const { sendMessage, messageHistory, isLoading, hasError } = useChat(customerId, corpusIds, apiKey);
+  const { sendMessage, resetConversation, messageHistory, isLoading, hasError } = useChat(
+    customerId,
+    corpusIds,
+    apiKey
+  );
   const appLayoutRef = useRef<HTMLDivElement>(null);
   const isScrolledToBottomRef = useRef(true);
 
@@ -156,6 +160,14 @@ export const ChatView = ({
                     </Fragment>
                   );
                 })}
+                <VuiFlexContainer fullWidth={true} justifyContent="center">
+                  <VuiFlexItem>
+                    <VuiButtonSecondary color="neutral" size="xs" onClick={resetConversation} isDisabled={isLoading}>
+                      Reset conversation
+                    </VuiButtonSecondary>
+                  </VuiFlexItem>
+                </VuiFlexContainer>
+                <VuiSpacer size="l" />
               </>
             )}
           </div>

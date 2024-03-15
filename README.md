@@ -124,7 +124,7 @@ import { useChat } from "@vectara/react-chatbot/lib";
 
 /* snip */
 
-const { sendMessage, messageHistory, isLoading, hasError } = useChat(
+const { sendMessage, resetConversation, messageHistory, isLoading, hasError } = useChat(
   "CUSTOMER_ID",
   ["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"],
   "API_KEY"
@@ -138,6 +138,10 @@ The values returned by the hook can be passed on to your custom components as pr
 ##### sendMessage: `async ({ query: string; isRetry?: boolean }) => void;`
 
 This is used to send a message to the chat API. Send `true` for the optional `isRetry` flag to if this is retrying a previously failed message. This allows the internal logic to correctly link the next successful answer to the failed query.
+
+##### resetConversation: `() => void;`
+
+This is used to reset the chat. Message history and topics discussed previosuly are restored to their initial state.
 
 ##### messageHistory: `ChatTurn[]`
 

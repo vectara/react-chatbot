@@ -95,6 +95,11 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
     }
   };
 
+  const resetConversation = () => {
+    setMessageHistory([]);
+    setConversationId(undefined);
+  };
+
   useEffect(() => {
     if (!recentAnswer) return;
 
@@ -107,6 +112,7 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
 
   return {
     sendMessage,
+    resetConversation,
     messageHistory,
     isLoading,
     hasError

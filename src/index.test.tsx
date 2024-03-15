@@ -97,6 +97,7 @@ describe("ReactChatbot", () => {
 
     expect(screen.getByShadowText("mock-question")).toBeInTheDocument();
     expect(screen.getByShadowText("mock-answer")).toBeInTheDocument();
+    expect(screen.getByShadowText("Reset conversation")).toBeInTheDocument();
   });
 
   it("should execute callback when sending message", () => {
