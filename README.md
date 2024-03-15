@@ -124,7 +124,7 @@ import { useChat } from "@vectara/react-chatbot/lib";
 
 /* snip */
 
-const { sendMessage, resetConversation, messageHistory, isLoading, hasError } = useChat(
+const { sendMessage, startNewConversation, messageHistory, isLoading, hasError } = useChat(
   "CUSTOMER_ID",
   ["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"],
   "API_KEY"
