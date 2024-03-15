@@ -47028,7 +47028,7 @@ export const App = () => (
 import { useChat } from "@vectara/react-chatbot/lib";
 
 export const App = () => {
-  const { sendMessage, resetConversation, messageHistory, isLoading, hasError } = useChat(
+  const { sendMessage, startNewConversation, messageHistory, isLoading, hasError } = useChat(
     DEFAULT_CUSTOMER_ID,
     DEFAULT_CORPUS_IDS,
     DEFAULT_API_KEY
