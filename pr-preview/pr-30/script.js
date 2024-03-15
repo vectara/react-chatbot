@@ -37111,13 +37111,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         return;
       let C2 = [...n2.slice(0, -1), a2];
       o2(C2);
-    }, [a2]), { sendMessage: b2, resetConversation: f2, messageHistory: n2, isLoading: l2, hasError: B2 };
+    }, [a2]), { sendMessage: b2, startNewConversation: f2, messageHistory: n2, isLoading: l2, hasError: B2 };
   };
   var Te2 = () => (0, import_jsx_runtime15.jsx)(import_jsx_runtime15.Fragment, { children: (0, import_jsx_runtime15.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--thinking", children: (0, import_jsx_runtime15.jsx)("div", { className: "vrcbChatMessage", children: (0, import_jsx_runtime15.jsx)("div", { className: "vrcbLoader" }) }) }) });
   var yt = { large: "l", medium: "m" };
   var St = () => (0, import_jsx_runtime16.jsxs)(I2, { className: "vrcbEmptyMessages", spacing: "none", alignItems: "center", justifyContent: "center", direction: "column", children: [(0, import_jsx_runtime16.jsx)(xe2, { size: "150px", color: "#000000" }), "Ask anything."] });
   var Re2 = ({ customerId: e2, corpusIds: t2, apiKey: r2, title: n2 = "My Chatbot", placeholder: o2 = "Chat with your AI Assistant", inputSize: i2 = "large", emptyStateDisplay: a2 = (0, import_jsx_runtime16.jsx)(St, {}), isInitiallyOpen: s2, zIndex: l2 = 9999 }) => {
-    let [c2, p2] = (0, import_react4.useState)(s2 != null ? s2 : false), [d2, B2] = (0, import_react4.useState)(""), { sendMessage: w2, resetConversation: T2, messageHistory: b2, isLoading: f2, hasError: C2 } = Be2(e2, t2, r2), h2 = (0, import_react4.useRef)(null), R2 = (0, import_react4.useRef)(true), z2 = () => {
+    let [c2, p2] = (0, import_react4.useState)(s2 != null ? s2 : false), [d2, B2] = (0, import_react4.useState)(""), { sendMessage: w2, startNewConversation: T2, messageHistory: b2, isLoading: f2, hasError: C2 } = Be2(e2, t2, r2), h2 = (0, import_react4.useRef)(null), R2 = (0, import_react4.useRef)(true), z2 = () => {
       setTimeout(() => {
         var S2, x2;
         R2.current && ((x2 = h2.current) == null || x2.scrollTo({ left: 0, top: (S2 = h2.current) == null ? void 0 : S2.scrollHeight, behavior: "smooth" }));
@@ -37145,8 +37145,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     return (0, import_react4.useEffect)(z2, [f2, b2]), c2 ? (0, import_jsx_runtime16.jsxs)("div", { className: "vrcbChatbotWrapper", style: { zIndex: l2 }, children: [(0, import_jsx_runtime16.jsxs)(I2, { className: "vrcbHeader", spacing: "none", direction: "row", children: [(0, import_jsx_runtime16.jsx)(g2, { grow: 1, alignItems: "center", children: n2 }), (0, import_jsx_runtime16.jsx)(g2, { alignItems: "center", children: (0, import_jsx_runtime16.jsx)("button", { onClick: () => p2(false), children: (0, import_jsx_runtime16.jsx)(de2, { size: "12px", color: "#2c313a" }) }) })] }), (0, import_jsx_runtime16.jsxs)(I2, { direction: "column", spacing: "none", className: "vrcbChatbotInnerWrapper", children: [(0, import_jsx_runtime16.jsx)(g2, { className: "vrcbMessagesWrapper", basis: "fill", children: (0, import_jsx_runtime16.jsx)("div", { ref: h2, children: L2 ? (0, import_jsx_runtime16.jsxs)(import_jsx_runtime16.Fragment, { children: [(0, import_jsx_runtime16.jsx)(k2, { size: "xs" }), N2.map((S2, x2) => {
       var O2;
       let P2;
-      return ((O2 = b2[x2]) == null ? void 0 : O2.answer) === "" ? P2 = null : P2 = x2 < N2.length - 1 ? (0, import_jsx_runtime16.jsx)(k2, { size: "m" }) : (0, import_jsx_runtime16.jsx)(k2, { size: "xl" }), (0, import_jsx_runtime16.jsxs)(import_react4.Fragment, { children: [S2, P2] }, x2);
-    }), (0, import_jsx_runtime16.jsx)(I2, { fullWidth: true, justifyContent: "center", children: (0, import_jsx_runtime16.jsx)(g2, { children: (0, import_jsx_runtime16.jsx)(te2, { color: "neutral", size: "xs", onClick: T2, isDisabled: f2, children: "Reset conversation" }) }) }), (0, import_jsx_runtime16.jsx)(k2, { size: "l" })] }) : a2 }) }), (0, import_jsx_runtime16.jsx)(g2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime16.jsx)(ye2, { placeholder: o2, buttonLabel: "Send", query: d2, setQuery: B2, isButtonDisabled: y2, onSubmit: A2, size: yt[i2] }) })] })] }) : (0, import_jsx_runtime16.jsx)("button", { className: "vrcbChatbotButton", onClick: () => p2(true), style: { zIndex: l2 }, children: n2 });
+      return ((O2 = b2[x2]) == null ? void 0 : O2.answer) === "" ? P2 = null : P2 = x2 < N2.length - 1 ? (0, import_jsx_runtime16.jsx)(k2, { size: "m" }) : (0, import_jsx_runtime16.jsx)(k2, { size: "l" }), (0, import_jsx_runtime16.jsxs)(import_react4.Fragment, { children: [S2, P2] }, x2);
+    }), (0, import_jsx_runtime16.jsx)(I2, { fullWidth: true, justifyContent: "center", children: (0, import_jsx_runtime16.jsx)(g2, { children: (0, import_jsx_runtime16.jsx)(te2, { color: "neutral", size: "xs", onClick: T2, isDisabled: f2, children: "Start new conversation" }) }) }), (0, import_jsx_runtime16.jsx)(k2, { size: "l" })] }) : a2 }) }), (0, import_jsx_runtime16.jsx)(g2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime16.jsx)(ye2, { placeholder: o2, buttonLabel: "Send", query: d2, setQuery: B2, isButtonDisabled: y2, onSubmit: A2, size: yt[i2] }) })] })] }) : (0, import_jsx_runtime16.jsx)("button", { className: "vrcbChatbotButton", onClick: () => p2(true), style: { zIndex: l2 }, children: n2 });
   };
   var ue2 = `:host {
   all: initial;
@@ -47044,7 +47044,7 @@ export const App = () => {
           /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("p", { children: "The hook returns:" }),
           /* @__PURE__ */ (0, import_jsx_runtime98.jsxs)("ul", { children: [
             /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("li", { children: "sendMessage - a function that sends a string to the Chat API endpoint" }),
-            /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("li", { children: "resetConversation - a function that resets the chat" }),
+            /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("li", { children: "startNewConversation - a function that resets the conversational context" }),
             /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("li", { children: "messageHistory - an array of objects representing messages from the entire conversation" }),
             /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("li", { children: "isLoading - a boolean value indicating whether or not a chat message request is pending" }),
             /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("li", { children: "hasError - a boolean value indicating whether or not the previous message request returned an error" })
