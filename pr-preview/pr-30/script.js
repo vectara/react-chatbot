@@ -38361,7 +38361,7 @@ fieldset {
     }
   };
   window.customElements.get("react-chatbot") || window.customElements.define("react-chatbot", pe2);
-  var ln = (e2) => {
+  var an = (e2) => {
     let t2 = (0, import_react3.useRef)(null);
     (0, import_react3.useEffect)(() => {
       t2.current && e2.emptyStateDisplay && t2.current.setEmptyStateDisplay(e2.emptyStateDisplay);
@@ -46980,7 +46980,7 @@ export const App = () => (
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiText, { children: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("p", { children: "React-Chatbot instantly adds a Vectara-powered chatbot to your React applications." }) }),
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiSpacer, { size: "m" }),
         /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(
-          ln,
+          an,
           {
             corpusIds: corpusIds.length === 0 ? DEFAULT_CORPUS_IDS : corpusIds,
             customerId: customerId === "" ? DEFAULT_CUSTOMER_ID : customerId,
