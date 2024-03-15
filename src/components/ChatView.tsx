@@ -54,7 +54,7 @@ export const ChatView = ({
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(isInitiallyOpen ?? false);
   const [query, setQuery] = useState<string>("");
-  const { sendMessage, resetConversation, messageHistory, isLoading, hasError } = useChat(
+  const { sendMessage, startNewConversation, messageHistory, isLoading, hasError } = useChat(
     customerId,
     corpusIds,
     apiKey
@@ -151,7 +151,7 @@ export const ChatView = ({
                   if (messageHistory[index]?.answer === "") {
                     spacer = null;
                   } else {
-                    spacer = index < chatItems.length - 1 ? <VuiSpacer size="m" /> : <VuiSpacer size="xl" />;
+                    spacer = index < chatItems.length - 1 ? <VuiSpacer size="m" /> : <VuiSpacer size="l" />;
                   }
                   return (
                     <Fragment key={index}>
@@ -162,8 +162,8 @@ export const ChatView = ({
                 })}
                 <VuiFlexContainer fullWidth={true} justifyContent="center">
                   <VuiFlexItem>
-                    <VuiButtonSecondary color="neutral" size="xs" onClick={resetConversation} isDisabled={isLoading}>
-                      Reset conversation
+                    <VuiButtonSecondary color="neutral" size="xs" onClick={startNewConversation} isDisabled={isLoading}>
+                      Start new conversation
                     </VuiButtonSecondary>
                   </VuiFlexItem>
                 </VuiFlexContainer>

@@ -81,7 +81,7 @@ describe("useChat", () => {
     expect(result.current.isLoading).toEqual(true);
   });
 
-  it("should reset the conversation", async () => {
+  it("should be able to reset the conversation", async () => {
     const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key"));
     (sendSearchRequest as jest.Mock).mockImplementation(() => Promise.resolve(MOCK_API_RESPONSE));
 
@@ -115,7 +115,7 @@ describe("useChat", () => {
     );
 
     await act(async () => {
-      await result.current.resetConversation();
+      await result.current.startNewConversation();
     });
 
     expect(result.current.messageHistory.length).toEqual(0);

@@ -139,9 +139,9 @@ The values returned by the hook can be passed on to your custom components as pr
 
 This is used to send a message to the chat API. Send `true` for the optional `isRetry` flag to if this is retrying a previously failed message. This allows the internal logic to correctly link the next successful answer to the failed query.
 
-##### resetConversation: `() => void;`
+##### startNewConversation: `() => void;`
 
-This is used to reset the chat. Message history and topics discussed previosuly are restored to their initial state.
+This is used to reset the conversational context of the chat. The message history will be cleared and the chatbot will "forget" everything that's been discussed.
 
 ##### messageHistory: `ChatTurn[]`
 

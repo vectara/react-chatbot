@@ -95,7 +95,7 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
     }
   };
 
-  const resetConversation = () => {
+  const startNewConversation = () => {
     setMessageHistory([]);
     setConversationId(undefined);
   };
@@ -112,7 +112,7 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
 
   return {
     sendMessage,
-    resetConversation,
+    startNewConversation,
     messageHistory,
     isLoading,
     hasError
