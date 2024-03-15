@@ -259,7 +259,7 @@ const App = () => {
 import { useChat } from "@vectara/react-chatbot/lib";
 
 export const App = () => {
-  const { sendMessage, messageHistory, isLoading, hasError } = useChat(
+  const { sendMessage, startNewConversation, messageHistory, isLoading, hasError } = useChat(
     DEFAULT_CUSTOMER_ID,
     DEFAULT_CORPUS_IDS,
     DEFAULT_API_KEY
@@ -278,6 +278,7 @@ export const App = () => {
               <p>The hook returns:</p>
               <ul>
                 <li>sendMessage - a function that sends a string to the Chat API endpoint</li>
+                <li>startNewConversation - a function that resets the conversational context</li>
                 <li>messageHistory - an array of objects representing messages from the entire conversation</li>
                 <li>isLoading - a boolean value indicating whether or not a chat message request is pending</li>
                 <li>

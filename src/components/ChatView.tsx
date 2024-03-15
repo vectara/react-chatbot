@@ -1,5 +1,5 @@
-import { Fragment, ReactNode, useCallback, useEffect, useRef, useState } from "react";
-import { VuiFlexContainer, VuiFlexItem, VuiSpacer } from "../vui";
+import { Fragment, ReactNode, useEffect, useRef, useState } from "react";
+import { VuiButtonSecondary, VuiFlexContainer, VuiFlexItem, VuiSpacer } from "../vui";
 import { QueryInput } from "./QueryInput";
 import { ChatItem } from "./ChatItem";
 import { useChat } from "../useChat";
@@ -54,7 +54,11 @@ export const ChatView = ({
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(isInitiallyOpen ?? false);
   const [query, setQuery] = useState<string>("");
-  const { sendMessage, messageHistory, isLoading, hasError } = useChat(customerId, corpusIds, apiKey);
+  const { sendMessage, startNewConversation, messageHistory, isLoading, hasError } = useChat(
+    customerId,
+    corpusIds,
+    apiKey
+  );
   const appLayoutRef = useRef<HTMLDivElement>(null);
   const isScrolledToBottomRef = useRef(true);
 
@@ -147,7 +151,7 @@ export const ChatView = ({
                   if (messageHistory[index]?.answer === "") {
                     spacer = null;
                   } else {
-                    spacer = index < chatItems.length - 1 ? <VuiSpacer size="m" /> : <VuiSpacer size="xl" />;
+                    spacer = index < chatItems.length - 1 ? <VuiSpacer size="m" /> : <VuiSpacer size="l" />;
                   }
                   return (
                     <Fragment key={index}>
@@ -156,6 +160,14 @@ export const ChatView = ({
                     </Fragment>
                   );
                 })}
+                <VuiFlexContainer fullWidth={true} justifyContent="center">
+                  <VuiFlexItem>
+                    <VuiButtonSecondary color="neutral" size="xs" onClick={startNewConversation} isDisabled={isLoading}>
+                      Start new conversation
+                    </VuiButtonSecondary>
+                  </VuiFlexItem>
+                </VuiFlexContainer>
+                <VuiSpacer size="l" />
               </>
             )}
           </div>
