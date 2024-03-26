@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { ChatTurn, SummaryLanguage } from "types";
+import { ChatTurn, DeserializedSearchResult, SummaryLanguage } from "types";
 import { deserializeSearchResponse } from "utils/deserializeSearchResponse";
-import { sendSearchRequest } from "utils/sendSearchRequest";
+import { sendSearchRequest, sendSummaryRequest } from "utils/sendSearchRequest";
 
 /**
  * A hook that exposes a data fetcher, message history, loading state, and error state.
@@ -67,24 +67,18 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
 
     if (initialSearchResponse.response.length > 0) {
       try {
-        const response = await sendSearchRequest({
-          ...baseSearchRequestParams,
-          summaryMode: true,
-          summaryNumResults: 7,
-          summaryNumSentences: 3,
-          summaryPromptName: "vectara-summary-ext-v1.2.0",
-          language: getLanguage(),
-          chat: { conversationId }
-        });
-
-        setConversationId(response.summary[0].chat.conversationId);
-        setRecentAnswer({
-          id: response.summary[0].chat.turnId,
-          question: recentQuestion.current,
-          answer: response?.summary[0].text ?? "",
-          results: deserializeSearchResponse(response) ?? []
-        });
-        setIsLoading(false);
+        await sendSummaryRequest(
+          {
+            ...baseSearchRequestParams,
+            summaryMode: true,
+            summaryNumResults: 7,
+            summaryNumSentences: 3,
+            summaryPromptName: "vectara-summary-ext-v1.2.0",
+            language: getLanguage(),
+            chat: { conversationId }
+          },
+          onStreamUpdate
+        );
       } catch (error) {
         console.log("Summary error", error);
         setIsLoading(false);
@@ -98,6 +92,22 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string)
   const startNewConversation = () => {
     setMessageHistory([]);
     setConversationId(undefined);
+  };
+
+  const onStreamUpdate = (
+    conversationId: string,
+    turnId: string,
+    updatedText: string,
+    searchResults: Array<DeserializedSearchResult>
+  ) => {
+    setIsLoading(false);
+    setConversationId(conversationId);
+    setRecentAnswer({
+      id: turnId,
+      question: recentQuestion.current,
+      answer: updatedText ?? "",
+      results: searchResults ?? []
+    });
   };
 
   useEffect(() => {
