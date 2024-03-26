@@ -1,10 +1,11 @@
-import { Fragment, ReactNode, useEffect, useRef, useState } from "react";
+import { Fragment, ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { VuiButtonSecondary, VuiFlexContainer, VuiFlexItem, VuiSpacer } from "../vui";
 import { QueryInput } from "./QueryInput";
 import { ChatItem } from "./ChatItem";
 import { useChat } from "../useChat";
 import { Loader } from "./Loader";
 import { ChatBubbleIcon, MinimizeIcon } from "./Icons";
+import { debounce } from "lodash";
 
 const inputSizeToQueryInputSize = {
   large: "l",
@@ -59,6 +60,7 @@ export const ChatView = ({
     corpusIds,
     apiKey
   );
+
   const appLayoutRef = useRef<HTMLDivElement>(null);
   const isScrolledToBottomRef = useRef(true);
 
@@ -73,6 +75,22 @@ export const ChatView = ({
       }
     }, 0);
   };
+
+  // A debounced version of updating scroll position.
+  // Used for scrolling as the stream is printed to the screen, where
+  // new lines may be printed, and overflow, rapidly.
+  const debouncedUpdateScrollPosition = useCallback(
+    debounce(() => {
+      if (isScrolledToBottomRef.current) {
+        appLayoutRef.current?.scrollTo({
+          left: 0,
+          top: appLayoutRef.current?.scrollHeight,
+          behavior: "smooth"
+        });
+      }
+    }, 800),
+    []
+  );
 
   useEffect(() => {
     if (isInitiallyOpen !== undefined) {
@@ -122,7 +140,8 @@ export const ChatView = ({
     setQuery("");
   };
 
-  useEffect(updateScrollPosition, [isLoading, messageHistory]);
+  useEffect(updateScrollPosition, [isLoading]);
+  useEffect(debouncedUpdateScrollPosition, [messageHistory]);
 
   return isOpen ? (
     <div className="vrcbChatbotWrapper" style={{ zIndex }}>
