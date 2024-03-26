@@ -37137,7 +37137,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, T2 = (0, import_react4.useCallback)((0, import_lodash.debounce)(() => {
       var p2, v2;
       B2.current && ((v2 = l2.current) == null || v2.scrollTo({ left: 0, top: (p2 = l2.current) == null ? void 0 : p2.scrollHeight, behavior: "smooth" }));
-    }, 1e3), []);
+    }, 800), []);
     (0, import_react4.useEffect)(() => {
       a2 !== void 0 && m2(a2);
     }, [a2]), (0, import_react4.useEffect)(() => {
