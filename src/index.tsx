@@ -32,6 +32,9 @@ export interface Props {
 
   // Used to control the component's z-index. Defaults to 9999.
   zIndex?: number;
+
+  // Used to enable streaming responses from the API. Defaults to true.
+  enableStreaming?: boolean;
 }
 
 /**
@@ -46,7 +49,8 @@ const ReactChatbotInternal: FC<Props> = ({
   inputSize,
   emptyStateDisplay,
   isInitiallyOpen,
-  zIndex
+  zIndex,
+  enableStreaming = true
 }) => {
   return (
     <div>
@@ -60,6 +64,7 @@ const ReactChatbotInternal: FC<Props> = ({
         emptyStateDisplay={emptyStateDisplay}
         isInitiallyOpen={isInitiallyOpen}
         zIndex={zIndex}
+        enableStreaming={enableStreaming}
       />
     </div>
   );
@@ -90,7 +95,8 @@ class ReactChatbotWebComponent extends HTMLElement {
       "inputsize",
       "isinitiallyopen",
       "zindex",
-      "emptystatedisplayupdatetime"
+      "emptystatedisplayupdatetime",
+      "enablestreaming"
     ];
   }
 
@@ -133,6 +139,7 @@ class ReactChatbotWebComponent extends HTMLElement {
     const isInitiallyOpen = this.getAttribute("isInitiallyOpen") === "true";
     const emptyStateDisplay = this.emptyStateDisplay ?? undefined;
     const zIndex = this.getAttribute("zIndex") !== null ? parseInt(this.getAttribute("zIndex")!) : undefined;
+    const enableStreaming = this.getAttribute("enableStreaming") == "true";
 
     ReactDOM.render(
       <>
@@ -146,6 +153,7 @@ class ReactChatbotWebComponent extends HTMLElement {
           emptyStateDisplay={emptyStateDisplay}
           isInitiallyOpen={isInitiallyOpen}
           zIndex={zIndex}
+          enableStreaming={enableStreaming}
         />
       </>,
       this.mountPoint

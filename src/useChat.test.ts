@@ -1,9 +1,15 @@
 import { useChat } from "./useChat";
 import { sendSearchRequest } from "./utils/sendSearchRequest";
 import { act, renderHook } from "@testing-library/react-hooks";
+import { waitFor } from "@testing-library/react";
+import { streamQuery } from "@vectara/stream-query-client";
 
 jest.mock("utils/sendSearchRequest", () => ({
   sendSearchRequest: jest.fn()
+}));
+
+jest.mock("@vectara/stream-query-client", () => ({
+  streamQuery: jest.fn()
 }));
 
 const MOCK_API_RESPONSE = {
@@ -37,52 +43,100 @@ const MOCK_API_RESPONSE = {
 };
 
 describe("useChat", () => {
-  it("should send messages and update message history", async () => {
-    const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key"));
+  describe("streaming", () => {
+    it("should send messages and update hook values", async () => {
+      const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key"));
 
-    (sendSearchRequest as jest.Mock).mockImplementation(() => Promise.resolve(MOCK_API_RESPONSE));
+      (streamQuery as jest.Mock).mockImplementation(async (_, onStreamUpdate) => {
+        await onStreamUpdate({
+          references: [],
+          detail: null,
+          updatedText: "mock-updated-text",
+          isDone: false
+        });
+      });
 
-    await act(async () => {
-      await result.current.sendMessage({ query: "mock-query" });
+      await act(async () => {
+        await result.current.sendMessage({ query: "mock-query" });
+      });
+
+      expect(result.current.activeMessage).toEqual({
+        answer: "mock-updated-text",
+        id: "",
+        question: "mock-query",
+        results: []
+      });
+
+      expect(result.current.isStreamingResponse).toEqual(true);
+      expect(result.current.messageHistory).toEqual([]);
+
+      (streamQuery as jest.Mock).mockImplementation(async (_, onStreamUpdate) => {
+        await onStreamUpdate({
+          references: [],
+          detail: null,
+          updatedText: "",
+          isDone: true
+        });
+      });
+
+      await act(async () => {
+        await result.current.sendMessage({ query: "mock-query" });
+      });
+
+      await waitFor(() => {
+        expect(result.current.messageHistory.length).toEqual(1);
+      });
     });
-
-    expect(sendSearchRequest).toHaveBeenCalledWith(
-      expect.objectContaining({
-        queryValue: "mock-query"
-      })
-    );
-
-    expect(result.current.messageHistory.length).toEqual(1);
   });
 
-  it("should reflect error state", async () => {
-    const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key"));
-    (sendSearchRequest as jest.Mock).mockImplementation(() => {
-      throw "error";
+  describe("non-streaming", () => {
+    it("should send messages and update message history", async () => {
+      const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key", false));
+
+      (sendSearchRequest as jest.Mock).mockImplementation(() => Promise.resolve(MOCK_API_RESPONSE));
+
+      await act(async () => {
+        await result.current.sendMessage({ query: "mock-query" });
+      });
+
+      expect(sendSearchRequest).toHaveBeenCalledWith(
+        expect.objectContaining({
+          queryValue: "mock-query"
+        })
+      );
+
+      expect(result.current.messageHistory.length).toEqual(1);
     });
 
-    await act(async () => {
-      result.current.sendMessage({ query: "mock-query" });
+    it("should reflect error state", async () => {
+      const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key", false));
+      (sendSearchRequest as jest.Mock).mockImplementation(() => {
+        throw "error";
+      });
+
+      await act(async () => {
+        result.current.sendMessage({ query: "mock-query" });
+      });
+
+      expect(result.current.hasError).toEqual(true);
     });
 
-    expect(result.current.hasError).toEqual(true);
-  });
+    it("should reflect loading state", async () => {
+      const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key"));
+      (sendSearchRequest as jest.Mock).mockImplementation(() => {
+        return new Promise(() => {});
+      });
 
-  it("should reflect loading state", async () => {
-    const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key"));
-    (sendSearchRequest as jest.Mock).mockImplementation(() => {
-      return new Promise(() => {});
+      act(() => {
+        result.current.sendMessage({ query: "mock-query" });
+      });
+
+      expect(result.current.isLoading).toEqual(true);
     });
-
-    act(() => {
-      result.current.sendMessage({ query: "mock-query" });
-    });
-
-    expect(result.current.isLoading).toEqual(true);
   });
 
   it("should be able to reset the conversation", async () => {
-    const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key"));
+    const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key", false));
     (sendSearchRequest as jest.Mock).mockImplementation(() => Promise.resolve(MOCK_API_RESPONSE));
 
     await act(async () => {
