@@ -1,10 +1,11 @@
-import { Fragment, ReactNode, useEffect, useRef, useState } from "react";
+import { Fragment, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { VuiButtonSecondary, VuiFlexContainer, VuiFlexItem, VuiSpacer } from "../vui";
 import { QueryInput } from "./QueryInput";
 import { ChatItem } from "./ChatItem";
 import { useChat } from "../useChat";
 import { Loader } from "./Loader";
 import { ChatBubbleIcon, MinimizeIcon } from "./Icons";
+import { debounce } from "lodash";
 
 const inputSizeToQueryInputSize = {
   large: "l",
@@ -54,11 +55,9 @@ export const ChatView = ({
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(isInitiallyOpen ?? false);
   const [query, setQuery] = useState<string>("");
-  const { sendMessage, startNewConversation, messageHistory, isLoading, hasError } = useChat(
-    customerId,
-    corpusIds,
-    apiKey
-  );
+  const { sendMessage, startNewConversation, messageHistory, isLoading, hasError, activeMessage, isStreamingResponse } =
+    useChat(customerId, corpusIds, apiKey);
+
   const appLayoutRef = useRef<HTMLDivElement>(null);
   const isScrolledToBottomRef = useRef(true);
 
@@ -73,6 +72,23 @@ export const ChatView = ({
       }
     }, 0);
   };
+
+  // A debounced version of updating scroll position.
+  // Used for scrolling as the stream is printed to the screen, where
+  // new lines may be printed, and overflow, rapidly. We debounce to avoid
+  // rapid scrollbar changes, which can be visually distracting.
+  const debouncedUpdateScrollPosition = useCallback(
+    debounce(() => {
+      if (isScrolledToBottomRef.current) {
+        appLayoutRef.current?.scrollTo({
+          left: 0,
+          top: appLayoutRef.current?.scrollHeight,
+          behavior: "smooth"
+        });
+      }
+    }, 100),
+    []
+  );
 
   useEffect(() => {
     if (isInitiallyOpen !== undefined) {
@@ -99,22 +115,27 @@ export const ChatView = ({
     };
   }, []);
 
-  const chatItems = messageHistory.map((turn, index) => {
-    const { question, answer, results } = turn;
-    const onRetry =
-      hasError && index === messageHistory.length - 1
-        ? () => sendMessage({ query: question, isRetry: true })
-        : undefined;
+  const historyItems = useMemo(
+    () =>
+      messageHistory.map((turn, index) => {
+        const { question, answer, results } = turn;
+        const onRetry =
+          hasError && index === messageHistory.length - 1
+            ? () => sendMessage({ query: question, isRetry: true })
+            : undefined;
 
-    return <ChatItem key={index} question={question} answer={answer} searchResults={results} onRetry={onRetry} />;
-  });
+        return (
+          <Fragment key={index}>
+            <ChatItem question={question} answer={answer} searchResults={results} onRetry={onRetry} />
+            {index < messageHistory.length - 1 && <VuiSpacer size="m" />}
+          </Fragment>
+        );
+      }),
+    [messageHistory]
+  );
 
-  if (isLoading) {
-    chatItems.push(<Loader />);
-  }
-
-  const hasContent = isLoading || messageHistory.length > 0;
-  const isRequestDisabled = isLoading || query.trim().length === 0;
+  const hasContent = isLoading || messageHistory.length > 0 || activeMessage;
+  const isRequestDisabled = isLoading || isStreamingResponse || query.trim().length === 0;
 
   const onSendQuery = () => {
     if (isRequestDisabled) return;
@@ -122,7 +143,10 @@ export const ChatView = ({
     setQuery("");
   };
 
-  useEffect(updateScrollPosition, [isLoading, messageHistory]);
+  const spacer = historyItems.length === 0 ? null : <VuiSpacer size={activeMessage ? "m" : "l"} />;
+
+  useEffect(updateScrollPosition, [isLoading]);
+  useEffect(debouncedUpdateScrollPosition, [activeMessage]);
 
   return isOpen ? (
     <div className="vrcbChatbotWrapper" style={{ zIndex }}>
@@ -146,20 +170,23 @@ export const ChatView = ({
             ) : (
               <>
                 <VuiSpacer size="xs" />
-                {chatItems.map((item, index) => {
-                  let spacer;
-                  if (messageHistory[index]?.answer === "") {
-                    spacer = null;
-                  } else {
-                    spacer = index < chatItems.length - 1 ? <VuiSpacer size="m" /> : <VuiSpacer size="l" />;
-                  }
-                  return (
-                    <Fragment key={index}>
-                      {item}
-                      {spacer}
-                    </Fragment>
-                  );
-                })}
+                {historyItems}
+                {spacer}
+                {activeMessage && (
+                  <>
+                    <ChatItem
+                      question={activeMessage.question}
+                      answer={activeMessage.answer}
+                      searchResults={activeMessage.results}
+                      onRetry={
+                        hasError ? () => sendMessage({ query: activeMessage.question, isRetry: true }) : undefined
+                      }
+                      isStreaming={isStreamingResponse}
+                    />
+                    <VuiSpacer size="l" />
+                  </>
+                )}
+                {isLoading && <Loader />}
                 <VuiFlexContainer fullWidth={true} justifyContent="center">
                   <VuiFlexItem>
                     <VuiButtonSecondary color="neutral" size="xs" onClick={startNewConversation} isDisabled={isLoading}>

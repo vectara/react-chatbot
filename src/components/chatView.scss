@@ -35,6 +35,12 @@ $chatbotPosition: $sizeS;
 .vrcbChatMessage {
   padding: $sizeS $sizeM;
   border-radius: $sizeM;
+
+  .vuiSpinner {
+    display: inline-block;
+    padding-left: 8px;
+    vertical-align: bottom;
+  }
 }
 
 .vrcbChatMessageContainer--question {

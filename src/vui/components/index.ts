@@ -5,6 +5,7 @@ import { VuiFlexContainer } from "./flex/FlexContainer";
 import { VuiFlexItem } from "./flex/FlexItem";
 import { VuiSearchInput } from "./searchInput/SearchInput";
 import { VuiSpacer } from "./spacer/Spacer";
+import { VuiSpinner } from "./spinner/Spinner";
 import { VuiText } from "./typography/Text";
 import { VuiTextColor } from "./typography/TextColor";
 import { TEXT_COLOR, TEXT_SIZE, TITLE_SIZE } from "./typography/types";
@@ -21,6 +22,7 @@ export {
   VuiFlexItem,
   VuiSearchInput,
   VuiSpacer,
+  VuiSpinner,
   VuiText,
   VuiTextColor,
   VuiTitle

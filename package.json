@@ -7,7 +7,7 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "npm run clean && node build.js && tsc --emitDeclarationOnly --outDir lib",
-    "clean": "rimraf dist",
+    "clean": "rimraf lib",
     "lint": "eslint .",
     "test": "jest --coverage",
     "docs": "npm install && npm run build && npm install --prefix docs && npm run docs --prefix docs"
@@ -32,6 +32,7 @@
   "dependencies": {
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@vectara/stream-query-client": "file:../stream-query/vectara-stream-query-client-0.0.2.tgz",
     "classnames": "^2.3.2",
     "lodash": "^4.17.21",
     "prismjs": "^1.29.0",
