@@ -44836,7 +44836,7 @@ export const App = () => (
         {
           left: /* @__PURE__ */ (0, import_jsx_runtime98.jsxs)(VuiFlexContainer, { spacing: "m", alignItems: "center", children: [
             /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiFlexItem, { grow: false, shrink: false, children: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(HeaderLogo, {}) }),
-            /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiFlexItem, { grow: false, shrink: false, children: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiTitle, { size: "xs", children: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("h1", { children: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("strong", { children: "Vectara React-Chatbot" }) }) }) })
+            /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiFlexItem, { grow: false, shrink: false, children: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(VuiTitle, { size: "xs", children: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("h1", { children: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)("strong", { children: "Vectara React-Chatbot 1.0.0" }) }) }) })
           ] }),
           right: /* @__PURE__ */ (0, import_jsx_runtime98.jsx)(
             VuiIconButton,
