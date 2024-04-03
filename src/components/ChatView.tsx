@@ -75,23 +75,6 @@ export const ChatView = ({
     }, 0);
   };
 
-  // A debounced version of updating scroll position.
-  // Used for scrolling as the stream is printed to the screen, where
-  // new lines may be printed, and overflow, rapidly. We debounce to avoid
-  // rapid scrollbar changes, which can be visually distracting.
-  const debouncedUpdateScrollPosition = useCallback(
-    debounce(() => {
-      if (isScrolledToBottomRef.current) {
-        appLayoutRef.current?.scrollTo({
-          left: 0,
-          top: appLayoutRef.current?.scrollHeight,
-          behavior: "smooth"
-        });
-      }
-    }, 100),
-    []
-  );
-
   useEffect(() => {
     if (isInitiallyOpen !== undefined) {
       setIsOpen(isInitiallyOpen);
@@ -147,8 +130,7 @@ export const ChatView = ({
 
   const spacer = historyItems.length === 0 ? null : <VuiSpacer size={activeMessage ? "m" : "l"} />;
 
-  useEffect(updateScrollPosition, [isLoading]);
-  useEffect(debouncedUpdateScrollPosition, [activeMessage]);
+  useEffect(updateScrollPosition, [isLoading, activeMessage]);
 
   return isOpen ? (
     <div className="vrcbChatbotWrapper" style={{ zIndex }}>
