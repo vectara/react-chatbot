@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { SPINNER_SIZE } from "./types";
+import { SPINNER_SIZE, SpinnerColor } from "./types";
 
 const sizeToClassNameMap = {
   xs: "vuiSpinner--xs",
@@ -12,55 +12,30 @@ const sizeToClassNameMap = {
 } as const;
 
 type Props = {
+  color?: SpinnerColor;
   size?: (typeof SPINNER_SIZE)[number];
 };
 
-export const VuiSpinner = ({ size = "m" }: Props) => {
-  const classes = classNames("vuiSpinner", sizeToClassNameMap[size]);
+export const VuiSpinner = ({ color = "accent", size = "m" }: Props) => {
+  const classes = classNames("vuiSpinner", sizeToClassNameMap[size], `vuiSpinner--${color}`);
   return (
-    <div className={classes}>
-      <svg
-        className="vuiSpinner__animation"
-        version="1.0"
-        width="100px"
-        height="100px"
-        viewBox="0 0 128 128"
-        xmlSpace="preserve"
-      >
-        <g>
-          <path fill="#d7c3fc" d="M99.359,10.919a60.763,60.763,0,1,0,0,106.162A63.751,63.751,0,1,1,99.359,10.919Z" />
+    <span className={classes}>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50">
+        <path
+          fill="#000"
+          d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
+        >
           <animateTransform
+            attributeType="xml"
             attributeName="transform"
             type="rotate"
-            from="0 64 64"
-            to="360 64 64"
-            dur="960ms"
+            from="0 25 25"
+            to="360 25 25"
+            dur="0.6s"
             repeatCount="indefinite"
           />
-        </g>
-        <g>
-          <path fill="#ab81fa" d="M28.641,117.081a60.763,60.763,0,1,0,0-106.162A63.751,63.751,0,1,1,28.641,117.081Z" />
-          <animateTransform
-            attributeName="transform"
-            type="rotate"
-            from="0 64 64"
-            to="360 64 64"
-            dur="1440ms"
-            repeatCount="indefinite"
-          />
-        </g>
-        <g>
-          <path fill="#7027f6" d="M117.081,99.313a60.763,60.763,0,1,0-106.162,0A63.751,63.751,0,1,1,117.081,99.313Z" />
-          <animateTransform
-            attributeName="transform"
-            type="rotate"
-            from="0 64 64"
-            to="360 64 64"
-            dur="2880ms"
-            repeatCount="indefinite"
-          />
-        </g>
+        </path>
       </svg>
-    </div>
+    </span>
   );
 };

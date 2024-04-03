@@ -106,7 +106,12 @@ export const ChatItem = ({ question, answer, searchResults, onRetry, isStreaming
                 }
               }}
             />
-            {isStreaming && <VuiSpinner size="xs" />}
+            {isStreaming && (
+              <span>
+                {" "}
+                <VuiSpinner size="xs" />
+              </span>
+            )}
           </VuiText>
 
           {reorderedSearchResults && reorderedSearchResults.length > 0 && (
