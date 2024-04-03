@@ -21,13 +21,13 @@ const sharedConfig = {
 };
 
 module.exports = {
-  component: {
+  esm: {
     ...sharedConfig,
     entryPoints: ["src/index.tsx"],
     format: "esm"
   },
 
-  hook: {
+  cjs: {
     ...sharedConfig,
     entryPoints: ["src/useChat.ts"],
     format: "cjs"
