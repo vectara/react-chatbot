@@ -4442,7 +4442,7 @@
             var warnedForNaNValue = false;
             var warnedForInfinityValue = false;
             var camelize = function(string2) {
-              return string2.replace(hyphenPattern, function(_3, character) {
+              return string2.replace(hyphenPattern, function(_2, character) {
                 return character.toUpperCase();
               });
             };
@@ -21352,12 +21352,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               function v3(t5, e5) {
                 return void 0 === e5 && (e5 = {}), e5.keyword = t5, y2[t5] = new f2(t5, e5);
               }
-              var b2 = { num: new f2("num", x2), regexp: new f2("regexp", x2), string: new f2("string", x2), name: new f2("name", x2), eof: new f2("eof"), bracketL: new f2("[", { beforeExpr: true, startsExpr: true }), bracketR: new f2("]"), braceL: new f2("{", { beforeExpr: true, startsExpr: true }), braceR: new f2("}"), parenL: new f2("(", { beforeExpr: true, startsExpr: true }), parenR: new f2(")"), comma: new f2(",", g2), semi: new f2(";", g2), colon: new f2(":", g2), dot: new f2("."), question: new f2("?", g2), questionDot: new f2("?."), arrow: new f2("=>", g2), template: new f2("template"), invalidTemplate: new f2("invalidTemplate"), ellipsis: new f2("...", g2), backQuote: new f2("`", x2), dollarBraceL: new f2("${", { beforeExpr: true, startsExpr: true }), eq: new f2("=", { beforeExpr: true, isAssign: true }), assign: new f2("_=", { beforeExpr: true, isAssign: true }), incDec: new f2("++/--", { prefix: true, postfix: true, startsExpr: true }), prefix: new f2("!/~", { beforeExpr: true, prefix: true, startsExpr: true }), logicalOR: m3("||", 1), logicalAND: m3("&&", 2), bitwiseOR: m3("|", 3), bitwiseXOR: m3("^", 4), bitwiseAND: m3("&", 5), equality: m3("==/!=/===/!==", 6), relational: m3("</>/<=/>=", 7), bitShift: m3("<</>>/>>>", 8), plusMin: new f2("+/-", { beforeExpr: true, binop: 9, prefix: true, startsExpr: true }), modulo: m3("%", 10), star: m3("*", 10), slash: m3("/", 10), starstar: new f2("**", { beforeExpr: true }), coalesce: m3("??", 1), _break: v3("break"), _case: v3("case", g2), _catch: v3("catch"), _continue: v3("continue"), _debugger: v3("debugger"), _default: v3("default", g2), _do: v3("do", { isLoop: true, beforeExpr: true }), _else: v3("else", g2), _finally: v3("finally"), _for: v3("for", { isLoop: true }), _function: v3("function", x2), _if: v3("if"), _return: v3("return", g2), _switch: v3("switch"), _throw: v3("throw", g2), _try: v3("try"), _var: v3("var"), _const: v3("const"), _while: v3("while", { isLoop: true }), _with: v3("with"), _new: v3("new", { beforeExpr: true, startsExpr: true }), _this: v3("this", x2), _super: v3("super", x2), _class: v3("class", x2), _extends: v3("extends", g2), _export: v3("export"), _import: v3("import", x2), _null: v3("null", x2), _true: v3("true", x2), _false: v3("false", x2), _in: v3("in", { beforeExpr: true, binop: 7 }), _instanceof: v3("instanceof", { beforeExpr: true, binop: 7 }), _typeof: v3("typeof", { beforeExpr: true, prefix: true, startsExpr: true }), _void: v3("void", { beforeExpr: true, prefix: true, startsExpr: true }), _delete: v3("delete", { beforeExpr: true, prefix: true, startsExpr: true }) }, _3 = /\r\n?|\n|\u2028|\u2029/, k3 = new RegExp(_3.source, "g");
+              var b2 = { num: new f2("num", x2), regexp: new f2("regexp", x2), string: new f2("string", x2), name: new f2("name", x2), eof: new f2("eof"), bracketL: new f2("[", { beforeExpr: true, startsExpr: true }), bracketR: new f2("]"), braceL: new f2("{", { beforeExpr: true, startsExpr: true }), braceR: new f2("}"), parenL: new f2("(", { beforeExpr: true, startsExpr: true }), parenR: new f2(")"), comma: new f2(",", g2), semi: new f2(";", g2), colon: new f2(":", g2), dot: new f2("."), question: new f2("?", g2), questionDot: new f2("?."), arrow: new f2("=>", g2), template: new f2("template"), invalidTemplate: new f2("invalidTemplate"), ellipsis: new f2("...", g2), backQuote: new f2("`", x2), dollarBraceL: new f2("${", { beforeExpr: true, startsExpr: true }), eq: new f2("=", { beforeExpr: true, isAssign: true }), assign: new f2("_=", { beforeExpr: true, isAssign: true }), incDec: new f2("++/--", { prefix: true, postfix: true, startsExpr: true }), prefix: new f2("!/~", { beforeExpr: true, prefix: true, startsExpr: true }), logicalOR: m3("||", 1), logicalAND: m3("&&", 2), bitwiseOR: m3("|", 3), bitwiseXOR: m3("^", 4), bitwiseAND: m3("&", 5), equality: m3("==/!=/===/!==", 6), relational: m3("</>/<=/>=", 7), bitShift: m3("<</>>/>>>", 8), plusMin: new f2("+/-", { beforeExpr: true, binop: 9, prefix: true, startsExpr: true }), modulo: m3("%", 10), star: m3("*", 10), slash: m3("/", 10), starstar: new f2("**", { beforeExpr: true }), coalesce: m3("??", 1), _break: v3("break"), _case: v3("case", g2), _catch: v3("catch"), _continue: v3("continue"), _debugger: v3("debugger"), _default: v3("default", g2), _do: v3("do", { isLoop: true, beforeExpr: true }), _else: v3("else", g2), _finally: v3("finally"), _for: v3("for", { isLoop: true }), _function: v3("function", x2), _if: v3("if"), _return: v3("return", g2), _switch: v3("switch"), _throw: v3("throw", g2), _try: v3("try"), _var: v3("var"), _const: v3("const"), _while: v3("while", { isLoop: true }), _with: v3("with"), _new: v3("new", { beforeExpr: true, startsExpr: true }), _this: v3("this", x2), _super: v3("super", x2), _class: v3("class", x2), _extends: v3("extends", g2), _export: v3("export"), _import: v3("import", x2), _null: v3("null", x2), _true: v3("true", x2), _false: v3("false", x2), _in: v3("in", { beforeExpr: true, binop: 7 }), _instanceof: v3("instanceof", { beforeExpr: true, binop: 7 }), _typeof: v3("typeof", { beforeExpr: true, prefix: true, startsExpr: true }), _void: v3("void", { beforeExpr: true, prefix: true, startsExpr: true }), _delete: v3("delete", { beforeExpr: true, prefix: true, startsExpr: true }) }, _2 = /\r\n?|\n|\u2028|\u2029/, k2 = new RegExp(_2.source, "g");
               function S2(t5, e5) {
                 return 10 === t5 || 13 === t5 || !e5 && (8232 === t5 || 8233 === t5);
               }
-              var w3 = /[\u1680\u2000-\u200a\u202f\u205f\u3000\ufeff]/, C3 = /(?:\s|\/\/.*|\/\*[^]*?\*\/)*/g, E2 = Object.prototype, A2 = E2.hasOwnProperty, I2 = E2.toString;
-              function P2(t5, e5) {
+              var w2 = /[\u1680\u2000-\u200a\u202f\u205f\u3000\ufeff]/, C3 = /(?:\s|\/\/.*|\/\*[^]*?\*\/)*/g, E2 = Object.prototype, A2 = E2.hasOwnProperty, I2 = E2.toString;
+              function P3(t5, e5) {
                 return A2.call(t5, e5);
               }
               var T3 = Array.isArray || function(t5) {
@@ -21366,29 +21366,29 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               function N2(t5) {
                 return new RegExp("^(?:" + t5.replace(/ /g, "|") + ")$");
               }
-              var L3 = function(t5, e5) {
+              var L2 = function(t5, e5) {
                 this.line = t5, this.column = e5;
               };
-              L3.prototype.offset = function(t5) {
-                return new L3(this.line, this.column + t5);
+              L2.prototype.offset = function(t5) {
+                return new L2(this.line, this.column + t5);
               };
-              var V2 = function(t5, e5, i4) {
+              var V3 = function(t5, e5, i4) {
                 this.start = e5, this.end = i4, null !== t5.sourceFile && (this.source = t5.sourceFile);
               };
               function O3(t5, e5) {
                 for (var i4 = 1, s4 = 0; ; ) {
-                  k3.lastIndex = s4;
-                  var r3 = k3.exec(t5);
+                  k2.lastIndex = s4;
+                  var r3 = k2.exec(t5);
                   if (!(r3 && r3.index < e5))
-                    return new L3(i4, e5 - s4);
+                    return new L2(i4, e5 - s4);
                   ++i4, s4 = r3.index + r3[0].length;
                 }
               }
               var R2 = { ecmaVersion: null, sourceType: "script", onInsertedSemicolon: null, onTrailingComma: null, allowReserved: null, allowReturnOutsideFunction: false, allowImportExportEverywhere: false, allowAwaitOutsideFunction: false, allowHashBang: false, locations: false, onToken: null, onComment: null, ranges: false, program: null, sourceFile: null, directSourceFile: null, preserveParens: false }, M2 = false;
-              function B2(t5) {
+              function B3(t5) {
                 var e5 = {};
                 for (var i4 in R2)
-                  e5[i4] = t5 && P2(t5, i4) ? t5[i4] : R2[i4];
+                  e5[i4] = t5 && P3(t5, i4) ? t5[i4] : R2[i4];
                 if ("latest" === e5.ecmaVersion ? e5.ecmaVersion = 1e8 : null == e5.ecmaVersion ? (!M2 && "object" == typeof console && console.warn && (M2 = true, console.warn("Since Acorn 8.0.0, options.ecmaVersion is required.\nDefaulting to 2020, but this will stop working in the future.")), e5.ecmaVersion = 11) : e5.ecmaVersion >= 2015 && (e5.ecmaVersion -= 2009), null == e5.allowReserved && (e5.allowReserved = e5.ecmaVersion < 5), T3(e5.onToken)) {
                   var s4 = e5.onToken;
                   e5.onToken = function(t6) {
@@ -21400,19 +21400,19 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               function D3(t5, e5) {
                 return function(i4, s4, r3, a3, n3, o3) {
                   var h3 = { type: i4 ? "Block" : "Line", value: s4, start: r3, end: a3 };
-                  t5.locations && (h3.loc = new V2(this, n3, o3)), t5.ranges && (h3.range = [r3, a3]), e5.push(h3);
+                  t5.locations && (h3.loc = new V3(this, n3, o3)), t5.ranges && (h3.range = [r3, a3]), e5.push(h3);
                 };
               }
-              var j2 = 1, U3 = 2, F2 = j2 | U3, q3 = 4, G3 = 8, H3 = 16, W3 = 32, z2 = 64, K3 = 128;
+              var j2 = 1, U3 = 2, F3 = j2 | U3, q3 = 4, G3 = 8, H3 = 16, W3 = 32, z2 = 64, K3 = 128;
               function X3(t5, e5) {
                 return U3 | (t5 ? q3 : 0) | (e5 ? G3 : 0);
               }
               var Q3 = 0, J3 = 1, Y3 = 2, Z3 = 3, $2 = 4, tt2 = 5, et2 = function(t5, i4, r3) {
-                this.options = t5 = B2(t5), this.sourceFile = t5.sourceFile, this.keywords = N2(s3[t5.ecmaVersion >= 6 ? 6 : "module" === t5.sourceType ? "5module" : 5]);
+                this.options = t5 = B3(t5), this.sourceFile = t5.sourceFile, this.keywords = N2(s3[t5.ecmaVersion >= 6 ? 6 : "module" === t5.sourceType ? "5module" : 5]);
                 var a3 = "";
                 true !== t5.allowReserved && (a3 = e4[t5.ecmaVersion >= 6 ? 6 : 5 === t5.ecmaVersion ? 5 : 3], "module" === t5.sourceType && (a3 += " await")), this.reservedWords = N2(a3);
                 var n3 = (a3 ? a3 + " " : "") + e4.strict;
-                this.reservedWordsStrict = N2(n3), this.reservedWordsStrictBind = N2(n3 + " " + e4.strictBind), this.input = String(i4), this.containsEsc = false, r3 ? (this.pos = r3, this.lineStart = this.input.lastIndexOf("\n", r3 - 1) + 1, this.curLine = this.input.slice(0, this.lineStart).split(_3).length) : (this.pos = this.lineStart = 0, this.curLine = 1), this.type = b2.eof, this.value = null, this.start = this.end = this.pos, this.startLoc = this.endLoc = this.curPosition(), this.lastTokEndLoc = this.lastTokStartLoc = null, this.lastTokStart = this.lastTokEnd = this.pos, this.context = this.initialContext(), this.exprAllowed = true, this.inModule = "module" === t5.sourceType, this.strict = this.inModule || this.strictDirective(this.pos), this.potentialArrowAt = -1, this.yieldPos = this.awaitPos = this.awaitIdentPos = 0, this.labels = [], this.undefinedExports = /* @__PURE__ */ Object.create(null), 0 === this.pos && t5.allowHashBang && "#!" === this.input.slice(0, 2) && this.skipLineComment(2), this.scopeStack = [], this.enterScope(j2), this.regexpState = null;
+                this.reservedWordsStrict = N2(n3), this.reservedWordsStrictBind = N2(n3 + " " + e4.strictBind), this.input = String(i4), this.containsEsc = false, r3 ? (this.pos = r3, this.lineStart = this.input.lastIndexOf("\n", r3 - 1) + 1, this.curLine = this.input.slice(0, this.lineStart).split(_2).length) : (this.pos = this.lineStart = 0, this.curLine = 1), this.type = b2.eof, this.value = null, this.start = this.end = this.pos, this.startLoc = this.endLoc = this.curPosition(), this.lastTokEndLoc = this.lastTokStartLoc = null, this.lastTokStart = this.lastTokEnd = this.pos, this.context = this.initialContext(), this.exprAllowed = true, this.inModule = "module" === t5.sourceType, this.strict = this.inModule || this.strictDirective(this.pos), this.potentialArrowAt = -1, this.yieldPos = this.awaitPos = this.awaitIdentPos = 0, this.labels = [], this.undefinedExports = /* @__PURE__ */ Object.create(null), 0 === this.pos && t5.allowHashBang && "#!" === this.input.slice(0, 2) && this.skipLineComment(2), this.scopeStack = [], this.enterScope(j2), this.regexpState = null;
               }, it2 = { inFunction: { configurable: true }, inGenerator: { configurable: true }, inAsync: { configurable: true }, allowSuper: { configurable: true }, allowDirectSuper: { configurable: true }, treatFunctionsAsVar: { configurable: true }, inNonArrowFunction: { configurable: true } };
               et2.prototype.parse = function() {
                 var t5 = this.options.program || this.startNode();
@@ -21458,7 +21458,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   if ("use strict" === (e5[1] || e5[2])) {
                     C3.lastIndex = t5 + e5[0].length;
                     var i4 = C3.exec(this.input), s4 = i4.index + i4[0].length, r3 = this.input.charAt(s4);
-                    return ";" === r3 || "}" === r3 || _3.test(i4[0]) && !(/[(`.[+\-/*%<>=,?^&]/.test(r3) || "!" === r3 && "=" === this.input.charAt(s4 + 1));
+                    return ";" === r3 || "}" === r3 || _2.test(i4[0]) && !(/[(`.[+\-/*%<>=,?^&]/.test(r3) || "!" === r3 && "=" === this.input.charAt(s4 + 1));
                   }
                   t5 += e5[0].length, C3.lastIndex = t5, t5 += C3.exec(this.input)[0].length, ";" === this.input[t5] && t5++;
                 }
@@ -21471,7 +21471,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }, st2.expectContextual = function(t5) {
                 this.eatContextual(t5) || this.unexpected();
               }, st2.canInsertSemicolon = function() {
-                return this.type === b2.eof || this.type === b2.braceR || _3.test(this.input.slice(this.lastTokEnd, this.start));
+                return this.type === b2.eof || this.type === b2.braceR || _2.test(this.input.slice(this.lastTokEnd, this.start));
               }, st2.insertSemicolon = function() {
                 if (this.canInsertSemicolon())
                   return this.options.onInsertedSemicolon && this.options.onInsertedSemicolon(this.lastTokEnd, this.lastTokEndLoc), true;
@@ -21541,7 +21541,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   return false;
                 C3.lastIndex = this.pos;
                 var t5 = C3.exec(this.input), e5 = this.pos + t5[0].length;
-                return !(_3.test(this.input.slice(this.pos, e5)) || "function" !== this.input.slice(e5, e5 + 8) || e5 + 8 !== this.input.length && d2(this.input.charAt(e5 + 8)));
+                return !(_2.test(this.input.slice(this.pos, e5)) || "function" !== this.input.slice(e5, e5 + 8) || e5 + 8 !== this.input.length && d2(this.input.charAt(e5 + 8)));
               }, nt2.parseStatement = function(t5, e5, i4) {
                 var s4, r3 = this.type, a3 = this.startNode();
                 switch (this.isLet(t5) && (r3 = b2._var, s4 = "let"), r3) {
@@ -21640,7 +21640,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     e5 || this.unexpected(), e5.consequent.push(this.parseStatement(null));
                 return this.exitScope(), e5 && this.finishNode(e5, "SwitchCase"), this.next(), this.labels.pop(), this.finishNode(t5, "SwitchStatement");
               }, nt2.parseThrowStatement = function(t5) {
-                return this.next(), _3.test(this.input.slice(this.lastTokEnd, this.start)) && this.raise(this.lastTokEnd, "Illegal newline after throw"), t5.argument = this.parseExpression(), this.semicolon(), this.finishNode(t5, "ThrowStatement");
+                return this.next(), _2.test(this.input.slice(this.lastTokEnd, this.start)) && this.raise(this.lastTokEnd, "Illegal newline after throw"), t5.argument = this.parseExpression(), this.semicolon(), this.finishNode(t5, "ThrowStatement");
               };
               var pt2 = [];
               nt2.parseTryStatement = function(t5) {
@@ -21764,7 +21764,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 }
                 return this.finishNode(t5, "ExportNamedDeclaration");
               }, nt2.checkExport = function(t5, e5, i4) {
-                t5 && (P2(t5, e5) && this.raiseRecoverable(i4, "Duplicate export '" + e5 + "'"), t5[e5] = true);
+                t5 && (P3(t5, e5) && this.raiseRecoverable(i4, "Duplicate export '" + e5 + "'"), t5[e5] = true);
               }, nt2.checkPatternExport = function(t5, e5) {
                 var i4 = e5.type;
                 if ("Identifier" === i4)
@@ -21928,7 +21928,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 var s4 = e5 !== Q3;
                 switch (t5.type) {
                   case "Identifier":
-                    this.strict && this.reservedWordsStrictBind.test(t5.name) && this.raiseRecoverable(t5.start, (s4 ? "Binding " : "Assigning to ") + t5.name + " in strict mode"), s4 && (e5 === Y3 && "let" === t5.name && this.raiseRecoverable(t5.start, "let is disallowed as a lexically bound name"), i4 && (P2(i4, t5.name) && this.raiseRecoverable(t5.start, "Argument name clash"), i4[t5.name] = true), e5 !== tt2 && this.declareName(t5.name, e5, t5.start));
+                    this.strict && this.reservedWordsStrictBind.test(t5.name) && this.raiseRecoverable(t5.start, (s4 ? "Binding " : "Assigning to ") + t5.name + " in strict mode"), s4 && (e5 === Y3 && "let" === t5.name && this.raiseRecoverable(t5.start, "let is disallowed as a lexically bound name"), i4 && (P3(i4, t5.name) && this.raiseRecoverable(t5.start, "Argument name clash"), i4[t5.name] = true), e5 !== tt2 && this.declareName(t5.name, e5, t5.start));
                     break;
                   case "ChainExpression":
                     this.raiseRecoverable(t5.start, "Optional chaining cannot appear in left-hand side");
@@ -22237,7 +22237,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   this.type === b2.eof && this.raise(this.pos, "Unterminated template literal"), this.expect(b2.dollarBraceL), i4.expressions.push(this.parseExpression()), this.expect(b2.braceR), i4.quasis.push(s4 = this.parseTemplateElement({ isTagged: e5 }));
                 return this.next(), this.finishNode(i4, "TemplateLiteral");
               }, ft2.isAsyncProp = function(t5) {
-                return !t5.computed && "Identifier" === t5.key.type && "async" === t5.key.name && (this.type === b2.name || this.type === b2.num || this.type === b2.string || this.type === b2.bracketL || this.type.keyword || this.options.ecmaVersion >= 9 && this.type === b2.star) && !_3.test(this.input.slice(this.lastTokEnd, this.start));
+                return !t5.computed && "Identifier" === t5.key.type && "async" === t5.key.name && (this.type === b2.name || this.type === b2.num || this.type === b2.string || this.type === b2.bracketL || this.type.keyword || this.options.ecmaVersion >= 9 && this.type === b2.star) && !_2.test(this.input.slice(this.lastTokEnd, this.start));
               }, ft2.parseObj = function(t5, e5) {
                 var i4 = this.startNode(), s4 = true, r3 = {};
                 for (i4.properties = [], this.next(); !this.eat(b2.braceR); ) {
@@ -22341,13 +22341,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 throw s4.pos = t5, s4.loc = i4, s4.raisedAt = this.pos, s4;
               }, gt2.raiseRecoverable = gt2.raise, gt2.curPosition = function() {
                 if (this.options.locations)
-                  return new L3(this.curLine, this.pos - this.lineStart);
+                  return new L2(this.curLine, this.pos - this.lineStart);
               };
-              var xt2 = et2.prototype, yt2 = function(t5) {
+              var xt2 = et2.prototype, yt = function(t5) {
                 this.flags = t5, this.var = [], this.lexical = [], this.functions = [];
               };
               xt2.enterScope = function(t5) {
-                this.scopeStack.push(new yt2(t5));
+                this.scopeStack.push(new yt(t5));
               }, xt2.exitScope = function() {
                 this.scopeStack.pop();
               }, xt2.treatFunctionsAsVarInScope = function(t5) {
@@ -22369,7 +22369,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                       s4 = true;
                       break;
                     }
-                    if (o3.var.push(t5), this.inModule && o3.flags & j2 && delete this.undefinedExports[t5], o3.flags & F2)
+                    if (o3.var.push(t5), this.inModule && o3.flags & j2 && delete this.undefinedExports[t5], o3.flags & F3)
                       break;
                   }
                 s4 && this.raiseRecoverable(i4, "Identifier '" + t5 + "' has already been declared");
@@ -22380,18 +22380,18 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }, xt2.currentVarScope = function() {
                 for (var t5 = this.scopeStack.length - 1; ; t5--) {
                   var e5 = this.scopeStack[t5];
-                  if (e5.flags & F2)
+                  if (e5.flags & F3)
                     return e5;
                 }
               }, xt2.currentThisScope = function() {
                 for (var t5 = this.scopeStack.length - 1; ; t5--) {
                   var e5 = this.scopeStack[t5];
-                  if (e5.flags & F2 && !(e5.flags & H3))
+                  if (e5.flags & F3 && !(e5.flags & H3))
                     return e5;
                 }
               };
               var vt2 = function(t5, e5, i4) {
-                this.type = "", this.start = e5, this.end = 0, t5.options.locations && (this.loc = new V2(t5, i4)), t5.options.directSourceFile && (this.sourceFile = t5.options.directSourceFile), t5.options.ranges && (this.range = [e5, 0]);
+                this.type = "", this.start = e5, this.end = 0, t5.options.locations && (this.loc = new V3(t5, i4)), t5.options.directSourceFile && (this.sourceFile = t5.options.directSourceFile), t5.options.ranges && (this.range = [e5, 0]);
               }, bt2 = et2.prototype;
               function _t2(t5, e5, i4, s4) {
                 return t5.type = e5, t5.end = i4, this.options.locations && (t5.loc.end = s4), this.options.ranges && (t5.range[1] = i4), t5;
@@ -22414,20 +22414,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 this.token = t5, this.isExpr = !!e5, this.preserveSpace = !!i4, this.override = s4, this.generator = !!r3;
               }, St2 = { b_stat: new kt2("{", false), b_expr: new kt2("{", true), b_tmpl: new kt2("${", false), p_stat: new kt2("(", false), p_expr: new kt2("(", true), q_tmpl: new kt2("`", true, true, function(t5) {
                 return t5.tryReadTemplateToken();
-              }), f_stat: new kt2("function", false), f_expr: new kt2("function", true), f_expr_gen: new kt2("function", true, false, null, true), f_gen: new kt2("function", false, false, null, true) }, wt = et2.prototype;
-              wt.initialContext = function() {
+              }), f_stat: new kt2("function", false), f_expr: new kt2("function", true), f_expr_gen: new kt2("function", true, false, null, true), f_gen: new kt2("function", false, false, null, true) }, wt2 = et2.prototype;
+              wt2.initialContext = function() {
                 return [St2.b_stat];
-              }, wt.braceIsBlock = function(t5) {
+              }, wt2.braceIsBlock = function(t5) {
                 var e5 = this.curContext();
-                return e5 === St2.f_expr || e5 === St2.f_stat || (t5 !== b2.colon || e5 !== St2.b_stat && e5 !== St2.b_expr ? t5 === b2._return || t5 === b2.name && this.exprAllowed ? _3.test(this.input.slice(this.lastTokEnd, this.start)) : t5 === b2._else || t5 === b2.semi || t5 === b2.eof || t5 === b2.parenR || t5 === b2.arrow || (t5 === b2.braceL ? e5 === St2.b_stat : t5 !== b2._var && t5 !== b2._const && t5 !== b2.name && !this.exprAllowed) : !e5.isExpr);
-              }, wt.inGeneratorContext = function() {
+                return e5 === St2.f_expr || e5 === St2.f_stat || (t5 !== b2.colon || e5 !== St2.b_stat && e5 !== St2.b_expr ? t5 === b2._return || t5 === b2.name && this.exprAllowed ? _2.test(this.input.slice(this.lastTokEnd, this.start)) : t5 === b2._else || t5 === b2.semi || t5 === b2.eof || t5 === b2.parenR || t5 === b2.arrow || (t5 === b2.braceL ? e5 === St2.b_stat : t5 !== b2._var && t5 !== b2._const && t5 !== b2.name && !this.exprAllowed) : !e5.isExpr);
+              }, wt2.inGeneratorContext = function() {
                 for (var t5 = this.context.length - 1; t5 >= 1; t5--) {
                   var e5 = this.context[t5];
                   if ("function" === e5.token)
                     return e5.generator;
                 }
                 return false;
-              }, wt.updateContext = function(t5) {
+              }, wt2.updateContext = function(t5) {
                 var e5, i4 = this.type;
                 i4.keyword && t5 === b2.dot ? this.exprAllowed = false : (e5 = i4.updateContext) ? e5.call(this, t5) : this.exprAllowed = i4.beforeExpr;
               }, b2.parenR.updateContext = b2.braceR.updateContext = function() {
@@ -22445,7 +22445,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 this.context.push(e5 ? St2.p_stat : St2.p_expr), this.exprAllowed = true;
               }, b2.incDec.updateContext = function() {
               }, b2._function.updateContext = b2._class.updateContext = function(t5) {
-                !t5.beforeExpr || t5 === b2._else || t5 === b2.semi && this.curContext() !== St2.p_stat || t5 === b2._return && _3.test(this.input.slice(this.lastTokEnd, this.start)) || (t5 === b2.colon || t5 === b2.braceL) && this.curContext() === St2.b_stat ? this.context.push(St2.f_stat) : this.context.push(St2.f_expr), this.exprAllowed = false;
+                !t5.beforeExpr || t5 === b2._else || t5 === b2.semi && this.curContext() !== St2.p_stat || t5 === b2._return && _2.test(this.input.slice(this.lastTokEnd, this.start)) || (t5 === b2.colon || t5 === b2.braceL) && this.curContext() === St2.b_stat ? this.context.push(St2.f_stat) : this.context.push(St2.f_expr), this.exprAllowed = false;
               }, b2.backQuote.updateContext = function() {
                 this.curContext() === St2.q_tmpl ? this.context.pop() : this.context.push(St2.q_tmpl), this.exprAllowed = false;
               }, b2.star.updateContext = function(t5) {
@@ -22458,9 +22458,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 var e5 = false;
                 this.options.ecmaVersion >= 6 && t5 !== b2.dot && ("of" === this.value && !this.exprAllowed || "yield" === this.value && this.inGeneratorContext()) && (e5 = true), this.exprAllowed = e5;
               };
-              var Ct = "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS", Et2 = Ct + " Extended_Pictographic", At2 = { 9: Ct, 10: Et2, 11: Et2, 12: Et2 + " EBase EComp EMod EPres ExtPict" }, It2 = "Cased_Letter LC Close_Punctuation Pe Connector_Punctuation Pc Control Cc cntrl Currency_Symbol Sc Dash_Punctuation Pd Decimal_Number Nd digit Enclosing_Mark Me Final_Punctuation Pf Format Cf Initial_Punctuation Pi Letter L Letter_Number Nl Line_Separator Zl Lowercase_Letter Ll Mark M Combining_Mark Math_Symbol Sm Modifier_Letter Lm Modifier_Symbol Sk Nonspacing_Mark Mn Number N Open_Punctuation Ps Other C Other_Letter Lo Other_Number No Other_Punctuation Po Other_Symbol So Paragraph_Separator Zp Private_Use Co Punctuation P punct Separator Z Space_Separator Zs Spacing_Mark Mc Surrogate Cs Symbol S Titlecase_Letter Lt Unassigned Cn Uppercase_Letter Lu", Pt2 = "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb", Tt2 = Pt2 + " Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd", Nt2 = Tt2 + " Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho", Lt2 = { 9: Pt2, 10: Tt2, 11: Nt2, 12: Nt2 + " Chorasmian Chrs Diak Dives_Akuru Khitan_Small_Script Kits Yezi Yezidi" }, Vt2 = {};
+              var Ct2 = "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS", Et2 = Ct2 + " Extended_Pictographic", At2 = { 9: Ct2, 10: Et2, 11: Et2, 12: Et2 + " EBase EComp EMod EPres ExtPict" }, It = "Cased_Letter LC Close_Punctuation Pe Connector_Punctuation Pc Control Cc cntrl Currency_Symbol Sc Dash_Punctuation Pd Decimal_Number Nd digit Enclosing_Mark Me Final_Punctuation Pf Format Cf Initial_Punctuation Pi Letter L Letter_Number Nl Line_Separator Zl Lowercase_Letter Ll Mark M Combining_Mark Math_Symbol Sm Modifier_Letter Lm Modifier_Symbol Sk Nonspacing_Mark Mn Number N Open_Punctuation Ps Other C Other_Letter Lo Other_Number No Other_Punctuation Po Other_Symbol So Paragraph_Separator Zp Private_Use Co Punctuation P punct Separator Z Space_Separator Zs Spacing_Mark Mc Surrogate Cs Symbol S Titlecase_Letter Lt Unassigned Cn Uppercase_Letter Lu", Pt2 = "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb", Tt2 = Pt2 + " Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd", Nt2 = Tt2 + " Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho", Lt2 = { 9: Pt2, 10: Tt2, 11: Nt2, 12: Nt2 + " Chorasmian Chrs Diak Dives_Akuru Khitan_Small_Script Kits Yezi Yezidi" }, Vt2 = {};
               function Ot(t5) {
-                var e5 = Vt2[t5] = { binary: N2(At2[t5] + " " + It2), nonBinary: { General_Category: N2(It2), Script: N2(Lt2[t5]) } };
+                var e5 = Vt2[t5] = { binary: N2(At2[t5] + " " + It), nonBinary: { General_Category: N2(It), Script: N2(Lt2[t5]) } };
                 e5.nonBinary.Script_Extensions = e5.nonBinary.Script, e5.nonBinary.gc = e5.nonBinary.General_Category, e5.nonBinary.sc = e5.nonBinary.Script, e5.nonBinary.scx = e5.nonBinary.Script_Extensions;
               }
               Ot(9), Ot(10), Ot(11), Ot(12);
@@ -22470,7 +22470,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               function Bt2(t5) {
                 return t5 <= 65535 ? String.fromCharCode(t5) : (t5 -= 65536, String.fromCharCode(55296 + (t5 >> 10), 56320 + (1023 & t5)));
               }
-              function Dt2(t5) {
+              function Dt(t5) {
                 return 36 === t5 || t5 >= 40 && t5 <= 43 || 46 === t5 || 63 === t5 || t5 >= 91 && t5 <= 94 || t5 >= 123 && t5 <= 125;
               }
               function jt(t5) {
@@ -22485,14 +22485,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               function qt(t5) {
                 return t5 >= 0 && t5 <= 1114111;
               }
-              function Gt2(t5) {
+              function Gt(t5) {
                 return 100 === t5 || 68 === t5 || 115 === t5 || 83 === t5 || 119 === t5 || 87 === t5;
               }
-              function Ht2(t5) {
+              function Ht(t5) {
                 return Ft2(t5) || 95 === t5;
               }
               function Wt(t5) {
-                return Ht2(t5) || zt2(t5);
+                return Ht(t5) || zt2(t5);
               }
               function zt2(t5) {
                 return t5 >= 48 && t5 <= 57;
@@ -22620,9 +22620,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 return this.regexp_eatBracedQuantifier(t5, true) && t5.raise("Nothing to repeat"), false;
               }, Rt2.regexp_eatSyntaxCharacter = function(t5) {
                 var e5 = t5.current();
-                return !!Dt2(e5) && (t5.lastIntValue = e5, t5.advance(), true);
+                return !!Dt(e5) && (t5.lastIntValue = e5, t5.advance(), true);
               }, Rt2.regexp_eatPatternCharacters = function(t5) {
-                for (var e5 = t5.pos, i4 = 0; -1 !== (i4 = t5.current()) && !Dt2(i4); )
+                for (var e5 = t5.pos, i4 = 0; -1 !== (i4 = t5.current()) && !Dt(i4); )
                   t5.advance();
                 return t5.pos !== e5;
               }, Rt2.regexp_eatExtendedPatternCharacter = function(t5) {
@@ -22731,7 +22731,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 return false;
               }, Rt2.regexp_eatCharacterClassEscape = function(t5) {
                 var e5 = t5.current();
-                if (Gt2(e5))
+                if (Gt(e5))
                   return t5.lastIntValue = -1, t5.advance(), true;
                 if (t5.switchU && this.options.ecmaVersion >= 9 && (80 === e5 || 112 === e5)) {
                   if (t5.lastIntValue = -1, t5.advance(), t5.eat(123) && this.regexp_eatUnicodePropertyValueExpression(t5) && t5.eat(125))
@@ -22754,12 +22754,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 }
                 return false;
               }, Rt2.regexp_validateUnicodePropertyNameAndValue = function(t5, e5, i4) {
-                P2(t5.unicodeProperties.nonBinary, e5) || t5.raise("Invalid property name"), t5.unicodeProperties.nonBinary[e5].test(i4) || t5.raise("Invalid property value");
+                P3(t5.unicodeProperties.nonBinary, e5) || t5.raise("Invalid property name"), t5.unicodeProperties.nonBinary[e5].test(i4) || t5.raise("Invalid property value");
               }, Rt2.regexp_validateUnicodePropertyNameOrValue = function(t5, e5) {
                 t5.unicodeProperties.binary.test(e5) || t5.raise("Invalid property name");
               }, Rt2.regexp_eatUnicodePropertyName = function(t5) {
                 var e5 = 0;
-                for (t5.lastStringValue = ""; Ht2(e5 = t5.current()); )
+                for (t5.lastStringValue = ""; Ht(e5 = t5.current()); )
                   t5.lastStringValue += Bt2(e5), t5.advance();
                 return "" !== t5.lastStringValue;
               }, Rt2.regexp_eatUnicodePropertyValue = function(t5) {
@@ -22856,7 +22856,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 return true;
               };
               var Jt = function(t5) {
-                this.type = t5.type, this.value = t5.value, this.start = t5.start, this.end = t5.end, t5.options.locations && (this.loc = new V2(t5, t5.startLoc, t5.endLoc)), t5.options.ranges && (this.range = [t5.start, t5.end]);
+                this.type = t5.type, this.value = t5.value, this.start = t5.start, this.end = t5.end, t5.options.locations && (this.loc = new V3(t5, t5.startLoc, t5.endLoc)), t5.options.ranges && (this.range = [t5.start, t5.end]);
               }, Yt = et2.prototype;
               function Zt(t5, e5) {
                 return e5 ? parseInt(t5, 8) : parseFloat(t5.replace(/_/g, ""));
@@ -22890,7 +22890,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }, Yt.skipBlockComment = function() {
                 var t5, e5 = this.options.onComment && this.curPosition(), i4 = this.pos, s4 = this.input.indexOf("*/", this.pos += 2);
                 if (-1 === s4 && this.raise(this.pos - 2, "Unterminated comment"), this.pos = s4 + 2, this.options.locations)
-                  for (k3.lastIndex = i4; (t5 = k3.exec(this.input)) && t5.index < this.pos; )
+                  for (k2.lastIndex = i4; (t5 = k2.exec(this.input)) && t5.index < this.pos; )
                     ++this.curLine, this.lineStart = t5.index + t5[0].length;
                 this.options.onComment && this.options.onComment(true, this.input.slice(i4 + 2, s4), i4, this.pos, e5, this.curPosition());
               }, Yt.skipLineComment = function(t5) {
@@ -22926,7 +22926,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                         }
                         break;
                       default:
-                        if (!(t5 > 8 && t5 < 14 || t5 >= 5760 && w3.test(String.fromCharCode(t5))))
+                        if (!(t5 > 8 && t5 < 14 || t5 >= 5760 && w2.test(String.fromCharCode(t5))))
                           break t;
                         ++this.pos;
                     }
@@ -22954,7 +22954,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 return 61 === this.input.charCodeAt(this.pos + 1) ? this.finishOp(b2.assign, 2) : this.finishOp(b2.bitwiseXOR, 1);
               }, Yt.readToken_plus_min = function(t5) {
                 var e5 = this.input.charCodeAt(this.pos + 1);
-                return e5 === t5 ? 45 !== e5 || this.inModule || 62 !== this.input.charCodeAt(this.pos + 2) || 0 !== this.lastTokEnd && !_3.test(this.input.slice(this.lastTokEnd, this.pos)) ? this.finishOp(b2.incDec, 2) : (this.skipLineComment(3), this.skipSpace(), this.nextToken()) : 61 === e5 ? this.finishOp(b2.assign, 2) : this.finishOp(b2.plusMin, 1);
+                return e5 === t5 ? 45 !== e5 || this.inModule || 62 !== this.input.charCodeAt(this.pos + 2) || 0 !== this.lastTokEnd && !_2.test(this.input.slice(this.lastTokEnd, this.pos)) ? this.finishOp(b2.incDec, 2) : (this.skipLineComment(3), this.skipSpace(), this.nextToken()) : 61 === e5 ? this.finishOp(b2.assign, 2) : this.finishOp(b2.plusMin, 1);
               }, Yt.readToken_lt_gt = function(t5) {
                 var e5 = this.input.charCodeAt(this.pos + 1), i4 = 1;
                 return e5 === t5 ? (i4 = 62 === t5 && 62 === this.input.charCodeAt(this.pos + 2) ? 3 : 2, 61 === this.input.charCodeAt(this.pos + i4) ? this.finishOp(b2.assign, i4 + 1) : this.finishOp(b2.bitShift, i4)) : 33 !== e5 || 60 !== t5 || this.inModule || 45 !== this.input.charCodeAt(this.pos + 2) || 45 !== this.input.charCodeAt(this.pos + 3) ? (61 === e5 && (i4 = 2), this.finishOp(b2.relational, i4)) : (this.skipLineComment(4), this.skipSpace(), this.nextToken());
@@ -23055,7 +23055,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 for (var t5, e5, i4 = this.pos; ; ) {
                   this.pos >= this.input.length && this.raise(i4, "Unterminated regular expression");
                   var s4 = this.input.charAt(this.pos);
-                  if (_3.test(s4) && this.raise(i4, "Unterminated regular expression"), t5)
+                  if (_2.test(s4) && this.raise(i4, "Unterminated regular expression"), t5)
                     t5 = false;
                   else {
                     if ("[" === s4)
@@ -23250,7 +23250,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               function ae3(t5, e5) {
                 return et2.tokenizer(t5, e5);
               }
-              et2.acorn = { Parser: et2, version: ie3, defaultOptions: R2, Position: L3, SourceLocation: V2, getLineInfo: O3, Node: vt2, TokenType: f2, tokTypes: b2, keywordTypes: y2, TokContext: kt2, tokContexts: St2, isIdentifierChar: d2, isIdentifierStart: u2, Token: Jt, isNewLine: S2, lineBreak: _3, lineBreakG: k3, nonASCIIwhitespace: w3 }, t4.Node = vt2, t4.Parser = et2, t4.Position = L3, t4.SourceLocation = V2, t4.TokContext = kt2, t4.Token = Jt, t4.TokenType = f2, t4.defaultOptions = R2, t4.getLineInfo = O3, t4.isIdentifierChar = d2, t4.isIdentifierStart = u2, t4.isNewLine = S2, t4.keywordTypes = y2, t4.lineBreak = _3, t4.lineBreakG = k3, t4.nonASCIIwhitespace = w3, t4.parse = se3, t4.parseExpressionAt = re3, t4.tokContexts = St2, t4.tokTypes = b2, t4.tokenizer = ae3, t4.version = ie3, Object.defineProperty(t4, "__esModule", { value: true });
+              et2.acorn = { Parser: et2, version: ie3, defaultOptions: R2, Position: L2, SourceLocation: V3, getLineInfo: O3, Node: vt2, TokenType: f2, tokTypes: b2, keywordTypes: y2, TokContext: kt2, tokContexts: St2, isIdentifierChar: d2, isIdentifierStart: u2, Token: Jt, isNewLine: S2, lineBreak: _2, lineBreakG: k2, nonASCIIwhitespace: w2 }, t4.Node = vt2, t4.Parser = et2, t4.Position = L2, t4.SourceLocation = V3, t4.TokContext = kt2, t4.Token = Jt, t4.TokenType = f2, t4.defaultOptions = R2, t4.getLineInfo = O3, t4.isIdentifierChar = d2, t4.isIdentifierStart = u2, t4.isNewLine = S2, t4.keywordTypes = y2, t4.lineBreak = _2, t4.lineBreakG = k2, t4.nonASCIIwhitespace = w2, t4.parse = se3, t4.parseExpressionAt = re3, t4.tokContexts = St2, t4.tokTypes = b2, t4.tokenizer = ae3, t4.version = ie3, Object.defineProperty(t4, "__esModule", { value: true });
             }(e3);
           }, 272: (t3, e3, i3) => {
             "use strict";
@@ -23279,21 +23279,21 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return new g2(t4, { beforeExpr: true, binop: e4 });
             }
             var y2 = { beforeExpr: true }, v3 = { startsExpr: true }, b2 = {};
-            function _3(t4, e4) {
+            function _2(t4, e4) {
               return void 0 === e4 && (e4 = {}), e4.keyword = t4, b2[t4] = new g2(t4, e4);
             }
-            var k3 = { num: new g2("num", v3), regexp: new g2("regexp", v3), string: new g2("string", v3), name: new g2("name", v3), eof: new g2("eof"), bracketL: new g2("[", { beforeExpr: true, startsExpr: true }), bracketR: new g2("]"), braceL: new g2("{", { beforeExpr: true, startsExpr: true }), braceR: new g2("}"), parenL: new g2("(", { beforeExpr: true, startsExpr: true }), parenR: new g2(")"), comma: new g2(",", y2), semi: new g2(";", y2), colon: new g2(":", y2), dot: new g2("."), question: new g2("?", y2), questionDot: new g2("?."), arrow: new g2("=>", y2), template: new g2("template"), invalidTemplate: new g2("invalidTemplate"), ellipsis: new g2("...", y2), backQuote: new g2("`", v3), dollarBraceL: new g2("${", { beforeExpr: true, startsExpr: true }), eq: new g2("=", { beforeExpr: true, isAssign: true }), assign: new g2("_=", { beforeExpr: true, isAssign: true }), incDec: new g2("++/--", { prefix: true, postfix: true, startsExpr: true }), prefix: new g2("!/~", { beforeExpr: true, prefix: true, startsExpr: true }), logicalOR: x2("||", 1), logicalAND: x2("&&", 2), bitwiseOR: x2("|", 3), bitwiseXOR: x2("^", 4), bitwiseAND: x2("&", 5), equality: x2("==/!=/===/!==", 6), relational: x2("</>/<=/>=", 7), bitShift: x2("<</>>/>>>", 8), plusMin: new g2("+/-", { beforeExpr: true, binop: 9, prefix: true, startsExpr: true }), modulo: x2("%", 10), star: x2("*", 10), slash: x2("/", 10), starstar: new g2("**", { beforeExpr: true }), coalesce: x2("??", 1), _break: _3("break"), _case: _3("case", y2), _catch: _3("catch"), _continue: _3("continue"), _debugger: _3("debugger"), _default: _3("default", y2), _do: _3("do", { isLoop: true, beforeExpr: true }), _else: _3("else", y2), _finally: _3("finally"), _for: _3("for", { isLoop: true }), _function: _3("function", v3), _if: _3("if"), _return: _3("return", y2), _switch: _3("switch"), _throw: _3("throw", y2), _try: _3("try"), _var: _3("var"), _const: _3("const"), _while: _3("while", { isLoop: true }), _with: _3("with"), _new: _3("new", { beforeExpr: true, startsExpr: true }), _this: _3("this", v3), _super: _3("super", v3), _class: _3("class", v3), _extends: _3("extends", y2), _export: _3("export"), _import: _3("import", v3), _null: _3("null", v3), _true: _3("true", v3), _false: _3("false", v3), _in: _3("in", { beforeExpr: true, binop: 7 }), _instanceof: _3("instanceof", { beforeExpr: true, binop: 7 }), _typeof: _3("typeof", { beforeExpr: true, prefix: true, startsExpr: true }), _void: _3("void", { beforeExpr: true, prefix: true, startsExpr: true }), _delete: _3("delete", { beforeExpr: true, prefix: true, startsExpr: true }) }, S2 = /\r\n?|\n|\u2028|\u2029/, w3 = new RegExp(S2.source, "g");
+            var k2 = { num: new g2("num", v3), regexp: new g2("regexp", v3), string: new g2("string", v3), name: new g2("name", v3), eof: new g2("eof"), bracketL: new g2("[", { beforeExpr: true, startsExpr: true }), bracketR: new g2("]"), braceL: new g2("{", { beforeExpr: true, startsExpr: true }), braceR: new g2("}"), parenL: new g2("(", { beforeExpr: true, startsExpr: true }), parenR: new g2(")"), comma: new g2(",", y2), semi: new g2(";", y2), colon: new g2(":", y2), dot: new g2("."), question: new g2("?", y2), questionDot: new g2("?."), arrow: new g2("=>", y2), template: new g2("template"), invalidTemplate: new g2("invalidTemplate"), ellipsis: new g2("...", y2), backQuote: new g2("`", v3), dollarBraceL: new g2("${", { beforeExpr: true, startsExpr: true }), eq: new g2("=", { beforeExpr: true, isAssign: true }), assign: new g2("_=", { beforeExpr: true, isAssign: true }), incDec: new g2("++/--", { prefix: true, postfix: true, startsExpr: true }), prefix: new g2("!/~", { beforeExpr: true, prefix: true, startsExpr: true }), logicalOR: x2("||", 1), logicalAND: x2("&&", 2), bitwiseOR: x2("|", 3), bitwiseXOR: x2("^", 4), bitwiseAND: x2("&", 5), equality: x2("==/!=/===/!==", 6), relational: x2("</>/<=/>=", 7), bitShift: x2("<</>>/>>>", 8), plusMin: new g2("+/-", { beforeExpr: true, binop: 9, prefix: true, startsExpr: true }), modulo: x2("%", 10), star: x2("*", 10), slash: x2("/", 10), starstar: new g2("**", { beforeExpr: true }), coalesce: x2("??", 1), _break: _2("break"), _case: _2("case", y2), _catch: _2("catch"), _continue: _2("continue"), _debugger: _2("debugger"), _default: _2("default", y2), _do: _2("do", { isLoop: true, beforeExpr: true }), _else: _2("else", y2), _finally: _2("finally"), _for: _2("for", { isLoop: true }), _function: _2("function", v3), _if: _2("if"), _return: _2("return", y2), _switch: _2("switch"), _throw: _2("throw", y2), _try: _2("try"), _var: _2("var"), _const: _2("const"), _while: _2("while", { isLoop: true }), _with: _2("with"), _new: _2("new", { beforeExpr: true, startsExpr: true }), _this: _2("this", v3), _super: _2("super", v3), _class: _2("class", v3), _extends: _2("extends", y2), _export: _2("export"), _import: _2("import", v3), _null: _2("null", v3), _true: _2("true", v3), _false: _2("false", v3), _in: _2("in", { beforeExpr: true, binop: 7 }), _instanceof: _2("instanceof", { beforeExpr: true, binop: 7 }), _typeof: _2("typeof", { beforeExpr: true, prefix: true, startsExpr: true }), _void: _2("void", { beforeExpr: true, prefix: true, startsExpr: true }), _delete: _2("delete", { beforeExpr: true, prefix: true, startsExpr: true }) }, S2 = /\r\n?|\n|\u2028|\u2029/, w2 = new RegExp(S2.source, "g");
             function C3(t4, e4) {
               return 10 === t4 || 13 === t4 || !e4 && (8232 === t4 || 8233 === t4);
             }
-            var E2 = /[\u1680\u2000-\u200a\u202f\u205f\u3000\ufeff]/, A2 = /(?:\s|\/\/.*|\/\*[^]*?\*\/)*/g, I2 = Object.prototype, P2 = I2.hasOwnProperty, T3 = I2.toString;
+            var E2 = /[\u1680\u2000-\u200a\u202f\u205f\u3000\ufeff]/, A2 = /(?:\s|\/\/.*|\/\*[^]*?\*\/)*/g, I2 = Object.prototype, P3 = I2.hasOwnProperty, T3 = I2.toString;
             function N2(t4, e4) {
-              return P2.call(t4, e4);
+              return P3.call(t4, e4);
             }
-            var L3 = Array.isArray || function(t4) {
+            var L2 = Array.isArray || function(t4) {
               return "[object Array]" === T3.call(t4);
             };
-            function V2(t4) {
+            function V3(t4) {
               return new RegExp("^(?:" + t4.replace(/ /g, "|") + ")$");
             }
             var O3 = function(t4, e4) {
@@ -23307,25 +23307,25 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             };
             function M2(t4, e4) {
               for (var i4 = 1, s4 = 0; ; ) {
-                w3.lastIndex = s4;
-                var r3 = w3.exec(t4);
+                w2.lastIndex = s4;
+                var r3 = w2.exec(t4);
                 if (!(r3 && r3.index < e4))
                   return new O3(i4, e4 - s4);
                 ++i4, s4 = r3.index + r3[0].length;
               }
             }
-            var B2 = { ecmaVersion: null, sourceType: "script", onInsertedSemicolon: null, onTrailingComma: null, allowReserved: null, allowReturnOutsideFunction: false, allowImportExportEverywhere: false, allowAwaitOutsideFunction: false, allowHashBang: false, locations: false, onToken: null, onComment: null, ranges: false, program: null, sourceFile: null, directSourceFile: null, preserveParens: false }, D3 = false;
+            var B3 = { ecmaVersion: null, sourceType: "script", onInsertedSemicolon: null, onTrailingComma: null, allowReserved: null, allowReturnOutsideFunction: false, allowImportExportEverywhere: false, allowAwaitOutsideFunction: false, allowHashBang: false, locations: false, onToken: null, onComment: null, ranges: false, program: null, sourceFile: null, directSourceFile: null, preserveParens: false }, D3 = false;
             function j2(t4) {
               var e4 = {};
-              for (var i4 in B2)
-                e4[i4] = t4 && N2(t4, i4) ? t4[i4] : B2[i4];
-              if ("latest" === e4.ecmaVersion ? e4.ecmaVersion = 1e8 : null == e4.ecmaVersion ? (!D3 && "object" == typeof console && console.warn && (D3 = true, console.warn("Since Acorn 8.0.0, options.ecmaVersion is required.\nDefaulting to 2020, but this will stop working in the future.")), e4.ecmaVersion = 11) : e4.ecmaVersion >= 2015 && (e4.ecmaVersion -= 2009), null == e4.allowReserved && (e4.allowReserved = e4.ecmaVersion < 5), L3(e4.onToken)) {
+              for (var i4 in B3)
+                e4[i4] = t4 && N2(t4, i4) ? t4[i4] : B3[i4];
+              if ("latest" === e4.ecmaVersion ? e4.ecmaVersion = 1e8 : null == e4.ecmaVersion ? (!D3 && "object" == typeof console && console.warn && (D3 = true, console.warn("Since Acorn 8.0.0, options.ecmaVersion is required.\nDefaulting to 2020, but this will stop working in the future.")), e4.ecmaVersion = 11) : e4.ecmaVersion >= 2015 && (e4.ecmaVersion -= 2009), null == e4.allowReserved && (e4.allowReserved = e4.ecmaVersion < 5), L2(e4.onToken)) {
                 var s4 = e4.onToken;
                 e4.onToken = function(t5) {
                   return s4.push(t5);
                 };
               }
-              return L3(e4.onComment) && (e4.onComment = /* @__PURE__ */ function(t5, e5) {
+              return L2(e4.onComment) && (e4.onComment = /* @__PURE__ */ function(t5, e5) {
                 return function(i5, s5, r3, a3, n3, o3) {
                   var h3 = { type: i5 ? "Block" : "Line", value: s5, start: r3, end: a3 };
                   t5.locations && (h3.loc = new R2(this, n3, o3)), t5.ranges && (h3.range = [r3, a3]), e5.push(h3);
@@ -23335,14 +23335,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             function U3(t4, e4) {
               return 2 | (t4 ? 4 : 0) | (e4 ? 8 : 0);
             }
-            var F2 = function(t4, e4, i4) {
-              this.options = t4 = j2(t4), this.sourceFile = t4.sourceFile, this.keywords = V2(a2[t4.ecmaVersion >= 6 ? 6 : "module" === t4.sourceType ? "5module" : 5]);
+            var F3 = function(t4, e4, i4) {
+              this.options = t4 = j2(t4), this.sourceFile = t4.sourceFile, this.keywords = V3(a2[t4.ecmaVersion >= 6 ? 6 : "module" === t4.sourceType ? "5module" : 5]);
               var r3 = "";
-              true !== t4.allowReserved && (r3 = s3[t4.ecmaVersion >= 6 ? 6 : 5 === t4.ecmaVersion ? 5 : 3], "module" === t4.sourceType && (r3 += " await")), this.reservedWords = V2(r3);
+              true !== t4.allowReserved && (r3 = s3[t4.ecmaVersion >= 6 ? 6 : 5 === t4.ecmaVersion ? 5 : 3], "module" === t4.sourceType && (r3 += " await")), this.reservedWords = V3(r3);
               var n3 = (r3 ? r3 + " " : "") + s3.strict;
-              this.reservedWordsStrict = V2(n3), this.reservedWordsStrictBind = V2(n3 + " " + s3.strictBind), this.input = String(e4), this.containsEsc = false, i4 ? (this.pos = i4, this.lineStart = this.input.lastIndexOf("\n", i4 - 1) + 1, this.curLine = this.input.slice(0, this.lineStart).split(S2).length) : (this.pos = this.lineStart = 0, this.curLine = 1), this.type = k3.eof, this.value = null, this.start = this.end = this.pos, this.startLoc = this.endLoc = this.curPosition(), this.lastTokEndLoc = this.lastTokStartLoc = null, this.lastTokStart = this.lastTokEnd = this.pos, this.context = this.initialContext(), this.exprAllowed = true, this.inModule = "module" === t4.sourceType, this.strict = this.inModule || this.strictDirective(this.pos), this.potentialArrowAt = -1, this.yieldPos = this.awaitPos = this.awaitIdentPos = 0, this.labels = [], this.undefinedExports = /* @__PURE__ */ Object.create(null), 0 === this.pos && t4.allowHashBang && "#!" === this.input.slice(0, 2) && this.skipLineComment(2), this.scopeStack = [], this.enterScope(1), this.regexpState = null;
+              this.reservedWordsStrict = V3(n3), this.reservedWordsStrictBind = V3(n3 + " " + s3.strictBind), this.input = String(e4), this.containsEsc = false, i4 ? (this.pos = i4, this.lineStart = this.input.lastIndexOf("\n", i4 - 1) + 1, this.curLine = this.input.slice(0, this.lineStart).split(S2).length) : (this.pos = this.lineStart = 0, this.curLine = 1), this.type = k2.eof, this.value = null, this.start = this.end = this.pos, this.startLoc = this.endLoc = this.curPosition(), this.lastTokEndLoc = this.lastTokStartLoc = null, this.lastTokStart = this.lastTokEnd = this.pos, this.context = this.initialContext(), this.exprAllowed = true, this.inModule = "module" === t4.sourceType, this.strict = this.inModule || this.strictDirective(this.pos), this.potentialArrowAt = -1, this.yieldPos = this.awaitPos = this.awaitIdentPos = 0, this.labels = [], this.undefinedExports = /* @__PURE__ */ Object.create(null), 0 === this.pos && t4.allowHashBang && "#!" === this.input.slice(0, 2) && this.skipLineComment(2), this.scopeStack = [], this.enterScope(1), this.regexpState = null;
             }, q3 = { inFunction: { configurable: true }, inGenerator: { configurable: true }, inAsync: { configurable: true }, allowSuper: { configurable: true }, allowDirectSuper: { configurable: true }, treatFunctionsAsVar: { configurable: true }, inNonArrowFunction: { configurable: true } };
-            F2.prototype.parse = function() {
+            F3.prototype.parse = function() {
               var t4 = this.options.program || this.startNode();
               return this.nextToken(), this.parseTopLevel(t4);
             }, q3.inFunction.get = function() {
@@ -23359,21 +23359,21 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return this.treatFunctionsAsVarInScope(this.currentScope());
             }, q3.inNonArrowFunction.get = function() {
               return (2 & this.currentThisScope().flags) > 0;
-            }, F2.extend = function() {
+            }, F3.extend = function() {
               for (var t4 = [], e4 = arguments.length; e4--; )
                 t4[e4] = arguments[e4];
               for (var i4 = this, s4 = 0; s4 < t4.length; s4++)
                 i4 = t4[s4](i4);
               return i4;
-            }, F2.parse = function(t4, e4) {
+            }, F3.parse = function(t4, e4) {
               return new this(e4, t4).parse();
-            }, F2.parseExpressionAt = function(t4, e4, i4) {
+            }, F3.parseExpressionAt = function(t4, e4, i4) {
               var s4 = new this(i4, t4, e4);
               return s4.nextToken(), s4.parseExpression();
-            }, F2.tokenizer = function(t4, e4) {
+            }, F3.tokenizer = function(t4, e4) {
               return new this(e4, t4);
-            }, Object.defineProperties(F2.prototype, q3);
-            var G3 = F2.prototype, H3 = /^(?:'((?:\\.|[^'\\])*?)'|"((?:\\.|[^"\\])*?)")/;
+            }, Object.defineProperties(F3.prototype, q3);
+            var G3 = F3.prototype, H3 = /^(?:'((?:\\.|[^'\\])*?)'|"((?:\\.|[^"\\])*?)")/;
             function W3() {
               this.shorthandAssign = this.trailingComma = this.parenthesizedAssign = this.parenthesizedBind = this.doubleProto = -1;
             }
@@ -23393,18 +23393,18 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, G3.eat = function(t4) {
               return this.type === t4 && (this.next(), true);
             }, G3.isContextual = function(t4) {
-              return this.type === k3.name && this.value === t4 && !this.containsEsc;
+              return this.type === k2.name && this.value === t4 && !this.containsEsc;
             }, G3.eatContextual = function(t4) {
               return !!this.isContextual(t4) && (this.next(), true);
             }, G3.expectContextual = function(t4) {
               this.eatContextual(t4) || this.unexpected();
             }, G3.canInsertSemicolon = function() {
-              return this.type === k3.eof || this.type === k3.braceR || S2.test(this.input.slice(this.lastTokEnd, this.start));
+              return this.type === k2.eof || this.type === k2.braceR || S2.test(this.input.slice(this.lastTokEnd, this.start));
             }, G3.insertSemicolon = function() {
               if (this.canInsertSemicolon())
                 return this.options.onInsertedSemicolon && this.options.onInsertedSemicolon(this.lastTokEnd, this.lastTokEndLoc), true;
             }, G3.semicolon = function() {
-              this.eat(k3.semi) || this.insertSemicolon() || this.unexpected();
+              this.eat(k2.semi) || this.insertSemicolon() || this.unexpected();
             }, G3.afterTrailingComma = function(t4, e4) {
               if (this.type === t4)
                 return this.options.onTrailingComma && this.options.onTrailingComma(this.lastTokStart, this.lastTokStartLoc), e4 || this.next(), true;
@@ -23430,10 +23430,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, G3.isSimpleAssignTarget = function(t4) {
               return "ParenthesizedExpression" === t4.type ? this.isSimpleAssignTarget(t4.expression) : "Identifier" === t4.type || "MemberExpression" === t4.type;
             };
-            var z2 = F2.prototype;
+            var z2 = F3.prototype;
             z2.parseTopLevel = function(t4) {
               var e4 = /* @__PURE__ */ Object.create(null);
-              for (t4.body || (t4.body = []); this.type !== k3.eof; ) {
+              for (t4.body || (t4.body = []); this.type !== k2.eof; ) {
                 var i4 = this.parseStatement(null, true, e4);
                 t4.body.push(i4);
               }
@@ -23472,59 +23472,59 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return !(S2.test(this.input.slice(this.pos, e4)) || "function" !== this.input.slice(e4, e4 + 8) || e4 + 8 !== this.input.length && m3(this.input.charAt(e4 + 8)));
             }, z2.parseStatement = function(t4, e4, i4) {
               var s4, r3 = this.type, a3 = this.startNode();
-              switch (this.isLet(t4) && (r3 = k3._var, s4 = "let"), r3) {
-                case k3._break:
-                case k3._continue:
+              switch (this.isLet(t4) && (r3 = k2._var, s4 = "let"), r3) {
+                case k2._break:
+                case k2._continue:
                   return this.parseBreakContinueStatement(a3, r3.keyword);
-                case k3._debugger:
+                case k2._debugger:
                   return this.parseDebuggerStatement(a3);
-                case k3._do:
+                case k2._do:
                   return this.parseDoStatement(a3);
-                case k3._for:
+                case k2._for:
                   return this.parseForStatement(a3);
-                case k3._function:
+                case k2._function:
                   return t4 && (this.strict || "if" !== t4 && "label" !== t4) && this.options.ecmaVersion >= 6 && this.unexpected(), this.parseFunctionStatement(a3, false, !t4);
-                case k3._class:
+                case k2._class:
                   return t4 && this.unexpected(), this.parseClass(a3, true);
-                case k3._if:
+                case k2._if:
                   return this.parseIfStatement(a3);
-                case k3._return:
+                case k2._return:
                   return this.parseReturnStatement(a3);
-                case k3._switch:
+                case k2._switch:
                   return this.parseSwitchStatement(a3);
-                case k3._throw:
+                case k2._throw:
                   return this.parseThrowStatement(a3);
-                case k3._try:
+                case k2._try:
                   return this.parseTryStatement(a3);
-                case k3._const:
-                case k3._var:
+                case k2._const:
+                case k2._var:
                   return s4 = s4 || this.value, t4 && "var" !== s4 && this.unexpected(), this.parseVarStatement(a3, s4);
-                case k3._while:
+                case k2._while:
                   return this.parseWhileStatement(a3);
-                case k3._with:
+                case k2._with:
                   return this.parseWithStatement(a3);
-                case k3.braceL:
+                case k2.braceL:
                   return this.parseBlock(true, a3);
-                case k3.semi:
+                case k2.semi:
                   return this.parseEmptyStatement(a3);
-                case k3._export:
-                case k3._import:
-                  if (this.options.ecmaVersion > 10 && r3 === k3._import) {
+                case k2._export:
+                case k2._import:
+                  if (this.options.ecmaVersion > 10 && r3 === k2._import) {
                     A2.lastIndex = this.pos;
                     var n3 = A2.exec(this.input), o3 = this.pos + n3[0].length, h3 = this.input.charCodeAt(o3);
                     if (40 === h3 || 46 === h3)
                       return this.parseExpressionStatement(a3, this.parseExpression());
                   }
-                  return this.options.allowImportExportEverywhere || (e4 || this.raise(this.start, "'import' and 'export' may only appear at the top level"), this.inModule || this.raise(this.start, "'import' and 'export' may appear only with 'sourceType: module'")), r3 === k3._import ? this.parseImport(a3) : this.parseExport(a3, i4);
+                  return this.options.allowImportExportEverywhere || (e4 || this.raise(this.start, "'import' and 'export' may only appear at the top level"), this.inModule || this.raise(this.start, "'import' and 'export' may appear only with 'sourceType: module'")), r3 === k2._import ? this.parseImport(a3) : this.parseExport(a3, i4);
                 default:
                   if (this.isAsyncFunction())
                     return t4 && this.unexpected(), this.next(), this.parseFunctionStatement(a3, true, !t4);
                   var p4 = this.value, c3 = this.parseExpression();
-                  return r3 === k3.name && "Identifier" === c3.type && this.eat(k3.colon) ? this.parseLabeledStatement(a3, p4, c3, t4) : this.parseExpressionStatement(a3, c3);
+                  return r3 === k2.name && "Identifier" === c3.type && this.eat(k2.colon) ? this.parseLabeledStatement(a3, p4, c3, t4) : this.parseExpressionStatement(a3, c3);
               }
             }, z2.parseBreakContinueStatement = function(t4, e4) {
               var i4 = "break" === e4;
-              this.next(), this.eat(k3.semi) || this.insertSemicolon() ? t4.label = null : this.type !== k3.name ? this.unexpected() : (t4.label = this.parseIdent(), this.semicolon());
+              this.next(), this.eat(k2.semi) || this.insertSemicolon() ? t4.label = null : this.type !== k2.name ? this.unexpected() : (t4.label = this.parseIdent(), this.semicolon());
               for (var s4 = 0; s4 < this.labels.length; ++s4) {
                 var r3 = this.labels[s4];
                 if (null == t4.label || r3.name === t4.label.name) {
@@ -23538,32 +23538,32 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, z2.parseDebuggerStatement = function(t4) {
               return this.next(), this.semicolon(), this.finishNode(t4, "DebuggerStatement");
             }, z2.parseDoStatement = function(t4) {
-              return this.next(), this.labels.push(K3), t4.body = this.parseStatement("do"), this.labels.pop(), this.expect(k3._while), t4.test = this.parseParenExpression(), this.options.ecmaVersion >= 6 ? this.eat(k3.semi) : this.semicolon(), this.finishNode(t4, "DoWhileStatement");
+              return this.next(), this.labels.push(K3), t4.body = this.parseStatement("do"), this.labels.pop(), this.expect(k2._while), t4.test = this.parseParenExpression(), this.options.ecmaVersion >= 6 ? this.eat(k2.semi) : this.semicolon(), this.finishNode(t4, "DoWhileStatement");
             }, z2.parseForStatement = function(t4) {
               this.next();
               var e4 = this.options.ecmaVersion >= 9 && (this.inAsync || !this.inFunction && this.options.allowAwaitOutsideFunction) && this.eatContextual("await") ? this.lastTokStart : -1;
-              if (this.labels.push(K3), this.enterScope(0), this.expect(k3.parenL), this.type === k3.semi)
+              if (this.labels.push(K3), this.enterScope(0), this.expect(k2.parenL), this.type === k2.semi)
                 return e4 > -1 && this.unexpected(e4), this.parseFor(t4, null);
               var i4 = this.isLet();
-              if (this.type === k3._var || this.type === k3._const || i4) {
+              if (this.type === k2._var || this.type === k2._const || i4) {
                 var s4 = this.startNode(), r3 = i4 ? "let" : this.value;
-                return this.next(), this.parseVar(s4, true, r3), this.finishNode(s4, "VariableDeclaration"), (this.type === k3._in || this.options.ecmaVersion >= 6 && this.isContextual("of")) && 1 === s4.declarations.length ? (this.options.ecmaVersion >= 9 && (this.type === k3._in ? e4 > -1 && this.unexpected(e4) : t4.await = e4 > -1), this.parseForIn(t4, s4)) : (e4 > -1 && this.unexpected(e4), this.parseFor(t4, s4));
+                return this.next(), this.parseVar(s4, true, r3), this.finishNode(s4, "VariableDeclaration"), (this.type === k2._in || this.options.ecmaVersion >= 6 && this.isContextual("of")) && 1 === s4.declarations.length ? (this.options.ecmaVersion >= 9 && (this.type === k2._in ? e4 > -1 && this.unexpected(e4) : t4.await = e4 > -1), this.parseForIn(t4, s4)) : (e4 > -1 && this.unexpected(e4), this.parseFor(t4, s4));
               }
               var a3 = new W3(), n3 = this.parseExpression(true, a3);
-              return this.type === k3._in || this.options.ecmaVersion >= 6 && this.isContextual("of") ? (this.options.ecmaVersion >= 9 && (this.type === k3._in ? e4 > -1 && this.unexpected(e4) : t4.await = e4 > -1), this.toAssignable(n3, false, a3), this.checkLValPattern(n3), this.parseForIn(t4, n3)) : (this.checkExpressionErrors(a3, true), e4 > -1 && this.unexpected(e4), this.parseFor(t4, n3));
+              return this.type === k2._in || this.options.ecmaVersion >= 6 && this.isContextual("of") ? (this.options.ecmaVersion >= 9 && (this.type === k2._in ? e4 > -1 && this.unexpected(e4) : t4.await = e4 > -1), this.toAssignable(n3, false, a3), this.checkLValPattern(n3), this.parseForIn(t4, n3)) : (this.checkExpressionErrors(a3, true), e4 > -1 && this.unexpected(e4), this.parseFor(t4, n3));
             }, z2.parseFunctionStatement = function(t4, e4, i4) {
               return this.next(), this.parseFunction(t4, J3 | (i4 ? 0 : Y3), false, e4);
             }, z2.parseIfStatement = function(t4) {
-              return this.next(), t4.test = this.parseParenExpression(), t4.consequent = this.parseStatement("if"), t4.alternate = this.eat(k3._else) ? this.parseStatement("if") : null, this.finishNode(t4, "IfStatement");
+              return this.next(), t4.test = this.parseParenExpression(), t4.consequent = this.parseStatement("if"), t4.alternate = this.eat(k2._else) ? this.parseStatement("if") : null, this.finishNode(t4, "IfStatement");
             }, z2.parseReturnStatement = function(t4) {
-              return this.inFunction || this.options.allowReturnOutsideFunction || this.raise(this.start, "'return' outside of function"), this.next(), this.eat(k3.semi) || this.insertSemicolon() ? t4.argument = null : (t4.argument = this.parseExpression(), this.semicolon()), this.finishNode(t4, "ReturnStatement");
+              return this.inFunction || this.options.allowReturnOutsideFunction || this.raise(this.start, "'return' outside of function"), this.next(), this.eat(k2.semi) || this.insertSemicolon() ? t4.argument = null : (t4.argument = this.parseExpression(), this.semicolon()), this.finishNode(t4, "ReturnStatement");
             }, z2.parseSwitchStatement = function(t4) {
               var e4;
-              this.next(), t4.discriminant = this.parseParenExpression(), t4.cases = [], this.expect(k3.braceL), this.labels.push(X3), this.enterScope(0);
-              for (var i4 = false; this.type !== k3.braceR; )
-                if (this.type === k3._case || this.type === k3._default) {
-                  var s4 = this.type === k3._case;
-                  e4 && this.finishNode(e4, "SwitchCase"), t4.cases.push(e4 = this.startNode()), e4.consequent = [], this.next(), s4 ? e4.test = this.parseExpression() : (i4 && this.raiseRecoverable(this.lastTokStart, "Multiple default clauses"), i4 = true, e4.test = null), this.expect(k3.colon);
+              this.next(), t4.discriminant = this.parseParenExpression(), t4.cases = [], this.expect(k2.braceL), this.labels.push(X3), this.enterScope(0);
+              for (var i4 = false; this.type !== k2.braceR; )
+                if (this.type === k2._case || this.type === k2._default) {
+                  var s4 = this.type === k2._case;
+                  e4 && this.finishNode(e4, "SwitchCase"), t4.cases.push(e4 = this.startNode()), e4.consequent = [], this.next(), s4 ? e4.test = this.parseExpression() : (i4 && this.raiseRecoverable(this.lastTokStart, "Multiple default clauses"), i4 = true, e4.test = null), this.expect(k2.colon);
                 } else
                   e4 || this.unexpected(), e4.consequent.push(this.parseStatement(null));
               return this.exitScope(), e4 && this.finishNode(e4, "SwitchCase"), this.next(), this.labels.pop(), this.finishNode(t4, "SwitchStatement");
@@ -23572,17 +23572,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             };
             var Q3 = [];
             z2.parseTryStatement = function(t4) {
-              if (this.next(), t4.block = this.parseBlock(), t4.handler = null, this.type === k3._catch) {
+              if (this.next(), t4.block = this.parseBlock(), t4.handler = null, this.type === k2._catch) {
                 var e4 = this.startNode();
-                if (this.next(), this.eat(k3.parenL)) {
+                if (this.next(), this.eat(k2.parenL)) {
                   e4.param = this.parseBindingAtom();
                   var i4 = "Identifier" === e4.param.type;
-                  this.enterScope(i4 ? 32 : 0), this.checkLValPattern(e4.param, i4 ? 4 : 2), this.expect(k3.parenR);
+                  this.enterScope(i4 ? 32 : 0), this.checkLValPattern(e4.param, i4 ? 4 : 2), this.expect(k2.parenR);
                 } else
                   this.options.ecmaVersion < 10 && this.unexpected(), e4.param = null, this.enterScope(0);
                 e4.body = this.parseBlock(false), this.exitScope(), t4.handler = this.finishNode(e4, "CatchClause");
               }
-              return t4.finalizer = this.eat(k3._finally) ? this.parseBlock() : null, t4.handler || t4.finalizer || this.raise(t4.start, "Missing catch or finally clause"), this.finishNode(t4, "TryStatement");
+              return t4.finalizer = this.eat(k2._finally) ? this.parseBlock() : null, t4.handler || t4.finalizer || this.raise(t4.start, "Missing catch or finally clause"), this.finishNode(t4, "TryStatement");
             }, z2.parseVarStatement = function(t4, e4) {
               return this.next(), this.parseVar(t4, false, e4), this.semicolon(), this.finishNode(t4, "VariableDeclaration");
             }, z2.parseWhileStatement = function(t4) {
@@ -23595,7 +23595,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               for (var r3 = 0, a3 = this.labels; r3 < a3.length; r3 += 1) {
                 a3[r3].name === e4 && this.raise(i4.start, "Label '" + e4 + "' is already declared");
               }
-              for (var n3 = this.type.isLoop ? "loop" : this.type === k3._switch ? "switch" : null, o3 = this.labels.length - 1; o3 >= 0; o3--) {
+              for (var n3 = this.type.isLoop ? "loop" : this.type === k2._switch ? "switch" : null, o3 = this.labels.length - 1; o3 >= 0; o3--) {
                 var h3 = this.labels[o3];
                 if (h3.statementStart !== t4.start)
                   break;
@@ -23605,20 +23605,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, z2.parseExpressionStatement = function(t4, e4) {
               return t4.expression = e4, this.semicolon(), this.finishNode(t4, "ExpressionStatement");
             }, z2.parseBlock = function(t4, e4, i4) {
-              for (void 0 === t4 && (t4 = true), void 0 === e4 && (e4 = this.startNode()), e4.body = [], this.expect(k3.braceL), t4 && this.enterScope(0); this.type !== k3.braceR; ) {
+              for (void 0 === t4 && (t4 = true), void 0 === e4 && (e4 = this.startNode()), e4.body = [], this.expect(k2.braceL), t4 && this.enterScope(0); this.type !== k2.braceR; ) {
                 var s4 = this.parseStatement(null);
                 e4.body.push(s4);
               }
               return i4 && (this.strict = false), this.next(), t4 && this.exitScope(), this.finishNode(e4, "BlockStatement");
             }, z2.parseFor = function(t4, e4) {
-              return t4.init = e4, this.expect(k3.semi), t4.test = this.type === k3.semi ? null : this.parseExpression(), this.expect(k3.semi), t4.update = this.type === k3.parenR ? null : this.parseExpression(), this.expect(k3.parenR), t4.body = this.parseStatement("for"), this.exitScope(), this.labels.pop(), this.finishNode(t4, "ForStatement");
+              return t4.init = e4, this.expect(k2.semi), t4.test = this.type === k2.semi ? null : this.parseExpression(), this.expect(k2.semi), t4.update = this.type === k2.parenR ? null : this.parseExpression(), this.expect(k2.parenR), t4.body = this.parseStatement("for"), this.exitScope(), this.labels.pop(), this.finishNode(t4, "ForStatement");
             }, z2.parseForIn = function(t4, e4) {
-              var i4 = this.type === k3._in;
-              return this.next(), "VariableDeclaration" === e4.type && null != e4.declarations[0].init && (!i4 || this.options.ecmaVersion < 8 || this.strict || "var" !== e4.kind || "Identifier" !== e4.declarations[0].id.type) && this.raise(e4.start, (i4 ? "for-in" : "for-of") + " loop variable declaration may not have an initializer"), t4.left = e4, t4.right = i4 ? this.parseExpression() : this.parseMaybeAssign(), this.expect(k3.parenR), t4.body = this.parseStatement("for"), this.exitScope(), this.labels.pop(), this.finishNode(t4, i4 ? "ForInStatement" : "ForOfStatement");
+              var i4 = this.type === k2._in;
+              return this.next(), "VariableDeclaration" === e4.type && null != e4.declarations[0].init && (!i4 || this.options.ecmaVersion < 8 || this.strict || "var" !== e4.kind || "Identifier" !== e4.declarations[0].id.type) && this.raise(e4.start, (i4 ? "for-in" : "for-of") + " loop variable declaration may not have an initializer"), t4.left = e4, t4.right = i4 ? this.parseExpression() : this.parseMaybeAssign(), this.expect(k2.parenR), t4.body = this.parseStatement("for"), this.exitScope(), this.labels.pop(), this.finishNode(t4, i4 ? "ForInStatement" : "ForOfStatement");
             }, z2.parseVar = function(t4, e4, i4) {
               for (t4.declarations = [], t4.kind = i4; ; ) {
                 var s4 = this.startNode();
-                if (this.parseVarId(s4, i4), this.eat(k3.eq) ? s4.init = this.parseMaybeAssign(e4) : "const" !== i4 || this.type === k3._in || this.options.ecmaVersion >= 6 && this.isContextual("of") ? "Identifier" === s4.id.type || e4 && (this.type === k3._in || this.isContextual("of")) ? s4.init = null : this.raise(this.lastTokEnd, "Complex binding patterns require an initialization value") : this.unexpected(), t4.declarations.push(this.finishNode(s4, "VariableDeclarator")), !this.eat(k3.comma))
+                if (this.parseVarId(s4, i4), this.eat(k2.eq) ? s4.init = this.parseMaybeAssign(e4) : "const" !== i4 || this.type === k2._in || this.options.ecmaVersion >= 6 && this.isContextual("of") ? "Identifier" === s4.id.type || e4 && (this.type === k2._in || this.isContextual("of")) ? s4.init = null : this.raise(this.lastTokEnd, "Complex binding patterns require an initialization value") : this.unexpected(), t4.declarations.push(this.finishNode(s4, "VariableDeclarator")), !this.eat(k2.comma))
                   break;
               }
               return t4;
@@ -23627,50 +23627,50 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             };
             var J3 = 1, Y3 = 2;
             z2.parseFunction = function(t4, e4, i4, s4) {
-              this.initFunction(t4), (this.options.ecmaVersion >= 9 || this.options.ecmaVersion >= 6 && !s4) && (this.type === k3.star && e4 & Y3 && this.unexpected(), t4.generator = this.eat(k3.star)), this.options.ecmaVersion >= 8 && (t4.async = !!s4), e4 & J3 && (t4.id = 4 & e4 && this.type !== k3.name ? null : this.parseIdent(), !t4.id || e4 & Y3 || this.checkLValSimple(t4.id, this.strict || t4.generator || t4.async ? this.treatFunctionsAsVar ? 1 : 2 : 3));
+              this.initFunction(t4), (this.options.ecmaVersion >= 9 || this.options.ecmaVersion >= 6 && !s4) && (this.type === k2.star && e4 & Y3 && this.unexpected(), t4.generator = this.eat(k2.star)), this.options.ecmaVersion >= 8 && (t4.async = !!s4), e4 & J3 && (t4.id = 4 & e4 && this.type !== k2.name ? null : this.parseIdent(), !t4.id || e4 & Y3 || this.checkLValSimple(t4.id, this.strict || t4.generator || t4.async ? this.treatFunctionsAsVar ? 1 : 2 : 3));
               var r3 = this.yieldPos, a3 = this.awaitPos, n3 = this.awaitIdentPos;
-              return this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(U3(t4.async, t4.generator)), e4 & J3 || (t4.id = this.type === k3.name ? this.parseIdent() : null), this.parseFunctionParams(t4), this.parseFunctionBody(t4, i4, false), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(t4, e4 & J3 ? "FunctionDeclaration" : "FunctionExpression");
+              return this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(U3(t4.async, t4.generator)), e4 & J3 || (t4.id = this.type === k2.name ? this.parseIdent() : null), this.parseFunctionParams(t4), this.parseFunctionBody(t4, i4, false), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(t4, e4 & J3 ? "FunctionDeclaration" : "FunctionExpression");
             }, z2.parseFunctionParams = function(t4) {
-              this.expect(k3.parenL), t4.params = this.parseBindingList(k3.parenR, false, this.options.ecmaVersion >= 8), this.checkYieldAwaitInDefaultParams();
+              this.expect(k2.parenL), t4.params = this.parseBindingList(k2.parenR, false, this.options.ecmaVersion >= 8), this.checkYieldAwaitInDefaultParams();
             }, z2.parseClass = function(t4, e4) {
               this.next();
               var i4 = this.strict;
               this.strict = true, this.parseClassId(t4, e4), this.parseClassSuper(t4);
               var s4 = this.startNode(), r3 = false;
-              for (s4.body = [], this.expect(k3.braceL); this.type !== k3.braceR; ) {
+              for (s4.body = [], this.expect(k2.braceL); this.type !== k2.braceR; ) {
                 var a3 = this.parseClassElement(null !== t4.superClass);
                 a3 && (s4.body.push(a3), "MethodDefinition" === a3.type && "constructor" === a3.kind && (r3 && this.raise(a3.start, "Duplicate constructor in the same class"), r3 = true));
               }
               return this.strict = i4, this.next(), t4.body = this.finishNode(s4, "ClassBody"), this.finishNode(t4, e4 ? "ClassDeclaration" : "ClassExpression");
             }, z2.parseClassElement = function(t4) {
               var e4 = this;
-              if (this.eat(k3.semi))
+              if (this.eat(k2.semi))
                 return null;
               var i4 = this.startNode(), s4 = function(t5, s5) {
                 void 0 === s5 && (s5 = false);
                 var r4 = e4.start, a4 = e4.startLoc;
-                return !!e4.eatContextual(t5) && (!(e4.type === k3.parenL || s5 && e4.canInsertSemicolon()) || (i4.key && e4.unexpected(), i4.computed = false, i4.key = e4.startNodeAt(r4, a4), i4.key.name = t5, e4.finishNode(i4.key, "Identifier"), false));
+                return !!e4.eatContextual(t5) && (!(e4.type === k2.parenL || s5 && e4.canInsertSemicolon()) || (i4.key && e4.unexpected(), i4.computed = false, i4.key = e4.startNodeAt(r4, a4), i4.key.name = t5, e4.finishNode(i4.key, "Identifier"), false));
               };
               i4.kind = "method", i4.static = s4("static");
-              var r3 = this.eat(k3.star), a3 = false;
-              r3 || (this.options.ecmaVersion >= 8 && s4("async", true) ? (a3 = true, r3 = this.options.ecmaVersion >= 9 && this.eat(k3.star)) : s4("get") ? i4.kind = "get" : s4("set") && (i4.kind = "set")), i4.key || this.parsePropertyName(i4);
+              var r3 = this.eat(k2.star), a3 = false;
+              r3 || (this.options.ecmaVersion >= 8 && s4("async", true) ? (a3 = true, r3 = this.options.ecmaVersion >= 9 && this.eat(k2.star)) : s4("get") ? i4.kind = "get" : s4("set") && (i4.kind = "set")), i4.key || this.parsePropertyName(i4);
               var n3 = i4.key, o3 = false;
               return i4.computed || i4.static || !("Identifier" === n3.type && "constructor" === n3.name || "Literal" === n3.type && "constructor" === n3.value) ? i4.static && "Identifier" === n3.type && "prototype" === n3.name && this.raise(n3.start, "Classes may not have a static property named prototype") : ("method" !== i4.kind && this.raise(n3.start, "Constructor can't have get/set modifier"), r3 && this.raise(n3.start, "Constructor can't be a generator"), a3 && this.raise(n3.start, "Constructor can't be an async method"), i4.kind = "constructor", o3 = t4), this.parseClassMethod(i4, r3, a3, o3), "get" === i4.kind && 0 !== i4.value.params.length && this.raiseRecoverable(i4.value.start, "getter should have no params"), "set" === i4.kind && 1 !== i4.value.params.length && this.raiseRecoverable(i4.value.start, "setter should have exactly one param"), "set" === i4.kind && "RestElement" === i4.value.params[0].type && this.raiseRecoverable(i4.value.params[0].start, "Setter cannot use rest params"), i4;
             }, z2.parseClassMethod = function(t4, e4, i4, s4) {
               return t4.value = this.parseMethod(e4, i4, s4), this.finishNode(t4, "MethodDefinition");
             }, z2.parseClassId = function(t4, e4) {
-              this.type === k3.name ? (t4.id = this.parseIdent(), e4 && this.checkLValSimple(t4.id, 2, false)) : (true === e4 && this.unexpected(), t4.id = null);
+              this.type === k2.name ? (t4.id = this.parseIdent(), e4 && this.checkLValSimple(t4.id, 2, false)) : (true === e4 && this.unexpected(), t4.id = null);
             }, z2.parseClassSuper = function(t4) {
-              t4.superClass = this.eat(k3._extends) ? this.parseExprSubscripts() : null;
+              t4.superClass = this.eat(k2._extends) ? this.parseExprSubscripts() : null;
             }, z2.parseExport = function(t4, e4) {
-              if (this.next(), this.eat(k3.star))
-                return this.options.ecmaVersion >= 11 && (this.eatContextual("as") ? (t4.exported = this.parseIdent(true), this.checkExport(e4, t4.exported.name, this.lastTokStart)) : t4.exported = null), this.expectContextual("from"), this.type !== k3.string && this.unexpected(), t4.source = this.parseExprAtom(), this.semicolon(), this.finishNode(t4, "ExportAllDeclaration");
-              if (this.eat(k3._default)) {
+              if (this.next(), this.eat(k2.star))
+                return this.options.ecmaVersion >= 11 && (this.eatContextual("as") ? (t4.exported = this.parseIdent(true), this.checkExport(e4, t4.exported.name, this.lastTokStart)) : t4.exported = null), this.expectContextual("from"), this.type !== k2.string && this.unexpected(), t4.source = this.parseExprAtom(), this.semicolon(), this.finishNode(t4, "ExportAllDeclaration");
+              if (this.eat(k2._default)) {
                 var i4;
-                if (this.checkExport(e4, "default", this.lastTokStart), this.type === k3._function || (i4 = this.isAsyncFunction())) {
+                if (this.checkExport(e4, "default", this.lastTokStart), this.type === k2._function || (i4 = this.isAsyncFunction())) {
                   var s4 = this.startNode();
                   this.next(), i4 && this.next(), t4.declaration = this.parseFunction(s4, 4 | J3, false, i4);
-                } else if (this.type === k3._class) {
+                } else if (this.type === k2._class) {
                   var r3 = this.startNode();
                   t4.declaration = this.parseClass(r3, "nullableID");
                 } else
@@ -23681,7 +23681,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 t4.declaration = this.parseStatement(null), "VariableDeclaration" === t4.declaration.type ? this.checkVariableExport(e4, t4.declaration.declarations) : this.checkExport(e4, t4.declaration.id.name, t4.declaration.id.start), t4.specifiers = [], t4.source = null;
               else {
                 if (t4.declaration = null, t4.specifiers = this.parseExportSpecifiers(e4), this.eatContextual("from"))
-                  this.type !== k3.string && this.unexpected(), t4.source = this.parseExprAtom();
+                  this.type !== k2.string && this.unexpected(), t4.source = this.parseExprAtom();
                 else {
                   for (var a3 = 0, n3 = t4.specifiers; a3 < n3.length; a3 += 1) {
                     var o3 = n3[a3];
@@ -23720,32 +23720,32 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return "var" === this.type.keyword || "const" === this.type.keyword || "class" === this.type.keyword || "function" === this.type.keyword || this.isLet() || this.isAsyncFunction();
             }, z2.parseExportSpecifiers = function(t4) {
               var e4 = [], i4 = true;
-              for (this.expect(k3.braceL); !this.eat(k3.braceR); ) {
+              for (this.expect(k2.braceL); !this.eat(k2.braceR); ) {
                 if (i4)
                   i4 = false;
-                else if (this.expect(k3.comma), this.afterTrailingComma(k3.braceR))
+                else if (this.expect(k2.comma), this.afterTrailingComma(k2.braceR))
                   break;
                 var s4 = this.startNode();
                 s4.local = this.parseIdent(true), s4.exported = this.eatContextual("as") ? this.parseIdent(true) : s4.local, this.checkExport(t4, s4.exported.name, s4.exported.start), e4.push(this.finishNode(s4, "ExportSpecifier"));
               }
               return e4;
             }, z2.parseImport = function(t4) {
-              return this.next(), this.type === k3.string ? (t4.specifiers = Q3, t4.source = this.parseExprAtom()) : (t4.specifiers = this.parseImportSpecifiers(), this.expectContextual("from"), t4.source = this.type === k3.string ? this.parseExprAtom() : this.unexpected()), this.semicolon(), this.finishNode(t4, "ImportDeclaration");
+              return this.next(), this.type === k2.string ? (t4.specifiers = Q3, t4.source = this.parseExprAtom()) : (t4.specifiers = this.parseImportSpecifiers(), this.expectContextual("from"), t4.source = this.type === k2.string ? this.parseExprAtom() : this.unexpected()), this.semicolon(), this.finishNode(t4, "ImportDeclaration");
             }, z2.parseImportSpecifiers = function() {
               var t4 = [], e4 = true;
-              if (this.type === k3.name) {
+              if (this.type === k2.name) {
                 var i4 = this.startNode();
-                if (i4.local = this.parseIdent(), this.checkLValSimple(i4.local, 2), t4.push(this.finishNode(i4, "ImportDefaultSpecifier")), !this.eat(k3.comma))
+                if (i4.local = this.parseIdent(), this.checkLValSimple(i4.local, 2), t4.push(this.finishNode(i4, "ImportDefaultSpecifier")), !this.eat(k2.comma))
                   return t4;
               }
-              if (this.type === k3.star) {
+              if (this.type === k2.star) {
                 var s4 = this.startNode();
                 return this.next(), this.expectContextual("as"), s4.local = this.parseIdent(), this.checkLValSimple(s4.local, 2), t4.push(this.finishNode(s4, "ImportNamespaceSpecifier")), t4;
               }
-              for (this.expect(k3.braceL); !this.eat(k3.braceR); ) {
+              for (this.expect(k2.braceL); !this.eat(k2.braceR); ) {
                 if (e4)
                   e4 = false;
-                else if (this.expect(k3.comma), this.afterTrailingComma(k3.braceR))
+                else if (this.expect(k2.comma), this.afterTrailingComma(k2.braceR))
                   break;
                 var r3 = this.startNode();
                 r3.imported = this.parseIdent(true), this.eatContextual("as") ? r3.local = this.parseIdent() : (this.checkUnreserved(r3.imported), r3.local = r3.imported), this.checkLValSimple(r3.local, 2), t4.push(this.finishNode(r3, "ImportSpecifier"));
@@ -23757,7 +23757,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, z2.isDirectiveCandidate = function(t4) {
               return "ExpressionStatement" === t4.type && "Literal" === t4.expression.type && "string" == typeof t4.expression.value && ('"' === this.input[t4.start] || "'" === this.input[t4.start]);
             };
-            var Z3 = F2.prototype;
+            var Z3 = F3.prototype;
             Z3.toAssignable = function(t4, e4, i4) {
               if (this.options.ecmaVersion >= 6 && t4)
                 switch (t4.type) {
@@ -23818,27 +23818,27 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return this.next(), e4.argument = this.parseMaybeAssign(false, t4), this.finishNode(e4, "SpreadElement");
             }, Z3.parseRestBinding = function() {
               var t4 = this.startNode();
-              return this.next(), 6 === this.options.ecmaVersion && this.type !== k3.name && this.unexpected(), t4.argument = this.parseBindingAtom(), this.finishNode(t4, "RestElement");
+              return this.next(), 6 === this.options.ecmaVersion && this.type !== k2.name && this.unexpected(), t4.argument = this.parseBindingAtom(), this.finishNode(t4, "RestElement");
             }, Z3.parseBindingAtom = function() {
               if (this.options.ecmaVersion >= 6)
                 switch (this.type) {
-                  case k3.bracketL:
+                  case k2.bracketL:
                     var t4 = this.startNode();
-                    return this.next(), t4.elements = this.parseBindingList(k3.bracketR, true, true), this.finishNode(t4, "ArrayPattern");
-                  case k3.braceL:
+                    return this.next(), t4.elements = this.parseBindingList(k2.bracketR, true, true), this.finishNode(t4, "ArrayPattern");
+                  case k2.braceL:
                     return this.parseObj(true);
                 }
               return this.parseIdent();
             }, Z3.parseBindingList = function(t4, e4, i4) {
               for (var s4 = [], r3 = true; !this.eat(t4); )
-                if (r3 ? r3 = false : this.expect(k3.comma), e4 && this.type === k3.comma)
+                if (r3 ? r3 = false : this.expect(k2.comma), e4 && this.type === k2.comma)
                   s4.push(null);
                 else {
                   if (i4 && this.afterTrailingComma(t4))
                     break;
-                  if (this.type === k3.ellipsis) {
+                  if (this.type === k2.ellipsis) {
                     var a3 = this.parseRestBinding();
-                    this.parseBindingListItem(a3), s4.push(a3), this.type === k3.comma && this.raise(this.start, "Comma is not permitted after the rest element"), this.expect(t4);
+                    this.parseBindingListItem(a3), s4.push(a3), this.type === k2.comma && this.raise(this.start, "Comma is not permitted after the rest element"), this.expect(t4);
                     break;
                   }
                   var n3 = this.parseMaybeDefault(this.start, this.startLoc);
@@ -23848,7 +23848,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, Z3.parseBindingListItem = function(t4) {
               return t4;
             }, Z3.parseMaybeDefault = function(t4, e4, i4) {
-              if (i4 = i4 || this.parseBindingAtom(), this.options.ecmaVersion < 6 || !this.eat(k3.eq))
+              if (i4 = i4 || this.parseBindingAtom(), this.options.ecmaVersion < 6 || !this.eat(k2.eq))
                 return i4;
               var s4 = this.startNodeAt(t4, e4);
               return s4.left = i4, s4.right = this.parseMaybeAssign(), this.finishNode(s4, "AssignmentPattern");
@@ -23902,7 +23902,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   this.checkLValPattern(t4, e4, i4);
               }
             };
-            var $2 = F2.prototype;
+            var $2 = F3.prototype;
             $2.checkPropClash = function(t4, e4, i4) {
               if (!(this.options.ecmaVersion >= 9 && "SpreadElement" === t4.type || this.options.ecmaVersion >= 6 && (t4.computed || t4.method || t4.shorthand))) {
                 var s4, r3 = t4.key;
@@ -23930,9 +23930,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }
             }, $2.parseExpression = function(t4, e4) {
               var i4 = this.start, s4 = this.startLoc, r3 = this.parseMaybeAssign(t4, e4);
-              if (this.type === k3.comma) {
+              if (this.type === k2.comma) {
                 var a3 = this.startNodeAt(i4, s4);
-                for (a3.expressions = [r3]; this.eat(k3.comma); )
+                for (a3.expressions = [r3]; this.eat(k2.comma); )
                   a3.expressions.push(this.parseMaybeAssign(t4, e4));
                 return this.finishNode(a3, "SequenceExpression");
               }
@@ -23946,20 +23946,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var s4 = false, r3 = -1, a3 = -1;
               e4 ? (r3 = e4.parenthesizedAssign, a3 = e4.trailingComma, e4.parenthesizedAssign = e4.trailingComma = -1) : (e4 = new W3(), s4 = true);
               var n3 = this.start, o3 = this.startLoc;
-              this.type !== k3.parenL && this.type !== k3.name || (this.potentialArrowAt = this.start);
+              this.type !== k2.parenL && this.type !== k2.name || (this.potentialArrowAt = this.start);
               var h3 = this.parseMaybeConditional(t4, e4);
               if (i4 && (h3 = i4.call(this, h3, n3, o3)), this.type.isAssign) {
                 var p4 = this.startNodeAt(n3, o3);
-                return p4.operator = this.value, this.type === k3.eq && (h3 = this.toAssignable(h3, false, e4)), s4 || (e4.parenthesizedAssign = e4.trailingComma = e4.doubleProto = -1), e4.shorthandAssign >= h3.start && (e4.shorthandAssign = -1), this.type === k3.eq ? this.checkLValPattern(h3) : this.checkLValSimple(h3), p4.left = h3, this.next(), p4.right = this.parseMaybeAssign(t4), this.finishNode(p4, "AssignmentExpression");
+                return p4.operator = this.value, this.type === k2.eq && (h3 = this.toAssignable(h3, false, e4)), s4 || (e4.parenthesizedAssign = e4.trailingComma = e4.doubleProto = -1), e4.shorthandAssign >= h3.start && (e4.shorthandAssign = -1), this.type === k2.eq ? this.checkLValPattern(h3) : this.checkLValSimple(h3), p4.left = h3, this.next(), p4.right = this.parseMaybeAssign(t4), this.finishNode(p4, "AssignmentExpression");
               }
               return s4 && this.checkExpressionErrors(e4, true), r3 > -1 && (e4.parenthesizedAssign = r3), a3 > -1 && (e4.trailingComma = a3), h3;
             }, $2.parseMaybeConditional = function(t4, e4) {
               var i4 = this.start, s4 = this.startLoc, r3 = this.parseExprOps(t4, e4);
               if (this.checkExpressionErrors(e4))
                 return r3;
-              if (this.eat(k3.question)) {
+              if (this.eat(k2.question)) {
                 var a3 = this.startNodeAt(i4, s4);
-                return a3.test = r3, a3.consequent = this.parseMaybeAssign(), this.expect(k3.colon), a3.alternate = this.parseMaybeAssign(t4), this.finishNode(a3, "ConditionalExpression");
+                return a3.test = r3, a3.consequent = this.parseMaybeAssign(), this.expect(k2.colon), a3.alternate = this.parseMaybeAssign(t4), this.finishNode(a3, "ConditionalExpression");
               }
               return r3;
             }, $2.parseExprOps = function(t4, e4) {
@@ -23967,13 +23967,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return this.checkExpressionErrors(e4) || r3.start === i4 && "ArrowFunctionExpression" === r3.type ? r3 : this.parseExprOp(r3, i4, s4, -1, t4);
             }, $2.parseExprOp = function(t4, e4, i4, s4, r3) {
               var a3 = this.type.binop;
-              if (null != a3 && (!r3 || this.type !== k3._in) && a3 > s4) {
-                var n3 = this.type === k3.logicalOR || this.type === k3.logicalAND, o3 = this.type === k3.coalesce;
-                o3 && (a3 = k3.logicalAND.binop);
+              if (null != a3 && (!r3 || this.type !== k2._in) && a3 > s4) {
+                var n3 = this.type === k2.logicalOR || this.type === k2.logicalAND, o3 = this.type === k2.coalesce;
+                o3 && (a3 = k2.logicalAND.binop);
                 var h3 = this.value;
                 this.next();
                 var p4 = this.start, c3 = this.startLoc, l3 = this.parseExprOp(this.parseMaybeUnary(null, false), p4, c3, a3, r3), u3 = this.buildBinary(e4, i4, t4, l3, h3, n3 || o3);
-                return (n3 && this.type === k3.coalesce || o3 && (this.type === k3.logicalOR || this.type === k3.logicalAND)) && this.raiseRecoverable(this.start, "Logical expressions and coalesce expressions cannot be mixed. Wrap either by parentheses"), this.parseExprOp(u3, e4, i4, s4, r3);
+                return (n3 && this.type === k2.coalesce || o3 && (this.type === k2.logicalOR || this.type === k2.logicalAND)) && this.raiseRecoverable(this.start, "Logical expressions and coalesce expressions cannot be mixed. Wrap either by parentheses"), this.parseExprOp(u3, e4, i4, s4, r3);
               }
               return t4;
             }, $2.buildBinary = function(t4, e4, i4, s4, r3, a3) {
@@ -23984,7 +23984,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               if (this.isContextual("await") && (this.inAsync || !this.inFunction && this.options.allowAwaitOutsideFunction))
                 i4 = this.parseAwait(), e4 = true;
               else if (this.type.prefix) {
-                var a3 = this.startNode(), n3 = this.type === k3.incDec;
+                var a3 = this.startNode(), n3 = this.type === k2.incDec;
                 a3.operator = this.value, a3.prefix = true, this.next(), a3.argument = this.parseMaybeUnary(null, true), this.checkExpressionErrors(t4, true), n3 ? this.checkLValSimple(a3.argument) : this.strict && "delete" === a3.operator && "Identifier" === a3.argument.type ? this.raiseRecoverable(a3.start, "Deleting local variable in strict mode") : e4 = true, i4 = this.finishNode(a3, n3 ? "UpdateExpression" : "UnaryExpression");
               } else {
                 if (i4 = this.parseExprSubscripts(t4), this.checkExpressionErrors(t4))
@@ -23994,7 +23994,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   o3.operator = this.value, o3.prefix = false, o3.argument = i4, this.checkLValSimple(i4), this.next(), i4 = this.finishNode(o3, "UpdateExpression");
                 }
               }
-              return !e4 && this.eat(k3.starstar) ? this.buildBinary(s4, r3, i4, this.parseMaybeUnary(null, false), "**", false) : i4;
+              return !e4 && this.eat(k2.starstar) ? this.buildBinary(s4, r3, i4, this.parseMaybeUnary(null, false), "**", false) : i4;
             }, $2.parseExprSubscripts = function(t4) {
               var e4 = this.start, i4 = this.startLoc, s4 = this.parseExprAtom(t4);
               if ("ArrowFunctionExpression" === s4.type && ")" !== this.input.slice(this.lastTokStart, this.lastTokEnd))
@@ -24014,72 +24014,72 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 t4 = n3;
               }
             }, $2.parseSubscript = function(t4, e4, i4, s4, r3, a3) {
-              var n3 = this.options.ecmaVersion >= 11, o3 = n3 && this.eat(k3.questionDot);
+              var n3 = this.options.ecmaVersion >= 11, o3 = n3 && this.eat(k2.questionDot);
               s4 && o3 && this.raise(this.lastTokStart, "Optional chaining cannot appear in the callee of new expressions");
-              var h3 = this.eat(k3.bracketL);
-              if (h3 || o3 && this.type !== k3.parenL && this.type !== k3.backQuote || this.eat(k3.dot)) {
+              var h3 = this.eat(k2.bracketL);
+              if (h3 || o3 && this.type !== k2.parenL && this.type !== k2.backQuote || this.eat(k2.dot)) {
                 var p4 = this.startNodeAt(e4, i4);
-                p4.object = t4, p4.property = h3 ? this.parseExpression() : this.parseIdent("never" !== this.options.allowReserved), p4.computed = !!h3, h3 && this.expect(k3.bracketR), n3 && (p4.optional = o3), t4 = this.finishNode(p4, "MemberExpression");
-              } else if (!s4 && this.eat(k3.parenL)) {
+                p4.object = t4, p4.property = h3 ? this.parseExpression() : this.parseIdent("never" !== this.options.allowReserved), p4.computed = !!h3, h3 && this.expect(k2.bracketR), n3 && (p4.optional = o3), t4 = this.finishNode(p4, "MemberExpression");
+              } else if (!s4 && this.eat(k2.parenL)) {
                 var c3 = new W3(), l3 = this.yieldPos, u3 = this.awaitPos, d3 = this.awaitIdentPos;
                 this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0;
-                var f3 = this.parseExprList(k3.parenR, this.options.ecmaVersion >= 8, false, c3);
-                if (r3 && !o3 && !this.canInsertSemicolon() && this.eat(k3.arrow))
+                var f3 = this.parseExprList(k2.parenR, this.options.ecmaVersion >= 8, false, c3);
+                if (r3 && !o3 && !this.canInsertSemicolon() && this.eat(k2.arrow))
                   return this.checkPatternErrors(c3, false), this.checkYieldAwaitInDefaultParams(), this.awaitIdentPos > 0 && this.raise(this.awaitIdentPos, "Cannot use 'await' as identifier inside an async function"), this.yieldPos = l3, this.awaitPos = u3, this.awaitIdentPos = d3, this.parseArrowExpression(this.startNodeAt(e4, i4), f3, true);
                 this.checkExpressionErrors(c3, true), this.yieldPos = l3 || this.yieldPos, this.awaitPos = u3 || this.awaitPos, this.awaitIdentPos = d3 || this.awaitIdentPos;
                 var m4 = this.startNodeAt(e4, i4);
                 m4.callee = t4, m4.arguments = f3, n3 && (m4.optional = o3), t4 = this.finishNode(m4, "CallExpression");
-              } else if (this.type === k3.backQuote) {
+              } else if (this.type === k2.backQuote) {
                 (o3 || a3) && this.raise(this.start, "Optional chaining cannot appear in the tag of tagged template expressions");
                 var g3 = this.startNodeAt(e4, i4);
                 g3.tag = t4, g3.quasi = this.parseTemplate({ isTagged: true }), t4 = this.finishNode(g3, "TaggedTemplateExpression");
               }
               return t4;
             }, $2.parseExprAtom = function(t4) {
-              this.type === k3.slash && this.readRegexp();
+              this.type === k2.slash && this.readRegexp();
               var e4, i4 = this.potentialArrowAt === this.start;
               switch (this.type) {
-                case k3._super:
-                  return this.allowSuper || this.raise(this.start, "'super' keyword outside a method"), e4 = this.startNode(), this.next(), this.type !== k3.parenL || this.allowDirectSuper || this.raise(e4.start, "super() call outside constructor of a subclass"), this.type !== k3.dot && this.type !== k3.bracketL && this.type !== k3.parenL && this.unexpected(), this.finishNode(e4, "Super");
-                case k3._this:
+                case k2._super:
+                  return this.allowSuper || this.raise(this.start, "'super' keyword outside a method"), e4 = this.startNode(), this.next(), this.type !== k2.parenL || this.allowDirectSuper || this.raise(e4.start, "super() call outside constructor of a subclass"), this.type !== k2.dot && this.type !== k2.bracketL && this.type !== k2.parenL && this.unexpected(), this.finishNode(e4, "Super");
+                case k2._this:
                   return e4 = this.startNode(), this.next(), this.finishNode(e4, "ThisExpression");
-                case k3.name:
+                case k2.name:
                   var s4 = this.start, r3 = this.startLoc, a3 = this.containsEsc, n3 = this.parseIdent(false);
-                  if (this.options.ecmaVersion >= 8 && !a3 && "async" === n3.name && !this.canInsertSemicolon() && this.eat(k3._function))
+                  if (this.options.ecmaVersion >= 8 && !a3 && "async" === n3.name && !this.canInsertSemicolon() && this.eat(k2._function))
                     return this.parseFunction(this.startNodeAt(s4, r3), 0, false, true);
                   if (i4 && !this.canInsertSemicolon()) {
-                    if (this.eat(k3.arrow))
+                    if (this.eat(k2.arrow))
                       return this.parseArrowExpression(this.startNodeAt(s4, r3), [n3], false);
-                    if (this.options.ecmaVersion >= 8 && "async" === n3.name && this.type === k3.name && !a3)
-                      return n3 = this.parseIdent(false), !this.canInsertSemicolon() && this.eat(k3.arrow) || this.unexpected(), this.parseArrowExpression(this.startNodeAt(s4, r3), [n3], true);
+                    if (this.options.ecmaVersion >= 8 && "async" === n3.name && this.type === k2.name && !a3)
+                      return n3 = this.parseIdent(false), !this.canInsertSemicolon() && this.eat(k2.arrow) || this.unexpected(), this.parseArrowExpression(this.startNodeAt(s4, r3), [n3], true);
                   }
                   return n3;
-                case k3.regexp:
+                case k2.regexp:
                   var o3 = this.value;
                   return (e4 = this.parseLiteral(o3.value)).regex = { pattern: o3.pattern, flags: o3.flags }, e4;
-                case k3.num:
-                case k3.string:
+                case k2.num:
+                case k2.string:
                   return this.parseLiteral(this.value);
-                case k3._null:
-                case k3._true:
-                case k3._false:
-                  return (e4 = this.startNode()).value = this.type === k3._null ? null : this.type === k3._true, e4.raw = this.type.keyword, this.next(), this.finishNode(e4, "Literal");
-                case k3.parenL:
+                case k2._null:
+                case k2._true:
+                case k2._false:
+                  return (e4 = this.startNode()).value = this.type === k2._null ? null : this.type === k2._true, e4.raw = this.type.keyword, this.next(), this.finishNode(e4, "Literal");
+                case k2.parenL:
                   var h3 = this.start, p4 = this.parseParenAndDistinguishExpression(i4);
                   return t4 && (t4.parenthesizedAssign < 0 && !this.isSimpleAssignTarget(p4) && (t4.parenthesizedAssign = h3), t4.parenthesizedBind < 0 && (t4.parenthesizedBind = h3)), p4;
-                case k3.bracketL:
-                  return e4 = this.startNode(), this.next(), e4.elements = this.parseExprList(k3.bracketR, true, true, t4), this.finishNode(e4, "ArrayExpression");
-                case k3.braceL:
+                case k2.bracketL:
+                  return e4 = this.startNode(), this.next(), e4.elements = this.parseExprList(k2.bracketR, true, true, t4), this.finishNode(e4, "ArrayExpression");
+                case k2.braceL:
                   return this.parseObj(false, t4);
-                case k3._function:
+                case k2._function:
                   return e4 = this.startNode(), this.next(), this.parseFunction(e4, 0);
-                case k3._class:
+                case k2._class:
                   return this.parseClass(this.startNode(), false);
-                case k3._new:
+                case k2._new:
                   return this.parseNew();
-                case k3.backQuote:
+                case k2.backQuote:
                   return this.parseTemplate();
-                case k3._import:
+                case k2._import:
                   return this.options.ecmaVersion >= 11 ? this.parseExprImport() : this.unexpected();
                 default:
                   this.unexpected();
@@ -24089,17 +24089,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               this.containsEsc && this.raiseRecoverable(this.start, "Escape sequence in keyword import");
               var e4 = this.parseIdent(true);
               switch (this.type) {
-                case k3.parenL:
+                case k2.parenL:
                   return this.parseDynamicImport(t4);
-                case k3.dot:
+                case k2.dot:
                   return t4.meta = e4, this.parseImportMeta(t4);
                 default:
                   this.unexpected();
               }
             }, $2.parseDynamicImport = function(t4) {
-              if (this.next(), t4.source = this.parseMaybeAssign(), !this.eat(k3.parenR)) {
+              if (this.next(), t4.source = this.parseMaybeAssign(), !this.eat(k2.parenR)) {
                 var e4 = this.start;
-                this.eat(k3.comma) && this.eat(k3.parenR) ? this.raiseRecoverable(e4, "Trailing comma is not allowed in import()") : this.unexpected(e4);
+                this.eat(k2.comma) && this.eat(k2.parenR) ? this.raiseRecoverable(e4, "Trailing comma is not allowed in import()") : this.unexpected(e4);
               }
               return this.finishNode(t4, "ImportExpression");
             }, $2.parseImportMeta = function(t4) {
@@ -24110,27 +24110,27 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var e4 = this.startNode();
               return e4.value = t4, e4.raw = this.input.slice(this.start, this.end), 110 === e4.raw.charCodeAt(e4.raw.length - 1) && (e4.bigint = e4.raw.slice(0, -1).replace(/_/g, "")), this.next(), this.finishNode(e4, "Literal");
             }, $2.parseParenExpression = function() {
-              this.expect(k3.parenL);
+              this.expect(k2.parenL);
               var t4 = this.parseExpression();
-              return this.expect(k3.parenR), t4;
+              return this.expect(k2.parenR), t4;
             }, $2.parseParenAndDistinguishExpression = function(t4) {
               var e4, i4 = this.start, s4 = this.startLoc, r3 = this.options.ecmaVersion >= 8;
               if (this.options.ecmaVersion >= 6) {
                 this.next();
                 var a3, n3 = this.start, o3 = this.startLoc, h3 = [], p4 = true, c3 = false, l3 = new W3(), u3 = this.yieldPos, d3 = this.awaitPos;
-                for (this.yieldPos = 0, this.awaitPos = 0; this.type !== k3.parenR; ) {
-                  if (p4 ? p4 = false : this.expect(k3.comma), r3 && this.afterTrailingComma(k3.parenR, true)) {
+                for (this.yieldPos = 0, this.awaitPos = 0; this.type !== k2.parenR; ) {
+                  if (p4 ? p4 = false : this.expect(k2.comma), r3 && this.afterTrailingComma(k2.parenR, true)) {
                     c3 = true;
                     break;
                   }
-                  if (this.type === k3.ellipsis) {
-                    a3 = this.start, h3.push(this.parseParenItem(this.parseRestBinding())), this.type === k3.comma && this.raise(this.start, "Comma is not permitted after the rest element");
+                  if (this.type === k2.ellipsis) {
+                    a3 = this.start, h3.push(this.parseParenItem(this.parseRestBinding())), this.type === k2.comma && this.raise(this.start, "Comma is not permitted after the rest element");
                     break;
                   }
                   h3.push(this.parseMaybeAssign(false, l3, this.parseParenItem));
                 }
                 var f3 = this.start, m4 = this.startLoc;
-                if (this.expect(k3.parenR), t4 && !this.canInsertSemicolon() && this.eat(k3.arrow))
+                if (this.expect(k2.parenR), t4 && !this.canInsertSemicolon() && this.eat(k2.arrow))
                   return this.checkPatternErrors(l3, false), this.checkYieldAwaitInDefaultParams(), this.yieldPos = u3, this.awaitPos = d3, this.parseParenArrowList(i4, s4, h3);
                 h3.length && !c3 || this.unexpected(this.lastTokStart), a3 && this.unexpected(a3), this.checkExpressionErrors(l3, true), this.yieldPos = u3 || this.yieldPos, this.awaitPos = d3 || this.awaitPos, h3.length > 1 ? ((e4 = this.startNodeAt(n3, o3)).expressions = h3, this.finishNodeAt(e4, "SequenceExpression", f3, m4)) : e4 = h3[0];
               } else
@@ -24149,16 +24149,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             $2.parseNew = function() {
               this.containsEsc && this.raiseRecoverable(this.start, "Escape sequence in keyword new");
               var t4 = this.startNode(), e4 = this.parseIdent(true);
-              if (this.options.ecmaVersion >= 6 && this.eat(k3.dot)) {
+              if (this.options.ecmaVersion >= 6 && this.eat(k2.dot)) {
                 t4.meta = e4;
                 var i4 = this.containsEsc;
                 return t4.property = this.parseIdent(true), "target" !== t4.property.name && this.raiseRecoverable(t4.property.start, "The only valid meta property for new is 'new.target'"), i4 && this.raiseRecoverable(t4.start, "'new.target' must not contain escaped characters"), this.inNonArrowFunction || this.raiseRecoverable(t4.start, "'new.target' can only be used in functions"), this.finishNode(t4, "MetaProperty");
               }
-              var s4 = this.start, r3 = this.startLoc, a3 = this.type === k3._import;
-              return t4.callee = this.parseSubscripts(this.parseExprAtom(), s4, r3, true), a3 && "ImportExpression" === t4.callee.type && this.raise(s4, "Cannot use new with import()"), this.eat(k3.parenL) ? t4.arguments = this.parseExprList(k3.parenR, this.options.ecmaVersion >= 8, false) : t4.arguments = tt2, this.finishNode(t4, "NewExpression");
+              var s4 = this.start, r3 = this.startLoc, a3 = this.type === k2._import;
+              return t4.callee = this.parseSubscripts(this.parseExprAtom(), s4, r3, true), a3 && "ImportExpression" === t4.callee.type && this.raise(s4, "Cannot use new with import()"), this.eat(k2.parenL) ? t4.arguments = this.parseExprList(k2.parenR, this.options.ecmaVersion >= 8, false) : t4.arguments = tt2, this.finishNode(t4, "NewExpression");
             }, $2.parseTemplateElement = function(t4) {
               var e4 = t4.isTagged, i4 = this.startNode();
-              return this.type === k3.invalidTemplate ? (e4 || this.raiseRecoverable(this.start, "Bad escape sequence in untagged template literal"), i4.value = { raw: this.value, cooked: null }) : i4.value = { raw: this.input.slice(this.start, this.end).replace(/\r\n?/g, "\n"), cooked: this.value }, this.next(), i4.tail = this.type === k3.backQuote, this.finishNode(i4, "TemplateElement");
+              return this.type === k2.invalidTemplate ? (e4 || this.raiseRecoverable(this.start, "Bad escape sequence in untagged template literal"), i4.value = { raw: this.value, cooked: null }) : i4.value = { raw: this.input.slice(this.start, this.end).replace(/\r\n?/g, "\n"), cooked: this.value }, this.next(), i4.tail = this.type === k2.backQuote, this.finishNode(i4, "TemplateElement");
             }, $2.parseTemplate = function(t4) {
               void 0 === t4 && (t4 = {});
               var e4 = t4.isTagged;
@@ -24167,16 +24167,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               this.next(), i4.expressions = [];
               var s4 = this.parseTemplateElement({ isTagged: e4 });
               for (i4.quasis = [s4]; !s4.tail; )
-                this.type === k3.eof && this.raise(this.pos, "Unterminated template literal"), this.expect(k3.dollarBraceL), i4.expressions.push(this.parseExpression()), this.expect(k3.braceR), i4.quasis.push(s4 = this.parseTemplateElement({ isTagged: e4 }));
+                this.type === k2.eof && this.raise(this.pos, "Unterminated template literal"), this.expect(k2.dollarBraceL), i4.expressions.push(this.parseExpression()), this.expect(k2.braceR), i4.quasis.push(s4 = this.parseTemplateElement({ isTagged: e4 }));
               return this.next(), this.finishNode(i4, "TemplateLiteral");
             }, $2.isAsyncProp = function(t4) {
-              return !t4.computed && "Identifier" === t4.key.type && "async" === t4.key.name && (this.type === k3.name || this.type === k3.num || this.type === k3.string || this.type === k3.bracketL || this.type.keyword || this.options.ecmaVersion >= 9 && this.type === k3.star) && !S2.test(this.input.slice(this.lastTokEnd, this.start));
+              return !t4.computed && "Identifier" === t4.key.type && "async" === t4.key.name && (this.type === k2.name || this.type === k2.num || this.type === k2.string || this.type === k2.bracketL || this.type.keyword || this.options.ecmaVersion >= 9 && this.type === k2.star) && !S2.test(this.input.slice(this.lastTokEnd, this.start));
             }, $2.parseObj = function(t4, e4) {
               var i4 = this.startNode(), s4 = true, r3 = {};
-              for (i4.properties = [], this.next(); !this.eat(k3.braceR); ) {
+              for (i4.properties = [], this.next(); !this.eat(k2.braceR); ) {
                 if (s4)
                   s4 = false;
-                else if (this.expect(k3.comma), this.options.ecmaVersion >= 5 && this.afterTrailingComma(k3.braceR))
+                else if (this.expect(k2.comma), this.options.ecmaVersion >= 5 && this.afterTrailingComma(k2.braceR))
                   break;
                 var a3 = this.parseProperty(t4, e4);
                 t4 || this.checkPropClash(a3, r3, e4), i4.properties.push(a3);
@@ -24184,18 +24184,18 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return this.finishNode(i4, t4 ? "ObjectPattern" : "ObjectExpression");
             }, $2.parseProperty = function(t4, e4) {
               var i4, s4, r3, a3, n3 = this.startNode();
-              if (this.options.ecmaVersion >= 9 && this.eat(k3.ellipsis))
-                return t4 ? (n3.argument = this.parseIdent(false), this.type === k3.comma && this.raise(this.start, "Comma is not permitted after the rest element"), this.finishNode(n3, "RestElement")) : (this.type === k3.parenL && e4 && (e4.parenthesizedAssign < 0 && (e4.parenthesizedAssign = this.start), e4.parenthesizedBind < 0 && (e4.parenthesizedBind = this.start)), n3.argument = this.parseMaybeAssign(false, e4), this.type === k3.comma && e4 && e4.trailingComma < 0 && (e4.trailingComma = this.start), this.finishNode(n3, "SpreadElement"));
-              this.options.ecmaVersion >= 6 && (n3.method = false, n3.shorthand = false, (t4 || e4) && (r3 = this.start, a3 = this.startLoc), t4 || (i4 = this.eat(k3.star)));
+              if (this.options.ecmaVersion >= 9 && this.eat(k2.ellipsis))
+                return t4 ? (n3.argument = this.parseIdent(false), this.type === k2.comma && this.raise(this.start, "Comma is not permitted after the rest element"), this.finishNode(n3, "RestElement")) : (this.type === k2.parenL && e4 && (e4.parenthesizedAssign < 0 && (e4.parenthesizedAssign = this.start), e4.parenthesizedBind < 0 && (e4.parenthesizedBind = this.start)), n3.argument = this.parseMaybeAssign(false, e4), this.type === k2.comma && e4 && e4.trailingComma < 0 && (e4.trailingComma = this.start), this.finishNode(n3, "SpreadElement"));
+              this.options.ecmaVersion >= 6 && (n3.method = false, n3.shorthand = false, (t4 || e4) && (r3 = this.start, a3 = this.startLoc), t4 || (i4 = this.eat(k2.star)));
               var o3 = this.containsEsc;
-              return this.parsePropertyName(n3), !t4 && !o3 && this.options.ecmaVersion >= 8 && !i4 && this.isAsyncProp(n3) ? (s4 = true, i4 = this.options.ecmaVersion >= 9 && this.eat(k3.star), this.parsePropertyName(n3, e4)) : s4 = false, this.parsePropertyValue(n3, t4, i4, s4, r3, a3, e4, o3), this.finishNode(n3, "Property");
+              return this.parsePropertyName(n3), !t4 && !o3 && this.options.ecmaVersion >= 8 && !i4 && this.isAsyncProp(n3) ? (s4 = true, i4 = this.options.ecmaVersion >= 9 && this.eat(k2.star), this.parsePropertyName(n3, e4)) : s4 = false, this.parsePropertyValue(n3, t4, i4, s4, r3, a3, e4, o3), this.finishNode(n3, "Property");
             }, $2.parsePropertyValue = function(t4, e4, i4, s4, r3, a3, n3, o3) {
-              if ((i4 || s4) && this.type === k3.colon && this.unexpected(), this.eat(k3.colon))
+              if ((i4 || s4) && this.type === k2.colon && this.unexpected(), this.eat(k2.colon))
                 t4.value = e4 ? this.parseMaybeDefault(this.start, this.startLoc) : this.parseMaybeAssign(false, n3), t4.kind = "init";
-              else if (this.options.ecmaVersion >= 6 && this.type === k3.parenL)
+              else if (this.options.ecmaVersion >= 6 && this.type === k2.parenL)
                 e4 && this.unexpected(), t4.kind = "init", t4.method = true, t4.value = this.parseMethod(i4, s4);
-              else if (e4 || o3 || !(this.options.ecmaVersion >= 5) || t4.computed || "Identifier" !== t4.key.type || "get" !== t4.key.name && "set" !== t4.key.name || this.type === k3.comma || this.type === k3.braceR || this.type === k3.eq)
-                this.options.ecmaVersion >= 6 && !t4.computed && "Identifier" === t4.key.type ? ((i4 || s4) && this.unexpected(), this.checkUnreserved(t4.key), "await" !== t4.key.name || this.awaitIdentPos || (this.awaitIdentPos = r3), t4.kind = "init", e4 ? t4.value = this.parseMaybeDefault(r3, a3, this.copyNode(t4.key)) : this.type === k3.eq && n3 ? (n3.shorthandAssign < 0 && (n3.shorthandAssign = this.start), t4.value = this.parseMaybeDefault(r3, a3, this.copyNode(t4.key))) : t4.value = this.copyNode(t4.key), t4.shorthand = true) : this.unexpected();
+              else if (e4 || o3 || !(this.options.ecmaVersion >= 5) || t4.computed || "Identifier" !== t4.key.type || "get" !== t4.key.name && "set" !== t4.key.name || this.type === k2.comma || this.type === k2.braceR || this.type === k2.eq)
+                this.options.ecmaVersion >= 6 && !t4.computed && "Identifier" === t4.key.type ? ((i4 || s4) && this.unexpected(), this.checkUnreserved(t4.key), "await" !== t4.key.name || this.awaitIdentPos || (this.awaitIdentPos = r3), t4.kind = "init", e4 ? t4.value = this.parseMaybeDefault(r3, a3, this.copyNode(t4.key)) : this.type === k2.eq && n3 ? (n3.shorthandAssign < 0 && (n3.shorthandAssign = this.start), t4.value = this.parseMaybeDefault(r3, a3, this.copyNode(t4.key))) : t4.value = this.copyNode(t4.key), t4.shorthand = true) : this.unexpected();
               else {
                 (i4 || s4) && this.unexpected(), t4.kind = t4.key.name, this.parsePropertyName(t4), t4.value = this.parseMethod(false);
                 var h3 = "get" === t4.kind ? 0 : 1;
@@ -24207,21 +24207,21 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }
             }, $2.parsePropertyName = function(t4) {
               if (this.options.ecmaVersion >= 6) {
-                if (this.eat(k3.bracketL))
-                  return t4.computed = true, t4.key = this.parseMaybeAssign(), this.expect(k3.bracketR), t4.key;
+                if (this.eat(k2.bracketL))
+                  return t4.computed = true, t4.key = this.parseMaybeAssign(), this.expect(k2.bracketR), t4.key;
                 t4.computed = false;
               }
-              return t4.key = this.type === k3.num || this.type === k3.string ? this.parseExprAtom() : this.parseIdent("never" !== this.options.allowReserved);
+              return t4.key = this.type === k2.num || this.type === k2.string ? this.parseExprAtom() : this.parseIdent("never" !== this.options.allowReserved);
             }, $2.initFunction = function(t4) {
               t4.id = null, this.options.ecmaVersion >= 6 && (t4.generator = t4.expression = false), this.options.ecmaVersion >= 8 && (t4.async = false);
             }, $2.parseMethod = function(t4, e4, i4) {
               var s4 = this.startNode(), r3 = this.yieldPos, a3 = this.awaitPos, n3 = this.awaitIdentPos;
-              return this.initFunction(s4), this.options.ecmaVersion >= 6 && (s4.generator = t4), this.options.ecmaVersion >= 8 && (s4.async = !!e4), this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(64 | U3(e4, s4.generator) | (i4 ? 128 : 0)), this.expect(k3.parenL), s4.params = this.parseBindingList(k3.parenR, false, this.options.ecmaVersion >= 8), this.checkYieldAwaitInDefaultParams(), this.parseFunctionBody(s4, false, true), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(s4, "FunctionExpression");
+              return this.initFunction(s4), this.options.ecmaVersion >= 6 && (s4.generator = t4), this.options.ecmaVersion >= 8 && (s4.async = !!e4), this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(64 | U3(e4, s4.generator) | (i4 ? 128 : 0)), this.expect(k2.parenL), s4.params = this.parseBindingList(k2.parenR, false, this.options.ecmaVersion >= 8), this.checkYieldAwaitInDefaultParams(), this.parseFunctionBody(s4, false, true), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(s4, "FunctionExpression");
             }, $2.parseArrowExpression = function(t4, e4, i4) {
               var s4 = this.yieldPos, r3 = this.awaitPos, a3 = this.awaitIdentPos;
               return this.enterScope(16 | U3(i4, false)), this.initFunction(t4), this.options.ecmaVersion >= 8 && (t4.async = !!i4), this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, t4.params = this.toAssignableList(e4, true), this.parseFunctionBody(t4, true, false), this.yieldPos = s4, this.awaitPos = r3, this.awaitIdentPos = a3, this.finishNode(t4, "ArrowFunctionExpression");
             }, $2.parseFunctionBody = function(t4, e4, i4) {
-              var s4 = e4 && this.type !== k3.braceL, r3 = this.strict, a3 = false;
+              var s4 = e4 && this.type !== k2.braceL, r3 = this.strict, a3 = false;
               if (s4)
                 t4.body = this.parseMaybeAssign(), t4.expression = true, this.checkParams(t4, false);
               else {
@@ -24246,10 +24246,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               for (var r3 = [], a3 = true; !this.eat(t4); ) {
                 if (a3)
                   a3 = false;
-                else if (this.expect(k3.comma), e4 && this.afterTrailingComma(t4))
+                else if (this.expect(k2.comma), e4 && this.afterTrailingComma(t4))
                   break;
                 var n3 = void 0;
-                i4 && this.type === k3.comma ? n3 = null : this.type === k3.ellipsis ? (n3 = this.parseSpread(s4), s4 && this.type === k3.comma && s4.trailingComma < 0 && (s4.trailingComma = this.start)) : n3 = this.parseMaybeAssign(false, s4), r3.push(n3);
+                i4 && this.type === k2.comma ? n3 = null : this.type === k2.ellipsis ? (n3 = this.parseSpread(s4), s4 && this.type === k2.comma && s4.trailingComma < 0 && (s4.trailingComma = this.start)) : n3 = this.parseMaybeAssign(false, s4), r3.push(n3);
               }
               return r3;
             }, $2.checkUnreserved = function(t4) {
@@ -24257,17 +24257,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               (this.inGenerator && "yield" === s4 && this.raiseRecoverable(e4, "Cannot use 'yield' as identifier inside a generator"), this.inAsync && "await" === s4 && this.raiseRecoverable(e4, "Cannot use 'await' as identifier inside an async function"), this.keywords.test(s4) && this.raise(e4, "Unexpected keyword '" + s4 + "'"), this.options.ecmaVersion < 6 && -1 !== this.input.slice(e4, i4).indexOf("\\")) || (this.strict ? this.reservedWordsStrict : this.reservedWords).test(s4) && (this.inAsync || "await" !== s4 || this.raiseRecoverable(e4, "Cannot use keyword 'await' outside an async function"), this.raiseRecoverable(e4, "The keyword '" + s4 + "' is reserved"));
             }, $2.parseIdent = function(t4, e4) {
               var i4 = this.startNode();
-              return this.type === k3.name ? i4.name = this.value : this.type.keyword ? (i4.name = this.type.keyword, "class" !== i4.name && "function" !== i4.name || this.lastTokEnd === this.lastTokStart + 1 && 46 === this.input.charCodeAt(this.lastTokStart) || this.context.pop()) : this.unexpected(), this.next(!!t4), this.finishNode(i4, "Identifier"), t4 || (this.checkUnreserved(i4), "await" !== i4.name || this.awaitIdentPos || (this.awaitIdentPos = i4.start)), i4;
+              return this.type === k2.name ? i4.name = this.value : this.type.keyword ? (i4.name = this.type.keyword, "class" !== i4.name && "function" !== i4.name || this.lastTokEnd === this.lastTokStart + 1 && 46 === this.input.charCodeAt(this.lastTokStart) || this.context.pop()) : this.unexpected(), this.next(!!t4), this.finishNode(i4, "Identifier"), t4 || (this.checkUnreserved(i4), "await" !== i4.name || this.awaitIdentPos || (this.awaitIdentPos = i4.start)), i4;
             }, $2.parseYield = function(t4) {
               this.yieldPos || (this.yieldPos = this.start);
               var e4 = this.startNode();
-              return this.next(), this.type === k3.semi || this.canInsertSemicolon() || this.type !== k3.star && !this.type.startsExpr ? (e4.delegate = false, e4.argument = null) : (e4.delegate = this.eat(k3.star), e4.argument = this.parseMaybeAssign(t4)), this.finishNode(e4, "YieldExpression");
+              return this.next(), this.type === k2.semi || this.canInsertSemicolon() || this.type !== k2.star && !this.type.startsExpr ? (e4.delegate = false, e4.argument = null) : (e4.delegate = this.eat(k2.star), e4.argument = this.parseMaybeAssign(t4)), this.finishNode(e4, "YieldExpression");
             }, $2.parseAwait = function() {
               this.awaitPos || (this.awaitPos = this.start);
               var t4 = this.startNode();
               return this.next(), t4.argument = this.parseMaybeUnary(null, true), this.finishNode(t4, "AwaitExpression");
             };
-            var et2 = F2.prototype;
+            var et2 = F3.prototype;
             et2.raise = function(t4, e4) {
               var i4 = M2(this.input, t4);
               e4 += " (" + i4.line + ":" + i4.column + ")";
@@ -24277,7 +24277,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               if (this.options.locations)
                 return new O3(this.curLine, this.pos - this.lineStart);
             };
-            var it2 = F2.prototype, st2 = function(t4) {
+            var it2 = F3.prototype, st2 = function(t4) {
               this.flags = t4, this.var = [], this.lexical = [], this.functions = [];
             };
             it2.enterScope = function(t4) {
@@ -24326,7 +24326,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             };
             var rt2 = function(t4, e4, i4) {
               this.type = "", this.start = e4, this.end = 0, t4.options.locations && (this.loc = new R2(t4, i4)), t4.options.directSourceFile && (this.sourceFile = t4.options.directSourceFile), t4.options.ranges && (this.range = [e4, 0]);
-            }, at2 = F2.prototype;
+            }, at2 = F3.prototype;
             function nt2(t4, e4, i4, s4) {
               return t4.type = e4, t4.end = i4, this.options.locations && (t4.loc.end = s4), this.options.ranges && (t4.range[1] = i4), t4;
             }
@@ -24348,12 +24348,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               this.token = t4, this.isExpr = !!e4, this.preserveSpace = !!i4, this.override = s4, this.generator = !!r3;
             }, ht2 = { b_stat: new ot2("{", false), b_expr: new ot2("{", true), b_tmpl: new ot2("${", false), p_stat: new ot2("(", false), p_expr: new ot2("(", true), q_tmpl: new ot2("`", true, true, function(t4) {
               return t4.tryReadTemplateToken();
-            }), f_stat: new ot2("function", false), f_expr: new ot2("function", true), f_expr_gen: new ot2("function", true, false, null, true), f_gen: new ot2("function", false, false, null, true) }, pt2 = F2.prototype;
+            }), f_stat: new ot2("function", false), f_expr: new ot2("function", true), f_expr_gen: new ot2("function", true, false, null, true), f_gen: new ot2("function", false, false, null, true) }, pt2 = F3.prototype;
             pt2.initialContext = function() {
               return [ht2.b_stat];
             }, pt2.braceIsBlock = function(t4) {
               var e4 = this.curContext();
-              return e4 === ht2.f_expr || e4 === ht2.f_stat || (t4 !== k3.colon || e4 !== ht2.b_stat && e4 !== ht2.b_expr ? t4 === k3._return || t4 === k3.name && this.exprAllowed ? S2.test(this.input.slice(this.lastTokEnd, this.start)) : t4 === k3._else || t4 === k3.semi || t4 === k3.eof || t4 === k3.parenR || t4 === k3.arrow || (t4 === k3.braceL ? e4 === ht2.b_stat : t4 !== k3._var && t4 !== k3._const && t4 !== k3.name && !this.exprAllowed) : !e4.isExpr);
+              return e4 === ht2.f_expr || e4 === ht2.f_stat || (t4 !== k2.colon || e4 !== ht2.b_stat && e4 !== ht2.b_expr ? t4 === k2._return || t4 === k2.name && this.exprAllowed ? S2.test(this.input.slice(this.lastTokEnd, this.start)) : t4 === k2._else || t4 === k2.semi || t4 === k2.eof || t4 === k2.parenR || t4 === k2.arrow || (t4 === k2.braceL ? e4 === ht2.b_stat : t4 !== k2._var && t4 !== k2._const && t4 !== k2.name && !this.exprAllowed) : !e4.isExpr);
             }, pt2.inGeneratorContext = function() {
               for (var t4 = this.context.length - 1; t4 >= 1; t4--) {
                 var e4 = this.context[t4];
@@ -24363,43 +24363,43 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return false;
             }, pt2.updateContext = function(t4) {
               var e4, i4 = this.type;
-              i4.keyword && t4 === k3.dot ? this.exprAllowed = false : (e4 = i4.updateContext) ? e4.call(this, t4) : this.exprAllowed = i4.beforeExpr;
-            }, k3.parenR.updateContext = k3.braceR.updateContext = function() {
+              i4.keyword && t4 === k2.dot ? this.exprAllowed = false : (e4 = i4.updateContext) ? e4.call(this, t4) : this.exprAllowed = i4.beforeExpr;
+            }, k2.parenR.updateContext = k2.braceR.updateContext = function() {
               if (1 !== this.context.length) {
                 var t4 = this.context.pop();
                 t4 === ht2.b_stat && "function" === this.curContext().token && (t4 = this.context.pop()), this.exprAllowed = !t4.isExpr;
               } else
                 this.exprAllowed = true;
-            }, k3.braceL.updateContext = function(t4) {
+            }, k2.braceL.updateContext = function(t4) {
               this.context.push(this.braceIsBlock(t4) ? ht2.b_stat : ht2.b_expr), this.exprAllowed = true;
-            }, k3.dollarBraceL.updateContext = function() {
+            }, k2.dollarBraceL.updateContext = function() {
               this.context.push(ht2.b_tmpl), this.exprAllowed = true;
-            }, k3.parenL.updateContext = function(t4) {
-              var e4 = t4 === k3._if || t4 === k3._for || t4 === k3._with || t4 === k3._while;
+            }, k2.parenL.updateContext = function(t4) {
+              var e4 = t4 === k2._if || t4 === k2._for || t4 === k2._with || t4 === k2._while;
               this.context.push(e4 ? ht2.p_stat : ht2.p_expr), this.exprAllowed = true;
-            }, k3.incDec.updateContext = function() {
-            }, k3._function.updateContext = k3._class.updateContext = function(t4) {
-              !t4.beforeExpr || t4 === k3._else || t4 === k3.semi && this.curContext() !== ht2.p_stat || t4 === k3._return && S2.test(this.input.slice(this.lastTokEnd, this.start)) || (t4 === k3.colon || t4 === k3.braceL) && this.curContext() === ht2.b_stat ? this.context.push(ht2.f_stat) : this.context.push(ht2.f_expr), this.exprAllowed = false;
-            }, k3.backQuote.updateContext = function() {
+            }, k2.incDec.updateContext = function() {
+            }, k2._function.updateContext = k2._class.updateContext = function(t4) {
+              !t4.beforeExpr || t4 === k2._else || t4 === k2.semi && this.curContext() !== ht2.p_stat || t4 === k2._return && S2.test(this.input.slice(this.lastTokEnd, this.start)) || (t4 === k2.colon || t4 === k2.braceL) && this.curContext() === ht2.b_stat ? this.context.push(ht2.f_stat) : this.context.push(ht2.f_expr), this.exprAllowed = false;
+            }, k2.backQuote.updateContext = function() {
               this.curContext() === ht2.q_tmpl ? this.context.pop() : this.context.push(ht2.q_tmpl), this.exprAllowed = false;
-            }, k3.star.updateContext = function(t4) {
-              if (t4 === k3._function) {
+            }, k2.star.updateContext = function(t4) {
+              if (t4 === k2._function) {
                 var e4 = this.context.length - 1;
                 this.context[e4] === ht2.f_expr ? this.context[e4] = ht2.f_expr_gen : this.context[e4] = ht2.f_gen;
               }
               this.exprAllowed = true;
-            }, k3.name.updateContext = function(t4) {
+            }, k2.name.updateContext = function(t4) {
               var e4 = false;
-              this.options.ecmaVersion >= 6 && t4 !== k3.dot && ("of" === this.value && !this.exprAllowed || "yield" === this.value && this.inGeneratorContext()) && (e4 = true), this.exprAllowed = e4;
+              this.options.ecmaVersion >= 6 && t4 !== k2.dot && ("of" === this.value && !this.exprAllowed || "yield" === this.value && this.inGeneratorContext()) && (e4 = true), this.exprAllowed = e4;
             };
-            var ct2 = "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS", lt2 = ct2 + " Extended_Pictographic", ut2 = { 9: ct2, 10: lt2, 11: lt2, 12: "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS Extended_Pictographic EBase EComp EMod EPres ExtPict" }, dt2 = "Cased_Letter LC Close_Punctuation Pe Connector_Punctuation Pc Control Cc cntrl Currency_Symbol Sc Dash_Punctuation Pd Decimal_Number Nd digit Enclosing_Mark Me Final_Punctuation Pf Format Cf Initial_Punctuation Pi Letter L Letter_Number Nl Line_Separator Zl Lowercase_Letter Ll Mark M Combining_Mark Math_Symbol Sm Modifier_Letter Lm Modifier_Symbol Sk Nonspacing_Mark Mn Number N Open_Punctuation Ps Other C Other_Letter Lo Other_Number No Other_Punctuation Po Other_Symbol So Paragraph_Separator Zp Private_Use Co Punctuation P punct Separator Z Space_Separator Zs Spacing_Mark Mc Surrogate Cs Symbol S Titlecase_Letter Lt Unassigned Cn Uppercase_Letter Lu", ft2 = "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb", mt2 = ft2 + " Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd", gt2 = mt2 + " Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho", xt2 = { 9: ft2, 10: mt2, 11: gt2, 12: "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho Chorasmian Chrs Diak Dives_Akuru Khitan_Small_Script Kits Yezi Yezidi" }, yt2 = {};
+            var ct2 = "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS", lt2 = ct2 + " Extended_Pictographic", ut2 = { 9: ct2, 10: lt2, 11: lt2, 12: "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS Extended_Pictographic EBase EComp EMod EPres ExtPict" }, dt2 = "Cased_Letter LC Close_Punctuation Pe Connector_Punctuation Pc Control Cc cntrl Currency_Symbol Sc Dash_Punctuation Pd Decimal_Number Nd digit Enclosing_Mark Me Final_Punctuation Pf Format Cf Initial_Punctuation Pi Letter L Letter_Number Nl Line_Separator Zl Lowercase_Letter Ll Mark M Combining_Mark Math_Symbol Sm Modifier_Letter Lm Modifier_Symbol Sk Nonspacing_Mark Mn Number N Open_Punctuation Ps Other C Other_Letter Lo Other_Number No Other_Punctuation Po Other_Symbol So Paragraph_Separator Zp Private_Use Co Punctuation P punct Separator Z Space_Separator Zs Spacing_Mark Mc Surrogate Cs Symbol S Titlecase_Letter Lt Unassigned Cn Uppercase_Letter Lu", ft2 = "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb", mt2 = ft2 + " Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd", gt2 = mt2 + " Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho", xt2 = { 9: ft2, 10: mt2, 11: gt2, 12: "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho Chorasmian Chrs Diak Dives_Akuru Khitan_Small_Script Kits Yezi Yezidi" }, yt = {};
             function vt2(t4) {
-              var e4 = yt2[t4] = { binary: V2(ut2[t4] + " " + dt2), nonBinary: { General_Category: V2(dt2), Script: V2(xt2[t4]) } };
+              var e4 = yt[t4] = { binary: V3(ut2[t4] + " " + dt2), nonBinary: { General_Category: V3(dt2), Script: V3(xt2[t4]) } };
               e4.nonBinary.Script_Extensions = e4.nonBinary.Script, e4.nonBinary.gc = e4.nonBinary.General_Category, e4.nonBinary.sc = e4.nonBinary.Script, e4.nonBinary.scx = e4.nonBinary.Script_Extensions;
             }
             vt2(9), vt2(10), vt2(11), vt2(12);
-            var bt2 = F2.prototype, _t2 = function(t4) {
-              this.parser = t4, this.validFlags = "gim" + (t4.options.ecmaVersion >= 6 ? "uy" : "") + (t4.options.ecmaVersion >= 9 ? "s" : ""), this.unicodeProperties = yt2[t4.options.ecmaVersion >= 12 ? 12 : t4.options.ecmaVersion], this.source = "", this.flags = "", this.start = 0, this.switchU = false, this.switchN = false, this.pos = 0, this.lastIntValue = 0, this.lastStringValue = "", this.lastAssertionIsQuantifiable = false, this.numCapturingParens = 0, this.maxBackReference = 0, this.groupNames = [], this.backReferenceNames = [];
+            var bt2 = F3.prototype, _t2 = function(t4) {
+              this.parser = t4, this.validFlags = "gim" + (t4.options.ecmaVersion >= 6 ? "uy" : "") + (t4.options.ecmaVersion >= 9 ? "s" : ""), this.unicodeProperties = yt[t4.options.ecmaVersion >= 12 ? 12 : t4.options.ecmaVersion], this.source = "", this.flags = "", this.start = 0, this.switchU = false, this.switchN = false, this.pos = 0, this.lastIntValue = 0, this.lastStringValue = "", this.lastAssertionIsQuantifiable = false, this.numCapturingParens = 0, this.maxBackReference = 0, this.groupNames = [], this.backReferenceNames = [];
             };
             function kt2(t4) {
               return t4 <= 65535 ? String.fromCharCode(t4) : (t4 -= 65536, String.fromCharCode(55296 + (t4 >> 10), 56320 + (1023 & t4)));
@@ -24407,19 +24407,19 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             function St2(t4) {
               return 36 === t4 || t4 >= 40 && t4 <= 43 || 46 === t4 || 63 === t4 || t4 >= 91 && t4 <= 94 || t4 >= 123 && t4 <= 125;
             }
-            function wt(t4) {
+            function wt2(t4) {
               return t4 >= 65 && t4 <= 90 || t4 >= 97 && t4 <= 122;
             }
-            function Ct(t4) {
-              return wt(t4) || 95 === t4;
+            function Ct2(t4) {
+              return wt2(t4) || 95 === t4;
             }
             function Et2(t4) {
-              return Ct(t4) || At2(t4);
+              return Ct2(t4) || At2(t4);
             }
             function At2(t4) {
               return t4 >= 48 && t4 <= 57;
             }
-            function It2(t4) {
+            function It(t4) {
               return t4 >= 48 && t4 <= 57 || t4 >= 65 && t4 <= 70 || t4 >= 97 && t4 <= 102;
             }
             function Pt2(t4) {
@@ -24617,7 +24617,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return 116 === e4 ? (t4.lastIntValue = 9, t4.advance(), true) : 110 === e4 ? (t4.lastIntValue = 10, t4.advance(), true) : 118 === e4 ? (t4.lastIntValue = 11, t4.advance(), true) : 102 === e4 ? (t4.lastIntValue = 12, t4.advance(), true) : 114 === e4 && (t4.lastIntValue = 13, t4.advance(), true);
             }, bt2.regexp_eatControlLetter = function(t4) {
               var e4 = t4.current();
-              return !!wt(e4) && (t4.lastIntValue = e4 % 32, t4.advance(), true);
+              return !!wt2(e4) && (t4.lastIntValue = e4 % 32, t4.advance(), true);
             }, bt2.regexp_eatRegExpUnicodeEscapeSequence = function(t4, e4) {
               void 0 === e4 && (e4 = false);
               var i4, s4 = t4.pos, r3 = e4 || t4.switchU;
@@ -24687,7 +24687,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               t4.unicodeProperties.binary.test(e4) || t4.raise("Invalid property name");
             }, bt2.regexp_eatUnicodePropertyName = function(t4) {
               var e4 = 0;
-              for (t4.lastStringValue = ""; Ct(e4 = t4.current()); )
+              for (t4.lastStringValue = ""; Ct2(e4 = t4.current()); )
                 t4.lastStringValue += kt2(e4), t4.advance();
               return "" !== t4.lastStringValue;
             }, bt2.regexp_eatUnicodePropertyValue = function(t4) {
@@ -24755,7 +24755,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return t4.pos !== e4;
             }, bt2.regexp_eatHexDigits = function(t4) {
               var e4 = t4.pos, i4 = 0;
-              for (t4.lastIntValue = 0; It2(i4 = t4.current()); )
+              for (t4.lastIntValue = 0; It(i4 = t4.current()); )
                 t4.lastIntValue = 16 * t4.lastIntValue + Pt2(i4), t4.advance();
               return t4.pos !== e4;
             }, bt2.regexp_eatLegacyOctalEscapeSequence = function(t4) {
@@ -24777,7 +24777,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               t4.lastIntValue = 0;
               for (var s4 = 0; s4 < e4; ++s4) {
                 var r3 = t4.current();
-                if (!It2(r3))
+                if (!It(r3))
                   return t4.pos = i4, false;
                 t4.lastIntValue = 16 * t4.lastIntValue + Pt2(r3), t4.advance();
               }
@@ -24785,7 +24785,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             };
             var Nt2 = function(t4) {
               this.type = t4.type, this.value = t4.value, this.start = t4.start, this.end = t4.end, t4.options.locations && (this.loc = new R2(t4, t4.startLoc, t4.endLoc)), t4.options.ranges && (this.range = [t4.start, t4.end]);
-            }, Lt2 = F2.prototype;
+            }, Lt2 = F3.prototype;
             function Vt2(t4) {
               return "function" != typeof BigInt ? null : BigInt(t4.replace(/_/g, ""));
             }
@@ -24800,13 +24800,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var t4 = this;
               return { next: function() {
                 var e4 = t4.getToken();
-                return { done: e4.type === k3.eof, value: e4 };
+                return { done: e4.type === k2.eof, value: e4 };
               } };
             }), Lt2.curContext = function() {
               return this.context[this.context.length - 1];
             }, Lt2.nextToken = function() {
               var t4 = this.curContext();
-              return t4 && t4.preserveSpace || this.skipSpace(), this.start = this.pos, this.options.locations && (this.startLoc = this.curPosition()), this.pos >= this.input.length ? this.finishToken(k3.eof) : t4.override ? t4.override(this) : void this.readToken(this.fullCharCodeAtPos());
+              return t4 && t4.preserveSpace || this.skipSpace(), this.start = this.pos, this.options.locations && (this.startLoc = this.curPosition()), this.pos >= this.input.length ? this.finishToken(k2.eof) : t4.override ? t4.override(this) : void this.readToken(this.fullCharCodeAtPos());
             }, Lt2.readToken = function(t4) {
               return f2(t4, this.options.ecmaVersion >= 6) || 92 === t4 ? this.readWord() : this.getTokenFromCode(t4);
             }, Lt2.fullCharCodeAtPos = function() {
@@ -24815,7 +24815,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, Lt2.skipBlockComment = function() {
               var t4, e4 = this.options.onComment && this.curPosition(), i4 = this.pos, s4 = this.input.indexOf("*/", this.pos += 2);
               if (-1 === s4 && this.raise(this.pos - 2, "Unterminated comment"), this.pos = s4 + 2, this.options.locations)
-                for (w3.lastIndex = i4; (t4 = w3.exec(this.input)) && t4.index < this.pos; )
+                for (w2.lastIndex = i4; (t4 = w2.exec(this.input)) && t4.index < this.pos; )
                   ++this.curLine, this.lineStart = t4.index + t4[0].length;
               this.options.onComment && this.options.onComment(true, this.input.slice(i4 + 2, s4), i4, this.pos, e4, this.curPosition());
             }, Lt2.skipLineComment = function(t4) {
@@ -24865,34 +24865,34 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               if (t4 >= 48 && t4 <= 57)
                 return this.readNumber(true);
               var e4 = this.input.charCodeAt(this.pos + 2);
-              return this.options.ecmaVersion >= 6 && 46 === t4 && 46 === e4 ? (this.pos += 3, this.finishToken(k3.ellipsis)) : (++this.pos, this.finishToken(k3.dot));
+              return this.options.ecmaVersion >= 6 && 46 === t4 && 46 === e4 ? (this.pos += 3, this.finishToken(k2.ellipsis)) : (++this.pos, this.finishToken(k2.dot));
             }, Lt2.readToken_slash = function() {
               var t4 = this.input.charCodeAt(this.pos + 1);
-              return this.exprAllowed ? (++this.pos, this.readRegexp()) : 61 === t4 ? this.finishOp(k3.assign, 2) : this.finishOp(k3.slash, 1);
+              return this.exprAllowed ? (++this.pos, this.readRegexp()) : 61 === t4 ? this.finishOp(k2.assign, 2) : this.finishOp(k2.slash, 1);
             }, Lt2.readToken_mult_modulo_exp = function(t4) {
-              var e4 = this.input.charCodeAt(this.pos + 1), i4 = 1, s4 = 42 === t4 ? k3.star : k3.modulo;
-              return this.options.ecmaVersion >= 7 && 42 === t4 && 42 === e4 && (++i4, s4 = k3.starstar, e4 = this.input.charCodeAt(this.pos + 2)), 61 === e4 ? this.finishOp(k3.assign, i4 + 1) : this.finishOp(s4, i4);
+              var e4 = this.input.charCodeAt(this.pos + 1), i4 = 1, s4 = 42 === t4 ? k2.star : k2.modulo;
+              return this.options.ecmaVersion >= 7 && 42 === t4 && 42 === e4 && (++i4, s4 = k2.starstar, e4 = this.input.charCodeAt(this.pos + 2)), 61 === e4 ? this.finishOp(k2.assign, i4 + 1) : this.finishOp(s4, i4);
             }, Lt2.readToken_pipe_amp = function(t4) {
               var e4 = this.input.charCodeAt(this.pos + 1);
               if (e4 === t4) {
                 if (this.options.ecmaVersion >= 12) {
                   if (61 === this.input.charCodeAt(this.pos + 2))
-                    return this.finishOp(k3.assign, 3);
+                    return this.finishOp(k2.assign, 3);
                 }
-                return this.finishOp(124 === t4 ? k3.logicalOR : k3.logicalAND, 2);
+                return this.finishOp(124 === t4 ? k2.logicalOR : k2.logicalAND, 2);
               }
-              return 61 === e4 ? this.finishOp(k3.assign, 2) : this.finishOp(124 === t4 ? k3.bitwiseOR : k3.bitwiseAND, 1);
+              return 61 === e4 ? this.finishOp(k2.assign, 2) : this.finishOp(124 === t4 ? k2.bitwiseOR : k2.bitwiseAND, 1);
             }, Lt2.readToken_caret = function() {
-              return 61 === this.input.charCodeAt(this.pos + 1) ? this.finishOp(k3.assign, 2) : this.finishOp(k3.bitwiseXOR, 1);
+              return 61 === this.input.charCodeAt(this.pos + 1) ? this.finishOp(k2.assign, 2) : this.finishOp(k2.bitwiseXOR, 1);
             }, Lt2.readToken_plus_min = function(t4) {
               var e4 = this.input.charCodeAt(this.pos + 1);
-              return e4 === t4 ? 45 !== e4 || this.inModule || 62 !== this.input.charCodeAt(this.pos + 2) || 0 !== this.lastTokEnd && !S2.test(this.input.slice(this.lastTokEnd, this.pos)) ? this.finishOp(k3.incDec, 2) : (this.skipLineComment(3), this.skipSpace(), this.nextToken()) : 61 === e4 ? this.finishOp(k3.assign, 2) : this.finishOp(k3.plusMin, 1);
+              return e4 === t4 ? 45 !== e4 || this.inModule || 62 !== this.input.charCodeAt(this.pos + 2) || 0 !== this.lastTokEnd && !S2.test(this.input.slice(this.lastTokEnd, this.pos)) ? this.finishOp(k2.incDec, 2) : (this.skipLineComment(3), this.skipSpace(), this.nextToken()) : 61 === e4 ? this.finishOp(k2.assign, 2) : this.finishOp(k2.plusMin, 1);
             }, Lt2.readToken_lt_gt = function(t4) {
               var e4 = this.input.charCodeAt(this.pos + 1), i4 = 1;
-              return e4 === t4 ? (i4 = 62 === t4 && 62 === this.input.charCodeAt(this.pos + 2) ? 3 : 2, 61 === this.input.charCodeAt(this.pos + i4) ? this.finishOp(k3.assign, i4 + 1) : this.finishOp(k3.bitShift, i4)) : 33 !== e4 || 60 !== t4 || this.inModule || 45 !== this.input.charCodeAt(this.pos + 2) || 45 !== this.input.charCodeAt(this.pos + 3) ? (61 === e4 && (i4 = 2), this.finishOp(k3.relational, i4)) : (this.skipLineComment(4), this.skipSpace(), this.nextToken());
+              return e4 === t4 ? (i4 = 62 === t4 && 62 === this.input.charCodeAt(this.pos + 2) ? 3 : 2, 61 === this.input.charCodeAt(this.pos + i4) ? this.finishOp(k2.assign, i4 + 1) : this.finishOp(k2.bitShift, i4)) : 33 !== e4 || 60 !== t4 || this.inModule || 45 !== this.input.charCodeAt(this.pos + 2) || 45 !== this.input.charCodeAt(this.pos + 3) ? (61 === e4 && (i4 = 2), this.finishOp(k2.relational, i4)) : (this.skipLineComment(4), this.skipSpace(), this.nextToken());
             }, Lt2.readToken_eq_excl = function(t4) {
               var e4 = this.input.charCodeAt(this.pos + 1);
-              return 61 === e4 ? this.finishOp(k3.equality, 61 === this.input.charCodeAt(this.pos + 2) ? 3 : 2) : 61 === t4 && 62 === e4 && this.options.ecmaVersion >= 6 ? (this.pos += 2, this.finishToken(k3.arrow)) : this.finishOp(61 === t4 ? k3.eq : k3.prefix, 1);
+              return 61 === e4 ? this.finishOp(k2.equality, 61 === this.input.charCodeAt(this.pos + 2) ? 3 : 2) : 61 === t4 && 62 === e4 && this.options.ecmaVersion >= 6 ? (this.pos += 2, this.finishToken(k2.arrow)) : this.finishOp(61 === t4 ? k2.eq : k2.prefix, 1);
             }, Lt2.readToken_question = function() {
               var t4 = this.options.ecmaVersion;
               if (t4 >= 11) {
@@ -24900,43 +24900,43 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 if (46 === e4) {
                   var i4 = this.input.charCodeAt(this.pos + 2);
                   if (i4 < 48 || i4 > 57)
-                    return this.finishOp(k3.questionDot, 2);
+                    return this.finishOp(k2.questionDot, 2);
                 }
                 if (63 === e4) {
                   if (t4 >= 12) {
                     if (61 === this.input.charCodeAt(this.pos + 2))
-                      return this.finishOp(k3.assign, 3);
+                      return this.finishOp(k2.assign, 3);
                   }
-                  return this.finishOp(k3.coalesce, 2);
+                  return this.finishOp(k2.coalesce, 2);
                 }
               }
-              return this.finishOp(k3.question, 1);
+              return this.finishOp(k2.question, 1);
             }, Lt2.getTokenFromCode = function(t4) {
               switch (t4) {
                 case 46:
                   return this.readToken_dot();
                 case 40:
-                  return ++this.pos, this.finishToken(k3.parenL);
+                  return ++this.pos, this.finishToken(k2.parenL);
                 case 41:
-                  return ++this.pos, this.finishToken(k3.parenR);
+                  return ++this.pos, this.finishToken(k2.parenR);
                 case 59:
-                  return ++this.pos, this.finishToken(k3.semi);
+                  return ++this.pos, this.finishToken(k2.semi);
                 case 44:
-                  return ++this.pos, this.finishToken(k3.comma);
+                  return ++this.pos, this.finishToken(k2.comma);
                 case 91:
-                  return ++this.pos, this.finishToken(k3.bracketL);
+                  return ++this.pos, this.finishToken(k2.bracketL);
                 case 93:
-                  return ++this.pos, this.finishToken(k3.bracketR);
+                  return ++this.pos, this.finishToken(k2.bracketR);
                 case 123:
-                  return ++this.pos, this.finishToken(k3.braceL);
+                  return ++this.pos, this.finishToken(k2.braceL);
                 case 125:
-                  return ++this.pos, this.finishToken(k3.braceR);
+                  return ++this.pos, this.finishToken(k2.braceR);
                 case 58:
-                  return ++this.pos, this.finishToken(k3.colon);
+                  return ++this.pos, this.finishToken(k2.colon);
                 case 96:
                   if (this.options.ecmaVersion < 6)
                     break;
-                  return ++this.pos, this.finishToken(k3.backQuote);
+                  return ++this.pos, this.finishToken(k2.backQuote);
                 case 48:
                   var e4 = this.input.charCodeAt(this.pos + 1);
                   if (120 === e4 || 88 === e4)
@@ -24982,7 +24982,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 case 63:
                   return this.readToken_question();
                 case 126:
-                  return this.finishOp(k3.prefix, 1);
+                  return this.finishOp(k2.prefix, 1);
               }
               this.raise(this.pos, "Unexpected character '" + Ot(t4) + "'");
             }, Lt2.finishOp = function(t4, e4) {
@@ -25016,7 +25016,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 h3 = new RegExp(r3, n3);
               } catch (t5) {
               }
-              return this.finishToken(k3.regexp, { pattern: r3, flags: n3, value: h3 });
+              return this.finishToken(k2.regexp, { pattern: r3, flags: n3, value: h3 });
             }, Lt2.readInt = function(t4, e4, i4) {
               for (var s4 = this.options.ecmaVersion >= 12 && void 0 === e4, r3 = i4 && 48 === this.input.charCodeAt(this.pos), a3 = this.pos, n3 = 0, o3 = 0, h3 = 0, p4 = null == e4 ? 1 / 0 : e4; h3 < p4; ++h3, ++this.pos) {
                 var c3 = this.input.charCodeAt(this.pos), l3 = void 0;
@@ -25033,7 +25033,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var e4 = this.pos;
               this.pos += 2;
               var i4 = this.readInt(t4);
-              return null == i4 && this.raise(this.start + 2, "Expected number in radix " + t4), this.options.ecmaVersion >= 11 && 110 === this.input.charCodeAt(this.pos) ? (i4 = Vt2(this.input.slice(e4, this.pos)), ++this.pos) : f2(this.fullCharCodeAtPos()) && this.raise(this.pos, "Identifier directly after number"), this.finishToken(k3.num, i4);
+              return null == i4 && this.raise(this.start + 2, "Expected number in radix " + t4), this.options.ecmaVersion >= 11 && 110 === this.input.charCodeAt(this.pos) ? (i4 = Vt2(this.input.slice(e4, this.pos)), ++this.pos) : f2(this.fullCharCodeAtPos()) && this.raise(this.pos, "Identifier directly after number"), this.finishToken(k2.num, i4);
             }, Lt2.readNumber = function(t4) {
               var e4 = this.pos;
               t4 || null !== this.readInt(10, void 0, true) || this.raise(e4, "Invalid number");
@@ -25042,11 +25042,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var s4 = this.input.charCodeAt(this.pos);
               if (!i4 && !t4 && this.options.ecmaVersion >= 11 && 110 === s4) {
                 var r3 = Vt2(this.input.slice(e4, this.pos));
-                return ++this.pos, f2(this.fullCharCodeAtPos()) && this.raise(this.pos, "Identifier directly after number"), this.finishToken(k3.num, r3);
+                return ++this.pos, f2(this.fullCharCodeAtPos()) && this.raise(this.pos, "Identifier directly after number"), this.finishToken(k2.num, r3);
               }
               i4 && /[89]/.test(this.input.slice(e4, this.pos)) && (i4 = false), 46 !== s4 || i4 || (++this.pos, this.readInt(10), s4 = this.input.charCodeAt(this.pos)), 69 !== s4 && 101 !== s4 || i4 || (43 !== (s4 = this.input.charCodeAt(++this.pos)) && 45 !== s4 || ++this.pos, null === this.readInt(10) && this.raise(e4, "Invalid number")), f2(this.fullCharCodeAtPos()) && this.raise(this.pos, "Identifier directly after number");
               var a3, n3 = (a3 = this.input.slice(e4, this.pos), i4 ? parseInt(a3, 8) : parseFloat(a3.replace(/_/g, "")));
-              return this.finishToken(k3.num, n3);
+              return this.finishToken(k2.num, n3);
             }, Lt2.readCodePoint = function() {
               var t4;
               if (123 === this.input.charCodeAt(this.pos)) {
@@ -25064,7 +25064,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   break;
                 92 === s4 ? (e4 += this.input.slice(i4, this.pos), e4 += this.readEscapedChar(false), i4 = this.pos) : (C3(s4, this.options.ecmaVersion >= 10) && this.raise(this.start, "Unterminated string constant"), ++this.pos);
               }
-              return e4 += this.input.slice(i4, this.pos++), this.finishToken(k3.string, e4);
+              return e4 += this.input.slice(i4, this.pos++), this.finishToken(k2.string, e4);
             };
             var Rt2 = {};
             Lt2.tryReadTemplateToken = function() {
@@ -25086,7 +25086,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 this.pos >= this.input.length && this.raise(this.start, "Unterminated template");
                 var i4 = this.input.charCodeAt(this.pos);
                 if (96 === i4 || 36 === i4 && 123 === this.input.charCodeAt(this.pos + 1))
-                  return this.pos !== this.start || this.type !== k3.template && this.type !== k3.invalidTemplate ? (t4 += this.input.slice(e4, this.pos), this.finishToken(k3.template, t4)) : 36 === i4 ? (this.pos += 2, this.finishToken(k3.dollarBraceL)) : (++this.pos, this.finishToken(k3.backQuote));
+                  return this.pos !== this.start || this.type !== k2.template && this.type !== k2.invalidTemplate ? (t4 += this.input.slice(e4, this.pos), this.finishToken(k2.template, t4)) : 36 === i4 ? (this.pos += 2, this.finishToken(k2.dollarBraceL)) : (++this.pos, this.finishToken(k2.backQuote));
                 if (92 === i4)
                   t4 += this.input.slice(e4, this.pos), t4 += this.readEscapedChar(true), e4 = this.pos;
                 else if (C3(i4)) {
@@ -25113,7 +25113,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     if ("{" !== this.input[this.pos + 1])
                       break;
                   case "`":
-                    return this.finishToken(k3.invalidTemplate, this.input.slice(this.start, this.pos));
+                    return this.finishToken(k2.invalidTemplate, this.input.slice(this.start, this.pos));
                 }
               this.raise(this.start, "Unterminated template");
             }, Lt2.readEscapedChar = function(t4) {
@@ -25174,17 +25174,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }
               return t4 + this.input.slice(i4, this.pos);
             }, Lt2.readWord = function() {
-              var t4 = this.readWord1(), e4 = k3.name;
+              var t4 = this.readWord1(), e4 = k2.name;
               return this.keywords.test(t4) && (e4 = b2[t4]), this.finishToken(e4, t4);
             };
-            F2.acorn = { Parser: F2, version: "8.0.5", defaultOptions: B2, Position: O3, SourceLocation: R2, getLineInfo: M2, Node: rt2, TokenType: g2, tokTypes: k3, keywordTypes: b2, TokContext: ot2, tokContexts: ht2, isIdentifierChar: m3, isIdentifierStart: f2, Token: Nt2, isNewLine: C3, lineBreak: S2, lineBreakG: w3, nonASCIIwhitespace: E2 };
-            var Mt2 = i3(977), Bt2 = i3.n(Mt2), Dt2 = i3(297), jt = i3.n(Dt2);
+            F3.acorn = { Parser: F3, version: "8.0.5", defaultOptions: B3, Position: O3, SourceLocation: R2, getLineInfo: M2, Node: rt2, TokenType: g2, tokTypes: k2, keywordTypes: b2, TokContext: ot2, tokContexts: ht2, isIdentifierChar: m3, isIdentifierStart: f2, Token: Nt2, isNewLine: C3, lineBreak: S2, lineBreakG: w2, nonASCIIwhitespace: E2 };
+            var Mt2 = i3(977), Bt2 = i3.n(Mt2), Dt = i3(297), jt = i3.n(Dt);
             const Ut = { class: "className", for: "htmlFor", maxlength: "maxLength", colspan: "colSpan", rowspan: "rowSpan" };
             var Ft2 = ["area", "base", "br", "col", "embed", "hr", "img", "input", "keygen", "link", "menuitem", "meta", "param", "source", "track", "wbr"], qt = ["table", "tbody", "tfoot", "thead", "tr"];
-            function Gt2(t4) {
+            function Gt(t4) {
               return -1 === Ft2.indexOf(t4.toLowerCase());
             }
-            function Ht2(t4) {
+            function Ht(t4) {
               return -1 !== qt.indexOf(t4.toLowerCase());
             }
             var Wt = function() {
@@ -25430,7 +25430,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 for (var s4 = arguments.length, r3 = new Array(s4), a3 = 0; a3 < s4; a3++)
                   r3[a3] = arguments[a3];
                 return fe3(ue3(t5 = e4.call.apply(e4, [this].concat(r3))), "ParsedChildren", null), ge3.set(ue3(t5), { writable: true, value: function(e5) {
-                  var i5 = F2.extend(Bt2()({ autoCloseVoidElements: t5.props.autoCloseVoidElements })), s5 = "<root>".concat(e5, "</root>"), r4 = [];
+                  var i5 = F3.extend(Bt2()({ autoCloseVoidElements: t5.props.autoCloseVoidElements })), s5 = "<root>".concat(e5, "</root>"), r4 = [];
                   try {
                     r4 = (r4 = i5.parse(s5, { ecmaVersion: "latest" })).body[0].expression.children || [];
                   } catch (e6) {
@@ -25450,7 +25450,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                       return me3(ue3(t5), xe3).call(ue3(t5), e5.expression, i5);
                     case "JSXText":
                       var s5 = t5.props.disableKeyGeneration ? void 0 : Wt();
-                      return t5.props.disableFragments ? e5.value : jt().createElement(Dt2.Fragment, { key: s5 }, e5.value);
+                      return t5.props.disableFragments ? e5.value : jt().createElement(Dt.Fragment, { key: s5 }, e5.value);
                     case "ArrayExpression":
                       return e5.elements.map(function(e6) {
                         return me3(ue3(t5), xe3).call(ue3(t5), e6, i5);
@@ -25583,11 +25583,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     if (!r4 && document.createElement(d3) instanceof HTMLUnknownElement)
                       return o3(new Error("The tag <".concat(d3, "> is unrecognized in this browser, and will not be rendered."))), t5.props.renderUnrecognized(d3);
                   }
-                  var y3 = "JSXElement" === e5.type ? te3(a4, d3) : Dt2.Fragment;
-                  if (y3 || Gt2(d3))
+                  var y3 = "JSXElement" === e5.type ? te3(a4, d3) : Dt.Fragment;
+                  if (y3 || Gt(d3))
                     if (g3 = p4.map(function(e6) {
                       return me3(ue3(t5), xe3).call(ue3(t5), e6, i5);
-                    }), y3 || Ht2(d3) || (g3 = g3.filter(function(t6) {
+                    }), y3 || Ht(d3) || (g3 = g3.filter(function(t6) {
                       return "string" != typeof t6 || !/^\s*$/.test(t6);
                     })), 0 === g3.length)
                       g3 = void 0;
@@ -26581,23 +26581,23 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       var E2 = Object.getOwnPropertyDescriptor;
       var v3 = Object.getOwnPropertyNames;
       var U3 = Object.prototype.hasOwnProperty;
-      var _3 = (e2, t2) => {
+      var _2 = (e2, t2) => {
         for (var r2 in t2)
           R2(e2, r2, { get: t2[r2], enumerable: true });
       };
-      var w3 = (e2, t2, r2, a2) => {
+      var w2 = (e2, t2, r2, a2) => {
         if (t2 && typeof t2 == "object" || typeof t2 == "function")
           for (let s2 of v3(t2))
             !U3.call(e2, s2) && s2 !== r2 && R2(e2, s2, { get: () => t2[s2], enumerable: !(a2 = E2(t2, s2)) || a2.enumerable });
         return e2;
       };
-      var M2 = (e2) => w3(R2({}, "__esModule", { value: true }), e2);
+      var M2 = (e2) => w2(R2({}, "__esModule", { value: true }), e2);
       var Q3 = {};
-      _3(Q3, { streamQuery: () => q3 });
+      _2(Q3, { streamQuery: () => q3 });
       module.exports = M2(Q3);
       var u2 = "%START_SNIPPET%";
       var d2 = "%END_SNIPPET%";
-      var k3 = (e2) => {
+      var k2 = (e2) => {
         if (!e2)
           return;
         let t2 = [], { response: r2, document: a2 } = e2;
@@ -26607,14 +26607,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         }), t2;
       };
       var z2 = (e2) => {
-        let t2 = L3(e2);
+        let t2 = L2(e2);
         return { source: t2.source, url: t2.url, title: t2.title || "Untitled", metadata: t2 };
       };
       var G3 = (e2) => {
         let [t2, r2] = e2.indexOf(u2) !== -1 ? e2.split(u2) : ["", e2], [a2, s2] = r2.indexOf(d2) !== -1 ? r2.split(d2) : [r2, ""];
         return { pre: t2, post: s2, text: a2 };
       };
-      var L3 = (e2) => {
+      var L2 = (e2) => {
         let t2 = {};
         return e2.forEach((r2) => {
           t2[r2.name] = r2.value;
@@ -26625,24 +26625,24 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         var c2, p3, l2, y2, S2, g2, h2;
         let r2 = { "x-api-key": e2.apiKey, "customer-id": e2.customerId, "Content-Type": "application/json" }, a2 = (c2 = e2.lambda) != null ? c2 : 0.025;
         a2 > 1 ? a2 = 1 : a2 < 0 && (a2 = 0);
-        let s2 = e2.corpusIds.map((n2) => ({ customerId: e2.customerId, corpusId: n2, lexicalInterpolationConfig: { lambda: a2 }, metadataFilter: e2.filter ? `doc.source = '${e2.filter}'` : void 0 })), i2 = e2.rerank ? { rerankingConfig: { rerankerId: e2.rerankerId, ...e2.rerankerId === 272725718 ? { mmrConfig: { diversityBias: e2.rerankDiversityBias } } : {} } } : {}, x2 = JSON.stringify({ query: [{ query: e2.queryValue, start: 0, numResults: e2.rerank ? e2.rerankNumResults : 10, corpusKey: s2, contextConfig: { sentencesBefore: (p3 = e2.summaryNumSentences) != null ? p3 : 2, sentencesAfter: (l2 = e2.summaryNumSentences) != null ? l2 : 2, startTag: u2, endTag: d2 }, summary: [{ responseLang: e2.language, maxSummarizedResults: e2.summaryNumResults, summarizerPromptName: e2.summaryPromptName, chat: { store: (S2 = (y2 = e2.chat) == null ? void 0 : y2.store) != null ? S2 : false, conversationId: (g2 = e2.chat) == null ? void 0 : g2.conversationId } }], ...i2 }] }), I2 = await B2(r2, x2, (h2 = e2.endpoint) != null ? h2 : O3), m3 = "";
+        let s2 = e2.corpusIds.map((n2) => ({ customerId: e2.customerId, corpusId: n2, lexicalInterpolationConfig: { lambda: a2 }, metadataFilter: e2.filter ? `doc.source = '${e2.filter}'` : void 0 })), i2 = e2.rerank ? { rerankingConfig: { rerankerId: e2.rerankerId, ...e2.rerankerId === 272725718 ? { mmrConfig: { diversityBias: e2.rerankDiversityBias } } : {} } } : {}, x2 = JSON.stringify({ query: [{ query: e2.queryValue, start: 0, numResults: e2.rerank ? e2.rerankNumResults : 10, corpusKey: s2, contextConfig: { sentencesBefore: (p3 = e2.summaryNumSentences) != null ? p3 : 2, sentencesAfter: (l2 = e2.summaryNumSentences) != null ? l2 : 2, startTag: u2, endTag: d2 }, summary: [{ responseLang: e2.language, maxSummarizedResults: e2.summaryNumResults, summarizerPromptName: e2.summaryPromptName, chat: { store: (S2 = (y2 = e2.chat) == null ? void 0 : y2.store) != null ? S2 : false, conversationId: (g2 = e2.chat) == null ? void 0 : g2.conversationId } }], ...i2 }] }), I2 = await B3(r2, x2, (h2 = e2.endpoint) != null ? h2 : O3), m3 = "";
         for await (let n2 of I2)
           try {
             n2.split(`
 `).filter((b2) => b2 !== "").forEach((b2) => {
-              var f2, N2, D3, P2;
+              var f2, N2, D3, P3;
               let o2 = JSON.parse(b2);
               if (!o2.result)
                 return;
-              let T3 = K3(o2.result), A2 = { references: (f2 = k3(o2.result.responseSet)) != null ? f2 : null, detail: T3 ? { type: "chat", data: T3 } : null, updatedText: j2(o2.result, m3), isDone: (D3 = (N2 = o2.result.summary) == null ? void 0 : N2.done) != null ? D3 : false };
-              m3 = (P2 = A2.updatedText) != null ? P2 : "", t2(A2);
+              let T3 = K3(o2.result), A2 = { references: (f2 = k2(o2.result.responseSet)) != null ? f2 : null, detail: T3 ? { type: "chat", data: T3 } : null, updatedText: j2(o2.result, m3), isDone: (D3 = (N2 = o2.result.summary) == null ? void 0 : N2.done) != null ? D3 : false };
+              m3 = (P3 = A2.updatedText) != null ? P3 : "", t2(A2);
             });
           } catch {
           }
       };
       var K3 = (e2) => e2.summary ? { conversationId: e2.summary.chat.conversationId, turnId: e2.summary.chat.turnId } : null;
       var j2 = (e2, t2) => e2.summary ? `${t2}${e2.summary.text}` : null;
-      var B2 = async (e2, t2, r2) => {
+      var B3 = async (e2, t2, r2) => {
         let a2 = await fetch(`https://${r2}/v1/stream-query`, { method: "POST", headers: e2, body: t2 });
         if (a2.status !== 200)
           throw new Error(a2.status.toString());
@@ -26659,6 +26659,2162 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           yield r2.decode(a2, { stream: true });
         }
       }
+    }
+  });
+
+  // ../node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js
+  var require_react_is_development = __commonJS({
+    "../node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js"(exports) {
+      "use strict";
+      if (true) {
+        (function() {
+          "use strict";
+          var hasSymbol = typeof Symbol === "function" && Symbol.for;
+          var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 60103;
+          var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 60106;
+          var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 60107;
+          var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 60108;
+          var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 60114;
+          var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 60109;
+          var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 60110;
+          var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 60111;
+          var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 60111;
+          var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 60112;
+          var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 60113;
+          var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 60120;
+          var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 60115;
+          var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 60116;
+          var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 60121;
+          var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 60117;
+          var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 60118;
+          var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 60119;
+          function isValidElementType(type) {
+            return typeof type === "string" || typeof type === "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+            type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+          }
+          function typeOf(object2) {
+            if (typeof object2 === "object" && object2 !== null) {
+              var $$typeof = object2.$$typeof;
+              switch ($$typeof) {
+                case REACT_ELEMENT_TYPE:
+                  var type = object2.type;
+                  switch (type) {
+                    case REACT_ASYNC_MODE_TYPE:
+                    case REACT_CONCURRENT_MODE_TYPE:
+                    case REACT_FRAGMENT_TYPE:
+                    case REACT_PROFILER_TYPE:
+                    case REACT_STRICT_MODE_TYPE:
+                    case REACT_SUSPENSE_TYPE:
+                      return type;
+                    default:
+                      var $$typeofType = type && type.$$typeof;
+                      switch ($$typeofType) {
+                        case REACT_CONTEXT_TYPE:
+                        case REACT_FORWARD_REF_TYPE:
+                        case REACT_LAZY_TYPE:
+                        case REACT_MEMO_TYPE:
+                        case REACT_PROVIDER_TYPE:
+                          return $$typeofType;
+                        default:
+                          return $$typeof;
+                      }
+                  }
+                case REACT_PORTAL_TYPE:
+                  return $$typeof;
+              }
+            }
+            return void 0;
+          }
+          var AsyncMode = REACT_ASYNC_MODE_TYPE;
+          var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+          var ContextConsumer = REACT_CONTEXT_TYPE;
+          var ContextProvider = REACT_PROVIDER_TYPE;
+          var Element2 = REACT_ELEMENT_TYPE;
+          var ForwardRef = REACT_FORWARD_REF_TYPE;
+          var Fragment29 = REACT_FRAGMENT_TYPE;
+          var Lazy = REACT_LAZY_TYPE;
+          var Memo = REACT_MEMO_TYPE;
+          var Portal = REACT_PORTAL_TYPE;
+          var Profiler = REACT_PROFILER_TYPE;
+          var StrictMode = REACT_STRICT_MODE_TYPE;
+          var Suspense = REACT_SUSPENSE_TYPE;
+          var hasWarnedAboutDeprecatedIsAsyncMode = false;
+          function isAsyncMode(object2) {
+            {
+              if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+                hasWarnedAboutDeprecatedIsAsyncMode = true;
+                console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
+              }
+            }
+            return isConcurrentMode(object2) || typeOf(object2) === REACT_ASYNC_MODE_TYPE;
+          }
+          function isConcurrentMode(object2) {
+            return typeOf(object2) === REACT_CONCURRENT_MODE_TYPE;
+          }
+          function isContextConsumer(object2) {
+            return typeOf(object2) === REACT_CONTEXT_TYPE;
+          }
+          function isContextProvider(object2) {
+            return typeOf(object2) === REACT_PROVIDER_TYPE;
+          }
+          function isElement(object2) {
+            return typeof object2 === "object" && object2 !== null && object2.$$typeof === REACT_ELEMENT_TYPE;
+          }
+          function isForwardRef(object2) {
+            return typeOf(object2) === REACT_FORWARD_REF_TYPE;
+          }
+          function isFragment(object2) {
+            return typeOf(object2) === REACT_FRAGMENT_TYPE;
+          }
+          function isLazy(object2) {
+            return typeOf(object2) === REACT_LAZY_TYPE;
+          }
+          function isMemo(object2) {
+            return typeOf(object2) === REACT_MEMO_TYPE;
+          }
+          function isPortal(object2) {
+            return typeOf(object2) === REACT_PORTAL_TYPE;
+          }
+          function isProfiler(object2) {
+            return typeOf(object2) === REACT_PROFILER_TYPE;
+          }
+          function isStrictMode(object2) {
+            return typeOf(object2) === REACT_STRICT_MODE_TYPE;
+          }
+          function isSuspense(object2) {
+            return typeOf(object2) === REACT_SUSPENSE_TYPE;
+          }
+          exports.AsyncMode = AsyncMode;
+          exports.ConcurrentMode = ConcurrentMode;
+          exports.ContextConsumer = ContextConsumer;
+          exports.ContextProvider = ContextProvider;
+          exports.Element = Element2;
+          exports.ForwardRef = ForwardRef;
+          exports.Fragment = Fragment29;
+          exports.Lazy = Lazy;
+          exports.Memo = Memo;
+          exports.Portal = Portal;
+          exports.Profiler = Profiler;
+          exports.StrictMode = StrictMode;
+          exports.Suspense = Suspense;
+          exports.isAsyncMode = isAsyncMode;
+          exports.isConcurrentMode = isConcurrentMode;
+          exports.isContextConsumer = isContextConsumer;
+          exports.isContextProvider = isContextProvider;
+          exports.isElement = isElement;
+          exports.isForwardRef = isForwardRef;
+          exports.isFragment = isFragment;
+          exports.isLazy = isLazy;
+          exports.isMemo = isMemo;
+          exports.isPortal = isPortal;
+          exports.isProfiler = isProfiler;
+          exports.isStrictMode = isStrictMode;
+          exports.isSuspense = isSuspense;
+          exports.isValidElementType = isValidElementType;
+          exports.typeOf = typeOf;
+        })();
+      }
+    }
+  });
+
+  // ../node_modules/prop-types/node_modules/react-is/index.js
+  var require_react_is = __commonJS({
+    "../node_modules/prop-types/node_modules/react-is/index.js"(exports, module) {
+      "use strict";
+      if (false) {
+        module.exports = null;
+      } else {
+        module.exports = require_react_is_development();
+      }
+    }
+  });
+
+  // ../node_modules/prop-types/lib/ReactPropTypesSecret.js
+  var require_ReactPropTypesSecret = __commonJS({
+    "../node_modules/prop-types/lib/ReactPropTypesSecret.js"(exports, module) {
+      "use strict";
+      var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
+      module.exports = ReactPropTypesSecret;
+    }
+  });
+
+  // ../node_modules/prop-types/lib/has.js
+  var require_has = __commonJS({
+    "../node_modules/prop-types/lib/has.js"(exports, module) {
+      module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
+    }
+  });
+
+  // ../node_modules/prop-types/checkPropTypes.js
+  var require_checkPropTypes = __commonJS({
+    "../node_modules/prop-types/checkPropTypes.js"(exports, module) {
+      "use strict";
+      var printWarning = function() {
+      };
+      if (true) {
+        ReactPropTypesSecret = require_ReactPropTypesSecret();
+        loggedTypeFailures = {};
+        has = require_has();
+        printWarning = function(text) {
+          var message = "Warning: " + text;
+          if (typeof console !== "undefined") {
+            console.error(message);
+          }
+          try {
+            throw new Error(message);
+          } catch (x2) {
+          }
+        };
+      }
+      var ReactPropTypesSecret;
+      var loggedTypeFailures;
+      var has;
+      function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+        if (true) {
+          for (var typeSpecName in typeSpecs) {
+            if (has(typeSpecs, typeSpecName)) {
+              var error;
+              try {
+                if (typeof typeSpecs[typeSpecName] !== "function") {
+                  var err = Error(
+                    (componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`."
+                  );
+                  err.name = "Invariant Violation";
+                  throw err;
+                }
+                error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+              } catch (ex) {
+                error = ex;
+              }
+              if (error && !(error instanceof Error)) {
+                printWarning(
+                  (componentName || "React class") + ": type specification of " + location + " `" + typeSpecName + "` is invalid; the type checker function must return `null` or an `Error` but returned a " + typeof error + ". You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument)."
+                );
+              }
+              if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+                loggedTypeFailures[error.message] = true;
+                var stack = getStack ? getStack() : "";
+                printWarning(
+                  "Failed " + location + " type: " + error.message + (stack != null ? stack : "")
+                );
+              }
+            }
+          }
+        }
+      }
+      checkPropTypes.resetWarningCache = function() {
+        if (true) {
+          loggedTypeFailures = {};
+        }
+      };
+      module.exports = checkPropTypes;
+    }
+  });
+
+  // ../node_modules/prop-types/factoryWithTypeCheckers.js
+  var require_factoryWithTypeCheckers = __commonJS({
+    "../node_modules/prop-types/factoryWithTypeCheckers.js"(exports, module) {
+      "use strict";
+      var ReactIs = require_react_is();
+      var assign = require_object_assign();
+      var ReactPropTypesSecret = require_ReactPropTypesSecret();
+      var has = require_has();
+      var checkPropTypes = require_checkPropTypes();
+      var printWarning = function() {
+      };
+      if (true) {
+        printWarning = function(text) {
+          var message = "Warning: " + text;
+          if (typeof console !== "undefined") {
+            console.error(message);
+          }
+          try {
+            throw new Error(message);
+          } catch (x2) {
+          }
+        };
+      }
+      function emptyFunctionThatReturnsNull() {
+        return null;
+      }
+      module.exports = function(isValidElement2, throwOnDirectAccess) {
+        var ITERATOR_SYMBOL = typeof Symbol === "function" && Symbol.iterator;
+        var FAUX_ITERATOR_SYMBOL = "@@iterator";
+        function getIteratorFn(maybeIterable) {
+          var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+          if (typeof iteratorFn === "function") {
+            return iteratorFn;
+          }
+        }
+        var ANONYMOUS = "<<anonymous>>";
+        var ReactPropTypes = {
+          array: createPrimitiveTypeChecker("array"),
+          bigint: createPrimitiveTypeChecker("bigint"),
+          bool: createPrimitiveTypeChecker("boolean"),
+          func: createPrimitiveTypeChecker("function"),
+          number: createPrimitiveTypeChecker("number"),
+          object: createPrimitiveTypeChecker("object"),
+          string: createPrimitiveTypeChecker("string"),
+          symbol: createPrimitiveTypeChecker("symbol"),
+          any: createAnyTypeChecker(),
+          arrayOf: createArrayOfTypeChecker,
+          element: createElementTypeChecker(),
+          elementType: createElementTypeTypeChecker(),
+          instanceOf: createInstanceTypeChecker,
+          node: createNodeChecker(),
+          objectOf: createObjectOfTypeChecker,
+          oneOf: createEnumTypeChecker,
+          oneOfType: createUnionTypeChecker,
+          shape: createShapeTypeChecker,
+          exact: createStrictShapeTypeChecker
+        };
+        function is(x2, y2) {
+          if (x2 === y2) {
+            return x2 !== 0 || 1 / x2 === 1 / y2;
+          } else {
+            return x2 !== x2 && y2 !== y2;
+          }
+        }
+        function PropTypeError(message, data) {
+          this.message = message;
+          this.data = data && typeof data === "object" ? data : {};
+          this.stack = "";
+        }
+        PropTypeError.prototype = Error.prototype;
+        function createChainableTypeChecker(validate) {
+          if (true) {
+            var manualPropTypeCallCache = {};
+            var manualPropTypeWarningCount = 0;
+          }
+          function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+            componentName = componentName || ANONYMOUS;
+            propFullName = propFullName || propName;
+            if (secret !== ReactPropTypesSecret) {
+              if (throwOnDirectAccess) {
+                var err = new Error(
+                  "Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types"
+                );
+                err.name = "Invariant Violation";
+                throw err;
+              } else if (typeof console !== "undefined") {
+                var cacheKey = componentName + ":" + propName;
+                if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
+                manualPropTypeWarningCount < 3) {
+                  printWarning(
+                    "You are manually calling a React.PropTypes validation function for the `" + propFullName + "` prop on `" + componentName + "`. This is deprecated and will throw in the standalone `prop-types` package. You may be seeing this warning due to a third-party PropTypes library. See https://fb.me/react-warning-dont-call-proptypes for details."
+                  );
+                  manualPropTypeCallCache[cacheKey] = true;
+                  manualPropTypeWarningCount++;
+                }
+              }
+            }
+            if (props[propName] == null) {
+              if (isRequired) {
+                if (props[propName] === null) {
+                  return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`."));
+                }
+                return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`."));
+              }
+              return null;
+            } else {
+              return validate(props, propName, componentName, location, propFullName);
+            }
+          }
+          var chainedCheckType = checkType.bind(null, false);
+          chainedCheckType.isRequired = checkType.bind(null, true);
+          return chainedCheckType;
+        }
+        function createPrimitiveTypeChecker(expectedType) {
+          function validate(props, propName, componentName, location, propFullName, secret) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== expectedType) {
+              var preciseType = getPreciseType(propValue);
+              return new PropTypeError(
+                "Invalid " + location + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."),
+                { expectedType }
+              );
+            }
+            return null;
+          }
+          return createChainableTypeChecker(validate);
+        }
+        function createAnyTypeChecker() {
+          return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+        }
+        function createArrayOfTypeChecker(typeChecker) {
+          function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== "function") {
+              return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside arrayOf.");
+            }
+            var propValue = props[propName];
+            if (!Array.isArray(propValue)) {
+              var propType = getPropType(propValue);
+              return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
+            }
+            for (var i2 = 0; i2 < propValue.length; i2++) {
+              var error = typeChecker(propValue, i2, componentName, location, propFullName + "[" + i2 + "]", ReactPropTypesSecret);
+              if (error instanceof Error) {
+                return error;
+              }
+            }
+            return null;
+          }
+          return createChainableTypeChecker(validate);
+        }
+        function createElementTypeChecker() {
+          function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!isValidElement2(propValue)) {
+              var propType = getPropType(propValue);
+              return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
+            }
+            return null;
+          }
+          return createChainableTypeChecker(validate);
+        }
+        function createElementTypeTypeChecker() {
+          function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!ReactIs.isValidElementType(propValue)) {
+              var propType = getPropType(propValue);
+              return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
+            }
+            return null;
+          }
+          return createChainableTypeChecker(validate);
+        }
+        function createInstanceTypeChecker(expectedClass) {
+          function validate(props, propName, componentName, location, propFullName) {
+            if (!(props[propName] instanceof expectedClass)) {
+              var expectedClassName = expectedClass.name || ANONYMOUS;
+              var actualClassName = getClassName(props[propName]);
+              return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
+            }
+            return null;
+          }
+          return createChainableTypeChecker(validate);
+        }
+        function createEnumTypeChecker(expectedValues) {
+          if (!Array.isArray(expectedValues)) {
+            if (true) {
+              if (arguments.length > 1) {
+                printWarning(
+                  "Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z])."
+                );
+              } else {
+                printWarning("Invalid argument supplied to oneOf, expected an array.");
+              }
+            }
+            return emptyFunctionThatReturnsNull;
+          }
+          function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            for (var i2 = 0; i2 < expectedValues.length; i2++) {
+              if (is(propValue, expectedValues[i2])) {
+                return null;
+              }
+            }
+            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+              var type = getPreciseType(value);
+              if (type === "symbol") {
+                return String(value);
+              }
+              return value;
+            });
+            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
+          }
+          return createChainableTypeChecker(validate);
+        }
+        function createObjectOfTypeChecker(typeChecker) {
+          function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== "function") {
+              return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside objectOf.");
+            }
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") {
+              return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
+            }
+            for (var key in propValue) {
+              if (has(propValue, key)) {
+                var error = typeChecker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error instanceof Error) {
+                  return error;
+                }
+              }
+            }
+            return null;
+          }
+          return createChainableTypeChecker(validate);
+        }
+        function createUnionTypeChecker(arrayOfTypeCheckers) {
+          if (!Array.isArray(arrayOfTypeCheckers)) {
+            true ? printWarning("Invalid argument supplied to oneOfType, expected an instance of array.") : void 0;
+            return emptyFunctionThatReturnsNull;
+          }
+          for (var i2 = 0; i2 < arrayOfTypeCheckers.length; i2++) {
+            var checker = arrayOfTypeCheckers[i2];
+            if (typeof checker !== "function") {
+              printWarning(
+                "Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + " at index " + i2 + "."
+              );
+              return emptyFunctionThatReturnsNull;
+            }
+          }
+          function validate(props, propName, componentName, location, propFullName) {
+            var expectedTypes = [];
+            for (var i3 = 0; i3 < arrayOfTypeCheckers.length; i3++) {
+              var checker2 = arrayOfTypeCheckers[i3];
+              var checkerResult = checker2(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+              if (checkerResult == null) {
+                return null;
+              }
+              if (checkerResult.data && has(checkerResult.data, "expectedType")) {
+                expectedTypes.push(checkerResult.data.expectedType);
+              }
+            }
+            var expectedTypesMessage = expectedTypes.length > 0 ? ", expected one of type [" + expectedTypes.join(", ") + "]" : "";
+            return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
+          }
+          return createChainableTypeChecker(validate);
+        }
+        function createNodeChecker() {
+          function validate(props, propName, componentName, location, propFullName) {
+            if (!isNode(props[propName])) {
+              return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
+            }
+            return null;
+          }
+          return createChainableTypeChecker(validate);
+        }
+        function invalidValidatorError(componentName, location, propFullName, key, type) {
+          return new PropTypeError(
+            (componentName || "React class") + ": " + location + " type `" + propFullName + "." + key + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + type + "`."
+          );
+        }
+        function createShapeTypeChecker(shapeTypes) {
+          function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") {
+              return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            }
+            for (var key in shapeTypes) {
+              var checker = shapeTypes[key];
+              if (typeof checker !== "function") {
+                return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+              }
+              var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+              if (error) {
+                return error;
+              }
+            }
+            return null;
+          }
+          return createChainableTypeChecker(validate);
+        }
+        function createStrictShapeTypeChecker(shapeTypes) {
+          function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") {
+              return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            }
+            var allKeys = assign({}, props[propName], shapeTypes);
+            for (var key in allKeys) {
+              var checker = shapeTypes[key];
+              if (has(shapeTypes, key) && typeof checker !== "function") {
+                return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+              }
+              if (!checker) {
+                return new PropTypeError(
+                  "Invalid " + location + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`.\nBad object: " + JSON.stringify(props[propName], null, "  ") + "\nValid keys: " + JSON.stringify(Object.keys(shapeTypes), null, "  ")
+                );
+              }
+              var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+              if (error) {
+                return error;
+              }
+            }
+            return null;
+          }
+          return createChainableTypeChecker(validate);
+        }
+        function isNode(propValue) {
+          switch (typeof propValue) {
+            case "number":
+            case "string":
+            case "undefined":
+              return true;
+            case "boolean":
+              return !propValue;
+            case "object":
+              if (Array.isArray(propValue)) {
+                return propValue.every(isNode);
+              }
+              if (propValue === null || isValidElement2(propValue)) {
+                return true;
+              }
+              var iteratorFn = getIteratorFn(propValue);
+              if (iteratorFn) {
+                var iterator = iteratorFn.call(propValue);
+                var step;
+                if (iteratorFn !== propValue.entries) {
+                  while (!(step = iterator.next()).done) {
+                    if (!isNode(step.value)) {
+                      return false;
+                    }
+                  }
+                } else {
+                  while (!(step = iterator.next()).done) {
+                    var entry = step.value;
+                    if (entry) {
+                      if (!isNode(entry[1])) {
+                        return false;
+                      }
+                    }
+                  }
+                }
+              } else {
+                return false;
+              }
+              return true;
+            default:
+              return false;
+          }
+        }
+        function isSymbol(propType, propValue) {
+          if (propType === "symbol") {
+            return true;
+          }
+          if (!propValue) {
+            return false;
+          }
+          if (propValue["@@toStringTag"] === "Symbol") {
+            return true;
+          }
+          if (typeof Symbol === "function" && propValue instanceof Symbol) {
+            return true;
+          }
+          return false;
+        }
+        function getPropType(propValue) {
+          var propType = typeof propValue;
+          if (Array.isArray(propValue)) {
+            return "array";
+          }
+          if (propValue instanceof RegExp) {
+            return "object";
+          }
+          if (isSymbol(propType, propValue)) {
+            return "symbol";
+          }
+          return propType;
+        }
+        function getPreciseType(propValue) {
+          if (typeof propValue === "undefined" || propValue === null) {
+            return "" + propValue;
+          }
+          var propType = getPropType(propValue);
+          if (propType === "object") {
+            if (propValue instanceof Date) {
+              return "date";
+            } else if (propValue instanceof RegExp) {
+              return "regexp";
+            }
+          }
+          return propType;
+        }
+        function getPostfixForTypeWarning(value) {
+          var type = getPreciseType(value);
+          switch (type) {
+            case "array":
+            case "object":
+              return "an " + type;
+            case "boolean":
+            case "date":
+            case "regexp":
+              return "a " + type;
+            default:
+              return type;
+          }
+        }
+        function getClassName(propValue) {
+          if (!propValue.constructor || !propValue.constructor.name) {
+            return ANONYMOUS;
+          }
+          return propValue.constructor.name;
+        }
+        ReactPropTypes.checkPropTypes = checkPropTypes;
+        ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+        ReactPropTypes.PropTypes = ReactPropTypes;
+        return ReactPropTypes;
+      };
+    }
+  });
+
+  // ../node_modules/prop-types/index.js
+  var require_prop_types = __commonJS({
+    "../node_modules/prop-types/index.js"(exports, module) {
+      if (true) {
+        ReactIs = require_react_is();
+        throwOnDirectAccess = true;
+        module.exports = require_factoryWithTypeCheckers()(ReactIs.isElement, throwOnDirectAccess);
+      } else {
+        module.exports = null();
+      }
+      var ReactIs;
+      var throwOnDirectAccess;
+    }
+  });
+
+  // ../node_modules/prismjs/prism.js
+  var require_prism = __commonJS({
+    "../node_modules/prismjs/prism.js"(exports, module) {
+      var _self = typeof window !== "undefined" ? window : typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope ? self : {};
+      var Prism3 = function(_self2) {
+        var lang = /(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i;
+        var uniqueId = 0;
+        var plainTextGrammar = {};
+        var _2 = {
+          /**
+           * By default, Prism will attempt to highlight all code elements (by calling {@link Prism.highlightAll}) on the
+           * current page after the page finished loading. This might be a problem if e.g. you wanted to asynchronously load
+           * additional languages or plugins yourself.
+           *
+           * By setting this value to `true`, Prism will not automatically highlight all code elements on the page.
+           *
+           * You obviously have to change this value before the automatic highlighting started. To do this, you can add an
+           * empty Prism object into the global scope before loading the Prism script like this:
+           *
+           * ```js
+           * window.Prism = window.Prism || {};
+           * Prism.manual = true;
+           * // add a new <script> to load Prism's script
+           * ```
+           *
+           * @default false
+           * @type {boolean}
+           * @memberof Prism
+           * @public
+           */
+          manual: _self2.Prism && _self2.Prism.manual,
+          /**
+           * By default, if Prism is in a web worker, it assumes that it is in a worker it created itself, so it uses
+           * `addEventListener` to communicate with its parent instance. However, if you're using Prism manually in your
+           * own worker, you don't want it to do this.
+           *
+           * By setting this value to `true`, Prism will not add its own listeners to the worker.
+           *
+           * You obviously have to change this value before Prism executes. To do this, you can add an
+           * empty Prism object into the global scope before loading the Prism script like this:
+           *
+           * ```js
+           * window.Prism = window.Prism || {};
+           * Prism.disableWorkerMessageHandler = true;
+           * // Load Prism's script
+           * ```
+           *
+           * @default false
+           * @type {boolean}
+           * @memberof Prism
+           * @public
+           */
+          disableWorkerMessageHandler: _self2.Prism && _self2.Prism.disableWorkerMessageHandler,
+          /**
+           * A namespace for utility methods.
+           *
+           * All function in this namespace that are not explicitly marked as _public_ are for __internal use only__ and may
+           * change or disappear at any time.
+           *
+           * @namespace
+           * @memberof Prism
+           */
+          util: {
+            encode: function encode3(tokens) {
+              if (tokens instanceof Token) {
+                return new Token(tokens.type, encode3(tokens.content), tokens.alias);
+              } else if (Array.isArray(tokens)) {
+                return tokens.map(encode3);
+              } else {
+                return tokens.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\u00a0/g, " ");
+              }
+            },
+            /**
+             * Returns the name of the type of the given value.
+             *
+             * @param {any} o
+             * @returns {string}
+             * @example
+             * type(null)      === 'Null'
+             * type(undefined) === 'Undefined'
+             * type(123)       === 'Number'
+             * type('foo')     === 'String'
+             * type(true)      === 'Boolean'
+             * type([1, 2])    === 'Array'
+             * type({})        === 'Object'
+             * type(String)    === 'Function'
+             * type(/abc+/)    === 'RegExp'
+             */
+            type: function(o2) {
+              return Object.prototype.toString.call(o2).slice(8, -1);
+            },
+            /**
+             * Returns a unique number for the given object. Later calls will still return the same number.
+             *
+             * @param {Object} obj
+             * @returns {number}
+             */
+            objId: function(obj) {
+              if (!obj["__id"]) {
+                Object.defineProperty(obj, "__id", { value: ++uniqueId });
+              }
+              return obj["__id"];
+            },
+            /**
+             * Creates a deep clone of the given object.
+             *
+             * The main intended use of this function is to clone language definitions.
+             *
+             * @param {T} o
+             * @param {Record<number, any>} [visited]
+             * @returns {T}
+             * @template T
+             */
+            clone: function deepClone(o2, visited) {
+              visited = visited || {};
+              var clone;
+              var id2;
+              switch (_2.util.type(o2)) {
+                case "Object":
+                  id2 = _2.util.objId(o2);
+                  if (visited[id2]) {
+                    return visited[id2];
+                  }
+                  clone = /** @type {Record<string, any>} */
+                  {};
+                  visited[id2] = clone;
+                  for (var key in o2) {
+                    if (o2.hasOwnProperty(key)) {
+                      clone[key] = deepClone(o2[key], visited);
+                    }
+                  }
+                  return (
+                    /** @type {any} */
+                    clone
+                  );
+                case "Array":
+                  id2 = _2.util.objId(o2);
+                  if (visited[id2]) {
+                    return visited[id2];
+                  }
+                  clone = [];
+                  visited[id2] = clone;
+                  /** @type {Array} */
+                  /** @type {any} */
+                  o2.forEach(function(v3, i2) {
+                    clone[i2] = deepClone(v3, visited);
+                  });
+                  return (
+                    /** @type {any} */
+                    clone
+                  );
+                default:
+                  return o2;
+              }
+            },
+            /**
+             * Returns the Prism language of the given element set by a `language-xxxx` or `lang-xxxx` class.
+             *
+             * If no language is set for the element or the element is `null` or `undefined`, `none` will be returned.
+             *
+             * @param {Element} element
+             * @returns {string}
+             */
+            getLanguage: function(element) {
+              while (element) {
+                var m3 = lang.exec(element.className);
+                if (m3) {
+                  return m3[1].toLowerCase();
+                }
+                element = element.parentElement;
+              }
+              return "none";
+            },
+            /**
+             * Sets the Prism `language-xxxx` class of the given element.
+             *
+             * @param {Element} element
+             * @param {string} language
+             * @returns {void}
+             */
+            setLanguage: function(element, language) {
+              element.className = element.className.replace(RegExp(lang, "gi"), "");
+              element.classList.add("language-" + language);
+            },
+            /**
+             * Returns the script element that is currently executing.
+             *
+             * This does __not__ work for line script element.
+             *
+             * @returns {HTMLScriptElement | null}
+             */
+            currentScript: function() {
+              if (typeof document === "undefined") {
+                return null;
+              }
+              if ("currentScript" in document && 1 < 2) {
+                return (
+                  /** @type {any} */
+                  document.currentScript
+                );
+              }
+              try {
+                throw new Error();
+              } catch (err) {
+                var src = (/at [^(\r\n]*\((.*):[^:]+:[^:]+\)$/i.exec(err.stack) || [])[1];
+                if (src) {
+                  var scripts = document.getElementsByTagName("script");
+                  for (var i2 in scripts) {
+                    if (scripts[i2].src == src) {
+                      return scripts[i2];
+                    }
+                  }
+                }
+                return null;
+              }
+            },
+            /**
+             * Returns whether a given class is active for `element`.
+             *
+             * The class can be activated if `element` or one of its ancestors has the given class and it can be deactivated
+             * if `element` or one of its ancestors has the negated version of the given class. The _negated version_ of the
+             * given class is just the given class with a `no-` prefix.
+             *
+             * Whether the class is active is determined by the closest ancestor of `element` (where `element` itself is
+             * closest ancestor) that has the given class or the negated version of it. If neither `element` nor any of its
+             * ancestors have the given class or the negated version of it, then the default activation will be returned.
+             *
+             * In the paradoxical situation where the closest ancestor contains __both__ the given class and the negated
+             * version of it, the class is considered active.
+             *
+             * @param {Element} element
+             * @param {string} className
+             * @param {boolean} [defaultActivation=false]
+             * @returns {boolean}
+             */
+            isActive: function(element, className, defaultActivation) {
+              var no = "no-" + className;
+              while (element) {
+                var classList = element.classList;
+                if (classList.contains(className)) {
+                  return true;
+                }
+                if (classList.contains(no)) {
+                  return false;
+                }
+                element = element.parentElement;
+              }
+              return !!defaultActivation;
+            }
+          },
+          /**
+           * This namespace contains all currently loaded languages and the some helper functions to create and modify languages.
+           *
+           * @namespace
+           * @memberof Prism
+           * @public
+           */
+          languages: {
+            /**
+             * The grammar for plain, unformatted text.
+             */
+            plain: plainTextGrammar,
+            plaintext: plainTextGrammar,
+            text: plainTextGrammar,
+            txt: plainTextGrammar,
+            /**
+             * Creates a deep copy of the language with the given id and appends the given tokens.
+             *
+             * If a token in `redef` also appears in the copied language, then the existing token in the copied language
+             * will be overwritten at its original position.
+             *
+             * ## Best practices
+             *
+             * Since the position of overwriting tokens (token in `redef` that overwrite tokens in the copied language)
+             * doesn't matter, they can technically be in any order. However, this can be confusing to others that trying to
+             * understand the language definition because, normally, the order of tokens matters in Prism grammars.
+             *
+             * Therefore, it is encouraged to order overwriting tokens according to the positions of the overwritten tokens.
+             * Furthermore, all non-overwriting tokens should be placed after the overwriting ones.
+             *
+             * @param {string} id The id of the language to extend. This has to be a key in `Prism.languages`.
+             * @param {Grammar} redef The new tokens to append.
+             * @returns {Grammar} The new language created.
+             * @public
+             * @example
+             * Prism.languages['css-with-colors'] = Prism.languages.extend('css', {
+             *     // Prism.languages.css already has a 'comment' token, so this token will overwrite CSS' 'comment' token
+             *     // at its original position
+             *     'comment': { ... },
+             *     // CSS doesn't have a 'color' token, so this token will be appended
+             *     'color': /\b(?:red|green|blue)\b/
+             * });
+             */
+            extend: function(id2, redef) {
+              var lang2 = _2.util.clone(_2.languages[id2]);
+              for (var key in redef) {
+                lang2[key] = redef[key];
+              }
+              return lang2;
+            },
+            /**
+             * Inserts tokens _before_ another token in a language definition or any other grammar.
+             *
+             * ## Usage
+             *
+             * This helper method makes it easy to modify existing languages. For example, the CSS language definition
+             * not only defines CSS highlighting for CSS documents, but also needs to define highlighting for CSS embedded
+             * in HTML through `<style>` elements. To do this, it needs to modify `Prism.languages.markup` and add the
+             * appropriate tokens. However, `Prism.languages.markup` is a regular JavaScript object literal, so if you do
+             * this:
+             *
+             * ```js
+             * Prism.languages.markup.style = {
+             *     // token
+             * };
+             * ```
+             *
+             * then the `style` token will be added (and processed) at the end. `insertBefore` allows you to insert tokens
+             * before existing tokens. For the CSS example above, you would use it like this:
+             *
+             * ```js
+             * Prism.languages.insertBefore('markup', 'cdata', {
+             *     'style': {
+             *         // token
+             *     }
+             * });
+             * ```
+             *
+             * ## Special cases
+             *
+             * If the grammars of `inside` and `insert` have tokens with the same name, the tokens in `inside`'s grammar
+             * will be ignored.
+             *
+             * This behavior can be used to insert tokens after `before`:
+             *
+             * ```js
+             * Prism.languages.insertBefore('markup', 'comment', {
+             *     'comment': Prism.languages.markup.comment,
+             *     // tokens after 'comment'
+             * });
+             * ```
+             *
+             * ## Limitations
+             *
+             * The main problem `insertBefore` has to solve is iteration order. Since ES2015, the iteration order for object
+             * properties is guaranteed to be the insertion order (except for integer keys) but some browsers behave
+             * differently when keys are deleted and re-inserted. So `insertBefore` can't be implemented by temporarily
+             * deleting properties which is necessary to insert at arbitrary positions.
+             *
+             * To solve this problem, `insertBefore` doesn't actually insert the given tokens into the target object.
+             * Instead, it will create a new object and replace all references to the target object with the new one. This
+             * can be done without temporarily deleting properties, so the iteration order is well-defined.
+             *
+             * However, only references that can be reached from `Prism.languages` or `insert` will be replaced. I.e. if
+             * you hold the target object in a variable, then the value of the variable will not change.
+             *
+             * ```js
+             * var oldMarkup = Prism.languages.markup;
+             * var newMarkup = Prism.languages.insertBefore('markup', 'comment', { ... });
+             *
+             * assert(oldMarkup !== Prism.languages.markup);
+             * assert(newMarkup === Prism.languages.markup);
+             * ```
+             *
+             * @param {string} inside The property of `root` (e.g. a language id in `Prism.languages`) that contains the
+             * object to be modified.
+             * @param {string} before The key to insert before.
+             * @param {Grammar} insert An object containing the key-value pairs to be inserted.
+             * @param {Object<string, any>} [root] The object containing `inside`, i.e. the object that contains the
+             * object to be modified.
+             *
+             * Defaults to `Prism.languages`.
+             * @returns {Grammar} The new grammar object.
+             * @public
+             */
+            insertBefore: function(inside, before, insert, root) {
+              root = root || /** @type {any} */
+              _2.languages;
+              var grammar = root[inside];
+              var ret = {};
+              for (var token in grammar) {
+                if (grammar.hasOwnProperty(token)) {
+                  if (token == before) {
+                    for (var newToken in insert) {
+                      if (insert.hasOwnProperty(newToken)) {
+                        ret[newToken] = insert[newToken];
+                      }
+                    }
+                  }
+                  if (!insert.hasOwnProperty(token)) {
+                    ret[token] = grammar[token];
+                  }
+                }
+              }
+              var old = root[inside];
+              root[inside] = ret;
+              _2.languages.DFS(_2.languages, function(key, value) {
+                if (value === old && key != inside) {
+                  this[key] = ret;
+                }
+              });
+              return ret;
+            },
+            // Traverse a language definition with Depth First Search
+            DFS: function DFS(o2, callback, type, visited) {
+              visited = visited || {};
+              var objId = _2.util.objId;
+              for (var i2 in o2) {
+                if (o2.hasOwnProperty(i2)) {
+                  callback.call(o2, i2, o2[i2], type || i2);
+                  var property = o2[i2];
+                  var propertyType = _2.util.type(property);
+                  if (propertyType === "Object" && !visited[objId(property)]) {
+                    visited[objId(property)] = true;
+                    DFS(property, callback, null, visited);
+                  } else if (propertyType === "Array" && !visited[objId(property)]) {
+                    visited[objId(property)] = true;
+                    DFS(property, callback, i2, visited);
+                  }
+                }
+              }
+            }
+          },
+          plugins: {},
+          /**
+           * This is the most high-level function in Prism’s API.
+           * It fetches all the elements that have a `.language-xxxx` class and then calls {@link Prism.highlightElement} on
+           * each one of them.
+           *
+           * This is equivalent to `Prism.highlightAllUnder(document, async, callback)`.
+           *
+           * @param {boolean} [async=false] Same as in {@link Prism.highlightAllUnder}.
+           * @param {HighlightCallback} [callback] Same as in {@link Prism.highlightAllUnder}.
+           * @memberof Prism
+           * @public
+           */
+          highlightAll: function(async, callback) {
+            _2.highlightAllUnder(document, async, callback);
+          },
+          /**
+           * Fetches all the descendants of `container` that have a `.language-xxxx` class and then calls
+           * {@link Prism.highlightElement} on each one of them.
+           *
+           * The following hooks will be run:
+           * 1. `before-highlightall`
+           * 2. `before-all-elements-highlight`
+           * 3. All hooks of {@link Prism.highlightElement} for each element.
+           *
+           * @param {ParentNode} container The root element, whose descendants that have a `.language-xxxx` class will be highlighted.
+           * @param {boolean} [async=false] Whether each element is to be highlighted asynchronously using Web Workers.
+           * @param {HighlightCallback} [callback] An optional callback to be invoked on each element after its highlighting is done.
+           * @memberof Prism
+           * @public
+           */
+          highlightAllUnder: function(container, async, callback) {
+            var env = {
+              callback,
+              container,
+              selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
+            };
+            _2.hooks.run("before-highlightall", env);
+            env.elements = Array.prototype.slice.apply(env.container.querySelectorAll(env.selector));
+            _2.hooks.run("before-all-elements-highlight", env);
+            for (var i2 = 0, element; element = env.elements[i2++]; ) {
+              _2.highlightElement(element, async === true, env.callback);
+            }
+          },
+          /**
+           * Highlights the code inside a single element.
+           *
+           * The following hooks will be run:
+           * 1. `before-sanity-check`
+           * 2. `before-highlight`
+           * 3. All hooks of {@link Prism.highlight}. These hooks will be run by an asynchronous worker if `async` is `true`.
+           * 4. `before-insert`
+           * 5. `after-highlight`
+           * 6. `complete`
+           *
+           * Some the above hooks will be skipped if the element doesn't contain any text or there is no grammar loaded for
+           * the element's language.
+           *
+           * @param {Element} element The element containing the code.
+           * It must have a class of `language-xxxx` to be processed, where `xxxx` is a valid language identifier.
+           * @param {boolean} [async=false] Whether the element is to be highlighted asynchronously using Web Workers
+           * to improve performance and avoid blocking the UI when highlighting very large chunks of code. This option is
+           * [disabled by default](https://prismjs.com/faq.html#why-is-asynchronous-highlighting-disabled-by-default).
+           *
+           * Note: All language definitions required to highlight the code must be included in the main `prism.js` file for
+           * asynchronous highlighting to work. You can build your own bundle on the
+           * [Download page](https://prismjs.com/download.html).
+           * @param {HighlightCallback} [callback] An optional callback to be invoked after the highlighting is done.
+           * Mostly useful when `async` is `true`, since in that case, the highlighting is done asynchronously.
+           * @memberof Prism
+           * @public
+           */
+          highlightElement: function(element, async, callback) {
+            var language = _2.util.getLanguage(element);
+            var grammar = _2.languages[language];
+            _2.util.setLanguage(element, language);
+            var parent = element.parentElement;
+            if (parent && parent.nodeName.toLowerCase() === "pre") {
+              _2.util.setLanguage(parent, language);
+            }
+            var code = element.textContent;
+            var env = {
+              element,
+              language,
+              grammar,
+              code
+            };
+            function insertHighlightedCode(highlightedCode) {
+              env.highlightedCode = highlightedCode;
+              _2.hooks.run("before-insert", env);
+              env.element.innerHTML = env.highlightedCode;
+              _2.hooks.run("after-highlight", env);
+              _2.hooks.run("complete", env);
+              callback && callback.call(env.element);
+            }
+            _2.hooks.run("before-sanity-check", env);
+            parent = env.element.parentElement;
+            if (parent && parent.nodeName.toLowerCase() === "pre" && !parent.hasAttribute("tabindex")) {
+              parent.setAttribute("tabindex", "0");
+            }
+            if (!env.code) {
+              _2.hooks.run("complete", env);
+              callback && callback.call(env.element);
+              return;
+            }
+            _2.hooks.run("before-highlight", env);
+            if (!env.grammar) {
+              insertHighlightedCode(_2.util.encode(env.code));
+              return;
+            }
+            if (async && _self2.Worker) {
+              var worker = new Worker(_2.filename);
+              worker.onmessage = function(evt) {
+                insertHighlightedCode(evt.data);
+              };
+              worker.postMessage(JSON.stringify({
+                language: env.language,
+                code: env.code,
+                immediateClose: true
+              }));
+            } else {
+              insertHighlightedCode(_2.highlight(env.code, env.grammar, env.language));
+            }
+          },
+          /**
+           * Low-level function, only use if you know what you’re doing. It accepts a string of text as input
+           * and the language definitions to use, and returns a string with the HTML produced.
+           *
+           * The following hooks will be run:
+           * 1. `before-tokenize`
+           * 2. `after-tokenize`
+           * 3. `wrap`: On each {@link Token}.
+           *
+           * @param {string} text A string with the code to be highlighted.
+           * @param {Grammar} grammar An object containing the tokens to use.
+           *
+           * Usually a language definition like `Prism.languages.markup`.
+           * @param {string} language The name of the language definition passed to `grammar`.
+           * @returns {string} The highlighted HTML.
+           * @memberof Prism
+           * @public
+           * @example
+           * Prism.highlight('var foo = true;', Prism.languages.javascript, 'javascript');
+           */
+          highlight: function(text, grammar, language) {
+            var env = {
+              code: text,
+              grammar,
+              language
+            };
+            _2.hooks.run("before-tokenize", env);
+            if (!env.grammar) {
+              throw new Error('The language "' + env.language + '" has no grammar.');
+            }
+            env.tokens = _2.tokenize(env.code, env.grammar);
+            _2.hooks.run("after-tokenize", env);
+            return Token.stringify(_2.util.encode(env.tokens), env.language);
+          },
+          /**
+           * This is the heart of Prism, and the most low-level function you can use. It accepts a string of text as input
+           * and the language definitions to use, and returns an array with the tokenized code.
+           *
+           * When the language definition includes nested tokens, the function is called recursively on each of these tokens.
+           *
+           * This method could be useful in other contexts as well, as a very crude parser.
+           *
+           * @param {string} text A string with the code to be highlighted.
+           * @param {Grammar} grammar An object containing the tokens to use.
+           *
+           * Usually a language definition like `Prism.languages.markup`.
+           * @returns {TokenStream} An array of strings and tokens, a token stream.
+           * @memberof Prism
+           * @public
+           * @example
+           * let code = `var foo = 0;`;
+           * let tokens = Prism.tokenize(code, Prism.languages.javascript);
+           * tokens.forEach(token => {
+           *     if (token instanceof Prism.Token && token.type === 'number') {
+           *         console.log(`Found numeric literal: ${token.content}`);
+           *     }
+           * });
+           */
+          tokenize: function(text, grammar) {
+            var rest = grammar.rest;
+            if (rest) {
+              for (var token in rest) {
+                grammar[token] = rest[token];
+              }
+              delete grammar.rest;
+            }
+            var tokenList = new LinkedList();
+            addAfter(tokenList, tokenList.head, text);
+            matchGrammar(text, tokenList, grammar, tokenList.head, 0);
+            return toArray3(tokenList);
+          },
+          /**
+           * @namespace
+           * @memberof Prism
+           * @public
+           */
+          hooks: {
+            all: {},
+            /**
+             * Adds the given callback to the list of callbacks for the given hook.
+             *
+             * The callback will be invoked when the hook it is registered for is run.
+             * Hooks are usually directly run by a highlight function but you can also run hooks yourself.
+             *
+             * One callback function can be registered to multiple hooks and the same hook multiple times.
+             *
+             * @param {string} name The name of the hook.
+             * @param {HookCallback} callback The callback function which is given environment variables.
+             * @public
+             */
+            add: function(name, callback) {
+              var hooks = _2.hooks.all;
+              hooks[name] = hooks[name] || [];
+              hooks[name].push(callback);
+            },
+            /**
+             * Runs a hook invoking all registered callbacks with the given environment variables.
+             *
+             * Callbacks will be invoked synchronously and in the order in which they were registered.
+             *
+             * @param {string} name The name of the hook.
+             * @param {Object<string, any>} env The environment variables of the hook passed to all callbacks registered.
+             * @public
+             */
+            run: function(name, env) {
+              var callbacks = _2.hooks.all[name];
+              if (!callbacks || !callbacks.length) {
+                return;
+              }
+              for (var i2 = 0, callback; callback = callbacks[i2++]; ) {
+                callback(env);
+              }
+            }
+          },
+          Token
+        };
+        _self2.Prism = _2;
+        function Token(type, content, alias, matchedStr) {
+          this.type = type;
+          this.content = content;
+          this.alias = alias;
+          this.length = (matchedStr || "").length | 0;
+        }
+        Token.stringify = function stringify(o2, language) {
+          if (typeof o2 == "string") {
+            return o2;
+          }
+          if (Array.isArray(o2)) {
+            var s2 = "";
+            o2.forEach(function(e2) {
+              s2 += stringify(e2, language);
+            });
+            return s2;
+          }
+          var env = {
+            type: o2.type,
+            content: stringify(o2.content, language),
+            tag: "span",
+            classes: ["token", o2.type],
+            attributes: {},
+            language
+          };
+          var aliases = o2.alias;
+          if (aliases) {
+            if (Array.isArray(aliases)) {
+              Array.prototype.push.apply(env.classes, aliases);
+            } else {
+              env.classes.push(aliases);
+            }
+          }
+          _2.hooks.run("wrap", env);
+          var attributes = "";
+          for (var name in env.attributes) {
+            attributes += " " + name + '="' + (env.attributes[name] || "").replace(/"/g, "&quot;") + '"';
+          }
+          return "<" + env.tag + ' class="' + env.classes.join(" ") + '"' + attributes + ">" + env.content + "</" + env.tag + ">";
+        };
+        function matchPattern(pattern, pos, text, lookbehind) {
+          pattern.lastIndex = pos;
+          var match = pattern.exec(text);
+          if (match && lookbehind && match[1]) {
+            var lookbehindLength = match[1].length;
+            match.index += lookbehindLength;
+            match[0] = match[0].slice(lookbehindLength);
+          }
+          return match;
+        }
+        function matchGrammar(text, tokenList, grammar, startNode, startPos, rematch) {
+          for (var token in grammar) {
+            if (!grammar.hasOwnProperty(token) || !grammar[token]) {
+              continue;
+            }
+            var patterns = grammar[token];
+            patterns = Array.isArray(patterns) ? patterns : [patterns];
+            for (var j2 = 0; j2 < patterns.length; ++j2) {
+              if (rematch && rematch.cause == token + "," + j2) {
+                return;
+              }
+              var patternObj = patterns[j2];
+              var inside = patternObj.inside;
+              var lookbehind = !!patternObj.lookbehind;
+              var greedy = !!patternObj.greedy;
+              var alias = patternObj.alias;
+              if (greedy && !patternObj.pattern.global) {
+                var flags = patternObj.pattern.toString().match(/[imsuy]*$/)[0];
+                patternObj.pattern = RegExp(patternObj.pattern.source, flags + "g");
+              }
+              var pattern = patternObj.pattern || patternObj;
+              for (var currentNode = startNode.next, pos = startPos; currentNode !== tokenList.tail; pos += currentNode.value.length, currentNode = currentNode.next) {
+                if (rematch && pos >= rematch.reach) {
+                  break;
+                }
+                var str = currentNode.value;
+                if (tokenList.length > text.length) {
+                  return;
+                }
+                if (str instanceof Token) {
+                  continue;
+                }
+                var removeCount = 1;
+                var match;
+                if (greedy) {
+                  match = matchPattern(pattern, pos, text, lookbehind);
+                  if (!match || match.index >= text.length) {
+                    break;
+                  }
+                  var from = match.index;
+                  var to = match.index + match[0].length;
+                  var p3 = pos;
+                  p3 += currentNode.value.length;
+                  while (from >= p3) {
+                    currentNode = currentNode.next;
+                    p3 += currentNode.value.length;
+                  }
+                  p3 -= currentNode.value.length;
+                  pos = p3;
+                  if (currentNode.value instanceof Token) {
+                    continue;
+                  }
+                  for (var k2 = currentNode; k2 !== tokenList.tail && (p3 < to || typeof k2.value === "string"); k2 = k2.next) {
+                    removeCount++;
+                    p3 += k2.value.length;
+                  }
+                  removeCount--;
+                  str = text.slice(pos, p3);
+                  match.index -= pos;
+                } else {
+                  match = matchPattern(pattern, 0, str, lookbehind);
+                  if (!match) {
+                    continue;
+                  }
+                }
+                var from = match.index;
+                var matchStr = match[0];
+                var before = str.slice(0, from);
+                var after = str.slice(from + matchStr.length);
+                var reach = pos + str.length;
+                if (rematch && reach > rematch.reach) {
+                  rematch.reach = reach;
+                }
+                var removeFrom = currentNode.prev;
+                if (before) {
+                  removeFrom = addAfter(tokenList, removeFrom, before);
+                  pos += before.length;
+                }
+                removeRange(tokenList, removeFrom, removeCount);
+                var wrapped = new Token(token, inside ? _2.tokenize(matchStr, inside) : matchStr, alias, matchStr);
+                currentNode = addAfter(tokenList, removeFrom, wrapped);
+                if (after) {
+                  addAfter(tokenList, currentNode, after);
+                }
+                if (removeCount > 1) {
+                  var nestedRematch = {
+                    cause: token + "," + j2,
+                    reach
+                  };
+                  matchGrammar(text, tokenList, grammar, currentNode.prev, pos, nestedRematch);
+                  if (rematch && nestedRematch.reach > rematch.reach) {
+                    rematch.reach = nestedRematch.reach;
+                  }
+                }
+              }
+            }
+          }
+        }
+        function LinkedList() {
+          var head = { value: null, prev: null, next: null };
+          var tail = { value: null, prev: head, next: null };
+          head.next = tail;
+          this.head = head;
+          this.tail = tail;
+          this.length = 0;
+        }
+        function addAfter(list, node2, value) {
+          var next = node2.next;
+          var newNode = { value, prev: node2, next };
+          node2.next = newNode;
+          next.prev = newNode;
+          list.length++;
+          return newNode;
+        }
+        function removeRange(list, node2, count) {
+          var next = node2.next;
+          for (var i2 = 0; i2 < count && next !== list.tail; i2++) {
+            next = next.next;
+          }
+          node2.next = next;
+          next.prev = node2;
+          list.length -= i2;
+        }
+        function toArray3(list) {
+          var array = [];
+          var node2 = list.head.next;
+          while (node2 !== list.tail) {
+            array.push(node2.value);
+            node2 = node2.next;
+          }
+          return array;
+        }
+        if (!_self2.document) {
+          if (!_self2.addEventListener) {
+            return _2;
+          }
+          if (!_2.disableWorkerMessageHandler) {
+            _self2.addEventListener("message", function(evt) {
+              var message = JSON.parse(evt.data);
+              var lang2 = message.language;
+              var code = message.code;
+              var immediateClose = message.immediateClose;
+              _self2.postMessage(_2.highlight(code, _2.languages[lang2], lang2));
+              if (immediateClose) {
+                _self2.close();
+              }
+            }, false);
+          }
+          return _2;
+        }
+        var script = _2.util.currentScript();
+        if (script) {
+          _2.filename = script.src;
+          if (script.hasAttribute("data-manual")) {
+            _2.manual = true;
+          }
+        }
+        function highlightAutomaticallyCallback() {
+          if (!_2.manual) {
+            _2.highlightAll();
+          }
+        }
+        if (!_2.manual) {
+          var readyState = document.readyState;
+          if (readyState === "loading" || readyState === "interactive" && script && script.defer) {
+            document.addEventListener("DOMContentLoaded", highlightAutomaticallyCallback);
+          } else {
+            if (window.requestAnimationFrame) {
+              window.requestAnimationFrame(highlightAutomaticallyCallback);
+            } else {
+              window.setTimeout(highlightAutomaticallyCallback, 16);
+            }
+          }
+        }
+        return _2;
+      }(_self);
+      if (typeof module !== "undefined" && module.exports) {
+        module.exports = Prism3;
+      }
+      if (typeof global !== "undefined") {
+        global.Prism = Prism3;
+      }
+      Prism3.languages.markup = {
+        "comment": {
+          pattern: /<!--(?:(?!<!--)[\s\S])*?-->/,
+          greedy: true
+        },
+        "prolog": {
+          pattern: /<\?[\s\S]+?\?>/,
+          greedy: true
+        },
+        "doctype": {
+          // https://www.w3.org/TR/xml/#NT-doctypedecl
+          pattern: /<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:[^<"'\]]|"[^"]*"|'[^']*'|<(?!!--)|<!--(?:[^-]|-(?!->))*-->)*\]\s*)?>/i,
+          greedy: true,
+          inside: {
+            "internal-subset": {
+              pattern: /(^[^\[]*\[)[\s\S]+(?=\]>$)/,
+              lookbehind: true,
+              greedy: true,
+              inside: null
+              // see below
+            },
+            "string": {
+              pattern: /"[^"]*"|'[^']*'/,
+              greedy: true
+            },
+            "punctuation": /^<!|>$|[[\]]/,
+            "doctype-tag": /^DOCTYPE/i,
+            "name": /[^\s<>'"]+/
+          }
+        },
+        "cdata": {
+          pattern: /<!\[CDATA\[[\s\S]*?\]\]>/i,
+          greedy: true
+        },
+        "tag": {
+          pattern: /<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/,
+          greedy: true,
+          inside: {
+            "tag": {
+              pattern: /^<\/?[^\s>\/]+/,
+              inside: {
+                "punctuation": /^<\/?/,
+                "namespace": /^[^\s>\/:]+:/
+              }
+            },
+            "special-attr": [],
+            "attr-value": {
+              pattern: /=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,
+              inside: {
+                "punctuation": [
+                  {
+                    pattern: /^=/,
+                    alias: "attr-equals"
+                  },
+                  {
+                    pattern: /^(\s*)["']|["']$/,
+                    lookbehind: true
+                  }
+                ]
+              }
+            },
+            "punctuation": /\/?>/,
+            "attr-name": {
+              pattern: /[^\s>\/]+/,
+              inside: {
+                "namespace": /^[^\s>\/:]+:/
+              }
+            }
+          }
+        },
+        "entity": [
+          {
+            pattern: /&[\da-z]{1,8};/i,
+            alias: "named-entity"
+          },
+          /&#x?[\da-f]{1,8};/i
+        ]
+      };
+      Prism3.languages.markup["tag"].inside["attr-value"].inside["entity"] = Prism3.languages.markup["entity"];
+      Prism3.languages.markup["doctype"].inside["internal-subset"].inside = Prism3.languages.markup;
+      Prism3.hooks.add("wrap", function(env) {
+        if (env.type === "entity") {
+          env.attributes["title"] = env.content.replace(/&amp;/, "&");
+        }
+      });
+      Object.defineProperty(Prism3.languages.markup.tag, "addInlined", {
+        /**
+         * Adds an inlined language to markup.
+         *
+         * An example of an inlined language is CSS with `<style>` tags.
+         *
+         * @param {string} tagName The name of the tag that contains the inlined language. This name will be treated as
+         * case insensitive.
+         * @param {string} lang The language key.
+         * @example
+         * addInlined('style', 'css');
+         */
+        value: function addInlined(tagName, lang) {
+          var includedCdataInside = {};
+          includedCdataInside["language-" + lang] = {
+            pattern: /(^<!\[CDATA\[)[\s\S]+?(?=\]\]>$)/i,
+            lookbehind: true,
+            inside: Prism3.languages[lang]
+          };
+          includedCdataInside["cdata"] = /^<!\[CDATA\[|\]\]>$/i;
+          var inside = {
+            "included-cdata": {
+              pattern: /<!\[CDATA\[[\s\S]*?\]\]>/i,
+              inside: includedCdataInside
+            }
+          };
+          inside["language-" + lang] = {
+            pattern: /[\s\S]+/,
+            inside: Prism3.languages[lang]
+          };
+          var def = {};
+          def[tagName] = {
+            pattern: RegExp(/(<__[^>]*>)(?:<!\[CDATA\[(?:[^\]]|\](?!\]>))*\]\]>|(?!<!\[CDATA\[)[\s\S])*?(?=<\/__>)/.source.replace(/__/g, function() {
+              return tagName;
+            }), "i"),
+            lookbehind: true,
+            greedy: true,
+            inside
+          };
+          Prism3.languages.insertBefore("markup", "cdata", def);
+        }
+      });
+      Object.defineProperty(Prism3.languages.markup.tag, "addAttribute", {
+        /**
+         * Adds an pattern to highlight languages embedded in HTML attributes.
+         *
+         * An example of an inlined language is CSS with `style` attributes.
+         *
+         * @param {string} attrName The name of the tag that contains the inlined language. This name will be treated as
+         * case insensitive.
+         * @param {string} lang The language key.
+         * @example
+         * addAttribute('style', 'css');
+         */
+        value: function(attrName, lang) {
+          Prism3.languages.markup.tag.inside["special-attr"].push({
+            pattern: RegExp(
+              /(^|["'\s])/.source + "(?:" + attrName + ")" + /\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))/.source,
+              "i"
+            ),
+            lookbehind: true,
+            inside: {
+              "attr-name": /^[^\s=]+/,
+              "attr-value": {
+                pattern: /=[\s\S]+/,
+                inside: {
+                  "value": {
+                    pattern: /(^=\s*(["']|(?!["'])))\S[\s\S]*(?=\2$)/,
+                    lookbehind: true,
+                    alias: [lang, "language-" + lang],
+                    inside: Prism3.languages[lang]
+                  },
+                  "punctuation": [
+                    {
+                      pattern: /^=/,
+                      alias: "attr-equals"
+                    },
+                    /"|'/
+                  ]
+                }
+              }
+            }
+          });
+        }
+      });
+      Prism3.languages.html = Prism3.languages.markup;
+      Prism3.languages.mathml = Prism3.languages.markup;
+      Prism3.languages.svg = Prism3.languages.markup;
+      Prism3.languages.xml = Prism3.languages.extend("markup", {});
+      Prism3.languages.ssml = Prism3.languages.xml;
+      Prism3.languages.atom = Prism3.languages.xml;
+      Prism3.languages.rss = Prism3.languages.xml;
+      (function(Prism4) {
+        var string2 = /(?:"(?:\\(?:\r\n|[\s\S])|[^"\\\r\n])*"|'(?:\\(?:\r\n|[\s\S])|[^'\\\r\n])*')/;
+        Prism4.languages.css = {
+          "comment": /\/\*[\s\S]*?\*\//,
+          "atrule": {
+            pattern: RegExp("@[\\w-](?:" + /[^;{\s"']|\s+(?!\s)/.source + "|" + string2.source + ")*?" + /(?:;|(?=\s*\{))/.source),
+            inside: {
+              "rule": /^@[\w-]+/,
+              "selector-function-argument": {
+                pattern: /(\bselector\s*\(\s*(?![\s)]))(?:[^()\s]|\s+(?![\s)])|\((?:[^()]|\([^()]*\))*\))+(?=\s*\))/,
+                lookbehind: true,
+                alias: "selector"
+              },
+              "keyword": {
+                pattern: /(^|[^\w-])(?:and|not|only|or)(?![\w-])/,
+                lookbehind: true
+              }
+              // See rest below
+            }
+          },
+          "url": {
+            // https://drafts.csswg.org/css-values-3/#urls
+            pattern: RegExp("\\burl\\((?:" + string2.source + "|" + /(?:[^\\\r\n()"']|\\[\s\S])*/.source + ")\\)", "i"),
+            greedy: true,
+            inside: {
+              "function": /^url/i,
+              "punctuation": /^\(|\)$/,
+              "string": {
+                pattern: RegExp("^" + string2.source + "$"),
+                alias: "url"
+              }
+            }
+          },
+          "selector": {
+            pattern: RegExp(`(^|[{}\\s])[^{}\\s](?:[^{};"'\\s]|\\s+(?![\\s{])|` + string2.source + ")*(?=\\s*\\{)"),
+            lookbehind: true
+          },
+          "string": {
+            pattern: string2,
+            greedy: true
+          },
+          "property": {
+            pattern: /(^|[^-\w\xA0-\uFFFF])(?!\s)[-_a-z\xA0-\uFFFF](?:(?!\s)[-\w\xA0-\uFFFF])*(?=\s*:)/i,
+            lookbehind: true
+          },
+          "important": /!important\b/i,
+          "function": {
+            pattern: /(^|[^-a-z0-9])[-a-z0-9]+(?=\()/i,
+            lookbehind: true
+          },
+          "punctuation": /[(){};:,]/
+        };
+        Prism4.languages.css["atrule"].inside.rest = Prism4.languages.css;
+        var markup = Prism4.languages.markup;
+        if (markup) {
+          markup.tag.addInlined("style", "css");
+          markup.tag.addAttribute("style", "css");
+        }
+      })(Prism3);
+      Prism3.languages.clike = {
+        "comment": [
+          {
+            pattern: /(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/,
+            lookbehind: true,
+            greedy: true
+          },
+          {
+            pattern: /(^|[^\\:])\/\/.*/,
+            lookbehind: true,
+            greedy: true
+          }
+        ],
+        "string": {
+          pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+          greedy: true
+        },
+        "class-name": {
+          pattern: /(\b(?:class|extends|implements|instanceof|interface|new|trait)\s+|\bcatch\s+\()[\w.\\]+/i,
+          lookbehind: true,
+          inside: {
+            "punctuation": /[.\\]/
+          }
+        },
+        "keyword": /\b(?:break|catch|continue|do|else|finally|for|function|if|in|instanceof|new|null|return|throw|try|while)\b/,
+        "boolean": /\b(?:false|true)\b/,
+        "function": /\b\w+(?=\()/,
+        "number": /\b0x[\da-f]+\b|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[+-]?\d+)?/i,
+        "operator": /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,
+        "punctuation": /[{}[\];(),.:]/
+      };
+      Prism3.languages.javascript = Prism3.languages.extend("clike", {
+        "class-name": [
+          Prism3.languages.clike["class-name"],
+          {
+            pattern: /(^|[^$\w\xA0-\uFFFF])(?!\s)[_$A-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\.(?:constructor|prototype))/,
+            lookbehind: true
+          }
+        ],
+        "keyword": [
+          {
+            pattern: /((?:^|\})\s*)catch\b/,
+            lookbehind: true
+          },
+          {
+            pattern: /(^|[^.]|\.\.\.\s*)\b(?:as|assert(?=\s*\{)|async(?=\s*(?:function\b|\(|[$\w\xA0-\uFFFF]|$))|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally(?=\s*(?:\{|$))|for|from(?=\s*(?:['"]|$))|function|(?:get|set)(?=\s*(?:[#\[$\w\xA0-\uFFFF]|$))|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\b/,
+            lookbehind: true
+          }
+        ],
+        // Allow for all non-ASCII characters (See http://stackoverflow.com/a/2008444)
+        "function": /#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*(?:\.\s*(?:apply|bind|call)\s*)?\()/,
+        "number": {
+          pattern: RegExp(
+            /(^|[^\w$])/.source + "(?:" + // constant
+            (/NaN|Infinity/.source + "|" + // binary integer
+            /0[bB][01]+(?:_[01]+)*n?/.source + "|" + // octal integer
+            /0[oO][0-7]+(?:_[0-7]+)*n?/.source + "|" + // hexadecimal integer
+            /0[xX][\dA-Fa-f]+(?:_[\dA-Fa-f]+)*n?/.source + "|" + // decimal bigint
+            /\d+(?:_\d+)*n/.source + "|" + // decimal number (integer or float) but no bigint
+            /(?:\d+(?:_\d+)*(?:\.(?:\d+(?:_\d+)*)?)?|\.\d+(?:_\d+)*)(?:[Ee][+-]?\d+(?:_\d+)*)?/.source) + ")" + /(?![\w$])/.source
+          ),
+          lookbehind: true
+        },
+        "operator": /--|\+\+|\*\*=?|=>|&&=?|\|\|=?|[!=]==|<<=?|>>>?=?|[-+*/%&|^!=<>]=?|\.{3}|\?\?=?|\?\.?|[~:]/
+      });
+      Prism3.languages.javascript["class-name"][0].pattern = /(\b(?:class|extends|implements|instanceof|interface|new)\s+)[\w.\\]+/;
+      Prism3.languages.insertBefore("javascript", "keyword", {
+        "regex": {
+          pattern: RegExp(
+            // lookbehind
+            // eslint-disable-next-line regexp/no-dupe-characters-character-class
+            /((?:^|[^$\w\xA0-\uFFFF."'\])\s]|\b(?:return|yield))\s*)/.source + // Regex pattern:
+            // There are 2 regex patterns here. The RegExp set notation proposal added support for nested character
+            // classes if the `v` flag is present. Unfortunately, nested CCs are both context-free and incompatible
+            // with the only syntax, so we have to define 2 different regex patterns.
+            /\//.source + "(?:" + /(?:\[(?:[^\]\\\r\n]|\\.)*\]|\\.|[^/\\\[\r\n])+\/[dgimyus]{0,7}/.source + "|" + // `v` flag syntax. This supports 3 levels of nested character classes.
+            /(?:\[(?:[^[\]\\\r\n]|\\.|\[(?:[^[\]\\\r\n]|\\.|\[(?:[^[\]\\\r\n]|\\.)*\])*\])*\]|\\.|[^/\\\[\r\n])+\/[dgimyus]{0,7}v[dgimyus]{0,7}/.source + ")" + // lookahead
+            /(?=(?:\s|\/\*(?:[^*]|\*(?!\/))*\*\/)*(?:$|[\r\n,.;:})\]]|\/\/))/.source
+          ),
+          lookbehind: true,
+          greedy: true,
+          inside: {
+            "regex-source": {
+              pattern: /^(\/)[\s\S]+(?=\/[a-z]*$)/,
+              lookbehind: true,
+              alias: "language-regex",
+              inside: Prism3.languages.regex
+            },
+            "regex-delimiter": /^\/|\/$/,
+            "regex-flags": /^[a-z]+$/
+          }
+        },
+        // This must be declared before keyword because we use "function" inside the look-forward
+        "function-variable": {
+          pattern: /#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*[=:]\s*(?:async\s*)?(?:\bfunction\b|(?:\((?:[^()]|\([^()]*\))*\)|(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)\s*=>))/,
+          alias: "function"
+        },
+        "parameter": [
+          {
+            pattern: /(function(?:\s+(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)?\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\))/,
+            lookbehind: true,
+            inside: Prism3.languages.javascript
+          },
+          {
+            pattern: /(^|[^$\w\xA0-\uFFFF])(?!\s)[_$a-z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*=>)/i,
+            lookbehind: true,
+            inside: Prism3.languages.javascript
+          },
+          {
+            pattern: /(\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*=>)/,
+            lookbehind: true,
+            inside: Prism3.languages.javascript
+          },
+          {
+            pattern: /((?:\b|\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)(?![$\w\xA0-\uFFFF]))(?:(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*\s*)\(\s*|\]\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*\{)/,
+            lookbehind: true,
+            inside: Prism3.languages.javascript
+          }
+        ],
+        "constant": /\b[A-Z](?:[A-Z_]|\dx?)*\b/
+      });
+      Prism3.languages.insertBefore("javascript", "string", {
+        "hashbang": {
+          pattern: /^#!.*/,
+          greedy: true,
+          alias: "comment"
+        },
+        "template-string": {
+          pattern: /`(?:\\[\s\S]|\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}|(?!\$\{)[^\\`])*`/,
+          greedy: true,
+          inside: {
+            "template-punctuation": {
+              pattern: /^`|`$/,
+              alias: "string"
+            },
+            "interpolation": {
+              pattern: /((?:^|[^\\])(?:\\{2})*)\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}/,
+              lookbehind: true,
+              inside: {
+                "interpolation-punctuation": {
+                  pattern: /^\$\{|\}$/,
+                  alias: "punctuation"
+                },
+                rest: Prism3.languages.javascript
+              }
+            },
+            "string": /[\s\S]+/
+          }
+        },
+        "string-property": {
+          pattern: /((?:^|[,{])[ \t]*)(["'])(?:\\(?:\r\n|[\s\S])|(?!\2)[^\\\r\n])*\2(?=\s*:)/m,
+          lookbehind: true,
+          greedy: true,
+          alias: "property"
+        }
+      });
+      Prism3.languages.insertBefore("javascript", "operator", {
+        "literal-property": {
+          pattern: /((?:^|[,{])[ \t]*)(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*:)/m,
+          lookbehind: true,
+          alias: "property"
+        }
+      });
+      if (Prism3.languages.markup) {
+        Prism3.languages.markup.tag.addInlined("script", "javascript");
+        Prism3.languages.markup.tag.addAttribute(
+          /on(?:abort|blur|change|click|composition(?:end|start|update)|dblclick|error|focus(?:in|out)?|key(?:down|up)|load|mouse(?:down|enter|leave|move|out|over|up)|reset|resize|scroll|select|slotchange|submit|unload|wheel)/.source,
+          "javascript"
+        );
+      }
+      Prism3.languages.js = Prism3.languages.javascript;
+      (function() {
+        if (typeof Prism3 === "undefined" || typeof document === "undefined") {
+          return;
+        }
+        if (!Element.prototype.matches) {
+          Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+        }
+        var LOADING_MESSAGE = "Loading\u2026";
+        var FAILURE_MESSAGE = function(status, message) {
+          return "\u2716 Error " + status + " while fetching file: " + message;
+        };
+        var FAILURE_EMPTY_MESSAGE = "\u2716 Error: File does not exist or is empty";
+        var EXTENSIONS = {
+          "js": "javascript",
+          "py": "python",
+          "rb": "ruby",
+          "ps1": "powershell",
+          "psm1": "powershell",
+          "sh": "bash",
+          "bat": "batch",
+          "h": "c",
+          "tex": "latex"
+        };
+        var STATUS_ATTR = "data-src-status";
+        var STATUS_LOADING = "loading";
+        var STATUS_LOADED = "loaded";
+        var STATUS_FAILED = "failed";
+        var SELECTOR = "pre[data-src]:not([" + STATUS_ATTR + '="' + STATUS_LOADED + '"]):not([' + STATUS_ATTR + '="' + STATUS_LOADING + '"])';
+        function loadFile(src, success, error) {
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET", src, true);
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+              if (xhr.status < 400 && xhr.responseText) {
+                success(xhr.responseText);
+              } else {
+                if (xhr.status >= 400) {
+                  error(FAILURE_MESSAGE(xhr.status, xhr.statusText));
+                } else {
+                  error(FAILURE_EMPTY_MESSAGE);
+                }
+              }
+            }
+          };
+          xhr.send(null);
+        }
+        function parseRange(range) {
+          var m3 = /^\s*(\d+)\s*(?:(,)\s*(?:(\d+)\s*)?)?$/.exec(range || "");
+          if (m3) {
+            var start = Number(m3[1]);
+            var comma = m3[2];
+            var end = m3[3];
+            if (!comma) {
+              return [start, start];
+            }
+            if (!end) {
+              return [start, void 0];
+            }
+            return [start, Number(end)];
+          }
+          return void 0;
+        }
+        Prism3.hooks.add("before-highlightall", function(env) {
+          env.selector += ", " + SELECTOR;
+        });
+        Prism3.hooks.add("before-sanity-check", function(env) {
+          var pre = (
+            /** @type {HTMLPreElement} */
+            env.element
+          );
+          if (pre.matches(SELECTOR)) {
+            env.code = "";
+            pre.setAttribute(STATUS_ATTR, STATUS_LOADING);
+            var code = pre.appendChild(document.createElement("CODE"));
+            code.textContent = LOADING_MESSAGE;
+            var src = pre.getAttribute("data-src");
+            var language = env.language;
+            if (language === "none") {
+              var extension = (/\.(\w+)$/.exec(src) || [, "none"])[1];
+              language = EXTENSIONS[extension] || extension;
+            }
+            Prism3.util.setLanguage(code, language);
+            Prism3.util.setLanguage(pre, language);
+            var autoloader = Prism3.plugins.autoloader;
+            if (autoloader) {
+              autoloader.loadLanguages(language);
+            }
+            loadFile(
+              src,
+              function(text) {
+                pre.setAttribute(STATUS_ATTR, STATUS_LOADED);
+                var range = parseRange(pre.getAttribute("data-range"));
+                if (range) {
+                  var lines = text.split(/\r\n?|\n/g);
+                  var start = range[0];
+                  var end = range[1] == null ? lines.length : range[1];
+                  if (start < 0) {
+                    start += lines.length;
+                  }
+                  start = Math.max(0, Math.min(start - 1, lines.length));
+                  if (end < 0) {
+                    end += lines.length;
+                  }
+                  end = Math.max(0, Math.min(end, lines.length));
+                  text = lines.slice(start, end).join("\n");
+                  if (!pre.hasAttribute("data-start")) {
+                    pre.setAttribute("data-start", String(start + 1));
+                  }
+                }
+                code.textContent = text;
+                Prism3.highlightElement(code);
+              },
+              function(error) {
+                pre.setAttribute(STATUS_ATTR, STATUS_FAILED);
+                code.textContent = error;
+              }
+            );
+          }
+        });
+        Prism3.plugins.fileHighlight = {
+          /**
+           * Executes the File Highlight plugin for all matching `pre` elements under the given container.
+           *
+           * Note: Elements which are already loaded or currently loading will not be touched by this method.
+           *
+           * @param {ParentNode} [container=document]
+           */
+          highlight: function highlight(container) {
+            var elements = (container || document).querySelectorAll(SELECTOR);
+            for (var i2 = 0, element; element = elements[i2++]; ) {
+              Prism3.highlightElement(element);
+            }
+          }
+        };
+        var logged = false;
+        Prism3.fileHighlight = function() {
+          if (!logged) {
+            console.warn("Prism.fileHighlight is deprecated. Use `Prism.plugins.fileHighlight.highlight` instead.");
+            logged = true;
+          }
+          Prism3.plugins.fileHighlight.highlight.apply(this, arguments);
+        };
+      })();
     }
   });
 
@@ -27352,7 +29508,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           return string2.match(reUnicodeWord) || [];
         }
         var runInContext = function runInContext2(context) {
-          context = context == null ? root : _3.defaults(root.Object(), context, _3.pick(root, contextProps));
+          context = context == null ? root : _2.defaults(root.Object(), context, _2.pick(root, contextProps));
           var Array2 = context.Array, Date2 = context.Date, Error2 = context.Error, Function2 = context.Function, Math2 = context.Math, Object2 = context.Object, RegExp2 = context.RegExp, String2 = context.String, TypeError2 = context.TypeError;
           var arrayProto = Array2.prototype, funcProto = Function2.prototype, objectProto = Object2.prototype;
           var coreJsData = context["__core-js_shared__"];
@@ -32126,2175 +34282,19 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           }
           return lodash;
         };
-        var _3 = runInContext();
+        var _2 = runInContext();
         if (typeof define == "function" && typeof define.amd == "object" && define.amd) {
-          root._ = _3;
+          root._ = _2;
           define(function() {
-            return _3;
+            return _2;
           });
         } else if (freeModule) {
-          (freeModule.exports = _3)._ = _3;
-          freeExports._ = _3;
+          (freeModule.exports = _2)._ = _2;
+          freeExports._ = _2;
         } else {
-          root._ = _3;
+          root._ = _2;
         }
       }).call(exports);
-    }
-  });
-
-  // ../node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js
-  var require_react_is_development = __commonJS({
-    "../node_modules/prop-types/node_modules/react-is/cjs/react-is.development.js"(exports) {
-      "use strict";
-      if (true) {
-        (function() {
-          "use strict";
-          var hasSymbol = typeof Symbol === "function" && Symbol.for;
-          var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 60103;
-          var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 60106;
-          var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 60107;
-          var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 60108;
-          var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 60114;
-          var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 60109;
-          var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 60110;
-          var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 60111;
-          var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 60111;
-          var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 60112;
-          var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 60113;
-          var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 60120;
-          var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 60115;
-          var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 60116;
-          var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 60121;
-          var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 60117;
-          var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 60118;
-          var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 60119;
-          function isValidElementType(type) {
-            return typeof type === "string" || typeof type === "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-            type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
-          }
-          function typeOf(object2) {
-            if (typeof object2 === "object" && object2 !== null) {
-              var $$typeof = object2.$$typeof;
-              switch ($$typeof) {
-                case REACT_ELEMENT_TYPE:
-                  var type = object2.type;
-                  switch (type) {
-                    case REACT_ASYNC_MODE_TYPE:
-                    case REACT_CONCURRENT_MODE_TYPE:
-                    case REACT_FRAGMENT_TYPE:
-                    case REACT_PROFILER_TYPE:
-                    case REACT_STRICT_MODE_TYPE:
-                    case REACT_SUSPENSE_TYPE:
-                      return type;
-                    default:
-                      var $$typeofType = type && type.$$typeof;
-                      switch ($$typeofType) {
-                        case REACT_CONTEXT_TYPE:
-                        case REACT_FORWARD_REF_TYPE:
-                        case REACT_LAZY_TYPE:
-                        case REACT_MEMO_TYPE:
-                        case REACT_PROVIDER_TYPE:
-                          return $$typeofType;
-                        default:
-                          return $$typeof;
-                      }
-                  }
-                case REACT_PORTAL_TYPE:
-                  return $$typeof;
-              }
-            }
-            return void 0;
-          }
-          var AsyncMode = REACT_ASYNC_MODE_TYPE;
-          var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
-          var ContextConsumer = REACT_CONTEXT_TYPE;
-          var ContextProvider = REACT_PROVIDER_TYPE;
-          var Element2 = REACT_ELEMENT_TYPE;
-          var ForwardRef = REACT_FORWARD_REF_TYPE;
-          var Fragment29 = REACT_FRAGMENT_TYPE;
-          var Lazy = REACT_LAZY_TYPE;
-          var Memo = REACT_MEMO_TYPE;
-          var Portal = REACT_PORTAL_TYPE;
-          var Profiler = REACT_PROFILER_TYPE;
-          var StrictMode = REACT_STRICT_MODE_TYPE;
-          var Suspense = REACT_SUSPENSE_TYPE;
-          var hasWarnedAboutDeprecatedIsAsyncMode = false;
-          function isAsyncMode(object2) {
-            {
-              if (!hasWarnedAboutDeprecatedIsAsyncMode) {
-                hasWarnedAboutDeprecatedIsAsyncMode = true;
-                console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
-              }
-            }
-            return isConcurrentMode(object2) || typeOf(object2) === REACT_ASYNC_MODE_TYPE;
-          }
-          function isConcurrentMode(object2) {
-            return typeOf(object2) === REACT_CONCURRENT_MODE_TYPE;
-          }
-          function isContextConsumer(object2) {
-            return typeOf(object2) === REACT_CONTEXT_TYPE;
-          }
-          function isContextProvider(object2) {
-            return typeOf(object2) === REACT_PROVIDER_TYPE;
-          }
-          function isElement(object2) {
-            return typeof object2 === "object" && object2 !== null && object2.$$typeof === REACT_ELEMENT_TYPE;
-          }
-          function isForwardRef(object2) {
-            return typeOf(object2) === REACT_FORWARD_REF_TYPE;
-          }
-          function isFragment(object2) {
-            return typeOf(object2) === REACT_FRAGMENT_TYPE;
-          }
-          function isLazy(object2) {
-            return typeOf(object2) === REACT_LAZY_TYPE;
-          }
-          function isMemo(object2) {
-            return typeOf(object2) === REACT_MEMO_TYPE;
-          }
-          function isPortal(object2) {
-            return typeOf(object2) === REACT_PORTAL_TYPE;
-          }
-          function isProfiler(object2) {
-            return typeOf(object2) === REACT_PROFILER_TYPE;
-          }
-          function isStrictMode(object2) {
-            return typeOf(object2) === REACT_STRICT_MODE_TYPE;
-          }
-          function isSuspense(object2) {
-            return typeOf(object2) === REACT_SUSPENSE_TYPE;
-          }
-          exports.AsyncMode = AsyncMode;
-          exports.ConcurrentMode = ConcurrentMode;
-          exports.ContextConsumer = ContextConsumer;
-          exports.ContextProvider = ContextProvider;
-          exports.Element = Element2;
-          exports.ForwardRef = ForwardRef;
-          exports.Fragment = Fragment29;
-          exports.Lazy = Lazy;
-          exports.Memo = Memo;
-          exports.Portal = Portal;
-          exports.Profiler = Profiler;
-          exports.StrictMode = StrictMode;
-          exports.Suspense = Suspense;
-          exports.isAsyncMode = isAsyncMode;
-          exports.isConcurrentMode = isConcurrentMode;
-          exports.isContextConsumer = isContextConsumer;
-          exports.isContextProvider = isContextProvider;
-          exports.isElement = isElement;
-          exports.isForwardRef = isForwardRef;
-          exports.isFragment = isFragment;
-          exports.isLazy = isLazy;
-          exports.isMemo = isMemo;
-          exports.isPortal = isPortal;
-          exports.isProfiler = isProfiler;
-          exports.isStrictMode = isStrictMode;
-          exports.isSuspense = isSuspense;
-          exports.isValidElementType = isValidElementType;
-          exports.typeOf = typeOf;
-        })();
-      }
-    }
-  });
-
-  // ../node_modules/prop-types/node_modules/react-is/index.js
-  var require_react_is = __commonJS({
-    "../node_modules/prop-types/node_modules/react-is/index.js"(exports, module) {
-      "use strict";
-      if (false) {
-        module.exports = null;
-      } else {
-        module.exports = require_react_is_development();
-      }
-    }
-  });
-
-  // ../node_modules/prop-types/lib/ReactPropTypesSecret.js
-  var require_ReactPropTypesSecret = __commonJS({
-    "../node_modules/prop-types/lib/ReactPropTypesSecret.js"(exports, module) {
-      "use strict";
-      var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
-      module.exports = ReactPropTypesSecret;
-    }
-  });
-
-  // ../node_modules/prop-types/lib/has.js
-  var require_has = __commonJS({
-    "../node_modules/prop-types/lib/has.js"(exports, module) {
-      module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
-    }
-  });
-
-  // ../node_modules/prop-types/checkPropTypes.js
-  var require_checkPropTypes = __commonJS({
-    "../node_modules/prop-types/checkPropTypes.js"(exports, module) {
-      "use strict";
-      var printWarning = function() {
-      };
-      if (true) {
-        ReactPropTypesSecret = require_ReactPropTypesSecret();
-        loggedTypeFailures = {};
-        has = require_has();
-        printWarning = function(text) {
-          var message = "Warning: " + text;
-          if (typeof console !== "undefined") {
-            console.error(message);
-          }
-          try {
-            throw new Error(message);
-          } catch (x2) {
-          }
-        };
-      }
-      var ReactPropTypesSecret;
-      var loggedTypeFailures;
-      var has;
-      function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-        if (true) {
-          for (var typeSpecName in typeSpecs) {
-            if (has(typeSpecs, typeSpecName)) {
-              var error;
-              try {
-                if (typeof typeSpecs[typeSpecName] !== "function") {
-                  var err = Error(
-                    (componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`.This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`."
-                  );
-                  err.name = "Invariant Violation";
-                  throw err;
-                }
-                error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
-              } catch (ex) {
-                error = ex;
-              }
-              if (error && !(error instanceof Error)) {
-                printWarning(
-                  (componentName || "React class") + ": type specification of " + location + " `" + typeSpecName + "` is invalid; the type checker function must return `null` or an `Error` but returned a " + typeof error + ". You may have forgotten to pass an argument to the type checker creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and shape all require an argument)."
-                );
-              }
-              if (error instanceof Error && !(error.message in loggedTypeFailures)) {
-                loggedTypeFailures[error.message] = true;
-                var stack = getStack ? getStack() : "";
-                printWarning(
-                  "Failed " + location + " type: " + error.message + (stack != null ? stack : "")
-                );
-              }
-            }
-          }
-        }
-      }
-      checkPropTypes.resetWarningCache = function() {
-        if (true) {
-          loggedTypeFailures = {};
-        }
-      };
-      module.exports = checkPropTypes;
-    }
-  });
-
-  // ../node_modules/prop-types/factoryWithTypeCheckers.js
-  var require_factoryWithTypeCheckers = __commonJS({
-    "../node_modules/prop-types/factoryWithTypeCheckers.js"(exports, module) {
-      "use strict";
-      var ReactIs = require_react_is();
-      var assign = require_object_assign();
-      var ReactPropTypesSecret = require_ReactPropTypesSecret();
-      var has = require_has();
-      var checkPropTypes = require_checkPropTypes();
-      var printWarning = function() {
-      };
-      if (true) {
-        printWarning = function(text) {
-          var message = "Warning: " + text;
-          if (typeof console !== "undefined") {
-            console.error(message);
-          }
-          try {
-            throw new Error(message);
-          } catch (x2) {
-          }
-        };
-      }
-      function emptyFunctionThatReturnsNull() {
-        return null;
-      }
-      module.exports = function(isValidElement2, throwOnDirectAccess) {
-        var ITERATOR_SYMBOL = typeof Symbol === "function" && Symbol.iterator;
-        var FAUX_ITERATOR_SYMBOL = "@@iterator";
-        function getIteratorFn(maybeIterable) {
-          var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
-          if (typeof iteratorFn === "function") {
-            return iteratorFn;
-          }
-        }
-        var ANONYMOUS = "<<anonymous>>";
-        var ReactPropTypes = {
-          array: createPrimitiveTypeChecker("array"),
-          bigint: createPrimitiveTypeChecker("bigint"),
-          bool: createPrimitiveTypeChecker("boolean"),
-          func: createPrimitiveTypeChecker("function"),
-          number: createPrimitiveTypeChecker("number"),
-          object: createPrimitiveTypeChecker("object"),
-          string: createPrimitiveTypeChecker("string"),
-          symbol: createPrimitiveTypeChecker("symbol"),
-          any: createAnyTypeChecker(),
-          arrayOf: createArrayOfTypeChecker,
-          element: createElementTypeChecker(),
-          elementType: createElementTypeTypeChecker(),
-          instanceOf: createInstanceTypeChecker,
-          node: createNodeChecker(),
-          objectOf: createObjectOfTypeChecker,
-          oneOf: createEnumTypeChecker,
-          oneOfType: createUnionTypeChecker,
-          shape: createShapeTypeChecker,
-          exact: createStrictShapeTypeChecker
-        };
-        function is(x2, y2) {
-          if (x2 === y2) {
-            return x2 !== 0 || 1 / x2 === 1 / y2;
-          } else {
-            return x2 !== x2 && y2 !== y2;
-          }
-        }
-        function PropTypeError(message, data) {
-          this.message = message;
-          this.data = data && typeof data === "object" ? data : {};
-          this.stack = "";
-        }
-        PropTypeError.prototype = Error.prototype;
-        function createChainableTypeChecker(validate) {
-          if (true) {
-            var manualPropTypeCallCache = {};
-            var manualPropTypeWarningCount = 0;
-          }
-          function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
-            componentName = componentName || ANONYMOUS;
-            propFullName = propFullName || propName;
-            if (secret !== ReactPropTypesSecret) {
-              if (throwOnDirectAccess) {
-                var err = new Error(
-                  "Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types"
-                );
-                err.name = "Invariant Violation";
-                throw err;
-              } else if (typeof console !== "undefined") {
-                var cacheKey = componentName + ":" + propName;
-                if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
-                manualPropTypeWarningCount < 3) {
-                  printWarning(
-                    "You are manually calling a React.PropTypes validation function for the `" + propFullName + "` prop on `" + componentName + "`. This is deprecated and will throw in the standalone `prop-types` package. You may be seeing this warning due to a third-party PropTypes library. See https://fb.me/react-warning-dont-call-proptypes for details."
-                  );
-                  manualPropTypeCallCache[cacheKey] = true;
-                  manualPropTypeWarningCount++;
-                }
-              }
-            }
-            if (props[propName] == null) {
-              if (isRequired) {
-                if (props[propName] === null) {
-                  return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`."));
-                }
-                return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`."));
-              }
-              return null;
-            } else {
-              return validate(props, propName, componentName, location, propFullName);
-            }
-          }
-          var chainedCheckType = checkType.bind(null, false);
-          chainedCheckType.isRequired = checkType.bind(null, true);
-          return chainedCheckType;
-        }
-        function createPrimitiveTypeChecker(expectedType) {
-          function validate(props, propName, componentName, location, propFullName, secret) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== expectedType) {
-              var preciseType = getPreciseType(propValue);
-              return new PropTypeError(
-                "Invalid " + location + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."),
-                { expectedType }
-              );
-            }
-            return null;
-          }
-          return createChainableTypeChecker(validate);
-        }
-        function createAnyTypeChecker() {
-          return createChainableTypeChecker(emptyFunctionThatReturnsNull);
-        }
-        function createArrayOfTypeChecker(typeChecker) {
-          function validate(props, propName, componentName, location, propFullName) {
-            if (typeof typeChecker !== "function") {
-              return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside arrayOf.");
-            }
-            var propValue = props[propName];
-            if (!Array.isArray(propValue)) {
-              var propType = getPropType(propValue);
-              return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
-            }
-            for (var i2 = 0; i2 < propValue.length; i2++) {
-              var error = typeChecker(propValue, i2, componentName, location, propFullName + "[" + i2 + "]", ReactPropTypesSecret);
-              if (error instanceof Error) {
-                return error;
-              }
-            }
-            return null;
-          }
-          return createChainableTypeChecker(validate);
-        }
-        function createElementTypeChecker() {
-          function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            if (!isValidElement2(propValue)) {
-              var propType = getPropType(propValue);
-              return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
-            }
-            return null;
-          }
-          return createChainableTypeChecker(validate);
-        }
-        function createElementTypeTypeChecker() {
-          function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            if (!ReactIs.isValidElementType(propValue)) {
-              var propType = getPropType(propValue);
-              return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
-            }
-            return null;
-          }
-          return createChainableTypeChecker(validate);
-        }
-        function createInstanceTypeChecker(expectedClass) {
-          function validate(props, propName, componentName, location, propFullName) {
-            if (!(props[propName] instanceof expectedClass)) {
-              var expectedClassName = expectedClass.name || ANONYMOUS;
-              var actualClassName = getClassName(props[propName]);
-              return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
-            }
-            return null;
-          }
-          return createChainableTypeChecker(validate);
-        }
-        function createEnumTypeChecker(expectedValues) {
-          if (!Array.isArray(expectedValues)) {
-            if (true) {
-              if (arguments.length > 1) {
-                printWarning(
-                  "Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z])."
-                );
-              } else {
-                printWarning("Invalid argument supplied to oneOf, expected an array.");
-              }
-            }
-            return emptyFunctionThatReturnsNull;
-          }
-          function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            for (var i2 = 0; i2 < expectedValues.length; i2++) {
-              if (is(propValue, expectedValues[i2])) {
-                return null;
-              }
-            }
-            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
-              var type = getPreciseType(value);
-              if (type === "symbol") {
-                return String(value);
-              }
-              return value;
-            });
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
-          }
-          return createChainableTypeChecker(validate);
-        }
-        function createObjectOfTypeChecker(typeChecker) {
-          function validate(props, propName, componentName, location, propFullName) {
-            if (typeof typeChecker !== "function") {
-              return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside objectOf.");
-            }
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== "object") {
-              return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
-            }
-            for (var key in propValue) {
-              if (has(propValue, key)) {
-                var error = typeChecker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
-                if (error instanceof Error) {
-                  return error;
-                }
-              }
-            }
-            return null;
-          }
-          return createChainableTypeChecker(validate);
-        }
-        function createUnionTypeChecker(arrayOfTypeCheckers) {
-          if (!Array.isArray(arrayOfTypeCheckers)) {
-            true ? printWarning("Invalid argument supplied to oneOfType, expected an instance of array.") : void 0;
-            return emptyFunctionThatReturnsNull;
-          }
-          for (var i2 = 0; i2 < arrayOfTypeCheckers.length; i2++) {
-            var checker = arrayOfTypeCheckers[i2];
-            if (typeof checker !== "function") {
-              printWarning(
-                "Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + " at index " + i2 + "."
-              );
-              return emptyFunctionThatReturnsNull;
-            }
-          }
-          function validate(props, propName, componentName, location, propFullName) {
-            var expectedTypes = [];
-            for (var i3 = 0; i3 < arrayOfTypeCheckers.length; i3++) {
-              var checker2 = arrayOfTypeCheckers[i3];
-              var checkerResult = checker2(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
-              if (checkerResult == null) {
-                return null;
-              }
-              if (checkerResult.data && has(checkerResult.data, "expectedType")) {
-                expectedTypes.push(checkerResult.data.expectedType);
-              }
-            }
-            var expectedTypesMessage = expectedTypes.length > 0 ? ", expected one of type [" + expectedTypes.join(", ") + "]" : "";
-            return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
-          }
-          return createChainableTypeChecker(validate);
-        }
-        function createNodeChecker() {
-          function validate(props, propName, componentName, location, propFullName) {
-            if (!isNode(props[propName])) {
-              return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
-            }
-            return null;
-          }
-          return createChainableTypeChecker(validate);
-        }
-        function invalidValidatorError(componentName, location, propFullName, key, type) {
-          return new PropTypeError(
-            (componentName || "React class") + ": " + location + " type `" + propFullName + "." + key + "` is invalid; it must be a function, usually from the `prop-types` package, but received `" + type + "`."
-          );
-        }
-        function createShapeTypeChecker(shapeTypes) {
-          function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== "object") {
-              return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
-            }
-            for (var key in shapeTypes) {
-              var checker = shapeTypes[key];
-              if (typeof checker !== "function") {
-                return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
-              }
-              var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
-              if (error) {
-                return error;
-              }
-            }
-            return null;
-          }
-          return createChainableTypeChecker(validate);
-        }
-        function createStrictShapeTypeChecker(shapeTypes) {
-          function validate(props, propName, componentName, location, propFullName) {
-            var propValue = props[propName];
-            var propType = getPropType(propValue);
-            if (propType !== "object") {
-              return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
-            }
-            var allKeys = assign({}, props[propName], shapeTypes);
-            for (var key in allKeys) {
-              var checker = shapeTypes[key];
-              if (has(shapeTypes, key) && typeof checker !== "function") {
-                return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
-              }
-              if (!checker) {
-                return new PropTypeError(
-                  "Invalid " + location + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`.\nBad object: " + JSON.stringify(props[propName], null, "  ") + "\nValid keys: " + JSON.stringify(Object.keys(shapeTypes), null, "  ")
-                );
-              }
-              var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
-              if (error) {
-                return error;
-              }
-            }
-            return null;
-          }
-          return createChainableTypeChecker(validate);
-        }
-        function isNode(propValue) {
-          switch (typeof propValue) {
-            case "number":
-            case "string":
-            case "undefined":
-              return true;
-            case "boolean":
-              return !propValue;
-            case "object":
-              if (Array.isArray(propValue)) {
-                return propValue.every(isNode);
-              }
-              if (propValue === null || isValidElement2(propValue)) {
-                return true;
-              }
-              var iteratorFn = getIteratorFn(propValue);
-              if (iteratorFn) {
-                var iterator = iteratorFn.call(propValue);
-                var step;
-                if (iteratorFn !== propValue.entries) {
-                  while (!(step = iterator.next()).done) {
-                    if (!isNode(step.value)) {
-                      return false;
-                    }
-                  }
-                } else {
-                  while (!(step = iterator.next()).done) {
-                    var entry = step.value;
-                    if (entry) {
-                      if (!isNode(entry[1])) {
-                        return false;
-                      }
-                    }
-                  }
-                }
-              } else {
-                return false;
-              }
-              return true;
-            default:
-              return false;
-          }
-        }
-        function isSymbol(propType, propValue) {
-          if (propType === "symbol") {
-            return true;
-          }
-          if (!propValue) {
-            return false;
-          }
-          if (propValue["@@toStringTag"] === "Symbol") {
-            return true;
-          }
-          if (typeof Symbol === "function" && propValue instanceof Symbol) {
-            return true;
-          }
-          return false;
-        }
-        function getPropType(propValue) {
-          var propType = typeof propValue;
-          if (Array.isArray(propValue)) {
-            return "array";
-          }
-          if (propValue instanceof RegExp) {
-            return "object";
-          }
-          if (isSymbol(propType, propValue)) {
-            return "symbol";
-          }
-          return propType;
-        }
-        function getPreciseType(propValue) {
-          if (typeof propValue === "undefined" || propValue === null) {
-            return "" + propValue;
-          }
-          var propType = getPropType(propValue);
-          if (propType === "object") {
-            if (propValue instanceof Date) {
-              return "date";
-            } else if (propValue instanceof RegExp) {
-              return "regexp";
-            }
-          }
-          return propType;
-        }
-        function getPostfixForTypeWarning(value) {
-          var type = getPreciseType(value);
-          switch (type) {
-            case "array":
-            case "object":
-              return "an " + type;
-            case "boolean":
-            case "date":
-            case "regexp":
-              return "a " + type;
-            default:
-              return type;
-          }
-        }
-        function getClassName(propValue) {
-          if (!propValue.constructor || !propValue.constructor.name) {
-            return ANONYMOUS;
-          }
-          return propValue.constructor.name;
-        }
-        ReactPropTypes.checkPropTypes = checkPropTypes;
-        ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
-        ReactPropTypes.PropTypes = ReactPropTypes;
-        return ReactPropTypes;
-      };
-    }
-  });
-
-  // ../node_modules/prop-types/index.js
-  var require_prop_types = __commonJS({
-    "../node_modules/prop-types/index.js"(exports, module) {
-      if (true) {
-        ReactIs = require_react_is();
-        throwOnDirectAccess = true;
-        module.exports = require_factoryWithTypeCheckers()(ReactIs.isElement, throwOnDirectAccess);
-      } else {
-        module.exports = null();
-      }
-      var ReactIs;
-      var throwOnDirectAccess;
-    }
-  });
-
-  // ../node_modules/prismjs/prism.js
-  var require_prism = __commonJS({
-    "../node_modules/prismjs/prism.js"(exports, module) {
-      var _self = typeof window !== "undefined" ? window : typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope ? self : {};
-      var Prism3 = function(_self2) {
-        var lang = /(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i;
-        var uniqueId = 0;
-        var plainTextGrammar = {};
-        var _3 = {
-          /**
-           * By default, Prism will attempt to highlight all code elements (by calling {@link Prism.highlightAll}) on the
-           * current page after the page finished loading. This might be a problem if e.g. you wanted to asynchronously load
-           * additional languages or plugins yourself.
-           *
-           * By setting this value to `true`, Prism will not automatically highlight all code elements on the page.
-           *
-           * You obviously have to change this value before the automatic highlighting started. To do this, you can add an
-           * empty Prism object into the global scope before loading the Prism script like this:
-           *
-           * ```js
-           * window.Prism = window.Prism || {};
-           * Prism.manual = true;
-           * // add a new <script> to load Prism's script
-           * ```
-           *
-           * @default false
-           * @type {boolean}
-           * @memberof Prism
-           * @public
-           */
-          manual: _self2.Prism && _self2.Prism.manual,
-          /**
-           * By default, if Prism is in a web worker, it assumes that it is in a worker it created itself, so it uses
-           * `addEventListener` to communicate with its parent instance. However, if you're using Prism manually in your
-           * own worker, you don't want it to do this.
-           *
-           * By setting this value to `true`, Prism will not add its own listeners to the worker.
-           *
-           * You obviously have to change this value before Prism executes. To do this, you can add an
-           * empty Prism object into the global scope before loading the Prism script like this:
-           *
-           * ```js
-           * window.Prism = window.Prism || {};
-           * Prism.disableWorkerMessageHandler = true;
-           * // Load Prism's script
-           * ```
-           *
-           * @default false
-           * @type {boolean}
-           * @memberof Prism
-           * @public
-           */
-          disableWorkerMessageHandler: _self2.Prism && _self2.Prism.disableWorkerMessageHandler,
-          /**
-           * A namespace for utility methods.
-           *
-           * All function in this namespace that are not explicitly marked as _public_ are for __internal use only__ and may
-           * change or disappear at any time.
-           *
-           * @namespace
-           * @memberof Prism
-           */
-          util: {
-            encode: function encode3(tokens) {
-              if (tokens instanceof Token) {
-                return new Token(tokens.type, encode3(tokens.content), tokens.alias);
-              } else if (Array.isArray(tokens)) {
-                return tokens.map(encode3);
-              } else {
-                return tokens.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\u00a0/g, " ");
-              }
-            },
-            /**
-             * Returns the name of the type of the given value.
-             *
-             * @param {any} o
-             * @returns {string}
-             * @example
-             * type(null)      === 'Null'
-             * type(undefined) === 'Undefined'
-             * type(123)       === 'Number'
-             * type('foo')     === 'String'
-             * type(true)      === 'Boolean'
-             * type([1, 2])    === 'Array'
-             * type({})        === 'Object'
-             * type(String)    === 'Function'
-             * type(/abc+/)    === 'RegExp'
-             */
-            type: function(o2) {
-              return Object.prototype.toString.call(o2).slice(8, -1);
-            },
-            /**
-             * Returns a unique number for the given object. Later calls will still return the same number.
-             *
-             * @param {Object} obj
-             * @returns {number}
-             */
-            objId: function(obj) {
-              if (!obj["__id"]) {
-                Object.defineProperty(obj, "__id", { value: ++uniqueId });
-              }
-              return obj["__id"];
-            },
-            /**
-             * Creates a deep clone of the given object.
-             *
-             * The main intended use of this function is to clone language definitions.
-             *
-             * @param {T} o
-             * @param {Record<number, any>} [visited]
-             * @returns {T}
-             * @template T
-             */
-            clone: function deepClone(o2, visited) {
-              visited = visited || {};
-              var clone;
-              var id2;
-              switch (_3.util.type(o2)) {
-                case "Object":
-                  id2 = _3.util.objId(o2);
-                  if (visited[id2]) {
-                    return visited[id2];
-                  }
-                  clone = /** @type {Record<string, any>} */
-                  {};
-                  visited[id2] = clone;
-                  for (var key in o2) {
-                    if (o2.hasOwnProperty(key)) {
-                      clone[key] = deepClone(o2[key], visited);
-                    }
-                  }
-                  return (
-                    /** @type {any} */
-                    clone
-                  );
-                case "Array":
-                  id2 = _3.util.objId(o2);
-                  if (visited[id2]) {
-                    return visited[id2];
-                  }
-                  clone = [];
-                  visited[id2] = clone;
-                  /** @type {Array} */
-                  /** @type {any} */
-                  o2.forEach(function(v3, i2) {
-                    clone[i2] = deepClone(v3, visited);
-                  });
-                  return (
-                    /** @type {any} */
-                    clone
-                  );
-                default:
-                  return o2;
-              }
-            },
-            /**
-             * Returns the Prism language of the given element set by a `language-xxxx` or `lang-xxxx` class.
-             *
-             * If no language is set for the element or the element is `null` or `undefined`, `none` will be returned.
-             *
-             * @param {Element} element
-             * @returns {string}
-             */
-            getLanguage: function(element) {
-              while (element) {
-                var m3 = lang.exec(element.className);
-                if (m3) {
-                  return m3[1].toLowerCase();
-                }
-                element = element.parentElement;
-              }
-              return "none";
-            },
-            /**
-             * Sets the Prism `language-xxxx` class of the given element.
-             *
-             * @param {Element} element
-             * @param {string} language
-             * @returns {void}
-             */
-            setLanguage: function(element, language) {
-              element.className = element.className.replace(RegExp(lang, "gi"), "");
-              element.classList.add("language-" + language);
-            },
-            /**
-             * Returns the script element that is currently executing.
-             *
-             * This does __not__ work for line script element.
-             *
-             * @returns {HTMLScriptElement | null}
-             */
-            currentScript: function() {
-              if (typeof document === "undefined") {
-                return null;
-              }
-              if ("currentScript" in document && 1 < 2) {
-                return (
-                  /** @type {any} */
-                  document.currentScript
-                );
-              }
-              try {
-                throw new Error();
-              } catch (err) {
-                var src = (/at [^(\r\n]*\((.*):[^:]+:[^:]+\)$/i.exec(err.stack) || [])[1];
-                if (src) {
-                  var scripts = document.getElementsByTagName("script");
-                  for (var i2 in scripts) {
-                    if (scripts[i2].src == src) {
-                      return scripts[i2];
-                    }
-                  }
-                }
-                return null;
-              }
-            },
-            /**
-             * Returns whether a given class is active for `element`.
-             *
-             * The class can be activated if `element` or one of its ancestors has the given class and it can be deactivated
-             * if `element` or one of its ancestors has the negated version of the given class. The _negated version_ of the
-             * given class is just the given class with a `no-` prefix.
-             *
-             * Whether the class is active is determined by the closest ancestor of `element` (where `element` itself is
-             * closest ancestor) that has the given class or the negated version of it. If neither `element` nor any of its
-             * ancestors have the given class or the negated version of it, then the default activation will be returned.
-             *
-             * In the paradoxical situation where the closest ancestor contains __both__ the given class and the negated
-             * version of it, the class is considered active.
-             *
-             * @param {Element} element
-             * @param {string} className
-             * @param {boolean} [defaultActivation=false]
-             * @returns {boolean}
-             */
-            isActive: function(element, className, defaultActivation) {
-              var no = "no-" + className;
-              while (element) {
-                var classList = element.classList;
-                if (classList.contains(className)) {
-                  return true;
-                }
-                if (classList.contains(no)) {
-                  return false;
-                }
-                element = element.parentElement;
-              }
-              return !!defaultActivation;
-            }
-          },
-          /**
-           * This namespace contains all currently loaded languages and the some helper functions to create and modify languages.
-           *
-           * @namespace
-           * @memberof Prism
-           * @public
-           */
-          languages: {
-            /**
-             * The grammar for plain, unformatted text.
-             */
-            plain: plainTextGrammar,
-            plaintext: plainTextGrammar,
-            text: plainTextGrammar,
-            txt: plainTextGrammar,
-            /**
-             * Creates a deep copy of the language with the given id and appends the given tokens.
-             *
-             * If a token in `redef` also appears in the copied language, then the existing token in the copied language
-             * will be overwritten at its original position.
-             *
-             * ## Best practices
-             *
-             * Since the position of overwriting tokens (token in `redef` that overwrite tokens in the copied language)
-             * doesn't matter, they can technically be in any order. However, this can be confusing to others that trying to
-             * understand the language definition because, normally, the order of tokens matters in Prism grammars.
-             *
-             * Therefore, it is encouraged to order overwriting tokens according to the positions of the overwritten tokens.
-             * Furthermore, all non-overwriting tokens should be placed after the overwriting ones.
-             *
-             * @param {string} id The id of the language to extend. This has to be a key in `Prism.languages`.
-             * @param {Grammar} redef The new tokens to append.
-             * @returns {Grammar} The new language created.
-             * @public
-             * @example
-             * Prism.languages['css-with-colors'] = Prism.languages.extend('css', {
-             *     // Prism.languages.css already has a 'comment' token, so this token will overwrite CSS' 'comment' token
-             *     // at its original position
-             *     'comment': { ... },
-             *     // CSS doesn't have a 'color' token, so this token will be appended
-             *     'color': /\b(?:red|green|blue)\b/
-             * });
-             */
-            extend: function(id2, redef) {
-              var lang2 = _3.util.clone(_3.languages[id2]);
-              for (var key in redef) {
-                lang2[key] = redef[key];
-              }
-              return lang2;
-            },
-            /**
-             * Inserts tokens _before_ another token in a language definition or any other grammar.
-             *
-             * ## Usage
-             *
-             * This helper method makes it easy to modify existing languages. For example, the CSS language definition
-             * not only defines CSS highlighting for CSS documents, but also needs to define highlighting for CSS embedded
-             * in HTML through `<style>` elements. To do this, it needs to modify `Prism.languages.markup` and add the
-             * appropriate tokens. However, `Prism.languages.markup` is a regular JavaScript object literal, so if you do
-             * this:
-             *
-             * ```js
-             * Prism.languages.markup.style = {
-             *     // token
-             * };
-             * ```
-             *
-             * then the `style` token will be added (and processed) at the end. `insertBefore` allows you to insert tokens
-             * before existing tokens. For the CSS example above, you would use it like this:
-             *
-             * ```js
-             * Prism.languages.insertBefore('markup', 'cdata', {
-             *     'style': {
-             *         // token
-             *     }
-             * });
-             * ```
-             *
-             * ## Special cases
-             *
-             * If the grammars of `inside` and `insert` have tokens with the same name, the tokens in `inside`'s grammar
-             * will be ignored.
-             *
-             * This behavior can be used to insert tokens after `before`:
-             *
-             * ```js
-             * Prism.languages.insertBefore('markup', 'comment', {
-             *     'comment': Prism.languages.markup.comment,
-             *     // tokens after 'comment'
-             * });
-             * ```
-             *
-             * ## Limitations
-             *
-             * The main problem `insertBefore` has to solve is iteration order. Since ES2015, the iteration order for object
-             * properties is guaranteed to be the insertion order (except for integer keys) but some browsers behave
-             * differently when keys are deleted and re-inserted. So `insertBefore` can't be implemented by temporarily
-             * deleting properties which is necessary to insert at arbitrary positions.
-             *
-             * To solve this problem, `insertBefore` doesn't actually insert the given tokens into the target object.
-             * Instead, it will create a new object and replace all references to the target object with the new one. This
-             * can be done without temporarily deleting properties, so the iteration order is well-defined.
-             *
-             * However, only references that can be reached from `Prism.languages` or `insert` will be replaced. I.e. if
-             * you hold the target object in a variable, then the value of the variable will not change.
-             *
-             * ```js
-             * var oldMarkup = Prism.languages.markup;
-             * var newMarkup = Prism.languages.insertBefore('markup', 'comment', { ... });
-             *
-             * assert(oldMarkup !== Prism.languages.markup);
-             * assert(newMarkup === Prism.languages.markup);
-             * ```
-             *
-             * @param {string} inside The property of `root` (e.g. a language id in `Prism.languages`) that contains the
-             * object to be modified.
-             * @param {string} before The key to insert before.
-             * @param {Grammar} insert An object containing the key-value pairs to be inserted.
-             * @param {Object<string, any>} [root] The object containing `inside`, i.e. the object that contains the
-             * object to be modified.
-             *
-             * Defaults to `Prism.languages`.
-             * @returns {Grammar} The new grammar object.
-             * @public
-             */
-            insertBefore: function(inside, before, insert, root) {
-              root = root || /** @type {any} */
-              _3.languages;
-              var grammar = root[inside];
-              var ret = {};
-              for (var token in grammar) {
-                if (grammar.hasOwnProperty(token)) {
-                  if (token == before) {
-                    for (var newToken in insert) {
-                      if (insert.hasOwnProperty(newToken)) {
-                        ret[newToken] = insert[newToken];
-                      }
-                    }
-                  }
-                  if (!insert.hasOwnProperty(token)) {
-                    ret[token] = grammar[token];
-                  }
-                }
-              }
-              var old = root[inside];
-              root[inside] = ret;
-              _3.languages.DFS(_3.languages, function(key, value) {
-                if (value === old && key != inside) {
-                  this[key] = ret;
-                }
-              });
-              return ret;
-            },
-            // Traverse a language definition with Depth First Search
-            DFS: function DFS(o2, callback, type, visited) {
-              visited = visited || {};
-              var objId = _3.util.objId;
-              for (var i2 in o2) {
-                if (o2.hasOwnProperty(i2)) {
-                  callback.call(o2, i2, o2[i2], type || i2);
-                  var property = o2[i2];
-                  var propertyType = _3.util.type(property);
-                  if (propertyType === "Object" && !visited[objId(property)]) {
-                    visited[objId(property)] = true;
-                    DFS(property, callback, null, visited);
-                  } else if (propertyType === "Array" && !visited[objId(property)]) {
-                    visited[objId(property)] = true;
-                    DFS(property, callback, i2, visited);
-                  }
-                }
-              }
-            }
-          },
-          plugins: {},
-          /**
-           * This is the most high-level function in Prism’s API.
-           * It fetches all the elements that have a `.language-xxxx` class and then calls {@link Prism.highlightElement} on
-           * each one of them.
-           *
-           * This is equivalent to `Prism.highlightAllUnder(document, async, callback)`.
-           *
-           * @param {boolean} [async=false] Same as in {@link Prism.highlightAllUnder}.
-           * @param {HighlightCallback} [callback] Same as in {@link Prism.highlightAllUnder}.
-           * @memberof Prism
-           * @public
-           */
-          highlightAll: function(async, callback) {
-            _3.highlightAllUnder(document, async, callback);
-          },
-          /**
-           * Fetches all the descendants of `container` that have a `.language-xxxx` class and then calls
-           * {@link Prism.highlightElement} on each one of them.
-           *
-           * The following hooks will be run:
-           * 1. `before-highlightall`
-           * 2. `before-all-elements-highlight`
-           * 3. All hooks of {@link Prism.highlightElement} for each element.
-           *
-           * @param {ParentNode} container The root element, whose descendants that have a `.language-xxxx` class will be highlighted.
-           * @param {boolean} [async=false] Whether each element is to be highlighted asynchronously using Web Workers.
-           * @param {HighlightCallback} [callback] An optional callback to be invoked on each element after its highlighting is done.
-           * @memberof Prism
-           * @public
-           */
-          highlightAllUnder: function(container, async, callback) {
-            var env = {
-              callback,
-              container,
-              selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
-            };
-            _3.hooks.run("before-highlightall", env);
-            env.elements = Array.prototype.slice.apply(env.container.querySelectorAll(env.selector));
-            _3.hooks.run("before-all-elements-highlight", env);
-            for (var i2 = 0, element; element = env.elements[i2++]; ) {
-              _3.highlightElement(element, async === true, env.callback);
-            }
-          },
-          /**
-           * Highlights the code inside a single element.
-           *
-           * The following hooks will be run:
-           * 1. `before-sanity-check`
-           * 2. `before-highlight`
-           * 3. All hooks of {@link Prism.highlight}. These hooks will be run by an asynchronous worker if `async` is `true`.
-           * 4. `before-insert`
-           * 5. `after-highlight`
-           * 6. `complete`
-           *
-           * Some the above hooks will be skipped if the element doesn't contain any text or there is no grammar loaded for
-           * the element's language.
-           *
-           * @param {Element} element The element containing the code.
-           * It must have a class of `language-xxxx` to be processed, where `xxxx` is a valid language identifier.
-           * @param {boolean} [async=false] Whether the element is to be highlighted asynchronously using Web Workers
-           * to improve performance and avoid blocking the UI when highlighting very large chunks of code. This option is
-           * [disabled by default](https://prismjs.com/faq.html#why-is-asynchronous-highlighting-disabled-by-default).
-           *
-           * Note: All language definitions required to highlight the code must be included in the main `prism.js` file for
-           * asynchronous highlighting to work. You can build your own bundle on the
-           * [Download page](https://prismjs.com/download.html).
-           * @param {HighlightCallback} [callback] An optional callback to be invoked after the highlighting is done.
-           * Mostly useful when `async` is `true`, since in that case, the highlighting is done asynchronously.
-           * @memberof Prism
-           * @public
-           */
-          highlightElement: function(element, async, callback) {
-            var language = _3.util.getLanguage(element);
-            var grammar = _3.languages[language];
-            _3.util.setLanguage(element, language);
-            var parent = element.parentElement;
-            if (parent && parent.nodeName.toLowerCase() === "pre") {
-              _3.util.setLanguage(parent, language);
-            }
-            var code = element.textContent;
-            var env = {
-              element,
-              language,
-              grammar,
-              code
-            };
-            function insertHighlightedCode(highlightedCode) {
-              env.highlightedCode = highlightedCode;
-              _3.hooks.run("before-insert", env);
-              env.element.innerHTML = env.highlightedCode;
-              _3.hooks.run("after-highlight", env);
-              _3.hooks.run("complete", env);
-              callback && callback.call(env.element);
-            }
-            _3.hooks.run("before-sanity-check", env);
-            parent = env.element.parentElement;
-            if (parent && parent.nodeName.toLowerCase() === "pre" && !parent.hasAttribute("tabindex")) {
-              parent.setAttribute("tabindex", "0");
-            }
-            if (!env.code) {
-              _3.hooks.run("complete", env);
-              callback && callback.call(env.element);
-              return;
-            }
-            _3.hooks.run("before-highlight", env);
-            if (!env.grammar) {
-              insertHighlightedCode(_3.util.encode(env.code));
-              return;
-            }
-            if (async && _self2.Worker) {
-              var worker = new Worker(_3.filename);
-              worker.onmessage = function(evt) {
-                insertHighlightedCode(evt.data);
-              };
-              worker.postMessage(JSON.stringify({
-                language: env.language,
-                code: env.code,
-                immediateClose: true
-              }));
-            } else {
-              insertHighlightedCode(_3.highlight(env.code, env.grammar, env.language));
-            }
-          },
-          /**
-           * Low-level function, only use if you know what you’re doing. It accepts a string of text as input
-           * and the language definitions to use, and returns a string with the HTML produced.
-           *
-           * The following hooks will be run:
-           * 1. `before-tokenize`
-           * 2. `after-tokenize`
-           * 3. `wrap`: On each {@link Token}.
-           *
-           * @param {string} text A string with the code to be highlighted.
-           * @param {Grammar} grammar An object containing the tokens to use.
-           *
-           * Usually a language definition like `Prism.languages.markup`.
-           * @param {string} language The name of the language definition passed to `grammar`.
-           * @returns {string} The highlighted HTML.
-           * @memberof Prism
-           * @public
-           * @example
-           * Prism.highlight('var foo = true;', Prism.languages.javascript, 'javascript');
-           */
-          highlight: function(text, grammar, language) {
-            var env = {
-              code: text,
-              grammar,
-              language
-            };
-            _3.hooks.run("before-tokenize", env);
-            if (!env.grammar) {
-              throw new Error('The language "' + env.language + '" has no grammar.');
-            }
-            env.tokens = _3.tokenize(env.code, env.grammar);
-            _3.hooks.run("after-tokenize", env);
-            return Token.stringify(_3.util.encode(env.tokens), env.language);
-          },
-          /**
-           * This is the heart of Prism, and the most low-level function you can use. It accepts a string of text as input
-           * and the language definitions to use, and returns an array with the tokenized code.
-           *
-           * When the language definition includes nested tokens, the function is called recursively on each of these tokens.
-           *
-           * This method could be useful in other contexts as well, as a very crude parser.
-           *
-           * @param {string} text A string with the code to be highlighted.
-           * @param {Grammar} grammar An object containing the tokens to use.
-           *
-           * Usually a language definition like `Prism.languages.markup`.
-           * @returns {TokenStream} An array of strings and tokens, a token stream.
-           * @memberof Prism
-           * @public
-           * @example
-           * let code = `var foo = 0;`;
-           * let tokens = Prism.tokenize(code, Prism.languages.javascript);
-           * tokens.forEach(token => {
-           *     if (token instanceof Prism.Token && token.type === 'number') {
-           *         console.log(`Found numeric literal: ${token.content}`);
-           *     }
-           * });
-           */
-          tokenize: function(text, grammar) {
-            var rest = grammar.rest;
-            if (rest) {
-              for (var token in rest) {
-                grammar[token] = rest[token];
-              }
-              delete grammar.rest;
-            }
-            var tokenList = new LinkedList();
-            addAfter(tokenList, tokenList.head, text);
-            matchGrammar(text, tokenList, grammar, tokenList.head, 0);
-            return toArray3(tokenList);
-          },
-          /**
-           * @namespace
-           * @memberof Prism
-           * @public
-           */
-          hooks: {
-            all: {},
-            /**
-             * Adds the given callback to the list of callbacks for the given hook.
-             *
-             * The callback will be invoked when the hook it is registered for is run.
-             * Hooks are usually directly run by a highlight function but you can also run hooks yourself.
-             *
-             * One callback function can be registered to multiple hooks and the same hook multiple times.
-             *
-             * @param {string} name The name of the hook.
-             * @param {HookCallback} callback The callback function which is given environment variables.
-             * @public
-             */
-            add: function(name, callback) {
-              var hooks = _3.hooks.all;
-              hooks[name] = hooks[name] || [];
-              hooks[name].push(callback);
-            },
-            /**
-             * Runs a hook invoking all registered callbacks with the given environment variables.
-             *
-             * Callbacks will be invoked synchronously and in the order in which they were registered.
-             *
-             * @param {string} name The name of the hook.
-             * @param {Object<string, any>} env The environment variables of the hook passed to all callbacks registered.
-             * @public
-             */
-            run: function(name, env) {
-              var callbacks = _3.hooks.all[name];
-              if (!callbacks || !callbacks.length) {
-                return;
-              }
-              for (var i2 = 0, callback; callback = callbacks[i2++]; ) {
-                callback(env);
-              }
-            }
-          },
-          Token
-        };
-        _self2.Prism = _3;
-        function Token(type, content, alias, matchedStr) {
-          this.type = type;
-          this.content = content;
-          this.alias = alias;
-          this.length = (matchedStr || "").length | 0;
-        }
-        Token.stringify = function stringify(o2, language) {
-          if (typeof o2 == "string") {
-            return o2;
-          }
-          if (Array.isArray(o2)) {
-            var s2 = "";
-            o2.forEach(function(e2) {
-              s2 += stringify(e2, language);
-            });
-            return s2;
-          }
-          var env = {
-            type: o2.type,
-            content: stringify(o2.content, language),
-            tag: "span",
-            classes: ["token", o2.type],
-            attributes: {},
-            language
-          };
-          var aliases = o2.alias;
-          if (aliases) {
-            if (Array.isArray(aliases)) {
-              Array.prototype.push.apply(env.classes, aliases);
-            } else {
-              env.classes.push(aliases);
-            }
-          }
-          _3.hooks.run("wrap", env);
-          var attributes = "";
-          for (var name in env.attributes) {
-            attributes += " " + name + '="' + (env.attributes[name] || "").replace(/"/g, "&quot;") + '"';
-          }
-          return "<" + env.tag + ' class="' + env.classes.join(" ") + '"' + attributes + ">" + env.content + "</" + env.tag + ">";
-        };
-        function matchPattern(pattern, pos, text, lookbehind) {
-          pattern.lastIndex = pos;
-          var match = pattern.exec(text);
-          if (match && lookbehind && match[1]) {
-            var lookbehindLength = match[1].length;
-            match.index += lookbehindLength;
-            match[0] = match[0].slice(lookbehindLength);
-          }
-          return match;
-        }
-        function matchGrammar(text, tokenList, grammar, startNode, startPos, rematch) {
-          for (var token in grammar) {
-            if (!grammar.hasOwnProperty(token) || !grammar[token]) {
-              continue;
-            }
-            var patterns = grammar[token];
-            patterns = Array.isArray(patterns) ? patterns : [patterns];
-            for (var j2 = 0; j2 < patterns.length; ++j2) {
-              if (rematch && rematch.cause == token + "," + j2) {
-                return;
-              }
-              var patternObj = patterns[j2];
-              var inside = patternObj.inside;
-              var lookbehind = !!patternObj.lookbehind;
-              var greedy = !!patternObj.greedy;
-              var alias = patternObj.alias;
-              if (greedy && !patternObj.pattern.global) {
-                var flags = patternObj.pattern.toString().match(/[imsuy]*$/)[0];
-                patternObj.pattern = RegExp(patternObj.pattern.source, flags + "g");
-              }
-              var pattern = patternObj.pattern || patternObj;
-              for (var currentNode = startNode.next, pos = startPos; currentNode !== tokenList.tail; pos += currentNode.value.length, currentNode = currentNode.next) {
-                if (rematch && pos >= rematch.reach) {
-                  break;
-                }
-                var str = currentNode.value;
-                if (tokenList.length > text.length) {
-                  return;
-                }
-                if (str instanceof Token) {
-                  continue;
-                }
-                var removeCount = 1;
-                var match;
-                if (greedy) {
-                  match = matchPattern(pattern, pos, text, lookbehind);
-                  if (!match || match.index >= text.length) {
-                    break;
-                  }
-                  var from = match.index;
-                  var to = match.index + match[0].length;
-                  var p3 = pos;
-                  p3 += currentNode.value.length;
-                  while (from >= p3) {
-                    currentNode = currentNode.next;
-                    p3 += currentNode.value.length;
-                  }
-                  p3 -= currentNode.value.length;
-                  pos = p3;
-                  if (currentNode.value instanceof Token) {
-                    continue;
-                  }
-                  for (var k3 = currentNode; k3 !== tokenList.tail && (p3 < to || typeof k3.value === "string"); k3 = k3.next) {
-                    removeCount++;
-                    p3 += k3.value.length;
-                  }
-                  removeCount--;
-                  str = text.slice(pos, p3);
-                  match.index -= pos;
-                } else {
-                  match = matchPattern(pattern, 0, str, lookbehind);
-                  if (!match) {
-                    continue;
-                  }
-                }
-                var from = match.index;
-                var matchStr = match[0];
-                var before = str.slice(0, from);
-                var after = str.slice(from + matchStr.length);
-                var reach = pos + str.length;
-                if (rematch && reach > rematch.reach) {
-                  rematch.reach = reach;
-                }
-                var removeFrom = currentNode.prev;
-                if (before) {
-                  removeFrom = addAfter(tokenList, removeFrom, before);
-                  pos += before.length;
-                }
-                removeRange(tokenList, removeFrom, removeCount);
-                var wrapped = new Token(token, inside ? _3.tokenize(matchStr, inside) : matchStr, alias, matchStr);
-                currentNode = addAfter(tokenList, removeFrom, wrapped);
-                if (after) {
-                  addAfter(tokenList, currentNode, after);
-                }
-                if (removeCount > 1) {
-                  var nestedRematch = {
-                    cause: token + "," + j2,
-                    reach
-                  };
-                  matchGrammar(text, tokenList, grammar, currentNode.prev, pos, nestedRematch);
-                  if (rematch && nestedRematch.reach > rematch.reach) {
-                    rematch.reach = nestedRematch.reach;
-                  }
-                }
-              }
-            }
-          }
-        }
-        function LinkedList() {
-          var head = { value: null, prev: null, next: null };
-          var tail = { value: null, prev: head, next: null };
-          head.next = tail;
-          this.head = head;
-          this.tail = tail;
-          this.length = 0;
-        }
-        function addAfter(list, node2, value) {
-          var next = node2.next;
-          var newNode = { value, prev: node2, next };
-          node2.next = newNode;
-          next.prev = newNode;
-          list.length++;
-          return newNode;
-        }
-        function removeRange(list, node2, count) {
-          var next = node2.next;
-          for (var i2 = 0; i2 < count && next !== list.tail; i2++) {
-            next = next.next;
-          }
-          node2.next = next;
-          next.prev = node2;
-          list.length -= i2;
-        }
-        function toArray3(list) {
-          var array = [];
-          var node2 = list.head.next;
-          while (node2 !== list.tail) {
-            array.push(node2.value);
-            node2 = node2.next;
-          }
-          return array;
-        }
-        if (!_self2.document) {
-          if (!_self2.addEventListener) {
-            return _3;
-          }
-          if (!_3.disableWorkerMessageHandler) {
-            _self2.addEventListener("message", function(evt) {
-              var message = JSON.parse(evt.data);
-              var lang2 = message.language;
-              var code = message.code;
-              var immediateClose = message.immediateClose;
-              _self2.postMessage(_3.highlight(code, _3.languages[lang2], lang2));
-              if (immediateClose) {
-                _self2.close();
-              }
-            }, false);
-          }
-          return _3;
-        }
-        var script = _3.util.currentScript();
-        if (script) {
-          _3.filename = script.src;
-          if (script.hasAttribute("data-manual")) {
-            _3.manual = true;
-          }
-        }
-        function highlightAutomaticallyCallback() {
-          if (!_3.manual) {
-            _3.highlightAll();
-          }
-        }
-        if (!_3.manual) {
-          var readyState = document.readyState;
-          if (readyState === "loading" || readyState === "interactive" && script && script.defer) {
-            document.addEventListener("DOMContentLoaded", highlightAutomaticallyCallback);
-          } else {
-            if (window.requestAnimationFrame) {
-              window.requestAnimationFrame(highlightAutomaticallyCallback);
-            } else {
-              window.setTimeout(highlightAutomaticallyCallback, 16);
-            }
-          }
-        }
-        return _3;
-      }(_self);
-      if (typeof module !== "undefined" && module.exports) {
-        module.exports = Prism3;
-      }
-      if (typeof global !== "undefined") {
-        global.Prism = Prism3;
-      }
-      Prism3.languages.markup = {
-        "comment": {
-          pattern: /<!--(?:(?!<!--)[\s\S])*?-->/,
-          greedy: true
-        },
-        "prolog": {
-          pattern: /<\?[\s\S]+?\?>/,
-          greedy: true
-        },
-        "doctype": {
-          // https://www.w3.org/TR/xml/#NT-doctypedecl
-          pattern: /<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:[^<"'\]]|"[^"]*"|'[^']*'|<(?!!--)|<!--(?:[^-]|-(?!->))*-->)*\]\s*)?>/i,
-          greedy: true,
-          inside: {
-            "internal-subset": {
-              pattern: /(^[^\[]*\[)[\s\S]+(?=\]>$)/,
-              lookbehind: true,
-              greedy: true,
-              inside: null
-              // see below
-            },
-            "string": {
-              pattern: /"[^"]*"|'[^']*'/,
-              greedy: true
-            },
-            "punctuation": /^<!|>$|[[\]]/,
-            "doctype-tag": /^DOCTYPE/i,
-            "name": /[^\s<>'"]+/
-          }
-        },
-        "cdata": {
-          pattern: /<!\[CDATA\[[\s\S]*?\]\]>/i,
-          greedy: true
-        },
-        "tag": {
-          pattern: /<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/,
-          greedy: true,
-          inside: {
-            "tag": {
-              pattern: /^<\/?[^\s>\/]+/,
-              inside: {
-                "punctuation": /^<\/?/,
-                "namespace": /^[^\s>\/:]+:/
-              }
-            },
-            "special-attr": [],
-            "attr-value": {
-              pattern: /=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,
-              inside: {
-                "punctuation": [
-                  {
-                    pattern: /^=/,
-                    alias: "attr-equals"
-                  },
-                  {
-                    pattern: /^(\s*)["']|["']$/,
-                    lookbehind: true
-                  }
-                ]
-              }
-            },
-            "punctuation": /\/?>/,
-            "attr-name": {
-              pattern: /[^\s>\/]+/,
-              inside: {
-                "namespace": /^[^\s>\/:]+:/
-              }
-            }
-          }
-        },
-        "entity": [
-          {
-            pattern: /&[\da-z]{1,8};/i,
-            alias: "named-entity"
-          },
-          /&#x?[\da-f]{1,8};/i
-        ]
-      };
-      Prism3.languages.markup["tag"].inside["attr-value"].inside["entity"] = Prism3.languages.markup["entity"];
-      Prism3.languages.markup["doctype"].inside["internal-subset"].inside = Prism3.languages.markup;
-      Prism3.hooks.add("wrap", function(env) {
-        if (env.type === "entity") {
-          env.attributes["title"] = env.content.replace(/&amp;/, "&");
-        }
-      });
-      Object.defineProperty(Prism3.languages.markup.tag, "addInlined", {
-        /**
-         * Adds an inlined language to markup.
-         *
-         * An example of an inlined language is CSS with `<style>` tags.
-         *
-         * @param {string} tagName The name of the tag that contains the inlined language. This name will be treated as
-         * case insensitive.
-         * @param {string} lang The language key.
-         * @example
-         * addInlined('style', 'css');
-         */
-        value: function addInlined(tagName, lang) {
-          var includedCdataInside = {};
-          includedCdataInside["language-" + lang] = {
-            pattern: /(^<!\[CDATA\[)[\s\S]+?(?=\]\]>$)/i,
-            lookbehind: true,
-            inside: Prism3.languages[lang]
-          };
-          includedCdataInside["cdata"] = /^<!\[CDATA\[|\]\]>$/i;
-          var inside = {
-            "included-cdata": {
-              pattern: /<!\[CDATA\[[\s\S]*?\]\]>/i,
-              inside: includedCdataInside
-            }
-          };
-          inside["language-" + lang] = {
-            pattern: /[\s\S]+/,
-            inside: Prism3.languages[lang]
-          };
-          var def = {};
-          def[tagName] = {
-            pattern: RegExp(/(<__[^>]*>)(?:<!\[CDATA\[(?:[^\]]|\](?!\]>))*\]\]>|(?!<!\[CDATA\[)[\s\S])*?(?=<\/__>)/.source.replace(/__/g, function() {
-              return tagName;
-            }), "i"),
-            lookbehind: true,
-            greedy: true,
-            inside
-          };
-          Prism3.languages.insertBefore("markup", "cdata", def);
-        }
-      });
-      Object.defineProperty(Prism3.languages.markup.tag, "addAttribute", {
-        /**
-         * Adds an pattern to highlight languages embedded in HTML attributes.
-         *
-         * An example of an inlined language is CSS with `style` attributes.
-         *
-         * @param {string} attrName The name of the tag that contains the inlined language. This name will be treated as
-         * case insensitive.
-         * @param {string} lang The language key.
-         * @example
-         * addAttribute('style', 'css');
-         */
-        value: function(attrName, lang) {
-          Prism3.languages.markup.tag.inside["special-attr"].push({
-            pattern: RegExp(
-              /(^|["'\s])/.source + "(?:" + attrName + ")" + /\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))/.source,
-              "i"
-            ),
-            lookbehind: true,
-            inside: {
-              "attr-name": /^[^\s=]+/,
-              "attr-value": {
-                pattern: /=[\s\S]+/,
-                inside: {
-                  "value": {
-                    pattern: /(^=\s*(["']|(?!["'])))\S[\s\S]*(?=\2$)/,
-                    lookbehind: true,
-                    alias: [lang, "language-" + lang],
-                    inside: Prism3.languages[lang]
-                  },
-                  "punctuation": [
-                    {
-                      pattern: /^=/,
-                      alias: "attr-equals"
-                    },
-                    /"|'/
-                  ]
-                }
-              }
-            }
-          });
-        }
-      });
-      Prism3.languages.html = Prism3.languages.markup;
-      Prism3.languages.mathml = Prism3.languages.markup;
-      Prism3.languages.svg = Prism3.languages.markup;
-      Prism3.languages.xml = Prism3.languages.extend("markup", {});
-      Prism3.languages.ssml = Prism3.languages.xml;
-      Prism3.languages.atom = Prism3.languages.xml;
-      Prism3.languages.rss = Prism3.languages.xml;
-      (function(Prism4) {
-        var string2 = /(?:"(?:\\(?:\r\n|[\s\S])|[^"\\\r\n])*"|'(?:\\(?:\r\n|[\s\S])|[^'\\\r\n])*')/;
-        Prism4.languages.css = {
-          "comment": /\/\*[\s\S]*?\*\//,
-          "atrule": {
-            pattern: RegExp("@[\\w-](?:" + /[^;{\s"']|\s+(?!\s)/.source + "|" + string2.source + ")*?" + /(?:;|(?=\s*\{))/.source),
-            inside: {
-              "rule": /^@[\w-]+/,
-              "selector-function-argument": {
-                pattern: /(\bselector\s*\(\s*(?![\s)]))(?:[^()\s]|\s+(?![\s)])|\((?:[^()]|\([^()]*\))*\))+(?=\s*\))/,
-                lookbehind: true,
-                alias: "selector"
-              },
-              "keyword": {
-                pattern: /(^|[^\w-])(?:and|not|only|or)(?![\w-])/,
-                lookbehind: true
-              }
-              // See rest below
-            }
-          },
-          "url": {
-            // https://drafts.csswg.org/css-values-3/#urls
-            pattern: RegExp("\\burl\\((?:" + string2.source + "|" + /(?:[^\\\r\n()"']|\\[\s\S])*/.source + ")\\)", "i"),
-            greedy: true,
-            inside: {
-              "function": /^url/i,
-              "punctuation": /^\(|\)$/,
-              "string": {
-                pattern: RegExp("^" + string2.source + "$"),
-                alias: "url"
-              }
-            }
-          },
-          "selector": {
-            pattern: RegExp(`(^|[{}\\s])[^{}\\s](?:[^{};"'\\s]|\\s+(?![\\s{])|` + string2.source + ")*(?=\\s*\\{)"),
-            lookbehind: true
-          },
-          "string": {
-            pattern: string2,
-            greedy: true
-          },
-          "property": {
-            pattern: /(^|[^-\w\xA0-\uFFFF])(?!\s)[-_a-z\xA0-\uFFFF](?:(?!\s)[-\w\xA0-\uFFFF])*(?=\s*:)/i,
-            lookbehind: true
-          },
-          "important": /!important\b/i,
-          "function": {
-            pattern: /(^|[^-a-z0-9])[-a-z0-9]+(?=\()/i,
-            lookbehind: true
-          },
-          "punctuation": /[(){};:,]/
-        };
-        Prism4.languages.css["atrule"].inside.rest = Prism4.languages.css;
-        var markup = Prism4.languages.markup;
-        if (markup) {
-          markup.tag.addInlined("style", "css");
-          markup.tag.addAttribute("style", "css");
-        }
-      })(Prism3);
-      Prism3.languages.clike = {
-        "comment": [
-          {
-            pattern: /(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/,
-            lookbehind: true,
-            greedy: true
-          },
-          {
-            pattern: /(^|[^\\:])\/\/.*/,
-            lookbehind: true,
-            greedy: true
-          }
-        ],
-        "string": {
-          pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
-          greedy: true
-        },
-        "class-name": {
-          pattern: /(\b(?:class|extends|implements|instanceof|interface|new|trait)\s+|\bcatch\s+\()[\w.\\]+/i,
-          lookbehind: true,
-          inside: {
-            "punctuation": /[.\\]/
-          }
-        },
-        "keyword": /\b(?:break|catch|continue|do|else|finally|for|function|if|in|instanceof|new|null|return|throw|try|while)\b/,
-        "boolean": /\b(?:false|true)\b/,
-        "function": /\b\w+(?=\()/,
-        "number": /\b0x[\da-f]+\b|(?:\b\d+(?:\.\d*)?|\B\.\d+)(?:e[+-]?\d+)?/i,
-        "operator": /[<>]=?|[!=]=?=?|--?|\+\+?|&&?|\|\|?|[?*/~^%]/,
-        "punctuation": /[{}[\];(),.:]/
-      };
-      Prism3.languages.javascript = Prism3.languages.extend("clike", {
-        "class-name": [
-          Prism3.languages.clike["class-name"],
-          {
-            pattern: /(^|[^$\w\xA0-\uFFFF])(?!\s)[_$A-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\.(?:constructor|prototype))/,
-            lookbehind: true
-          }
-        ],
-        "keyword": [
-          {
-            pattern: /((?:^|\})\s*)catch\b/,
-            lookbehind: true
-          },
-          {
-            pattern: /(^|[^.]|\.\.\.\s*)\b(?:as|assert(?=\s*\{)|async(?=\s*(?:function\b|\(|[$\w\xA0-\uFFFF]|$))|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally(?=\s*(?:\{|$))|for|from(?=\s*(?:['"]|$))|function|(?:get|set)(?=\s*(?:[#\[$\w\xA0-\uFFFF]|$))|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\b/,
-            lookbehind: true
-          }
-        ],
-        // Allow for all non-ASCII characters (See http://stackoverflow.com/a/2008444)
-        "function": /#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*(?:\.\s*(?:apply|bind|call)\s*)?\()/,
-        "number": {
-          pattern: RegExp(
-            /(^|[^\w$])/.source + "(?:" + // constant
-            (/NaN|Infinity/.source + "|" + // binary integer
-            /0[bB][01]+(?:_[01]+)*n?/.source + "|" + // octal integer
-            /0[oO][0-7]+(?:_[0-7]+)*n?/.source + "|" + // hexadecimal integer
-            /0[xX][\dA-Fa-f]+(?:_[\dA-Fa-f]+)*n?/.source + "|" + // decimal bigint
-            /\d+(?:_\d+)*n/.source + "|" + // decimal number (integer or float) but no bigint
-            /(?:\d+(?:_\d+)*(?:\.(?:\d+(?:_\d+)*)?)?|\.\d+(?:_\d+)*)(?:[Ee][+-]?\d+(?:_\d+)*)?/.source) + ")" + /(?![\w$])/.source
-          ),
-          lookbehind: true
-        },
-        "operator": /--|\+\+|\*\*=?|=>|&&=?|\|\|=?|[!=]==|<<=?|>>>?=?|[-+*/%&|^!=<>]=?|\.{3}|\?\?=?|\?\.?|[~:]/
-      });
-      Prism3.languages.javascript["class-name"][0].pattern = /(\b(?:class|extends|implements|instanceof|interface|new)\s+)[\w.\\]+/;
-      Prism3.languages.insertBefore("javascript", "keyword", {
-        "regex": {
-          pattern: RegExp(
-            // lookbehind
-            // eslint-disable-next-line regexp/no-dupe-characters-character-class
-            /((?:^|[^$\w\xA0-\uFFFF."'\])\s]|\b(?:return|yield))\s*)/.source + // Regex pattern:
-            // There are 2 regex patterns here. The RegExp set notation proposal added support for nested character
-            // classes if the `v` flag is present. Unfortunately, nested CCs are both context-free and incompatible
-            // with the only syntax, so we have to define 2 different regex patterns.
-            /\//.source + "(?:" + /(?:\[(?:[^\]\\\r\n]|\\.)*\]|\\.|[^/\\\[\r\n])+\/[dgimyus]{0,7}/.source + "|" + // `v` flag syntax. This supports 3 levels of nested character classes.
-            /(?:\[(?:[^[\]\\\r\n]|\\.|\[(?:[^[\]\\\r\n]|\\.|\[(?:[^[\]\\\r\n]|\\.)*\])*\])*\]|\\.|[^/\\\[\r\n])+\/[dgimyus]{0,7}v[dgimyus]{0,7}/.source + ")" + // lookahead
-            /(?=(?:\s|\/\*(?:[^*]|\*(?!\/))*\*\/)*(?:$|[\r\n,.;:})\]]|\/\/))/.source
-          ),
-          lookbehind: true,
-          greedy: true,
-          inside: {
-            "regex-source": {
-              pattern: /^(\/)[\s\S]+(?=\/[a-z]*$)/,
-              lookbehind: true,
-              alias: "language-regex",
-              inside: Prism3.languages.regex
-            },
-            "regex-delimiter": /^\/|\/$/,
-            "regex-flags": /^[a-z]+$/
-          }
-        },
-        // This must be declared before keyword because we use "function" inside the look-forward
-        "function-variable": {
-          pattern: /#?(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*[=:]\s*(?:async\s*)?(?:\bfunction\b|(?:\((?:[^()]|\([^()]*\))*\)|(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)\s*=>))/,
-          alias: "function"
-        },
-        "parameter": [
-          {
-            pattern: /(function(?:\s+(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*)?\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\))/,
-            lookbehind: true,
-            inside: Prism3.languages.javascript
-          },
-          {
-            pattern: /(^|[^$\w\xA0-\uFFFF])(?!\s)[_$a-z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*=>)/i,
-            lookbehind: true,
-            inside: Prism3.languages.javascript
-          },
-          {
-            pattern: /(\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*=>)/,
-            lookbehind: true,
-            inside: Prism3.languages.javascript
-          },
-          {
-            pattern: /((?:\b|\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)(?![$\w\xA0-\uFFFF]))(?:(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*\s*)\(\s*|\]\s*\(\s*)(?!\s)(?:[^()\s]|\s+(?![\s)])|\([^()]*\))+(?=\s*\)\s*\{)/,
-            lookbehind: true,
-            inside: Prism3.languages.javascript
-          }
-        ],
-        "constant": /\b[A-Z](?:[A-Z_]|\dx?)*\b/
-      });
-      Prism3.languages.insertBefore("javascript", "string", {
-        "hashbang": {
-          pattern: /^#!.*/,
-          greedy: true,
-          alias: "comment"
-        },
-        "template-string": {
-          pattern: /`(?:\\[\s\S]|\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}|(?!\$\{)[^\\`])*`/,
-          greedy: true,
-          inside: {
-            "template-punctuation": {
-              pattern: /^`|`$/,
-              alias: "string"
-            },
-            "interpolation": {
-              pattern: /((?:^|[^\\])(?:\\{2})*)\$\{(?:[^{}]|\{(?:[^{}]|\{[^}]*\})*\})+\}/,
-              lookbehind: true,
-              inside: {
-                "interpolation-punctuation": {
-                  pattern: /^\$\{|\}$/,
-                  alias: "punctuation"
-                },
-                rest: Prism3.languages.javascript
-              }
-            },
-            "string": /[\s\S]+/
-          }
-        },
-        "string-property": {
-          pattern: /((?:^|[,{])[ \t]*)(["'])(?:\\(?:\r\n|[\s\S])|(?!\2)[^\\\r\n])*\2(?=\s*:)/m,
-          lookbehind: true,
-          greedy: true,
-          alias: "property"
-        }
-      });
-      Prism3.languages.insertBefore("javascript", "operator", {
-        "literal-property": {
-          pattern: /((?:^|[,{])[ \t]*)(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*:)/m,
-          lookbehind: true,
-          alias: "property"
-        }
-      });
-      if (Prism3.languages.markup) {
-        Prism3.languages.markup.tag.addInlined("script", "javascript");
-        Prism3.languages.markup.tag.addAttribute(
-          /on(?:abort|blur|change|click|composition(?:end|start|update)|dblclick|error|focus(?:in|out)?|key(?:down|up)|load|mouse(?:down|enter|leave|move|out|over|up)|reset|resize|scroll|select|slotchange|submit|unload|wheel)/.source,
-          "javascript"
-        );
-      }
-      Prism3.languages.js = Prism3.languages.javascript;
-      (function() {
-        if (typeof Prism3 === "undefined" || typeof document === "undefined") {
-          return;
-        }
-        if (!Element.prototype.matches) {
-          Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
-        }
-        var LOADING_MESSAGE = "Loading\u2026";
-        var FAILURE_MESSAGE = function(status, message) {
-          return "\u2716 Error " + status + " while fetching file: " + message;
-        };
-        var FAILURE_EMPTY_MESSAGE = "\u2716 Error: File does not exist or is empty";
-        var EXTENSIONS = {
-          "js": "javascript",
-          "py": "python",
-          "rb": "ruby",
-          "ps1": "powershell",
-          "psm1": "powershell",
-          "sh": "bash",
-          "bat": "batch",
-          "h": "c",
-          "tex": "latex"
-        };
-        var STATUS_ATTR = "data-src-status";
-        var STATUS_LOADING = "loading";
-        var STATUS_LOADED = "loaded";
-        var STATUS_FAILED = "failed";
-        var SELECTOR = "pre[data-src]:not([" + STATUS_ATTR + '="' + STATUS_LOADED + '"]):not([' + STATUS_ATTR + '="' + STATUS_LOADING + '"])';
-        function loadFile(src, success, error) {
-          var xhr = new XMLHttpRequest();
-          xhr.open("GET", src, true);
-          xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4) {
-              if (xhr.status < 400 && xhr.responseText) {
-                success(xhr.responseText);
-              } else {
-                if (xhr.status >= 400) {
-                  error(FAILURE_MESSAGE(xhr.status, xhr.statusText));
-                } else {
-                  error(FAILURE_EMPTY_MESSAGE);
-                }
-              }
-            }
-          };
-          xhr.send(null);
-        }
-        function parseRange(range) {
-          var m3 = /^\s*(\d+)\s*(?:(,)\s*(?:(\d+)\s*)?)?$/.exec(range || "");
-          if (m3) {
-            var start = Number(m3[1]);
-            var comma = m3[2];
-            var end = m3[3];
-            if (!comma) {
-              return [start, start];
-            }
-            if (!end) {
-              return [start, void 0];
-            }
-            return [start, Number(end)];
-          }
-          return void 0;
-        }
-        Prism3.hooks.add("before-highlightall", function(env) {
-          env.selector += ", " + SELECTOR;
-        });
-        Prism3.hooks.add("before-sanity-check", function(env) {
-          var pre = (
-            /** @type {HTMLPreElement} */
-            env.element
-          );
-          if (pre.matches(SELECTOR)) {
-            env.code = "";
-            pre.setAttribute(STATUS_ATTR, STATUS_LOADING);
-            var code = pre.appendChild(document.createElement("CODE"));
-            code.textContent = LOADING_MESSAGE;
-            var src = pre.getAttribute("data-src");
-            var language = env.language;
-            if (language === "none") {
-              var extension = (/\.(\w+)$/.exec(src) || [, "none"])[1];
-              language = EXTENSIONS[extension] || extension;
-            }
-            Prism3.util.setLanguage(code, language);
-            Prism3.util.setLanguage(pre, language);
-            var autoloader = Prism3.plugins.autoloader;
-            if (autoloader) {
-              autoloader.loadLanguages(language);
-            }
-            loadFile(
-              src,
-              function(text) {
-                pre.setAttribute(STATUS_ATTR, STATUS_LOADED);
-                var range = parseRange(pre.getAttribute("data-range"));
-                if (range) {
-                  var lines = text.split(/\r\n?|\n/g);
-                  var start = range[0];
-                  var end = range[1] == null ? lines.length : range[1];
-                  if (start < 0) {
-                    start += lines.length;
-                  }
-                  start = Math.max(0, Math.min(start - 1, lines.length));
-                  if (end < 0) {
-                    end += lines.length;
-                  }
-                  end = Math.max(0, Math.min(end, lines.length));
-                  text = lines.slice(start, end).join("\n");
-                  if (!pre.hasAttribute("data-start")) {
-                    pre.setAttribute("data-start", String(start + 1));
-                  }
-                }
-                code.textContent = text;
-                Prism3.highlightElement(code);
-              },
-              function(error) {
-                pre.setAttribute(STATUS_ATTR, STATUS_FAILED);
-                code.textContent = error;
-              }
-            );
-          }
-        });
-        Prism3.plugins.fileHighlight = {
-          /**
-           * Executes the File Highlight plugin for all matching `pre` elements under the given container.
-           *
-           * Note: Elements which are already loaded or currently loading will not be touched by this method.
-           *
-           * @param {ParentNode} [container=document]
-           */
-          highlight: function highlight(container) {
-            var elements = (container || document).querySelectorAll(SELECTOR);
-            for (var i2 = 0, element; element = elements[i2++]; ) {
-              Prism3.highlightElement(element);
-            }
-          }
-        };
-        var logged = false;
-        Prism3.fileHighlight = function() {
-          if (!logged) {
-            console.warn("Prism.fileHighlight is deprecated. Use `Prism.plugins.fileHighlight.highlight` instead.");
-            logged = true;
-          }
-          Prism3.plugins.fileHighlight.highlight.apply(this, arguments);
-        };
-      })();
     }
   });
 
@@ -34794,7 +34794,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         return n3;
       }, {}) : null;
     }
-    const q3 = [], V2 = {}, X3 = { 0: { match: Ie(u), order: 1, parse: (e2, n2, t3) => ({ children: n2(e2[0].replace(p, ""), t3) }), render: (e2, n2, t3) => d2("blockquote", { key: t3.key }, n2(e2.children, t3)) }, 1: { match: Re(f), order: 1, parse: _e, render: (e2, n2, t3) => d2("br", { key: t3.key }) }, 2: { match: Ie(h), order: 1, parse: _e, render: (e2, n2, t3) => d2("hr", { key: t3.key }) }, 3: { match: Ie(g), order: 0, parse: (e2) => ({ lang: void 0, text: e2[0].replace(/^ {4}/gm, "").replace(/\n+$/, "") }), render: (e2, t3, r3) => d2("pre", { key: r3.key }, d2("code", n({}, e2.attrs, { className: e2.lang ? `lang-${e2.lang}` : "" }), e2.text)) }, 4: { match: Ie(m), order: 0, parse: (e2) => ({ attrs: Z3(e2[3] || ""), lang: e2[2] || void 0, text: e2[4], type: "3" }) }, 5: { match: Me(y), order: 3, parse: (e2) => ({ text: e2[2] }), render: (e2, n2, t3) => d2("code", { key: t3.key }, e2.text) }, 6: { match: Ie(v), order: 0, parse: (e2) => (q3.push({ footnote: e2[2], identifier: e2[1] }), {}), render: Fe }, 7: { match: ze(b), order: 1, parse: (e2) => ({ target: `#${r2.slugify(e2[1])}`, text: e2[1] }), render: (e2, n2, t3) => d2("a", { key: t3.key, href: je(e2.target) }, d2("sup", { key: t3.key }, e2.text)) }, 8: { match: ze(S), order: 1, parse: (e2) => ({ completed: "x" === e2[1].toLowerCase() }), render: (e2, n2, t3) => d2("input", { checked: e2.completed, key: t3.key, readOnly: true, type: "checkbox" }) }, 9: { match: Ie(r2.enforceAtxHeadings ? C : w), order: 1, parse: (e2, n2, t3) => ({ children: Ne(n2, e2[2], t3), id: r2.slugify(e2[2]), level: e2[1].length }), render: (e2, n2, t3) => d2(`h${e2.level}`, { id: e2.id, key: t3.key }, n2(e2.children, t3)) }, 10: { match: Ie(E), order: 0, parse: (e2, n2, t3) => ({ children: Ne(n2, e2[1], t3), level: "=" === e2[2] ? 1 : 2, type: "9" }) }, 11: { match: Re(A), order: 1, parse(e2, n2, t3) {
+    const q3 = [], V3 = {}, X3 = { 0: { match: Ie(u), order: 1, parse: (e2, n2, t3) => ({ children: n2(e2[0].replace(p, ""), t3) }), render: (e2, n2, t3) => d2("blockquote", { key: t3.key }, n2(e2.children, t3)) }, 1: { match: Re(f), order: 1, parse: _e, render: (e2, n2, t3) => d2("br", { key: t3.key }) }, 2: { match: Ie(h), order: 1, parse: _e, render: (e2, n2, t3) => d2("hr", { key: t3.key }) }, 3: { match: Ie(g), order: 0, parse: (e2) => ({ lang: void 0, text: e2[0].replace(/^ {4}/gm, "").replace(/\n+$/, "") }), render: (e2, t3, r3) => d2("pre", { key: r3.key }, d2("code", n({}, e2.attrs, { className: e2.lang ? `lang-${e2.lang}` : "" }), e2.text)) }, 4: { match: Ie(m), order: 0, parse: (e2) => ({ attrs: Z3(e2[3] || ""), lang: e2[2] || void 0, text: e2[4], type: "3" }) }, 5: { match: Me(y), order: 3, parse: (e2) => ({ text: e2[2] }), render: (e2, n2, t3) => d2("code", { key: t3.key }, e2.text) }, 6: { match: Ie(v), order: 0, parse: (e2) => (q3.push({ footnote: e2[2], identifier: e2[1] }), {}), render: Fe }, 7: { match: ze(b), order: 1, parse: (e2) => ({ target: `#${r2.slugify(e2[1])}`, text: e2[1] }), render: (e2, n2, t3) => d2("a", { key: t3.key, href: je(e2.target) }, d2("sup", { key: t3.key }, e2.text)) }, 8: { match: ze(S), order: 1, parse: (e2) => ({ completed: "x" === e2[1].toLowerCase() }), render: (e2, n2, t3) => d2("input", { checked: e2.completed, key: t3.key, readOnly: true, type: "checkbox" }) }, 9: { match: Ie(r2.enforceAtxHeadings ? C : w), order: 1, parse: (e2, n2, t3) => ({ children: Ne(n2, e2[2], t3), id: r2.slugify(e2[2]), level: e2[1].length }), render: (e2, n2, t3) => d2(`h${e2.level}`, { id: e2.id, key: t3.key }, n2(e2.children, t3)) }, 10: { match: Ie(E), order: 0, parse: (e2, n2, t3) => ({ children: Ne(n2, e2[1], t3), level: "=" === e2[2] ? 1 : 2, type: "9" }) }, 11: { match: Re(A), order: 1, parse(e2, n2, t3) {
       const [, r3] = e2[3].match(re), i3 = new RegExp(`^${r3}`, "gm"), l2 = e2[3].replace(i3, ""), o2 = (a2 = l2, Ce.some((e3) => e3.test(a2)) ? De : Ne);
       var a2;
       const s2 = e2[1].toLowerCase(), d3 = -1 !== c.indexOf(s2), u2 = { attrs: Z3(e2[2]), noInnerParse: d3, tag: d3 ? s2 : e2[1] };
@@ -34802,7 +34802,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, render: (e2, t3, r3) => d2(e2.tag, n({ key: r3.key }, e2.attrs), e2.text || t3(e2.children, r3)) }, 13: { match: Re(z), order: 1, parse: (e2) => ({ attrs: Z3(e2[2] || ""), tag: e2[1] }), render: (e2, t3, r3) => d2(e2.tag, n({}, e2.attrs, { key: r3.key })) }, 12: { match: Re(T), order: 1, parse: () => ({}), render: Fe }, 14: { match: Me(Se), order: 1, parse: (e2) => ({ alt: e2[1], target: Be(e2[2]), title: e2[3] }), render: (e2, n2, t3) => d2("img", { key: t3.key, alt: e2.alt || void 0, title: e2.title || void 0, src: je(e2.target) }) }, 15: { match: ze($e), order: 3, parse: (e2, n2, t3) => ({ children: He(n2, e2[1], t3), target: Be(e2[2]), title: e2[3] }), render: (e2, n2, t3) => d2("a", { key: t3.key, href: je(e2.target), title: e2.title }, n2(e2.children, t3)) }, 16: { match: ze(U), order: 0, parse: (e2) => ({ children: [{ text: e2[1], type: "27" }], target: e2[1], type: "15" }) }, 17: { match: (e2, n2) => n2.inAnchor ? null : ze(I)(e2, n2), order: 0, parse: (e2) => ({ children: [{ text: e2[1], type: "27" }], target: e2[1], title: void 0, type: "15" }) }, 18: { match: ze(R), order: 0, parse(e2) {
       let n2 = e2[1], t3 = e2[1];
       return s.test(t3) || (t3 = "mailto:" + t3), { children: [{ text: n2.replace("mailto:", ""), type: "27" }], target: t3, type: "15" };
-    } }, 20: be(d2, 1), 33: be(d2, 2), 19: { match: Ie(k), order: 3, parse: _e, render: () => "\n" }, 21: { match: Ue, order: 3, parse: Pe, render: (e2, n2, t3) => d2("p", { key: t3.key }, n2(e2.children, t3)) }, 22: { match: ze(N), order: 0, parse: (e2) => (V2[e2[1]] = { target: e2[2], title: e2[4] }, {}), render: Fe }, 23: { match: Me(H), order: 0, parse: (e2) => ({ alt: e2[1] || void 0, ref: e2[2] }), render: (e2, n2, t3) => d2("img", { key: t3.key, alt: e2.alt, src: je(V2[e2.ref].target), title: V2[e2.ref].title }) }, 24: { match: ze(D), order: 0, parse: (e2, n2, t3) => ({ children: n2(e2[1], t3), fallbackChildren: n2(e2[0].replace(P, "\\$1"), t3), ref: e2[2] }), render: (e2, n2, t3) => V2[e2.ref] ? d2("a", { key: t3.key, href: je(V2[e2.ref].target), title: V2[e2.ref].title }, n2(e2.children, t3)) : d2("span", { key: t3.key }, n2(e2.fallbackChildren, t3)) }, 25: { match: Ie(B), order: 1, parse: Te, render: (e2, n2, t3) => d2("table", { key: t3.key }, d2("thead", null, d2("tr", null, e2.header.map(function(r3, i3) {
+    } }, 20: be(d2, 1), 33: be(d2, 2), 19: { match: Ie(k), order: 3, parse: _e, render: () => "\n" }, 21: { match: Ue, order: 3, parse: Pe, render: (e2, n2, t3) => d2("p", { key: t3.key }, n2(e2.children, t3)) }, 22: { match: ze(N), order: 0, parse: (e2) => (V3[e2[1]] = { target: e2[2], title: e2[4] }, {}), render: Fe }, 23: { match: Me(H), order: 0, parse: (e2) => ({ alt: e2[1] || void 0, ref: e2[2] }), render: (e2, n2, t3) => d2("img", { key: t3.key, alt: e2.alt, src: je(V3[e2.ref].target), title: V3[e2.ref].title }) }, 24: { match: ze(D), order: 0, parse: (e2, n2, t3) => ({ children: n2(e2[1], t3), fallbackChildren: n2(e2[0].replace(P, "\\$1"), t3), ref: e2[2] }), render: (e2, n2, t3) => V3[e2.ref] ? d2("a", { key: t3.key, href: je(V3[e2.ref].target), title: V3[e2.ref].title }, n2(e2.children, t3)) : d2("span", { key: t3.key }, n2(e2.fallbackChildren, t3)) }, 25: { match: Ie(B), order: 1, parse: Te, render: (e2, n2, t3) => d2("table", { key: t3.key }, d2("thead", null, d2("tr", null, e2.header.map(function(r3, i3) {
       return d2("th", { key: i3, style: Le(e2, i3) }, n2(r3, t3));
     }))), d2("tbody", null, e2.cells.map(function(r3, i3) {
       return d2("tr", { key: i3 }, r3.map(function(r4, i4) {
@@ -35869,7 +35869,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }
   }
   function formatHeader(header) {
-    return header.trim().toLowerCase().replace(/([a-z\d])(\w*)/g, (w3, char, str) => {
+    return header.trim().toLowerCase().replace(/([a-z\d])(\w*)/g, (w2, char, str) => {
       return char.toUpperCase() + str;
     });
   }
@@ -37024,60 +37024,59 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // ../lib/index.js
   var import_jsx_runtime16 = __toESM(require_jsx_runtime());
-  var import_lodash = __toESM(require_lodash());
   var import_jsx_runtime17 = __toESM(require_jsx_runtime());
   var import_jsx_runtime18 = __toESM(require_jsx_runtime());
-  var qe = { baseline: "vuiFlexContainer--alignItemsBaseline", center: "vuiFlexContainer--alignItemsCenter", end: "vuiFlexContainer--alignItemsEnd", start: "vuiFlexContainer--alignItemsStart", stretch: "vuiFlexContainer--alignItemsStretch" };
-  var We2 = { column: "vuiFlexContainer--directionColumn", columnReverse: "vuiFlexContainer--directionColumnReverse", row: "vuiFlexContainer--directionRow", rowReverse: "vuiFlexContainer--directionRowReverse" };
-  var je2 = { center: "vuiFlexContainer--justifyContentCenter", end: "vuiFlexContainer--justifyContentEnd", start: "vuiFlexContainer--justifyContentStart", spaceAround: "vuiFlexContainer--justifyContentSpaceAround", spaceBetween: "vuiFlexContainer--justifyContentSpaceBetween", spaceEvenly: "vuiFlexContainer--justifyContentSpaceEvenly" };
-  var $e2 = { none: "vuiFlexContainer--spacingNone", xxs: "vuiFlexContainer--spacingXxs", xs: "vuiFlexContainer--spacingXs", s: "vuiFlexContainer--spacingS", m: "vuiFlexContainer--spacingM", l: "vuiFlexContainer--spacingL", xl: "vuiFlexContainer--spacingXl", xxl: "vuiFlexContainer--spacingXxl" };
-  var w2 = ({ children: e2, alignItems: t2 = "stretch", direction: r2 = "row", justifyContent: n2 = "start", spacing: o2 = "m", wrap: i2, className: a2, fullWidth: s2, ...l2 }) => {
-    let c2 = (0, import_classnames.default)(a2, "vuiFlexContainer", qe[t2], We2[r2], je2[n2], $e2[o2], { "vuiFlexContainer--wrap": i2, "vuiFlexContainer--fullWidth": s2 });
+  var Oe2 = { baseline: "vuiFlexContainer--alignItemsBaseline", center: "vuiFlexContainer--alignItemsCenter", end: "vuiFlexContainer--alignItemsEnd", start: "vuiFlexContainer--alignItemsStart", stretch: "vuiFlexContainer--alignItemsStretch" };
+  var qe = { column: "vuiFlexContainer--directionColumn", columnReverse: "vuiFlexContainer--directionColumnReverse", row: "vuiFlexContainer--directionRow", rowReverse: "vuiFlexContainer--directionRowReverse" };
+  var We2 = { center: "vuiFlexContainer--justifyContentCenter", end: "vuiFlexContainer--justifyContentEnd", start: "vuiFlexContainer--justifyContentStart", spaceAround: "vuiFlexContainer--justifyContentSpaceAround", spaceBetween: "vuiFlexContainer--justifyContentSpaceBetween", spaceEvenly: "vuiFlexContainer--justifyContentSpaceEvenly" };
+  var je2 = { none: "vuiFlexContainer--spacingNone", xxs: "vuiFlexContainer--spacingXxs", xs: "vuiFlexContainer--spacingXs", s: "vuiFlexContainer--spacingS", m: "vuiFlexContainer--spacingM", l: "vuiFlexContainer--spacingL", xl: "vuiFlexContainer--spacingXl", xxl: "vuiFlexContainer--spacingXxl" };
+  var B2 = ({ children: e2, alignItems: t2 = "stretch", direction: r2 = "row", justifyContent: n2 = "start", spacing: o2 = "m", wrap: i2, className: a2, fullWidth: s2, ...l2 }) => {
+    let c2 = (0, import_classnames.default)(a2, "vuiFlexContainer", Oe2[t2], qe[r2], We2[n2], je2[o2], { "vuiFlexContainer--wrap": i2, "vuiFlexContainer--fullWidth": s2 });
     return (0, import_jsx_runtime.jsx)("div", { className: c2, ...l2, children: e2 });
   };
-  var Ue2 = { baseline: "vuiFlexItem--alignItemsBaseline", center: "vuiFlexItem--alignItemsCenter", end: "vuiFlexItem--alignItemsEnd", start: "vuiFlexItem--alignItemsStart", stretch: "vuiFlexItem--alignItemsStretch" };
+  var Ze2 = { baseline: "vuiFlexItem--alignItemsBaseline", center: "vuiFlexItem--alignItemsCenter", end: "vuiFlexItem--alignItemsEnd", start: "vuiFlexItem--alignItemsStart", stretch: "vuiFlexItem--alignItemsStretch" };
   var v2 = ({ children: e2, grow: t2, shrink: r2, basis: n2 = "auto", alignItems: o2 = "stretch", className: i2, truncate: a2, ...s2 }) => {
-    let l2 = t2 === false, c2 = r2 === false, d2 = (0, import_classnames2.default)("vuiFlexItem", `vuiFlexItem--${n2}`, Ue2[o2], { [`vuiFlexItem--flexGrow${t2}`]: typeof t2 == "number", "vuiFlexItem--flexGrowNone": l2, [`vuiFlexItem--flexShrink${r2}`]: typeof r2 == "number", "vuiFlexItem--flexShrinkNone": c2, "vuiFlexItem--truncate": a2 }, i2);
+    let l2 = t2 === false, c2 = r2 === false, d2 = (0, import_classnames2.default)("vuiFlexItem", `vuiFlexItem--${n2}`, Ze2[o2], { [`vuiFlexItem--flexGrow${t2}`]: typeof t2 == "number", "vuiFlexItem--flexGrowNone": l2, [`vuiFlexItem--flexShrink${r2}`]: typeof r2 == "number", "vuiFlexItem--flexShrinkNone": c2, "vuiFlexItem--truncate": a2 }, i2);
     return (0, import_jsx_runtime2.jsx)("div", { className: d2, ...s2, children: e2 });
   };
   var X2 = 0;
-  var ne2 = () => (X2 === Number.MAX_SAFE_INTEGER ? X2 = 0 : X2++, X2.toString());
+  var re2 = () => (X2 === Number.MAX_SAFE_INTEGER ? X2 = 0 : X2++, X2.toString());
   var ve2 = ({ size: e2, color: t2 }) => (0, import_jsx_runtime3.jsx)("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 329.26933 329", width: e2, height: e2, fill: t2, children: (0, import_jsx_runtime3.jsx)("path", { d: "m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0" }) });
   var be2 = ({ size: e2 = "16px", color: t2 = "#ffffff" }) => (0, import_jsx_runtime3.jsxs)("svg", { fill: t2, version: "1.1", id: "Capa_1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", width: e2, height: e2, viewBox: "0 0 29.75 29.75", xmlSpace: "preserve", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M26.573,4.026H5.163c-1.884,0-3.413,1.707-3.413,3.321v12.976c0,0.001,0,0.002,0,0.003l-0.004-0.003L0,25.724l4.913-2.717 c0.084,0.004,0.164,0.02,0.25,0.02h21.41c1.884,0,3.177-1.09,3.177-2.703V7.347C29.75,5.733,28.457,4.026,26.573,4.026z M27.75,20.323c0,0.538-0.548,0.703-1.177,0.703H5.163c-0.629,0-1.413-0.165-1.413-0.703V7.347c0-0.539,0.784-1.321,1.413-1.321 h21.41c0.629,0,1.177,0.782,1.177,1.321V20.323z" }), " ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsx)("circle", { cx: "9.274", cy: "13.526", r: "1.874" }), " ", (0, import_jsx_runtime3.jsx)("circle", { cx: "15.657", cy: "13.526", r: "1.874" }), " ", (0, import_jsx_runtime3.jsx)("circle", { cx: "22.04", cy: "13.526", r: "1.874" }), " "] }), " "] }), " "] }), " "] })] });
   var ye2 = () => (0, import_jsx_runtime3.jsxs)("svg", { fill: "#c41535", width: "16px", height: "16px", viewBox: "0 0 1024 1024", xmlns: "http://www.w3.org/2000/svg", stroke: "#c41535", strokeWidth: "20", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_iconCarrier", children: (0, import_jsx_runtime3.jsx)("path", { d: "M520.741 163.801a10.234 10.234 0 00-3.406-3.406c-4.827-2.946-11.129-1.421-14.075 3.406L80.258 856.874a10.236 10.236 0 00-1.499 5.335c0 5.655 4.585 10.24 10.24 10.24h846.004c1.882 0 3.728-.519 5.335-1.499 4.827-2.946 6.352-9.248 3.406-14.075L520.742 163.802zm43.703-26.674L987.446 830.2c17.678 28.964 8.528 66.774-20.436 84.452a61.445 61.445 0 01-32.008 8.996H88.998c-33.932 0-61.44-27.508-61.44-61.44a61.445 61.445 0 018.996-32.008l423.002-693.073c17.678-28.964 55.488-38.113 84.452-20.436a61.438 61.438 0 0120.436 20.436zM512 778.24c22.622 0 40.96-18.338 40.96-40.96s-18.338-40.96-40.96-40.96-40.96 18.338-40.96 40.96 18.338 40.96 40.96 40.96zm0-440.32c-22.622 0-40.96 18.338-40.96 40.96v225.28c0 22.622 18.338 40.96 40.96 40.96s40.96-18.338 40.96-40.96V378.88c0-22.622-18.338-40.96-40.96-40.96z" }) })] });
   var Ce2 = () => (0, import_jsx_runtime3.jsxs)("svg", { width: "10px", height: "10px", viewBox: "-5.5 0 26 26", version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", fill: "#2c313a", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsx)("title", { children: "chevron-right" }), " ", (0, import_jsx_runtime3.jsx)("desc", { children: "Created with Sketch Beta." }), " ", (0, import_jsx_runtime3.jsx)("defs", { children: " " }), " ", (0, import_jsx_runtime3.jsxs)("g", { id: "Page-1", stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { id: "Icon-Set-Filled", transform: "translate(-474.000000, -1196.000000)", fill: "#2c313a", children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M488.404,1207.36 L477.637,1197.6 C476.806,1196.76 475.459,1196.76 474.629,1197.6 C473.798,1198.43 473.798,1199.77 474.629,1200.6 L483.885,1209 L474.629,1217.4 C473.798,1218.23 473.798,1219.57 474.629,1220.4 C475.459,1221.24 476.806,1221.24 477.637,1220.4 L488.404,1210.64 C488.854,1210.19 489.052,1209.59 489.015,1209 C489.052,1208.41 488.854,1207.81 488.404,1207.36", id: "chevron-right", children: " " }), " "] }), " "] }), " "] })] });
   var Se2 = () => (0, import_jsx_runtime3.jsxs)("svg", { width: "10px", height: "10px", viewBox: "0 -4.5 24 24", version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", fill: "#2c313a", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsx)("title", { children: "chevron-down" }), " ", (0, import_jsx_runtime3.jsx)("desc", { children: "Created with Sketch Beta." }), " ", (0, import_jsx_runtime3.jsx)("defs", { children: " " }), " ", (0, import_jsx_runtime3.jsxs)("g", { id: "Page-1", stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { id: "Icon-Set-Filled", transform: "translate(-574.000000, -1201.000000)", fill: "#2c313a", children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M597.405,1201.63 C596.576,1200.8 595.23,1200.8 594.401,1201.63 L586.016,1210.88 L577.63,1201.63 C576.801,1200.8 575.455,1200.8 574.626,1201.63 C573.797,1202.46 573.797,1203.81 574.626,1204.64 L584.381,1215.4 C584.83,1215.85 585.429,1216.05 586.016,1216.01 C586.603,1216.05 587.201,1215.85 587.65,1215.4 L597.405,1204.64 C598.234,1203.81 598.234,1202.46 597.405,1201.63", id: "chevron-down", children: " " }), " "] }), " "] }), " "] })] });
-  var oe2 = ({ header: e2, children: t2, isOpen: r2, setIsOpen: n2, ...o2 }) => {
-    let i2 = ne2(), a2 = ne2();
-    return (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [(0, import_jsx_runtime4.jsx)("button", { className: "vuiAccordionHeader", onClick: () => n2(!r2), id: i2, "aria-controls": a2, "aria-expanded": r2, ...o2, children: (0, import_jsx_runtime4.jsxs)(w2, { alignItems: "center", justifyContent: "start", spacing: "xxs", children: [(0, import_jsx_runtime4.jsx)(v2, { grow: false, shrink: false, children: r2 ? (0, import_jsx_runtime4.jsx)(Se2, {}) : (0, import_jsx_runtime4.jsx)(Ce2, {}) }), (0, import_jsx_runtime4.jsx)(v2, { className: "vuiAccordionHeader__title", grow: 1, children: e2 })] }) }), r2 && (0, import_jsx_runtime4.jsx)("div", { id: a2, "aria-labelledby": i2, children: t2 })] });
+  var ne2 = ({ header: e2, children: t2, isOpen: r2, setIsOpen: n2, ...o2 }) => {
+    let i2 = re2(), a2 = re2();
+    return (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [(0, import_jsx_runtime4.jsx)("button", { className: "vuiAccordionHeader", onClick: () => n2(!r2), id: i2, "aria-controls": a2, "aria-expanded": r2, ...o2, children: (0, import_jsx_runtime4.jsxs)(B2, { alignItems: "center", justifyContent: "start", spacing: "xxs", children: [(0, import_jsx_runtime4.jsx)(v2, { grow: false, shrink: false, children: r2 ? (0, import_jsx_runtime4.jsx)(Se2, {}) : (0, import_jsx_runtime4.jsx)(Ce2, {}) }), (0, import_jsx_runtime4.jsx)(v2, { className: "vuiAccordionHeader__title", grow: 1, children: e2 })] }) }), r2 && (0, import_jsx_runtime4.jsx)("div", { id: a2, "aria-labelledby": i2, children: t2 })] });
   };
   var we2 = (e2) => e2 ? { rel: "noopener", referrerpolicy: "no-referrer-when-downgrade" } : { rel: "noopener" };
-  var Ye = { left: "vuiBaseButton--alignLeft", center: "vuiBaseButton--alignCenter", right: "vuiBaseButton--alignRight" };
-  var Z2 = (0, import_react6.forwardRef)(({ children: e2, icon: t2, iconSide: r2 = "left", align: n2 = "center", className: o2, size: i2, fullWidth: a2, onClick: s2, tabIndex: l2, isInert: c2, isDisabled: d2, href: x2, target: b2, track: h2, htmlFor: y2, isSubmit: N2, ...g2 }, S2) => {
-    let E2 = (0, import_classnames4.default)("vuiBaseButton", o2, `vuiBaseButton--${i2}`, Ye[n2], { "vuiBaseButton-isInert": c2, "vuiBaseButton-isDisabled": d2, "vuiBaseButton--fullWidth": a2, [`vuiBaseButton--${r2}`]: !!t2 && !!e2 }), I2 = t2 ? (0, import_jsx_runtime5.jsx)("span", { className: "vuiBaseButtonIconContainer", children: t2 }) : null;
+  var Je = { left: "vuiBaseButton--alignLeft", center: "vuiBaseButton--alignCenter", right: "vuiBaseButton--alignRight" };
+  var Z2 = (0, import_react6.forwardRef)(({ children: e2, icon: t2, iconSide: r2 = "left", align: n2 = "center", className: o2, size: i2, fullWidth: a2, onClick: s2, tabIndex: l2, isInert: c2, isDisabled: d2, href: g2, target: b2, track: h2, htmlFor: y2, isSubmit: k2, ...f2 }, S2) => {
+    let R2 = (0, import_classnames4.default)("vuiBaseButton", o2, `vuiBaseButton--${i2}`, Je[n2], { "vuiBaseButton-isInert": c2, "vuiBaseButton-isDisabled": d2, "vuiBaseButton--fullWidth": a2, [`vuiBaseButton--${r2}`]: !!t2 && !!e2 }), I2 = t2 ? (0, import_jsx_runtime5.jsx)("span", { className: "vuiBaseButtonIconContainer", children: t2 }) : null;
     if (y2)
-      return (0, import_jsx_runtime5.jsxs)("label", { htmlFor: y2, className: E2, tabIndex: l2, ...g2, children: [I2, e2] });
-    if (x2) {
+      return (0, import_jsx_runtime5.jsxs)("label", { htmlFor: y2, className: R2, tabIndex: l2, ...f2, children: [I2, e2] });
+    if (g2) {
       let u2 = (0, import_classnames4.default)("vuiBaseButtonLinkWrapper", { "vuiBaseButtonLinkWrapper--fullWidth": a2 });
-      return (0, import_jsx_runtime5.jsx)("a", { className: u2, href: x2, onClick: s2, target: b2, tabIndex: l2, ...g2, ...we2(h2), children: (0, import_jsx_runtime5.jsxs)("button", { className: E2, tabIndex: -1, ref: S2, children: [I2, e2] }) });
+      return (0, import_jsx_runtime5.jsx)("a", { className: u2, href: g2, onClick: s2, target: b2, tabIndex: l2, ...f2, ...we2(h2), children: (0, import_jsx_runtime5.jsxs)("button", { className: R2, tabIndex: -1, ref: S2, children: [I2, e2] }) });
     }
-    let A2 = { onClick: s2, tabIndex: l2, type: N2 ? "submit" : "button", ...g2 };
-    return (0, import_jsx_runtime5.jsxs)("button", { className: E2, ...A2, ref: S2, children: [I2, e2] });
+    let _2 = { onClick: s2, tabIndex: l2, type: k2 ? "submit" : "button", ...f2 };
+    return (0, import_jsx_runtime5.jsxs)("button", { className: R2, ..._2, ref: S2, children: [I2, e2] });
   });
-  var tt = { xs: "xs", s: "xs", m: "s", l: "m" };
-  var rt = { accent: "accent", primary: "primary", success: "success", danger: "danger", warning: "warning", neutral: "neutral", subdued: "subdued" };
-  var U2 = (e2, t2, r2, n2 = rt) => e2 ? (0, import_react7.cloneElement)(e2, { size: t2 ? tt[t2] : "s", color: e2.props.color === "inherit" ? n2[r2] : e2.props.color }) : null;
-  var it = { accent: "empty", primary: "empty", success: "empty", danger: "empty", warning: "empty", neutral: "neutral", subdued: "subdued" };
-  var ae2 = (0, import_react5.forwardRef)(({ children: e2, icon: t2, color: r2, size: n2 = "m", className: o2, isSelected: i2, isDisabled: a2, ...s2 }, l2) => {
-    let c2 = (0, import_classnames3.default)(o2, "vuiButtonPrimary", `vuiButtonPrimary--${r2}`, { "vuiButtonPrimary-isSelected": i2 }), d2 = U2(t2, n2, r2, it);
+  var et = { xs: "xs", s: "xs", m: "s", l: "m" };
+  var tt = { accent: "accent", primary: "primary", success: "success", danger: "danger", warning: "warning", neutral: "neutral", subdued: "subdued" };
+  var U2 = (e2, t2, r2, n2 = tt) => e2 ? (0, import_react7.cloneElement)(e2, { size: t2 ? et[t2] : "s", color: e2.props.color === "inherit" ? n2[r2] : e2.props.color }) : null;
+  var ot = { accent: "empty", primary: "empty", success: "empty", danger: "empty", warning: "empty", neutral: "neutral", subdued: "subdued" };
+  var ie2 = (0, import_react5.forwardRef)(({ children: e2, icon: t2, color: r2, size: n2 = "m", className: o2, isSelected: i2, isDisabled: a2, ...s2 }, l2) => {
+    let c2 = (0, import_classnames3.default)(o2, "vuiButtonPrimary", `vuiButtonPrimary--${r2}`, { "vuiButtonPrimary-isSelected": i2 }), d2 = U2(t2, n2, r2, ot);
     return (0, import_jsx_runtime6.jsx)(Z2, { ref: l2, className: c2, icon: d2, size: n2, isDisabled: a2, ...s2, children: e2 });
   });
-  var ct = { accent: "accent", primary: "primary", success: "success", danger: "danger", warning: "warning", neutral: "neutral", subdued: "subdued" };
-  var se2 = (0, import_react8.forwardRef)(({ children: e2, icon: t2, color: r2, size: n2 = "m", className: o2, isSelected: i2, isDisabled: a2, solid: s2, ...l2 }, c2) => {
-    let d2 = (0, import_classnames5.default)(o2, "vuiButtonSecondary", `vuiButtonSecondary--${r2}`, { "vuiButtonSecondary-isSelected": i2, "vuiButtonSecondary--solid": s2 }), x2 = U2(t2, n2, r2, ct);
-    return (0, import_jsx_runtime7.jsx)(Z2, { ref: c2, className: d2, icon: x2, size: n2, isDisabled: a2, ...l2, children: e2 });
+  var lt = { accent: "accent", primary: "primary", success: "success", danger: "danger", warning: "warning", neutral: "neutral", subdued: "subdued" };
+  var ae2 = (0, import_react8.forwardRef)(({ children: e2, icon: t2, color: r2, size: n2 = "m", className: o2, isSelected: i2, isDisabled: a2, solid: s2, ...l2 }, c2) => {
+    let d2 = (0, import_classnames5.default)(o2, "vuiButtonSecondary", `vuiButtonSecondary--${r2}`, { "vuiButtonSecondary-isSelected": i2, "vuiButtonSecondary--solid": s2 }), g2 = U2(t2, n2, r2, lt);
+    return (0, import_jsx_runtime7.jsx)(Z2, { ref: c2, className: d2, icon: g2, size: n2, isDisabled: a2, ...l2, children: e2 });
   });
-  var ce2 = ({ className: e2, size: t2 = "m", value: r2, onChange: n2, placeholder: o2, autoFocus: i2, onSubmit: a2, ...s2 }) => {
+  var le2 = ({ className: e2, size: t2 = "m", value: r2, onChange: n2, placeholder: o2, autoFocus: i2, onSubmit: a2, ...s2 }) => {
     let l2 = (0, import_classnames6.default)("vuiSearchInput", `vuiSearchInput--${t2}`, e2);
     return (0, import_jsx_runtime8.jsx)("form", { onSubmit: a2, children: (0, import_jsx_runtime8.jsx)("div", { className: l2, children: (0, import_jsx_runtime8.jsx)("input", { className: "vuiSearchInput__input", type: "text", autoComplete: "off", autoCapitalize: "off", spellCheck: "false", autoFocus: i2, placeholder: o2, value: r2, onChange: n2, ...s2 }) }) });
   };
@@ -37085,21 +37084,21 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     let t2 = (0, import_classnames7.default)("vuiSpacer", { [`vuiSpacer--${e2}`]: e2 });
     return (0, import_jsx_runtime9.jsx)("div", { className: t2 });
   };
-  var gt = { xs: "vuiSpinner--xs", s: "vuiSpinner--s", m: "vuiSpinner--m", l: "vuiSpinner--l", xl: "vuiSpinner--xl", xxl: "vuiSpinner--xxl", xxxl: "vuiSpinner--xxxl" };
-  var ue2 = ({ size: e2 = "m" }) => {
-    let t2 = (0, import_classnames8.default)("vuiSpinner", gt[e2]);
+  var xt = { xs: "vuiSpinner--xs", s: "vuiSpinner--s", m: "vuiSpinner--m", l: "vuiSpinner--l", xl: "vuiSpinner--xl", xxl: "vuiSpinner--xxl", xxxl: "vuiSpinner--xxxl" };
+  var ce2 = ({ size: e2 = "m" }) => {
+    let t2 = (0, import_classnames8.default)("vuiSpinner", xt[e2]);
     return (0, import_jsx_runtime10.jsx)("div", { className: t2, children: (0, import_jsx_runtime10.jsxs)("svg", { className: "vuiSpinner__animation", version: "1.0", width: "100px", height: "100px", viewBox: "0 0 128 128", xmlSpace: "preserve", children: [(0, import_jsx_runtime10.jsxs)("g", { children: [(0, import_jsx_runtime10.jsx)("path", { fill: "#d7c3fc", d: "M99.359,10.919a60.763,60.763,0,1,0,0,106.162A63.751,63.751,0,1,1,99.359,10.919Z" }), (0, import_jsx_runtime10.jsx)("animateTransform", { attributeName: "transform", type: "rotate", from: "0 64 64", to: "360 64 64", dur: "960ms", repeatCount: "indefinite" })] }), (0, import_jsx_runtime10.jsxs)("g", { children: [(0, import_jsx_runtime10.jsx)("path", { fill: "#ab81fa", d: "M28.641,117.081a60.763,60.763,0,1,0,0-106.162A63.751,63.751,0,1,1,28.641,117.081Z" }), (0, import_jsx_runtime10.jsx)("animateTransform", { attributeName: "transform", type: "rotate", from: "0 64 64", to: "360 64 64", dur: "1440ms", repeatCount: "indefinite" })] }), (0, import_jsx_runtime10.jsxs)("g", { children: [(0, import_jsx_runtime10.jsx)("path", { fill: "#7027f6", d: "M117.081,99.313a60.763,60.763,0,1,0-106.162,0A63.751,63.751,0,1,1,117.081,99.313Z" }), (0, import_jsx_runtime10.jsx)("animateTransform", { attributeName: "transform", type: "rotate", from: "0 64 64", to: "360 64 64", dur: "2880ms", repeatCount: "indefinite" })] })] }) });
   };
   var q2 = ({ children: e2, className: t2, id: r2, truncate: n2, size: o2 = "s", align: i2, ...a2 }) => {
     let s2 = (0, import_classnames9.default)("vuiText", `vuiText--${o2}`, { [`vuiText--${i2}`]: i2, "vuiText--truncate": n2 }, t2);
     return (0, import_jsx_runtime11.jsx)("div", { className: s2, id: r2, ...a2, children: e2 });
   };
-  var Fe2 = ({ query: e2, setQuery: t2, onSubmit: r2, placeholder: n2, buttonLabel: o2, isButtonDisabled: i2, size: a2 }) => (0, import_jsx_runtime13.jsxs)(w2, { alignItems: "center", spacing: "xs", children: [(0, import_jsx_runtime13.jsx)(v2, { grow: 1, children: (0, import_jsx_runtime13.jsx)(ce2, { size: a2, value: e2, onChange: (c2) => {
+  var Fe2 = ({ query: e2, setQuery: t2, onSubmit: r2, placeholder: n2, buttonLabel: o2, isButtonDisabled: i2, size: a2 }) => (0, import_jsx_runtime13.jsxs)(B2, { alignItems: "center", spacing: "xs", children: [(0, import_jsx_runtime13.jsx)(v2, { grow: 1, children: (0, import_jsx_runtime13.jsx)(le2, { size: a2, value: e2, onChange: (c2) => {
     t2(c2.target.value);
   }, onSubmit: (c2) => {
     c2.preventDefault(), r2();
-  }, placeholder: n2, autoFocus: true, "data-testid": "queryInput" }) }), (0, import_jsx_runtime13.jsx)(v2, { children: (0, import_jsx_runtime13.jsx)(ae2, { color: "primary", size: a2, onClick: () => r2(), isDisabled: i2, children: o2 }) })] });
-  var pe2 = (e2, t2) => {
+  }, placeholder: n2, autoFocus: true, "data-testid": "queryInput" }) }), (0, import_jsx_runtime13.jsx)(v2, { children: (0, import_jsx_runtime13.jsx)(ie2, { color: "primary", size: a2, onClick: () => r2(), isDisabled: i2, children: o2 }) })] });
+  var ue2 = (e2, t2) => {
     let r2 = [], n2 = t2.match(/\[\d+\]/g) || [], o2 = /* @__PURE__ */ new Set();
     for (let i2 = 0; i2 < n2.length; i2++) {
       let a2 = n2[i2], s2 = Number(a2.slice(1, a2.length - 1)) - 1;
@@ -37107,7 +37106,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }
     return r2;
   };
-  var de2 = (e2) => {
+  var pe2 = (e2) => {
     let t2 = /\[(\d+(,*\s*\d*)*)\]/g, r2 = [], n2, o2 = 0;
     for (; (n2 = t2.exec(e2)) !== null; ) {
       let a2 = n2.index, s2 = n2[1], l2 = e2.slice(o2, a2).trim();
@@ -37116,42 +37115,42 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     let i2 = e2.slice(o2).trim();
     return i2.length > 0 && r2.push({ text: i2 }), r2;
   };
-  var me2 = (e2) => {
+  var de2 = (e2) => {
     let t2 = e2.match(/\[\d+\]/g) || [], r2 = [...new Set(t2)], n2 = {};
     return r2.forEach((o2, i2) => {
       n2[o2] = `[${i2 + 1}]`;
     }), e2.replace(/\[\d+\]/g, (o2) => n2[o2]);
   };
   var ke2 = ({ searchResults: e2, isOpen: t2 = false, setIsOpen: r2 = () => {
-  } }) => (0, import_jsx_runtime14.jsxs)(oe2, { header: `Based on ${e2.length} ${e2.length === 1 ? "fact" : "facts"}`, isOpen: t2, setIsOpen: r2, children: [(0, import_jsx_runtime14.jsx)(T2, { size: "s" }), e2.map((n2, o2) => (0, import_jsx_runtime14.jsxs)("div", { children: [(0, import_jsx_runtime14.jsx)(bt, { result: n2, position: o2 }), o2 < e2.length - 1 && (0, import_jsx_runtime14.jsx)(T2, { size: "s" })] }, o2))] });
-  var bt = ({ result: e2, position: t2 }) => {
+  } }) => (0, import_jsx_runtime14.jsxs)(ne2, { header: `Based on ${e2.length} ${e2.length === 1 ? "fact" : "facts"}`, isOpen: t2, setIsOpen: r2, children: [(0, import_jsx_runtime14.jsx)(T2, { size: "s" }), e2.map((n2, o2) => (0, import_jsx_runtime14.jsxs)("div", { children: [(0, import_jsx_runtime14.jsx)(vt, { result: n2, position: o2 }), o2 < e2.length - 1 && (0, import_jsx_runtime14.jsx)(T2, { size: "s" })] }, o2))] });
+  var vt = ({ result: e2, position: t2 }) => {
     var o2;
     let r2 = (o2 = e2 == null ? void 0 : e2.snippet) == null ? void 0 : o2.text, n2 = e2 == null ? void 0 : e2.url;
-    return (0, import_jsx_runtime14.jsx)(import_jsx_runtime14.Fragment, { children: (0, import_jsx_runtime14.jsxs)(w2, { alignItems: "start", spacing: "s", children: [(0, import_jsx_runtime14.jsx)(v2, { grow: false, shrink: false, children: (0, import_jsx_runtime14.jsx)("div", { className: "vrcbChatSearchResultPosition", children: t2 + 1 }) }), (0, import_jsx_runtime14.jsx)(v2, { grow: 1, shrink: 1, children: (0, import_jsx_runtime14.jsx)(q2, { size: "s", children: (0, import_jsx_runtime14.jsx)("p", { children: n2 ? (0, import_jsx_runtime14.jsx)("a", { href: n2, target: "_blank", children: r2 }) : r2 }) }) })] }) });
+    return (0, import_jsx_runtime14.jsx)(import_jsx_runtime14.Fragment, { children: (0, import_jsx_runtime14.jsxs)(B2, { alignItems: "start", spacing: "s", children: [(0, import_jsx_runtime14.jsx)(v2, { grow: false, shrink: false, children: (0, import_jsx_runtime14.jsx)("div", { className: "vrcbChatSearchResultPosition", children: t2 + 1 }) }), (0, import_jsx_runtime14.jsx)(v2, { grow: 1, shrink: 1, children: (0, import_jsx_runtime14.jsx)(q2, { size: "s", children: (0, import_jsx_runtime14.jsx)("p", { children: n2 ? (0, import_jsx_runtime14.jsx)("a", { href: n2, target: "_blank", children: r2 }) : r2 }) }) })] }) });
   };
-  var It = (e2) => de2(e2).reduce((r2, { text: n2, references: o2 }) => (o2 ? (r2.push(n2), n2 && n2[n2.length - 1] !== " " && r2.push(" "), o2.forEach((a2, s2) => {
+  var St = (e2) => pe2(e2).reduce((r2, { text: n2, references: o2 }) => (o2 ? (r2.push(n2), n2 && n2[n2.length - 1] !== " " && r2.push(" "), o2.forEach((a2, s2) => {
     s2 > 0 && r2.push(" "), r2.push(`<SummaryCitation reference={${a2}} />`);
   })) : r2.push(n2), r2), []).join(" ");
-  var ge2 = ({ question: e2, answer: t2, searchResults: r2, onRetry: n2, isStreaming: o2 }) => {
+  var xe2 = ({ question: e2, answer: t2, searchResults: r2, onRetry: n2, isStreaming: o2 }) => {
     let [i2, a2] = (0, import_react10.useState)(false), s2;
     if (n2)
-      s2 = (0, import_jsx_runtime15.jsxs)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--error", children: [(0, import_jsx_runtime15.jsx)(T2, { size: "m" }), (0, import_jsx_runtime15.jsxs)(w2, { alignItems: "center", spacing: "none", children: [(0, import_jsx_runtime15.jsxs)(w2, { alignItems: "center", spacing: "xxs", children: [(0, import_jsx_runtime15.jsx)(v2, { grow: false, shrink: true, children: (0, import_jsx_runtime15.jsx)(ye2, {}) }), (0, import_jsx_runtime15.jsx)(v2, { grow: false, children: "Message not sent." })] }), n2 && (0, import_jsx_runtime15.jsxs)(import_jsx_runtime15.Fragment, { children: [(0, import_jsx_runtime15.jsx)(T2, { size: "s" }), (0, import_jsx_runtime15.jsx)(w2, { alignItems: "center", spacing: "none", children: (0, import_jsx_runtime15.jsx)("button", { className: "vrcbRetryButton", onClick: () => n2(), children: "Try again" }) })] })] })] });
+      s2 = (0, import_jsx_runtime15.jsxs)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--error", children: [(0, import_jsx_runtime15.jsx)(T2, { size: "m" }), (0, import_jsx_runtime15.jsxs)(B2, { alignItems: "center", spacing: "none", children: [(0, import_jsx_runtime15.jsxs)(B2, { alignItems: "center", spacing: "xxs", children: [(0, import_jsx_runtime15.jsx)(v2, { grow: false, shrink: true, children: (0, import_jsx_runtime15.jsx)(ye2, {}) }), (0, import_jsx_runtime15.jsx)(v2, { grow: false, children: "Message not sent." })] }), n2 && (0, import_jsx_runtime15.jsxs)(import_jsx_runtime15.Fragment, { children: [(0, import_jsx_runtime15.jsx)(T2, { size: "s" }), (0, import_jsx_runtime15.jsx)(B2, { alignItems: "center", spacing: "none", children: (0, import_jsx_runtime15.jsx)("button", { className: "vrcbRetryButton", onClick: () => n2(), children: "Try again" }) })] })] })] });
     else if (t2) {
-      let l2 = (r2 ? pe2(r2, t2) : []).slice(0, 7), c2 = r2 ? me2(t2) : t2, d2 = It(c2);
-      s2 = (0, import_jsx_runtime15.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--answer", children: (0, import_jsx_runtime15.jsxs)("div", { className: "vrcbChatMessage", children: [(0, import_jsx_runtime15.jsxs)(q2, { size: "s", children: [(0, import_jsx_runtime15.jsx)(index_modern_default, { children: d2, options: { forceInline: true, overrides: { SummaryCitation: { component: ({ reference: b2 }) => (0, import_jsx_runtime15.jsxs)(import_jsx_runtime15.Fragment, { children: [" ", (0, import_jsx_runtime15.jsx)("button", { onClick: () => a2(true), children: (0, import_jsx_runtime15.jsx)("span", { className: "vrcbChatSummaryCitation", children: b2 }) })] }) } } } }), o2 && (0, import_jsx_runtime15.jsx)(ue2, { size: "xs" })] }), l2 && l2.length > 0 && (0, import_jsx_runtime15.jsxs)(import_jsx_runtime15.Fragment, { children: [(0, import_jsx_runtime15.jsx)(T2, { size: "s" }), (0, import_jsx_runtime15.jsx)(ke2, { searchResults: l2, isOpen: i2, setIsOpen: a2 })] })] }) });
+      let l2 = (r2 ? ue2(r2, t2) : []).slice(0, 7), c2 = r2 ? de2(t2) : t2, d2 = St(c2);
+      s2 = (0, import_jsx_runtime15.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--answer", children: (0, import_jsx_runtime15.jsxs)("div", { className: "vrcbChatMessage", children: [(0, import_jsx_runtime15.jsxs)(q2, { size: "s", children: [(0, import_jsx_runtime15.jsx)(index_modern_default, { children: d2, options: { forceInline: true, overrides: { SummaryCitation: { component: ({ reference: b2 }) => (0, import_jsx_runtime15.jsxs)(import_jsx_runtime15.Fragment, { children: [" ", (0, import_jsx_runtime15.jsx)("button", { onClick: () => a2(true), children: (0, import_jsx_runtime15.jsx)("span", { className: "vrcbChatSummaryCitation", children: b2 }) })] }) } } } }), o2 && (0, import_jsx_runtime15.jsx)(ce2, { size: "xs" })] }), l2 && l2.length > 0 && (0, import_jsx_runtime15.jsxs)(import_jsx_runtime15.Fragment, { children: [(0, import_jsx_runtime15.jsx)(T2, { size: "s" }), (0, import_jsx_runtime15.jsx)(ke2, { searchResults: l2, isOpen: i2, setIsOpen: a2 })] })] }) });
     }
     return (0, import_jsx_runtime15.jsxs)(import_jsx_runtime15.Fragment, { children: [(0, import_jsx_runtime15.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--question", children: (0, import_jsx_runtime15.jsx)("div", { className: "vrcbChatMessage", children: e2 }) }), (0, import_jsx_runtime15.jsx)(T2, { size: "xs" }), s2] });
   };
-  var Re2 = async ({ filter: e2, queryValue: t2, language: r2, summaryMode: n2, rerank: o2, rerankNumResults: i2, rerankerId: a2, rerankDiversityBias: s2, hybridNumWords: l2, hybridLambdaShort: c2, hybridLambdaLong: d2, summaryNumResults: x2, summaryNumSentences: b2, summaryPromptName: h2, customerId: y2, corpusId: N2, endpoint: g2, apiKey: S2, chat: E2 }) => {
-    let I2 = typeof t2 > "u" || t2.trim().split(" ").length > l2 ? d2 : c2, A2 = N2.split(",").map((B2) => ({ customerId: y2, corpusId: B2, lexicalInterpolationConfig: { lambda: I2 }, metadataFilter: e2 ? `doc.source = '${e2}'` : void 0 })), u2 = { query: [{ query: t2, start: 0, numResults: o2 ? i2 : 10, corpusKey: A2, contextConfig: { sentencesBefore: n2 ? b2 : 2, sentencesAfter: n2 ? b2 : 2, startTag: Y2, endTag: ee2 }, ...n2 ? { summary: [{ responseLang: r2, maxSummarizedResults: x2, summarizerPromptName: h2, chat: { store: true, conversationId: E2 == null ? void 0 : E2.conversationId } }] } : {}, ...o2 ? { rerankingConfig: { rerankerId: a2, ...a2 === 272725718 ? { mmrConfig: { diversityBias: s2 } } : {} } } : {} }] }, R2 = `https://${g2}/v1/query`, P2 = { headers: { "Content-Type": "application/json", Accept: "application/json", "customer-id": y2, "x-api-key": S2, "grpc-timeout": "60S", "x-source": "react-chatbot" } }, f2 = await axios_default.post(R2, u2, P2), M2 = f2.data.responseSet[0].status;
+  var Re2 = async ({ filter: e2, queryValue: t2, language: r2, summaryMode: n2, rerank: o2, rerankNumResults: i2, rerankerId: a2, rerankDiversityBias: s2, hybridNumWords: l2, hybridLambdaShort: c2, hybridLambdaLong: d2, summaryNumResults: g2, summaryNumSentences: b2, summaryPromptName: h2, customerId: y2, corpusId: k2, endpoint: f2, apiKey: S2, chat: R2 }) => {
+    let I2 = typeof t2 > "u" || t2.trim().split(" ").length > l2 ? d2 : c2, _2 = k2.split(",").map((w2) => ({ customerId: y2, corpusId: w2, lexicalInterpolationConfig: { lambda: I2 }, metadataFilter: e2 ? `doc.source = '${e2}'` : void 0 })), u2 = { query: [{ query: t2, start: 0, numResults: o2 ? i2 : 10, corpusKey: _2, contextConfig: { sentencesBefore: n2 ? b2 : 2, sentencesAfter: n2 ? b2 : 2, startTag: Y2, endTag: ee2 }, ...n2 ? { summary: [{ responseLang: r2, maxSummarizedResults: g2, summarizerPromptName: h2, chat: { store: true, conversationId: R2 == null ? void 0 : R2.conversationId } }] } : {}, ...o2 ? { rerankingConfig: { rerankerId: a2, ...a2 === 272725718 ? { mmrConfig: { diversityBias: s2 } } : {} } } : {} }] }, N2 = `https://${f2}/v1/query`, E2 = { headers: { "Content-Type": "application/json", Accept: "application/json", "customer-id": y2, "x-api-key": S2, "grpc-timeout": "60S", "x-source": "react-chatbot" } }, x2 = await axios_default.post(N2, u2, E2), M2 = x2.data.responseSet[0].status;
     if (M2.length > 0 && M2[0].code === "UNAUTHORIZED" && console.log("UNAUTHORIZED access; check your API key and customer ID"), n2) {
-      let B2 = f2.data.responseSet[0].summary[0].status;
-      if (B2.length > 0 && B2[0].code === "BAD_REQUEST")
+      let w2 = x2.data.responseSet[0].summary[0].status;
+      if (w2.length > 0 && w2[0].code === "BAD_REQUEST")
         throw new Error("BAD REQUEST: Too much text for the summarizer to summarize. Please try reducing the number of search results to summarize, or the context of each result by adjusting the 'summary_num_sentences', and 'summary_num_results' parameters respectively.");
-      if (B2.length > 0 && B2[0].code === "NOT_FOUND" && B2[0].statusDetail === "Failed to retrieve summarizer.")
+      if (w2.length > 0 && w2[0].code === "NOT_FOUND" && w2[0].statusDetail === "Failed to retrieve summarizer.")
         throw new Error(`BAD REQUEST: summarizer ${h2} is invalid for this account.`);
     }
-    return f2.data.responseSet[0];
+    return x2.data.responseSet[0];
   };
   var Y2 = "%START_SNIPPET%";
   var ee2 = "%END_SNIPPET%";
@@ -37160,94 +37159,91 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       return;
     let t2 = [], { response: r2, document: n2 } = e2;
     return r2.forEach((o2) => {
-      let { documentIndex: i2, text: a2 } = o2, { pre: s2, post: l2, text: c2 } = Tt(a2), d2 = n2[Number(i2)], { id: x2, metadata: b2 } = d2, { source: h2, url: y2, title: N2, metadata: g2 } = Bt(b2);
-      t2.push({ id: x2, snippet: { pre: s2, text: c2, post: l2 }, source: h2, url: y2, title: N2, metadata: g2 });
+      let { documentIndex: i2, text: a2 } = o2, { pre: s2, post: l2, text: c2 } = Bt(a2), d2 = n2[Number(i2)], { id: g2, metadata: b2 } = d2, { source: h2, url: y2, title: k2, metadata: f2 } = wt(b2);
+      t2.push({ id: g2, snippet: { pre: s2, text: c2, post: l2 }, source: h2, url: y2, title: k2, metadata: f2 });
     }), t2;
   };
-  var Bt = (e2) => {
-    let t2 = Ft(e2);
+  var wt = (e2) => {
+    let t2 = Tt(e2);
     return { source: t2.source, url: t2.url, title: t2.title || "Untitled", metadata: t2 };
   };
-  var Tt = (e2) => {
+  var Bt = (e2) => {
     let [t2, r2] = e2.indexOf(Y2) !== -1 ? e2.split(Y2) : ["", e2], [n2, o2] = r2.indexOf(ee2) !== -1 ? r2.split(ee2) : [r2, ""];
     return { pre: t2, post: o2, text: n2 };
   };
-  var Ft = (e2) => {
+  var Tt = (e2) => {
     let t2 = {};
     return e2.forEach((r2) => {
       t2[r2.name] = r2.value;
     }), t2;
   };
   var Ee2 = (e2, t2, r2, n2 = true) => {
-    let [o2, i2] = (0, import_react11.useState)([]), a2 = (0, import_react11.useRef)(""), [s2, l2] = (0, import_react11.useState)(null), [c2, d2] = (0, import_react11.useState)(false), [x2, b2] = (0, import_react11.useState)(false), [h2, y2] = (0, import_react11.useState)(null), [N2, g2] = (0, import_react11.useState)(false), S2 = (u2) => u2 != null ? u2 : "eng", E2 = async ({ query: u2, isRetry: R2 = false }) => {
+    let [o2, i2] = (0, import_react11.useState)([]), a2 = (0, import_react11.useRef)(""), [s2, l2] = (0, import_react11.useState)(null), [c2, d2] = (0, import_react11.useState)(false), [g2, b2] = (0, import_react11.useState)(false), [h2, y2] = (0, import_react11.useState)(null), [k2, f2] = (0, import_react11.useState)(false), S2 = (u2) => u2 != null ? u2 : "eng", R2 = async ({ query: u2, isRetry: N2 = false }) => {
       if (c2)
         return;
-      R2 && g2(false), l2(null), a2.current = u2, l2({ id: "placeholder-message-id", question: u2, answer: "", results: [] });
-      let P2 = { filter: "", queryValue: u2, rerank: true, rerankNumResults: 10, rerankerId: 272725718, rerankDiversityBias: 0.3, customerId: e2, corpusId: t2.join(","), endpoint: "api.vectara.io", apiKey: r2 };
+      N2 && f2(false), l2(null), a2.current = u2, l2({ id: "placeholder-message-id", question: u2, answer: "", results: [] });
+      let E2 = { filter: "", queryValue: u2, rerank: true, rerankNumResults: 50, rerankerId: 272725718, rerankDiversityBias: 0.3, customerId: e2, corpusId: t2.join(","), endpoint: "api.vectara.io", apiKey: r2 };
       if (d2(true), n2)
         try {
-          await (0, import_stream_query_client.streamQuery)({ ...P2, corpusIds: t2, summaryNumResults: 7, summaryNumSentences: 3, summaryPromptName: "vectara-summary-ext-v1.2.0", language: S2(), chat: { store: true, conversationId: h2 != null ? h2 : void 0 } }, (f2) => A2(f2));
-        } catch (f2) {
-          console.log("Summary error", f2), d2(false), g2(true);
+          await (0, import_stream_query_client.streamQuery)({ ...E2, corpusIds: t2, summaryNumResults: 7, summaryNumSentences: 3, summaryPromptName: "vectara-summary-ext-v1.2.0", language: S2(), chat: { store: true, conversationId: h2 != null ? h2 : void 0 } }, (x2) => _2(x2));
+        } catch (x2) {
+          console.log("Summary error", x2), d2(false), f2(true);
           return;
         }
       else
         try {
-          let f2 = await Re2({ ...P2, hybridNumWords: 2, hybridLambdaLong: 0, hybridLambdaShort: 0.1, summaryMode: true, summaryNumResults: 7, summaryNumSentences: 3, summaryPromptName: "vectara-summary-ext-v1.2.0", language: S2(), chat: { conversationId: h2 != null ? h2 : void 0 } });
-          y2(f2.summary[0].chat.conversationId), i2((M2) => {
-            var B2, V2;
-            return [...M2, { id: f2.summary[0].chat.turnId, question: a2.current, answer: (B2 = f2 == null ? void 0 : f2.summary[0].text) != null ? B2 : "", results: (V2 = Ne2(f2)) != null ? V2 : [] }];
+          let x2 = await Re2({ ...E2, hybridNumWords: 2, hybridLambdaLong: 0, hybridLambdaShort: 0.1, summaryMode: true, summaryNumResults: 7, summaryNumSentences: 3, summaryPromptName: "vectara-summary-ext-v1.2.0", language: S2(), chat: { conversationId: h2 != null ? h2 : void 0 } });
+          y2(x2.summary[0].chat.conversationId), i2((M2) => {
+            var w2, A2;
+            return [...M2, { id: x2.summary[0].chat.turnId, question: a2.current, answer: (w2 = x2 == null ? void 0 : x2.summary[0].text) != null ? w2 : "", results: (A2 = Ne2(x2)) != null ? A2 : [] }];
           }), l2(null), d2(false);
-        } catch (f2) {
-          console.log("Summary error", f2), g2(true), d2(false);
+        } catch (x2) {
+          console.log("Summary error", x2), f2(true), d2(false);
           return;
         }
     }, I2 = () => {
       i2([]), y2(null);
-    }, A2 = ({ references: u2, detail: R2, updatedText: P2, isDone: f2 }) => {
-      var B2;
-      P2 && (b2(true), d2(false));
-      let M2 = (R2 == null ? void 0 : R2.type) === "chat";
-      M2 && y2((B2 = R2.data.conversationId) != null ? B2 : null), f2 ? b2(false) : l2((V2) => {
+    }, _2 = ({ references: u2, detail: N2, updatedText: E2, isDone: x2 }) => {
+      var w2;
+      E2 && (b2(true), d2(false));
+      let M2 = (N2 == null ? void 0 : N2.type) === "chat";
+      M2 && y2((w2 = N2.data.conversationId) != null ? w2 : null), x2 ? b2(false) : l2((A2) => {
         var j2;
-        return { id: M2 ? R2.data.turnId : "", question: a2.current, answer: P2 != null ? P2 : "", results: [...(j2 = V2 == null ? void 0 : V2.results) != null ? j2 : [], ...u2 != null ? u2 : []] };
+        return { id: M2 ? N2.data.turnId : "", question: a2.current, answer: E2 != null ? E2 : "", results: [...(j2 = A2 == null ? void 0 : A2.results) != null ? j2 : [], ...u2 != null ? u2 : []] };
       });
     };
     return (0, import_react11.useEffect)(() => {
-      !x2 && s2 && (i2([...o2, s2]), l2(null));
-    }, [x2]), { sendMessage: E2, activeMessage: s2, messageHistory: o2, isLoading: c2, isStreamingResponse: x2, startNewConversation: I2, hasError: N2 };
+      !g2 && s2 && (i2([...o2, s2]), l2(null));
+    }, [g2]), { sendMessage: R2, activeMessage: s2, messageHistory: o2, isLoading: c2, isStreamingResponse: g2, startNewConversation: I2, hasError: k2 };
   };
   var ze2 = () => (0, import_jsx_runtime16.jsx)(import_jsx_runtime16.Fragment, { children: (0, import_jsx_runtime16.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--thinking", children: (0, import_jsx_runtime16.jsx)("div", { className: "vrcbChatMessage", children: (0, import_jsx_runtime16.jsx)("div", { className: "vrcbLoader" }) }) }) });
-  var Vt = { large: "l", medium: "m" };
-  var _t = () => (0, import_jsx_runtime17.jsxs)(w2, { className: "vrcbEmptyMessages", spacing: "none", alignItems: "center", justifyContent: "center", direction: "column", children: [(0, import_jsx_runtime17.jsx)(be2, { size: "150px", color: "#000000" }), "Ask anything."] });
-  var Ve = ({ customerId: e2, corpusIds: t2, apiKey: r2, title: n2 = "My Chatbot", placeholder: o2 = "Chat with your AI Assistant", inputSize: i2 = "large", emptyStateDisplay: a2 = (0, import_jsx_runtime17.jsx)(_t, {}), isInitiallyOpen: s2, zIndex: l2 = 9999, enableStreaming: c2 }) => {
-    let [d2, x2] = (0, import_react4.useState)(s2 != null ? s2 : false), [b2, h2] = (0, import_react4.useState)(""), { sendMessage: y2, startNewConversation: N2, messageHistory: g2, isLoading: S2, hasError: E2, activeMessage: I2, isStreamingResponse: A2 } = Ee2(e2, t2, r2, c2), u2 = (0, import_react4.useRef)(null), R2 = (0, import_react4.useRef)(true), P2 = () => {
+  var Pt = { large: "l", medium: "m" };
+  var Mt = () => (0, import_jsx_runtime17.jsxs)(B2, { className: "vrcbEmptyMessages", spacing: "none", alignItems: "center", justifyContent: "center", direction: "column", children: [(0, import_jsx_runtime17.jsx)(be2, { size: "150px", color: "#000000" }), "Ask anything."] });
+  var Ve = ({ customerId: e2, corpusIds: t2, apiKey: r2, title: n2 = "My Chatbot", placeholder: o2 = "Chat with your AI Assistant", inputSize: i2 = "large", emptyStateDisplay: a2 = (0, import_jsx_runtime17.jsx)(Mt, {}), isInitiallyOpen: s2, zIndex: l2 = 9999, enableStreaming: c2 }) => {
+    let [d2, g2] = (0, import_react4.useState)(s2 != null ? s2 : false), [b2, h2] = (0, import_react4.useState)(""), { sendMessage: y2, startNewConversation: k2, messageHistory: f2, isLoading: S2, hasError: R2, activeMessage: I2, isStreamingResponse: _2 } = Ee2(e2, t2, r2, c2), u2 = (0, import_react4.useRef)(null), N2 = (0, import_react4.useRef)(true), E2 = () => {
       setTimeout(() => {
-        var F2, z2;
-        R2.current && ((z2 = u2.current) == null || z2.scrollTo({ left: 0, top: (F2 = u2.current) == null ? void 0 : F2.scrollHeight, behavior: "smooth" }));
+        var z2, L2;
+        N2.current && ((L2 = u2.current) == null || L2.scrollTo({ left: 0, top: (z2 = u2.current) == null ? void 0 : z2.scrollHeight, behavior: "smooth" }));
       }, 0);
-    }, f2 = (0, import_react4.useCallback)((0, import_lodash.debounce)(() => {
-      var F2, z2;
-      R2.current && ((z2 = u2.current) == null || z2.scrollTo({ left: 0, top: (F2 = u2.current) == null ? void 0 : F2.scrollHeight, behavior: "smooth" }));
-    }, 100), []);
+    };
     (0, import_react4.useEffect)(() => {
-      s2 !== void 0 && x2(s2);
+      s2 !== void 0 && g2(s2);
     }, [s2]), (0, import_react4.useEffect)(() => {
-      let F2 = u2.current, z2 = () => {
+      let z2 = u2.current, L2 = () => {
         let $2 = u2.current ? Math.abs(u2.current.scrollHeight - u2.current.clientHeight - u2.current.scrollTop) < 50 : true;
-        R2.current = $2;
+        N2.current = $2;
       };
-      return F2 == null || F2.addEventListener("scroll", z2), () => {
-        F2 == null || F2.removeEventListener("scroll", z2);
+      return z2 == null || z2.addEventListener("scroll", L2), () => {
+        z2 == null || z2.removeEventListener("scroll", L2);
       };
     }, []);
-    let M2 = (0, import_react4.useMemo)(() => g2.map((F2, z2) => {
-      let { question: $2, answer: De2, results: He2 } = F2, Ge2 = E2 && z2 === g2.length - 1 ? () => y2({ query: $2, isRetry: true }) : void 0;
-      return (0, import_jsx_runtime17.jsxs)(import_react4.Fragment, { children: [(0, import_jsx_runtime17.jsx)(ge2, { question: $2, answer: De2, searchResults: He2, onRetry: Ge2 }), z2 < g2.length - 1 && (0, import_jsx_runtime17.jsx)(T2, { size: "m" })] }, z2);
-    }), [g2]), B2 = S2 || g2.length > 0 || I2, V2 = S2 || A2 || b2.trim().length === 0, j2 = () => {
-      V2 || (y2({ query: b2 }), h2(""));
-    }, Ae2 = M2.length === 0 ? null : (0, import_jsx_runtime17.jsx)(T2, { size: I2 ? "m" : "l" });
-    return (0, import_react4.useEffect)(P2, [S2]), (0, import_react4.useEffect)(f2, [I2]), d2 ? (0, import_jsx_runtime17.jsxs)("div", { className: "vrcbChatbotWrapper", style: { zIndex: l2 }, children: [(0, import_jsx_runtime17.jsxs)(w2, { className: "vrcbHeader", spacing: "none", direction: "row", children: [(0, import_jsx_runtime17.jsx)(v2, { grow: 1, alignItems: "center", children: n2 }), (0, import_jsx_runtime17.jsx)(v2, { alignItems: "center", children: (0, import_jsx_runtime17.jsx)("button", { onClick: () => x2(false), children: (0, import_jsx_runtime17.jsx)(ve2, { size: "12px", color: "#2c313a" }) }) })] }), (0, import_jsx_runtime17.jsxs)(w2, { direction: "column", spacing: "none", className: "vrcbChatbotInnerWrapper", children: [(0, import_jsx_runtime17.jsx)(v2, { className: "vrcbMessagesWrapper", basis: "fill", children: (0, import_jsx_runtime17.jsx)("div", { ref: u2, children: B2 ? (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [(0, import_jsx_runtime17.jsx)(T2, { size: "xs" }), M2, Ae2, I2 && (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [(0, import_jsx_runtime17.jsx)(ge2, { question: I2.question, answer: I2.answer, searchResults: I2.results, onRetry: E2 ? () => y2({ query: I2.question, isRetry: true }) : void 0, isStreaming: A2 }), (0, import_jsx_runtime17.jsx)(T2, { size: "l" })] }), S2 && (0, import_jsx_runtime17.jsx)(ze2, {}), (0, import_jsx_runtime17.jsx)(w2, { fullWidth: true, justifyContent: "center", children: (0, import_jsx_runtime17.jsx)(v2, { children: (0, import_jsx_runtime17.jsx)(se2, { color: "neutral", size: "xs", onClick: N2, isDisabled: S2, children: "Start new conversation" }) }) }), (0, import_jsx_runtime17.jsx)(T2, { size: "l" })] }) : a2 }) }), (0, import_jsx_runtime17.jsx)(v2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime17.jsx)(Fe2, { placeholder: o2, buttonLabel: "Send", query: b2, setQuery: h2, isButtonDisabled: V2, onSubmit: j2, size: Vt[i2] }) })] })] }) : (0, import_jsx_runtime17.jsx)("button", { className: "vrcbChatbotButton", onClick: () => x2(true), style: { zIndex: l2 }, children: n2 });
+    let x2 = (0, import_react4.useMemo)(() => f2.map((z2, L2) => {
+      let { question: $2, answer: Ae2, results: De2 } = z2, He2 = R2 && L2 === f2.length - 1 ? () => y2({ query: $2, isRetry: true }) : void 0;
+      return (0, import_jsx_runtime17.jsxs)(import_react4.Fragment, { children: [(0, import_jsx_runtime17.jsx)(xe2, { question: $2, answer: Ae2, searchResults: De2, onRetry: He2 }), L2 < f2.length - 1 && (0, import_jsx_runtime17.jsx)(T2, { size: "m" })] }, L2);
+    }), [f2]), M2 = S2 || f2.length > 0 || I2, w2 = S2 || _2 || b2.trim().length === 0, A2 = () => {
+      w2 || (y2({ query: b2 }), h2(""));
+    }, j2 = x2.length === 0 ? null : (0, import_jsx_runtime17.jsx)(T2, { size: I2 ? "m" : "l" });
+    return (0, import_react4.useEffect)(E2, [S2, I2]), d2 ? (0, import_jsx_runtime17.jsxs)("div", { className: "vrcbChatbotWrapper", style: { zIndex: l2 }, children: [(0, import_jsx_runtime17.jsxs)(B2, { className: "vrcbHeader", spacing: "none", direction: "row", children: [(0, import_jsx_runtime17.jsx)(v2, { grow: 1, alignItems: "center", children: n2 }), (0, import_jsx_runtime17.jsx)(v2, { alignItems: "center", children: (0, import_jsx_runtime17.jsx)("button", { onClick: () => g2(false), children: (0, import_jsx_runtime17.jsx)(ve2, { size: "12px", color: "#2c313a" }) }) })] }), (0, import_jsx_runtime17.jsxs)(B2, { direction: "column", spacing: "none", className: "vrcbChatbotInnerWrapper", children: [(0, import_jsx_runtime17.jsx)(v2, { className: "vrcbMessagesWrapper", basis: "fill", children: (0, import_jsx_runtime17.jsx)("div", { ref: u2, children: M2 ? (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [(0, import_jsx_runtime17.jsx)(T2, { size: "xs" }), x2, j2, I2 && (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [(0, import_jsx_runtime17.jsx)(xe2, { question: I2.question, answer: I2.answer, searchResults: I2.results, onRetry: R2 ? () => y2({ query: I2.question, isRetry: true }) : void 0, isStreaming: _2 }), (0, import_jsx_runtime17.jsx)(T2, { size: "l" })] }), S2 && (0, import_jsx_runtime17.jsx)(ze2, {}), (0, import_jsx_runtime17.jsx)(B2, { fullWidth: true, justifyContent: "center", children: (0, import_jsx_runtime17.jsx)(v2, { children: (0, import_jsx_runtime17.jsx)(ae2, { color: "neutral", size: "xs", onClick: k2, isDisabled: S2, children: "Start new conversation" }) }) }), (0, import_jsx_runtime17.jsx)(T2, { size: "l" })] }) : a2 }) }), (0, import_jsx_runtime17.jsx)(v2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime17.jsx)(Fe2, { placeholder: o2, buttonLabel: "Send", query: b2, setQuery: h2, isButtonDisabled: w2, onSubmit: A2, size: Pt[i2] }) })] })] }) : (0, import_jsx_runtime17.jsx)("button", { className: "vrcbChatbotButton", onClick: () => g2(true), style: { zIndex: l2 }, children: n2 });
   };
   var fe2 = `:host {
   all: initial;
@@ -38478,7 +38474,7 @@ fieldset {
 .vuiTextColor--neutral {
   color: #2c313a !important;
 }`;
-  var Ht = ({ customerId: e2, apiKey: t2, corpusIds: r2, title: n2, placeholder: o2, inputSize: i2, emptyStateDisplay: a2, isInitiallyOpen: s2, zIndex: l2, enableStreaming: c2 = true }) => (0, import_jsx_runtime18.jsx)("div", { children: (0, import_jsx_runtime18.jsx)(Ve, { customerId: e2, corpusIds: r2, apiKey: t2, title: n2, placeholder: o2, inputSize: i2, emptyStateDisplay: a2, isInitiallyOpen: s2, zIndex: l2, enableStreaming: c2 }) });
+  var _t = ({ customerId: e2, apiKey: t2, corpusIds: r2, title: n2, placeholder: o2, inputSize: i2, emptyStateDisplay: a2, isInitiallyOpen: s2, zIndex: l2, enableStreaming: c2 = true }) => (0, import_jsx_runtime18.jsx)("div", { children: (0, import_jsx_runtime18.jsx)(Ve, { customerId: e2, corpusIds: r2, apiKey: t2, title: n2, placeholder: o2, inputSize: i2, emptyStateDisplay: a2, isInitiallyOpen: s2, zIndex: l2, enableStreaming: c2 }) });
   var he2 = class extends HTMLElement {
     static get observedAttributes() {
       return ["customerid", "corpusids", "apikey", "title", "placeholder", "inputsize", "isinitiallyopen", "zindex", "emptystatedisplayupdatetime", "enablestreaming"];
@@ -38497,16 +38493,16 @@ fieldset {
       this.emptyStateDisplay = t2, this.setAttribute("emptystatedisplayupdatetime", Date.now().toString());
     }
     connectedCallback() {
-      var x2, b2, h2, y2, N2, g2, S2;
-      let t2 = (x2 = this.getAttribute("customerId")) != null ? x2 : "", r2 = ((b2 = this.getAttribute("corpusIds")) != null ? b2 : "").split(" "), n2 = (h2 = this.getAttribute("apiKey")) != null ? h2 : "", o2 = (y2 = this.getAttribute("title")) != null ? y2 : void 0, i2 = (N2 = this.getAttribute("placeholder")) != null ? N2 : void 0, a2 = (g2 = this.getAttribute("inputSize")) != null ? g2 : void 0, s2 = this.getAttribute("isInitiallyOpen") === "true", l2 = (S2 = this.emptyStateDisplay) != null ? S2 : void 0, c2 = this.getAttribute("zIndex") !== null ? parseInt(this.getAttribute("zIndex")) : void 0, d2 = this.getAttribute("enableStreaming") == "true";
-      _e2.render((0, import_jsx_runtime18.jsx)(import_jsx_runtime18.Fragment, { children: (0, import_jsx_runtime18.jsx)(Ht, { customerId: t2, corpusIds: r2, apiKey: n2, title: o2, placeholder: i2, inputSize: a2, emptyStateDisplay: l2, isInitiallyOpen: s2, zIndex: c2, enableStreaming: d2 }) }), this.mountPoint);
+      var g2, b2, h2, y2, k2, f2, S2;
+      let t2 = (g2 = this.getAttribute("customerId")) != null ? g2 : "", r2 = ((b2 = this.getAttribute("corpusIds")) != null ? b2 : "").split(" "), n2 = (h2 = this.getAttribute("apiKey")) != null ? h2 : "", o2 = (y2 = this.getAttribute("title")) != null ? y2 : void 0, i2 = (k2 = this.getAttribute("placeholder")) != null ? k2 : void 0, a2 = (f2 = this.getAttribute("inputSize")) != null ? f2 : void 0, s2 = this.getAttribute("isInitiallyOpen") === "true", l2 = (S2 = this.emptyStateDisplay) != null ? S2 : void 0, c2 = this.getAttribute("zIndex") !== null ? parseInt(this.getAttribute("zIndex")) : void 0, d2 = this.getAttribute("enableStreaming") == "true";
+      _e2.render((0, import_jsx_runtime18.jsx)(import_jsx_runtime18.Fragment, { children: (0, import_jsx_runtime18.jsx)(_t, { customerId: t2, corpusIds: r2, apiKey: n2, title: o2, placeholder: i2, inputSize: a2, emptyStateDisplay: l2, isInitiallyOpen: s2, zIndex: c2, enableStreaming: d2 }) }), this.mountPoint);
     }
     attributeChangedCallback() {
       this.connectedCallback();
     }
   };
   window.customElements.get("react-chatbot") || window.customElements.define("react-chatbot", he2);
-  var Fo = (e2) => {
+  var wo = (e2) => {
     let t2 = (0, import_react3.useRef)(null);
     (0, import_react3.useEffect)(() => {
       t2.current && e2.emptyStateDisplay && t2.current.setEmptyStateDisplay(e2.emptyStateDisplay);
@@ -38705,9 +38701,9 @@ fieldset {
   function __spreadArrays() {
     for (var s2 = 0, i2 = 0, il = arguments.length; i2 < il; i2++)
       s2 += arguments[i2].length;
-    for (var r2 = Array(s2), k3 = 0, i2 = 0; i2 < il; i2++)
-      for (var a2 = arguments[i2], j2 = 0, jl = a2.length; j2 < jl; j2++, k3++)
-        r2[k3] = a2[j2];
+    for (var r2 = Array(s2), k2 = 0, i2 = 0; i2 < il; i2++)
+      for (var a2 = arguments[i2], j2 = 0, jl = a2.length; j2 < jl; j2++, k2++)
+        r2[k2] = a2[j2];
     return r2;
   }
   function __spreadArray(to, from, pack) {
@@ -39588,7 +39584,7 @@ fieldset {
         }
       }
     }
-    return nodes.filter(function(_3, index) {
+    return nodes.filter(function(_2, index) {
       return !contained.has(index);
     });
   };
@@ -41017,7 +41013,7 @@ fieldset {
     }
     warning(path === "*" || !path.endsWith("*") || path.endsWith("/*"), 'Route path "' + path + '" will be treated as if it were ' + ('"' + path.replace(/\*$/, "/*") + '" because the `*` character must ') + "always follow a `/` in the pattern. To get rid of this warning, " + ('please change the route path to "' + path.replace(/\*$/, "/*") + '".'));
     let params = [];
-    let regexpSource = "^" + path.replace(/\/*\*?$/, "").replace(/^\/*/, "/").replace(/[\\.*+^${}|()[\]]/g, "\\$&").replace(/\/:([\w-]+)(\?)?/g, (_3, paramName, isOptional) => {
+    let regexpSource = "^" + path.replace(/\/*\*?$/, "").replace(/^\/*/, "/").replace(/[\\.*+^${}|()[\]]/g, "\\$&").replace(/\/:([\w-]+)(\?)?/g, (_2, paramName, isOptional) => {
       params.push({
         paramName,
         isOptional: isOptional != null
@@ -43842,7 +43838,7 @@ pre[class*="language-"] {
   // src/ui/components/table/Table.tsx
   var import_react48 = __toESM(require_react());
   var import_classnames60 = __toESM(require_classnames());
-  var import_lodash2 = __toESM(require_lodash());
+  var import_lodash = __toESM(require_lodash());
 
   // src/ui/components/table/TableRowActions.tsx
   var import_react46 = __toESM(require_react());
@@ -47167,7 +47163,7 @@ export const App = () => (
         /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(VuiText, { children: /* @__PURE__ */ (0, import_jsx_runtime99.jsx)("p", { children: "React-Chatbot instantly adds a Vectara-powered chatbot to your React applications." }) }),
         /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(VuiSpacer, { size: "m" }),
         /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(
-          Fo,
+          wo,
           {
             corpusIds: corpusIds.length === 0 ? DEFAULT_CORPUS_IDS : corpusIds,
             customerId: customerId === "" ? DEFAULT_CUSTOMER_ID : customerId,
@@ -47372,16 +47368,6 @@ react/cjs/react-jsx-runtime.development.js:
    * LICENSE file in the root directory of this source tree.
    *)
 
-lodash/lodash.js:
-  (**
-   * @license
-   * Lodash <https://lodash.com/>
-   * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
-   * Released under MIT license <https://lodash.com/license>
-   * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
-   * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-   *)
-
 react-is/cjs/react-is.development.js:
   (** @license React v16.13.1
    * react-is.development.js
@@ -47400,6 +47386,16 @@ prismjs/prism.js:
    * @author Lea Verou <https://lea.verou.me>
    * @namespace
    * @public
+   *)
+
+lodash/lodash.js:
+  (**
+   * @license
+   * Lodash <https://lodash.com/>
+   * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
+   * Released under MIT license <https://lodash.com/license>
+   * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+   * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
    *)
 
 @remix-run/router/dist/router.js:
