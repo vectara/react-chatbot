@@ -4,7 +4,6 @@ const { dependencies, devDependencies, peerDependencies } = require("./package.j
 
 const sharedConfig = {
   bundle: true,
-  entryPoints: ["src/index.tsx", "src/useChat.ts"],
   logLevel: "info",
   treeShaking: true,
   minify: true,
@@ -22,12 +21,15 @@ const sharedConfig = {
 };
 
 module.exports = {
-  esm: {
+  component: {
     ...sharedConfig,
+    entryPoints: ["src/index.tsx"],
     format: "esm"
   },
-  cjs: {
+
+  hook: {
     ...sharedConfig,
+    entryPoints: ["src/useChat.ts"],
     format: "cjs"
   }
 };

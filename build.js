@@ -1,4 +1,5 @@
 const { build } = require("esbuild");
-const { esm } = require("./buildConfigs");
+const { component, hook } = require("./buildConfigs");
 
-build(esm);
+build(component);
+build(hook);
