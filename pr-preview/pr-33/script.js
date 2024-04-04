@@ -37182,7 +37182,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       if (c2)
         return;
       N2 && f2(false), l2(null), a2.current = u2, l2({ id: "placeholder-message-id", question: u2, answer: "", results: [] });
-      let E2 = { filter: "", queryValue: u2, rerank: true, rerankNumResults: 50, rerankerId: 272725718, rerankDiversityBias: 0.3, customerId: e2, corpusId: t2.join(","), endpoint: "api.vectara.io", apiKey: r2 };
+      let E2 = { filter: "", queryValue: u2, rerank: true, rerankNumResults: 7, rerankerId: 272725718, rerankDiversityBias: 0.3, customerId: e2, corpusId: t2.join(","), endpoint: "api.vectara.io", apiKey: r2 };
       if (d2(true), n2)
         try {
           await (0, import_stream_query_client.streamQuery)({ ...E2, corpusIds: t2, summaryNumResults: 7, summaryNumSentences: 3, summaryPromptName: "vectara-summary-ext-v1.2.0", language: S2(), chat: { store: true, conversationId: h2 != null ? h2 : void 0 } }, (x2) => _2(x2));
