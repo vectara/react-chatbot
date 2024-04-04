@@ -68,6 +68,7 @@ import { ReactChatbot } from "@vectara/react-chatbot";
   emptyStateDisplay={<MyEmptyStateDisplayComponent />}
   isInitiallyOpen={false}
   zIndex={ /* (optional) number representing the z-index the component should have */ }
+  enableStreaming={true}
 />;
 ```
 
@@ -109,6 +110,10 @@ Control the size of the input - either "large" (18px) or "medium" (14px)
 
 Customize the z-index of the chatbot widget
 
+##### `enableStreaming` (optional)
+
+Enable streaming responses from the Vectara API. Defaults to true.
+
 ### Use your own views with the useChat hook
 
 Install React-Chatbot:
@@ -124,10 +129,19 @@ import { useChat } from "@vectara/react-chatbot/lib";
 
 /* snip */
 
-const { sendMessage, startNewConversation, messageHistory, isLoading, hasError } = useChat(
+const {
+  sendMessage,
+  activeMessage,
+  messageHistory,
+  isLoading,
+  isStreamingResponse,
+  hasError
+  startNewConversation
+} = useChat(
   "CUSTOMER_ID",
   ["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"],
-  "API_KEY"
+  "API_KEY",
+  true // Enable streaming, false otherwise. Defaults to true.
 );
 ```
 
@@ -138,6 +152,10 @@ The values returned by the hook can be passed on to your custom components as pr
 ##### sendMessage: `async ({ query: string; isRetry?: boolean }) => void;`
 
 This is used to send a message to the chat API. Send `true` for the optional `isRetry` flag to if this is retrying a previously failed message. This allows the internal logic to correctly link the next successful answer to the failed query.
+
+##### activeMessage: `ChatTurn`
+
+This is the current message that is currently awaiting a response, or being responded to, by the API.
 
 ##### startNewConversation: `() => void;`
 
@@ -150,6 +168,10 @@ This is an array of objects representing question and answer pairs from the enti
 ##### isLoading: `boolean`
 
 A boolean value indicating whether or not a chat API request is still pending
+
+##### isStreamingResponse: `boolean`
+
+A boolean value indicating whether or not the API is still streaming a response to the browser. (Only available if streaming is enabled)
 
 ##### hasError: `boolean`
 

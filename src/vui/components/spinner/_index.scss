@@ -1,0 +1,56 @@
+@use "sass:map";
+
+.vuiSpinner {
+  display: inline-block;
+}
+
+// Color
+$color: (
+  accent: (
+    "color": $colorAccent
+  ),
+  primary: (
+    "color": $colorPrimary
+  ),
+  success: (
+    "color": $colorSuccess
+  ),
+  danger: (
+    "color": $colorDanger
+  ),
+  warning: (
+    "color": $colorWarning
+  ),
+  empty: (
+    "color": $colorEmptyShade
+  ),
+  dark: (
+    "color": $colorDarkerShade
+  )
+);
+
+@each $colorName, $colorValue in $color {
+  .vuiSpinner--#{$colorName} {
+    svg path,
+    svg rect {
+      fill: #{map.get($colorValue, "color")};
+    }
+  }
+}
+
+$size: (
+  xs: $sizeXs * 1.75,
+  s: $sizeS * 1.325,
+  m: $sizeM * 1.255,
+  l: $sizeL * 2,
+  xl: $sizeXl * 2,
+  xxl: $sizeXxl * 2,
+  xxxl: $sizeXxl * 2.5
+);
+
+@each $sizeName, $sizeValue in $size {
+  .vuiSpinner--#{$sizeName} {
+    width: $sizeValue;
+    height: $sizeValue;
+  }
+}

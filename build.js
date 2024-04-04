@@ -1,4 +1,5 @@
 const { build } = require("esbuild");
-const { esm } = require("./buildConfigs");
+const { esm, cjs } = require("./buildConfigs");
 
 build(esm);
+build(cjs);

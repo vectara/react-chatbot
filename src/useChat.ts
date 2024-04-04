@@ -1,120 +1,162 @@
 import { useEffect, useRef, useState } from "react";
 import { ChatTurn, SummaryLanguage } from "types";
-import { deserializeSearchResponse } from "utils/deserializeSearchResponse";
+import { streamQuery, StreamUpdate } from "@vectara/stream-query-client";
 import { sendSearchRequest } from "utils/sendSearchRequest";
+import { deserializeSearchResponse } from "utils/deserializeSearchResponse";
 
 /**
- * A hook that exposes a data fetcher, message history, loading state, and error state.
+ * A hook that exposes:
+ *  - sendMessage: a request utility for sending a text string to the query API
+ *  - activeMessage: an object representing a message that the platform has not completed responding to yet
+ *  - messageHistory: an array of previous messages
+ *  - isLoading: a boolean indicating a pending response from the platform
+ *  - isStreamingResponse: a boolean indicating that the platform is currently streaming data to the client
+ *  - startNewConversation: a utility method for clearing the chat context
+ *  - hasError: a boolean indicating an error was encountered while sending a message to the platform
  */
-export const useChat = (customerId: string, corpusIds: string[], apiKey: string) => {
+export const useChat = (customerId: string, corpusIds: string[], apiKey: string, useStreaming: boolean = true) => {
   const [messageHistory, setMessageHistory] = useState<ChatTurn[]>([]);
   const recentQuestion = useRef<string>("");
-  const [recentAnswer, setRecentAnswer] = useState<ChatTurn | null>();
+  const [activeMessage, setActiveMessage] = useState<ChatTurn | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [conversationId, setConversationId] = useState<string | undefined>();
+  const [isStreamingResponse, setIsStreamingResponse] = useState<boolean>(false);
+  const [conversationId, setConversationId] = useState<string | null>(null);
   const [hasError, setHasError] = useState<boolean>(false);
+
   const getLanguage = (languageValue?: string): SummaryLanguage => (languageValue ?? "eng") as SummaryLanguage;
 
   const sendMessage = async ({ query, isRetry = false }: { query: string; isRetry?: boolean }) => {
     if (isLoading) return;
-    recentQuestion.current = query;
-
-    // If this isn't a retry, optimistically add a placeholder entry to the chat history.
-    // We'll replace this later on with a copy from the server.
-    if (!isRetry) {
-      setMessageHistory((messageHistory) => {
-        return [
-          ...messageHistory,
-          {
-            id: "placeholder-message-id",
-            question: query,
-            answer: "",
-            results: []
-          }
-        ];
-      });
-    } else {
+    if (isRetry) {
       setHasError(false);
     }
+
+    setActiveMessage(null);
+    recentQuestion.current = query;
+
+    // Optimistically add a placeholder entry as the active message.
+    // We'll replace this later on with data from the server.
+    setActiveMessage({
+      id: "placeholder-message-id",
+      question: query,
+      answer: "",
+      results: []
+    });
 
     const baseSearchRequestParams = {
       filter: "",
       queryValue: query,
       rerank: true,
-      rerankNumResults: 50,
+      rerankNumResults: 7,
       rerankerId: 272725718,
       rerankDiversityBias: 0.3,
-      hybridNumWords: 2,
-      hybridLambdaLong: 0.0,
-      hybridLambdaShort: 0.1,
       customerId: customerId,
       corpusId: corpusIds.join(","),
       endpoint: "api.vectara.io",
       apiKey: apiKey
     };
 
-    let initialSearchResponse;
-
     setIsLoading(true);
 
-    try {
-      initialSearchResponse = await sendSearchRequest(baseSearchRequestParams);
-    } catch (error) {
-      setHasError(true);
-      setIsLoading(false);
-      return [];
-    }
-
-    if (initialSearchResponse.response.length > 0) {
+    if (useStreaming) {
+      try {
+        await streamQuery(
+          {
+            ...baseSearchRequestParams,
+            corpusIds,
+            summaryNumResults: 7,
+            summaryNumSentences: 3,
+            summaryPromptName: "vectara-summary-ext-v1.2.0",
+            language: getLanguage(),
+            chat: { store: true, conversationId: conversationId ?? undefined }
+          },
+          (update) => onStreamUpdate(update)
+        );
+      } catch (error) {
+        console.log("Summary error", error);
+        setIsLoading(false);
+        setHasError(true);
+        return;
+      }
+    } else {
       try {
         const response = await sendSearchRequest({
           ...baseSearchRequestParams,
+          hybridNumWords: 2,
+          hybridLambdaLong: 0.0,
+          hybridLambdaShort: 0.1,
           summaryMode: true,
           summaryNumResults: 7,
           summaryNumSentences: 3,
           summaryPromptName: "vectara-summary-ext-v1.2.0",
           language: getLanguage(),
-          chat: { conversationId }
+          chat: { conversationId: conversationId ?? undefined }
         });
 
         setConversationId(response.summary[0].chat.conversationId);
-        setRecentAnswer({
-          id: response.summary[0].chat.turnId,
-          question: recentQuestion.current,
-          answer: response?.summary[0].text ?? "",
-          results: deserializeSearchResponse(response) ?? []
-        });
+        setMessageHistory((prev) => [
+          ...prev,
+          {
+            id: response.summary[0].chat.turnId,
+            question: recentQuestion.current,
+            answer: response?.summary[0].text ?? "",
+            results: deserializeSearchResponse(response) ?? []
+          }
+        ]);
+        setActiveMessage(null);
         setIsLoading(false);
       } catch (error) {
         console.log("Summary error", error);
+        setHasError(true);
         setIsLoading(false);
         return;
       }
-    } else {
-      setIsLoading(false);
     }
   };
 
   const startNewConversation = () => {
     setMessageHistory([]);
-    setConversationId(undefined);
+    setConversationId(null);
+  };
+
+  const onStreamUpdate = ({ references, detail, updatedText, isDone }: StreamUpdate) => {
+    if (updatedText) {
+      setIsStreamingResponse(true);
+      setIsLoading(false);
+    }
+
+    const hasChatDetail = detail?.type === "chat";
+
+    if (hasChatDetail) {
+      setConversationId(detail.data.conversationId ?? null);
+    }
+
+    if (isDone) {
+      setIsStreamingResponse(false);
+    } else {
+      setActiveMessage((prev) => ({
+        id: hasChatDetail ? detail.data.turnId : "",
+        question: recentQuestion.current,
+        answer: updatedText ?? "",
+        results: [...(prev?.results ?? []), ...(references ?? [])]
+      }));
+    }
   };
 
   useEffect(() => {
-    if (!recentAnswer) return;
-
-    // Replace most recent entry with an updated version that includes the answer and turn id from the server.
-    // We do this to ensure that our local copy of messages is reflective of what's on the server.
-    const updatedHistory = [...messageHistory.slice(0, -1), recentAnswer];
-
-    setMessageHistory(updatedHistory);
-  }, [recentAnswer]);
+    if (!isStreamingResponse && activeMessage) {
+      setMessageHistory([...messageHistory, activeMessage]);
+      setActiveMessage(null);
+    }
+  }, [isStreamingResponse]);
 
   return {
     sendMessage,
-    startNewConversation,
+    activeMessage,
     messageHistory,
     isLoading,
+    isStreamingResponse,
+    startNewConversation,
     hasError
   };
 };

@@ -30,6 +30,8 @@ type Props = {
   onUpdateInputSize: (inputSize: "large" | "medium") => void;
   emptyMessagesContent: string;
   onUpdateEmptyMessagesContent: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  isStreamingEnabled: boolean;
+  onUpdateIsStreamingEnabled: (isStreamingEnabled: boolean) => void;
 };
 
 export const ConfigurationDrawer = ({
@@ -48,7 +50,9 @@ export const ConfigurationDrawer = ({
   inputSize,
   onUpdateInputSize,
   emptyMessagesContent,
-  onUpdateEmptyMessagesContent
+  onUpdateEmptyMessagesContent,
+  isStreamingEnabled,
+  onUpdateIsStreamingEnabled
 }: Props) => {
   return (
     <VuiDrawer
@@ -110,6 +114,19 @@ export const ConfigurationDrawer = ({
       <VuiFormGroup label="Placeholder text" labelFor="placeholderText">
         <VuiTextInput value={placeholder} onChange={onUpdatePlaceholder} fullWidth />
       </VuiFormGroup>
+
+      <VuiSpacer size="m" />
+
+      <VuiLabel>Enable Streaming</VuiLabel>
+
+      <VuiSpacer size="xs" />
+
+      <VuiToggle
+        onChange={(e) => {
+          onUpdateIsStreamingEnabled(e.target.checked);
+        }}
+        checked={isStreamingEnabled}
+      />
 
       <VuiSpacer size="m" />
 

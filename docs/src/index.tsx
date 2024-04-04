@@ -38,7 +38,8 @@ const generateCodeSnippet = (
   title?: string,
   placeholder?: string,
   inputSize?: string,
-  emptyStateDisplay?: string
+  emptyStateDisplay?: string,
+  isStreamingEnabled?: boolean
 ) => {
   const props = [
     `customerId="${customerId === "" ? "<Your Vectara customer ID>" : customerId}"`,
@@ -63,6 +64,8 @@ const generateCodeSnippet = (
   if (emptyStateDisplay) {
     props.push(`emptyStateDisplay={${emptyStateDisplay.replace(/\n/g, "").replace(/\s+/g, " ")}}`);
   }
+
+  props.push(`enableStreaming={${isStreamingEnabled}}`);
 
   props.push(`isInitiallyOpen={ /* (optional) true, if the component should be initially opened */ }`);
   props.push(`zIndex={ /* (optional) number representing the z-index the component should have */ }`);
@@ -93,6 +96,7 @@ const App = () => {
   const [title, setTitle] = useState<string>(DEFAULT_TITLE);
   const [placeholder, setPlaceholder] = useState<string>(DEFAULT_PLACEHOLDER);
   const [inputSize, setInputSize] = useState<"large" | "medium">("large");
+  const [isStreamingEnabled, setIsStreamingEnabled] = useState<boolean>(true);
   const [emptyStateJsx, setEmptyStateJsx] = useState<string>("");
 
   const onUpdateCorpusIds = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -172,15 +176,11 @@ const App = () => {
             <VuiTitle size="l">
               <h1>Vectara React-Chatbot</h1>
             </VuiTitle>
-
             <VuiSpacer size="m" />
-
             <VuiText>
               <p>React-Chatbot instantly adds a Vectara-powered chatbot to your React applications.</p>
             </VuiText>
-
             <VuiSpacer size="m" />
-
             {/**
              * Here we ensure that if the field is blank, we use the default props that point to the docs page.
              * This ensures that we don't voluntarily display the docs corpus details in the text fields.
@@ -195,10 +195,9 @@ const App = () => {
               emptyStateDisplay={emptyStateJsx === "" ? undefined : <CustomEmptyStateDisplay />}
               isInitiallyOpen={isChatbotForcedOpen}
               zIndex={9}
+              enableStreaming={isStreamingEnabled}
             />
-
             <VuiSpacer size="m" />
-
             <VuiButtonSecondary
               color="primary"
               onClick={() => {
@@ -208,15 +207,11 @@ const App = () => {
             >
               Edit configuration
             </VuiButtonSecondary>
-
             <VuiSpacer size="xxl" />
-
             <VuiTitle size="m">
               <h2>Use it in your code</h2>
             </VuiTitle>
-
             <VuiSpacer size="m" />
-
             <VuiText>
               <p>
                 For help,{" "}
@@ -225,25 +220,26 @@ const App = () => {
                 </VuiLink>
               </p>
             </VuiText>
-
             <VuiSpacer size="m" />
-
             <VuiCode>npm install @vectara/react-chatbot</VuiCode>
-
             <VuiSpacer size="s" />
-
             <VuiCode language="tsx">
-              {generateCodeSnippet(customerId, corpusIds, apiKey, title, placeholder, inputSize, emptyStateJsx)}
+              {generateCodeSnippet(
+                customerId,
+                corpusIds,
+                apiKey,
+                title,
+                placeholder,
+                inputSize,
+                emptyStateJsx,
+                isStreamingEnabled
+              )}
             </VuiCode>
-
             <VuiSpacer size="xxl" />
-
             <VuiTitle size="m">
               <h2>Create your own view</h2>
             </VuiTitle>
-
             <VuiSpacer size="m" />
-
             <VuiText>
               <p>
                 React-Chatbot also exposes a useChat hook that sends and receives data to/from the chat API. This is
@@ -251,18 +247,25 @@ const App = () => {
               </p>
               <p>Check out the example below.</p>
             </VuiText>
-
             <VuiSpacer size="s" />
-
             <VuiCode language="tsx">
               {`
 import { useChat } from "@vectara/react-chatbot/lib";
 
 export const App = () => {
-  const { sendMessage, startNewConversation, messageHistory, isLoading, hasError } = useChat(
+  const {
+    sendMessage,
+    activeMessage,
+    messageHistory,
+    isLoading,
+    isStreamingResponse,
+    hasError
+    startNewConversation
+  } = useChat(
     DEFAULT_CUSTOMER_ID,
     DEFAULT_CORPUS_IDS,
-    DEFAULT_API_KEY
+    DEFAULT_API_KEY,
+    true // Enable streaming, false otherwise. Defaults to true.
   );
 
   /* You can pass the values returned by the hook to your custom components as props, or use them
@@ -270,32 +273,32 @@ export const App = () => {
 };
 `}
             </VuiCode>
-
             <VuiSpacer size="m" />
-
             <VuiText>
               <p></p>
               <p>The hook returns:</p>
               <ul>
                 <li>sendMessage - a function that sends a string to the Chat API endpoint</li>
-                <li>startNewConversation - a function that resets the conversational context</li>
+                <li>activeMessage - the current message awaiting a response from the platform</li>
                 <li>messageHistory - an array of objects representing messages from the entire conversation</li>
                 <li>isLoading - a boolean value indicating whether or not a chat message request is pending</li>
                 <li>
+                  isStreamingResponse - a boolean value indicating whether or not a response is currently being streamed
+                  to the browser (only available if streaming is enabled)
+                </li>
+                <li>
                   hasError - a boolean value indicating whether or not the previous message request returned an error
                 </li>
+                <li>startNewConversation - a function that resets the conversational context</li>
               </ul>
             </VuiText>
-
             <VuiSpacer size="m" />
-
             <VuiText>
               For more details, including return value types,{" "}
               <VuiLink isAnchor href="https://github.com/vectara/react-chatbot">
                 read the docs.
               </VuiLink>
             </VuiText>
-
             <ConfigurationDrawer
               isOpen={isConfigurationDrawerOpen}
               onClose={() => setIsConfigurationDrawerOpen(false)}
@@ -313,6 +316,8 @@ export const App = () => {
               onUpdateInputSize={setInputSize}
               emptyMessagesContent={emptyStateJsx}
               onUpdateEmptyMessagesContent={onUpdateEmptyMessagesContent}
+              isStreamingEnabled={isStreamingEnabled}
+              onUpdateIsStreamingEnabled={setIsStreamingEnabled}
             />
           </div>
         </VuiAppContent>

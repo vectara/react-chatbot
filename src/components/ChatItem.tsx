@@ -1,5 +1,5 @@
 import Markdown from "markdown-to-jsx";
-import { VuiFlexContainer, VuiFlexItem, VuiSpacer, VuiText } from "../vui";
+import { VuiFlexContainer, VuiFlexItem, VuiSpacer, VuiSpinner, VuiText } from "../vui";
 import { applyCitationOrder, extractCitations, reorderCitations } from "../vui/utils/citations";
 import { DeserializedSearchResult } from "../types";
 import { ChatReferences } from "./ChatReferences";
@@ -39,6 +39,7 @@ type Props = {
   answer?: string;
   searchResults?: DeserializedSearchResult[];
   onRetry?: () => void;
+  isStreaming?: boolean;
 };
 
 /**
@@ -46,7 +47,7 @@ type Props = {
  * Defaults to showing just the user-supplied message, if it has not yet been answered.
  * Otherwise, shows both question and answer, plus applicable references.
  */
-export const ChatItem = ({ question, answer, searchResults, onRetry }: Props) => {
+export const ChatItem = ({ question, answer, searchResults, onRetry, isStreaming }: Props) => {
   const [isReferencesOpen, setIsReferencesOpen] = useState(false);
   let content;
 
@@ -97,7 +98,7 @@ export const ChatItem = ({ question, answer, searchResults, onRetry }: Props) =>
             <Markdown
               children={sanitizedAnswer}
               options={{
-                forceBlock: true,
+                forceInline: true,
                 overrides: {
                   SummaryCitation: {
                     component: SummaryCitation
@@ -105,6 +106,12 @@ export const ChatItem = ({ question, answer, searchResults, onRetry }: Props) =>
                 }
               }}
             />
+            {isStreaming && (
+              <span>
+                {" "}
+                <VuiSpinner size="xs" />
+              </span>
+            )}
           </VuiText>
 
           {reorderedSearchResults && reorderedSearchResults.length > 0 && (
