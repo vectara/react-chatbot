@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChatTurn, SummaryLanguage } from "types";
-import { streamQuery, StreamUpdate } from "@vectara/stream-query-client";
+import { ChatDetail, streamQuery, StreamUpdate } from "@vectara/stream-query-client";
 import { sendSearchRequest } from "utils/sendSearchRequest";
 import { deserializeSearchResponse } from "utils/deserializeSearchResponse";
 
@@ -119,23 +119,23 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string,
     setConversationId(null);
   };
 
-  const onStreamUpdate = ({ references, detail, updatedText, isDone }: StreamUpdate) => {
+  const onStreamUpdate = ({ references, details, updatedText, isDone }: StreamUpdate) => {
     if (updatedText) {
       setIsStreamingResponse(true);
       setIsLoading(false);
     }
 
-    const hasChatDetail = detail?.type === "chat";
+    const chatDetail = details?.find((detail) => detail.type === "chat") as ChatDetail | undefined;
 
-    if (hasChatDetail) {
-      setConversationId(detail.data.conversationId ?? null);
+    if (chatDetail) {
+      setConversationId(chatDetail.data.conversationId ?? null);
     }
 
     if (isDone) {
       setIsStreamingResponse(false);
     } else {
       setActiveMessage((prev) => ({
-        id: hasChatDetail ? detail.data.turnId : "",
+        id: chatDetail ? chatDetail.data.turnId : "",
         question: recentQuestion.current,
         answer: updatedText ?? "",
         results: [...(prev?.results ?? []), ...(references ?? [])]

@@ -1,4 +1,3 @@
-import axios from "axios";
 import { SummaryLanguage } from "../types";
 
 type Config = {
@@ -112,25 +111,31 @@ export const sendSearchRequest = async ({
 
   const url = `https://${endpoint}/v1/query`;
   const headers = {
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-      "customer-id": customerId,
-      "x-api-key": apiKey,
-      "grpc-timeout": "60S",
-      "x-source": "react-chatbot"
-    }
+    "Content-Type": "application/json",
+    Accept: "application/json",
+    "customer-id": customerId,
+    "x-api-key": apiKey,
+    "grpc-timeout": "60S",
+    "x-source": "react-chatbot"
   };
+  const response = await fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(body)
+  });
 
-  const result = await axios.post(url, body, headers);
+  if (response.status !== 200) throw new Error(response.status.toString());
+  console.log("### response: ", response);
 
-  const status = result["data"]["responseSet"][0]["status"];
+  const result = await response.json();
+  console.log("### RESULT: ", result);
+  const status = result["responseSet"][0]["status"];
   if (status.length > 0 && status[0]["code"] === "UNAUTHORIZED") {
     console.log("UNAUTHORIZED access; check your API key and customer ID");
   }
 
   if (summaryMode) {
-    const summaryStatus = result["data"]["responseSet"][0]["summary"][0]["status"];
+    const summaryStatus = result["responseSet"][0]["summary"][0]["status"];
     if (summaryStatus.length > 0 && summaryStatus[0]["code"] === "BAD_REQUEST") {
       throw new Error(
         `BAD REQUEST: Too much text for the summarizer to summarize. Please try reducing the number of search results to summarize, or the context of each result by adjusting the 'summary_num_sentences', and 'summary_num_results' parameters respectively.`
@@ -145,7 +150,7 @@ export const sendSearchRequest = async ({
     }
   }
 
-  return result["data"]["responseSet"][0];
+  return result["responseSet"][0];
 };
 
 export const START_TAG = "%START_SNIPPET%";
