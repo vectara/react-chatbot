@@ -441,7 +441,7 @@
                   var init = lazyComponent._init;
                   try {
                     return getComponentName(init(payload));
-                  } catch (x3) {
+                  } catch (x2) {
                     return null;
                   }
                 }
@@ -1249,8 +1249,8 @@
               if (prefix === void 0) {
                 try {
                   throw Error();
-                } catch (x3) {
-                  var match = x3.stack.trim().match(/\n( *(at )?)/);
+                } catch (x2) {
+                  var match = x2.stack.trim().match(/\n( *(at )?)/);
                   prefix = match && match[1] || "";
                 }
               }
@@ -1296,23 +1296,23 @@
                 if (typeof Reflect === "object" && Reflect.construct) {
                   try {
                     Reflect.construct(Fake, []);
-                  } catch (x3) {
-                    control = x3;
+                  } catch (x2) {
+                    control = x2;
                   }
                   Reflect.construct(fn, [], Fake);
                 } else {
                   try {
                     Fake.call();
-                  } catch (x3) {
-                    control = x3;
+                  } catch (x2) {
+                    control = x2;
                   }
                   fn.call(Fake.prototype);
                 }
               } else {
                 try {
                   throw Error();
-                } catch (x3) {
-                  control = x3;
+                } catch (x2) {
+                  control = x2;
                 }
                 fn();
               }
@@ -1404,7 +1404,7 @@
                   var init = lazyComponent._init;
                   try {
                     return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
-                  } catch (x3) {
+                  } catch (x2) {
                   }
                 }
               }
@@ -3377,8 +3377,8 @@
               if (prefix === void 0) {
                 try {
                   throw Error();
-                } catch (x3) {
-                  var match = x3.stack.trim().match(/\n( *(at )?)/);
+                } catch (x2) {
+                  var match = x2.stack.trim().match(/\n( *(at )?)/);
                   prefix = match && match[1] || "";
                 }
               }
@@ -3424,23 +3424,23 @@
                 if (typeof Reflect === "object" && Reflect.construct) {
                   try {
                     Reflect.construct(Fake, []);
-                  } catch (x3) {
-                    control = x3;
+                  } catch (x2) {
+                    control = x2;
                   }
                   Reflect.construct(fn, [], Fake);
                 } else {
                   try {
                     Fake.call();
-                  } catch (x3) {
-                    control = x3;
+                  } catch (x2) {
+                    control = x2;
                   }
                   fn.call(Fake.prototype);
                 }
               } else {
                 try {
                   throw Error();
-                } catch (x3) {
-                  control = x3;
+                } catch (x2) {
+                  control = x2;
                 }
                 fn();
               }
@@ -3537,7 +3537,7 @@
                   var init = lazyComponent._init;
                   try {
                     return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
-                  } catch (x3) {
+                  } catch (x2) {
                   }
                 }
               }
@@ -3579,8 +3579,8 @@
                 node2 = node2.return;
               } while (node2);
               return info;
-            } catch (x3) {
-              return "\nError generating stack: " + x3.message + "\n" + x3.stack;
+            } catch (x2) {
+              return "\nError generating stack: " + x2.message + "\n" + x2.stack;
             }
           }
           function getWrappedName(outerType, innerType, wrapperName) {
@@ -3639,7 +3639,7 @@
                   var init = lazyComponent._init;
                   try {
                     return getComponentName(init(payload));
-                  } catch (x3) {
+                  } catch (x2) {
                     return null;
                   }
                 }
@@ -7995,8 +7995,8 @@
             }
             accumulateEnterLeaveTwoPhaseListeners(dispatchQueue, leave, enter, from, to);
           }
-          function is(x3, y2) {
-            return x3 === y2 && (x3 !== 0 || 1 / x3 === 1 / y2) || x3 !== x3 && y2 !== y2;
+          function is(x2, y2) {
+            return x2 === y2 && (x2 !== 0 || 1 / x2 === 1 / y2) || x2 !== x2 && y2 !== y2;
           }
           var objectIs = typeof Object.is === "function" ? Object.is : is;
           var hasOwnProperty$2 = Object.prototype.hasOwnProperty;
@@ -14944,7 +14944,7 @@
                   var init = lazyComponent._init;
                   try {
                     outerMemoType = init(payload);
-                  } catch (x3) {
+                  } catch (x2) {
                     outerMemoType = null;
                   }
                   var outerPropTypes = outerMemoType && outerMemoType.propTypes;
@@ -21129,7 +21129,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             t3.exports = function(t4) {
               return t4 = t4 || {}, function(e4) {
                 return function(t5, e5) {
-                  const n3 = e5.acorn || i3(234), p3 = o2(n3), c2 = n3.tokTypes, l2 = p3.tokTypes, u2 = n3.tokContexts, d2 = p3.tokContexts.tc_oTag, f2 = p3.tokContexts.tc_cTag, m2 = p3.tokContexts.tc_expr, g2 = n3.isNewLine, x3 = n3.isIdentifierStart, y2 = n3.isIdentifierChar;
+                  const n3 = e5.acorn || i3(234), p3 = o2(n3), c2 = n3.tokTypes, l2 = p3.tokTypes, u2 = n3.tokContexts, d2 = p3.tokContexts.tc_oTag, f2 = p3.tokContexts.tc_cTag, m3 = p3.tokContexts.tc_expr, g2 = n3.isNewLine, x2 = n3.isIdentifierStart, y2 = n3.isIdentifierChar;
                   return class extends e5 {
                     static get acornJsx() {
                       return p3;
@@ -21288,10 +21288,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     }
                     readToken(t6) {
                       let e6 = this.curContext();
-                      if (e6 === m2)
+                      if (e6 === m3)
                         return this.jsx_readToken();
                       if (e6 === d2 || e6 === f2) {
-                        if (x3(t6))
+                        if (x2(t6))
                           return this.jsx_readWord();
                         if (62 == t6)
                           return ++this.pos, this.finishToken(l2.jsxTagEnd);
@@ -21303,7 +21303,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     updateContext(t6) {
                       if (this.type == c2.braceL) {
                         var e6 = this.curContext();
-                        e6 == d2 ? this.context.push(u2.b_expr) : e6 == m2 ? this.context.push(u2.b_tmpl) : super.updateContext(t6), this.exprAllowed = true;
+                        e6 == d2 ? this.context.push(u2.b_expr) : e6 == m3 ? this.context.push(u2.b_tmpl) : super.updateContext(t6), this.exprAllowed = true;
                       } else {
                         if (this.type !== c2.slash || t6 !== l2.jsxTagStart)
                           return super.updateContext(t6);
@@ -21341,14 +21341,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var f2 = function(t5, e5) {
                 void 0 === e5 && (e5 = {}), this.label = t5, this.keyword = e5.keyword, this.beforeExpr = !!e5.beforeExpr, this.startsExpr = !!e5.startsExpr, this.isLoop = !!e5.isLoop, this.isAssign = !!e5.isAssign, this.prefix = !!e5.prefix, this.postfix = !!e5.postfix, this.binop = e5.binop || null, this.updateContext = null;
               };
-              function m2(t5, e5) {
+              function m3(t5, e5) {
                 return new f2(t5, { beforeExpr: true, binop: e5 });
               }
-              var g2 = { beforeExpr: true }, x3 = { startsExpr: true }, y2 = {};
+              var g2 = { beforeExpr: true }, x2 = { startsExpr: true }, y2 = {};
               function v3(t5, e5) {
                 return void 0 === e5 && (e5 = {}), e5.keyword = t5, y2[t5] = new f2(t5, e5);
               }
-              var b2 = { num: new f2("num", x3), regexp: new f2("regexp", x3), string: new f2("string", x3), name: new f2("name", x3), eof: new f2("eof"), bracketL: new f2("[", { beforeExpr: true, startsExpr: true }), bracketR: new f2("]"), braceL: new f2("{", { beforeExpr: true, startsExpr: true }), braceR: new f2("}"), parenL: new f2("(", { beforeExpr: true, startsExpr: true }), parenR: new f2(")"), comma: new f2(",", g2), semi: new f2(";", g2), colon: new f2(":", g2), dot: new f2("."), question: new f2("?", g2), questionDot: new f2("?."), arrow: new f2("=>", g2), template: new f2("template"), invalidTemplate: new f2("invalidTemplate"), ellipsis: new f2("...", g2), backQuote: new f2("`", x3), dollarBraceL: new f2("${", { beforeExpr: true, startsExpr: true }), eq: new f2("=", { beforeExpr: true, isAssign: true }), assign: new f2("_=", { beforeExpr: true, isAssign: true }), incDec: new f2("++/--", { prefix: true, postfix: true, startsExpr: true }), prefix: new f2("!/~", { beforeExpr: true, prefix: true, startsExpr: true }), logicalOR: m2("||", 1), logicalAND: m2("&&", 2), bitwiseOR: m2("|", 3), bitwiseXOR: m2("^", 4), bitwiseAND: m2("&", 5), equality: m2("==/!=/===/!==", 6), relational: m2("</>/<=/>=", 7), bitShift: m2("<</>>/>>>", 8), plusMin: new f2("+/-", { beforeExpr: true, binop: 9, prefix: true, startsExpr: true }), modulo: m2("%", 10), star: m2("*", 10), slash: m2("/", 10), starstar: new f2("**", { beforeExpr: true }), coalesce: m2("??", 1), _break: v3("break"), _case: v3("case", g2), _catch: v3("catch"), _continue: v3("continue"), _debugger: v3("debugger"), _default: v3("default", g2), _do: v3("do", { isLoop: true, beforeExpr: true }), _else: v3("else", g2), _finally: v3("finally"), _for: v3("for", { isLoop: true }), _function: v3("function", x3), _if: v3("if"), _return: v3("return", g2), _switch: v3("switch"), _throw: v3("throw", g2), _try: v3("try"), _var: v3("var"), _const: v3("const"), _while: v3("while", { isLoop: true }), _with: v3("with"), _new: v3("new", { beforeExpr: true, startsExpr: true }), _this: v3("this", x3), _super: v3("super", x3), _class: v3("class", x3), _extends: v3("extends", g2), _export: v3("export"), _import: v3("import", x3), _null: v3("null", x3), _true: v3("true", x3), _false: v3("false", x3), _in: v3("in", { beforeExpr: true, binop: 7 }), _instanceof: v3("instanceof", { beforeExpr: true, binop: 7 }), _typeof: v3("typeof", { beforeExpr: true, prefix: true, startsExpr: true }), _void: v3("void", { beforeExpr: true, prefix: true, startsExpr: true }), _delete: v3("delete", { beforeExpr: true, prefix: true, startsExpr: true }) }, _2 = /\r\n?|\n|\u2028|\u2029/, k2 = new RegExp(_2.source, "g");
+              var b2 = { num: new f2("num", x2), regexp: new f2("regexp", x2), string: new f2("string", x2), name: new f2("name", x2), eof: new f2("eof"), bracketL: new f2("[", { beforeExpr: true, startsExpr: true }), bracketR: new f2("]"), braceL: new f2("{", { beforeExpr: true, startsExpr: true }), braceR: new f2("}"), parenL: new f2("(", { beforeExpr: true, startsExpr: true }), parenR: new f2(")"), comma: new f2(",", g2), semi: new f2(";", g2), colon: new f2(":", g2), dot: new f2("."), question: new f2("?", g2), questionDot: new f2("?."), arrow: new f2("=>", g2), template: new f2("template"), invalidTemplate: new f2("invalidTemplate"), ellipsis: new f2("...", g2), backQuote: new f2("`", x2), dollarBraceL: new f2("${", { beforeExpr: true, startsExpr: true }), eq: new f2("=", { beforeExpr: true, isAssign: true }), assign: new f2("_=", { beforeExpr: true, isAssign: true }), incDec: new f2("++/--", { prefix: true, postfix: true, startsExpr: true }), prefix: new f2("!/~", { beforeExpr: true, prefix: true, startsExpr: true }), logicalOR: m3("||", 1), logicalAND: m3("&&", 2), bitwiseOR: m3("|", 3), bitwiseXOR: m3("^", 4), bitwiseAND: m3("&", 5), equality: m3("==/!=/===/!==", 6), relational: m3("</>/<=/>=", 7), bitShift: m3("<</>>/>>>", 8), plusMin: new f2("+/-", { beforeExpr: true, binop: 9, prefix: true, startsExpr: true }), modulo: m3("%", 10), star: m3("*", 10), slash: m3("/", 10), starstar: new f2("**", { beforeExpr: true }), coalesce: m3("??", 1), _break: v3("break"), _case: v3("case", g2), _catch: v3("catch"), _continue: v3("continue"), _debugger: v3("debugger"), _default: v3("default", g2), _do: v3("do", { isLoop: true, beforeExpr: true }), _else: v3("else", g2), _finally: v3("finally"), _for: v3("for", { isLoop: true }), _function: v3("function", x2), _if: v3("if"), _return: v3("return", g2), _switch: v3("switch"), _throw: v3("throw", g2), _try: v3("try"), _var: v3("var"), _const: v3("const"), _while: v3("while", { isLoop: true }), _with: v3("with"), _new: v3("new", { beforeExpr: true, startsExpr: true }), _this: v3("this", x2), _super: v3("super", x2), _class: v3("class", x2), _extends: v3("extends", g2), _export: v3("export"), _import: v3("import", x2), _null: v3("null", x2), _true: v3("true", x2), _false: v3("false", x2), _in: v3("in", { beforeExpr: true, binop: 7 }), _instanceof: v3("instanceof", { beforeExpr: true, binop: 7 }), _typeof: v3("typeof", { beforeExpr: true, prefix: true, startsExpr: true }), _void: v3("void", { beforeExpr: true, prefix: true, startsExpr: true }), _delete: v3("delete", { beforeExpr: true, prefix: true, startsExpr: true }) }, _2 = /\r\n?|\n|\u2028|\u2029/, k2 = new RegExp(_2.source, "g");
               function S3(t5, e5) {
                 return 10 === t5 || 13 === t5 || !e5 && (8232 === t5 || 8233 === t5);
               }
@@ -22090,8 +22090,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   if (r3 && !o3 && !this.canInsertSemicolon() && this.eat(b2.arrow))
                     return this.checkPatternErrors(c3, false), this.checkYieldAwaitInDefaultParams(), this.awaitIdentPos > 0 && this.raise(this.awaitIdentPos, "Cannot use 'await' as identifier inside an async function"), this.yieldPos = l3, this.awaitPos = u3, this.awaitIdentPos = d3, this.parseArrowExpression(this.startNodeAt(e5, i4), f3, true);
                   this.checkExpressionErrors(c3, true), this.yieldPos = l3 || this.yieldPos, this.awaitPos = u3 || this.awaitPos, this.awaitIdentPos = d3 || this.awaitIdentPos;
-                  var m3 = this.startNodeAt(e5, i4);
-                  m3.callee = t5, m3.arguments = f3, n3 && (m3.optional = o3), t5 = this.finishNode(m3, "CallExpression");
+                  var m4 = this.startNodeAt(e5, i4);
+                  m4.callee = t5, m4.arguments = f3, n3 && (m4.optional = o3), t5 = this.finishNode(m4, "CallExpression");
                 } else if (this.type === b2.backQuote) {
                   (o3 || a3) && this.raise(this.start, "Optional chaining cannot appear in the tag of tagged template expressions");
                   var g3 = this.startNodeAt(e5, i4);
@@ -22192,10 +22192,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     }
                     h3.push(this.parseMaybeAssign(false, l3, this.parseParenItem));
                   }
-                  var f3 = this.start, m3 = this.startLoc;
+                  var f3 = this.start, m4 = this.startLoc;
                   if (this.expect(b2.parenR), t5 && !this.canInsertSemicolon() && this.eat(b2.arrow))
                     return this.checkPatternErrors(l3, false), this.checkYieldAwaitInDefaultParams(), this.yieldPos = u3, this.awaitPos = d3, this.parseParenArrowList(i4, s4, h3);
-                  h3.length && !c3 || this.unexpected(this.lastTokStart), a3 && this.unexpected(a3), this.checkExpressionErrors(l3, true), this.yieldPos = u3 || this.yieldPos, this.awaitPos = d3 || this.awaitPos, h3.length > 1 ? ((e5 = this.startNodeAt(n3, o3)).expressions = h3, this.finishNodeAt(e5, "SequenceExpression", f3, m3)) : e5 = h3[0];
+                  h3.length && !c3 || this.unexpected(this.lastTokStart), a3 && this.unexpected(a3), this.checkExpressionErrors(l3, true), this.yieldPos = u3 || this.yieldPos, this.awaitPos = d3 || this.awaitPos, h3.length > 1 ? ((e5 = this.startNodeAt(n3, o3)).expressions = h3, this.finishNodeAt(e5, "SequenceExpression", f3, m4)) : e5 = h3[0];
                 } else
                   e5 = this.parseParenExpression();
                 if (this.options.preserveParens) {
@@ -23265,20 +23265,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             function f2(t4, e4) {
               return t4 < 65 ? 36 === t4 : t4 < 91 || (t4 < 97 ? 95 === t4 : t4 < 123 || (t4 <= 65535 ? t4 >= 170 && p3.test(String.fromCharCode(t4)) : false !== e4 && d2(t4, l2)));
             }
-            function m2(t4, e4) {
+            function m3(t4, e4) {
               return t4 < 48 ? 36 === t4 : t4 < 58 || !(t4 < 65) && (t4 < 91 || (t4 < 97 ? 95 === t4 : t4 < 123 || (t4 <= 65535 ? t4 >= 170 && c2.test(String.fromCharCode(t4)) : false !== e4 && (d2(t4, l2) || d2(t4, u2)))));
             }
             var g2 = function(t4, e4) {
               void 0 === e4 && (e4 = {}), this.label = t4, this.keyword = e4.keyword, this.beforeExpr = !!e4.beforeExpr, this.startsExpr = !!e4.startsExpr, this.isLoop = !!e4.isLoop, this.isAssign = !!e4.isAssign, this.prefix = !!e4.prefix, this.postfix = !!e4.postfix, this.binop = e4.binop || null, this.updateContext = null;
             };
-            function x3(t4, e4) {
+            function x2(t4, e4) {
               return new g2(t4, { beforeExpr: true, binop: e4 });
             }
             var y2 = { beforeExpr: true }, v3 = { startsExpr: true }, b2 = {};
             function _2(t4, e4) {
               return void 0 === e4 && (e4 = {}), e4.keyword = t4, b2[t4] = new g2(t4, e4);
             }
-            var k2 = { num: new g2("num", v3), regexp: new g2("regexp", v3), string: new g2("string", v3), name: new g2("name", v3), eof: new g2("eof"), bracketL: new g2("[", { beforeExpr: true, startsExpr: true }), bracketR: new g2("]"), braceL: new g2("{", { beforeExpr: true, startsExpr: true }), braceR: new g2("}"), parenL: new g2("(", { beforeExpr: true, startsExpr: true }), parenR: new g2(")"), comma: new g2(",", y2), semi: new g2(";", y2), colon: new g2(":", y2), dot: new g2("."), question: new g2("?", y2), questionDot: new g2("?."), arrow: new g2("=>", y2), template: new g2("template"), invalidTemplate: new g2("invalidTemplate"), ellipsis: new g2("...", y2), backQuote: new g2("`", v3), dollarBraceL: new g2("${", { beforeExpr: true, startsExpr: true }), eq: new g2("=", { beforeExpr: true, isAssign: true }), assign: new g2("_=", { beforeExpr: true, isAssign: true }), incDec: new g2("++/--", { prefix: true, postfix: true, startsExpr: true }), prefix: new g2("!/~", { beforeExpr: true, prefix: true, startsExpr: true }), logicalOR: x3("||", 1), logicalAND: x3("&&", 2), bitwiseOR: x3("|", 3), bitwiseXOR: x3("^", 4), bitwiseAND: x3("&", 5), equality: x3("==/!=/===/!==", 6), relational: x3("</>/<=/>=", 7), bitShift: x3("<</>>/>>>", 8), plusMin: new g2("+/-", { beforeExpr: true, binop: 9, prefix: true, startsExpr: true }), modulo: x3("%", 10), star: x3("*", 10), slash: x3("/", 10), starstar: new g2("**", { beforeExpr: true }), coalesce: x3("??", 1), _break: _2("break"), _case: _2("case", y2), _catch: _2("catch"), _continue: _2("continue"), _debugger: _2("debugger"), _default: _2("default", y2), _do: _2("do", { isLoop: true, beforeExpr: true }), _else: _2("else", y2), _finally: _2("finally"), _for: _2("for", { isLoop: true }), _function: _2("function", v3), _if: _2("if"), _return: _2("return", y2), _switch: _2("switch"), _throw: _2("throw", y2), _try: _2("try"), _var: _2("var"), _const: _2("const"), _while: _2("while", { isLoop: true }), _with: _2("with"), _new: _2("new", { beforeExpr: true, startsExpr: true }), _this: _2("this", v3), _super: _2("super", v3), _class: _2("class", v3), _extends: _2("extends", y2), _export: _2("export"), _import: _2("import", v3), _null: _2("null", v3), _true: _2("true", v3), _false: _2("false", v3), _in: _2("in", { beforeExpr: true, binop: 7 }), _instanceof: _2("instanceof", { beforeExpr: true, binop: 7 }), _typeof: _2("typeof", { beforeExpr: true, prefix: true, startsExpr: true }), _void: _2("void", { beforeExpr: true, prefix: true, startsExpr: true }), _delete: _2("delete", { beforeExpr: true, prefix: true, startsExpr: true }) }, S3 = /\r\n?|\n|\u2028|\u2029/, w2 = new RegExp(S3.source, "g");
+            var k2 = { num: new g2("num", v3), regexp: new g2("regexp", v3), string: new g2("string", v3), name: new g2("name", v3), eof: new g2("eof"), bracketL: new g2("[", { beforeExpr: true, startsExpr: true }), bracketR: new g2("]"), braceL: new g2("{", { beforeExpr: true, startsExpr: true }), braceR: new g2("}"), parenL: new g2("(", { beforeExpr: true, startsExpr: true }), parenR: new g2(")"), comma: new g2(",", y2), semi: new g2(";", y2), colon: new g2(":", y2), dot: new g2("."), question: new g2("?", y2), questionDot: new g2("?."), arrow: new g2("=>", y2), template: new g2("template"), invalidTemplate: new g2("invalidTemplate"), ellipsis: new g2("...", y2), backQuote: new g2("`", v3), dollarBraceL: new g2("${", { beforeExpr: true, startsExpr: true }), eq: new g2("=", { beforeExpr: true, isAssign: true }), assign: new g2("_=", { beforeExpr: true, isAssign: true }), incDec: new g2("++/--", { prefix: true, postfix: true, startsExpr: true }), prefix: new g2("!/~", { beforeExpr: true, prefix: true, startsExpr: true }), logicalOR: x2("||", 1), logicalAND: x2("&&", 2), bitwiseOR: x2("|", 3), bitwiseXOR: x2("^", 4), bitwiseAND: x2("&", 5), equality: x2("==/!=/===/!==", 6), relational: x2("</>/<=/>=", 7), bitShift: x2("<</>>/>>>", 8), plusMin: new g2("+/-", { beforeExpr: true, binop: 9, prefix: true, startsExpr: true }), modulo: x2("%", 10), star: x2("*", 10), slash: x2("/", 10), starstar: new g2("**", { beforeExpr: true }), coalesce: x2("??", 1), _break: _2("break"), _case: _2("case", y2), _catch: _2("catch"), _continue: _2("continue"), _debugger: _2("debugger"), _default: _2("default", y2), _do: _2("do", { isLoop: true, beforeExpr: true }), _else: _2("else", y2), _finally: _2("finally"), _for: _2("for", { isLoop: true }), _function: _2("function", v3), _if: _2("if"), _return: _2("return", y2), _switch: _2("switch"), _throw: _2("throw", y2), _try: _2("try"), _var: _2("var"), _const: _2("const"), _while: _2("while", { isLoop: true }), _with: _2("with"), _new: _2("new", { beforeExpr: true, startsExpr: true }), _this: _2("this", v3), _super: _2("super", v3), _class: _2("class", v3), _extends: _2("extends", y2), _export: _2("export"), _import: _2("import", v3), _null: _2("null", v3), _true: _2("true", v3), _false: _2("false", v3), _in: _2("in", { beforeExpr: true, binop: 7 }), _instanceof: _2("instanceof", { beforeExpr: true, binop: 7 }), _typeof: _2("typeof", { beforeExpr: true, prefix: true, startsExpr: true }), _void: _2("void", { beforeExpr: true, prefix: true, startsExpr: true }), _delete: _2("delete", { beforeExpr: true, prefix: true, startsExpr: true }) }, S3 = /\r\n?|\n|\u2028|\u2029/, w2 = new RegExp(S3.source, "g");
             function C2(t4, e4) {
               return 10 === t4 || 13 === t4 || !e4 && (8232 === t4 || 8233 === t4);
             }
@@ -23453,7 +23453,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               if (123 === s4)
                 return true;
               if (f2(s4, true)) {
-                for (var r3 = i4 + 1; m2(this.input.charCodeAt(r3), true); )
+                for (var r3 = i4 + 1; m3(this.input.charCodeAt(r3), true); )
                   ++r3;
                 var a3 = this.input.slice(i4, r3);
                 if (!n2.test(a3))
@@ -23465,7 +23465,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 return false;
               A2.lastIndex = this.pos;
               var t4 = A2.exec(this.input), e4 = this.pos + t4[0].length;
-              return !(S3.test(this.input.slice(this.pos, e4)) || "function" !== this.input.slice(e4, e4 + 8) || e4 + 8 !== this.input.length && m2(this.input.charAt(e4 + 8)));
+              return !(S3.test(this.input.slice(this.pos, e4)) || "function" !== this.input.slice(e4, e4 + 8) || e4 + 8 !== this.input.length && m3(this.input.charAt(e4 + 8)));
             }, z2.parseStatement = function(t4, e4, i4) {
               var s4, r3 = this.type, a3 = this.startNode();
               switch (this.isLet(t4) && (r3 = k2._var, s4 = "let"), r3) {
@@ -24023,8 +24023,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 if (r3 && !o3 && !this.canInsertSemicolon() && this.eat(k2.arrow))
                   return this.checkPatternErrors(c3, false), this.checkYieldAwaitInDefaultParams(), this.awaitIdentPos > 0 && this.raise(this.awaitIdentPos, "Cannot use 'await' as identifier inside an async function"), this.yieldPos = l3, this.awaitPos = u3, this.awaitIdentPos = d3, this.parseArrowExpression(this.startNodeAt(e4, i4), f3, true);
                 this.checkExpressionErrors(c3, true), this.yieldPos = l3 || this.yieldPos, this.awaitPos = u3 || this.awaitPos, this.awaitIdentPos = d3 || this.awaitIdentPos;
-                var m3 = this.startNodeAt(e4, i4);
-                m3.callee = t4, m3.arguments = f3, n3 && (m3.optional = o3), t4 = this.finishNode(m3, "CallExpression");
+                var m4 = this.startNodeAt(e4, i4);
+                m4.callee = t4, m4.arguments = f3, n3 && (m4.optional = o3), t4 = this.finishNode(m4, "CallExpression");
               } else if (this.type === k2.backQuote) {
                 (o3 || a3) && this.raise(this.start, "Optional chaining cannot appear in the tag of tagged template expressions");
                 var g3 = this.startNodeAt(e4, i4);
@@ -24125,10 +24125,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   }
                   h3.push(this.parseMaybeAssign(false, l3, this.parseParenItem));
                 }
-                var f3 = this.start, m3 = this.startLoc;
+                var f3 = this.start, m4 = this.startLoc;
                 if (this.expect(k2.parenR), t4 && !this.canInsertSemicolon() && this.eat(k2.arrow))
                   return this.checkPatternErrors(l3, false), this.checkYieldAwaitInDefaultParams(), this.yieldPos = u3, this.awaitPos = d3, this.parseParenArrowList(i4, s4, h3);
-                h3.length && !c3 || this.unexpected(this.lastTokStart), a3 && this.unexpected(a3), this.checkExpressionErrors(l3, true), this.yieldPos = u3 || this.yieldPos, this.awaitPos = d3 || this.awaitPos, h3.length > 1 ? ((e4 = this.startNodeAt(n3, o3)).expressions = h3, this.finishNodeAt(e4, "SequenceExpression", f3, m3)) : e4 = h3[0];
+                h3.length && !c3 || this.unexpected(this.lastTokStart), a3 && this.unexpected(a3), this.checkExpressionErrors(l3, true), this.yieldPos = u3 || this.yieldPos, this.awaitPos = d3 || this.awaitPos, h3.length > 1 ? ((e4 = this.startNodeAt(n3, o3)).expressions = h3, this.finishNodeAt(e4, "SequenceExpression", f3, m4)) : e4 = h3[0];
               } else
                 e4 = this.parseParenExpression();
               if (this.options.preserveParens) {
@@ -24574,7 +24574,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, bt.regexp_eatRegExpIdentifierPart = function(t4) {
               var e4 = t4.pos, i4 = this.options.ecmaVersion >= 11, s4 = t4.current(i4);
               return t4.advance(i4), 92 === s4 && this.regexp_eatRegExpUnicodeEscapeSequence(t4, i4) && (s4 = t4.lastIntValue), function(t5) {
-                return m2(t5, true) || 36 === t5 || 95 === t5 || 8204 === t5 || 8205 === t5;
+                return m3(t5, true) || 36 === t5 || 95 === t5 || 8204 === t5 || 8205 === t5;
               }(s4) ? (t4.lastIntValue = s4, true) : (t4.pos = e4, false);
             }, bt.regexp_eatAtomEscape = function(t4) {
               return !!(this.regexp_eatBackReference(t4) || this.regexp_eatCharacterClassEscape(t4) || this.regexp_eatCharacterEscape(t4) || t4.switchN && this.regexp_eatKGroupName(t4)) || (t4.switchU && (99 === t4.current() && t4.raise("Invalid unicode escape"), t4.raise("Invalid escape")), false);
@@ -25155,7 +25155,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               this.containsEsc = false;
               for (var t4 = "", e4 = true, i4 = this.pos, s4 = this.options.ecmaVersion >= 6; this.pos < this.input.length; ) {
                 var r3 = this.fullCharCodeAtPos();
-                if (m2(r3, s4))
+                if (m3(r3, s4))
                   this.pos += r3 <= 65535 ? 1 : 2;
                 else {
                   if (92 !== r3)
@@ -25164,7 +25164,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   var a3 = this.pos;
                   117 !== this.input.charCodeAt(++this.pos) && this.invalidStringToken(this.pos, "Expecting Unicode escape sequence \\uXXXX"), ++this.pos;
                   var n3 = this.readCodePoint();
-                  (e4 ? f2 : m2)(n3, s4) || this.invalidStringToken(a3, "Invalid Unicode escape"), t4 += Ot(n3), i4 = this.pos;
+                  (e4 ? f2 : m3)(n3, s4) || this.invalidStringToken(a3, "Invalid Unicode escape"), t4 += Ot(n3), i4 = this.pos;
                 }
                 e4 = false;
               }
@@ -25173,7 +25173,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var t4 = this.readWord1(), e4 = k2.name;
               return this.keywords.test(t4) && (e4 = b2[t4]), this.finishToken(e4, t4);
             };
-            F3.acorn = { Parser: F3, version: "8.0.5", defaultOptions: B3, Position: O3, SourceLocation: R2, getLineInfo: M2, Node: rt2, TokenType: g2, tokTypes: k2, keywordTypes: b2, TokContext: ot2, tokContexts: ht2, isIdentifierChar: m2, isIdentifierStart: f2, Token: Nt2, isNewLine: C2, lineBreak: S3, lineBreakG: w2, nonASCIIwhitespace: E2 };
+            F3.acorn = { Parser: F3, version: "8.0.5", defaultOptions: B3, Position: O3, SourceLocation: R2, getLineInfo: M2, Node: rt2, TokenType: g2, tokTypes: k2, keywordTypes: b2, TokContext: ot2, tokContexts: ht2, isIdentifierChar: m3, isIdentifierStart: f2, Token: Nt2, isNewLine: C2, lineBreak: S3, lineBreakG: w2, nonASCIIwhitespace: E2 };
             var Mt2 = i3(977), Bt2 = i3.n(Mt2), Dt = i3(297), jt = i3.n(Dt);
             const Ut = { class: "className", for: "htmlFor", maxlength: "maxLength", colspan: "colSpan", rowspan: "rowSpan" };
             var Ft2 = ["area", "base", "br", "col", "embed", "hr", "img", "input", "keygen", "link", "menuitem", "meta", "param", "source", "track", "wbr"], qt = ["table", "tbody", "tfoot", "thead", "tr"];
@@ -25550,28 +25550,28 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     }
                   var d3 = me3(ue3(t5), xe3).call(ue3(t5), o3, i5);
                   try {
-                    var f3 = d3, m3 = h3.reduce(function(t6, e6) {
+                    var f3 = d3, m4 = h3.reduce(function(t6, e6) {
                       return f3 = t6, t6[e6];
                     }, d3);
-                    return "function" == typeof m3 ? m3.bind(f3) : m3;
+                    return "function" == typeof m4 ? m4.bind(f3) : m4;
                   } catch (e6) {
-                    var g3, x4 = (null === (g3 = o3) || void 0 === g3 ? void 0 : g3.name) || "unknown";
-                    t5.props.onError(new Error("Unable to parse ".concat(x4, '["').concat(h3.join('"]["'), '"]}')));
+                    var g3, x3 = (null === (g3 = o3) || void 0 === g3 ? void 0 : g3.name) || "unknown";
+                    t5.props.onError(new Error("Unable to parse ".concat(x3, '["').concat(h3.join('"]["'), '"]}')));
                   }
                 } }), ve3.set(ue3(t5), { writable: true, value: function(e5) {
                   return "JSXIdentifier" === e5.type ? e5.name : "".concat(me3(ue3(t5), ve3).call(ue3(t5), e5.object), ".").concat(me3(ue3(t5), ve3).call(ue3(t5), e5.property));
                 } }), be3.set(ue3(t5), { writable: true, value: function(e5, i5) {
                   var s5 = t5.props, r4 = s5.allowUnknownElements, a4 = s5.components, n3 = s5.componentsOnly, o3 = s5.onError, h3 = e5.children, p4 = void 0 === h3 ? [] : h3, c3 = "JSXElement" === e5.type ? e5.openingElement : e5.openingFragment, l3 = c3.attributes, u3 = void 0 === l3 ? [] : l3, d3 = "JSXElement" === e5.type ? me3(ue3(t5), ve3).call(ue3(t5), c3.name) : "", f3 = (t5.props.blacklistedAttrs || []).map(function(t6) {
                     return t6 instanceof RegExp ? t6 : new RegExp(t6, "i");
-                  }), m3 = (t5.props.blacklistedTags || []).map(function(t6) {
+                  }), m4 = (t5.props.blacklistedTags || []).map(function(t6) {
                     return t6.trim().toLowerCase();
                   }).filter(Boolean);
                   if (/^(html|head|body)$/i.test(d3))
                     return p4.map(function(e6) {
                       return me3(ue3(t5), be3).call(ue3(t5), e6, i5);
                     });
-                  var g3, x4 = d3.trim().toLowerCase();
-                  if (-1 !== m3.indexOf(x4))
+                  var g3, x3 = d3.trim().toLowerCase();
+                  if (-1 !== m4.indexOf(x3))
                     return o3(new Error("The tag <".concat(d3, "> is blacklisted, and will not be rendered."))), null;
                   if ("" !== d3 && !te3(a4, d3)) {
                     if (n3)
@@ -25868,7 +25868,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   var init = lazyComponent._init;
                   try {
                     return getComponentName(init(payload));
-                  } catch (x3) {
+                  } catch (x2) {
                     return null;
                   }
                 }
@@ -25961,8 +25961,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               if (prefix === void 0) {
                 try {
                   throw Error();
-                } catch (x3) {
-                  var match = x3.stack.trim().match(/\n( *(at )?)/);
+                } catch (x2) {
+                  var match = x2.stack.trim().match(/\n( *(at )?)/);
                   prefix = match && match[1] || "";
                 }
               }
@@ -26008,23 +26008,23 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 if (typeof Reflect === "object" && Reflect.construct) {
                   try {
                     Reflect.construct(Fake, []);
-                  } catch (x3) {
-                    control = x3;
+                  } catch (x2) {
+                    control = x2;
                   }
                   Reflect.construct(fn, [], Fake);
                 } else {
                   try {
                     Fake.call();
-                  } catch (x3) {
-                    control = x3;
+                  } catch (x2) {
+                    control = x2;
                   }
                   fn.call(Fake.prototype);
                 }
               } else {
                 try {
                   throw Error();
-                } catch (x3) {
-                  control = x3;
+                } catch (x2) {
+                  control = x2;
                 }
                 fn();
               }
@@ -26116,7 +26116,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   var init = lazyComponent._init;
                   try {
                     return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
-                  } catch (x3) {
+                  } catch (x2) {
                   }
                 }
               }
@@ -26598,8 +26598,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           return;
         let t2 = [], { response: r2, document: a2 } = e2;
         return r2.forEach((s2) => {
-          let { documentIndex: c2, text: f2 } = s2, { pre: C2, post: l2, text: m2 } = q3(f2), d2 = a2[Number(c2)], { id: p3, metadata: y2 } = d2, { source: S3, url: h2, title: g2, metadata: x3 } = O3(y2);
-          t2.push({ id: p3, snippet: { pre: C2, text: m2, post: l2 }, source: S3, url: h2, title: g2, metadata: x3 });
+          let { documentIndex: c2, text: f2 } = s2, { pre: C2, post: l2, text: m3 } = q3(f2), d2 = a2[Number(c2)], { id: p3, metadata: y2 } = d2, { source: S3, url: h2, title: g2, metadata: x2 } = O3(y2);
+          t2.push({ id: p3, snippet: { pre: C2, text: m3, post: l2 }, source: S3, url: h2, title: g2, metadata: x2 });
         }), t2;
       };
       var O3 = (e2) => {
@@ -26618,10 +26618,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       };
       var j2 = "api.vectara.io";
       var B3 = async (e2, t2) => {
-        var m2, d2, p3, y2, S3, h2, g2, x3;
-        let r2 = { "x-api-key": e2.apiKey, "customer-id": e2.customerId, "Content-Type": "application/json" }, a2 = (m2 = e2.lambda) != null ? m2 : 0.025;
+        var m3, d2, p3, y2, S3, h2, g2, x2;
+        let r2 = { "x-api-key": e2.apiKey, "customer-id": e2.customerId, "Content-Type": "application/json" }, a2 = (m3 = e2.lambda) != null ? m3 : 0.025;
         a2 > 1 ? a2 = 1 : a2 < 0 && (a2 = 0);
-        let s2 = e2.corpusIds.map((D3) => ({ customerId: e2.customerId, corpusId: D3, lexicalInterpolationConfig: { lambda: a2 }, metadataFilter: e2.filter ? `doc.source = '${e2.filter}'` : void 0 })), c2 = e2.rerank ? { rerankingConfig: { rerankerId: e2.rerankerId, ...e2.rerankerId === 272725718 ? { mmrConfig: { diversityBias: e2.rerankDiversityBias } } : {} } } : {}, f2 = JSON.stringify({ query: [{ query: e2.queryValue, start: 0, numResults: e2.rerank ? e2.rerankNumResults : 10, corpusKey: s2, contextConfig: { sentencesBefore: (d2 = e2.summaryNumSentences) != null ? d2 : 2, sentencesAfter: (p3 = e2.summaryNumSentences) != null ? p3 : 2, startTag: u2, endTag: i2 }, summary: [{ responseLang: e2.language, maxSummarizedResults: e2.summaryNumResults, summarizerPromptName: e2.summaryPromptName, factualConsistencyScore: (y2 = e2.enableFactualConsistencyScore) != null ? y2 : false, chat: { store: (h2 = (S3 = e2.chat) == null ? void 0 : S3.store) != null ? h2 : false, conversationId: (g2 = e2.chat) == null ? void 0 : g2.conversationId } }], ...c2 }] }), C2 = await J3(r2, f2, (x3 = e2.endpoint) != null ? x3 : j2), l2 = "";
+        let s2 = e2.corpusIds.map((D3) => ({ customerId: e2.customerId, corpusId: D3, lexicalInterpolationConfig: { lambda: a2 }, metadataFilter: e2.filter ? `doc.source = '${e2.filter}'` : void 0 })), c2 = e2.rerank ? { rerankingConfig: { rerankerId: e2.rerankerId, ...e2.rerankerId === 272725718 ? { mmrConfig: { diversityBias: e2.rerankDiversityBias } } : {} } } : {}, f2 = JSON.stringify({ query: [{ query: e2.queryValue, start: 0, numResults: e2.rerank ? e2.rerankNumResults : 10, corpusKey: s2, contextConfig: { sentencesBefore: (d2 = e2.summaryNumSentences) != null ? d2 : 2, sentencesAfter: (p3 = e2.summaryNumSentences) != null ? p3 : 2, startTag: u2, endTag: i2 }, summary: [{ responseLang: e2.language, maxSummarizedResults: e2.summaryNumResults, summarizerPromptName: e2.summaryPromptName, factualConsistencyScore: (y2 = e2.enableFactualConsistencyScore) != null ? y2 : false, chat: { store: (h2 = (S3 = e2.chat) == null ? void 0 : S3.store) != null ? h2 : false, conversationId: (g2 = e2.chat) == null ? void 0 : g2.conversationId } }], ...c2 }] }), C2 = await J3(r2, f2, (x2 = e2.endpoint) != null ? x2 : j2), l2 = "";
         for await (let D3 of C2)
           try {
             D3.split(`
@@ -26863,7 +26863,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           }
           try {
             throw new Error(message);
-          } catch (x3) {
+          } catch (x2) {
           }
         };
       }
@@ -26931,7 +26931,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           }
           try {
             throw new Error(message);
-          } catch (x3) {
+          } catch (x2) {
           }
         };
       }
@@ -26969,11 +26969,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           shape: createShapeTypeChecker,
           exact: createStrictShapeTypeChecker
         };
-        function is(x3, y2) {
-          if (x3 === y2) {
-            return x3 !== 0 || 1 / x3 === 1 / y2;
+        function is(x2, y2) {
+          if (x2 === y2) {
+            return x2 !== 0 || 1 / x2 === 1 / y2;
           } else {
-            return x3 !== x3 && y2 !== y2;
+            return x2 !== x2 && y2 !== y2;
           }
         }
         function PropTypeError(message, data) {
@@ -27535,9 +27535,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
              */
             getLanguage: function(element) {
               while (element) {
-                var m2 = lang.exec(element.className);
-                if (m2) {
-                  return m2[1].toLowerCase();
+                var m3 = lang.exec(element.className);
+                if (m3) {
+                  return m3[1].toLowerCase();
                 }
                 element = element.parentElement;
               }
@@ -28720,11 +28720,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           xhr.send(null);
         }
         function parseRange(range) {
-          var m2 = /^\s*(\d+)\s*(?:(,)\s*(?:(\d+)\s*)?)?$/.exec(range || "");
-          if (m2) {
-            var start = Number(m2[1]);
-            var comma = m2[2];
-            var end = m2[3];
+          var m3 = /^\s*(\d+)\s*(?:(,)\s*(?:(\d+)\s*)?)?$/.exec(range || "");
+          if (m3) {
+            var start = Number(m3[1]);
+            var comma = m3[2];
+            var end = m3[3];
             if (!comma) {
               return [start, start];
             }
@@ -34627,8 +34627,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         const p3 = r3.inline, f2 = r3.list;
         let h2;
         r3.list = true, u2 ? (r3.inline = false, h2 = s2.replace(le, "\n\n")) : (r3.inline = true, h2 = s2.replace(le, ""));
-        const m2 = n3(h2, r3);
-        return r3.inline = p3, r3.list = f2, m2;
+        const m3 = n3(h2, r3);
+        return r3.inline = p3, r3.list = f2, m3;
       }), ordered: t2, start: o2 };
     }, render: (n3, t3, r3) => e2(n3.ordered ? "ol" : "ul", { key: r3.key, start: "20" === n3.type ? n3.start : void 0 }, n3.items.map(function(n4, i3) {
       return e2("li", { key: i3 }, t3(n4, r3));
@@ -34892,14 +34892,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var Ge2 = { column: "vuiFlexContainer--directionColumn", columnReverse: "vuiFlexContainer--directionColumnReverse", row: "vuiFlexContainer--directionRow", rowReverse: "vuiFlexContainer--directionRowReverse" };
   var qe = { center: "vuiFlexContainer--justifyContentCenter", end: "vuiFlexContainer--justifyContentEnd", start: "vuiFlexContainer--justifyContentStart", spaceAround: "vuiFlexContainer--justifyContentSpaceAround", spaceBetween: "vuiFlexContainer--justifyContentSpaceBetween", spaceEvenly: "vuiFlexContainer--justifyContentSpaceEvenly" };
   var We2 = { none: "vuiFlexContainer--spacingNone", xxs: "vuiFlexContainer--spacingXxs", xs: "vuiFlexContainer--spacingXs", s: "vuiFlexContainer--spacingS", m: "vuiFlexContainer--spacingM", l: "vuiFlexContainer--spacingL", xl: "vuiFlexContainer--spacingXl", xxl: "vuiFlexContainer--spacingXxl" };
-  var B2 = ({ children: e2, alignItems: t2 = "stretch", direction: r2 = "row", justifyContent: n2 = "start", spacing: i2 = "m", wrap: o2, className: s2, fullWidth: a2, ...l2 }) => {
-    let c2 = (0, import_classnames.default)(s2, "vuiFlexContainer", Oe2[t2], Ge2[r2], qe[n2], We2[i2], { "vuiFlexContainer--wrap": o2, "vuiFlexContainer--fullWidth": a2 });
+  var B2 = ({ children: e2, alignItems: t2 = "stretch", direction: r2 = "row", justifyContent: n2 = "start", spacing: i2 = "m", wrap: o2, className: a2, fullWidth: s2, ...l2 }) => {
+    let c2 = (0, import_classnames.default)(a2, "vuiFlexContainer", Oe2[t2], Ge2[r2], qe[n2], We2[i2], { "vuiFlexContainer--wrap": o2, "vuiFlexContainer--fullWidth": s2 });
     return (0, import_jsx_runtime.jsx)("div", { className: c2, ...l2, children: e2 });
   };
   var Xe = { baseline: "vuiFlexItem--alignItemsBaseline", center: "vuiFlexItem--alignItemsCenter", end: "vuiFlexItem--alignItemsEnd", start: "vuiFlexItem--alignItemsStart", stretch: "vuiFlexItem--alignItemsStretch" };
-  var v2 = ({ children: e2, grow: t2, shrink: r2, basis: n2 = "auto", alignItems: i2 = "stretch", className: o2, truncate: s2, ...a2 }) => {
-    let l2 = t2 === false, c2 = r2 === false, d2 = (0, import_classnames2.default)("vuiFlexItem", `vuiFlexItem--${n2}`, Xe[i2], { [`vuiFlexItem--flexGrow${t2}`]: typeof t2 == "number", "vuiFlexItem--flexGrowNone": l2, [`vuiFlexItem--flexShrink${r2}`]: typeof r2 == "number", "vuiFlexItem--flexShrinkNone": c2, "vuiFlexItem--truncate": s2 }, o2);
-    return (0, import_jsx_runtime2.jsx)("div", { className: d2, ...a2, children: e2 });
+  var v2 = ({ children: e2, grow: t2, shrink: r2, basis: n2 = "auto", alignItems: i2 = "stretch", className: o2, truncate: a2, ...s2 }) => {
+    let l2 = t2 === false, c2 = r2 === false, d2 = (0, import_classnames2.default)("vuiFlexItem", `vuiFlexItem--${n2}`, Xe[i2], { [`vuiFlexItem--flexGrow${t2}`]: typeof t2 == "number", "vuiFlexItem--flexGrowNone": l2, [`vuiFlexItem--flexShrink${r2}`]: typeof r2 == "number", "vuiFlexItem--flexShrinkNone": c2, "vuiFlexItem--truncate": a2 }, o2);
+    return (0, import_jsx_runtime2.jsx)("div", { className: d2, ...s2, children: e2 });
   };
   var $2 = 0;
   var te2 = () => ($2 === Number.MAX_SAFE_INTEGER ? $2 = 0 : $2++, $2.toString());
@@ -34909,38 +34909,38 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var ye2 = () => (0, import_jsx_runtime3.jsxs)("svg", { width: "10px", height: "10px", viewBox: "-5.5 0 26 26", version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", fill: "#2c313a", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsx)("title", { children: "chevron-right" }), " ", (0, import_jsx_runtime3.jsx)("desc", { children: "Created with Sketch Beta." }), " ", (0, import_jsx_runtime3.jsx)("defs", { children: " " }), " ", (0, import_jsx_runtime3.jsxs)("g", { id: "Page-1", stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { id: "Icon-Set-Filled", transform: "translate(-474.000000, -1196.000000)", fill: "#2c313a", children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M488.404,1207.36 L477.637,1197.6 C476.806,1196.76 475.459,1196.76 474.629,1197.6 C473.798,1198.43 473.798,1199.77 474.629,1200.6 L483.885,1209 L474.629,1217.4 C473.798,1218.23 473.798,1219.57 474.629,1220.4 C475.459,1221.24 476.806,1221.24 477.637,1220.4 L488.404,1210.64 C488.854,1210.19 489.052,1209.59 489.015,1209 C489.052,1208.41 488.854,1207.81 488.404,1207.36", id: "chevron-right", children: " " }), " "] }), " "] }), " "] })] });
   var Ce2 = () => (0, import_jsx_runtime3.jsxs)("svg", { width: "10px", height: "10px", viewBox: "0 -4.5 24 24", version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", fill: "#2c313a", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsx)("title", { children: "chevron-down" }), " ", (0, import_jsx_runtime3.jsx)("desc", { children: "Created with Sketch Beta." }), " ", (0, import_jsx_runtime3.jsx)("defs", { children: " " }), " ", (0, import_jsx_runtime3.jsxs)("g", { id: "Page-1", stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { id: "Icon-Set-Filled", transform: "translate(-574.000000, -1201.000000)", fill: "#2c313a", children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M597.405,1201.63 C596.576,1200.8 595.23,1200.8 594.401,1201.63 L586.016,1210.88 L577.63,1201.63 C576.801,1200.8 575.455,1200.8 574.626,1201.63 C573.797,1202.46 573.797,1203.81 574.626,1204.64 L584.381,1215.4 C584.83,1215.85 585.429,1216.05 586.016,1216.01 C586.603,1216.05 587.201,1215.85 587.65,1215.4 L597.405,1204.64 C598.234,1203.81 598.234,1202.46 597.405,1201.63", id: "chevron-down", children: " " }), " "] }), " "] }), " "] })] });
   var re2 = ({ header: e2, children: t2, isOpen: r2, setIsOpen: n2, ...i2 }) => {
-    let o2 = te2(), s2 = te2();
-    return (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [(0, import_jsx_runtime4.jsx)("button", { className: "vuiAccordionHeader", onClick: () => n2(!r2), id: o2, "aria-controls": s2, "aria-expanded": r2, ...i2, children: (0, import_jsx_runtime4.jsxs)(B2, { alignItems: "center", justifyContent: "start", spacing: "xxs", children: [(0, import_jsx_runtime4.jsx)(v2, { grow: false, shrink: false, children: r2 ? (0, import_jsx_runtime4.jsx)(Ce2, {}) : (0, import_jsx_runtime4.jsx)(ye2, {}) }), (0, import_jsx_runtime4.jsx)(v2, { className: "vuiAccordionHeader__title", grow: 1, children: e2 })] }) }), r2 && (0, import_jsx_runtime4.jsx)("div", { id: s2, "aria-labelledby": o2, children: t2 })] });
+    let o2 = te2(), a2 = te2();
+    return (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [(0, import_jsx_runtime4.jsx)("button", { className: "vuiAccordionHeader", onClick: () => n2(!r2), id: o2, "aria-controls": a2, "aria-expanded": r2, ...i2, children: (0, import_jsx_runtime4.jsxs)(B2, { alignItems: "center", justifyContent: "start", spacing: "xxs", children: [(0, import_jsx_runtime4.jsx)(v2, { grow: false, shrink: false, children: r2 ? (0, import_jsx_runtime4.jsx)(Ce2, {}) : (0, import_jsx_runtime4.jsx)(ye2, {}) }), (0, import_jsx_runtime4.jsx)(v2, { className: "vuiAccordionHeader__title", grow: 1, children: e2 })] }) }), r2 && (0, import_jsx_runtime4.jsx)("div", { id: a2, "aria-labelledby": o2, children: t2 })] });
   };
   var we2 = (e2) => e2 ? { rel: "noopener", referrerpolicy: "no-referrer-when-downgrade" } : { rel: "noopener" };
   var Qe = { left: "vuiBaseButton--alignLeft", center: "vuiBaseButton--alignCenter", right: "vuiBaseButton--alignRight" };
-  var X2 = (0, import_react6.forwardRef)(({ children: e2, icon: t2, iconSide: r2 = "left", align: n2 = "center", className: i2, size: o2, fullWidth: s2, onClick: a2, tabIndex: l2, isInert: c2, isDisabled: d2, href: g2, target: b2, track: h2, htmlFor: y2, isSubmit: R2, ...f2 }, w2) => {
-    let N2 = (0, import_classnames4.default)("vuiBaseButton", i2, `vuiBaseButton--${o2}`, Qe[n2], { "vuiBaseButton-isInert": c2, "vuiBaseButton-isDisabled": d2, "vuiBaseButton--fullWidth": s2, [`vuiBaseButton--${r2}`]: !!t2 && !!e2 }), I2 = t2 ? (0, import_jsx_runtime5.jsx)("span", { className: "vuiBaseButtonIconContainer", children: t2 }) : null;
+  var X2 = (0, import_react6.forwardRef)(({ children: e2, icon: t2, iconSide: r2 = "left", align: n2 = "center", className: i2, size: o2, fullWidth: a2, onClick: s2, tabIndex: l2, isInert: c2, isDisabled: d2, href: g2, target: b2, track: h2, htmlFor: y2, isSubmit: k2, ...f2 }, w2) => {
+    let R2 = (0, import_classnames4.default)("vuiBaseButton", i2, `vuiBaseButton--${o2}`, Qe[n2], { "vuiBaseButton-isInert": c2, "vuiBaseButton-isDisabled": d2, "vuiBaseButton--fullWidth": a2, [`vuiBaseButton--${r2}`]: !!t2 && !!e2 }), I2 = t2 ? (0, import_jsx_runtime5.jsx)("span", { className: "vuiBaseButtonIconContainer", children: t2 }) : null;
     if (y2)
-      return (0, import_jsx_runtime5.jsxs)("label", { htmlFor: y2, className: N2, tabIndex: l2, ...f2, children: [I2, e2] });
+      return (0, import_jsx_runtime5.jsxs)("label", { htmlFor: y2, className: R2, tabIndex: l2, ...f2, children: [I2, e2] });
     if (g2) {
-      let u2 = (0, import_classnames4.default)("vuiBaseButtonLinkWrapper", { "vuiBaseButtonLinkWrapper--fullWidth": s2 });
-      return (0, import_jsx_runtime5.jsx)("a", { className: u2, href: g2, onClick: a2, target: b2, tabIndex: l2, ...f2, ...we2(h2), children: (0, import_jsx_runtime5.jsxs)("button", { className: N2, tabIndex: -1, ref: w2, children: [I2, e2] }) });
+      let u2 = (0, import_classnames4.default)("vuiBaseButtonLinkWrapper", { "vuiBaseButtonLinkWrapper--fullWidth": a2 });
+      return (0, import_jsx_runtime5.jsx)("a", { className: u2, href: g2, onClick: s2, target: b2, tabIndex: l2, ...f2, ...we2(h2), children: (0, import_jsx_runtime5.jsxs)("button", { className: R2, tabIndex: -1, ref: w2, children: [I2, e2] }) });
     }
-    let A2 = { onClick: a2, tabIndex: l2, type: R2 ? "submit" : "button", ...f2 };
-    return (0, import_jsx_runtime5.jsxs)("button", { className: N2, ...A2, ref: w2, children: [I2, e2] });
+    let A2 = { onClick: s2, tabIndex: l2, type: k2 ? "submit" : "button", ...f2 };
+    return (0, import_jsx_runtime5.jsxs)("button", { className: R2, ...A2, ref: w2, children: [I2, e2] });
   });
   var Ye = { xs: "xs", s: "xs", m: "s", l: "m" };
   var et = { accent: "accent", primary: "primary", success: "success", danger: "danger", warning: "warning", neutral: "neutral", subdued: "subdued" };
   var U2 = (e2, t2, r2, n2 = et) => e2 ? (0, import_react7.cloneElement)(e2, { size: t2 ? Ye[t2] : "s", color: e2.props.color === "inherit" ? n2[r2] : e2.props.color }) : null;
   var nt = { accent: "empty", primary: "empty", success: "empty", danger: "empty", warning: "empty", neutral: "neutral", subdued: "subdued" };
-  var ie2 = (0, import_react5.forwardRef)(({ children: e2, icon: t2, color: r2, size: n2 = "m", className: i2, isSelected: o2, isDisabled: s2, ...a2 }, l2) => {
+  var ie2 = (0, import_react5.forwardRef)(({ children: e2, icon: t2, color: r2, size: n2 = "m", className: i2, isSelected: o2, isDisabled: a2, ...s2 }, l2) => {
     let c2 = (0, import_classnames3.default)(i2, "vuiButtonPrimary", `vuiButtonPrimary--${r2}`, { "vuiButtonPrimary-isSelected": o2 }), d2 = U2(t2, n2, r2, nt);
-    return (0, import_jsx_runtime6.jsx)(X2, { ref: l2, className: c2, icon: d2, size: n2, isDisabled: s2, ...a2, children: e2 });
+    return (0, import_jsx_runtime6.jsx)(X2, { ref: l2, className: c2, icon: d2, size: n2, isDisabled: a2, ...s2, children: e2 });
   });
-  var at = { accent: "accent", primary: "primary", success: "success", danger: "danger", warning: "warning", neutral: "neutral", subdued: "subdued" };
-  var oe2 = (0, import_react8.forwardRef)(({ children: e2, icon: t2, color: r2, size: n2 = "m", className: i2, isSelected: o2, isDisabled: s2, solid: a2, ...l2 }, c2) => {
-    let d2 = (0, import_classnames5.default)(i2, "vuiButtonSecondary", `vuiButtonSecondary--${r2}`, { "vuiButtonSecondary-isSelected": o2, "vuiButtonSecondary--solid": a2 }), g2 = U2(t2, n2, r2, at);
-    return (0, import_jsx_runtime7.jsx)(X2, { ref: c2, className: d2, icon: g2, size: n2, isDisabled: s2, ...l2, children: e2 });
+  var st = { accent: "accent", primary: "primary", success: "success", danger: "danger", warning: "warning", neutral: "neutral", subdued: "subdued" };
+  var oe2 = (0, import_react8.forwardRef)(({ children: e2, icon: t2, color: r2, size: n2 = "m", className: i2, isSelected: o2, isDisabled: a2, solid: s2, ...l2 }, c2) => {
+    let d2 = (0, import_classnames5.default)(i2, "vuiButtonSecondary", `vuiButtonSecondary--${r2}`, { "vuiButtonSecondary-isSelected": o2, "vuiButtonSecondary--solid": s2 }), g2 = U2(t2, n2, r2, st);
+    return (0, import_jsx_runtime7.jsx)(X2, { ref: c2, className: d2, icon: g2, size: n2, isDisabled: a2, ...l2, children: e2 });
   });
-  var ae2 = ({ className: e2, size: t2 = "m", value: r2, onChange: n2, placeholder: i2, autoFocus: o2, onSubmit: s2, ...a2 }) => {
+  var se2 = ({ className: e2, size: t2 = "m", value: r2, onChange: n2, placeholder: i2, autoFocus: o2, onSubmit: a2, ...s2 }) => {
     let l2 = (0, import_classnames6.default)("vuiSearchInput", `vuiSearchInput--${t2}`, e2);
-    return (0, import_jsx_runtime8.jsx)("form", { onSubmit: s2, children: (0, import_jsx_runtime8.jsx)("div", { className: l2, children: (0, import_jsx_runtime8.jsx)("input", { className: "vuiSearchInput__input", type: "text", autoComplete: "off", autoCapitalize: "off", spellCheck: "false", autoFocus: o2, placeholder: i2, value: r2, onChange: n2, ...a2 }) }) });
+    return (0, import_jsx_runtime8.jsx)("form", { onSubmit: a2, children: (0, import_jsx_runtime8.jsx)("div", { className: l2, children: (0, import_jsx_runtime8.jsx)("input", { className: "vuiSearchInput__input", type: "text", autoComplete: "off", autoCapitalize: "off", spellCheck: "false", autoFocus: o2, placeholder: i2, value: r2, onChange: n2, ...s2 }) }) });
   };
   var T2 = ({ size: e2 = "m" }) => {
     let t2 = (0, import_classnames7.default)("vuiSpacer", { [`vuiSpacer--${e2}`]: e2 });
@@ -34951,28 +34951,28 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     let r2 = (0, import_classnames8.default)("vuiSpinner", mt[t2], `vuiSpinner--${e2}`);
     return (0, import_jsx_runtime10.jsx)("span", { className: r2, children: (0, import_jsx_runtime10.jsx)("svg", { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 50 50", children: (0, import_jsx_runtime10.jsx)("path", { fill: "#000", d: "M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z", children: (0, import_jsx_runtime10.jsx)("animateTransform", { attributeType: "xml", attributeName: "transform", type: "rotate", from: "0 25 25", to: "360 25 25", dur: "0.6s", repeatCount: "indefinite" }) }) }) });
   };
-  var G2 = ({ children: e2, className: t2, id: r2, truncate: n2, size: i2 = "s", align: o2, ...s2 }) => {
-    let a2 = (0, import_classnames9.default)("vuiText", `vuiText--${i2}`, { [`vuiText--${o2}`]: o2, "vuiText--truncate": n2 }, t2);
-    return (0, import_jsx_runtime11.jsx)("div", { className: a2, id: r2, ...s2, children: e2 });
+  var G2 = ({ children: e2, className: t2, id: r2, truncate: n2, size: i2 = "s", align: o2, ...a2 }) => {
+    let s2 = (0, import_classnames9.default)("vuiText", `vuiText--${i2}`, { [`vuiText--${o2}`]: o2, "vuiText--truncate": n2 }, t2);
+    return (0, import_jsx_runtime11.jsx)("div", { className: s2, id: r2, ...a2, children: e2 });
   };
-  var Te2 = ({ query: e2, setQuery: t2, onSubmit: r2, placeholder: n2, buttonLabel: i2, isButtonDisabled: o2, size: s2 }) => (0, import_jsx_runtime13.jsxs)(B2, { alignItems: "center", spacing: "xs", children: [(0, import_jsx_runtime13.jsx)(v2, { grow: 1, children: (0, import_jsx_runtime13.jsx)(ae2, { size: s2, value: e2, onChange: (c2) => {
+  var Te2 = ({ query: e2, setQuery: t2, onSubmit: r2, placeholder: n2, buttonLabel: i2, isButtonDisabled: o2, size: a2 }) => (0, import_jsx_runtime13.jsxs)(B2, { alignItems: "center", spacing: "xs", children: [(0, import_jsx_runtime13.jsx)(v2, { grow: 1, children: (0, import_jsx_runtime13.jsx)(se2, { size: a2, value: e2, onChange: (c2) => {
     t2(c2.target.value);
   }, onSubmit: (c2) => {
     c2.preventDefault(), r2();
-  }, placeholder: n2, autoFocus: true, "data-testid": "queryInput" }) }), (0, import_jsx_runtime13.jsx)(v2, { children: (0, import_jsx_runtime13.jsx)(ie2, { color: "primary", size: s2, onClick: () => r2(), isDisabled: o2, children: i2 }) })] });
+  }, placeholder: n2, autoFocus: true, "data-testid": "queryInput" }) }), (0, import_jsx_runtime13.jsx)(v2, { children: (0, import_jsx_runtime13.jsx)(ie2, { color: "primary", size: a2, onClick: () => r2(), isDisabled: o2, children: i2 }) })] });
   var ce2 = (e2, t2) => {
     let r2 = [], n2 = t2.match(/\[\d+\]/g) || [], i2 = /* @__PURE__ */ new Set();
     for (let o2 = 0; o2 < n2.length; o2++) {
-      let s2 = n2[o2], a2 = Number(s2.slice(1, s2.length - 1)) - 1;
-      i2.has(a2) || (r2.push(e2[a2]), i2.add(a2));
+      let a2 = n2[o2], s2 = Number(a2.slice(1, a2.length - 1)) - 1;
+      i2.has(s2) || (r2.push(e2[s2]), i2.add(s2));
     }
     return r2;
   };
   var ue2 = (e2) => {
     let t2 = /\[(\d+(,*\s*\d*)*)\]/g, r2 = [], n2, i2 = 0;
     for (; (n2 = t2.exec(e2)) !== null; ) {
-      let s2 = n2.index, a2 = n2[1], l2 = e2.slice(i2, s2).trim();
-      r2.push({ text: l2, references: a2.replace(/\s/g, "").split(",") }), i2 = s2 + n2[0].length;
+      let a2 = n2.index, s2 = n2[1], l2 = e2.slice(i2, a2).trim();
+      r2.push({ text: l2, references: s2.replace(/\s/g, "").split(",") }), i2 = a2 + n2[0].length;
     }
     let o2 = e2.slice(i2).trim();
     return o2.length > 0 && r2.push({ text: o2 }), r2;
@@ -34990,35 +34990,32 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     let r2 = (i2 = e2 == null ? void 0 : e2.snippet) == null ? void 0 : i2.text, n2 = e2 == null ? void 0 : e2.url;
     return (0, import_jsx_runtime14.jsx)(import_jsx_runtime14.Fragment, { children: (0, import_jsx_runtime14.jsxs)(B2, { alignItems: "start", spacing: "s", children: [(0, import_jsx_runtime14.jsx)(v2, { grow: false, shrink: false, children: (0, import_jsx_runtime14.jsx)("div", { className: "vrcbChatSearchResultPosition", children: t2 + 1 }) }), (0, import_jsx_runtime14.jsx)(v2, { grow: 1, shrink: 1, children: (0, import_jsx_runtime14.jsx)(G2, { size: "s", children: (0, import_jsx_runtime14.jsx)("p", { children: n2 ? (0, import_jsx_runtime14.jsx)("a", { href: n2, target: "_blank", children: r2 }) : r2 }) }) })] }) });
   };
-  var Ct = (e2) => ue2(e2).reduce((r2, { text: n2, references: i2 }) => (i2 ? (r2.push(n2), n2 && n2[n2.length - 1] !== " " && r2.push(" "), i2.forEach((s2, a2) => {
-    a2 > 0 && r2.push(" "), r2.push(`<SummaryCitation reference={${s2}} />`);
+  var Ct = (e2) => ue2(e2).reduce((r2, { text: n2, references: i2 }) => (i2 ? (r2.push(n2), n2 && n2[n2.length - 1] !== " " && r2.push(" "), i2.forEach((a2, s2) => {
+    s2 > 0 && r2.push(" "), r2.push(`<SummaryCitation reference={${a2}} />`);
   })) : r2.push(n2), r2), []).join(" ");
   var me2 = ({ question: e2, answer: t2, searchResults: r2, onRetry: n2, isStreaming: i2 }) => {
-    let [o2, s2] = (0, import_react10.useState)(false), a2;
+    let [o2, a2] = (0, import_react10.useState)(false), s2;
     if (n2)
-      a2 = (0, import_jsx_runtime15.jsxs)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--error", children: [(0, import_jsx_runtime15.jsx)(T2, { size: "m" }), (0, import_jsx_runtime15.jsxs)(B2, { alignItems: "center", spacing: "none", children: [(0, import_jsx_runtime15.jsxs)(B2, { alignItems: "center", spacing: "xxs", children: [(0, import_jsx_runtime15.jsx)(v2, { grow: false, shrink: true, children: (0, import_jsx_runtime15.jsx)(be2, {}) }), (0, import_jsx_runtime15.jsx)(v2, { grow: false, children: "Message not sent." })] }), n2 && (0, import_jsx_runtime15.jsxs)(import_jsx_runtime15.Fragment, { children: [(0, import_jsx_runtime15.jsx)(T2, { size: "s" }), (0, import_jsx_runtime15.jsx)(B2, { alignItems: "center", spacing: "none", children: (0, import_jsx_runtime15.jsx)("button", { className: "vrcbRetryButton", onClick: () => n2(), children: "Try again" }) })] })] })] });
+      s2 = (0, import_jsx_runtime15.jsxs)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--error", children: [(0, import_jsx_runtime15.jsx)(T2, { size: "m" }), (0, import_jsx_runtime15.jsxs)(B2, { alignItems: "center", spacing: "none", children: [(0, import_jsx_runtime15.jsxs)(B2, { alignItems: "center", spacing: "xxs", children: [(0, import_jsx_runtime15.jsx)(v2, { grow: false, shrink: true, children: (0, import_jsx_runtime15.jsx)(be2, {}) }), (0, import_jsx_runtime15.jsx)(v2, { grow: false, children: "Message not sent." })] }), n2 && (0, import_jsx_runtime15.jsxs)(import_jsx_runtime15.Fragment, { children: [(0, import_jsx_runtime15.jsx)(T2, { size: "s" }), (0, import_jsx_runtime15.jsx)(B2, { alignItems: "center", spacing: "none", children: (0, import_jsx_runtime15.jsx)("button", { className: "vrcbRetryButton", onClick: () => n2(), children: "Try again" }) })] })] })] });
     else if (t2) {
       let l2 = (r2 ? ce2(r2, t2) : []).slice(0, 7), c2 = r2 ? pe2(t2) : t2, d2 = Ct(c2);
-      a2 = (0, import_jsx_runtime15.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--answer", children: (0, import_jsx_runtime15.jsxs)("div", { className: "vrcbChatMessage", children: [(0, import_jsx_runtime15.jsxs)(G2, { size: "s", children: [(0, import_jsx_runtime15.jsx)(index_modern_default, { children: d2, options: { forceInline: true, overrides: { SummaryCitation: { component: ({ reference: b2 }) => (0, import_jsx_runtime15.jsxs)(import_jsx_runtime15.Fragment, { children: [" ", (0, import_jsx_runtime15.jsx)("button", { onClick: () => s2(true), children: (0, import_jsx_runtime15.jsx)("span", { className: "vrcbChatSummaryCitation", children: b2 }) })] }) } } } }), i2 && (0, import_jsx_runtime15.jsxs)("span", { children: [" ", (0, import_jsx_runtime15.jsx)(le2, { size: "xs" })] })] }), l2 && l2.length > 0 && (0, import_jsx_runtime15.jsxs)(import_jsx_runtime15.Fragment, { children: [(0, import_jsx_runtime15.jsx)(T2, { size: "s" }), (0, import_jsx_runtime15.jsx)(Fe2, { searchResults: l2, isOpen: o2, setIsOpen: s2 })] })] }) });
+      s2 = (0, import_jsx_runtime15.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--answer", children: (0, import_jsx_runtime15.jsxs)("div", { className: "vrcbChatMessage", children: [(0, import_jsx_runtime15.jsxs)(G2, { size: "s", children: [(0, import_jsx_runtime15.jsx)(index_modern_default, { children: d2, options: { forceInline: true, overrides: { SummaryCitation: { component: ({ reference: b2 }) => (0, import_jsx_runtime15.jsxs)(import_jsx_runtime15.Fragment, { children: [" ", (0, import_jsx_runtime15.jsx)("button", { onClick: () => a2(true), children: (0, import_jsx_runtime15.jsx)("span", { className: "vrcbChatSummaryCitation", children: b2 }) })] }) } } } }), i2 && (0, import_jsx_runtime15.jsxs)("span", { children: [" ", (0, import_jsx_runtime15.jsx)(le2, { size: "xs" })] })] }), l2 && l2.length > 0 && (0, import_jsx_runtime15.jsxs)(import_jsx_runtime15.Fragment, { children: [(0, import_jsx_runtime15.jsx)(T2, { size: "s" }), (0, import_jsx_runtime15.jsx)(Fe2, { searchResults: l2, isOpen: o2, setIsOpen: a2 })] })] }) });
     }
-    return (0, import_jsx_runtime15.jsxs)(import_jsx_runtime15.Fragment, { children: [(0, import_jsx_runtime15.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--question", children: (0, import_jsx_runtime15.jsx)("div", { className: "vrcbChatMessage", children: e2 }) }), (0, import_jsx_runtime15.jsx)(T2, { size: "xs" }), a2] });
+    return (0, import_jsx_runtime15.jsxs)(import_jsx_runtime15.Fragment, { children: [(0, import_jsx_runtime15.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--question", children: (0, import_jsx_runtime15.jsx)("div", { className: "vrcbChatMessage", children: e2 }) }), (0, import_jsx_runtime15.jsx)(T2, { size: "xs" }), s2] });
   };
-  var ke2 = async ({ filter: e2, queryValue: t2, language: r2, summaryMode: n2, rerank: i2, rerankNumResults: o2, rerankerId: s2, rerankDiversityBias: a2, hybridNumWords: l2, hybridLambdaShort: c2, hybridLambdaLong: d2, summaryNumResults: g2, summaryNumSentences: b2, summaryPromptName: h2, customerId: y2, corpusId: R2, endpoint: f2, apiKey: w2, chat: N2 }) => {
-    let I2 = typeof t2 > "u" || t2.trim().split(" ").length > l2 ? d2 : c2, A2 = R2.split(",").map((C2) => ({ customerId: y2, corpusId: C2, lexicalInterpolationConfig: { lambda: I2 }, metadataFilter: e2 ? `doc.source = '${e2}'` : void 0 })), u2 = { query: [{ query: t2, start: 0, numResults: i2 ? o2 : 10, corpusKey: A2, contextConfig: { sentencesBefore: n2 ? b2 : 2, sentencesAfter: n2 ? b2 : 2, startTag: J2, endTag: Y2 }, ...n2 ? { summary: [{ responseLang: r2, maxSummarizedResults: g2, summarizerPromptName: h2, chat: { store: true, conversationId: N2 == null ? void 0 : N2.conversationId } }] } : {}, ...i2 ? { rerankingConfig: { rerankerId: s2, ...s2 === 272725718 ? { mmrConfig: { diversityBias: a2 } } : {} } } : {} }] }, P2 = `https://${f2}/v1/query`, m2 = await fetch(P2, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json", "customer-id": y2, "x-api-key": w2, "grpc-timeout": "60S", "x-source": "react-chatbot" }, body: JSON.stringify(u2) });
-    if (m2.status !== 200)
-      throw new Error(m2.status.toString());
-    console.log("### response: ", m2);
-    let k2 = await m2.json();
-    console.log("### RESULT: ", k2);
-    let E2 = k2.responseSet[0].status;
+  var ke2 = async ({ filter: e2, queryValue: t2, language: r2, summaryMode: n2, rerank: i2, rerankNumResults: o2, rerankerId: a2, rerankDiversityBias: s2, hybridNumWords: l2, hybridLambdaShort: c2, hybridLambdaLong: d2, summaryNumResults: g2, summaryNumSentences: b2, summaryPromptName: h2, customerId: y2, corpusId: k2, endpoint: f2, apiKey: w2, chat: R2 }) => {
+    let I2 = typeof t2 > "u" || t2.trim().split(" ").length > l2 ? d2 : c2, A2 = k2.split(",").map((C2) => ({ customerId: y2, corpusId: C2, lexicalInterpolationConfig: { lambda: I2 }, metadataFilter: e2 ? `doc.source = '${e2}'` : void 0 })), u2 = { query: [{ query: t2, start: 0, numResults: i2 ? o2 : 10, corpusKey: A2, contextConfig: { sentencesBefore: n2 ? b2 : 2, sentencesAfter: n2 ? b2 : 2, startTag: J2, endTag: Y2 }, ...n2 ? { summary: [{ responseLang: r2, maxSummarizedResults: g2, summarizerPromptName: h2, chat: { store: true, conversationId: R2 == null ? void 0 : R2.conversationId } }] } : {}, ...i2 ? { rerankingConfig: { rerankerId: a2, ...a2 === 272725718 ? { mmrConfig: { diversityBias: s2 } } : {} } } : {} }] }, P2 = `https://${f2}/v1/query`, x2 = await fetch(P2, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json", "customer-id": y2, "x-api-key": w2, "grpc-timeout": "60S", "x-source": "react-chatbot" }, body: JSON.stringify(u2) });
+    if (x2.status !== 200)
+      throw new Error(x2.status.toString());
+    let N2 = await x2.json(), E2 = N2.responseSet[0].status;
     if (E2.length > 0 && E2[0].code === "UNAUTHORIZED" && console.log("UNAUTHORIZED access; check your API key and customer ID"), n2) {
-      let C2 = k2.responseSet[0].summary[0].status;
+      let C2 = N2.responseSet[0].summary[0].status;
       if (C2.length > 0 && C2[0].code === "BAD_REQUEST")
         throw new Error("BAD REQUEST: Too much text for the summarizer to summarize. Please try reducing the number of search results to summarize, or the context of each result by adjusting the 'summary_num_sentences', and 'summary_num_results' parameters respectively.");
       if (C2.length > 0 && C2[0].code === "NOT_FOUND" && C2[0].statusDetail === "Failed to retrieve summarizer.")
         throw new Error(`BAD REQUEST: summarizer ${h2} is invalid for this account.`);
     }
-    return k2.responseSet[0];
+    return N2.responseSet[0];
   };
   var J2 = "%START_SNIPPET%";
   var Y2 = "%END_SNIPPET%";
@@ -35027,8 +35024,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       return;
     let t2 = [], { response: r2, document: n2 } = e2;
     return r2.forEach((i2) => {
-      let { documentIndex: o2, text: s2 } = i2, { pre: a2, post: l2, text: c2 } = wt(s2), d2 = n2[Number(o2)], { id: g2, metadata: b2 } = d2, { source: h2, url: y2, title: R2, metadata: f2 } = St(b2);
-      t2.push({ id: g2, snippet: { pre: a2, text: c2, post: l2 }, source: h2, url: y2, title: R2, metadata: f2 });
+      let { documentIndex: o2, text: a2 } = i2, { pre: s2, post: l2, text: c2 } = wt(a2), d2 = n2[Number(o2)], { id: g2, metadata: b2 } = d2, { source: h2, url: y2, title: k2, metadata: f2 } = St(b2);
+      t2.push({ id: g2, snippet: { pre: s2, text: c2, post: l2 }, source: h2, url: y2, title: k2, metadata: f2 });
     }), t2;
   };
   var St = (e2) => {
@@ -35046,57 +35043,57 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }), t2;
   };
   var Ne2 = (e2, t2, r2, n2 = true) => {
-    let [i2, o2] = (0, import_react11.useState)([]), s2 = (0, import_react11.useRef)(""), [a2, l2] = (0, import_react11.useState)(null), [c2, d2] = (0, import_react11.useState)(false), [g2, b2] = (0, import_react11.useState)(false), [h2, y2] = (0, import_react11.useState)(null), [R2, f2] = (0, import_react11.useState)(false), w2 = (u2) => u2 != null ? u2 : "eng", N2 = async ({ query: u2, isRetry: P2 = false }) => {
+    let [i2, o2] = (0, import_react11.useState)([]), a2 = (0, import_react11.useRef)(""), [s2, l2] = (0, import_react11.useState)(null), [c2, d2] = (0, import_react11.useState)(false), [g2, b2] = (0, import_react11.useState)(false), [h2, y2] = (0, import_react11.useState)(null), [k2, f2] = (0, import_react11.useState)(false), w2 = (u2) => u2 != null ? u2 : "eng", R2 = async ({ query: u2, isRetry: P2 = false }) => {
       if (c2)
         return;
-      P2 && f2(false), l2(null), s2.current = u2, l2({ id: "placeholder-message-id", question: u2, answer: "", results: [] });
+      P2 && f2(false), l2(null), a2.current = u2, l2({ id: "placeholder-message-id", question: u2, answer: "", results: [] });
       let M2 = { filter: "", queryValue: u2, rerank: true, rerankNumResults: 7, rerankerId: 272725718, rerankDiversityBias: 0.3, customerId: e2, corpusId: t2.join(","), endpoint: "api.vectara.io", apiKey: r2 };
       if (d2(true), n2)
         try {
-          await (0, import_stream_query_client.streamQuery)({ ...M2, corpusIds: t2, summaryNumResults: 7, summaryNumSentences: 3, summaryPromptName: "vectara-summary-ext-v1.2.0", language: w2(), chat: { store: true, conversationId: h2 != null ? h2 : void 0 } }, (m2) => A2(m2));
-        } catch (m2) {
-          console.log("Summary error", m2), d2(false), f2(true);
+          await (0, import_stream_query_client.streamQuery)({ ...M2, corpusIds: t2, summaryNumResults: 7, summaryNumSentences: 3, summaryPromptName: "vectara-summary-ext-v1.2.0", language: w2(), chat: { store: true, conversationId: h2 != null ? h2 : void 0 } }, (x2) => A2(x2));
+        } catch (x2) {
+          console.log("Summary error", x2), d2(false), f2(true);
           return;
         }
       else
         try {
-          let m2 = await ke2({ ...M2, hybridNumWords: 2, hybridLambdaLong: 0, hybridLambdaShort: 0.1, summaryMode: true, summaryNumResults: 7, summaryNumSentences: 3, summaryPromptName: "vectara-summary-ext-v1.2.0", language: w2(), chat: { conversationId: h2 != null ? h2 : void 0 } });
-          y2(m2.summary[0].chat.conversationId), o2((k2) => {
+          let x2 = await ke2({ ...M2, hybridNumWords: 2, hybridLambdaLong: 0, hybridLambdaShort: 0.1, summaryMode: true, summaryNumResults: 7, summaryNumSentences: 3, summaryPromptName: "vectara-summary-ext-v1.2.0", language: w2(), chat: { conversationId: h2 != null ? h2 : void 0 } });
+          y2(x2.summary[0].chat.conversationId), o2((N2) => {
             var E2, C2;
-            return [...k2, { id: m2.summary[0].chat.turnId, question: s2.current, answer: (E2 = m2 == null ? void 0 : m2.summary[0].text) != null ? E2 : "", results: (C2 = Re2(m2)) != null ? C2 : [] }];
+            return [...N2, { id: x2.summary[0].chat.turnId, question: a2.current, answer: (E2 = x2 == null ? void 0 : x2.summary[0].text) != null ? E2 : "", results: (C2 = Re2(x2)) != null ? C2 : [] }];
           }), l2(null), d2(false);
-        } catch (m2) {
-          console.log("Summary error", m2), f2(true), d2(false);
+        } catch (x2) {
+          console.log("Summary error", x2), f2(true), d2(false);
           return;
         }
     }, I2 = () => {
       o2([]), y2(null);
-    }, A2 = ({ references: u2, details: P2, updatedText: M2, isDone: m2 }) => {
+    }, A2 = ({ references: u2, details: P2, updatedText: M2, isDone: x2 }) => {
       var E2;
       M2 && (b2(true), d2(false));
-      let k2 = P2 == null ? void 0 : P2.find((C2) => C2.type === "chat");
-      k2 && y2((E2 = k2.data.conversationId) != null ? E2 : null), m2 ? b2(false) : l2((C2) => {
+      let N2 = P2 == null ? void 0 : P2.find((C2) => C2.type === "chat");
+      N2 && y2((E2 = N2.data.conversationId) != null ? E2 : null), x2 ? b2(false) : l2((C2) => {
         var W2;
-        return { id: k2 ? k2.data.turnId : "", question: s2.current, answer: M2 != null ? M2 : "", results: [...(W2 = C2 == null ? void 0 : C2.results) != null ? W2 : [], ...u2 != null ? u2 : []] };
+        return { id: N2 ? N2.data.turnId : "", question: a2.current, answer: M2 != null ? M2 : "", results: [...(W2 = C2 == null ? void 0 : C2.results) != null ? W2 : [], ...u2 != null ? u2 : []] };
       });
     };
     return (0, import_react11.useEffect)(() => {
-      !g2 && a2 && (o2([...i2, a2]), l2(null));
-    }, [g2]), { sendMessage: N2, activeMessage: a2, messageHistory: i2, isLoading: c2, isStreamingResponse: g2, startNewConversation: I2, hasError: R2 };
+      !g2 && s2 && (o2([...i2, s2]), l2(null));
+    }, [g2]), { sendMessage: R2, activeMessage: s2, messageHistory: i2, isLoading: c2, isStreamingResponse: g2, startNewConversation: I2, hasError: k2 };
   };
   var Ee2 = () => (0, import_jsx_runtime16.jsx)(import_jsx_runtime16.Fragment, { children: (0, import_jsx_runtime16.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--thinking", children: (0, import_jsx_runtime16.jsx)("div", { className: "vrcbChatMessage", children: (0, import_jsx_runtime16.jsx)("div", { className: "vrcbLoader" }) }) }) });
   var Et = { large: "l", medium: "m" };
   var zt = () => (0, import_jsx_runtime17.jsxs)(B2, { className: "vrcbEmptyMessages", spacing: "none", alignItems: "center", justifyContent: "center", direction: "column", children: [(0, import_jsx_runtime17.jsx)(ve2, { size: "150px", color: "#000000" }), "Ask anything."] });
-  var Le2 = ({ customerId: e2, corpusIds: t2, apiKey: r2, title: n2 = "My Chatbot", placeholder: i2 = "Chat with your AI Assistant", inputSize: o2 = "large", emptyStateDisplay: s2 = (0, import_jsx_runtime17.jsx)(zt, {}), isInitiallyOpen: a2, zIndex: l2 = 9999, enableStreaming: c2 }) => {
-    let [d2, g2] = (0, import_react4.useState)(a2 != null ? a2 : false), [b2, h2] = (0, import_react4.useState)(""), { sendMessage: y2, startNewConversation: R2, messageHistory: f2, isLoading: w2, hasError: N2, activeMessage: I2, isStreamingResponse: A2 } = Ne2(e2, t2, r2, c2), u2 = (0, import_react4.useRef)(null), P2 = (0, import_react4.useRef)(true), M2 = () => {
+  var Le2 = ({ customerId: e2, corpusIds: t2, apiKey: r2, title: n2 = "My Chatbot", placeholder: i2 = "Chat with your AI Assistant", inputSize: o2 = "large", emptyStateDisplay: a2 = (0, import_jsx_runtime17.jsx)(zt, {}), isInitiallyOpen: s2, zIndex: l2 = 9999, enableStreaming: c2 }) => {
+    let [d2, g2] = (0, import_react4.useState)(s2 != null ? s2 : false), [b2, h2] = (0, import_react4.useState)(""), { sendMessage: y2, startNewConversation: k2, messageHistory: f2, isLoading: w2, hasError: R2, activeMessage: I2, isStreamingResponse: A2 } = Ne2(e2, t2, r2, c2), u2 = (0, import_react4.useRef)(null), P2 = (0, import_react4.useRef)(true), M2 = () => {
       setTimeout(() => {
         var z2, _2;
         P2.current && ((_2 = u2.current) == null || _2.scrollTo({ left: 0, top: (z2 = u2.current) == null ? void 0 : z2.scrollHeight, behavior: "smooth" }));
       }, 0);
     };
     (0, import_react4.useEffect)(() => {
-      a2 !== void 0 && g2(a2);
-    }, [a2]), (0, import_react4.useEffect)(() => {
+      s2 !== void 0 && g2(s2);
+    }, [s2]), (0, import_react4.useEffect)(() => {
       let z2 = u2.current, _2 = () => {
         let j2 = u2.current ? Math.abs(u2.current.scrollHeight - u2.current.clientHeight - u2.current.scrollTop) < 50 : true;
         P2.current = j2;
@@ -35105,13 +35102,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         z2 == null || z2.removeEventListener("scroll", _2);
       };
     }, []);
-    let m2 = (0, import_react4.useMemo)(() => f2.map((z2, _2) => {
-      let { question: j2, answer: _e2, results: Ae2 } = z2, De2 = N2 && _2 === f2.length - 1 ? () => y2({ query: j2, isRetry: true }) : void 0;
+    let x2 = (0, import_react4.useMemo)(() => f2.map((z2, _2) => {
+      let { question: j2, answer: _e2, results: Ae2 } = z2, De2 = R2 && _2 === f2.length - 1 ? () => y2({ query: j2, isRetry: true }) : void 0;
       return (0, import_jsx_runtime17.jsxs)(import_react4.Fragment, { children: [(0, import_jsx_runtime17.jsx)(me2, { question: j2, answer: _e2, searchResults: Ae2, onRetry: De2 }), _2 < f2.length - 1 && (0, import_jsx_runtime17.jsx)(T2, { size: "m" })] }, _2);
-    }), [f2]), k2 = w2 || f2.length > 0 || I2, E2 = w2 || A2 || b2.trim().length === 0, C2 = () => {
+    }), [f2]), N2 = w2 || f2.length > 0 || I2, E2 = w2 || A2 || b2.trim().length === 0, C2 = () => {
       E2 || (y2({ query: b2 }), h2(""));
-    }, W2 = m2.length === 0 ? null : (0, import_jsx_runtime17.jsx)(T2, { size: I2 ? "m" : "l" });
-    return (0, import_react4.useEffect)(M2, [w2, I2]), d2 ? (0, import_jsx_runtime17.jsxs)("div", { className: "vrcbChatbotWrapper", style: { zIndex: l2 }, children: [(0, import_jsx_runtime17.jsxs)(B2, { className: "vrcbHeader", spacing: "none", direction: "row", children: [(0, import_jsx_runtime17.jsx)(v2, { grow: 1, alignItems: "center", children: n2 }), (0, import_jsx_runtime17.jsx)(v2, { alignItems: "center", children: (0, import_jsx_runtime17.jsx)("button", { onClick: () => g2(false), children: (0, import_jsx_runtime17.jsx)(he2, { size: "12px", color: "#2c313a" }) }) })] }), (0, import_jsx_runtime17.jsxs)(B2, { direction: "column", spacing: "none", className: "vrcbChatbotInnerWrapper", children: [(0, import_jsx_runtime17.jsx)(v2, { className: "vrcbMessagesWrapper", basis: "fill", children: (0, import_jsx_runtime17.jsx)("div", { ref: u2, children: k2 ? (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [(0, import_jsx_runtime17.jsx)(T2, { size: "xs" }), m2, W2, I2 && (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [(0, import_jsx_runtime17.jsx)(me2, { question: I2.question, answer: I2.answer, searchResults: I2.results, onRetry: N2 ? () => y2({ query: I2.question, isRetry: true }) : void 0, isStreaming: A2 }), (0, import_jsx_runtime17.jsx)(T2, { size: "l" })] }), w2 && (0, import_jsx_runtime17.jsx)(Ee2, {}), (0, import_jsx_runtime17.jsx)(B2, { fullWidth: true, justifyContent: "center", children: (0, import_jsx_runtime17.jsx)(v2, { children: (0, import_jsx_runtime17.jsx)(oe2, { color: "neutral", size: "xs", onClick: R2, isDisabled: w2, children: "Start new conversation" }) }) }), (0, import_jsx_runtime17.jsx)(T2, { size: "l" })] }) : s2 }) }), (0, import_jsx_runtime17.jsx)(v2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime17.jsx)(Te2, { placeholder: i2, buttonLabel: "Send", query: b2, setQuery: h2, isButtonDisabled: E2, onSubmit: C2, size: Et[o2] }) })] })] }) : (0, import_jsx_runtime17.jsx)("button", { className: "vrcbChatbotButton", onClick: () => g2(true), style: { zIndex: l2 }, children: n2 });
+    }, W2 = x2.length === 0 ? null : (0, import_jsx_runtime17.jsx)(T2, { size: I2 ? "m" : "l" });
+    return (0, import_react4.useEffect)(M2, [w2, I2]), d2 ? (0, import_jsx_runtime17.jsxs)("div", { className: "vrcbChatbotWrapper", style: { zIndex: l2 }, children: [(0, import_jsx_runtime17.jsxs)(B2, { className: "vrcbHeader", spacing: "none", direction: "row", children: [(0, import_jsx_runtime17.jsx)(v2, { grow: 1, alignItems: "center", children: n2 }), (0, import_jsx_runtime17.jsx)(v2, { alignItems: "center", children: (0, import_jsx_runtime17.jsx)("button", { onClick: () => g2(false), children: (0, import_jsx_runtime17.jsx)(he2, { size: "12px", color: "#2c313a" }) }) })] }), (0, import_jsx_runtime17.jsxs)(B2, { direction: "column", spacing: "none", className: "vrcbChatbotInnerWrapper", children: [(0, import_jsx_runtime17.jsx)(v2, { className: "vrcbMessagesWrapper", basis: "fill", children: (0, import_jsx_runtime17.jsx)("div", { ref: u2, children: N2 ? (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [(0, import_jsx_runtime17.jsx)(T2, { size: "xs" }), x2, W2, I2 && (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [(0, import_jsx_runtime17.jsx)(me2, { question: I2.question, answer: I2.answer, searchResults: I2.results, onRetry: R2 ? () => y2({ query: I2.question, isRetry: true }) : void 0, isStreaming: A2 }), (0, import_jsx_runtime17.jsx)(T2, { size: "l" })] }), w2 && (0, import_jsx_runtime17.jsx)(Ee2, {}), (0, import_jsx_runtime17.jsx)(B2, { fullWidth: true, justifyContent: "center", children: (0, import_jsx_runtime17.jsx)(v2, { children: (0, import_jsx_runtime17.jsx)(oe2, { color: "neutral", size: "xs", onClick: k2, isDisabled: w2, children: "Start new conversation" }) }) }), (0, import_jsx_runtime17.jsx)(T2, { size: "l" })] }) : a2 }) }), (0, import_jsx_runtime17.jsx)(v2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime17.jsx)(Te2, { placeholder: i2, buttonLabel: "Send", query: b2, setQuery: h2, isButtonDisabled: E2, onSubmit: C2, size: Et[o2] }) })] })] }) : (0, import_jsx_runtime17.jsx)("button", { className: "vrcbChatbotButton", onClick: () => g2(true), style: { zIndex: l2 }, children: n2 });
   };
   var ge2 = `:host {
   all: initial;
@@ -36371,7 +36368,7 @@ fieldset {
 .vuiTextColor--neutral {
   color: #2c313a !important;
 }`;
-  var Lt = ({ customerId: e2, apiKey: t2, corpusIds: r2, title: n2, placeholder: i2, inputSize: o2, emptyStateDisplay: s2, isInitiallyOpen: a2, zIndex: l2, enableStreaming: c2 = true }) => (0, import_jsx_runtime18.jsx)("div", { children: (0, import_jsx_runtime18.jsx)(Le2, { customerId: e2, corpusIds: r2, apiKey: t2, title: n2, placeholder: i2, inputSize: o2, emptyStateDisplay: s2, isInitiallyOpen: a2, zIndex: l2, enableStreaming: c2 }) });
+  var Lt = ({ customerId: e2, apiKey: t2, corpusIds: r2, title: n2, placeholder: i2, inputSize: o2, emptyStateDisplay: a2, isInitiallyOpen: s2, zIndex: l2, enableStreaming: c2 = true }) => (0, import_jsx_runtime18.jsx)("div", { children: (0, import_jsx_runtime18.jsx)(Le2, { customerId: e2, corpusIds: r2, apiKey: t2, title: n2, placeholder: i2, inputSize: o2, emptyStateDisplay: a2, isInitiallyOpen: s2, zIndex: l2, enableStreaming: c2 }) });
   var fe2 = class extends HTMLElement {
     static get observedAttributes() {
       return ["customerid", "corpusids", "apikey", "title", "placeholder", "inputsize", "isinitiallyopen", "zindex", "emptystatedisplayupdatetime", "enablestreaming"];
@@ -36390,9 +36387,9 @@ fieldset {
       this.emptyStateDisplay = t2, this.setAttribute("emptystatedisplayupdatetime", Date.now().toString());
     }
     connectedCallback() {
-      var g2, b2, h2, y2, R2, f2, w2;
-      let t2 = (g2 = this.getAttribute("customerId")) != null ? g2 : "", r2 = ((b2 = this.getAttribute("corpusIds")) != null ? b2 : "").split(" "), n2 = (h2 = this.getAttribute("apiKey")) != null ? h2 : "", i2 = (y2 = this.getAttribute("title")) != null ? y2 : void 0, o2 = (R2 = this.getAttribute("placeholder")) != null ? R2 : void 0, s2 = (f2 = this.getAttribute("inputSize")) != null ? f2 : void 0, a2 = this.getAttribute("isInitiallyOpen") === "true", l2 = (w2 = this.emptyStateDisplay) != null ? w2 : void 0, c2 = this.getAttribute("zIndex") !== null ? parseInt(this.getAttribute("zIndex")) : void 0, d2 = this.getAttribute("enableStreaming") == "true";
-      Ve.render((0, import_jsx_runtime18.jsx)(import_jsx_runtime18.Fragment, { children: (0, import_jsx_runtime18.jsx)(Lt, { customerId: t2, corpusIds: r2, apiKey: n2, title: i2, placeholder: o2, inputSize: s2, emptyStateDisplay: l2, isInitiallyOpen: a2, zIndex: c2, enableStreaming: d2 }) }), this.mountPoint);
+      var g2, b2, h2, y2, k2, f2, w2;
+      let t2 = (g2 = this.getAttribute("customerId")) != null ? g2 : "", r2 = ((b2 = this.getAttribute("corpusIds")) != null ? b2 : "").split(" "), n2 = (h2 = this.getAttribute("apiKey")) != null ? h2 : "", i2 = (y2 = this.getAttribute("title")) != null ? y2 : void 0, o2 = (k2 = this.getAttribute("placeholder")) != null ? k2 : void 0, a2 = (f2 = this.getAttribute("inputSize")) != null ? f2 : void 0, s2 = this.getAttribute("isInitiallyOpen") === "true", l2 = (w2 = this.emptyStateDisplay) != null ? w2 : void 0, c2 = this.getAttribute("zIndex") !== null ? parseInt(this.getAttribute("zIndex")) : void 0, d2 = this.getAttribute("enableStreaming") == "true";
+      Ve.render((0, import_jsx_runtime18.jsx)(import_jsx_runtime18.Fragment, { children: (0, import_jsx_runtime18.jsx)(Lt, { customerId: t2, corpusIds: r2, apiKey: n2, title: i2, placeholder: o2, inputSize: a2, emptyStateDisplay: l2, isInitiallyOpen: s2, zIndex: c2, enableStreaming: d2 }) }), this.mountPoint);
     }
     attributeChangedCallback() {
       this.connectedCallback();
@@ -36723,8 +36720,8 @@ fieldset {
         var item = middleware(data, assigned);
         buffer.push(item);
         return function() {
-          buffer = buffer.filter(function(x3) {
-            return x3 !== item;
+          buffer = buffer.filter(function(x2) {
+            return x2 !== item;
           });
         };
       },
@@ -36736,8 +36733,8 @@ fieldset {
           cbs.forEach(cb);
         }
         buffer = {
-          push: function(x3) {
-            return cb(x3);
+          push: function(x2) {
+            return cb(x2);
           },
           filter: function() {
             return buffer;
@@ -36763,8 +36760,8 @@ fieldset {
         };
         cycle();
         buffer = {
-          push: function(x3) {
-            pendingQueue.push(x3);
+          push: function(x2) {
+            pendingQueue.push(x2);
             cycle();
           },
           filter: function(filter) {
@@ -37328,8 +37325,8 @@ fieldset {
   var isNotAGuard = function(node2) {
     return !isGuard(node2);
   };
-  var isDefined = function(x3) {
-    return Boolean(x3);
+  var isDefined = function(x2) {
+    return Boolean(x2);
   };
 
   // ../node_modules/focus-lock/dist/es2015/utils/tabOrder.js
@@ -38137,8 +38134,8 @@ fieldset {
     right: 0,
     gap: 0
   };
-  var parse = function(x3) {
-    return parseInt(x3 || "", 10) || 0;
+  var parse = function(x2) {
+    return parseInt(x2 || "", 10) || 0;
   };
   var getOffset = function(gapMode) {
     var cs = window.getComputedStyle(document.body);
@@ -38312,8 +38309,8 @@ fieldset {
   var extractRef3 = function(ref) {
     return ref && "current" in ref ? ref.current : ref;
   };
-  var deltaCompare = function(x3, y2) {
-    return x3[0] === y2[0] && x3[1] === y2[1];
+  var deltaCompare = function(x2, y2) {
+    return x2[0] === y2[0] && x2[1] === y2[1];
   };
   var generateStyle = function(id2) {
     return "\n  .block-interactivity-".concat(id2, " {pointer-events: none;}\n  .allow-interactivity-").concat(id2, " {pointer-events: all;}\n");
@@ -38499,8 +38496,8 @@ fieldset {
       }
       console.error("aria-hidden", target, "in not contained inside", parent, ". Doing nothing");
       return null;
-    }).filter(function(x3) {
-      return Boolean(x3);
+    }).filter(function(x2) {
+      return Boolean(x2);
     });
   };
   var applyAttributeToOthers = function(originalTarget, parentNode, markerName, controlAttribute) {
@@ -39258,7 +39255,7 @@ fieldset {
       matches,
       loaderData
     } = useDataRouterState(DataRouterStateHook.UseMatches);
-    return React18.useMemo(() => matches.map((m2) => convertRouteMatchToUiMatch(m2, loaderData)), [matches, loaderData]);
+    return React18.useMemo(() => matches.map((m3) => convertRouteMatchToUiMatch(m3, loaderData)), [matches, loaderData]);
   }
   function useNavigateStable() {
     let {
