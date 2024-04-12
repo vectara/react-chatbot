@@ -60,7 +60,7 @@ import { ReactChatbot } from "@vectara/react-chatbot";
 
 <ReactChatbot
   customerId="CUSTOMER_ID"
-  corpusId={["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"]}
+  corpusIds={["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"]}
   apiKey="API_KEY"
   title="My Chatbot"
   placeholder="Chat with your AI assistant"
@@ -69,7 +69,7 @@ import { ReactChatbot } from "@vectara/react-chatbot";
   isInitiallyOpen={false}
   zIndex={ /* (optional) number representing the z-index the component should have */ }
   enableStreaming={true}
-/>;
+/>
 ```
 
 #### <u>Configuration Options</u>
@@ -125,24 +125,17 @@ npm install --save @vectara/react-chatbot
 Then use the `useChat` hook in your application like this:
 
 ```js
-import { useChat } from "@vectara/react-chatbot/lib";
+import { useChat } from "@vectara/react-chatbot/lib/useChat";
 
 /* snip */
 
-const {
-  sendMessage,
-  activeMessage,
-  messageHistory,
-  isLoading,
-  isStreamingResponse,
-  hasError
-  startNewConversation
-} = useChat(
-  "CUSTOMER_ID",
-  ["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"],
-  "API_KEY",
-  true // Enable streaming, false otherwise. Defaults to true.
-);
+const { sendMessage, activeMessage, messageHistory, isLoading, isStreamingResponse, hasError, startNewConversation } =
+  useChat(
+    "CUSTOMER_ID",
+    ["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"],
+    "API_KEY",
+    true // Enable streaming, false otherwise. Defaults to true.
+  );
 ```
 
 The values returned by the hook can be passed on to your custom components as props or used in any way you wish.
@@ -271,3 +264,5 @@ Additionally, any changes to the development app source code at `/docs/index.tsx
 ## License
 
 Vectara React-Chatbot is an open-sourced software licensed under the [Apache 2.0 license](/LICENSE).
+
+_This repository contains sample code that can help you build UIs powered by Vectara, and is licensed under the Apache 2.0 License. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License._
