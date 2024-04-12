@@ -125,10 +125,8 @@ export const sendSearchRequest = async ({
   });
 
   if (response.status !== 200) throw new Error(response.status.toString());
-  console.log("### response: ", response);
 
   const result = await response.json();
-  console.log("### RESULT: ", result);
   const status = result["responseSet"][0]["status"];
   if (status.length > 0 && status[0]["code"] === "UNAUTHORIZED") {
     console.log("UNAUTHORIZED access; check your API key and customer ID");
