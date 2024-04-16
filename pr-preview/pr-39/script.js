@@ -45182,7 +45182,7 @@ export const App = () => {
     DEFAULT_CORPUS_IDS,
     DEFAULT_API_KEY,
     true, // Enable streaming, false otherwise. Defaults to true.
-    "eng"
+    "fra" // Response language. Defaults to "eng" for English.
   );
 
   /* You can pass the values returned by the hook to your custom components as props, or use them
