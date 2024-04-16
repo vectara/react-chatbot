@@ -45,7 +45,7 @@ type SearchResponseSummary = {
   status?: string;
 };
 
-const SUMMARY_LANGUAGES = [
+export const SUMMARY_LANGUAGES = [
   "auto",
   "eng",
   "deu",

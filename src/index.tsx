@@ -4,6 +4,7 @@ import { ChatView } from "components/ChatView";
 
 // @ts-ignore
 import cssText from "index.scss";
+import type { SummaryLanguage } from "./types";
 
 export interface Props {
   // Vectara customer ID
@@ -35,6 +36,9 @@ export interface Props {
 
   // Used to enable streaming responses from the API. Defaults to true.
   enableStreaming?: boolean;
+
+  // The language the responses should be in. Defaults to English.
+  language?: SummaryLanguage;
 }
 
 /**
@@ -50,7 +54,8 @@ const ReactChatbotInternal: FC<Props> = ({
   emptyStateDisplay,
   isInitiallyOpen,
   zIndex,
-  enableStreaming = true
+  enableStreaming = true,
+  language = "eng"
 }) => {
   return (
     <div>
@@ -65,6 +70,7 @@ const ReactChatbotInternal: FC<Props> = ({
         isInitiallyOpen={isInitiallyOpen}
         zIndex={zIndex}
         enableStreaming={enableStreaming}
+        language={language}
       />
     </div>
   );
@@ -96,7 +102,8 @@ class ReactChatbotWebComponent extends HTMLElement {
       "isinitiallyopen",
       "zindex",
       "emptystatedisplayupdatetime",
-      "enablestreaming"
+      "enablestreaming",
+      "language"
     ];
   }
 
@@ -139,7 +146,9 @@ class ReactChatbotWebComponent extends HTMLElement {
     const isInitiallyOpen = this.getAttribute("isInitiallyOpen") === "true";
     const emptyStateDisplay = this.emptyStateDisplay ?? undefined;
     const zIndex = this.getAttribute("zIndex") !== null ? parseInt(this.getAttribute("zIndex")!) : undefined;
-    const enableStreaming = this.getAttribute("enableStreaming") == "true";
+    const enableStreaming =
+      this.getAttribute("enableStreaming") !== null ? this.getAttribute("enableStreaming") == "true" : undefined;
+    const language = (this.getAttribute("language") as SummaryLanguage) ?? undefined;
 
     ReactDOM.render(
       <>
@@ -154,6 +163,7 @@ class ReactChatbotWebComponent extends HTMLElement {
           isInitiallyOpen={isInitiallyOpen}
           zIndex={zIndex}
           enableStreaming={enableStreaming}
+          language={language}
         />
       </>,
       this.mountPoint
@@ -196,3 +206,5 @@ export const ReactChatbot = (props: Props) => {
   // @ts-ignore
   return <react-chatbot ref={ref} {...updatedProps} />;
 };
+
+export { SummaryLanguage };

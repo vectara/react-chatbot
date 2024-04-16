@@ -2,7 +2,7 @@ import { ChangeEvent, ReactNode, useCallback, useState } from "react";
 import ReactDOM from "react-dom";
 import { BiLogoGithub } from "react-icons/bi";
 import JsxParser from "react-jsx-parser";
-import { ReactChatbot } from "@vectara/react-chatbot";
+import { ReactChatbot, SummaryLanguage } from "@vectara/react-chatbot";
 import {
   VuiAppContent,
   VuiAppHeader,
@@ -39,7 +39,8 @@ const generateCodeSnippet = (
   placeholder?: string,
   inputSize?: string,
   emptyStateDisplay?: string,
-  isStreamingEnabled?: boolean
+  isStreamingEnabled?: boolean,
+  language?: SummaryLanguage
 ) => {
   const props = [
     `customerId="${customerId === "" ? "<Your Vectara customer ID>" : customerId}"`,
@@ -66,6 +67,8 @@ const generateCodeSnippet = (
   }
 
   props.push(`enableStreaming={${isStreamingEnabled}}`);
+
+  props.push(`language="${language}"`);
 
   props.push(`isInitiallyOpen={ /* (optional) true, if the component should be initially opened */ }`);
   props.push(`zIndex={ /* (optional) number representing the z-index the component should have */ }`);
@@ -97,6 +100,7 @@ const App = () => {
   const [placeholder, setPlaceholder] = useState<string>(DEFAULT_PLACEHOLDER);
   const [inputSize, setInputSize] = useState<"large" | "medium">("large");
   const [isStreamingEnabled, setIsStreamingEnabled] = useState<boolean>(true);
+  const [language, setLanguage] = useState<SummaryLanguage>("eng");
   const [emptyStateJsx, setEmptyStateJsx] = useState<string>("");
 
   const onUpdateCorpusIds = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -196,6 +200,7 @@ const App = () => {
               isInitiallyOpen={isChatbotForcedOpen}
               zIndex={9}
               enableStreaming={isStreamingEnabled}
+              language={language}
             />
             <VuiSpacer size="m" />
             <VuiButtonSecondary
@@ -232,7 +237,8 @@ const App = () => {
                 placeholder,
                 inputSize,
                 emptyStateJsx,
-                isStreamingEnabled
+                isStreamingEnabled,
+                language
               )}
             </VuiCode>
             <VuiSpacer size="xxl" />
@@ -265,7 +271,8 @@ export const App = () => {
     DEFAULT_CUSTOMER_ID,
     DEFAULT_CORPUS_IDS,
     DEFAULT_API_KEY,
-    true // Enable streaming, false otherwise. Defaults to true.
+    true, // Enable streaming, false otherwise. Defaults to true.
+    "fra" // Response language. Defaults to "eng" for English.
   );
 
   /* You can pass the values returned by the hook to your custom components as props, or use them
@@ -318,6 +325,8 @@ export const App = () => {
               onUpdateEmptyMessagesContent={onUpdateEmptyMessagesContent}
               isStreamingEnabled={isStreamingEnabled}
               onUpdateIsStreamingEnabled={setIsStreamingEnabled}
+              language={language}
+              onUpdateLanguage={setLanguage}
             />
           </div>
         </VuiAppContent>

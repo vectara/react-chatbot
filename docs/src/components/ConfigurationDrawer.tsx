@@ -10,8 +10,13 @@ import {
   VuiToggle,
   VuiTextArea,
   VuiRadioButton,
-  VuiLabel
+  VuiLabel,
+  VuiSelect
 } from "../ui";
+
+import { SummaryLanguage } from "@vectara/react-chatbot";
+
+import { SUMMARY_LANGUAGES } from "../../../src/types";
 
 type Props = {
   isOpen: boolean;
@@ -32,6 +37,8 @@ type Props = {
   onUpdateEmptyMessagesContent: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   isStreamingEnabled: boolean;
   onUpdateIsStreamingEnabled: (isStreamingEnabled: boolean) => void;
+  language: SummaryLanguage;
+  onUpdateLanguage: (language: SummaryLanguage) => void;
 };
 
 export const ConfigurationDrawer = ({
@@ -52,7 +59,9 @@ export const ConfigurationDrawer = ({
   emptyMessagesContent,
   onUpdateEmptyMessagesContent,
   isStreamingEnabled,
-  onUpdateIsStreamingEnabled
+  onUpdateIsStreamingEnabled,
+  language,
+  onUpdateLanguage
 }: Props) => {
   return (
     <VuiDrawer
@@ -130,6 +139,21 @@ export const ConfigurationDrawer = ({
 
       <VuiSpacer size="m" />
 
+      <VuiFormGroup label="Response Language" labelFor="responseLanguage">
+        <VuiSelect
+          value={language}
+          onChange={(evt) => {
+            onUpdateLanguage(evt.target.value);
+          }}
+          options={SUMMARY_LANGUAGES.filter((lang) => lang !== "auto").map((lang) => ({
+            text: lang,
+            value: lang
+          }))}
+        />
+      </VuiFormGroup>
+
+      <VuiSpacer size="m" />
+
       <VuiLabel>Input size</VuiLabel>
 
       <VuiSpacer size="xs" />
@@ -149,6 +173,7 @@ export const ConfigurationDrawer = ({
         onChange={() => onUpdateInputSize("medium")}
         checked={inputSize === "medium"}
       />
+
       <VuiSpacer size="m" />
 
       <VuiFormGroup label="Empty messages content (JSX)" labelFor="emptyMessagesContent">
