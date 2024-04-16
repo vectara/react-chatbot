@@ -45113,7 +45113,7 @@ export const App = () => (
         ] }),
         /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(VuiSpacer, { size: "s" }),
         /* @__PURE__ */ (0, import_jsx_runtime99.jsx)(VuiCode, { language: "tsx", children: `
-import { useChat } from "@vectara/react-chatbot/lib";
+import { useChat } from "@vectara/react-chatbot/lib/useChat";
 
 export const App = () => {
   const {
