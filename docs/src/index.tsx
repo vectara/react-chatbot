@@ -250,7 +250,7 @@ const App = () => {
             <VuiSpacer size="s" />
             <VuiCode language="tsx">
               {`
-import { useChat } from "@vectara/react-chatbot/lib";
+import { useChat } from "@vectara/react-chatbot/lib/useChat";
 
 export const App = () => {
   const {
