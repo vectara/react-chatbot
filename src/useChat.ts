@@ -14,7 +14,13 @@ import { deserializeSearchResponse } from "utils/deserializeSearchResponse";
  *  - startNewConversation: a utility method for clearing the chat context
  *  - hasError: a boolean indicating an error was encountered while sending a message to the platform
  */
-export const useChat = (customerId: string, corpusIds: string[], apiKey: string, useStreaming: boolean = true) => {
+export const useChat = (
+  customerId: string,
+  corpusIds: string[],
+  apiKey: string,
+  useStreaming: boolean = true,
+  language: SummaryLanguage = "eng"
+) => {
   const [messageHistory, setMessageHistory] = useState<ChatTurn[]>([]);
   const recentQuestion = useRef<string>("");
   const [activeMessage, setActiveMessage] = useState<ChatTurn | null>(null);
@@ -22,8 +28,6 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string,
   const [isStreamingResponse, setIsStreamingResponse] = useState<boolean>(false);
   const [conversationId, setConversationId] = useState<string | null>(null);
   const [hasError, setHasError] = useState<boolean>(false);
-
-  const getLanguage = (languageValue?: string): SummaryLanguage => (languageValue ?? "eng") as SummaryLanguage;
 
   const sendMessage = async ({ query, isRetry = false }: { query: string; isRetry?: boolean }) => {
     if (isLoading) return;
@@ -67,7 +71,7 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string,
             summaryNumResults: 7,
             summaryNumSentences: 3,
             summaryPromptName: "vectara-summary-ext-v1.2.0",
-            language: getLanguage(),
+            language,
             chat: { store: true, conversationId: conversationId ?? undefined }
           },
           (update) => onStreamUpdate(update)
@@ -89,7 +93,7 @@ export const useChat = (customerId: string, corpusIds: string[], apiKey: string,
           summaryNumResults: 7,
           summaryNumSentences: 3,
           summaryPromptName: "vectara-summary-ext-v1.2.0",
-          language: getLanguage(),
+          language,
           chat: { conversationId: conversationId ?? undefined }
         });
 

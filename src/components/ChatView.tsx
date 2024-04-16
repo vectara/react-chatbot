@@ -5,7 +5,7 @@ import { ChatItem } from "./ChatItem";
 import { useChat } from "../useChat";
 import { Loader } from "./Loader";
 import { ChatBubbleIcon, MinimizeIcon } from "./Icons";
-import { debounce } from "lodash";
+import { SummaryLanguage } from "types";
 
 const inputSizeToQueryInputSize = {
   large: "l",
@@ -30,6 +30,7 @@ interface Props {
   corpusIds: string[];
   apiKey: string;
   enableStreaming: boolean;
+  language: SummaryLanguage;
   title?: string;
   placeholder?: string;
   inputSize?: "large" | "medium";
@@ -53,12 +54,13 @@ export const ChatView = ({
   emptyStateDisplay = <DefaultEmptyMessagesState />,
   isInitiallyOpen,
   zIndex = 9999,
-  enableStreaming
+  enableStreaming,
+  language
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(isInitiallyOpen ?? false);
   const [query, setQuery] = useState<string>("");
   const { sendMessage, startNewConversation, messageHistory, isLoading, hasError, activeMessage, isStreamingResponse } =
-    useChat(customerId, corpusIds, apiKey, enableStreaming);
+    useChat(customerId, corpusIds, apiKey, enableStreaming, language);
 
   const appLayoutRef = useRef<HTMLDivElement>(null);
   const isScrolledToBottomRef = useRef(true);

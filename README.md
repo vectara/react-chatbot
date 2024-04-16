@@ -69,6 +69,7 @@ import { ReactChatbot } from "@vectara/react-chatbot";
   isInitiallyOpen={false}
   zIndex={ /* (optional) number representing the z-index the component should have */ }
   enableStreaming={true}
+  language="fra"
 />
 ```
 
@@ -114,6 +115,11 @@ Customize the z-index of the chatbot widget
 
 Enable streaming responses from the Vectara API. Defaults to true.
 
+##### `language` (optional)
+
+The language the response should be in. Defaults to "eng" for English.
+See our [types](src/types.ts) for more information on supported language values.
+
 ### Use your own views with the useChat hook
 
 Install React-Chatbot:
@@ -134,7 +140,8 @@ const { sendMessage, activeMessage, messageHistory, isLoading, isStreamingRespon
     "CUSTOMER_ID",
     ["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"],
     "API_KEY",
-    true // Enable streaming, false otherwise. Defaults to true.
+    true, // Enable streaming, false otherwise. Defaults to true.
+    "fra" // Response language. Defaults to "eng" for English. See our types for more information.
   );
 ```
 
