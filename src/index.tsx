@@ -1,99 +1,19 @@
-import React, { FC, ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import * as ReactDOM from "react-dom";
-import { ChatView } from "components/ChatView";
+import { Props, ChatView } from "./components/ChatView";
+import type { SummaryLanguage } from "./types";
+export type { Props } from "components/ChatView";
+export { DEFAULT_SUMMARIZER } from "./useChat";
 
 // @ts-ignore
 import cssText from "index.scss";
-import type { SummaryLanguage } from "./types";
-
-export interface Props {
-  // Vectara customer ID
-  customerId: string;
-
-  // Vectara API key
-  apiKey: string;
-
-  // Vectara corpus IDs
-  corpusIds: string[];
-
-  // Title to be shown in the UI header
-  title?: string;
-
-  // Text to be shown when the input field has no text
-  placeholder?: string;
-
-  // Example questions to prompt the user
-  exampleQuestions?: string[];
-
-  // Size of input. Defaults to "large".
-  inputSize?: "large" | "medium";
-
-  // Content to render into the messages display when there are no messages to show
-  emptyStateDisplay?: ReactNode;
-
-  // Used to explicitly configure the component's initial open/closed state.
-  isInitiallyOpen?: boolean;
-
-  // Used to control the component's z-index. Defaults to 9999.
-  zIndex?: number;
-
-  // Used to enable streaming responses from the API. Defaults to true.
-  enableStreaming?: boolean;
-
-  // The language the responses should be in. Defaults to English.
-  language?: SummaryLanguage;
-}
-
-/**
- * A client-side chat component that queries specific corpora with a user-provided message.
- */
-const ReactChatbotInternal: FC<Props> = ({
-  customerId,
-  apiKey,
-  corpusIds,
-  title,
-  placeholder,
-  exampleQuestions,
-  inputSize,
-  emptyStateDisplay,
-  isInitiallyOpen,
-  zIndex,
-  enableStreaming = true,
-  language = "eng"
-}) => {
-  return (
-    <div>
-      <ChatView
-        customerId={customerId}
-        corpusIds={corpusIds}
-        apiKey={apiKey}
-        title={title}
-        placeholder={placeholder}
-        exampleQuestions={exampleQuestions}
-        inputSize={inputSize}
-        emptyStateDisplay={emptyStateDisplay}
-        isInitiallyOpen={isInitiallyOpen}
-        zIndex={zIndex}
-        enableStreaming={enableStreaming}
-        language={language}
-      />
-    </div>
-  );
-};
 
 class ReactChatbotWebComponent extends HTMLElement {
   sheet!: CSSStyleSheet;
   sr!: ShadowRoot;
   mountPoint!: HTMLDivElement;
 
-  // Props
-  customerId!: string;
-  corpusIds!: string[];
-  apiKey!: string;
-  title!: string;
-  placeholder!: string;
-  isInitiallyOpen!: boolean;
-  zIndex!: number;
+  // References
   emptyStateDisplay!: ReactNode;
 
   static get observedAttributes() {
@@ -109,7 +29,9 @@ class ReactChatbotWebComponent extends HTMLElement {
       "zindex",
       "emptystatedisplayupdatetime",
       "enablestreaming",
-      "language"
+      "language",
+      "enablefactualconsistencyscore",
+      "summarypromptname"
     ];
   }
 
@@ -157,24 +79,28 @@ class ReactChatbotWebComponent extends HTMLElement {
     const enableStreaming =
       this.getAttribute("enableStreaming") !== null ? this.getAttribute("enableStreaming") == "true" : undefined;
     const language = (this.getAttribute("language") as SummaryLanguage) ?? undefined;
+    const enableFactualConsistencyScore = this.getAttribute("enableFactualConsistencyScore") === "true";
+    const summaryPromptName = this.getAttribute("summaryPromptName") ?? undefined;
 
     ReactDOM.render(
-      <>
-        <ReactChatbotInternal
+      <div>
+        <ChatView
           customerId={customerId}
           corpusIds={corpusIds}
           apiKey={apiKey}
           title={title}
           placeholder={placeholder}
           exampleQuestions={exampleQuestions}
-          inputSize={inputSize as "large" | "medium" | undefined}
+          inputSize={inputSize as Props["inputSize"]}
           emptyStateDisplay={emptyStateDisplay}
           isInitiallyOpen={isInitiallyOpen}
           zIndex={zIndex}
           enableStreaming={enableStreaming}
           language={language}
+          enableFactualConsistencyScore={enableFactualConsistencyScore}
+          summaryPromptName={summaryPromptName}
         />
-      </>,
+      </div>,
       this.mountPoint
     );
   }

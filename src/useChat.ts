@@ -14,13 +14,28 @@ import { deserializeSearchResponse } from "utils/deserializeSearchResponse";
  *  - startNewConversation: a utility method for clearing the chat context
  *  - hasError: a boolean indicating an error was encountered while sending a message to the platform
  */
-export const useChat = (
-  customerId: string,
-  corpusIds: string[],
-  apiKey: string,
-  useStreaming: boolean = true,
-  language: SummaryLanguage = "eng"
-) => {
+
+export const DEFAULT_SUMMARIZER = "vectara-summary-ext-v1.2.0";
+
+type UseChatConfig = {
+  customerId: string;
+  corpusIds: string[];
+  apiKey: string;
+  enableStreaming?: boolean;
+  language?: SummaryLanguage;
+  enableFactualConsistencyScore?: boolean;
+  summaryPromptName?: string;
+};
+
+export const useChat = ({
+  customerId,
+  corpusIds,
+  apiKey,
+  enableStreaming = true,
+  language = "eng",
+  enableFactualConsistencyScore,
+  summaryPromptName = DEFAULT_SUMMARIZER
+}: UseChatConfig) => {
   const [messageHistory, setMessageHistory] = useState<ChatTurn[]>([]);
   const recentQuestion = useRef<string>("");
   const [activeMessage, setActiveMessage] = useState<ChatTurn | null>(null);
@@ -62,7 +77,7 @@ export const useChat = (
 
     setIsLoading(true);
 
-    if (useStreaming) {
+    if (enableStreaming) {
       try {
         await streamQuery(
           {
@@ -70,8 +85,9 @@ export const useChat = (
             corpusIds,
             summaryNumResults: 7,
             summaryNumSentences: 3,
-            summaryPromptName: "vectara-summary-ext-v1.2.0",
+            summaryPromptName,
             language,
+            enableFactualConsistencyScore,
             chat: { store: true, conversationId: conversationId ?? undefined }
           },
           (update) => onStreamUpdate(update)
@@ -92,8 +108,9 @@ export const useChat = (
           summaryMode: true,
           summaryNumResults: 7,
           summaryNumSentences: 3,
-          summaryPromptName: "vectara-summary-ext-v1.2.0",
+          summaryPromptName,
           language,
+          enableFactualConsistencyScore,
           chat: { conversationId: conversationId ?? undefined }
         });
 

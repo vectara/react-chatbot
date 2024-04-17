@@ -13,19 +13,48 @@ const inputSizeToQueryInputSize = {
   medium: "m"
 } as const;
 
-interface Props {
+export interface Props {
+  // Vectara customer ID
   customerId: string;
-  corpusIds: string[];
+
+  // Vectara API key
   apiKey: string;
-  enableStreaming: boolean;
-  language: SummaryLanguage;
+
+  // Vectara corpus IDs
+  corpusIds: string[];
+
+  // Title to be shown in the UI header
   title?: string;
+
+  // Text to be shown when the input field has no text
   placeholder?: string;
+
+  // Example questions to prompt the user
   exampleQuestions?: string[];
+
+  // Size of input. Defaults to "large".
   inputSize?: "large" | "medium";
+
+  // Content to render into the messages display when there are no messages to show
   emptyStateDisplay?: ReactNode;
+
+  // Configures the component's initial open/closed state.
   isInitiallyOpen?: boolean;
+
+  // Defines the component's z-index. Defaults to 9999.
   zIndex?: number;
+
+  // Enables streaming responses from the API. Defaults to true.
+  enableStreaming?: boolean;
+
+  // The language the responses should be in. Defaults to English.
+  language?: SummaryLanguage;
+
+  // Enables the factual consistency score in the API response. Defaults to false.
+  enableFactualConsistencyScore?: boolean;
+
+  // Defines the name of the summary prompt. Defaults to "vectara-summary-ext-v1.2.0".
+  summaryPromptName?: string;
 }
 
 /**
@@ -44,13 +73,23 @@ export const ChatView = ({
   emptyStateDisplay,
   isInitiallyOpen,
   zIndex = 9999,
-  enableStreaming,
-  language
+  enableStreaming = true,
+  language = "eng",
+  enableFactualConsistencyScore,
+  summaryPromptName
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(isInitiallyOpen ?? false);
   const [query, setQuery] = useState<string>("");
   const { sendMessage, startNewConversation, messageHistory, isLoading, hasError, activeMessage, isStreamingResponse } =
-    useChat(customerId, corpusIds, apiKey, enableStreaming, language);
+    useChat({
+      customerId,
+      corpusIds,
+      apiKey,
+      enableStreaming,
+      language,
+      enableFactualConsistencyScore,
+      summaryPromptName
+    });
 
   const appLayoutRef = useRef<HTMLDivElement>(null);
   const isScrolledToBottomRef = useRef(true);

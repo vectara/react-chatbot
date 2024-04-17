@@ -140,13 +140,13 @@ import { useChat } from "@vectara/react-chatbot/lib/useChat";
 /* snip */
 
 const { sendMessage, activeMessage, messageHistory, isLoading, isStreamingResponse, hasError, startNewConversation } =
-  useChat(
-    "CUSTOMER_ID",
-    ["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"],
-    "API_KEY",
-    true, // Enable streaming, false otherwise. Defaults to true.
-    "fra" // Response language. Defaults to "eng" for English. See our types for more information.
-  );
+  useChat({
+    customerId: "CUSTOMER_ID",
+    corpusIds: ["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"],
+    apiKey: "API_KEY",
+    enableStreaming: true, // Enable streaming, false otherwise. Defaults to true.
+    language: "fra" // Response language. Defaults to "eng" for English. See our types for more information.
+  });
 ```
 
 The values returned by the hook can be passed on to your custom components as props or used in any way you wish.

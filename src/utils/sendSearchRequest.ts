@@ -1,6 +1,10 @@
 import { SummaryLanguage } from "../types";
 
 type Config = {
+  customerId: string;
+  corpusId: string;
+  endpoint: string;
+  apiKey: string;
   filter: string;
   queryValue?: string;
   language?: SummaryLanguage;
@@ -15,10 +19,7 @@ type Config = {
   summaryNumResults?: number;
   summaryNumSentences?: number;
   summaryPromptName?: string;
-  customerId: string;
-  corpusId: string;
-  endpoint: string;
-  apiKey: string;
+  enableFactualConsistencyScore?: boolean;
   chat?: {
     conversationId?: string;
   };
@@ -28,6 +29,10 @@ type Config = {
  * Send a request to the query API.
  */
 export const sendSearchRequest = async ({
+  customerId,
+  corpusId,
+  endpoint,
+  apiKey,
   filter,
   queryValue,
   language,
@@ -42,10 +47,7 @@ export const sendSearchRequest = async ({
   summaryNumResults,
   summaryNumSentences,
   summaryPromptName,
-  customerId,
-  corpusId,
-  endpoint,
-  apiKey,
+  enableFactualConsistencyScore,
   chat
 }: Config) => {
   const lambda =
@@ -80,6 +82,7 @@ export const sendSearchRequest = async ({
           ? {
               summary: [
                 {
+                  factualConsistencyScore: enableFactualConsistencyScore,
                   responseLang: language,
                   maxSummarizedResults: summaryNumResults,
                   summarizerPromptName: summaryPromptName,
