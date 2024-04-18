@@ -5,8 +5,9 @@ import { ChatItem } from "./ChatItem";
 import { useChat } from "../useChat";
 import { Loader } from "./Loader";
 import { MinimizeIcon } from "./Icons";
-import { SummaryLanguage } from "types";
+import { FactualConsistencyBadge } from "./FactualConsistencyBadge";
 import { ExampleQuestions } from "./exampleQuestions/ExampleQuestions";
+import { SummaryLanguage } from "types";
 
 const inputSizeToQueryInputSize = {
   large: "l",
@@ -134,7 +135,7 @@ export const ChatView = ({
   const historyItems = useMemo(
     () =>
       messageHistory.map((turn, index) => {
-        const { question, answer, results } = turn;
+        const { question, answer, results, factualConsistencyScore } = turn;
         const onRetry =
           hasError && index === messageHistory.length - 1
             ? () => sendMessage({ query: question, isRetry: true })
@@ -142,7 +143,15 @@ export const ChatView = ({
 
         return (
           <Fragment key={index}>
-            <ChatItem question={question} answer={answer} searchResults={results} onRetry={onRetry} />
+            <ChatItem
+              question={question}
+              answer={answer}
+              searchResults={results}
+              factualConsistencyScore={
+                enableFactualConsistencyScore && <FactualConsistencyBadge score={factualConsistencyScore} />
+              }
+              onRetry={onRetry}
+            />
             {index < messageHistory.length - 1 && <VuiSpacer size="m" />}
           </Fragment>
         );
@@ -195,6 +204,11 @@ export const ChatView = ({
                       question={activeMessage.question}
                       answer={activeMessage.answer}
                       searchResults={activeMessage.results}
+                      factualConsistencyScore={
+                        enableFactualConsistencyScore && (
+                          <FactualConsistencyBadge score={activeMessage.factualConsistencyScore} />
+                        )
+                      }
                       onRetry={
                         hasError ? () => sendMessage({ query: activeMessage.question, isRetry: true }) : undefined
                       }

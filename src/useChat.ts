@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChatTurn, SummaryLanguage } from "types";
-import { ChatDetail, streamQuery, StreamUpdate } from "@vectara/stream-query-client";
+import { ChatDetail, FactualConsistencyDetail, streamQuery, StreamUpdate } from "@vectara/stream-query-client";
 import { sendSearchRequest } from "utils/sendSearchRequest";
 import { deserializeSearchResponse } from "utils/deserializeSearchResponse";
 
@@ -46,6 +46,7 @@ export const useChat = ({
 
   const sendMessage = async ({ query, isRetry = false }: { query: string; isRetry?: boolean }) => {
     if (isLoading) return;
+
     if (isRetry) {
       setHasError(false);
     }
@@ -121,7 +122,8 @@ export const useChat = ({
             id: response.summary[0].chat.turnId,
             question: recentQuestion.current,
             answer: response?.summary[0].text ?? "",
-            results: deserializeSearchResponse(response) ?? []
+            results: deserializeSearchResponse(response) ?? [],
+            factualConsistencyScore: response.summary[0].factualConsistency?.score
           }
         ]);
         setActiveMessage(null);
@@ -140,7 +142,11 @@ export const useChat = ({
     setConversationId(null);
   };
 
-  const onStreamUpdate = ({ references, details, updatedText, isDone }: StreamUpdate) => {
+  const onStreamUpdate = (update: StreamUpdate) => {
+    const { references, details, updatedText, isDone } = update;
+
+    const factualConsistencyScore = extractFactualConsistencyScore(update);
+
     if (updatedText) {
       setIsStreamingResponse(true);
       setIsLoading(false);
@@ -152,18 +158,26 @@ export const useChat = ({
       setConversationId(chatDetail.data.conversationId ?? null);
     }
 
-    if (isDone) {
+    setActiveMessage((prev) => ({
+      id: chatDetail ? chatDetail.data.turnId : "",
+      question: recentQuestion.current,
+      answer: updatedText ?? "",
+      results: [...(prev?.results ?? []), ...(references ?? [])],
+      factualConsistencyScore
+    }));
+
+    const isFactualConsistencyScoreComplete = enableFactualConsistencyScore
+      ? factualConsistencyScore !== undefined
+      : true;
+    const isResponseComplete = isDone && isFactualConsistencyScoreComplete;
+
+    if (isResponseComplete) {
       setIsStreamingResponse(false);
-    } else {
-      setActiveMessage((prev) => ({
-        id: chatDetail ? chatDetail.data.turnId : "",
-        question: recentQuestion.current,
-        answer: updatedText ?? "",
-        results: [...(prev?.results ?? []), ...(references ?? [])]
-      }));
     }
   };
 
+  // Handle this in an effect instead of directly in the onStreamUpdate callback
+  // because onStreamUpdate doesn't have access to the latest state of activeMessage.
   useEffect(() => {
     if (!isStreamingResponse && activeMessage) {
       setMessageHistory([...messageHistory, activeMessage]);
@@ -180,4 +194,15 @@ export const useChat = ({
     startNewConversation,
     hasError
   };
+};
+
+const extractFactualConsistencyScore = (update: StreamUpdate) => {
+  const { details } = update;
+  const factualConsistencyDetail = details?.find((detail) => detail.type === "factualConsistency") as
+    | FactualConsistencyDetail
+    | undefined;
+
+  if (factualConsistencyDetail) {
+    return factualConsistencyDetail.data.score;
+  }
 };

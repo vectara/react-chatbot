@@ -38,6 +38,7 @@ type Props = {
   question?: string;
   answer?: string;
   searchResults?: DeserializedSearchResult[];
+  factualConsistencyScore?: React.ReactNode;
   onRetry?: () => void;
   isStreaming?: boolean;
 };
@@ -47,7 +48,7 @@ type Props = {
  * Defaults to showing just the user-supplied message, if it has not yet been answered.
  * Otherwise, shows both question and answer, plus applicable references.
  */
-export const ChatItem = ({ question, answer, searchResults, onRetry, isStreaming }: Props) => {
+export const ChatItem = ({ question, answer, searchResults, factualConsistencyScore, onRetry, isStreaming }: Props) => {
   const [isReferencesOpen, setIsReferencesOpen] = useState(false);
   let content;
 
@@ -113,6 +114,13 @@ export const ChatItem = ({ question, answer, searchResults, onRetry, isStreaming
               </span>
             )}
           </VuiText>
+
+          {factualConsistencyScore && (
+            <>
+              <VuiSpacer size="xs" />
+              {factualConsistencyScore}
+            </>
+          )}
 
           {reorderedSearchResults && reorderedSearchResults.length > 0 && (
             <>
