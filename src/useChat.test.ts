@@ -45,7 +45,9 @@ const MOCK_API_RESPONSE = {
 describe("useChat", () => {
   describe("streaming", () => {
     it("should send messages and update hook values", async () => {
-      const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key"));
+      const { result } = renderHook(() =>
+        useChat({ customerId: "mock-customer-id", corpusIds: ["1"], apiKey: "mock-api-key" })
+      );
 
       (streamQuery as jest.Mock).mockImplementation(async (_, onStreamUpdate) => {
         await onStreamUpdate({
@@ -91,7 +93,9 @@ describe("useChat", () => {
 
   describe("non-streaming", () => {
     it("should send messages and update message history", async () => {
-      const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key", false));
+      const { result } = renderHook(() =>
+        useChat({ customerId: "mock-customer-id", corpusIds: ["1"], apiKey: "mock-api-key", enableStreaming: false })
+      );
 
       (sendSearchRequest as jest.Mock).mockImplementation(() => Promise.resolve(MOCK_API_RESPONSE));
 
@@ -109,7 +113,9 @@ describe("useChat", () => {
     });
 
     it("should reflect error state", async () => {
-      const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key", false));
+      const { result } = renderHook(() =>
+        useChat({ customerId: "mock-customer-id", corpusIds: ["1"], apiKey: "mock-api-key", enableStreaming: false })
+      );
       (sendSearchRequest as jest.Mock).mockImplementation(() => {
         throw "error";
       });
@@ -122,7 +128,9 @@ describe("useChat", () => {
     });
 
     it("should reflect loading state", async () => {
-      const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key"));
+      const { result } = renderHook(() =>
+        useChat({ customerId: "mock-customer-id", corpusIds: ["1"], apiKey: "mock-api-key" })
+      );
       (sendSearchRequest as jest.Mock).mockImplementation(() => {
         return new Promise(() => {});
       });
@@ -136,7 +144,9 @@ describe("useChat", () => {
   });
 
   it("should be able to reset the conversation", async () => {
-    const { result } = renderHook(() => useChat("mock-customer-id", ["1"], "mock-api-key", false));
+    const { result } = renderHook(() =>
+      useChat({ customerId: "mock-customer-id", corpusIds: ["1"], apiKey: "mock-api-key", enableStreaming: false })
+    );
     (sendSearchRequest as jest.Mock).mockImplementation(() => Promise.resolve(MOCK_API_RESPONSE));
 
     await act(async () => {
