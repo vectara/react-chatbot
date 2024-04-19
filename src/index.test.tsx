@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import { screen } from "shadow-dom-testing-library";
 import { ReactChatbot } from "./";
-import { useChat } from "./useChat";
+import * as useChatInterface from "./useChat";
 
 const MIN_PROPS = {
   customerId: "mock-customer-id",
@@ -49,25 +49,36 @@ window.CSSStyleSheet = jest.fn().mockImplementation(() => ({
   replaceSync: () => {}
 }));
 
-const mockSendMessage = jest.fn();
-
-jest.mock("./useChat", () => ({
-  useChat: jest.fn()
-}));
-
 describe("ReactChatbot", () => {
-  (useChat as jest.Mock).mockImplementation(() => ({
-    sendMessage: mockSendMessage,
-    messageHistory: []
-  }));
+  let mockSendMessage: jest.Mock;
+  let useChatSpy: jest.SpyInstance;
+
+  beforeEach(() => {
+    mockSendMessage = jest.fn();
+    useChatSpy = jest.spyOn(useChatInterface, "useChat");
+  });
+
+  afterEach(() => {
+    jest.resetAllMocks();
+  });
 
   it("should render in closed state by default", () => {
+    useChatSpy.mockImplementation(() => ({
+      sendMessage: mockSendMessage,
+      messageHistory: []
+    }));
+
     render(<ReactChatbot {...MIN_PROPS} />);
 
     expect(screen.getByShadowText("My Chatbot")).toBeInTheDocument();
   });
 
   it("should optionally render in open state", () => {
+    useChatSpy.mockImplementation(() => ({
+      sendMessage: mockSendMessage,
+      messageHistory: []
+    }));
+
     render(<ReactChatbot {...MIN_PROPS} isInitiallyOpen={true} />);
 
     expect(screen.getByShadowText("Ask anything.")).toBeInTheDocument();
@@ -75,6 +86,11 @@ describe("ReactChatbot", () => {
   });
 
   it("should render based on optional parameters", () => {
+    useChatSpy.mockImplementation(() => ({
+      sendMessage: mockSendMessage,
+      messageHistory: []
+    }));
+
     render(<ReactChatbot {...MIN_PROPS} {...OPTIONAL_PROPS} />);
     const openButton = screen.getByShadowText(OPTIONAL_PROPS.title);
 
@@ -88,7 +104,7 @@ describe("ReactChatbot", () => {
   });
 
   it("should render messages", () => {
-    (useChat as jest.Mock).mockImplementation(() => ({
+    useChatSpy.mockImplementation(() => ({
       sendMessage: mockSendMessage,
       messageHistory: MOCK_MESSAGE_HISTORY
     }));
@@ -101,6 +117,11 @@ describe("ReactChatbot", () => {
   });
 
   it("should execute callback when sending message", () => {
+    useChatSpy.mockImplementation(() => ({
+      sendMessage: mockSendMessage,
+      messageHistory: []
+    }));
+
     render(<ReactChatbot {...MIN_PROPS} isInitiallyOpen={true} />);
     const sendButton = screen.getByShadowText("Send");
     const input = screen.getByShadowTestId("queryInput");
@@ -116,5 +137,19 @@ describe("ReactChatbot", () => {
 
     expect(mockSendMessage).toHaveBeenCalledTimes(2);
     expect((input as HTMLInputElement).value).toEqual("");
+  });
+
+  it("renders example questions", () => {
+    useChatSpy.mockImplementation(() => ({
+      sendMessage: mockSendMessage,
+      messageHistory: []
+    }));
+
+    render(<ReactChatbot {...MIN_PROPS} exampleQuestions={["What is RAG"]} isInitiallyOpen={true} />);
+    const exampleQuestion = screen.getByShadowTestId("exampleQuestion");
+    expect(exampleQuestion.textContent).toEqual("What is RAG");
+
+    fireEvent.click(exampleQuestion);
+    expect(mockSendMessage).toHaveBeenCalledTimes(1);
   });
 });

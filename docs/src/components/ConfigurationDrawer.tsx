@@ -39,6 +39,8 @@ type Props = {
   onUpdateIsStreamingEnabled: (isStreamingEnabled: boolean) => void;
   language: SummaryLanguage;
   onUpdateLanguage: (language: SummaryLanguage) => void;
+  exampleQuestions: string;
+  onUpdateExampleQuestions: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const ConfigurationDrawer = ({
@@ -61,7 +63,9 @@ export const ConfigurationDrawer = ({
   isStreamingEnabled,
   onUpdateIsStreamingEnabled,
   language,
-  onUpdateLanguage
+  onUpdateLanguage,
+  exampleQuestions,
+  onUpdateExampleQuestions
 }: Props) => {
   return (
     <VuiDrawer
@@ -126,6 +130,12 @@ export const ConfigurationDrawer = ({
 
       <VuiSpacer size="m" />
 
+      <VuiFormGroup label="Example questions" labelFor="exampleQuestions">
+        <VuiTextInput value={exampleQuestions} onChange={onUpdateExampleQuestions} fullWidth />
+      </VuiFormGroup>
+
+      <VuiSpacer size="m" />
+
       <VuiLabel>Enable Streaming</VuiLabel>
 
       <VuiSpacer size="xs" />
@@ -143,7 +153,7 @@ export const ConfigurationDrawer = ({
         <VuiSelect
           value={language}
           onChange={(evt) => {
-            onUpdateLanguage(evt.target.value);
+            onUpdateLanguage(evt.target.value as SummaryLanguage);
           }}
           options={SUMMARY_LANGUAGES.filter((lang) => lang !== "auto").map((lang) => ({
             text: lang,

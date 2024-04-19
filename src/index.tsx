@@ -22,6 +22,9 @@ export interface Props {
   // Text to be shown when the input field has no text
   placeholder?: string;
 
+  // Example questions to prompt the user
+  exampleQuestions?: string[];
+
   // Size of input. Defaults to "large".
   inputSize?: "large" | "medium";
 
@@ -50,6 +53,7 @@ const ReactChatbotInternal: FC<Props> = ({
   corpusIds,
   title,
   placeholder,
+  exampleQuestions,
   inputSize,
   emptyStateDisplay,
   isInitiallyOpen,
@@ -65,6 +69,7 @@ const ReactChatbotInternal: FC<Props> = ({
         apiKey={apiKey}
         title={title}
         placeholder={placeholder}
+        exampleQuestions={exampleQuestions}
         inputSize={inputSize}
         emptyStateDisplay={emptyStateDisplay}
         isInitiallyOpen={isInitiallyOpen}
@@ -98,6 +103,7 @@ class ReactChatbotWebComponent extends HTMLElement {
       "apikey",
       "title",
       "placeholder",
+      "examplequestions",
       "inputsize",
       "isinitiallyopen",
       "zindex",
@@ -142,6 +148,8 @@ class ReactChatbotWebComponent extends HTMLElement {
     const apiKey = this.getAttribute("apiKey") ?? "";
     const title = this.getAttribute("title") ?? undefined;
     const placeholder = this.getAttribute("placeholder") ?? undefined;
+    const rawExampleQuestions = this.getAttribute("exampleQuestions");
+    const exampleQuestions = rawExampleQuestions ? rawExampleQuestions.split(",") : undefined;
     const inputSize = this.getAttribute("inputSize") ?? undefined;
     const isInitiallyOpen = this.getAttribute("isInitiallyOpen") === "true";
     const emptyStateDisplay = this.emptyStateDisplay ?? undefined;
@@ -158,6 +166,7 @@ class ReactChatbotWebComponent extends HTMLElement {
           apiKey={apiKey}
           title={title}
           placeholder={placeholder}
+          exampleQuestions={exampleQuestions}
           inputSize={inputSize as "large" | "medium" | undefined}
           emptyStateDisplay={emptyStateDisplay}
           isInitiallyOpen={isInitiallyOpen}

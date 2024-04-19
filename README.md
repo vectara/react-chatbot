@@ -95,9 +95,13 @@ Configure the title in the header of the chatbot window.
 
 Configure the placeholder text in the chatbot's input.
 
+##### `exampleQuestions` (optional)
+
+Configure the example questions that will be suggested to the user when there are no messages to display.
+
 ##### `emptyStateDisplay` (optional)
 
-Configure JSX content to render in the messages window when there are no messages to display.
+Configure JSX content to render in the messages window when there are no messages to display. When configured, this will supersede `exampleQuestions`.
 
 ##### `isInitiallyOpen` (optional)
 

@@ -40,7 +40,8 @@ const generateCodeSnippet = (
   inputSize?: string,
   emptyStateDisplay?: string,
   isStreamingEnabled?: boolean,
-  language?: SummaryLanguage
+  language?: SummaryLanguage,
+  exampleQuestions?: string
 ) => {
   const props = [
     `customerId="${customerId === "" ? "<Your Vectara customer ID>" : customerId}"`,
@@ -56,6 +57,15 @@ const generateCodeSnippet = (
 
   if (placeholder) {
     props.push(`placeholder=${formatStringProp(placeholder)}`);
+  }
+
+  if (exampleQuestions) {
+    props.push(
+      `exampleQuestions={[${exampleQuestions
+        .split(",")
+        .map((value) => formatStringProp(value.trim()))
+        .join(", ")}]}`
+    );
   }
 
   if (inputSize) {
@@ -102,6 +112,7 @@ const App = () => {
   const [isStreamingEnabled, setIsStreamingEnabled] = useState<boolean>(true);
   const [language, setLanguage] = useState<SummaryLanguage>("eng");
   const [emptyStateJsx, setEmptyStateJsx] = useState<string>("");
+  const [exampleQuestions, setExampleQuestions] = useState<string>("What is Vectara?, How does RAG work?");
 
   const onUpdateCorpusIds = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const sanitizedValue = e.target.value.trim();
@@ -133,12 +144,18 @@ const App = () => {
     setEmptyStateJsx(e.target.value);
   }, []);
 
+  const onUpdateExampleQuestions = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    setExampleQuestions(e.target.value);
+  }, []);
+
   const CustomEmptyStateDisplay = useCallback(() => {
     return (
       // @ts-ignore
       <JsxParser jsx={emptyStateJsx} />
     );
   }, [emptyStateJsx]);
+
+  const parsedExampleQuestions = exampleQuestions && exampleQuestions.split(",");
 
   return (
     <>
@@ -196,6 +213,7 @@ const App = () => {
               title={title === "" ? undefined : title}
               placeholder={placeholder}
               inputSize={inputSize}
+              exampleQuestions={parsedExampleQuestions}
               emptyStateDisplay={emptyStateJsx === "" ? undefined : <CustomEmptyStateDisplay />}
               isInitiallyOpen={isChatbotForcedOpen}
               zIndex={9}
@@ -238,7 +256,8 @@ const App = () => {
                 inputSize,
                 emptyStateJsx,
                 isStreamingEnabled,
-                language
+                language,
+                exampleQuestions
               )}
             </VuiCode>
             <VuiSpacer size="xxl" />
@@ -327,6 +346,8 @@ export const App = () => {
               onUpdateIsStreamingEnabled={setIsStreamingEnabled}
               language={language}
               onUpdateLanguage={setLanguage}
+              exampleQuestions={exampleQuestions}
+              onUpdateExampleQuestions={onUpdateExampleQuestions}
             />
           </div>
         </VuiAppContent>
