@@ -1,29 +1,17 @@
-import { Fragment, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { VuiButtonSecondary, VuiFlexContainer, VuiFlexItem, VuiSpacer } from "../vui";
+import { Fragment, ReactNode, useEffect, useMemo, useRef, useState } from "react";
+import { VuiButtonSecondary, VuiContextProvider, VuiFlexContainer, VuiFlexItem, VuiSpacer } from "../vui";
 import { QueryInput } from "./QueryInput";
 import { ChatItem } from "./ChatItem";
 import { useChat } from "../useChat";
 import { Loader } from "./Loader";
-import { ChatBubbleIcon, MinimizeIcon } from "./Icons";
+import { MinimizeIcon } from "./Icons";
 import { SummaryLanguage } from "types";
+import { ExampleQuestions } from "./exampleQuestions/ExampleQuestions";
 
 const inputSizeToQueryInputSize = {
   large: "l",
   medium: "m"
 } as const;
-
-const DefaultEmptyMessagesState = () => (
-  <VuiFlexContainer
-    className="vrcbEmptyMessages"
-    spacing="none"
-    alignItems="center"
-    justifyContent="center"
-    direction="column"
-  >
-    <ChatBubbleIcon size="150px" color="#000000" />
-    Ask anything.
-  </VuiFlexContainer>
-);
 
 interface Props {
   customerId: string;
@@ -33,6 +21,7 @@ interface Props {
   language: SummaryLanguage;
   title?: string;
   placeholder?: string;
+  exampleQuestions?: string[];
   inputSize?: "large" | "medium";
   emptyStateDisplay?: ReactNode;
   isInitiallyOpen?: boolean;
@@ -50,8 +39,9 @@ export const ChatView = ({
   apiKey,
   title = "My Chatbot",
   placeholder = "Chat with your AI Assistant",
+  exampleQuestions,
   inputSize = "large",
-  emptyStateDisplay = <DefaultEmptyMessagesState />,
+  emptyStateDisplay,
   isInitiallyOpen,
   zIndex = 9999,
   enableStreaming,
@@ -124,9 +114,9 @@ export const ChatView = ({
   const hasContent = isLoading || messageHistory.length > 0 || activeMessage;
   const isRequestDisabled = isLoading || isStreamingResponse || query.trim().length === 0;
 
-  const onSendQuery = () => {
-    if (isRequestDisabled) return;
-    sendMessage({ query });
+  const onSendQuery = (queryOverride?: string) => {
+    if (isRequestDisabled && !queryOverride) return;
+    sendMessage({ query: queryOverride ?? query });
     setQuery("");
   };
 
@@ -134,7 +124,7 @@ export const ChatView = ({
 
   useEffect(updateScrollPosition, [isLoading, activeMessage]);
 
-  return isOpen ? (
+  const content = isOpen ? (
     <div className="vrcbChatbotWrapper" style={{ zIndex }}>
       <VuiFlexContainer className="vrcbHeader" spacing="none" direction="row">
         <VuiFlexItem grow={1} alignItems="center">
@@ -152,7 +142,9 @@ export const ChatView = ({
         <VuiFlexItem className="vrcbMessagesWrapper" basis="fill">
           <div ref={appLayoutRef}>
             {!hasContent ? (
-              emptyStateDisplay
+              emptyStateDisplay ?? (
+                <ExampleQuestions exampleQuestions={exampleQuestions ?? []} onSubmitChat={onSendQuery} />
+              )
             ) : (
               <>
                 <VuiSpacer size="xs" />
@@ -204,4 +196,6 @@ export const ChatView = ({
       {title}
     </button>
   );
+
+  return <VuiContextProvider>{content}</VuiContextProvider>;
 };

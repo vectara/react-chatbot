@@ -1,0 +1,9 @@
+@import "../../vui/styleUtils/index.scss";
+
+.vrcbExampleQuestionsContainer {
+  padding: $sizeM;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

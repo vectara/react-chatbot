@@ -1,0 +1,21 @@
+.vuiTopicButton {
+  display: inline-block;
+  text-decoration: none;
+  background-color: $colorEmptyShade;
+  border-radius: $sizeXs;
+  box-shadow: $shadowLargeStart;
+  transition: box-shadow $transitionSpeed, border-color $transitionSpeed;
+  overflow: hidden;
+  padding: $sizeM $sizeL;
+  text-align: left;
+
+  &:hover {
+    text-decoration: none;
+    box-shadow: $shadowLargeEnd, $colorPrimary 0 0 1px 1px;
+    z-index: 1;
+  }
+}
+
+.vuiTopicButton--fullWidth {
+  width: 100%;
+}

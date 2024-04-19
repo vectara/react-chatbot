@@ -1,0 +1,17 @@
+.vuiLink {
+  color: $colorPrimary !important;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+
+    // This is needed when wrapping an element that has display: inline-flex.
+    & * {
+      text-decoration: underline;
+    }
+  }
+}
+
+.vuiLink--button {
+  display: inline;
+}
