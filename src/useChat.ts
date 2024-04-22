@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChatTurn, SummaryLanguage } from "types";
-import { ChatDetail, FactualConsistencyDetail, streamQuery, StreamUpdate } from "@vectara/stream-query-client";
+import { streamQuery, StreamUpdate } from "@vectara/stream-query-client";
 import { sendSearchRequest } from "utils/sendSearchRequest";
 import { deserializeSearchResponse } from "utils/deserializeSearchResponse";
 
@@ -145,21 +145,19 @@ export const useChat = ({
   const onStreamUpdate = (update: StreamUpdate) => {
     const { references, details, updatedText, isDone } = update;
 
-    const factualConsistencyScore = extractFactualConsistencyScore(update);
+    const factualConsistencyScore = details?.factualConsistency?.score;
 
     if (updatedText) {
       setIsStreamingResponse(true);
       setIsLoading(false);
     }
 
-    const chatDetail = details?.find((detail) => detail.type === "chat") as ChatDetail | undefined;
-
-    if (chatDetail) {
-      setConversationId(chatDetail.data.conversationId ?? null);
+    if (details?.chat) {
+      setConversationId(details.chat.conversationId ?? null);
     }
 
     setActiveMessage((prev) => ({
-      id: chatDetail ? chatDetail.data.turnId : "",
+      id: details?.chat?.turnId ?? "",
       question: recentQuestion.current,
       answer: updatedText ?? "",
       results: [...(prev?.results ?? []), ...(references ?? [])],
@@ -194,15 +192,4 @@ export const useChat = ({
     startNewConversation,
     hasError
   };
-};
-
-const extractFactualConsistencyScore = (update: StreamUpdate) => {
-  const { details } = update;
-  const factualConsistencyDetail = details?.find((detail) => detail.type === "factualConsistency") as
-    | FactualConsistencyDetail
-    | undefined;
-
-  if (factualConsistencyDetail) {
-    return factualConsistencyDetail.data.score;
-  }
 };
