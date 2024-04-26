@@ -124,7 +124,7 @@ Enable streaming responses from the Vectara API. Defaults to true.
 The language the response should be in. Defaults to "eng" for English.
 See our [types](src/types.ts) for more information on supported language values.
 
-##### `factualConsistencyScore` (optional)
+##### `enableFactualConsistencyScore` (optional)
 
 When set, this will calculate the [Factual Consistency Score (FCS)](https://docs.vectara.com/docs/console-ui/corpus-query-configuration#configure-evaluation) of the chat response and display it in the UI.
 
