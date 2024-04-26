@@ -124,6 +124,14 @@ Enable streaming responses from the Vectara API. Defaults to true.
 The language the response should be in. Defaults to "eng" for English.
 See our [types](src/types.ts) for more information on supported language values.
 
+##### `factualConsistencyScore` (optional)
+
+When set, this will calculate the [Factual Consistency Score (FCS)](https://docs.vectara.com/docs/console-ui/corpus-query-configuration#configure-evaluation) of the chat response and display it in the UI.
+
+##### `summaryPromptName` (optional)
+
+Define the [summarizer and prompt](https://docs.vectara.com/docs/learn/grounded-generation/select-a-summarizer) to use to generate the chat response.
+
 ### Use your own views with the useChat hook
 
 Install React-Chatbot:
