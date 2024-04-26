@@ -93,4 +93,5 @@ export type ChatTurn = {
   question: string;
   answer: string;
   results: DeserializedSearchResult[];
+  factualConsistencyScore?: number;
 };

@@ -1,8 +1,8 @@
-import { ChangeEvent, ReactNode, useCallback, useState } from "react";
+import { ChangeEvent, useCallback, useState } from "react";
 import ReactDOM from "react-dom";
 import { BiLogoGithub } from "react-icons/bi";
 import JsxParser from "react-jsx-parser";
-import { ReactChatbot, SummaryLanguage } from "@vectara/react-chatbot";
+import { ReactChatbot, SummaryLanguage, DEFAULT_SUMMARIZER } from "@vectara/react-chatbot";
 import {
   VuiAppContent,
   VuiAppHeader,
@@ -113,6 +113,8 @@ const App = () => {
   const [language, setLanguage] = useState<SummaryLanguage>("eng");
   const [emptyStateJsx, setEmptyStateJsx] = useState<string>("");
   const [exampleQuestions, setExampleQuestions] = useState<string>("What is Vectara?, How does RAG work?");
+  const [enableFactualConsistencyScore, setEnableFactualConsistencyScore] = useState<boolean>(false);
+  const [summaryPromptName, setSummaryPromptName] = useState<string>(DEFAULT_SUMMARIZER);
 
   const onUpdateCorpusIds = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const sanitizedValue = e.target.value.trim();
@@ -202,6 +204,7 @@ const App = () => {
               <p>React-Chatbot instantly adds a Vectara-powered chatbot to your React applications.</p>
             </VuiText>
             <VuiSpacer size="m" />
+
             {/**
              * Here we ensure that if the field is blank, we use the default props that point to the docs page.
              * This ensures that we don't voluntarily display the docs corpus details in the text fields.
@@ -219,7 +222,10 @@ const App = () => {
               zIndex={9}
               enableStreaming={isStreamingEnabled}
               language={language}
+              enableFactualConsistencyScore={enableFactualConsistencyScore}
+              summaryPromptName={summaryPromptName}
             />
+
             <VuiSpacer size="m" />
             <VuiButtonSecondary
               color="primary"
@@ -246,6 +252,7 @@ const App = () => {
             <VuiSpacer size="m" />
             <VuiCode>npm install @vectara/react-chatbot</VuiCode>
             <VuiSpacer size="s" />
+
             <VuiCode language="tsx">
               {generateCodeSnippet(
                 customerId,
@@ -260,6 +267,7 @@ const App = () => {
                 exampleQuestions
               )}
             </VuiCode>
+
             <VuiSpacer size="xxl" />
             <VuiTitle size="m">
               <h2>Create your own view</h2>
@@ -273,6 +281,7 @@ const App = () => {
               <p>Check out the example below.</p>
             </VuiText>
             <VuiSpacer size="s" />
+
             <VuiCode language="tsx">
               {`
 import { useChat } from "@vectara/react-chatbot/lib/useChat";
@@ -286,19 +295,20 @@ export const App = () => {
     isStreamingResponse,
     hasError
     startNewConversation
-  } = useChat(
-    DEFAULT_CUSTOMER_ID,
-    DEFAULT_CORPUS_IDS,
-    DEFAULT_API_KEY,
-    true, // Enable streaming, false otherwise. Defaults to true.
-    "fra" // Response language. Defaults to "eng" for English.
-  );
+  } = useChat({
+    customerId: DEFAULT_CUSTOMER_ID,
+    corpusIds: DEFAULT_CORPUS_IDS,
+    apiKey: DEFAULT_API_KEY,
+    enableStreaming: true, // Enable streaming, false otherwise. Defaults to true.
+    language: "fra" // Response language. Defaults to "eng" for English.
+  });
 
   /* You can pass the values returned by the hook to your custom components as props, or use them
   however you wish. */
 };
 `}
             </VuiCode>
+
             <VuiSpacer size="m" />
             <VuiText>
               <p></p>
@@ -325,6 +335,7 @@ export const App = () => {
                 read the docs.
               </VuiLink>
             </VuiText>
+
             <ConfigurationDrawer
               isOpen={isConfigurationDrawerOpen}
               onClose={() => setIsConfigurationDrawerOpen(false)}
@@ -348,6 +359,10 @@ export const App = () => {
               onUpdateLanguage={setLanguage}
               exampleQuestions={exampleQuestions}
               onUpdateExampleQuestions={onUpdateExampleQuestions}
+              enableFactualConsistencyScore={enableFactualConsistencyScore}
+              onUpdateEnableFactualConsistencyScore={setEnableFactualConsistencyScore}
+              summaryPromptName={summaryPromptName}
+              onUpdateSummaryPromptName={setSummaryPromptName}
             />
           </div>
         </VuiAppContent>

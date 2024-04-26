@@ -1,4 +1,5 @@
 import { VuiAccordion } from "./accordion/Accordion";
+import { VuiBadge } from "./badge/Badge";
 import { VuiButtonPrimary } from "./button/ButtonPrimary";
 import { VuiButtonSecondary } from "./button/ButtonSecondary";
 import { VuiContextProvider } from "./context/Context";
@@ -20,6 +21,7 @@ export {
   TEXT_SIZE,
   TITLE_SIZE,
   VuiAccordion,
+  VuiBadge,
   VuiButtonPrimary,
   VuiButtonSecondary,
   VuiContextProvider,

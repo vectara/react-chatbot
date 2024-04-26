@@ -41,6 +41,10 @@ type Props = {
   onUpdateLanguage: (language: SummaryLanguage) => void;
   exampleQuestions: string;
   onUpdateExampleQuestions: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  enableFactualConsistencyScore: boolean;
+  onUpdateEnableFactualConsistencyScore: (enableFactualConsistencyScore: boolean) => void;
+  summaryPromptName: string;
+  onUpdateSummaryPromptName: (summaryPromptName: string) => void;
 };
 
 export const ConfigurationDrawer = ({
@@ -65,7 +69,11 @@ export const ConfigurationDrawer = ({
   language,
   onUpdateLanguage,
   exampleQuestions,
-  onUpdateExampleQuestions
+  onUpdateExampleQuestions,
+  enableFactualConsistencyScore,
+  onUpdateEnableFactualConsistencyScore,
+  summaryPromptName,
+  onUpdateSummaryPromptName
 }: Props) => {
   return (
     <VuiDrawer
@@ -136,7 +144,7 @@ export const ConfigurationDrawer = ({
 
       <VuiSpacer size="m" />
 
-      <VuiLabel>Enable Streaming</VuiLabel>
+      <VuiLabel>Enable streaming</VuiLabel>
 
       <VuiSpacer size="xs" />
 
@@ -149,7 +157,7 @@ export const ConfigurationDrawer = ({
 
       <VuiSpacer size="m" />
 
-      <VuiFormGroup label="Response Language" labelFor="responseLanguage">
+      <VuiFormGroup label="Response language" labelFor="responseLanguage">
         <VuiSelect
           value={language}
           onChange={(evt) => {
@@ -188,6 +196,25 @@ export const ConfigurationDrawer = ({
 
       <VuiFormGroup label="Empty messages content (JSX)" labelFor="emptyMessagesContent">
         <VuiTextArea value={emptyMessagesContent} onChange={onUpdateEmptyMessagesContent} fullWidth />
+      </VuiFormGroup>
+
+      <VuiSpacer size="m" />
+
+      <VuiLabel>Enable Factual Consistency Score</VuiLabel>
+
+      <VuiSpacer size="xs" />
+
+      <VuiToggle
+        onChange={(e) => {
+          onUpdateEnableFactualConsistencyScore(e.target.checked);
+        }}
+        checked={enableFactualConsistencyScore}
+      />
+
+      <VuiSpacer size="m" />
+
+      <VuiFormGroup label="Summary prompt name" labelFor="summaryPromptName">
+        <VuiTextInput value={summaryPromptName} onChange={(e) => onUpdateSummaryPromptName(e.target.value)} fullWidth />
       </VuiFormGroup>
 
       <VuiSpacer size="l" />
