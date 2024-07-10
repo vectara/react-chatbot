@@ -95,3 +95,5 @@ export type ChatTurn = {
   results: DeserializedSearchResult[];
   factualConsistencyScore?: number;
 };
+
+export type RerankerIds = 272725717 | 272725719 | 272725718

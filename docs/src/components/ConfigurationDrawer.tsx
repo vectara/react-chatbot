@@ -11,12 +11,12 @@ import {
   VuiTextArea,
   VuiRadioButton,
   VuiLabel,
-  VuiSelect
+  VuiSelect, VuiNumberInput
 } from "../ui";
 
 import { SummaryLanguage } from "@vectara/react-chatbot";
 
-import { SUMMARY_LANGUAGES } from "../../../src/types";
+import { SUMMARY_LANGUAGES, RerankerIds } from "../../../src/types";
 
 type Props = {
   isOpen: boolean;
@@ -45,6 +45,8 @@ type Props = {
   onUpdateEnableFactualConsistencyScore: (enableFactualConsistencyScore: boolean) => void;
   summaryPromptName: string;
   onUpdateSummaryPromptName: (summaryPromptName: string) => void;
+  rerankerId: RerankerIds;
+  onUpdateRerankerId: (rerankerId: RerankerIds) => void;
 };
 
 export const ConfigurationDrawer = ({
@@ -73,7 +75,9 @@ export const ConfigurationDrawer = ({
   enableFactualConsistencyScore,
   onUpdateEnableFactualConsistencyScore,
   summaryPromptName,
-  onUpdateSummaryPromptName
+  onUpdateSummaryPromptName,
+  rerankerId,
+  onUpdateRerankerId
 }: Props) => {
   return (
     <VuiDrawer
@@ -215,6 +219,12 @@ export const ConfigurationDrawer = ({
 
       <VuiFormGroup label="Summary prompt name" labelFor="summaryPromptName">
         <VuiTextInput value={summaryPromptName} onChange={(e) => onUpdateSummaryPromptName(e.target.value)} fullWidth />
+      </VuiFormGroup>
+
+      <VuiSpacer size="m" />
+
+      <VuiFormGroup label="Reranker ID" labelFor="rerankerId">
+        <VuiNumberInput value={rerankerId} onChange={(rerankerId) => onUpdateRerankerId(rerankerId as RerankerIds)} />
       </VuiFormGroup>
 
       <VuiSpacer size="l" />

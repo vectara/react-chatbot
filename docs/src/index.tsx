@@ -2,7 +2,7 @@ import { ChangeEvent, useCallback, useState } from "react";
 import ReactDOM from "react-dom";
 import { BiLogoGithub } from "react-icons/bi";
 import JsxParser from "react-jsx-parser";
-import { ReactChatbot, SummaryLanguage, DEFAULT_SUMMARIZER } from "@vectara/react-chatbot";
+import { ReactChatbot, SummaryLanguage, DEFAULT_SUMMARIZER, DEFAULT_RERANKER_ID } from "@vectara/react-chatbot";
 import {
   VuiAppContent,
   VuiAppHeader,
@@ -22,6 +22,7 @@ import { HeaderLogo } from "./components/HeaderLogo";
 import { ConfigurationDrawer } from "components/ConfigurationDrawer";
 import "./ui/_index.scss";
 import "./index.scss";
+import {RerankerIds} from "../../src/types";
 
 const formatStringProp = (value?: string) => {
   if (!value) {
@@ -41,7 +42,8 @@ const generateCodeSnippet = (
   emptyStateDisplay?: string,
   isStreamingEnabled?: boolean,
   language?: SummaryLanguage,
-  exampleQuestions?: string
+  exampleQuestions?: string,
+  rerankerId?: RerankerIds
 ) => {
   const props = [
     `customerId="${customerId === "" ? "<Your Vectara customer ID>" : customerId}"`,
@@ -79,6 +81,7 @@ const generateCodeSnippet = (
   props.push(`enableStreaming={${isStreamingEnabled}}`);
 
   props.push(`language="${language}"`);
+  props.push(`rerankerId=${rerankerId}`);
 
   props.push(`isInitiallyOpen={ /* (optional) true, if the component should be initially opened */ }`);
   props.push(`zIndex={ /* (optional) number representing the z-index the component should have */ }`);
@@ -115,6 +118,7 @@ const App = () => {
   const [exampleQuestions, setExampleQuestions] = useState<string>("What is Vectara?, How does RAG work?");
   const [enableFactualConsistencyScore, setEnableFactualConsistencyScore] = useState<boolean>(false);
   const [summaryPromptName, setSummaryPromptName] = useState<string>(DEFAULT_SUMMARIZER);
+  const [rerankerId, setRerankerId] = useState<RerankerIds>(DEFAULT_RERANKER_ID);
 
   const onUpdateCorpusIds = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const sanitizedValue = e.target.value.trim();
@@ -224,6 +228,7 @@ const App = () => {
               language={language}
               enableFactualConsistencyScore={enableFactualConsistencyScore}
               summaryPromptName={summaryPromptName}
+              rerankerId={rerankerId}
             />
 
             <VuiSpacer size="m" />
@@ -264,7 +269,8 @@ const App = () => {
                 emptyStateJsx,
                 isStreamingEnabled,
                 language,
-                exampleQuestions
+                exampleQuestions,
+                rerankerId
               )}
             </VuiCode>
 
@@ -363,6 +369,8 @@ export const App = () => {
               onUpdateEnableFactualConsistencyScore={setEnableFactualConsistencyScore}
               summaryPromptName={summaryPromptName}
               onUpdateSummaryPromptName={setSummaryPromptName}
+              rerankerId={rerankerId}
+              onUpdateRerankerId={setRerankerId}
             />
           </div>
         </VuiAppContent>

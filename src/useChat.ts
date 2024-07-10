@@ -15,7 +15,8 @@ import { deserializeSearchResponse } from "utils/deserializeSearchResponse";
  *  - hasError: a boolean indicating an error was encountered while sending a message to the platform
  */
 
-export const DEFAULT_SUMMARIZER = "vectara-summary-ext-v1.2.0";
+export const DEFAULT_SUMMARIZER = "vectara-summary-ext-24-05-med-omni";
+export const DEFAULT_RERANKER_ID = 272725719
 
 type UseChatConfig = {
   customerId: string;
@@ -25,6 +26,7 @@ type UseChatConfig = {
   language?: SummaryLanguage;
   enableFactualConsistencyScore?: boolean;
   summaryPromptName?: string;
+  rerankerId?: number;
 };
 
 export const useChat = ({
@@ -34,7 +36,8 @@ export const useChat = ({
   enableStreaming = true,
   language = "eng",
   enableFactualConsistencyScore,
-  summaryPromptName = DEFAULT_SUMMARIZER
+  summaryPromptName = DEFAULT_SUMMARIZER,
+  rerankerId = DEFAULT_RERANKER_ID
 }: UseChatConfig) => {
   const [messageHistory, setMessageHistory] = useState<ChatTurn[]>([]);
   const recentQuestion = useRef<string>("");
@@ -67,8 +70,8 @@ export const useChat = ({
       filter: "",
       queryValue: query,
       rerank: true,
-      rerankNumResults: 7,
-      rerankerId: 272725718,
+      rerankNumResults: 100,
+      rerankerId: rerankerId,
       rerankDiversityBias: 0.3,
       customerId: customerId,
       corpusId: corpusIds.join(","),
@@ -84,12 +87,14 @@ export const useChat = ({
           {
             ...baseSearchRequestParams,
             corpusIds,
-            summaryNumResults: 7,
-            summaryNumSentences: 3,
+            summaryNumResults: 100,
+            summaryNumSentences: 2,
             summaryPromptName,
             language,
+            rerankerId: rerankerId,
             enableFactualConsistencyScore,
-            chat: { store: true, conversationId: conversationId ?? undefined }
+            chat: { store: false, conversationId: conversationId ?? undefined },
+            lambda: 0.005
           },
           (update) => onStreamUpdate(update)
         );
@@ -109,6 +114,7 @@ export const useChat = ({
           summaryMode: true,
           summaryNumResults: 7,
           summaryNumSentences: 3,
+          rerankerId: rerankerId,
           summaryPromptName,
           language,
           enableFactualConsistencyScore,
