@@ -47,6 +47,8 @@ type Props = {
   onUpdateSummaryPromptName: (summaryPromptName: string) => void;
   rerankerId: RerankerIds;
   onUpdateRerankerId: (rerankerId: RerankerIds) => void;
+  lambda: number;
+  onUpdateLambda: (lamda: number) => void;
 };
 
 export const ConfigurationDrawer = ({
@@ -77,7 +79,9 @@ export const ConfigurationDrawer = ({
   summaryPromptName,
   onUpdateSummaryPromptName,
   rerankerId,
-  onUpdateRerankerId
+  onUpdateRerankerId,
+  lambda,
+  onUpdateLambda
 }: Props) => {
   return (
     <VuiDrawer
@@ -225,6 +229,12 @@ export const ConfigurationDrawer = ({
 
       <VuiFormGroup label="Reranker ID" labelFor="rerankerId">
         <VuiNumberInput value={rerankerId} onChange={(rerankerId) => onUpdateRerankerId(rerankerId as RerankerIds)} />
+      </VuiFormGroup>
+
+      <VuiSpacer size="m" />
+
+      <VuiFormGroup label="Lambda" labelFor="lambda">
+        <VuiNumberInput value={lambda} onChange={(lambda) => onUpdateLambda(lambda as number)} max={1} min={0} step={0.001} />
       </VuiFormGroup>
 
       <VuiSpacer size="l" />

@@ -15,8 +15,10 @@ import { deserializeSearchResponse } from "utils/deserializeSearchResponse";
  *  - hasError: a boolean indicating an error was encountered while sending a message to the platform
  */
 
-export const DEFAULT_SUMMARIZER = "vectara-summary-ext-24-05-med-omni";
-export const DEFAULT_RERANKER_ID = 272725719
+export const DEFAULT_SUMMARIZER = "vectara-summary-ext-v1.2.0";
+export const DEFAULT_RERANKER_ID = 272725718
+
+export const DEFAULT_LAMBDA_VALUE = 0.025
 
 type UseChatConfig = {
   customerId: string;
@@ -27,6 +29,7 @@ type UseChatConfig = {
   enableFactualConsistencyScore?: boolean;
   summaryPromptName?: string;
   rerankerId?: number;
+  lambda?: number
 };
 
 export const useChat = ({
@@ -37,7 +40,8 @@ export const useChat = ({
   language = "eng",
   enableFactualConsistencyScore,
   summaryPromptName = DEFAULT_SUMMARIZER,
-  rerankerId = DEFAULT_RERANKER_ID
+  rerankerId = DEFAULT_RERANKER_ID,
+  lambda = DEFAULT_LAMBDA_VALUE
 }: UseChatConfig) => {
   const [messageHistory, setMessageHistory] = useState<ChatTurn[]>([]);
   const recentQuestion = useRef<string>("");
@@ -70,7 +74,7 @@ export const useChat = ({
       filter: "",
       queryValue: query,
       rerank: true,
-      rerankNumResults: 100,
+      rerankNumResults: 7,
       rerankerId: rerankerId,
       rerankDiversityBias: 0.3,
       customerId: customerId,
@@ -87,14 +91,14 @@ export const useChat = ({
           {
             ...baseSearchRequestParams,
             corpusIds,
-            summaryNumResults: 100,
-            summaryNumSentences: 2,
+            summaryNumResults: 7,
+            summaryNumSentences: 3,
             summaryPromptName,
             language,
             rerankerId: rerankerId,
             enableFactualConsistencyScore,
-            chat: { store: false, conversationId: conversationId ?? undefined },
-            lambda: 0.005
+            chat: { store: true, conversationId: conversationId ?? undefined },
+            lambda: lambda
           },
           (update) => onStreamUpdate(update)
         );

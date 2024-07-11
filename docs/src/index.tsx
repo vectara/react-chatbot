@@ -2,7 +2,7 @@ import { ChangeEvent, useCallback, useState } from "react";
 import ReactDOM from "react-dom";
 import { BiLogoGithub } from "react-icons/bi";
 import JsxParser from "react-jsx-parser";
-import { ReactChatbot, SummaryLanguage, DEFAULT_SUMMARIZER, DEFAULT_RERANKER_ID } from "@vectara/react-chatbot";
+import { ReactChatbot, SummaryLanguage, DEFAULT_SUMMARIZER, DEFAULT_RERANKER_ID, DEFAULT_LAMBDA_VALUE } from "@vectara/react-chatbot";
 import {
   VuiAppContent,
   VuiAppHeader,
@@ -43,7 +43,8 @@ const generateCodeSnippet = (
   isStreamingEnabled?: boolean,
   language?: SummaryLanguage,
   exampleQuestions?: string,
-  rerankerId?: RerankerIds
+  rerankerId?: RerankerIds,
+  lambda?: number
 ) => {
   const props = [
     `customerId="${customerId === "" ? "<Your Vectara customer ID>" : customerId}"`,
@@ -82,6 +83,7 @@ const generateCodeSnippet = (
 
   props.push(`language="${language}"`);
   props.push(`rerankerId=${rerankerId}`);
+  props.push(`lambda=${lambda}`);
 
   props.push(`isInitiallyOpen={ /* (optional) true, if the component should be initially opened */ }`);
   props.push(`zIndex={ /* (optional) number representing the z-index the component should have */ }`);
@@ -119,6 +121,7 @@ const App = () => {
   const [enableFactualConsistencyScore, setEnableFactualConsistencyScore] = useState<boolean>(false);
   const [summaryPromptName, setSummaryPromptName] = useState<string>(DEFAULT_SUMMARIZER);
   const [rerankerId, setRerankerId] = useState<RerankerIds>(DEFAULT_RERANKER_ID);
+  const [lambda, setLambda] = useState<number>(DEFAULT_LAMBDA_VALUE);
 
   const onUpdateCorpusIds = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     const sanitizedValue = e.target.value.trim();
@@ -229,6 +232,7 @@ const App = () => {
               enableFactualConsistencyScore={enableFactualConsistencyScore}
               summaryPromptName={summaryPromptName}
               rerankerId={rerankerId}
+              lambda={lambda}
             />
 
             <VuiSpacer size="m" />
@@ -270,7 +274,8 @@ const App = () => {
                 isStreamingEnabled,
                 language,
                 exampleQuestions,
-                rerankerId
+                rerankerId,
+                lambda
               )}
             </VuiCode>
 
@@ -371,6 +376,8 @@ export const App = () => {
               onUpdateSummaryPromptName={setSummaryPromptName}
               rerankerId={rerankerId}
               onUpdateRerankerId={setRerankerId}
+              lambda={lambda}
+              onUpdateLambda={setLambda}
             />
           </div>
         </VuiAppContent>

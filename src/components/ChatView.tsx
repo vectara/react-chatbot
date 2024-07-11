@@ -59,6 +59,8 @@ export interface Props {
 
   //Define the reranker Id to be used , Defaults to "272725718"
   rerankerId?: RerankerIds;
+
+  lambda?: number
 }
 
 /**
@@ -82,6 +84,7 @@ export const ChatView = ({
   enableFactualConsistencyScore,
   summaryPromptName,
   rerankerId,
+  lambda
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(isInitiallyOpen ?? false);
   const [query, setQuery] = useState<string>("");
@@ -94,7 +97,8 @@ export const ChatView = ({
       language,
       enableFactualConsistencyScore,
       summaryPromptName,
-      rerankerId
+      rerankerId,
+      lambda
     });
 
   const appLayoutRef = useRef<HTMLDivElement>(null);
