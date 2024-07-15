@@ -7,7 +7,7 @@ import { Loader } from "./Loader";
 import { MinimizeIcon } from "./Icons";
 import { FactualConsistencyBadge } from "./FactualConsistencyBadge";
 import { ExampleQuestions } from "./exampleQuestions/ExampleQuestions";
-import {RerankerIds, SummaryLanguage} from "types";
+import {RerankerId, SummaryLanguage} from "types";
 
 const inputSizeToQueryInputSize = {
   large: "l",
@@ -57,8 +57,8 @@ export interface Props {
   // Defines the name of the summary prompt. Defaults to "vectara-summary-ext-v1.2.0".
   summaryPromptName?: string;
 
-  //Define the reranker Id to be used , Defaults to "272725718"
-  rerankerId?: RerankerIds;
+  // Define the reranker Id to be used , Defaults to "272725718"
+  rerankerId?: RerankerId;
 
   lambda?: number
 }

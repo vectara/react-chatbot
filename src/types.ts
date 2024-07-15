@@ -96,4 +96,4 @@ export type ChatTurn = {
   factualConsistencyScore?: number;
 };
 
-export type RerankerIds = 272725717 | 272725719 | 272725718
+export type RerankerId = 272725717 | 272725719 | 272725718

@@ -22,7 +22,7 @@ import { HeaderLogo } from "./components/HeaderLogo";
 import { ConfigurationDrawer } from "components/ConfigurationDrawer";
 import "./ui/_index.scss";
 import "./index.scss";
-import {RerankerIds} from "../../src/types";
+import {RerankerId} from "../../src/types";
 
 const formatStringProp = (value?: string) => {
   if (!value) {
@@ -43,7 +43,7 @@ const generateCodeSnippet = (
   isStreamingEnabled?: boolean,
   language?: SummaryLanguage,
   exampleQuestions?: string,
-  rerankerId?: RerankerIds,
+  rerankerId?: RerankerId,
   lambda?: number
 ) => {
   const props = [
@@ -120,7 +120,7 @@ const App = () => {
   const [exampleQuestions, setExampleQuestions] = useState<string>("What is Vectara?, How does RAG work?");
   const [enableFactualConsistencyScore, setEnableFactualConsistencyScore] = useState<boolean>(false);
   const [summaryPromptName, setSummaryPromptName] = useState<string>(DEFAULT_SUMMARIZER);
-  const [rerankerId, setRerankerId] = useState<RerankerIds>(DEFAULT_RERANKER_ID);
+  const [rerankerId, setRerankerId] = useState<RerankerId>(DEFAULT_RERANKER_ID);
   const [lambda, setLambda] = useState<number>(DEFAULT_LAMBDA_VALUE);
 
   const onUpdateCorpusIds = useCallback((e: ChangeEvent<HTMLInputElement>) => {

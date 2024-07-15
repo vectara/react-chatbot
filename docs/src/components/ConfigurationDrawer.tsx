@@ -16,7 +16,7 @@ import {
 
 import { SummaryLanguage } from "@vectara/react-chatbot";
 
-import { SUMMARY_LANGUAGES, RerankerIds } from "../../../src/types";
+import { SUMMARY_LANGUAGES, RerankerId } from "../../../src/types";
 
 type Props = {
   isOpen: boolean;
@@ -45,8 +45,8 @@ type Props = {
   onUpdateEnableFactualConsistencyScore: (enableFactualConsistencyScore: boolean) => void;
   summaryPromptName: string;
   onUpdateSummaryPromptName: (summaryPromptName: string) => void;
-  rerankerId: RerankerIds;
-  onUpdateRerankerId: (rerankerId: RerankerIds) => void;
+  rerankerId: RerankerId;
+  onUpdateRerankerId: (rerankerId: RerankerId) => void;
   lambda: number;
   onUpdateLambda: (lamda: number) => void;
 };
@@ -228,7 +228,7 @@ export const ConfigurationDrawer = ({
       <VuiSpacer size="m" />
 
       <VuiFormGroup label="Reranker ID" labelFor="rerankerId">
-        <VuiNumberInput value={rerankerId} onChange={(rerankerId) => onUpdateRerankerId(rerankerId as RerankerIds)} />
+        <VuiNumberInput value={rerankerId} onChange={(rerankerId) => onUpdateRerankerId(rerankerId as RerankerId)} />
       </VuiFormGroup>
 
       <VuiSpacer size="m" />

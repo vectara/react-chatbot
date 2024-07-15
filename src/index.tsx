@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useRef } from "react";
 import * as ReactDOM from "react-dom";
 import { Props, ChatView } from "./components/ChatView";
-import type {RerankerIds, SummaryLanguage} from "./types";
+import type {RerankerId, SummaryLanguage} from "./types";
 export type { Props } from "components/ChatView";
 export { DEFAULT_SUMMARIZER, DEFAULT_RERANKER_ID, DEFAULT_LAMBDA_VALUE } from "./useChat";
 
@@ -103,7 +103,7 @@ class ReactChatbotWebComponent extends HTMLElement {
           language={language}
           enableFactualConsistencyScore={enableFactualConsistencyScore}
           summaryPromptName={summaryPromptName}
-          rerankerId={rerankerId as RerankerIds}
+          rerankerId={rerankerId as RerankerId}
           lambda={lambda}
         />
       </div>,
