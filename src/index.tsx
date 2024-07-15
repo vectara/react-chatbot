@@ -1,9 +1,9 @@
 import { ReactNode, useEffect, useRef } from "react";
 import * as ReactDOM from "react-dom";
 import { Props, ChatView } from "./components/ChatView";
-import type { SummaryLanguage } from "./types";
+import type {RerankerId, SummaryLanguage} from "./types";
 export type { Props } from "components/ChatView";
-export { DEFAULT_SUMMARIZER } from "./useChat";
+export { DEFAULT_SUMMARIZER, DEFAULT_RERANKER_ID, DEFAULT_LAMBDA_VALUE } from "./useChat";
 
 // @ts-ignore
 import cssText from "index.scss";
@@ -31,7 +31,9 @@ class ReactChatbotWebComponent extends HTMLElement {
       "enablestreaming",
       "language",
       "enablefactualconsistencyscore",
-      "summarypromptname"
+      "summarypromptname",
+      "rerankerId",
+      "lambda"
     ];
   }
 
@@ -81,6 +83,8 @@ class ReactChatbotWebComponent extends HTMLElement {
     const language = (this.getAttribute("language") as SummaryLanguage) ?? undefined;
     const enableFactualConsistencyScore = this.getAttribute("enableFactualConsistencyScore") === "true";
     const summaryPromptName = this.getAttribute("summaryPromptName") ?? undefined;
+    const rerankerId = this.getAttribute("rerankerId") !== null ? parseInt(this.getAttribute("rerankerId")!, 10) : undefined;
+    const lambda = this.getAttribute("lambda") !== null ? parseFloat(this.getAttribute("lambda")!) : undefined;
 
     ReactDOM.render(
       <div>
@@ -99,6 +103,8 @@ class ReactChatbotWebComponent extends HTMLElement {
           language={language}
           enableFactualConsistencyScore={enableFactualConsistencyScore}
           summaryPromptName={summaryPromptName}
+          rerankerId={rerankerId as RerankerId}
+          lambda={lambda}
         />
       </div>,
       this.mountPoint

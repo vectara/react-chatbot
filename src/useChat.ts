@@ -16,6 +16,9 @@ import { deserializeSearchResponse } from "utils/deserializeSearchResponse";
  */
 
 export const DEFAULT_SUMMARIZER = "vectara-summary-ext-v1.2.0";
+export const DEFAULT_RERANKER_ID = 272725718
+
+export const DEFAULT_LAMBDA_VALUE = 0.025
 
 type UseChatConfig = {
   customerId: string;
@@ -25,6 +28,8 @@ type UseChatConfig = {
   language?: SummaryLanguage;
   enableFactualConsistencyScore?: boolean;
   summaryPromptName?: string;
+  rerankerId?: number;
+  lambda?: number
 };
 
 export const useChat = ({
@@ -34,7 +39,9 @@ export const useChat = ({
   enableStreaming = true,
   language = "eng",
   enableFactualConsistencyScore,
-  summaryPromptName = DEFAULT_SUMMARIZER
+  summaryPromptName = DEFAULT_SUMMARIZER,
+  rerankerId = DEFAULT_RERANKER_ID,
+  lambda = DEFAULT_LAMBDA_VALUE
 }: UseChatConfig) => {
   const [messageHistory, setMessageHistory] = useState<ChatTurn[]>([]);
   const recentQuestion = useRef<string>("");
@@ -68,7 +75,7 @@ export const useChat = ({
       queryValue: query,
       rerank: true,
       rerankNumResults: 7,
-      rerankerId: 272725718,
+      rerankerId,
       rerankDiversityBias: 0.3,
       customerId: customerId,
       corpusId: corpusIds.join(","),
@@ -88,8 +95,10 @@ export const useChat = ({
             summaryNumSentences: 3,
             summaryPromptName,
             language,
+            rerankerId,
             enableFactualConsistencyScore,
-            chat: { store: true, conversationId: conversationId ?? undefined }
+            chat: { store: true, conversationId: conversationId ?? undefined },
+            lambda: lambda
           },
           (update) => onStreamUpdate(update)
         );
@@ -109,6 +118,7 @@ export const useChat = ({
           summaryMode: true,
           summaryNumResults: 7,
           summaryNumSentences: 3,
+          rerankerId,
           summaryPromptName,
           language,
           enableFactualConsistencyScore,
