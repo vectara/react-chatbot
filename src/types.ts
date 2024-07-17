@@ -1,15 +1,20 @@
-export type DeserializedSearchResult = {
-  id: string;
+export type SearchResult = {
+  document_id: string;
+  document_metadata: Record<string, unknown>;
+  part_metadata: Record<string, unknown>;
+  score: number;
+  text: string;
+};
+
+export type SearchResultWithSnippet = SearchResult & {
   snippet: {
     pre: string;
     text: string;
     post: string;
   };
-  source: string;
-  url?: string;
-  title?: string;
-  metadata: Record<string, unknown>;
 };
+
+
 
 export type DocMetadata = {
   name: string;
@@ -92,8 +97,9 @@ export type ChatTurn = {
   id: string;
   question: string;
   answer: string;
-  results: DeserializedSearchResult[];
+  results: SearchResultWithSnippet[];
   factualConsistencyScore?: number;
 };
 
 export type RerankerId = 272725717 | 272725719 | 272725718
+export const mmrRerankerId = 272725718;

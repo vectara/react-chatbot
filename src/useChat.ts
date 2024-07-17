@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from "react";
-import { ChatTurn, SummaryLanguage } from "types";
-import { streamQuery, StreamUpdate } from "@vectara/stream-query-client";
-import { sendSearchRequest } from "utils/sendSearchRequest";
-import { deserializeSearchResponse } from "utils/deserializeSearchResponse";
+import {useEffect, useRef, useState} from "react";
+import {ChatTurn, mmrRerankerId, SearchResult, SearchResultWithSnippet, SummaryLanguage} from "types";
+import {ApiV2, streamQueryV2} from "@vectara/stream-query-client";
+import {parseSnippet} from "./utils/parseSnippet";
 
 /**
  * A hook that exposes:
@@ -22,9 +21,9 @@ export const DEFAULT_LAMBDA_VALUE = 0.025
 
 type UseChatConfig = {
   customerId: string;
-  corpusIds: string[];
+  corpusKey: string;
   apiKey: string;
-  enableStreaming?: boolean;
+  numberOfSearchResults?: number;
   language?: SummaryLanguage;
   enableFactualConsistencyScore?: boolean;
   summaryPromptName?: string;
@@ -34,11 +33,11 @@ type UseChatConfig = {
 
 export const useChat = ({
   customerId,
-  corpusIds,
+  corpusKey,
   apiKey,
-  enableStreaming = true,
+  numberOfSearchResults = 15,
   language = "eng",
-  enableFactualConsistencyScore,
+  enableFactualConsistencyScore = true,
   summaryPromptName = DEFAULT_SUMMARIZER,
   rerankerId = DEFAULT_RERANKER_ID,
   lambda = DEFAULT_LAMBDA_VALUE
@@ -67,125 +66,135 @@ export const useChat = ({
       id: "placeholder-message-id",
       question: query,
       answer: "",
-      results: []
+      results: [],
+      factualConsistencyScore: undefined
     });
-
-    const baseSearchRequestParams = {
-      filter: "",
-      queryValue: query,
-      rerank: true,
-      rerankNumResults: 7,
-      rerankerId,
-      rerankDiversityBias: 0.3,
-      customerId: customerId,
-      corpusId: corpusIds.join(","),
-      endpoint: "api.vectara.io",
-      apiKey: apiKey
-    };
-
     setIsLoading(true);
+    let resultsWithSnippets: SearchResultWithSnippet[];
+    try {
 
-    if (enableStreaming) {
-      try {
-        await streamQuery(
-          {
-            ...baseSearchRequestParams,
-            corpusIds,
-            summaryNumResults: 7,
-            summaryNumSentences: 3,
-            summaryPromptName,
-            language,
-            rerankerId,
-            enableFactualConsistencyScore,
-            chat: { store: true, conversationId: conversationId ?? undefined },
-            lambda: lambda
-          },
-          (update) => onStreamUpdate(update)
-        );
-      } catch (error) {
-        console.log("Summary error", error);
-        setIsLoading(false);
-        setHasError(true);
-        return;
-      }
-    } else {
-      try {
-        const response = await sendSearchRequest({
-          ...baseSearchRequestParams,
-          hybridNumWords: 2,
-          hybridLambdaLong: 0.0,
-          hybridLambdaShort: 0.1,
-          summaryMode: true,
-          summaryNumResults: 7,
-          summaryNumSentences: 3,
-          rerankerId,
-          summaryPromptName,
-          language,
-          enableFactualConsistencyScore,
-          chat: { conversationId: conversationId ?? undefined }
-        });
+      const onStreamEvent = (event: ApiV2.StreamEvent) => {
+        switch (event.type) {
+          case "requestError":
+          case "genericError":
+          case "error":
+            setHasError(true);
+            setIsLoading(false);
+            break;
 
-        setConversationId(response.summary[0].chat.conversationId);
-        setMessageHistory((prev) => [
-          ...prev,
-          {
-            id: response.summary[0].chat.turnId,
-            question: recentQuestion.current,
-            answer: response?.summary[0].text ?? "",
-            results: deserializeSearchResponse(response) ?? [],
-            factualConsistencyScore: response.summary[0].factualConsistency?.score
+          case "chatInfo":
+            setConversationId(event.chatId);
+            setActiveMessage((prevState) => ({
+              id: event.chatId,
+              question: recentQuestion.current,
+              answer: prevState?.answer ?? "",
+              results: prevState?.results ?? [],
+            }));
+
+            break;
+
+          case "searchResults":
+            resultsWithSnippets = event.searchResults.map((result: SearchResult) => {
+              const { pre, text, post } = parseSnippet(result.text);
+
+              return {
+                ...result,
+                snippet: {
+                  pre,
+                  text,
+                  post
+                }
+              };
+            });
+
+            setActiveMessage((prevState) => ({
+              id: prevState?.id ?? "",
+              question: recentQuestion.current,
+              answer: prevState?.answer ?? "",
+              results: resultsWithSnippets
+            }));
+            break;
+
+          case "generationChunk":
+            setIsStreamingResponse(true);
+            setIsLoading(false);
+            setActiveMessage((prevState) => ({
+              id: prevState?.id ?? "",
+              question: recentQuestion.current,
+              answer: event.updatedText ?? "",
+              results: prevState?.results ?? [],
+            }));
+            break;
+
+          case "factualConsistencyScore":
+            setActiveMessage((prevState) => ({
+              id: prevState?.id ?? "",
+              question: recentQuestion.current,
+              answer: prevState?.answer ?? "",
+              results: prevState?.results ?? [],
+              factualConsistencyScore: event.factualConsistencyScore
+            }));
+            break;
+
+          case "end":
+            setIsStreamingResponse(false);
+            break;
+        }
+      };
+
+      const streamQueryConfig: ApiV2.StreamQueryConfig = {
+        apiKey: apiKey!,
+        customerId: customerId!,
+        query: query,
+        corpusKey: corpusKey!,
+        search: {
+          offset: 0,
+          metadataFilter: "",
+          lexicalInterpolation: lambda,
+          reranker: rerankerId === mmrRerankerId
+              ? {
+                type: "mmr",
+                diversityBias: 0
+              }
+              : {
+                type: "customer_reranker",
+                // rnk_ prefix needed for conversion from API v1 to v2.
+                rerankerId: `rnk_${rerankerId}`
+              },
+          contextConfiguration: {
+            sentencesBefore: 2,
+            sentencesAfter: 2,
           }
-        ]);
-        setActiveMessage(null);
-        setIsLoading(false);
-      } catch (error) {
-        console.log("Summary error", error);
-        setHasError(true);
-        setIsLoading(false);
-        return;
-      }
+        },
+
+        chat: { store: true, conversationId: conversationId ?? undefined },
+        generation: {
+          promptName: summaryPromptName,
+          maxUsedSearchResults: numberOfSearchResults,
+          enableFactualConsistencyScore: enableFactualConsistencyScore,
+          responseLanguage: language
+
+        }
+      };
+
+      await streamQueryV2({ streamQueryConfig, onStreamEvent })
+    }
+    catch (error) {
+      console.log("Summary error", error);
+      setHasError(true);
+      setIsLoading(false);
+      return;
     }
   };
 
   const startNewConversation = () => {
     setMessageHistory([]);
     setConversationId(null);
+    // setActiveMessage(null)
   };
 
-  const onStreamUpdate = (update: StreamUpdate) => {
-    const { references, details, updatedText, isDone } = update;
-
-    const factualConsistencyScore = details?.factualConsistency?.score;
-
-    if (updatedText) {
-      setIsStreamingResponse(true);
-      setIsLoading(false);
-    }
-
-    if (details?.chat) {
-      setConversationId(details.chat.conversationId ?? null);
-    }
-
-    setActiveMessage((prev) => ({
-      id: details?.chat?.turnId ?? "",
-      question: recentQuestion.current,
-      answer: updatedText ?? "",
-      results: [...(prev?.results ?? []), ...(references ?? [])],
-      factualConsistencyScore
-    }));
-
-    const isFactualConsistencyScoreComplete = enableFactualConsistencyScore
-      ? factualConsistencyScore !== undefined
-      : true;
-    const isResponseComplete = isDone && isFactualConsistencyScoreComplete;
-
-    if (isResponseComplete) {
-      setIsStreamingResponse(false);
-    }
-  };
-
-  // Handle this in an effect instead of directly in the onStreamUpdate callback
-  // because onStreamUpdate doesn't have access to the latest state of activeMessage.
+  // Handle this in an effect instead of directly in the onStreamEvent callback
+  // because onStreamEvent doesn't have access to the latest state of activeMessage.
   useEffect(() => {
     if (!isStreamingResponse && activeMessage) {
       setMessageHistory([...messageHistory, activeMessage]);

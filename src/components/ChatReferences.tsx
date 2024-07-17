@@ -1,8 +1,8 @@
-import { VuiFlexContainer, VuiFlexItem, VuiText, VuiAccordion, VuiSpacer } from "../vui";
-import { DeserializedSearchResult } from "../types";
+import {VuiFlexContainer, VuiFlexItem, VuiText, VuiAccordion, VuiSpacer, VuiLink} from "../vui";
+import { SearchResultWithSnippet } from "../types";
 
 type Props = {
-  searchResults: DeserializedSearchResult[];
+  searchResults: SearchResultWithSnippet[];
   isOpen?: boolean;
   setIsOpen?: (isOpen: boolean) => void;
 };
@@ -29,9 +29,9 @@ export const ChatReferences = ({ searchResults, isOpen = false, setIsOpen = () =
   );
 };
 
-const ChatReference = ({ result, position }: { result: DeserializedSearchResult; position: number }) => {
+const ChatReference = ({ result, position }: { result: SearchResultWithSnippet; position: number }) => {
   const text = result?.snippet?.text;
-  const url = result?.url;
+  const url = result.document_metadata.url as string;
 
   return (
     <>
@@ -42,15 +42,7 @@ const ChatReference = ({ result, position }: { result: DeserializedSearchResult;
 
         <VuiFlexItem grow={1} shrink={1}>
           <VuiText size="s">
-            <p>
-              {url ? (
-                <a href={url} target="_blank">
-                  {text}
-                </a>
-              ) : (
-                text
-              )}
-            </p>
+            <p>{url ? <VuiLink href={url}>{text}</VuiLink> : text}</p>
           </VuiText>
         </VuiFlexItem>
       </VuiFlexContainer>

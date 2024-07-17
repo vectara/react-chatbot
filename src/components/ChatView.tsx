@@ -22,7 +22,7 @@ export interface Props {
   apiKey: string;
 
   // Vectara corpus IDs
-  corpusIds: string[];
+  corpusKey: string;
 
   // Title to be shown in the UI header
   title?: string;
@@ -45,8 +45,8 @@ export interface Props {
   // Defines the component's z-index. Defaults to 9999.
   zIndex?: number;
 
-  // Enables streaming responses from the API. Defaults to true.
-  enableStreaming?: boolean;
+  // Number of search results to summarize.
+  numberOfSearchResults?: number;
 
   // The language the responses should be in. Defaults to English.
   language?: SummaryLanguage;
@@ -70,7 +70,7 @@ export interface Props {
  */
 export const ChatView = ({
   customerId,
-  corpusIds,
+  corpusKey,
   apiKey,
   title = "My Chatbot",
   placeholder = "Chat with your AI Assistant",
@@ -79,7 +79,7 @@ export const ChatView = ({
   emptyStateDisplay,
   isInitiallyOpen,
   zIndex = 9999,
-  enableStreaming = true,
+  numberOfSearchResults = 15,
   language = "eng",
   enableFactualConsistencyScore,
   summaryPromptName,
@@ -91,9 +91,9 @@ export const ChatView = ({
   const { sendMessage, startNewConversation, messageHistory, isLoading, hasError, activeMessage, isStreamingResponse } =
     useChat({
       customerId,
-      corpusIds,
+      corpusKey,
       apiKey,
-      enableStreaming,
+      numberOfSearchResults,
       language,
       enableFactualConsistencyScore,
       summaryPromptName,
