@@ -110,7 +110,6 @@ export const sendSearchRequest = async ({
     customerId,
     corpusKey,
     apiKey,
-    authToken,
     query,
     domain,
     search,
@@ -195,7 +194,6 @@ export const sendSearchRequest = async ({
     };
 
     if (apiKey) headers["x-api-key"] = apiKey;
-    if (authToken) headers["Authorization"] = `Bearer ${authToken}`;
 
     const url = `${domain ?? DEFAULT_DOMAIN}/v2/chats`;
     const response = await fetch(url, {

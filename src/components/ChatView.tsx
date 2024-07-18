@@ -84,7 +84,7 @@ export const ChatView = ({
   emptyStateDisplay,
   isInitiallyOpen,
   zIndex = 9999,
-  numberOfSearchResults = 15,
+  numberOfSearchResults = 10,
   language = "eng",
   enableFactualConsistencyScore,
   summaryPromptName,

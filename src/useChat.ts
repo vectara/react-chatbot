@@ -44,7 +44,7 @@ export const useChat = ({
   customerId,
   corpusKey,
   apiKey,
-  numberOfSearchResults = 15,
+  numberOfSearchResults = 10,
   language = "eng",
   enableFactualConsistencyScore,
   summaryPromptName = DEFAULT_SUMMARIZER,
