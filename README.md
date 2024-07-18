@@ -132,6 +132,18 @@ When set, this will calculate the [Factual Consistency Score (FCS)](https://docs
 
 Define the [summarizer and prompt](https://docs.vectara.com/docs/learn/grounded-generation/select-a-summarizer) to use to generate the chat response.
 
+##### `numberOfSearchResults` (optional)
+
+Define the number of search results to be used to generate summary. Default is set to 15.
+
+##### `rerankerId` (optional)
+
+Define the reranker Id to be used , Defaults to 272725718.
+
+##### `lambda` (optional)
+
+How much to weigh lexical scores compared to the embedding score. 0 means lexical search is not used at all, and 1 means only lexical search is used.
+
 ### Use your own views with the useChat hook
 
 Install React-Chatbot:

@@ -60,6 +60,8 @@ export interface Props {
   // Define the reranker Id to be used , Defaults to "272725718"
   rerankerId?: RerankerId;
 
+  // How much to weigh lexical scores compared to the embedding score. 0 means lexical search is not used at all,
+  // and 1 means only lexical search is used.
   lambda?: number;
 
   // Enables streaming responses from the API. Defaults to true.

@@ -235,7 +235,7 @@ export const useChat = ({
 
           }
         })
-        
+
         resultsWithSnippets = response.search_results.map((result: SearchResult) => {
           const { pre, text, post } = parseSnippet(result.text);
 
