@@ -274,7 +274,7 @@ export const useChat = ({
   const startNewConversation = () => {
     setMessageHistory([]);
     setConversationId(null);
-    // setActiveMessage(null)
+    setActiveMessage(null)
   };
 
   // Handle this in an effect instead of directly in the onStreamEvent callback
