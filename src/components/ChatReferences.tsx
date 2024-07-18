@@ -42,7 +42,15 @@ const ChatReference = ({ result, position }: { result: SearchResultWithSnippet; 
 
         <VuiFlexItem grow={1} shrink={1}>
           <VuiText size="s">
-            <p>{url ? <VuiLink href={url}>{text}</VuiLink> : text}</p>
+            <p>
+              {url ? (
+                  <a href={url} target="_blank">
+                    {text}
+                  </a>
+              ) : (
+                  text
+              )}
+            </p>
           </VuiText>
         </VuiFlexItem>
       </VuiFlexContainer>

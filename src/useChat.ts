@@ -1,7 +1,15 @@
 import {useEffect, useRef, useState} from "react";
-import {ChatTurn, mmrRerankerId, SearchResult, SearchResultWithSnippet, SummaryLanguage} from "types";
+import {
+  ChatQueryResponse,
+  ChatTurn, END_TAG,
+  mmrRerankerId,
+  SearchResult,
+  SearchResultWithSnippet, START_TAG,
+  SummaryLanguage
+} from "types";
 import {ApiV2, streamQueryV2} from "@vectara/stream-query-client";
 import {parseSnippet} from "./utils/parseSnippet";
+import {sendSearchRequest} from "./utils/sendSearchRequest";
 
 /**
  * A hook that exposes:
@@ -28,7 +36,8 @@ type UseChatConfig = {
   enableFactualConsistencyScore?: boolean;
   summaryPromptName?: string;
   rerankerId?: number;
-  lambda?: number
+  lambda?: number;
+  enableStreaming?: boolean;
 };
 
 export const useChat = ({
@@ -37,10 +46,11 @@ export const useChat = ({
   apiKey,
   numberOfSearchResults = 15,
   language = "eng",
-  enableFactualConsistencyScore = true,
+  enableFactualConsistencyScore,
   summaryPromptName = DEFAULT_SUMMARIZER,
   rerankerId = DEFAULT_RERANKER_ID,
-  lambda = DEFAULT_LAMBDA_VALUE
+  lambda = DEFAULT_LAMBDA_VALUE,
+  enableStreaming = true,
 }: UseChatConfig) => {
   const [messageHistory, setMessageHistory] = useState<ChatTurn[]>([]);
   const recentQuestion = useRef<string>("");
@@ -71,119 +81,193 @@ export const useChat = ({
     });
     setIsLoading(true);
     let resultsWithSnippets: SearchResultWithSnippet[];
-    try {
+    if (enableStreaming) {
+      try {
 
-      const onStreamEvent = (event: ApiV2.StreamEvent) => {
-        switch (event.type) {
-          case "requestError":
-          case "genericError":
-          case "error":
-            setHasError(true);
-            setIsLoading(false);
-            break;
+        const onStreamEvent = (event: ApiV2.StreamEvent) => {
+          switch (event.type) {
+            case "requestError":
+            case "genericError":
+            case "error":
+              setHasError(true);
+              setIsLoading(false);
+              break;
 
-          case "chatInfo":
-            setConversationId(event.chatId);
-            setActiveMessage((prevState) => ({
-              id: event.chatId,
-              question: recentQuestion.current,
-              answer: prevState?.answer ?? "",
-              results: prevState?.results ?? [],
-            }));
+            case "chatInfo":
+              setConversationId(event.chatId);
+              setActiveMessage((prevState) => ({
+                id: event.chatId,
+                question: recentQuestion.current,
+                answer: prevState?.answer ?? "",
+                results: prevState?.results ?? [],
+              }));
 
-            break;
+              break;
 
-          case "searchResults":
-            resultsWithSnippets = event.searchResults.map((result: SearchResult) => {
-              const { pre, text, post } = parseSnippet(result.text);
+            case "searchResults":
+              resultsWithSnippets = event.searchResults.map((result: SearchResult) => {
+                const { pre, text, post } = parseSnippet(result.text);
 
-              return {
-                ...result,
-                snippet: {
-                  pre,
-                  text,
-                  post
-                }
-              };
-            });
+                return {
+                  ...result,
+                  snippet: {
+                    pre,
+                    text,
+                    post
+                  }
+                };
+              });
 
-            setActiveMessage((prevState) => ({
-              id: prevState?.id ?? "",
-              question: recentQuestion.current,
-              answer: prevState?.answer ?? "",
-              results: resultsWithSnippets
-            }));
-            break;
+              setActiveMessage((prevState) => ({
+                id: prevState?.id ?? "",
+                question: recentQuestion.current,
+                answer: prevState?.answer ?? "",
+                results: resultsWithSnippets
+              }));
+              break;
 
-          case "generationChunk":
-            setIsStreamingResponse(true);
-            setIsLoading(false);
-            setActiveMessage((prevState) => ({
-              id: prevState?.id ?? "",
-              question: recentQuestion.current,
-              answer: event.updatedText ?? "",
-              results: prevState?.results ?? [],
-            }));
-            break;
+            case "generationChunk":
+              setIsStreamingResponse(true);
+              setIsLoading(false);
+              setActiveMessage((prevState) => ({
+                id: prevState?.id ?? "",
+                question: recentQuestion.current,
+                answer: event.updatedText ?? "",
+                results: prevState?.results ?? [],
+              }));
+              break;
 
-          case "factualConsistencyScore":
-            setActiveMessage((prevState) => ({
-              id: prevState?.id ?? "",
-              question: recentQuestion.current,
-              answer: prevState?.answer ?? "",
-              results: prevState?.results ?? [],
-              factualConsistencyScore: event.factualConsistencyScore
-            }));
-            break;
+            case "factualConsistencyScore":
+              setActiveMessage((prevState) => ({
+                id: prevState?.id ?? "",
+                question: recentQuestion.current,
+                answer: prevState?.answer ?? "",
+                results: prevState?.results ?? [],
+                factualConsistencyScore: event.factualConsistencyScore
+              }));
+              break;
 
-          case "end":
-            setIsStreamingResponse(false);
-            break;
-        }
-      };
-
-      const streamQueryConfig: ApiV2.StreamQueryConfig = {
-        apiKey: apiKey!,
-        customerId: customerId!,
-        query: query,
-        corpusKey: corpusKey!,
-        search: {
-          offset: 0,
-          metadataFilter: "",
-          lexicalInterpolation: lambda,
-          reranker: rerankerId === mmrRerankerId
-              ? {
-                type: "mmr",
-                diversityBias: 0
-              }
-              : {
-                type: "customer_reranker",
-                // rnk_ prefix needed for conversion from API v1 to v2.
-                rerankerId: `rnk_${rerankerId}`
-              },
-          contextConfiguration: {
-            sentencesBefore: 2,
-            sentencesAfter: 2,
+            case "end":
+              setIsStreamingResponse(false);
+              break;
           }
-        },
+        };
 
-        chat: { store: true, conversationId: conversationId ?? undefined },
-        generation: {
-          promptName: summaryPromptName,
-          maxUsedSearchResults: numberOfSearchResults,
-          enableFactualConsistencyScore: enableFactualConsistencyScore,
-          responseLanguage: language
+        const streamQueryConfig: ApiV2.StreamQueryConfig = {
+          apiKey: apiKey!,
+          customerId: customerId!,
+          query: query,
+          corpusKey: corpusKey!,
+          search: {
+            offset: 0,
+            metadataFilter: "",
+            lexicalInterpolation: lambda,
+            reranker: rerankerId === mmrRerankerId
+                ? {
+                  type: "mmr",
+                  diversityBias: 0
+                }
+                : {
+                  type: "customer_reranker",
+                  // rnk_ prefix needed for conversion from API v1 to v2.
+                  rerankerId: `rnk_${rerankerId}`
+                },
+            contextConfiguration: {
+              sentencesBefore: 2,
+              sentencesAfter: 2,
+            }
+          },
 
-        }
-      };
+          chat: { store: true, conversationId: conversationId ?? undefined },
+          generation: {
+            promptName: summaryPromptName,
+            maxUsedSearchResults: numberOfSearchResults,
+            enableFactualConsistencyScore: enableFactualConsistencyScore,
+            responseLanguage: language
 
-      await streamQueryV2({ streamQueryConfig, onStreamEvent })
+          }
+        };
+
+        await streamQueryV2({ streamQueryConfig, onStreamEvent })
+      }
+      catch (error) {
+        console.log("Summary error", error);
+        setHasError(true);
+        setIsLoading(false);
+        return;
+      }
     }
-    catch (error) {
-      console.log("Summary error", error);
-      setHasError(true);
-      setIsLoading(false);
-      return;
+    else {
+      try {
+        const response: ChatQueryResponse = await sendSearchRequest({
+          apiKey: apiKey!,
+          customerId: customerId!,
+          query: query,
+          corpusKey: corpusKey!,
+          search: {
+            offset: 0,
+            metadataFilter: "",
+            lexicalInterpolation: lambda,
+            reranker: rerankerId === mmrRerankerId
+                ? {
+                  type: "mmr",
+                  diversityBias: 0
+                }
+                : {
+                  type: "customer_reranker",
+                  // rnk_ prefix needed for conversion from API v1 to v2.
+                  rerankerId: `rnk_${rerankerId}`
+                },
+            contextConfiguration: {
+              sentencesBefore: 2,
+              sentencesAfter: 2,
+              startTag: START_TAG,
+              endTag: END_TAG
+            }
+          },
+
+          chat: {store: true, conversationId: conversationId ?? undefined},
+          generation: {
+            promptName: summaryPromptName,
+            maxUsedSearchResults: numberOfSearchResults,
+            enableFactualConsistencyScore: enableFactualConsistencyScore,
+            responseLanguage: language
+
+          }
+        })
+        
+        resultsWithSnippets = response.search_results.map((result: SearchResult) => {
+          const { pre, text, post } = parseSnippet(result.text);
+
+          return {
+            ...result,
+            snippet: {
+              pre,
+              text,
+              post
+            }
+          };
+        });
+        setConversationId(response.chat_id);
+        setMessageHistory((prev) => [
+          ...prev,
+          {
+            id: response.chat_id,
+            question: recentQuestion.current,
+            answer: response?.answer ?? "",
+            results: resultsWithSnippets ?? [],
+            factualConsistencyScore: response.factual_consistency_score
+          }
+        ]);
+        setActiveMessage(null);
+        setIsLoading(false);
+      } catch (error) {
+        console.log("Summary error", error);
+        setHasError(true);
+        setIsLoading(false);
+        return;
+      }
+
     }
   };
 

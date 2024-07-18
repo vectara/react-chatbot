@@ -49,6 +49,8 @@ type Props = {
   onUpdateRerankerId: (rerankerId: RerankerId) => void;
   lambda: number;
   onUpdateLambda: (lamda: number) => void;
+  isStreamingEnabled: boolean;
+  onUpdateIsStreamingEnabled: (isStreamingEnabled: boolean) => void;
 };
 
 export const ConfigurationDrawer = ({
@@ -81,7 +83,9 @@ export const ConfigurationDrawer = ({
   rerankerId,
   onUpdateRerankerId,
   lambda,
-  onUpdateLambda
+  onUpdateLambda,
+  isStreamingEnabled,
+  onUpdateIsStreamingEnabled,
 }: Props) => {
   return (
     <VuiDrawer
@@ -153,8 +157,14 @@ export const ConfigurationDrawer = ({
       <VuiSpacer size="m" />
 
       <VuiLabel>Enable streaming</VuiLabel>
+      <VuiToggle
+          onChange={(e) => {
+            onUpdateIsStreamingEnabled(e.target.checked);
+          }}
+          checked={isStreamingEnabled}
+      />
 
-      <VuiSpacer size="xs" />
+      <VuiSpacer size="m" />
 
       <VuiFormGroup label="Number of search results to summarize" labelFor="numberOfSearchResults">
         <VuiNumberInput value={numberOfSearchResults} onChange={(numberOfSearchResults) => onUpdateNumberOfSearchResults(numberOfSearchResults as number)} step={1} />

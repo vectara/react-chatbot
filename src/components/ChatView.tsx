@@ -60,7 +60,10 @@ export interface Props {
   // Define the reranker Id to be used , Defaults to "272725718"
   rerankerId?: RerankerId;
 
-  lambda?: number
+  lambda?: number;
+
+  // Enables streaming responses from the API. Defaults to true.
+  enableStreaming?: boolean;
 }
 
 /**
@@ -84,7 +87,8 @@ export const ChatView = ({
   enableFactualConsistencyScore,
   summaryPromptName,
   rerankerId,
-  lambda
+  lambda,
+  enableStreaming = true,
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(isInitiallyOpen ?? false);
   const [query, setQuery] = useState<string>("");
@@ -98,7 +102,8 @@ export const ChatView = ({
       enableFactualConsistencyScore,
       summaryPromptName,
       rerankerId,
-      lambda
+      lambda,
+      enableStreaming
     });
 
   const appLayoutRef = useRef<HTMLDivElement>(null);

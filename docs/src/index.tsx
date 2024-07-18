@@ -44,7 +44,8 @@ const generateCodeSnippet = (
   language?: SummaryLanguage,
   exampleQuestions?: string,
   rerankerId?: RerankerId,
-  lambda?: number
+  lambda?: number,
+  isStreamingEnabled?: boolean,
 ) => {
   const props = [
     `customerId="${customerId === "" ? "<Your Vectara customer ID>" : customerId}"`,
@@ -77,6 +78,7 @@ const generateCodeSnippet = (
     props.push(`emptyStateDisplay={${emptyStateDisplay.replace(/\n/g, "").replace(/\s+/g, " ")}}`);
   }
 
+  props.push(`enableStreaming={${isStreamingEnabled}}`);
   props.push(`numberOfSearchResultsForSummary={${numberOfSearchResults}}`);
 
   props.push(`language="${language}"`);
@@ -112,6 +114,7 @@ const App = () => {
   const [title, setTitle] = useState<string>(DEFAULT_TITLE);
   const [placeholder, setPlaceholder] = useState<string>(DEFAULT_PLACEHOLDER);
   const [inputSize, setInputSize] = useState<"large" | "medium">("large");
+  const [isStreamingEnabled, setIsStreamingEnabled] = useState<boolean>(true);
   const [numberOfSearchResults, setNumberOfSearchResults] = useState<number>(15);
   const [language, setLanguage] = useState<SummaryLanguage>("eng");
   const [emptyStateJsx, setEmptyStateJsx] = useState<string>("");
@@ -225,6 +228,7 @@ const App = () => {
               summaryPromptName={summaryPromptName}
               rerankerId={rerankerId}
               lambda={lambda}
+              enableStreaming={isStreamingEnabled}
             />
 
             <VuiSpacer size="m" />
@@ -267,7 +271,8 @@ const App = () => {
                 language,
                 exampleQuestions,
                 rerankerId,
-                lambda
+                lambda,
+                isStreamingEnabled
               )}
             </VuiCode>
 
@@ -302,6 +307,7 @@ export const App = () => {
     customerId: DEFAULT_CUSTOMER_ID,
     corpusKey: DEFAULT_CORPUS_KEY,
     apiKey: DEFAULT_API_KEY,
+    enableStreaming: true, // Enable streaming, false otherwise. Defaults to true.
     numberOfSearchResults: 15, // Number of search results to use for summary.
     language: "fra" // Response language. Defaults to "eng" for English.
   });
@@ -370,6 +376,8 @@ export const App = () => {
               onUpdateRerankerId={setRerankerId}
               lambda={lambda}
               onUpdateLambda={setLambda}
+              isStreamingEnabled={isStreamingEnabled}
+              onUpdateIsStreamingEnabled={setIsStreamingEnabled}
             />
           </div>
         </VuiAppContent>

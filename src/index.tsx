@@ -33,7 +33,8 @@ class ReactChatbotWebComponent extends HTMLElement {
       "enablefactualconsistencyscore",
       "summarypromptname",
       "rerankerId",
-      "lambda"
+      "lambda",
+      "enablestreaming",
     ];
   }
 
@@ -84,6 +85,8 @@ class ReactChatbotWebComponent extends HTMLElement {
     const summaryPromptName = this.getAttribute("summaryPromptName") ?? undefined;
     const rerankerId = this.getAttribute("rerankerId") !== null ? parseInt(this.getAttribute("rerankerId")!, 10) : undefined;
     const lambda = this.getAttribute("lambda") !== null ? parseFloat(this.getAttribute("lambda")!) : undefined;
+    const enableStreaming =
+        this.getAttribute("enableStreaming") !== null ? this.getAttribute("enableStreaming") == "true" : undefined;
 
     ReactDOM.render(
       <div>
@@ -98,6 +101,7 @@ class ReactChatbotWebComponent extends HTMLElement {
           emptyStateDisplay={emptyStateDisplay}
           isInitiallyOpen={isInitiallyOpen}
           zIndex={zIndex}
+          enableStreaming={enableStreaming}
           numberOfSearchResults={numberOfSearchResults}
           language={language}
           enableFactualConsistencyScore={enableFactualConsistencyScore}
