@@ -204,7 +204,6 @@ export const sendSearchRequest = async ({
 
     if (response.status === 400 || response.status === 403 || response.status === 404) {
         const result = await response.json();
-        console.log("I was there", result)
         throw new Error(`BAD REQUEST: ${result?.messages[0] ?? result.field_errors}`);
     }
 
