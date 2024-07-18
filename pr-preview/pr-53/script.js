@@ -35310,7 +35310,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           return;
         }
     }, A2 = () => {
-      S2([]), _2(null);
+      S2([]), _2(null), p2(null);
     };
     return (0, import_react12.useEffect)(() => {
       !V2 && E2 && (S2([...h2, E2]), p2(null));
