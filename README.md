@@ -60,7 +60,7 @@ import { ReactChatbot } from "@vectara/react-chatbot";
 
 <ReactChatbot
   customerId="CUSTOMER_ID"
-  corpusKeys={["CORPUS_KEY_1", "CORPUS_KEY_2", "CORPUS_KEY_N"]}
+  corpusKeys={"CORPUS_KEY_1,CORPUS_KEY_2,CORPUS_KEY_N"}
   apiKey="API_KEY"
   title="My Chatbot"
   placeholder="Chat with your AI assistant"
@@ -163,7 +163,7 @@ import { useChat } from "@vectara/react-chatbot/lib/useChat";
 const { sendMessage, activeMessage, messageHistory, isLoading, isStreamingResponse, hasError, startNewConversation } =
   useChat({
     customerId: "CUSTOMER_ID",
-    corpusIds: ["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"],
+    corpusKeys: "CORPUS_ID_1,CORPUS_ID_2,CORPUS_ID_N",
     apiKey: "API_KEY",
     enableStreaming: true, // Enable streaming, false otherwise. Defaults to true.
     language: "fra" // Response language. Defaults to "eng" for English. See our types for more information.
@@ -231,7 +231,7 @@ export const App = (props: Props): ReactNode => {
       setChatWidget(
         <ReactChatbot
           customerId="CUSTOMER_ID"
-          corpusKeys={["CORPUS_KEY_1", "CORPUS_KEY_2", "CORPUS_KEY_N"]}
+          corpusKeys={"CORPUS_KEY_1,CORPUS_KEY_2,CORPUS_KEY_N"}
           apiKey="API_KEY"
         />
       );

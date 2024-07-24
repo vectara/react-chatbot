@@ -120,7 +120,7 @@ export const ConfigurationDrawer = ({
 
       <VuiSpacer size="m" />
 
-      <VuiFormGroup label="Corpus Key" labelFor="corpusId">
+      <VuiFormGroup label="Corpus Key" labelFor="corpusKey">
         <VuiTextInput value={corpusKeys} onChange={onUpdateCorpusKeys} />
       </VuiFormGroup>
 
