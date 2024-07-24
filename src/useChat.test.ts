@@ -42,7 +42,7 @@ describe("useChat", () => {
   describe("streaming", () => {
     it("should send messages and update hook values", async () => {
       const { result } = renderHook(() =>
-          useChat({ customerId: "mock-customer-id", corpusKey: "1", apiKey: "mock-api-key" })
+          useChat({ customerId: "mock-customer-id", corpusKeys: "1", apiKey: "mock-api-key" })
       );
 
       streamQuerySpy.mockImplementation(async ({onStreamEvent}) => {
@@ -85,7 +85,7 @@ describe("useChat", () => {
   describe("non-streaming", () => {
     it("should send messages and update message history", async () => {
       const { result } = renderHook(() =>
-          useChat({ customerId: "mock-customer-id", corpusKey: "1", apiKey: "mock-api-key", enableStreaming: false })
+          useChat({ customerId: "mock-customer-id", corpusKeys: "1", apiKey: "mock-api-key", enableStreaming: false })
       );
 
       sendSearchRequestSpy.mockImplementation(() => Promise.resolve(MOCK_API_RESPONSE));
@@ -105,7 +105,7 @@ describe("useChat", () => {
 
     it("should reflect error state", async () => {
       const { result } = renderHook(() =>
-          useChat({ customerId: "mock-customer-id", corpusKey: "1", apiKey: "mock-api-key", enableStreaming: false })
+          useChat({ customerId: "mock-customer-id", corpusKeys: "1", apiKey: "mock-api-key", enableStreaming: false })
       );
       sendSearchRequestSpy.mockImplementation(() => {
         throw "error";
@@ -120,7 +120,7 @@ describe("useChat", () => {
 
     it("should reflect loading state", async () => {
       const { result } = renderHook(() =>
-          useChat({ customerId: "mock-customer-id", corpusKey: "1", apiKey: "mock-api-key" })
+          useChat({ customerId: "mock-customer-id", corpusKeys: "1", apiKey: "mock-api-key" })
       );
       sendSearchRequestSpy.mockImplementation(() => {
         return new Promise(() => {});
@@ -136,7 +136,7 @@ describe("useChat", () => {
 
   it("should be able to reset the conversation", async () => {
     const { result } = renderHook(() =>
-        useChat({ customerId: "mock-customer-id", corpusKey: "1", apiKey: "mock-api-key", enableStreaming: false })
+        useChat({ customerId: "mock-customer-id", corpusKeys: "1", apiKey: "mock-api-key", enableStreaming: false })
     );
     sendSearchRequestSpy.mockImplementation(() => Promise.resolve(MOCK_API_RESPONSE));
 

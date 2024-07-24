@@ -6,7 +6,7 @@ import * as useChatInterface from "./useChat";
 
 const MIN_PROPS = {
   customerId: "mock-customer-id",
-  corpusKey: "1",
+  corpusKeys: "1",
   apiKey: "mock-api-key"
 };
 

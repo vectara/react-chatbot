@@ -60,7 +60,7 @@ import { ReactChatbot } from "@vectara/react-chatbot";
 
 <ReactChatbot
   customerId="CUSTOMER_ID"
-  corpusIds={["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"]}
+  corpusKeys={["CORPUS_KEY_1", "CORPUS_KEY_2", "CORPUS_KEY_N"]}
   apiKey="API_KEY"
   title="My Chatbot"
   placeholder="Chat with your AI assistant"
@@ -79,9 +79,10 @@ import { ReactChatbot } from "@vectara/react-chatbot";
 
 Every Vectara account is associated with a customer ID. You can find your customer ID by logging into the [Vectara Console](https://console.vectara.com/) and opening your account dropdown in the top-right corner.
 
-##### `corpusIds` (required)
+##### `corpuskeys` (required)
 
-After you [create a corpus](https://docs.vectara.com/docs/console-ui/creating-a-corpus), you can find its ID by navigating to the corpus and looking in the top-left corner, next to the corpus name.
+After you [create a corpus](https://docs.vectara.com/docs/console-ui/creating-a-corpus), you can find its Key by navigating to the corpus and looking in the top-left corner, next to the corpus name.
+To run queries against multiple corpora, use a comma-separated list of corpus keys. For example: "corpus_1,corpus_2".
 
 ##### `apiKey` (required)
 
@@ -230,7 +231,7 @@ export const App = (props: Props): ReactNode => {
       setChatWidget(
         <ReactChatbot
           customerId="CUSTOMER_ID"
-          corpusIds={["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"]}
+          corpusKeys={["CORPUS_KEY_1", "CORPUS_KEY_2", "CORPUS_KEY_N"]}
           apiKey="API_KEY"
         />
       );

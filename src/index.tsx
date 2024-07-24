@@ -19,7 +19,7 @@ class ReactChatbotWebComponent extends HTMLElement {
   static get observedAttributes() {
     return [
       "customerid",
-      "corpuskey",
+      "corpuskeys",
       "apikey",
       "title",
       "placeholder",
@@ -69,7 +69,7 @@ class ReactChatbotWebComponent extends HTMLElement {
 
   public connectedCallback() {
     const customerId = this.getAttribute("customerId") ?? "";
-    const corpusKey = (this.getAttribute("corpuskey") ?? "");
+    const corpusKeys = (this.getAttribute("corpuskey") ?? "");
     const apiKey = this.getAttribute("apiKey") ?? "";
     const title = this.getAttribute("title") ?? undefined;
     const placeholder = this.getAttribute("placeholder") ?? undefined;
@@ -92,7 +92,7 @@ class ReactChatbotWebComponent extends HTMLElement {
       <div>
         <ChatView
           customerId={customerId}
-          corpusKey={corpusKey}
+          corpusKeys={corpusKeys}
           apiKey={apiKey}
           title={title}
           placeholder={placeholder}

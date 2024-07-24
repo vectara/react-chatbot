@@ -27,7 +27,7 @@ type Config = {
     authToken?: string;
     domain?: string;
     query: string;
-    corpusKey: string;
+    corpusKeys: string;
     search: {
         metadataFilter: string;
         lexicalInterpolation?: number;
@@ -108,7 +108,7 @@ const convertCitations = (citations?: GenerationConfig["citations"]) => {
  */
 export const sendSearchRequest = async ({
     customerId,
-    corpusKey,
+    corpusKeys,
     apiKey,
     query,
     domain,
@@ -130,7 +130,7 @@ export const sendSearchRequest = async ({
     const body: ChatQueryBody = {
         query,
         search: {
-            corpora: corpusKey.split(",").map((key) => (
+            corpora: corpusKeys.split(",").map((key) => (
                 {
                     corpus_key: key,
                     metadata_filter: metadataFilter,

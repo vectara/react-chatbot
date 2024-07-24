@@ -1,4 +1,4 @@
-import {VuiFlexContainer, VuiFlexItem, VuiText, VuiAccordion, VuiSpacer, VuiLink} from "../vui";
+import {VuiFlexContainer, VuiFlexItem, VuiText, VuiAccordion, VuiSpacer} from "../vui";
 import { SearchResultWithSnippet } from "../types";
 
 type Props = {
@@ -44,9 +44,9 @@ const ChatReference = ({ result, position }: { result: SearchResultWithSnippet; 
           <VuiText size="s">
             <p>
               {url ? (
-                  <a href={url} target="_blank">
-                    {text}
-                  </a>
+                <a href={url} target="_blank">
+                  {text}
+                </a>
               ) : (
                   text
               )}

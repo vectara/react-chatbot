@@ -21,8 +21,8 @@ import { SUMMARY_LANGUAGES, RerankerId } from "../../../src/types";
 type Props = {
   isOpen: boolean;
   onClose: () => void;
-  corpusKey: string;
-  onUpdateCorpusKey: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  corpusKeys: string;
+  onUpdateCorpusKeys: (event: React.ChangeEvent<HTMLInputElement>) => void;
   customerId: string;
   onUpdateCustomerId: (event: React.ChangeEvent<HTMLInputElement>) => void;
   apiKey: string;
@@ -56,8 +56,8 @@ type Props = {
 export const ConfigurationDrawer = ({
   isOpen,
   onClose,
-  corpusKey,
-  onUpdateCorpusKey,
+  corpusKeys,
+  onUpdateCorpusKeys,
   customerId,
   onUpdateCustomerId,
   apiKey,
@@ -121,7 +121,7 @@ export const ConfigurationDrawer = ({
       <VuiSpacer size="m" />
 
       <VuiFormGroup label="Corpus Key" labelFor="corpusId">
-        <VuiTextInput value={corpusKey} onChange={onUpdateCorpusKey} />
+        <VuiTextInput value={corpusKeys} onChange={onUpdateCorpusKeys} />
       </VuiFormGroup>
 
       <VuiSpacer size="m" />

@@ -21,8 +21,8 @@ export interface Props {
   // Vectara API key
   apiKey: string;
 
-  // Vectara corpus IDs
-  corpusKey: string;
+  // Vectara corpus keys
+  corpusKeys: string;
 
   // Title to be shown in the UI header
   title?: string;
@@ -75,7 +75,7 @@ export interface Props {
  */
 export const ChatView = ({
   customerId,
-  corpusKey,
+  corpusKeys,
   apiKey,
   title = "My Chatbot",
   placeholder = "Chat with your AI Assistant",
@@ -97,7 +97,7 @@ export const ChatView = ({
   const { sendMessage, startNewConversation, messageHistory, isLoading, hasError, activeMessage, isStreamingResponse } =
     useChat({
       customerId,
-      corpusKey,
+      corpusKeys,
       apiKey,
       numberOfSearchResults,
       language,

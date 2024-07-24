@@ -34,7 +34,7 @@ const formatStringProp = (value?: string) => {
 
 const generateCodeSnippet = (
   customerId?: string,
-  corpusKey?: string,
+  corpusKeys?: string,
   apiKey?: string,
   title?: string,
   placeholder?: string,
@@ -49,7 +49,7 @@ const generateCodeSnippet = (
 ) => {
   const props = [
     `customerId="${customerId === "" ? "<Your Vectara customer ID>" : customerId}"`,
-    `corpusIds="${corpusKey === "" ? "<Your Vectara Corpus key>" : corpusKey}"`,
+    `corpusKeys="${corpusKeys === "" ? "<Your Vectara Corpus key>" : corpusKeys}"`,
     `apiKey="${apiKey === "" ? "<Your Vectara API key>" : apiKey}"`
   ];
 
@@ -108,7 +108,7 @@ const DEFAULT_PLACEHOLDER = 'Try "What is Vectara?" or "How does RAG work?"';
 const App = () => {
   const [isConfigurationDrawerOpen, setIsConfigurationDrawerOpen] = useState(false);
   const [isChatbotForcedOpen, setIsChatbotForcedOpen] = useState(true);
-  const [corpusKey, setCorpusKey] = useState<string>("");
+  const [corpusKeys, setCorpusKeys] = useState<string>("");
   const [customerId, setCustomerId] = useState<string>("");
   const [apiKey, setApiKey] = useState<string>("");
   const [title, setTitle] = useState<string>(DEFAULT_TITLE);
@@ -124,8 +124,8 @@ const App = () => {
   const [rerankerId, setRerankerId] = useState<RerankerId>(DEFAULT_RERANKER_ID);
   const [lambda, setLambda] = useState<number>(DEFAULT_LAMBDA_VALUE);
 
-  const onUpdateCorpusKey = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    setCorpusKey(e.target.value);
+  const onUpdateCorpusKeys = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    setCorpusKeys(e.target.value);
   }, []);
 
   const onUpdateCustomerId = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -212,7 +212,7 @@ const App = () => {
              * This ensures that we don't voluntarily display the docs corpus details in the text fields.
              */}
             <ReactChatbot
-              corpusKey={corpusKey === "" ? DEFAULT_CORPUS_KEY : corpusKey}
+              corpusKey={corpusKeys === "" ? DEFAULT_CORPUS_KEY : corpusKeys}
               customerId={customerId === "" ? DEFAULT_CUSTOMER_ID : customerId}
               apiKey={apiKey === "" ? DEFAULT_API_KEY : apiKey}
               title={title === "" ? undefined : title}
@@ -261,7 +261,7 @@ const App = () => {
             <VuiCode language="tsx">
               {generateCodeSnippet(
                 customerId,
-                corpusKey,
+                corpusKeys,
                 apiKey,
                 title,
                 placeholder,
@@ -305,7 +305,7 @@ export const App = () => {
     startNewConversation
   } = useChat({
     customerId: DEFAULT_CUSTOMER_ID,
-    corpusKey: DEFAULT_CORPUS_KEY,
+    corpusKeys: DEFAULT_CORPUS_KEY,
     apiKey: DEFAULT_API_KEY,
     enableStreaming: true, // Enable streaming, false otherwise. Defaults to true.
     numberOfSearchResults: 15, // Number of search results to use for summary.
@@ -348,8 +348,8 @@ export const App = () => {
             <ConfigurationDrawer
               isOpen={isConfigurationDrawerOpen}
               onClose={() => setIsConfigurationDrawerOpen(false)}
-              corpusKey={corpusKey}
-              onUpdateCorpusKey={onUpdateCorpusKey}
+              corpusKeys={corpusKeys}
+              onUpdateCorpusKeys={onUpdateCorpusKeys}
               customerId={customerId}
               onUpdateCustomerId={onUpdateCustomerId}
               apiKey={apiKey}

@@ -20,28 +20,28 @@ export const FactualConsistencyBadge = ({ score }: Props) => {
     }
 
     badge = (
-        <VuiBadge color={badgeColor as "neutral" | "success" | "danger"}>
-          Factual Consistency Score: {sanitizedScore}
-        </VuiBadge>
+      <VuiBadge color={badgeColor as "neutral" | "success" | "danger"}>
+        Factual Consistency Score: {sanitizedScore}
+      </VuiBadge>
     );
   }
 
   return (
-      <VuiFlexContainer alignItems="center" data-testid="factualConsistencyBadge">
-        {score === undefined && <VuiSpinner size="s" />}
+    <VuiFlexContainer alignItems="center" data-testid="factualConsistencyBadge">
+      {score === undefined && <VuiSpinner size="s" />}
 
-        {badge}
+      {badge}
 
-        <VuiText size="xs">
-          <p>
-            <VuiLink
-                href="https://docs.vectara.com/docs/api-reference/search-apis/search?#factual-consistency-score"
-                target="_blank"
-            >
-              What's this?
-            </VuiLink>
-          </p>
-        </VuiText>
-      </VuiFlexContainer>
+      <VuiText size="xs">
+        <p>
+          <VuiLink
+              href="https://docs.vectara.com/docs/api-reference/search-apis/search?#factual-consistency-score"
+              target="_blank"
+          >
+            What's this?
+          </VuiLink>
+        </p>
+      </VuiText>
+    </VuiFlexContainer>
   );
 };

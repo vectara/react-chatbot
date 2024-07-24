@@ -29,7 +29,7 @@ export const DEFAULT_LAMBDA_VALUE = 0.005
 
 type UseChatConfig = {
   customerId: string;
-  corpusKey: string;
+  corpusKeys: string;
   apiKey: string;
   numberOfSearchResults?: number;
   language?: SummaryLanguage;
@@ -42,7 +42,7 @@ type UseChatConfig = {
 
 export const useChat = ({
   customerId,
-  corpusKey,
+  corpusKeys,
   apiKey,
   numberOfSearchResults = 10,
   language = "eng",
@@ -157,7 +157,7 @@ export const useChat = ({
           apiKey: apiKey!,
           customerId: customerId!,
           query: query,
-          corpusKey: corpusKey!,
+          corpusKey: corpusKeys!,
           search: {
             offset: 0,
             metadataFilter: "",
@@ -203,7 +203,7 @@ export const useChat = ({
           apiKey: apiKey!,
           customerId: customerId!,
           query: query,
-          corpusKey: corpusKey!,
+          corpusKeys: corpusKeys!,
           search: {
             offset: 0,
             metadataFilter: "",
