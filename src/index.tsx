@@ -138,11 +138,7 @@ export const ReactChatbot = (props: Props) => {
   const typedProps = props as Record<string, any>;
   const updatedProps = Object.keys(props).reduce((acc: Record<string, string>, propName: string) => {
     if (propName === "emptyStateDisplay") return acc;
-    if (propName === "corpusIds") {
-      acc[propName] = typedProps["corpusIds"].join(" ");
-    } else {
-      acc[propName] = typedProps[propName];
-    }
+    acc[propName] = typedProps[propName];
 
     return acc;
   }, {});

@@ -115,7 +115,7 @@ const App = () => {
   const [placeholder, setPlaceholder] = useState<string>(DEFAULT_PLACEHOLDER);
   const [inputSize, setInputSize] = useState<"large" | "medium">("large");
   const [isStreamingEnabled, setIsStreamingEnabled] = useState<boolean>(true);
-  const [numberOfSearchResults, setNumberOfSearchResults] = useState<number>(15);
+  const [numberOfSearchResults, setNumberOfSearchResults] = useState<number>(10);
   const [language, setLanguage] = useState<SummaryLanguage>("eng");
   const [emptyStateJsx, setEmptyStateJsx] = useState<string>("");
   const [exampleQuestions, setExampleQuestions] = useState<string>("What is Vectara?, How does RAG work?");
@@ -308,7 +308,7 @@ export const App = () => {
     corpusKeys: DEFAULT_CORPUS_KEY,
     apiKey: DEFAULT_API_KEY,
     enableStreaming: true, // Enable streaming, false otherwise. Defaults to true.
-    numberOfSearchResults: 15, // Number of search results to use for summary.
+    numberOfSearchResults: 10, // Number of search results to use for summary.
     language: "fra" // Response language. Defaults to "eng" for English.
   });
 
