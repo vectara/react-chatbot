@@ -175,6 +175,8 @@ export const useChat = ({
             contextConfiguration: {
               sentencesBefore: 2,
               sentencesAfter: 2,
+              startTag: START_TAG,
+              endTag: END_TAG
             }
           },
 
