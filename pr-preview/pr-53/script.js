@@ -1790,8 +1790,8 @@
                 setTimeout(_flushCallback, 0);
               }
             };
-            requestHostTimeout = function(cb, ms) {
-              _timeoutID = setTimeout(cb, ms);
+            requestHostTimeout = function(cb, ms2) {
+              _timeoutID = setTimeout(cb, ms2);
             };
             cancelHostTimeout = function() {
               clearTimeout(_timeoutID);
@@ -1868,10 +1868,10 @@
                 port.postMessage(null);
               }
             };
-            requestHostTimeout = function(callback, ms) {
+            requestHostTimeout = function(callback, ms2) {
               taskTimeoutID = _setTimeout(function() {
                 callback(exports.unstable_now());
-              }, ms);
+              }, ms2);
             };
             cancelHostTimeout = function() {
               _clearTimeout(taskTimeoutID);
@@ -1950,7 +1950,7 @@
           var NormalPriority = 3;
           var LowPriority = 4;
           var IdlePriority = 5;
-          function markTaskErrored(task, ms) {
+          function markTaskErrored(task, ms2) {
           }
           var maxSigned31BitInt = 1073741823;
           var IMMEDIATE_PRIORITY_TIMEOUT = -1;
@@ -23237,16 +23237,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 return this.keywords.test(t5) && (e5 = y2[t5]), this.finishToken(e5, t5);
               };
               var ie3 = "8.0.5";
-              function se2(t5, e5) {
+              function se3(t5, e5) {
                 return et2.parse(t5, e5);
               }
               function re3(t5, e5, i4) {
                 return et2.parseExpressionAt(t5, e5, i4);
               }
-              function ae3(t5, e5) {
+              function ae2(t5, e5) {
                 return et2.tokenizer(t5, e5);
               }
-              et2.acorn = { Parser: et2, version: ie3, defaultOptions: R2, Position: L2, SourceLocation: V2, getLineInfo: O3, Node: vt2, TokenType: f3, tokTypes: b2, keywordTypes: y2, TokContext: kt2, tokContexts: St2, isIdentifierChar: d2, isIdentifierStart: u2, Token: Jt2, isNewLine: S3, lineBreak: _2, lineBreakG: k2, nonASCIIwhitespace: w2 }, t4.Node = vt2, t4.Parser = et2, t4.Position = L2, t4.SourceLocation = V2, t4.TokContext = kt2, t4.Token = Jt2, t4.TokenType = f3, t4.defaultOptions = R2, t4.getLineInfo = O3, t4.isIdentifierChar = d2, t4.isIdentifierStart = u2, t4.isNewLine = S3, t4.keywordTypes = y2, t4.lineBreak = _2, t4.lineBreakG = k2, t4.nonASCIIwhitespace = w2, t4.parse = se2, t4.parseExpressionAt = re3, t4.tokContexts = St2, t4.tokTypes = b2, t4.tokenizer = ae3, t4.version = ie3, Object.defineProperty(t4, "__esModule", { value: true });
+              et2.acorn = { Parser: et2, version: ie3, defaultOptions: R2, Position: L2, SourceLocation: V2, getLineInfo: O3, Node: vt2, TokenType: f3, tokTypes: b2, keywordTypes: y2, TokContext: kt2, tokContexts: St2, isIdentifierChar: d2, isIdentifierStart: u2, Token: Jt2, isNewLine: S3, lineBreak: _2, lineBreakG: k2, nonASCIIwhitespace: w2 }, t4.Node = vt2, t4.Parser = et2, t4.Position = L2, t4.SourceLocation = V2, t4.TokContext = kt2, t4.Token = Jt2, t4.TokenType = f3, t4.defaultOptions = R2, t4.getLineInfo = O3, t4.isIdentifierChar = d2, t4.isIdentifierStart = u2, t4.isNewLine = S3, t4.keywordTypes = y2, t4.lineBreak = _2, t4.lineBreakG = k2, t4.nonASCIIwhitespace = w2, t4.parse = se3, t4.parseExpressionAt = re3, t4.tokContexts = St2, t4.tokTypes = b2, t4.tokenizer = ae2, t4.version = ie3, Object.defineProperty(t4, "__esModule", { value: true });
             }(e3);
           }, 272: (t3, e3, i3) => {
             "use strict";
@@ -25295,7 +25295,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }
               return i4;
             }
-            function se2(t4) {
+            function se3(t4) {
               for (var e4 = 1; e4 < arguments.length; e4++) {
                 var i4 = null != arguments[e4] ? arguments[e4] : {};
                 e4 % 2 ? ie3(Object(i4), true).forEach(function(e5) {
@@ -25332,7 +25332,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
               }();
             }
-            function ae3(t4) {
+            function ae2(t4) {
               return function(t5) {
                 if (Array.isArray(t5))
                   return oe3(t5);
@@ -25485,7 +25485,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                       return;
                     case "CallExpression":
                       var r4 = me3(ue3(t5), xe3).call(ue3(t5), e5.callee);
-                      return void 0 === r4 ? void t5.props.onError(new Error("The expression '".concat(e5.callee, "' could not be resolved, resulting in an undefined return value."))) : r4.apply(void 0, ae3(e5.arguments.map(function(i6) {
+                      return void 0 === r4 ? void t5.props.onError(new Error("The expression '".concat(e5.callee, "' could not be resolved, resulting in an undefined return value."))) : r4.apply(void 0, ae2(e5.arguments.map(function(i6) {
                         return me3(ue3(t5), xe3).call(ue3(t5), i6, e5.callee);
                       })));
                     case "ConditionalExpression":
@@ -25509,7 +25509,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     case "TemplateElement":
                       return e5.value.cooked;
                     case "TemplateLiteral":
-                      return [].concat(ae3(e5.expressions), ae3(e5.quasis)).sort(function(t6, e6) {
+                      return [].concat(ae2(e5.expressions), ae2(e5.quasis)).sort(function(t6, e6) {
                         return t6.start < e6.start ? -1 : 1;
                       }).map(function(e6) {
                         return me3(ue3(t5), xe3).call(ue3(t5), e6);
@@ -25591,7 +25591,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                       g4 = re3(g4, 1)[0];
                     } else
                       g4.length > 1 && !t5.props.disableKeyGeneration && (g4 = g4.map(function(t6, e6) {
-                        return null == t6 || !t6.type || null != t6 && t6.key ? t6 : se2(se2({}, t6), {}, { key: t6.key || e6 });
+                        return null == t6 || !t6.type || null != t6 && t6.key ? t6 : se3(se3({}, t6), {}, { key: t6.key || e6 });
                       }));
                   var v3 = { key: t5.props.disableKeyGeneration ? void 0 : Wt2() };
                   u3.forEach(function(e6) {
@@ -25615,7 +25615,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 } }), fe3(ue3(t5), "render", function() {
                   var e5 = (t5.props.jsx || "").trim().replace(/<!DOCTYPE([^>]*)>/g, "");
                   t5.ParsedChildren = me3(ue3(t5), ge3).call(ue3(t5), e5);
-                  var i5 = ae3(new Set(["jsx-parser"].concat(ae3(String(t5.props.className).split(" "))))).filter(Boolean).join(" ");
+                  var i5 = ae2(new Set(["jsx-parser"].concat(ae2(String(t5.props.className).split(" "))))).filter(Boolean).join(" ");
                   return t5.props.renderInWrapper ? jt2().createElement("div", { className: i5 }, t5.ParsedChildren) : jt2().createElement(jt2().Fragment, null, t5.ParsedChildren);
                 }), t5;
               }
@@ -26656,7 +26656,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               T2 && (d2.summary = T2);
               let k2 = re3(e2, o2.result);
               k2 && (d2.chat = k2);
-              let c2 = se2(o2.result);
+              let c2 = se3(o2.result);
               c2 && (d2.factualConsistency = c2);
               let _2 = { references: H2(o2.result.responseSet), details: d2, updatedText: ne3(o2.result, l2), isDone: (R2 = (S3 = o2.result.summary) == null ? void 0 : S3.done) != null ? R2 : false };
               l2 = (P2 = _2.updatedText) != null ? P2 : "", t2(_2);
@@ -26676,7 +26676,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         let s2 = { conversationId: t2.summary.chat.conversationId, turnId: t2.summary.chat.turnId };
         return e2.debug && t2.summary.chat.rephrasedQuery && (s2.rephrasedQuery = t2.summary.chat.rephrasedQuery), s2;
       };
-      var se2 = (e2) => {
+      var se3 = (e2) => {
         if (!(!e2.summary || !e2.summary.factualConsistency))
           return { score: e2.summary.factualConsistency.score };
       };
@@ -26741,7 +26741,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           }), this.events = [];
         }
       };
-      var ae3 = (e2) => {
+      var ae2 = (e2) => {
         if (e2) {
           if (e2.type === "none")
             return { type: e2.type };
@@ -26760,7 +26760,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         }
       };
       var z2 = async ({ streamQueryConfig: e2, onStreamEvent: t2, includeRawEvents: s2 = false }) => {
-        let { customerId: r2, apiKey: n2, authToken: u2, domain: m2, corpusKey: f3, query: y2, search: { metadataFilter: l2, lexicalInterpolation: h2, customDimensions: v2, semantics: x3, offset: E2, limit: b2, contextConfiguration: a2, reranker: I2 }, generation: C3, chat: p2 } = e2, g3 = { query: y2, search: { corpora: f3.split(",").map((c2) => ({ corpus_key: c2, metadata_filter: l2, lexical_interpolation: h2, custom_dimensions: v2, semantics: x3 })), offset: E2, limit: b2, context_configuration: { characters_before: a2 == null ? void 0 : a2.charactersBefore, characters_after: a2 == null ? void 0 : a2.charactersAfter, sentences_before: a2 == null ? void 0 : a2.sentencesBefore, sentences_after: a2 == null ? void 0 : a2.sentencesAfter, start_tag: a2 == null ? void 0 : a2.startTag, end_tag: a2 == null ? void 0 : a2.endTag }, reranker: ae3(I2) }, stream_response: true };
+        let { customerId: r2, apiKey: n2, authToken: u2, domain: m2, corpusKey: f3, query: y2, search: { metadataFilter: l2, lexicalInterpolation: h2, customDimensions: v2, semantics: x3, offset: E2, limit: b2, contextConfiguration: a2, reranker: I2 }, generation: C3, chat: p2 } = e2, g3 = { query: y2, search: { corpora: f3.split(",").map((c2) => ({ corpus_key: c2, metadata_filter: l2, lexical_interpolation: h2, custom_dimensions: v2, semantics: x3 })), offset: E2, limit: b2, context_configuration: { characters_before: a2 == null ? void 0 : a2.charactersBefore, characters_after: a2 == null ? void 0 : a2.charactersAfter, sentences_before: a2 == null ? void 0 : a2.sentencesBefore, sentences_after: a2 == null ? void 0 : a2.sentencesAfter, start_tag: a2 == null ? void 0 : a2.startTag, end_tag: a2 == null ? void 0 : a2.endTag }, reranker: ae2(I2) }, stream_response: true };
         if (C3) {
           let { promptName: c2, maxUsedSearchResults: _2, promptText: S3, maxResponseCharacters: R2, responseLanguage: P2, modelParameters: i2, citations: q3, enableFactualConsistencyScore: B3 } = C3;
           g3.generation = { prompt_name: c2, max_used_search_results: _2, prompt_text: S3, max_response_characters: R2, response_language: P2, model_parameters: i2 && { max_tokens: i2.maxTokens, temperature: i2.temperature, frequency_penalty: i2.frequencyPenalty, presence_penalty: i2.presencePenalty }, citations: oe3(q3), enable_factual_consistency_score: B3 };
@@ -35052,40 +35052,40 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     let c2 = r2 === false, l2 = t2 === false, h2 = (0, import_classnames2.default)("vuiFlexItem", `vuiFlexItem--${n2}`, zt[o2], { [`vuiFlexItem--flexGrow${r2}`]: typeof r2 == "number", "vuiFlexItem--flexGrowNone": c2, [`vuiFlexItem--flexShrink${t2}`]: typeof t2 == "number", "vuiFlexItem--flexShrinkNone": l2, "vuiFlexItem--truncate": s2 }, i2);
     return (0, import_jsx_runtime2.jsx)("div", { className: h2, ...a2, children: e2 });
   };
-  var ae2 = 0;
-  var ge2 = () => (ae2 === Number.MAX_SAFE_INTEGER ? ae2 = 0 : ae2++, ae2.toString());
-  var ze2 = ({ size: e2, color: r2 }) => (0, import_jsx_runtime3.jsx)("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 329.26933 329", width: e2, height: e2, fill: r2, children: (0, import_jsx_runtime3.jsx)("path", { d: "m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0" }) });
-  var Ge2 = ({ size: e2 = "16px", color: r2 = "#ffffff" }) => (0, import_jsx_runtime3.jsxs)("svg", { fill: r2, version: "1.1", id: "Capa_1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", width: e2, height: e2, viewBox: "0 0 29.75 29.75", xmlSpace: "preserve", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M26.573,4.026H5.163c-1.884,0-3.413,1.707-3.413,3.321v12.976c0,0.001,0,0.002,0,0.003l-0.004-0.003L0,25.724l4.913-2.717 c0.084,0.004,0.164,0.02,0.25,0.02h21.41c1.884,0,3.177-1.09,3.177-2.703V7.347C29.75,5.733,28.457,4.026,26.573,4.026z M27.75,20.323c0,0.538-0.548,0.703-1.177,0.703H5.163c-0.629,0-1.413-0.165-1.413-0.703V7.347c0-0.539,0.784-1.321,1.413-1.321 h21.41c0.629,0,1.177,0.782,1.177,1.321V20.323z" }), " ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsx)("circle", { cx: "9.274", cy: "13.526", r: "1.874" }), " ", (0, import_jsx_runtime3.jsx)("circle", { cx: "15.657", cy: "13.526", r: "1.874" }), " ", (0, import_jsx_runtime3.jsx)("circle", { cx: "22.04", cy: "13.526", r: "1.874" }), " "] }), " "] }), " "] }), " "] })] });
-  var De2 = () => (0, import_jsx_runtime3.jsxs)("svg", { fill: "#c41535", width: "16px", height: "16px", viewBox: "0 0 1024 1024", xmlns: "http://www.w3.org/2000/svg", stroke: "#c41535", strokeWidth: "20", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_iconCarrier", children: (0, import_jsx_runtime3.jsx)("path", { d: "M520.741 163.801a10.234 10.234 0 00-3.406-3.406c-4.827-2.946-11.129-1.421-14.075 3.406L80.258 856.874a10.236 10.236 0 00-1.499 5.335c0 5.655 4.585 10.24 10.24 10.24h846.004c1.882 0 3.728-.519 5.335-1.499 4.827-2.946 6.352-9.248 3.406-14.075L520.742 163.802zm43.703-26.674L987.446 830.2c17.678 28.964 8.528 66.774-20.436 84.452a61.445 61.445 0 01-32.008 8.996H88.998c-33.932 0-61.44-27.508-61.44-61.44a61.445 61.445 0 018.996-32.008l423.002-693.073c17.678-28.964 55.488-38.113 84.452-20.436a61.438 61.438 0 0120.436 20.436zM512 778.24c22.622 0 40.96-18.338 40.96-40.96s-18.338-40.96-40.96-40.96-40.96 18.338-40.96 40.96 18.338 40.96 40.96 40.96zm0-440.32c-22.622 0-40.96 18.338-40.96 40.96v225.28c0 22.622 18.338 40.96 40.96 40.96s40.96-18.338 40.96-40.96V378.88c0-22.622-18.338-40.96-40.96-40.96z" }) })] });
-  var qe = () => (0, import_jsx_runtime3.jsxs)("svg", { width: "10px", height: "10px", viewBox: "-5.5 0 26 26", version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", fill: "#2c313a", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsx)("title", { children: "chevron-right" }), " ", (0, import_jsx_runtime3.jsx)("desc", { children: "Created with Sketch Beta." }), " ", (0, import_jsx_runtime3.jsx)("defs", { children: " " }), " ", (0, import_jsx_runtime3.jsxs)("g", { id: "Page-1", stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { id: "Icon-Set-Filled", transform: "translate(-474.000000, -1196.000000)", fill: "#2c313a", children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M488.404,1207.36 L477.637,1197.6 C476.806,1196.76 475.459,1196.76 474.629,1197.6 C473.798,1198.43 473.798,1199.77 474.629,1200.6 L483.885,1209 L474.629,1217.4 C473.798,1218.23 473.798,1219.57 474.629,1220.4 C475.459,1221.24 476.806,1221.24 477.637,1220.4 L488.404,1210.64 C488.854,1210.19 489.052,1209.59 489.015,1209 C489.052,1208.41 488.854,1207.81 488.404,1207.36", id: "chevron-right", children: " " }), " "] }), " "] }), " "] })] });
-  var He2 = () => (0, import_jsx_runtime3.jsxs)("svg", { width: "10px", height: "10px", viewBox: "0 -4.5 24 24", version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", fill: "#2c313a", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsx)("title", { children: "chevron-down" }), " ", (0, import_jsx_runtime3.jsx)("desc", { children: "Created with Sketch Beta." }), " ", (0, import_jsx_runtime3.jsx)("defs", { children: " " }), " ", (0, import_jsx_runtime3.jsxs)("g", { id: "Page-1", stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { id: "Icon-Set-Filled", transform: "translate(-574.000000, -1201.000000)", fill: "#2c313a", children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M597.405,1201.63 C596.576,1200.8 595.23,1200.8 594.401,1201.63 L586.016,1210.88 L577.63,1201.63 C576.801,1200.8 575.455,1200.8 574.626,1201.63 C573.797,1202.46 573.797,1203.81 574.626,1204.64 L584.381,1215.4 C584.83,1215.85 585.429,1216.05 586.016,1216.01 C586.603,1216.05 587.201,1215.85 587.65,1215.4 L597.405,1204.64 C598.234,1203.81 598.234,1202.46 597.405,1201.63", id: "chevron-down", children: " " }), " "] }), " "] }), " "] })] });
-  var fe2 = ({ header: e2, children: r2, isOpen: t2, setIsOpen: n2, ...o2 }) => {
-    let i2 = ge2(), s2 = ge2();
-    return (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [(0, import_jsx_runtime4.jsx)("button", { className: "vuiAccordionHeader", onClick: () => n2(!t2), id: i2, "aria-controls": s2, "aria-expanded": t2, ...o2, children: (0, import_jsx_runtime4.jsxs)(C2, { alignItems: "center", justifyContent: "start", spacing: "xxs", children: [(0, import_jsx_runtime4.jsx)(S2, { grow: false, shrink: false, children: t2 ? (0, import_jsx_runtime4.jsx)(He2, {}) : (0, import_jsx_runtime4.jsx)(qe, {}) }), (0, import_jsx_runtime4.jsx)(S2, { className: "vuiAccordionHeader__title", grow: 1, children: e2 })] }) }), t2 && (0, import_jsx_runtime4.jsx)("div", { id: s2, "aria-labelledby": i2, children: r2 })] });
+  var ce2 = 0;
+  var fe2 = () => (ce2 === Number.MAX_SAFE_INTEGER ? ce2 = 0 : ce2++, ce2.toString());
+  var De2 = ({ size: e2, color: r2 }) => (0, import_jsx_runtime3.jsx)("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 329.26933 329", width: e2, height: e2, fill: r2, children: (0, import_jsx_runtime3.jsx)("path", { d: "m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0" }) });
+  var qe = ({ size: e2 = "16px", color: r2 = "#ffffff" }) => (0, import_jsx_runtime3.jsxs)("svg", { fill: r2, version: "1.1", id: "Capa_1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", width: e2, height: e2, viewBox: "0 0 29.75 29.75", xmlSpace: "preserve", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M26.573,4.026H5.163c-1.884,0-3.413,1.707-3.413,3.321v12.976c0,0.001,0,0.002,0,0.003l-0.004-0.003L0,25.724l4.913-2.717 c0.084,0.004,0.164,0.02,0.25,0.02h21.41c1.884,0,3.177-1.09,3.177-2.703V7.347C29.75,5.733,28.457,4.026,26.573,4.026z M27.75,20.323c0,0.538-0.548,0.703-1.177,0.703H5.163c-0.629,0-1.413-0.165-1.413-0.703V7.347c0-0.539,0.784-1.321,1.413-1.321 h21.41c0.629,0,1.177,0.782,1.177,1.321V20.323z" }), " ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsx)("circle", { cx: "9.274", cy: "13.526", r: "1.874" }), " ", (0, import_jsx_runtime3.jsx)("circle", { cx: "15.657", cy: "13.526", r: "1.874" }), " ", (0, import_jsx_runtime3.jsx)("circle", { cx: "22.04", cy: "13.526", r: "1.874" }), " "] }), " "] }), " "] }), " "] })] });
+  var He2 = () => (0, import_jsx_runtime3.jsxs)("svg", { fill: "#c41535", width: "16px", height: "16px", viewBox: "0 0 1024 1024", xmlns: "http://www.w3.org/2000/svg", stroke: "#c41535", strokeWidth: "20", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_iconCarrier", children: (0, import_jsx_runtime3.jsx)("path", { d: "M520.741 163.801a10.234 10.234 0 00-3.406-3.406c-4.827-2.946-11.129-1.421-14.075 3.406L80.258 856.874a10.236 10.236 0 00-1.499 5.335c0 5.655 4.585 10.24 10.24 10.24h846.004c1.882 0 3.728-.519 5.335-1.499 4.827-2.946 6.352-9.248 3.406-14.075L520.742 163.802zm43.703-26.674L987.446 830.2c17.678 28.964 8.528 66.774-20.436 84.452a61.445 61.445 0 01-32.008 8.996H88.998c-33.932 0-61.44-27.508-61.44-61.44a61.445 61.445 0 018.996-32.008l423.002-693.073c17.678-28.964 55.488-38.113 84.452-20.436a61.438 61.438 0 0120.436 20.436zM512 778.24c22.622 0 40.96-18.338 40.96-40.96s-18.338-40.96-40.96-40.96-40.96 18.338-40.96 40.96 18.338 40.96 40.96 40.96zm0-440.32c-22.622 0-40.96 18.338-40.96 40.96v225.28c0 22.622 18.338 40.96 40.96 40.96s40.96-18.338 40.96-40.96V378.88c0-22.622-18.338-40.96-40.96-40.96z" }) })] });
+  var We2 = () => (0, import_jsx_runtime3.jsxs)("svg", { width: "10px", height: "10px", viewBox: "-5.5 0 26 26", version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", fill: "#2c313a", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsx)("title", { children: "chevron-right" }), " ", (0, import_jsx_runtime3.jsx)("desc", { children: "Created with Sketch Beta." }), " ", (0, import_jsx_runtime3.jsx)("defs", { children: " " }), " ", (0, import_jsx_runtime3.jsxs)("g", { id: "Page-1", stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { id: "Icon-Set-Filled", transform: "translate(-474.000000, -1196.000000)", fill: "#2c313a", children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M488.404,1207.36 L477.637,1197.6 C476.806,1196.76 475.459,1196.76 474.629,1197.6 C473.798,1198.43 473.798,1199.77 474.629,1200.6 L483.885,1209 L474.629,1217.4 C473.798,1218.23 473.798,1219.57 474.629,1220.4 C475.459,1221.24 476.806,1221.24 477.637,1220.4 L488.404,1210.64 C488.854,1210.19 489.052,1209.59 489.015,1209 C489.052,1208.41 488.854,1207.81 488.404,1207.36", id: "chevron-right", children: " " }), " "] }), " "] }), " "] })] });
+  var Oe2 = () => (0, import_jsx_runtime3.jsxs)("svg", { width: "10px", height: "10px", viewBox: "0 -4.5 24 24", version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", fill: "#2c313a", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsx)("title", { children: "chevron-down" }), " ", (0, import_jsx_runtime3.jsx)("desc", { children: "Created with Sketch Beta." }), " ", (0, import_jsx_runtime3.jsx)("defs", { children: " " }), " ", (0, import_jsx_runtime3.jsxs)("g", { id: "Page-1", stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { id: "Icon-Set-Filled", transform: "translate(-574.000000, -1201.000000)", fill: "#2c313a", children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M597.405,1201.63 C596.576,1200.8 595.23,1200.8 594.401,1201.63 L586.016,1210.88 L577.63,1201.63 C576.801,1200.8 575.455,1200.8 574.626,1201.63 C573.797,1202.46 573.797,1203.81 574.626,1204.64 L584.381,1215.4 C584.83,1215.85 585.429,1216.05 586.016,1216.01 C586.603,1216.05 587.201,1215.85 587.65,1215.4 L597.405,1204.64 C598.234,1203.81 598.234,1202.46 597.405,1201.63", id: "chevron-down", children: " " }), " "] }), " "] }), " "] })] });
+  var he2 = ({ header: e2, children: r2, isOpen: t2, setIsOpen: n2, ...o2 }) => {
+    let i2 = fe2(), s2 = fe2();
+    return (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [(0, import_jsx_runtime4.jsx)("button", { className: "vuiAccordionHeader", onClick: () => n2(!t2), id: i2, "aria-controls": s2, "aria-expanded": t2, ...o2, children: (0, import_jsx_runtime4.jsxs)(C2, { alignItems: "center", justifyContent: "start", spacing: "xxs", children: [(0, import_jsx_runtime4.jsx)(S2, { grow: false, shrink: false, children: t2 ? (0, import_jsx_runtime4.jsx)(Oe2, {}) : (0, import_jsx_runtime4.jsx)(We2, {}) }), (0, import_jsx_runtime4.jsx)(S2, { className: "vuiAccordionHeader__title", grow: 1, children: e2 })] }) }), t2 && (0, import_jsx_runtime4.jsx)("div", { id: s2, "aria-labelledby": i2, children: r2 })] });
   };
   var Z2 = (e2) => e2 ? { rel: "noopener", referrerpolicy: "no-referrer-when-downgrade" } : { rel: "noopener" };
-  var Ue2 = (0, import_react5.createContext)(void 0);
-  var he2 = ({ children: e2, linkProvider: r2, pathProvider: t2, drawerTitle: n2 = "h2" }) => {
+  var $e2 = (0, import_react5.createContext)(void 0);
+  var be2 = ({ children: e2, linkProvider: r2, pathProvider: t2, drawerTitle: n2 = "h2" }) => {
     let o2 = (a2) => {
       if (r2)
         return r2(a2);
       let { className: c2, href: l2, onClick: h2, children: w2, ...v2 } = a2;
       return (0, import_jsx_runtime5.jsx)("a", { className: c2, href: l2, onClick: h2, ...v2, children: w2 });
     }, i2 = () => t2 ? t2() : window.location.pathname, s2 = n2;
-    return (0, import_jsx_runtime5.jsx)(Ue2.Provider, { value: { createLink: o2, getPath: i2, DrawerTitle: s2 }, children: e2 });
+    return (0, import_jsx_runtime5.jsx)($e2.Provider, { value: { createLink: o2, getPath: i2, DrawerTitle: s2 }, children: e2 });
   };
   var K2 = () => {
-    let e2 = (0, import_react5.useContext)(Ue2);
+    let e2 = (0, import_react5.useContext)($e2);
     if (e2 === void 0)
       throw new Error("useVuiContext must be used within a VuiContextProvider");
     return e2;
   };
-  var ce2 = ({ children: e2, className: r2, color: t2, onClick: n2, href: o2, target: i2, track: s2, ...a2 }) => {
+  var le2 = ({ children: e2, className: r2, color: t2, onClick: n2, href: o2, target: i2, track: s2, ...a2 }) => {
     let { createLink: c2 } = K2(), l2 = (0, import_classnames3.default)(r2, "vuiBadge", `vuiBadge--${t2}`, { "vuiBadge--clickable": n2 != null ? n2 : o2 });
     return n2 ? (0, import_jsx_runtime6.jsx)("button", { className: l2, onClick: n2, ...a2, children: e2 }) : o2 ? c2({ className: l2, href: o2, onClick: n2, children: e2, target: i2, ...Z2(s2) }) : (0, import_jsx_runtime6.jsx)("div", { className: l2, ...a2, children: e2 });
   };
   var Ut = { left: "vuiBaseButton--alignLeft", center: "vuiBaseButton--alignCenter", right: "vuiBaseButton--alignRight" };
-  var le2 = (0, import_react7.forwardRef)(({ children: e2, icon: r2, iconSide: t2 = "left", align: n2 = "center", className: o2, size: i2, fullWidth: s2, onClick: a2, tabIndex: c2, isInert: l2, isDisabled: h2, href: w2, target: v2, track: E2, htmlFor: p2, isSubmit: H2, ...k2 }, V2) => {
+  var ue2 = (0, import_react7.forwardRef)(({ children: e2, icon: r2, iconSide: t2 = "left", align: n2 = "center", className: o2, size: i2, fullWidth: s2, onClick: a2, tabIndex: c2, isInert: l2, isDisabled: h2, href: w2, target: v2, track: E2, htmlFor: p2, isSubmit: H2, ...k2 }, V2) => {
     let F2 = (0, import_classnames5.default)("vuiBaseButton", o2, `vuiBaseButton--${i2}`, Ut[n2], { "vuiBaseButton-isInert": l2, "vuiBaseButton-isDisabled": h2, "vuiBaseButton--fullWidth": s2, [`vuiBaseButton--${t2}`]: !!r2 && !!e2 }), m2 = r2 ? (0, import_jsx_runtime7.jsx)("span", { className: "vuiBaseButtonIconContainer", children: r2 }) : null;
     if (p2)
       return (0, import_jsx_runtime7.jsxs)("label", { htmlFor: p2, className: F2, tabIndex: c2, ...k2, children: [m2, e2] });
@@ -35098,29 +35098,29 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   });
   var $t = { xs: "xs", s: "xs", m: "s", l: "m" };
   var Xt = { accent: "accent", primary: "primary", success: "success", danger: "danger", warning: "warning", neutral: "neutral", subdued: "subdued" };
-  var ue2 = (e2, r2, t2, n2 = Xt) => e2 ? (0, import_react8.cloneElement)(e2, { size: r2 ? $t[r2] : "s", color: e2.props.color === "inherit" ? n2[t2] : e2.props.color }) : null;
+  var pe2 = (e2, r2, t2, n2 = Xt) => e2 ? (0, import_react8.cloneElement)(e2, { size: r2 ? $t[r2] : "s", color: e2.props.color === "inherit" ? n2[t2] : e2.props.color }) : null;
   var Kt = { accent: "empty", primary: "empty", success: "empty", danger: "empty", warning: "empty", neutral: "neutral", subdued: "subdued" };
-  var ve2 = (0, import_react6.forwardRef)(({ children: e2, icon: r2, color: t2, size: n2 = "m", className: o2, isSelected: i2, isDisabled: s2, ...a2 }, c2) => {
-    let l2 = (0, import_classnames4.default)(o2, "vuiButtonPrimary", `vuiButtonPrimary--${t2}`, { "vuiButtonPrimary-isSelected": i2 }), h2 = ue2(r2, n2, t2, Kt);
-    return (0, import_jsx_runtime8.jsx)(le2, { ref: c2, className: l2, icon: h2, size: n2, isDisabled: s2, ...a2, children: e2 });
+  var ye2 = (0, import_react6.forwardRef)(({ children: e2, icon: r2, color: t2, size: n2 = "m", className: o2, isSelected: i2, isDisabled: s2, ...a2 }, c2) => {
+    let l2 = (0, import_classnames4.default)(o2, "vuiButtonPrimary", `vuiButtonPrimary--${t2}`, { "vuiButtonPrimary-isSelected": i2 }), h2 = pe2(r2, n2, t2, Kt);
+    return (0, import_jsx_runtime8.jsx)(ue2, { ref: c2, className: l2, icon: h2, size: n2, isDisabled: s2, ...a2, children: e2 });
   });
   var tr = { accent: "accent", primary: "primary", success: "success", danger: "danger", warning: "warning", neutral: "neutral", subdued: "subdued" };
-  var ye2 = (0, import_react9.forwardRef)(({ children: e2, icon: r2, color: t2, size: n2 = "m", className: o2, isSelected: i2, isDisabled: s2, solid: a2, ...c2 }, l2) => {
-    let h2 = (0, import_classnames6.default)(o2, "vuiButtonSecondary", `vuiButtonSecondary--${t2}`, { "vuiButtonSecondary-isSelected": i2, "vuiButtonSecondary--solid": a2 }), w2 = ue2(r2, n2, t2, tr);
-    return (0, import_jsx_runtime9.jsx)(le2, { ref: l2, className: h2, icon: w2, size: n2, isDisabled: s2, ...c2, children: e2 });
+  var Ce2 = (0, import_react9.forwardRef)(({ children: e2, icon: r2, color: t2, size: n2 = "m", className: o2, isSelected: i2, isDisabled: s2, solid: a2, ...c2 }, l2) => {
+    let h2 = (0, import_classnames6.default)(o2, "vuiButtonSecondary", `vuiButtonSecondary--${t2}`, { "vuiButtonSecondary-isSelected": i2, "vuiButtonSecondary--solid": a2 }), w2 = pe2(r2, n2, t2, tr);
+    return (0, import_jsx_runtime9.jsx)(ue2, { ref: l2, className: h2, icon: w2, size: n2, isDisabled: s2, ...c2, children: e2 });
   });
-  var Ce2 = ({ children: e2, columns: r2 = 2, spacing: t2 = "m", className: n2, ...o2 }) => {
+  var Se2 = ({ children: e2, columns: r2 = 2, spacing: t2 = "m", className: n2, ...o2 }) => {
     let i2 = (0, import_classnames7.default)("vuiGridContainer", n2), s2 = (0, import_classnames7.default)("vuiGrid", `vuiGrid--${t2}`, `vuiGrid--columns${r2}`);
     return (0, import_jsx_runtime10.jsx)("div", { className: i2, ...o2, children: (0, import_jsx_runtime10.jsx)("div", { className: s2, children: e2 }) });
   };
-  var we2 = ({ children: e2, href: r2, target: t2, onClick: n2, className: o2, track: i2, isAnchor: s2, ...a2 }) => {
+  var ke2 = ({ children: e2, href: r2, target: t2, onClick: n2, className: o2, track: i2, isAnchor: s2, ...a2 }) => {
     let { createLink: c2 } = K2();
     if (!r2)
       return (0, import_jsx_runtime11.jsx)("button", { className: (0, import_classnames8.default)("vuiLink", "vuiLink--button", o2), onClick: n2, ...a2, children: e2 });
     let l2 = { ...a2, ...Z2(i2) };
     return t2 === "_blank" && (l2.target = t2), s2 ? (0, import_jsx_runtime11.jsx)("a", { className: (0, import_classnames8.default)("vuiLink", o2), href: r2, onClick: n2, ...l2, children: e2 }) : c2({ className: (0, import_classnames8.default)("vuiLink", o2), href: r2, onClick: n2, children: e2, ...l2 });
   };
-  var Be2 = ({ className: e2, size: r2 = "m", value: t2, onChange: n2, placeholder: o2, autoFocus: i2, onSubmit: s2, ...a2 }) => {
+  var Ie2 = ({ className: e2, size: r2 = "m", value: t2, onChange: n2, placeholder: o2, autoFocus: i2, onSubmit: s2, ...a2 }) => {
     let c2 = (0, import_classnames9.default)("vuiSearchInput", `vuiSearchInput--${r2}`, e2);
     return (0, import_jsx_runtime12.jsx)("form", { onSubmit: s2, children: (0, import_jsx_runtime12.jsx)("div", { className: c2, children: (0, import_jsx_runtime12.jsx)("input", { className: "vuiSearchInput__input", type: "text", autoComplete: "off", autoCapitalize: "off", spellCheck: "false", autoFocus: i2, placeholder: o2, value: t2, onChange: n2, ...a2 }) }) });
   };
@@ -35142,16 +35142,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     return (0, import_jsx_runtime16.jsx)("span", { className: n2, children: e2 });
   };
   var te2 = ({ children: e2, className: r2, size: t2, align: n2, ...o2 }) => (0, import_react10.cloneElement)(e2, { className: (0, import_classnames14.default)("vuiTitle", `vuiTitle--${t2}`, { [`vuiTitle--${n2}`]: n2 }, r2, e2.props.className), ...o2 });
-  var Ie2 = ({ children: e2, className: r2, href: t2, onClick: n2, title: o2, fullWidth: i2, ...s2 }) => {
+  var Te2 = ({ children: e2, className: r2, href: t2, onClick: n2, title: o2, fullWidth: i2, ...s2 }) => {
     let { createLink: a2 } = K2(), c2 = (0, import_classnames15.default)("vuiTopicButton", r2, { "vuiTopicButton--fullWidth": i2 }), l2 = (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [o2 && (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [(0, import_jsx_runtime17.jsx)(te2, { size: "s", children: (0, import_jsx_runtime17.jsx)("p", { children: (0, import_jsx_runtime17.jsx)($2, { color: "primary", children: o2 }) }) }), e2 && (0, import_jsx_runtime17.jsx)(f2, { size: "xxs" })] }), e2] });
     return t2 ? a2({ className: c2, href: t2, onClick: n2, children: l2, ...s2 }) : (0, import_jsx_runtime17.jsx)("button", { className: c2, onClick: n2, ...s2, children: l2 });
   };
-  var et = ({ query: e2, setQuery: r2, onSubmit: t2, placeholder: n2, buttonLabel: o2, isButtonDisabled: i2, size: s2 }) => (0, import_jsx_runtime18.jsxs)(C2, { alignItems: "center", spacing: "xs", children: [(0, import_jsx_runtime18.jsx)(S2, { grow: 1, children: (0, import_jsx_runtime18.jsx)(Be2, { size: s2, value: e2, onChange: (l2) => {
+  var rt = ({ query: e2, setQuery: r2, onSubmit: t2, placeholder: n2, buttonLabel: o2, isButtonDisabled: i2, size: s2 }) => (0, import_jsx_runtime18.jsxs)(C2, { alignItems: "center", spacing: "xs", children: [(0, import_jsx_runtime18.jsx)(S2, { grow: 1, children: (0, import_jsx_runtime18.jsx)(Ie2, { size: s2, value: e2, onChange: (l2) => {
     r2(l2.target.value);
   }, onSubmit: (l2) => {
     l2.preventDefault(), t2();
-  }, placeholder: n2, autoFocus: true, "data-testid": "queryInput" }) }), (0, import_jsx_runtime18.jsx)(S2, { children: (0, import_jsx_runtime18.jsx)(ve2, { color: "primary", size: s2, onClick: () => t2(), isDisabled: i2, children: o2 }) })] });
-  var Te2 = (e2, r2) => {
+  }, placeholder: n2, autoFocus: true, "data-testid": "queryInput" }) }), (0, import_jsx_runtime18.jsx)(S2, { children: (0, import_jsx_runtime18.jsx)(ye2, { color: "primary", size: s2, onClick: () => t2(), isDisabled: i2, children: o2 }) })] });
+  var Re2 = (e2, r2) => {
     let t2 = [], n2 = r2.match(/\[\d+\]/g) || [], o2 = /* @__PURE__ */ new Set();
     for (let i2 = 0; i2 < n2.length; i2++) {
       let s2 = n2[i2], a2 = Number(s2.slice(1, s2.length - 1)) - 1;
@@ -35159,7 +35159,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }
     return t2;
   };
-  var Re2 = (e2) => {
+  var Fe2 = (e2) => {
     let r2 = /\[(\d+(,*\s*\d*)*)\]/g, t2 = [], n2, o2 = 0;
     for (; (n2 = r2.exec(e2)) !== null; ) {
       let s2 = n2.index, a2 = n2[1], c2 = e2.slice(o2, s2).trim();
@@ -35168,41 +35168,41 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     let i2 = e2.slice(o2).trim();
     return i2.length > 0 && t2.push({ text: i2 }), t2;
   };
-  var Fe2 = (e2) => {
+  var _e2 = (e2) => {
     let r2 = e2.match(/\[\d+\]/g) || [], t2 = [...new Set(r2)], n2 = {};
     return t2.forEach((o2, i2) => {
       n2[o2] = `[${i2 + 1}]`;
     }), e2.replace(/\[\d+\]/g, (o2) => n2[o2]);
   };
-  var tt = ({ searchResults: e2, isOpen: r2 = false, setIsOpen: t2 = () => {
-  } }) => (0, import_jsx_runtime19.jsxs)(fe2, { header: `Based on ${e2.length} ${e2.length === 1 ? "fact" : "facts"}`, isOpen: r2, setIsOpen: t2, children: [(0, import_jsx_runtime19.jsx)(f2, { size: "s" }), e2.map((n2, o2) => (0, import_jsx_runtime19.jsxs)("div", { children: [(0, import_jsx_runtime19.jsx)(fr, { result: n2, position: o2 }), o2 < e2.length - 1 && (0, import_jsx_runtime19.jsx)(f2, { size: "s" })] }, o2))] });
+  var nt = "%START_SNIPPET%";
+  var ot = "%END_SNIPPET%";
+  var ne2 = (e2) => {
+    let [r2, t2] = e2.indexOf(nt) !== -1 ? e2.split(nt) : ["", e2], [n2, o2] = t2.indexOf(ot) !== -1 ? t2.split(ot) : [t2, ""];
+    return { pre: r2, post: o2, text: n2 };
+  };
+  var it = ({ searchResults: e2, isOpen: r2 = false, setIsOpen: t2 = () => {
+  } }) => (0, import_jsx_runtime19.jsxs)(he2, { header: `Based on ${e2.length} ${e2.length === 1 ? "fact" : "facts"}`, isOpen: r2, setIsOpen: t2, children: [(0, import_jsx_runtime19.jsx)(f2, { size: "s" }), e2.map((n2, o2) => (0, import_jsx_runtime19.jsxs)("div", { children: [(0, import_jsx_runtime19.jsx)(fr, { result: n2, position: o2 }), o2 < e2.length - 1 && (0, import_jsx_runtime19.jsx)(f2, { size: "s" })] }, o2))] });
   var fr = ({ result: e2, position: r2 }) => {
     var o2;
-    let t2 = (o2 = e2 == null ? void 0 : e2.snippet) == null ? void 0 : o2.text, n2 = e2.document_metadata.url;
-    return (0, import_jsx_runtime19.jsx)(import_jsx_runtime19.Fragment, { children: (0, import_jsx_runtime19.jsxs)(C2, { alignItems: "start", spacing: "s", children: [(0, import_jsx_runtime19.jsx)(S2, { grow: false, shrink: false, children: (0, import_jsx_runtime19.jsx)("div", { className: "vrcbChatSearchResultPosition", children: r2 + 1 }) }), (0, import_jsx_runtime19.jsx)(S2, { grow: 1, shrink: 1, children: (0, import_jsx_runtime19.jsx)(D2, { size: "s", children: (0, import_jsx_runtime19.jsx)("p", { children: n2 ? (0, import_jsx_runtime19.jsx)("a", { href: n2, target: "_blank", children: t2 }) : t2 }) }) })] }) });
+    let t2 = e2.document_metadata.url, { text: n2 } = ne2((o2 = e2 == null ? void 0 : e2.snippet) == null ? void 0 : o2.text);
+    return (0, import_jsx_runtime19.jsx)(import_jsx_runtime19.Fragment, { children: (0, import_jsx_runtime19.jsxs)(C2, { alignItems: "start", spacing: "s", children: [(0, import_jsx_runtime19.jsx)(S2, { grow: false, shrink: false, children: (0, import_jsx_runtime19.jsx)("div", { className: "vrcbChatSearchResultPosition", children: r2 + 1 }) }), (0, import_jsx_runtime19.jsx)(S2, { grow: 1, shrink: 1, children: (0, import_jsx_runtime19.jsx)(D2, { size: "s", children: (0, import_jsx_runtime19.jsx)("p", { children: t2 ? (0, import_jsx_runtime19.jsx)("a", { href: t2, target: "_blank", children: n2 }) : n2 }) }) })] }) });
   };
-  var yr = (e2) => Re2(e2).reduce((t2, { text: n2, references: o2 }) => (o2 ? (t2.push(n2), n2 && n2[n2.length - 1] !== " " && t2.push(" "), o2.forEach((s2, a2) => {
+  var yr = (e2) => Fe2(e2).reduce((t2, { text: n2, references: o2 }) => (o2 ? (t2.push(n2), n2 && n2[n2.length - 1] !== " " && t2.push(" "), o2.forEach((s2, a2) => {
     a2 > 0 && t2.push(" "), t2.push(`<SummaryCitation reference={${s2}} />`);
   })) : t2.push(n2), t2), []).join(" ");
-  var Pe2 = ({ question: e2, answer: r2, searchResults: t2, factualConsistencyScore: n2, onRetry: o2, isStreaming: i2 }) => {
+  var Ne2 = ({ question: e2, answer: r2, searchResults: t2, factualConsistencyScore: n2, onRetry: o2, isStreaming: i2 }) => {
     let [s2, a2] = (0, import_react11.useState)(false), c2;
     if (o2)
-      c2 = (0, import_jsx_runtime20.jsxs)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--error", children: [(0, import_jsx_runtime20.jsx)(f2, { size: "m" }), (0, import_jsx_runtime20.jsxs)(C2, { alignItems: "center", spacing: "none", children: [(0, import_jsx_runtime20.jsxs)(C2, { alignItems: "center", spacing: "xxs", children: [(0, import_jsx_runtime20.jsx)(S2, { grow: false, shrink: true, children: (0, import_jsx_runtime20.jsx)(De2, {}) }), (0, import_jsx_runtime20.jsx)(S2, { grow: false, children: "Message not sent." })] }), o2 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "s" }), (0, import_jsx_runtime20.jsx)(C2, { alignItems: "center", spacing: "none", children: (0, import_jsx_runtime20.jsx)("button", { className: "vrcbRetryButton", onClick: () => o2(), children: "Try again" }) })] })] })] });
+      c2 = (0, import_jsx_runtime20.jsxs)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--error", children: [(0, import_jsx_runtime20.jsx)(f2, { size: "m" }), (0, import_jsx_runtime20.jsxs)(C2, { alignItems: "center", spacing: "none", children: [(0, import_jsx_runtime20.jsxs)(C2, { alignItems: "center", spacing: "xxs", children: [(0, import_jsx_runtime20.jsx)(S2, { grow: false, shrink: true, children: (0, import_jsx_runtime20.jsx)(He2, {}) }), (0, import_jsx_runtime20.jsx)(S2, { grow: false, children: "Message not sent." })] }), o2 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "s" }), (0, import_jsx_runtime20.jsx)(C2, { alignItems: "center", spacing: "none", children: (0, import_jsx_runtime20.jsx)("button", { className: "vrcbRetryButton", onClick: () => o2(), children: "Try again" }) })] })] })] });
     else if (r2) {
-      let l2 = (t2 ? Te2(t2, r2) : []).slice(0, 7), h2 = t2 ? Fe2(r2) : r2, w2 = yr(h2);
-      c2 = (0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--answer", children: (0, import_jsx_runtime20.jsxs)("div", { className: "vrcbChatMessage", children: [(0, import_jsx_runtime20.jsxs)(D2, { size: "s", children: [(0, import_jsx_runtime20.jsx)(index_modern_default, { children: w2, options: { forceInline: true, overrides: { SummaryCitation: { component: ({ reference: E2 }) => (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [" ", (0, import_jsx_runtime20.jsx)("button", { onClick: () => a2(true), children: (0, import_jsx_runtime20.jsx)("span", { className: "vrcbChatSummaryCitation", children: E2 }) })] }) } } } }), i2 && (0, import_jsx_runtime20.jsxs)("span", { children: [" ", (0, import_jsx_runtime20.jsx)(ee2, { size: "xs" })] })] }), n2 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "xs" }), n2] }), l2 && l2.length > 0 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "s" }), (0, import_jsx_runtime20.jsx)(tt, { searchResults: l2, isOpen: s2, setIsOpen: a2 })] })] }) });
+      let l2 = (t2 ? Re2(t2, r2) : []).slice(0, 7), h2 = t2 ? _e2(r2) : r2, w2 = yr(h2);
+      c2 = (0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--answer", children: (0, import_jsx_runtime20.jsxs)("div", { className: "vrcbChatMessage", children: [(0, import_jsx_runtime20.jsxs)(D2, { size: "s", children: [(0, import_jsx_runtime20.jsx)(index_modern_default, { children: w2, options: { forceInline: true, overrides: { SummaryCitation: { component: ({ reference: E2 }) => (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [" ", (0, import_jsx_runtime20.jsx)("button", { onClick: () => a2(true), children: (0, import_jsx_runtime20.jsx)("span", { className: "vrcbChatSummaryCitation", children: E2 }) })] }) } } } }), i2 && (0, import_jsx_runtime20.jsxs)("span", { children: [" ", (0, import_jsx_runtime20.jsx)(ee2, { size: "xs" })] })] }), n2 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "xs" }), n2] }), l2 && l2.length > 0 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "s" }), (0, import_jsx_runtime20.jsx)(it, { searchResults: l2, isOpen: s2, setIsOpen: a2 })] })] }) });
     }
     return (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--question", children: (0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessage", children: e2 }) }), (0, import_jsx_runtime20.jsx)(f2, { size: "xs" }), c2] });
   };
-  var rt = "https://api.vectara.io";
-  var nt = "%START_SNIPPET%";
-  var ot = "%END_SNIPPET%";
-  var it = "%START_SNIPPET%";
-  var st = "%END_SNIPPET%";
-  var Ne2 = (e2) => {
-    let [r2, t2] = e2.indexOf(it) !== -1 ? e2.split(it) : ["", e2], [n2, o2] = t2.indexOf(st) !== -1 ? t2.split(st) : [t2, ""];
-    return { pre: r2, post: o2, text: n2 };
-  };
+  var st = "https://api.vectara.io";
+  var Ee2 = "%START_SNIPPET%";
+  var Ve = "%END_SNIPPET%";
   var Cr = (e2) => {
     if (e2) {
       if (e2.type === "none")
@@ -35231,7 +35231,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     a2 && (k2.chat = { store: a2.store });
     let V2 = { "customer-id": e2, "Content-Type": "application/json" };
     t2 && (V2["x-api-key"] = t2);
-    let F2 = `${o2 != null ? o2 : rt}/v2/chats`, m2 = await fetch(F2, { method: "POST", headers: V2, body: JSON.stringify(k2) });
+    let F2 = `${o2 != null ? o2 : st}/v2/chats`, m2 = await fetch(F2, { method: "POST", headers: V2, body: JSON.stringify(k2) });
     if (m2.status === 400 || m2.status === 403 || m2.status === 404) {
       let y2 = await m2.json();
       throw new Error(`BAD REQUEST: ${(_2 = y2 == null ? void 0 : y2.messages[0]) != null ? _2 : y2.field_errors}`);
@@ -35266,7 +35266,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 break;
               case "searchResults":
                 P2 = L2.searchResults.map((u2) => {
-                  let { pre: I2, text: T2, post: W2 } = Ne2(u2.text);
+                  let { pre: I2, text: T2, post: W2 } = ne2(u2.text);
                   return { ...u2, snippet: { pre: I2, text: T2, post: W2 } };
                 }), p2((u2) => {
                   var I2, T2;
@@ -35289,7 +35289,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 F2(false);
                 break;
             }
-          }, U2 = { apiKey: t2, customerId: e2, query: z2, corpusKey: r2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: c2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2 } }, chat: { store: true, conversationId: m2 != null ? m2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } };
+          }, U2 = { apiKey: t2, customerId: e2, query: z2, corpusKey: r2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: c2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2, startTag: Ee2, endTag: Ve } }, chat: { store: true, conversationId: m2 != null ? m2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } };
           await (0, import_stream_query_client.streamQueryV2)({ streamQueryConfig: U2, onStreamEvent: d2 });
         } catch (d2) {
           console.log("Summary error", d2), G2(true), k2(false);
@@ -35297,9 +35297,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         }
       else
         try {
-          let d2 = await at({ apiKey: t2, customerId: e2, query: z2, corpusKeys: r2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: c2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2, startTag: nt, endTag: ot } }, chat: { store: true, conversationId: m2 != null ? m2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } });
+          let d2 = await at({ apiKey: t2, customerId: e2, query: z2, corpusKeys: r2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: c2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2, startTag: Ee2, endTag: Ve } }, chat: { store: true, conversationId: m2 != null ? m2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } });
           P2 = d2.search_results.map((U2) => {
-            let { pre: L2, text: u2, post: I2 } = Ne2(U2.text);
+            let { pre: L2, text: u2, post: I2 } = ne2(U2.text);
             return { ...U2, snippet: { pre: L2, text: u2, post: I2 } };
           }), _2(d2.chat_id), w2((U2) => {
             var L2;
@@ -35317,19 +35317,19 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, [V2]), { sendMessage: M2, activeMessage: E2, messageHistory: h2, isLoading: H2, isStreamingResponse: V2, startNewConversation: A2, hasError: y2 };
   };
   var mt = () => (0, import_jsx_runtime21.jsx)(import_jsx_runtime21.Fragment, { children: (0, import_jsx_runtime21.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--thinking", children: (0, import_jsx_runtime21.jsx)("div", { className: "vrcbChatMessage", children: (0, import_jsx_runtime21.jsx)("div", { className: "vrcbLoader" }) }) }) });
-  var Ee2 = ({ score: e2 }) => {
+  var Le2 = ({ score: e2 }) => {
     let r2;
     if (e2 === void 0)
-      r2 = (0, import_jsx_runtime22.jsx)(ce2, { color: "accent", children: "Calculating Factual Consistency Score\u2026" });
+      r2 = (0, import_jsx_runtime22.jsx)(le2, { color: "accent", children: "Calculating Factual Consistency Score\u2026" });
     else {
       let t2 = parseFloat(e2.toFixed(2)), n2 = "neutral";
-      t2 === 0 ? n2 = "danger" : t2 === 1 && (n2 = "success"), r2 = (0, import_jsx_runtime22.jsxs)(ce2, { color: n2, children: ["Factual Consistency Score: ", t2] });
+      t2 === 0 ? n2 = "danger" : t2 === 1 && (n2 = "success"), r2 = (0, import_jsx_runtime22.jsxs)(le2, { color: n2, children: ["Factual Consistency Score: ", t2] });
     }
-    return (0, import_jsx_runtime22.jsxs)(C2, { alignItems: "center", "data-testid": "factualConsistencyBadge", children: [e2 === void 0 && (0, import_jsx_runtime22.jsx)(ee2, { size: "s" }), r2, (0, import_jsx_runtime22.jsx)(D2, { size: "xs", children: (0, import_jsx_runtime22.jsx)("p", { children: (0, import_jsx_runtime22.jsx)(we2, { href: "https://docs.vectara.com/docs/api-reference/search-apis/search?#factual-consistency-score", target: "_blank", children: "What's this?" }) }) })] });
+    return (0, import_jsx_runtime22.jsxs)(C2, { alignItems: "center", "data-testid": "factualConsistencyBadge", children: [e2 === void 0 && (0, import_jsx_runtime22.jsx)(ee2, { size: "s" }), r2, (0, import_jsx_runtime22.jsx)(D2, { size: "xs", children: (0, import_jsx_runtime22.jsx)("p", { children: (0, import_jsx_runtime22.jsx)(ke2, { href: "https://docs.vectara.com/docs/api-reference/search-apis/search?#factual-consistency-score", target: "_blank", children: "What's this?" }) }) })] });
   };
-  var ht = ({ children: e2, onClick: r2, title: t2 }) => (0, import_jsx_runtime23.jsx)(Ie2, { onClick: r2, "data-testid": "exampleQuestion", children: (0, import_jsx_runtime23.jsxs)(import_jsx_runtime23.Fragment, { children: [t2 && (0, import_jsx_runtime23.jsxs)(import_jsx_runtime23.Fragment, { children: [(0, import_jsx_runtime23.jsx)(te2, { size: "s", children: (0, import_jsx_runtime23.jsx)("p", { children: (0, import_jsx_runtime23.jsx)($2, { color: "primary", children: t2 }) }) }), e2 && (0, import_jsx_runtime23.jsx)(f2, { size: "xxs" })] }), e2] }) });
-  var bt = () => (0, import_jsx_runtime24.jsxs)(C2, { className: "vrcbEmptyMessages", spacing: "none", alignItems: "center", justifyContent: "center", direction: "column", children: [(0, import_jsx_runtime24.jsx)(Ge2, { size: "80px", color: "#cbcdde" }), (0, import_jsx_runtime24.jsx)(D2, { children: (0, import_jsx_runtime24.jsx)("p", { children: (0, import_jsx_runtime24.jsx)($2, { color: "subdued", children: "Ask anything." }) }) })] });
-  var vt = ({ exampleQuestions: e2, onSubmitChat: r2 }) => e2.length > 0 ? (0, import_jsx_runtime25.jsxs)("div", { className: "vrcbExampleQuestionsContainer", children: [(0, import_jsx_runtime25.jsx)(D2, { children: (0, import_jsx_runtime25.jsx)("p", { children: (0, import_jsx_runtime25.jsx)($2, { color: "subdued", children: "Try out these example questions" }) }) }), (0, import_jsx_runtime25.jsx)(f2, { size: "m" }), (0, import_jsx_runtime25.jsx)(Ce2, { columns: 3, children: e2.map((n2) => (0, import_jsx_runtime25.jsx)(ht, { onClick: () => r2(n2), title: n2 }, n2)) })] }) : (0, import_jsx_runtime25.jsx)(bt, {});
+  var ht = ({ children: e2, onClick: r2, title: t2 }) => (0, import_jsx_runtime23.jsx)(Te2, { onClick: r2, "data-testid": "exampleQuestion", children: (0, import_jsx_runtime23.jsxs)(import_jsx_runtime23.Fragment, { children: [t2 && (0, import_jsx_runtime23.jsxs)(import_jsx_runtime23.Fragment, { children: [(0, import_jsx_runtime23.jsx)(te2, { size: "s", children: (0, import_jsx_runtime23.jsx)("p", { children: (0, import_jsx_runtime23.jsx)($2, { color: "primary", children: t2 }) }) }), e2 && (0, import_jsx_runtime23.jsx)(f2, { size: "xxs" })] }), e2] }) });
+  var bt = () => (0, import_jsx_runtime24.jsxs)(C2, { className: "vrcbEmptyMessages", spacing: "none", alignItems: "center", justifyContent: "center", direction: "column", children: [(0, import_jsx_runtime24.jsx)(qe, { size: "80px", color: "#cbcdde" }), (0, import_jsx_runtime24.jsx)(D2, { children: (0, import_jsx_runtime24.jsx)("p", { children: (0, import_jsx_runtime24.jsx)($2, { color: "subdued", children: "Ask anything." }) }) })] });
+  var vt = ({ exampleQuestions: e2, onSubmitChat: r2 }) => e2.length > 0 ? (0, import_jsx_runtime25.jsxs)("div", { className: "vrcbExampleQuestionsContainer", children: [(0, import_jsx_runtime25.jsx)(D2, { children: (0, import_jsx_runtime25.jsx)("p", { children: (0, import_jsx_runtime25.jsx)($2, { color: "subdued", children: "Try out these example questions" }) }) }), (0, import_jsx_runtime25.jsx)(f2, { size: "m" }), (0, import_jsx_runtime25.jsx)(Se2, { columns: 3, children: e2.map((n2) => (0, import_jsx_runtime25.jsx)(ht, { onClick: () => r2(n2), title: n2 }, n2)) })] }) : (0, import_jsx_runtime25.jsx)(bt, {});
   var Pr = { large: "l", medium: "m" };
   var wt = ({ customerId: e2, corpusKeys: r2, apiKey: t2, title: n2 = "My Chatbot", placeholder: o2 = "Chat with your AI Assistant", exampleQuestions: i2, inputSize: s2 = "large", emptyStateDisplay: a2, isInitiallyOpen: c2, zIndex: l2 = 9999, numberOfSearchResults: h2 = 10, language: w2 = "eng", enableFactualConsistencyScore: v2, summaryPromptName: E2, rerankerId: p2, lambda: H2, enableStreaming: k2 = true }) => {
     let [V2, F2] = (0, import_react4.useState)(c2 != null ? c2 : false), [m2, _2] = (0, import_react4.useState)(""), { sendMessage: y2, startNewConversation: G2, messageHistory: M2, isLoading: A2, hasError: z2, activeMessage: b2, isStreamingResponse: P2 } = dt({ customerId: e2, corpusKeys: r2, apiKey: t2, numberOfSearchResults: h2, language: w2, enableFactualConsistencyScore: v2, summaryPromptName: E2, rerankerId: p2, lambda: H2, enableStreaming: k2 }), d2 = (0, import_react4.useRef)(null), U2 = (0, import_react4.useRef)(true), L2 = () => {
@@ -35342,24 +35342,24 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       c2 !== void 0 && F2(c2);
     }, [c2]), (0, import_react4.useEffect)(() => {
       let R2 = d2.current, Q2 = () => {
-        let se2 = d2.current ? Math.abs(d2.current.scrollHeight - d2.current.clientHeight - d2.current.scrollTop) < 50 : true;
-        U2.current = se2;
+        let ae2 = d2.current ? Math.abs(d2.current.scrollHeight - d2.current.clientHeight - d2.current.scrollTop) < 50 : true;
+        U2.current = ae2;
       };
       return R2 == null || R2.addEventListener("scroll", Q2), () => {
         R2 == null || R2.removeEventListener("scroll", Q2);
       };
     }, []);
     let u2 = (0, import_react4.useMemo)(() => M2.map((R2, Q2) => {
-      let { question: se2, answer: Tt, results: Rt, factualConsistencyScore: Ft } = R2, _t = z2 && Q2 === M2.length - 1 ? () => y2({ query: se2, isRetry: true }) : void 0;
-      return (0, import_jsx_runtime26.jsxs)(import_react4.Fragment, { children: [(0, import_jsx_runtime26.jsx)(Pe2, { question: se2, answer: Tt, searchResults: Rt, factualConsistencyScore: v2 && (0, import_jsx_runtime26.jsx)(Ee2, { score: Ft }), onRetry: _t }), Q2 < M2.length - 1 && (0, import_jsx_runtime26.jsx)(f2, { size: "m" })] }, Q2);
+      let { question: ae2, answer: Tt, results: Rt, factualConsistencyScore: Ft } = R2, _t = z2 && Q2 === M2.length - 1 ? () => y2({ query: ae2, isRetry: true }) : void 0;
+      return (0, import_jsx_runtime26.jsxs)(import_react4.Fragment, { children: [(0, import_jsx_runtime26.jsx)(Ne2, { question: ae2, answer: Tt, searchResults: Rt, factualConsistencyScore: v2 && (0, import_jsx_runtime26.jsx)(Le2, { score: Ft }), onRetry: _t }), Q2 < M2.length - 1 && (0, import_jsx_runtime26.jsx)(f2, { size: "m" })] }, Q2);
     }), [M2]), I2 = A2 || M2.length > 0 || b2, T2 = A2 || P2 || m2.trim().length === 0, W2 = (R2) => {
       T2 && !R2 || (y2({ query: R2 != null ? R2 : m2 }), _2(""));
     }, Bt = u2.length === 0 ? null : (0, import_jsx_runtime26.jsx)(f2, { size: b2 ? "m" : "l" });
     (0, import_react4.useEffect)(L2, [A2, b2]);
-    let It = V2 ? (0, import_jsx_runtime26.jsxs)("div", { className: "vrcbChatbotWrapper", style: { zIndex: l2 }, children: [(0, import_jsx_runtime26.jsxs)(C2, { className: "vrcbHeader", spacing: "none", direction: "row", children: [(0, import_jsx_runtime26.jsx)(S2, { grow: 1, alignItems: "center", children: n2 }), (0, import_jsx_runtime26.jsx)(S2, { alignItems: "center", children: (0, import_jsx_runtime26.jsx)("button", { onClick: () => F2(false), children: (0, import_jsx_runtime26.jsx)(ze2, { size: "12px", color: "#2c313a" }) }) })] }), (0, import_jsx_runtime26.jsxs)(C2, { direction: "column", spacing: "none", className: "vrcbChatbotInnerWrapper", children: [(0, import_jsx_runtime26.jsx)(S2, { className: "vrcbMessagesWrapper", basis: "fill", children: (0, import_jsx_runtime26.jsx)("div", { ref: d2, children: I2 ? (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(f2, { size: "xs" }), u2, Bt, b2 && (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(Pe2, { question: b2.question, answer: b2.answer, searchResults: b2.results, factualConsistencyScore: v2 && (0, import_jsx_runtime26.jsx)(Ee2, { score: b2.factualConsistencyScore }), onRetry: z2 ? () => y2({ query: b2.question, isRetry: true }) : void 0, isStreaming: P2 }), (0, import_jsx_runtime26.jsx)(f2, { size: "l" })] }), A2 && (0, import_jsx_runtime26.jsx)(mt, {}), (0, import_jsx_runtime26.jsx)(C2, { fullWidth: true, justifyContent: "center", children: (0, import_jsx_runtime26.jsx)(S2, { children: (0, import_jsx_runtime26.jsx)(ye2, { color: "neutral", size: "xs", onClick: G2, isDisabled: A2, children: "Start new conversation" }) }) }), (0, import_jsx_runtime26.jsx)(f2, { size: "l" })] }) : a2 != null ? a2 : (0, import_jsx_runtime26.jsx)(vt, { exampleQuestions: i2 != null ? i2 : [], onSubmitChat: W2 }) }) }), (0, import_jsx_runtime26.jsx)(S2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime26.jsx)(et, { placeholder: o2, buttonLabel: "Send", query: m2, setQuery: _2, isButtonDisabled: T2, onSubmit: W2, size: Pr[s2] }) })] })] }) : (0, import_jsx_runtime26.jsx)("button", { className: "vrcbChatbotButton", onClick: () => F2(true), style: { zIndex: l2 }, children: n2 });
-    return (0, import_jsx_runtime26.jsx)(he2, { children: It });
+    let It = V2 ? (0, import_jsx_runtime26.jsxs)("div", { className: "vrcbChatbotWrapper", style: { zIndex: l2 }, children: [(0, import_jsx_runtime26.jsxs)(C2, { className: "vrcbHeader", spacing: "none", direction: "row", children: [(0, import_jsx_runtime26.jsx)(S2, { grow: 1, alignItems: "center", children: n2 }), (0, import_jsx_runtime26.jsx)(S2, { alignItems: "center", children: (0, import_jsx_runtime26.jsx)("button", { onClick: () => F2(false), children: (0, import_jsx_runtime26.jsx)(De2, { size: "12px", color: "#2c313a" }) }) })] }), (0, import_jsx_runtime26.jsxs)(C2, { direction: "column", spacing: "none", className: "vrcbChatbotInnerWrapper", children: [(0, import_jsx_runtime26.jsx)(S2, { className: "vrcbMessagesWrapper", basis: "fill", children: (0, import_jsx_runtime26.jsx)("div", { ref: d2, children: I2 ? (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(f2, { size: "xs" }), u2, Bt, b2 && (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(Ne2, { question: b2.question, answer: b2.answer, searchResults: b2.results, factualConsistencyScore: v2 && (0, import_jsx_runtime26.jsx)(Le2, { score: b2.factualConsistencyScore }), onRetry: z2 ? () => y2({ query: b2.question, isRetry: true }) : void 0, isStreaming: P2 }), (0, import_jsx_runtime26.jsx)(f2, { size: "l" })] }), A2 && (0, import_jsx_runtime26.jsx)(mt, {}), (0, import_jsx_runtime26.jsx)(C2, { fullWidth: true, justifyContent: "center", children: (0, import_jsx_runtime26.jsx)(S2, { children: (0, import_jsx_runtime26.jsx)(Ce2, { color: "neutral", size: "xs", onClick: G2, isDisabled: A2, children: "Start new conversation" }) }) }), (0, import_jsx_runtime26.jsx)(f2, { size: "l" })] }) : a2 != null ? a2 : (0, import_jsx_runtime26.jsx)(vt, { exampleQuestions: i2 != null ? i2 : [], onSubmitChat: W2 }) }) }), (0, import_jsx_runtime26.jsx)(S2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime26.jsx)(rt, { placeholder: o2, buttonLabel: "Send", query: m2, setQuery: _2, isButtonDisabled: T2, onSubmit: W2, size: Pr[s2] }) })] })] }) : (0, import_jsx_runtime26.jsx)("button", { className: "vrcbChatbotButton", onClick: () => F2(true), style: { zIndex: l2 }, children: n2 });
+    return (0, import_jsx_runtime26.jsx)(be2, { children: It });
   };
-  var Le2 = `:host {
+  var Ae2 = `:host {
   all: initial;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
@@ -36806,17 +36806,17 @@ fieldset {
 .vuiTextColor--neutral {
   color: #2c313a !important;
 }`;
-  var Me2 = class extends HTMLElement {
+  var ze2 = class extends HTMLElement {
     static get observedAttributes() {
       return ["customerid", "corpuskeys", "apikey", "title", "placeholder", "examplequestions", "inputsize", "isinitiallyopen", "zindex", "emptystatedisplayupdatetime", "numberofsearchresults", "language", "enablefactualconsistencyscore", "summarypromptname", "rerankerId", "lambda", "enablestreaming"];
     }
     constructor() {
       super(), this.sr = this.attachShadow({ mode: "open" });
       try {
-        this.sheet = new CSSStyleSheet(), this.sheet.replaceSync(Le2), this.sr.adoptedStyleSheets = [this.sheet];
+        this.sheet = new CSSStyleSheet(), this.sheet.replaceSync(Ae2), this.sr.adoptedStyleSheets = [this.sheet];
       } catch {
         let r2 = document.createElement("style");
-        r2.innerText = Le2, this.sr.appendChild(r2);
+        r2.innerText = Ae2, this.sr.appendChild(r2);
       }
       this.mountPoint = document.createElement("div"), this.sr.appendChild(this.mountPoint);
     }
@@ -36832,8 +36832,8 @@ fieldset {
       this.connectedCallback();
     }
   };
-  window.customElements.get("react-chatbot") || window.customElements.define("react-chatbot", Me2);
-  var ds = (e2) => {
+  window.customElements.get("react-chatbot") || window.customElements.define("react-chatbot", ze2);
+  var ms = (e2) => {
     let r2 = (0, import_react3.useRef)(null);
     (0, import_react3.useEffect)(() => {
       r2.current && e2.emptyStateDisplay && r2.current.setEmptyStateDisplay(e2.emptyStateDisplay);
@@ -45591,7 +45591,7 @@ export const App = () => (
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(VuiText, { children: /* @__PURE__ */ (0, import_jsx_runtime108.jsx)("p", { children: "React-Chatbot instantly adds a Vectara-powered chatbot to your React applications." }) }),
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(VuiSpacer, { size: "m" }),
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(
-          ds,
+          ms,
           {
             corpusKey: corpusKeys === "" ? DEFAULT_CORPUS_KEY : corpusKeys,
             customerId: customerId === "" ? DEFAULT_CUSTOMER_ID : customerId,
