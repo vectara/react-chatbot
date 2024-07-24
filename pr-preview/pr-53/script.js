@@ -1790,8 +1790,8 @@
                 setTimeout(_flushCallback, 0);
               }
             };
-            requestHostTimeout = function(cb, ms2) {
-              _timeoutID = setTimeout(cb, ms2);
+            requestHostTimeout = function(cb, ms) {
+              _timeoutID = setTimeout(cb, ms);
             };
             cancelHostTimeout = function() {
               clearTimeout(_timeoutID);
@@ -1868,10 +1868,10 @@
                 port.postMessage(null);
               }
             };
-            requestHostTimeout = function(callback, ms2) {
+            requestHostTimeout = function(callback, ms) {
               taskTimeoutID = _setTimeout(function() {
                 callback(exports.unstable_now());
-              }, ms2);
+              }, ms);
             };
             cancelHostTimeout = function() {
               _clearTimeout(taskTimeoutID);
@@ -1950,7 +1950,7 @@
           var NormalPriority = 3;
           var LowPriority = 4;
           var IdlePriority = 5;
-          function markTaskErrored(task, ms2) {
+          function markTaskErrored(task, ms) {
           }
           var maxSigned31BitInt = 1073741823;
           var IMMEDIATE_PRIORITY_TIMEOUT = -1;
@@ -26600,8 +26600,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           return;
         let t2 = [], { response: s2, document: r2 } = e2;
         return s2.forEach((n2) => {
-          let { documentIndex: u2, text: c2 } = n2, { pre: f3, post: d2, text: y2 } = Y3(c2), l2 = r2[Number(u2)], { id: v2, metadata: x3 } = l2, { source: E2, url: b2, title: a2, metadata: I2 } = X3(x3);
-          t2.push({ id: v2, snippet: { pre: f3, text: y2, post: d2 }, source: E2, url: b2, title: a2, metadata: I2 });
+          let { documentIndex: u2, text: m2 } = n2, { pre: f3, post: y2, text: l2 } = Y3(m2), h2 = r2[Number(u2)], { id: v2, metadata: x3 } = h2, { source: E2, url: b2, title: a2, metadata: I2 } = X3(x3);
+          t2.push({ id: v2, snippet: { pre: f3, text: l2, post: y2 }, source: E2, url: b2, title: a2, metadata: I2 });
         }), t2;
       };
       var X3 = (e2) => {
@@ -26641,28 +26641,28 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         }
       }
       var M2 = async (e2, t2) => {
-        var l2, v2, x3, E2, b2, a2, I2, C3;
-        let s2 = { "x-api-key": e2.apiKey, "customer-id": e2.customerId, "Content-Type": "application/json" }, r2 = (l2 = e2.lambda) != null ? l2 : 0.025;
+        var h2, v2, x3, E2, b2, a2, I2, C3;
+        let s2 = { "x-api-key": e2.apiKey, "customer-id": e2.customerId, "Content-Type": "application/json" }, r2 = (h2 = e2.lambda) != null ? h2 : 0.025;
         r2 > 1 ? r2 = 1 : r2 < 0 && (r2 = 0);
-        let n2 = e2.corpusIds.map((m2) => ({ customerId: e2.customerId, corpusId: m2, lexicalInterpolationConfig: { lambda: r2 }, metadataFilter: e2.filter ? `doc.source = '${e2.filter}'` : void 0 })), u2 = e2.rerank ? { rerankingConfig: { rerankerId: e2.rerankerId, ...e2.rerankerId === 272725718 ? { mmrConfig: { diversityBias: e2.rerankDiversityBias } } : {} } } : {}, c2 = JSON.stringify({ query: [{ query: e2.queryValue, start: 0, numResults: e2.rerank ? e2.rerankNumResults : 10, corpusKey: n2, contextConfig: { sentencesBefore: (v2 = e2.summaryNumSentences) != null ? v2 : 2, sentencesAfter: (x3 = e2.summaryNumSentences) != null ? x3 : 2, startTag: A2, endTag: w2 }, summary: [{ responseLang: e2.language, debug: e2.debug, maxSummarizedResults: e2.summaryNumResults, summarizerPromptName: e2.summaryPromptName, factualConsistencyScore: (E2 = e2.enableFactualConsistencyScore) != null ? E2 : false, chat: { store: (a2 = (b2 = e2.chat) == null ? void 0 : b2.store) != null ? a2 : false, conversationId: (I2 = e2.chat) == null ? void 0 : I2.conversationId } }], ...u2 }] }), f3 = (C3 = e2.endpoint) != null ? C3 : `${D3}/v1/stream-query`, { stream: d2 } = await N3(s2, c2, f3), y2 = "";
-        for await (let m2 of d2)
+        let n2 = e2.corpusIds.map((p2) => ({ customerId: e2.customerId, corpusId: p2, lexicalInterpolationConfig: { lambda: r2 }, metadataFilter: e2.filter ? `doc.source = '${e2.filter}'` : void 0 })), u2 = e2.rerank ? { rerankingConfig: { rerankerId: e2.rerankerId, ...e2.rerankerId === 272725718 ? { mmrConfig: { diversityBias: e2.rerankDiversityBias } } : {} } } : {}, m2 = JSON.stringify({ query: [{ query: e2.queryValue, start: 0, numResults: e2.rerank ? e2.rerankNumResults : 10, corpusKey: n2, contextConfig: { sentencesBefore: (v2 = e2.summaryNumSentences) != null ? v2 : 2, sentencesAfter: (x3 = e2.summaryNumSentences) != null ? x3 : 2, startTag: A2, endTag: w2 }, summary: [{ responseLang: e2.language, debug: e2.debug, maxSummarizedResults: e2.summaryNumResults, summarizerPromptName: e2.summaryPromptName, factualConsistencyScore: (E2 = e2.enableFactualConsistencyScore) != null ? E2 : false, chat: { store: (a2 = (b2 = e2.chat) == null ? void 0 : b2.store) != null ? a2 : false, conversationId: (I2 = e2.chat) == null ? void 0 : I2.conversationId } }], ...u2 }] }), f3 = (C3 = e2.endpoint) != null ? C3 : `${D3}/v1/stream-query`, { stream: y2 } = await N3(s2, m2, f3), l2 = "";
+        for await (let p2 of y2)
           try {
-            L2(m2, (h2) => {
+            L2(p2, (g3) => {
               var S3, R2, P2;
-              let o2 = JSON.parse(h2);
+              let o2 = JSON.parse(g3);
               if (!o2.result)
                 return;
-              let p2 = {}, T2 = te3(e2, o2.result);
-              T2 && (p2.summary = T2);
+              let d2 = {}, T2 = te3(e2, o2.result);
+              T2 && (d2.summary = T2);
               let k2 = re3(e2, o2.result);
-              k2 && (p2.chat = k2);
-              let g3 = se2(o2.result);
-              g3 && (p2.factualConsistency = g3);
-              let _2 = { references: H2(o2.result.responseSet), details: p2, updatedText: ne3(o2.result, y2), isDone: (R2 = (S3 = o2.result.summary) == null ? void 0 : S3.done) != null ? R2 : false };
-              y2 = (P2 = _2.updatedText) != null ? P2 : "", t2(_2);
+              k2 && (d2.chat = k2);
+              let c2 = se2(o2.result);
+              c2 && (d2.factualConsistency = c2);
+              let _2 = { references: H2(o2.result.responseSet), details: d2, updatedText: ne3(o2.result, l2), isDone: (R2 = (S3 = o2.result.summary) == null ? void 0 : S3.done) != null ? R2 : false };
+              l2 = (P2 = _2.updatedText) != null ? P2 : "", t2(_2);
             });
-          } catch (h2) {
-            console.log(h2);
+          } catch (g3) {
+            console.log(g3);
           }
       };
       var te3 = (e2, t2) => {
@@ -26705,7 +26705,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           }), this.drainEvents();
         }
         enqueueEvent(t2) {
-          let { type: s2, messages: r2, search_results: n2, chat_id: u2, turn_id: c2, factual_consistency_score: f3, generation_chunk: d2, rendered_prompt: y2, rephrased_query: l2 } = t2;
+          let { type: s2, messages: r2, search_results: n2, chat_id: u2, turn_id: m2, factual_consistency_score: f3, generation_chunk: y2, rendered_prompt: l2, rephrased_query: h2 } = t2;
           switch (s2) {
             case "error":
               this.events.push({ type: "error", messages: r2, ...this.includeRaw && { raw: t2 } });
@@ -26714,13 +26714,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               this.events.push({ type: "searchResults", searchResults: n2, ...this.includeRaw && { raw: t2 } });
               break;
             case "chat_info":
-              this.events.push({ type: "chatInfo", chatId: u2, turnId: c2, ...this.includeRaw && { raw: t2 } });
+              this.events.push({ type: "chatInfo", chatId: u2, turnId: m2, ...this.includeRaw && { raw: t2 } });
               break;
             case "generation_chunk":
-              this.updatedText += d2, this.events.push({ type: "generationChunk", updatedText: this.updatedText, generationChunk: d2, ...this.includeRaw && { raw: t2 } });
+              this.updatedText += y2, this.events.push({ type: "generationChunk", updatedText: this.updatedText, generationChunk: y2, ...this.includeRaw && { raw: t2 } });
               break;
             case "generation_info":
-              this.events.push({ type: "generationInfo", renderedPrompt: y2, rephrasedQuery: l2, ...this.includeRaw && { raw: t2 } });
+              this.events.push({ type: "generationInfo", renderedPrompt: l2, rephrasedQuery: h2, ...this.includeRaw && { raw: t2 } });
               break;
             case "generation_end":
               this.events.push({ type: "generationEnd", ...this.includeRaw && { raw: t2 } });
@@ -26760,19 +26760,19 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         }
       };
       var z2 = async ({ streamQueryConfig: e2, onStreamEvent: t2, includeRawEvents: s2 = false }) => {
-        let { customerId: r2, apiKey: n2, authToken: u2, domain: c2, corpusKey: f3, query: d2, search: { metadataFilter: y2, lexicalInterpolation: l2, customDimensions: v2, semantics: x3, offset: E2, limit: b2, contextConfiguration: a2, reranker: I2 }, generation: C3, chat: m2 } = e2, h2 = { query: d2, search: { corpora: [{ corpus_key: f3, metadata_filter: y2, lexical_interpolation: l2, custom_dimensions: v2, semantics: x3 }], offset: E2, limit: b2, context_configuration: { characters_before: a2 == null ? void 0 : a2.charactersBefore, characters_after: a2 == null ? void 0 : a2.charactersAfter, sentences_before: a2 == null ? void 0 : a2.sentencesBefore, sentences_after: a2 == null ? void 0 : a2.sentencesAfter, start_tag: a2 == null ? void 0 : a2.startTag, end_tag: a2 == null ? void 0 : a2.endTag }, reranker: ae3(I2) }, stream_response: true };
+        let { customerId: r2, apiKey: n2, authToken: u2, domain: m2, corpusKey: f3, query: y2, search: { metadataFilter: l2, lexicalInterpolation: h2, customDimensions: v2, semantics: x3, offset: E2, limit: b2, contextConfiguration: a2, reranker: I2 }, generation: C3, chat: p2 } = e2, g3 = { query: y2, search: { corpora: f3.split(",").map((c2) => ({ corpus_key: c2, metadata_filter: l2, lexical_interpolation: h2, custom_dimensions: v2, semantics: x3 })), offset: E2, limit: b2, context_configuration: { characters_before: a2 == null ? void 0 : a2.charactersBefore, characters_after: a2 == null ? void 0 : a2.charactersAfter, sentences_before: a2 == null ? void 0 : a2.sentencesBefore, sentences_after: a2 == null ? void 0 : a2.sentencesAfter, start_tag: a2 == null ? void 0 : a2.startTag, end_tag: a2 == null ? void 0 : a2.endTag }, reranker: ae3(I2) }, stream_response: true };
         if (C3) {
-          let { promptName: g3, maxUsedSearchResults: _2, promptText: S3, maxResponseCharacters: R2, responseLanguage: P2, modelParameters: i2, citations: q3, enableFactualConsistencyScore: B3 } = C3;
-          h2.generation = { prompt_name: g3, max_used_search_results: _2, prompt_text: S3, max_response_characters: R2, response_language: P2, model_parameters: i2 && { max_tokens: i2.maxTokens, temperature: i2.temperature, frequency_penalty: i2.frequencyPenalty, presence_penalty: i2.presencePenalty }, citations: oe3(q3), enable_factual_consistency_score: B3 };
+          let { promptName: c2, maxUsedSearchResults: _2, promptText: S3, maxResponseCharacters: R2, responseLanguage: P2, modelParameters: i2, citations: q3, enableFactualConsistencyScore: B3 } = C3;
+          g3.generation = { prompt_name: c2, max_used_search_results: _2, prompt_text: S3, max_response_characters: R2, response_language: P2, model_parameters: i2 && { max_tokens: i2.maxTokens, temperature: i2.temperature, frequency_penalty: i2.frequencyPenalty, presence_penalty: i2.presencePenalty }, citations: oe3(q3), enable_factual_consistency_score: B3 };
         }
-        m2 && (h2.chat = { store: m2.store });
+        p2 && (g3.chat = { store: p2.store });
         let o2;
-        m2 ? m2.conversationId ? o2 = `/v2/chats/${m2.conversationId}/turns` : o2 = "/v2/chats" : o2 = "/v2/query";
-        let p2 = { "customer-id": r2, "Content-Type": "application/json" };
-        n2 && (p2["x-api-key"] = n2), u2 && (p2.Authorization = `Bearer ${u2}`);
-        let T2 = `${c2 != null ? c2 : D3}${o2}`, k2 = { method: "POST", url: T2, headers: p2, body: h2 };
+        p2 ? p2.conversationId ? o2 = `/v2/chats/${p2.conversationId}/turns` : o2 = "/v2/chats" : o2 = "/v2/query";
+        let d2 = { "customer-id": r2, "Content-Type": "application/json" };
+        n2 && (d2["x-api-key"] = n2), u2 && (d2.Authorization = `Bearer ${u2}`);
+        let T2 = `${m2 != null ? m2 : D3}${o2}`, k2 = { method: "POST", url: T2, headers: d2, body: g3 };
         try {
-          let { cancelStream: g3, stream: _2, status: S3, responseHeaders: R2 } = await N3(p2, JSON.stringify(h2), T2);
+          let { cancelStream: c2, stream: _2, status: S3, responseHeaders: R2 } = await N3(d2, JSON.stringify(g3), T2);
           return (async () => {
             try {
               let i2 = new Q2(t2, s2, S3);
@@ -26785,9 +26785,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             } catch (i2) {
               i2 instanceof DOMException && i2.name == "AbortError" || G2(i2, t2);
             }
-          })(), { cancelStream: g3, request: k2, status: S3, responseHeaders: R2 };
-        } catch (g3) {
-          G2(g3, t2);
+          })(), { cancelStream: c2, request: k2, status: S3, responseHeaders: R2 };
+        } catch (c2) {
+          G2(c2, t2);
         }
         return { request: k2 };
       };
@@ -35221,7 +35221,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         return { style: e2.style, url_pattern: e2.urlPattern, text_pattern: e2.textPattern };
     }
   };
-  var at = async ({ customerId: e2, corpusKey: r2, apiKey: t2, query: n2, domain: o2, search: i2, generation: s2, chat: a2 }) => {
+  var at = async ({ customerId: e2, corpusKeys: r2, apiKey: t2, query: n2, domain: o2, search: i2, generation: s2, chat: a2 }) => {
     var _2;
     let { metadataFilter: c2, lexicalInterpolation: l2, customDimensions: h2, semantics: w2, offset: v2, limit: E2, contextConfiguration: p2, reranker: H2 } = i2, k2 = { query: n2, search: { corpora: r2.split(",").map((y2) => ({ corpus_key: y2, metadata_filter: c2, lexical_interpolation: l2, custom_dimensions: h2, semantics: w2 })), offset: v2, limit: E2, context_configuration: { characters_before: p2 == null ? void 0 : p2.charactersBefore, characters_after: p2 == null ? void 0 : p2.charactersAfter, sentences_before: p2 == null ? void 0 : p2.sentencesBefore, sentences_after: p2 == null ? void 0 : p2.sentencesAfter, start_tag: p2 == null ? void 0 : p2.startTag, end_tag: p2 == null ? void 0 : p2.endTag }, reranker: Cr(H2) } };
     if (s2) {
@@ -35243,7 +35243,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var lt = "vectara-summary-ext-v1.2.0";
   var ut = 272725718;
   var pt = 5e-3;
-  var dt = ({ customerId: e2, corpusKey: r2, apiKey: t2, numberOfSearchResults: n2 = 10, language: o2 = "eng", enableFactualConsistencyScore: i2, summaryPromptName: s2 = lt, rerankerId: a2 = ut, lambda: c2 = pt, enableStreaming: l2 = true }) => {
+  var dt = ({ customerId: e2, corpusKeys: r2, apiKey: t2, numberOfSearchResults: n2 = 10, language: o2 = "eng", enableFactualConsistencyScore: i2, summaryPromptName: s2 = lt, rerankerId: a2 = ut, lambda: c2 = pt, enableStreaming: l2 = true }) => {
     let [h2, w2] = (0, import_react12.useState)([]), v2 = (0, import_react12.useRef)(""), [E2, p2] = (0, import_react12.useState)(null), [H2, k2] = (0, import_react12.useState)(false), [V2, F2] = (0, import_react12.useState)(false), [m2, _2] = (0, import_react12.useState)(null), [y2, G2] = (0, import_react12.useState)(false), M2 = async ({ query: z2, isRetry: b2 = false }) => {
       if (H2)
         return;
@@ -35297,7 +35297,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         }
       else
         try {
-          let d2 = await at({ apiKey: t2, customerId: e2, query: z2, corpusKey: r2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: c2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2, startTag: nt, endTag: ot } }, chat: { store: true, conversationId: m2 != null ? m2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } });
+          let d2 = await at({ apiKey: t2, customerId: e2, query: z2, corpusKeys: r2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: c2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2, startTag: nt, endTag: ot } }, chat: { store: true, conversationId: m2 != null ? m2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } });
           P2 = d2.search_results.map((U2) => {
             let { pre: L2, text: u2, post: I2 } = Ne2(U2.text);
             return { ...U2, snippet: { pre: L2, text: u2, post: I2 } };
@@ -35331,8 +35331,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var bt = () => (0, import_jsx_runtime24.jsxs)(C2, { className: "vrcbEmptyMessages", spacing: "none", alignItems: "center", justifyContent: "center", direction: "column", children: [(0, import_jsx_runtime24.jsx)(Ge2, { size: "80px", color: "#cbcdde" }), (0, import_jsx_runtime24.jsx)(D2, { children: (0, import_jsx_runtime24.jsx)("p", { children: (0, import_jsx_runtime24.jsx)($2, { color: "subdued", children: "Ask anything." }) }) })] });
   var vt = ({ exampleQuestions: e2, onSubmitChat: r2 }) => e2.length > 0 ? (0, import_jsx_runtime25.jsxs)("div", { className: "vrcbExampleQuestionsContainer", children: [(0, import_jsx_runtime25.jsx)(D2, { children: (0, import_jsx_runtime25.jsx)("p", { children: (0, import_jsx_runtime25.jsx)($2, { color: "subdued", children: "Try out these example questions" }) }) }), (0, import_jsx_runtime25.jsx)(f2, { size: "m" }), (0, import_jsx_runtime25.jsx)(Ce2, { columns: 3, children: e2.map((n2) => (0, import_jsx_runtime25.jsx)(ht, { onClick: () => r2(n2), title: n2 }, n2)) })] }) : (0, import_jsx_runtime25.jsx)(bt, {});
   var Pr = { large: "l", medium: "m" };
-  var wt = ({ customerId: e2, corpusKey: r2, apiKey: t2, title: n2 = "My Chatbot", placeholder: o2 = "Chat with your AI Assistant", exampleQuestions: i2, inputSize: s2 = "large", emptyStateDisplay: a2, isInitiallyOpen: c2, zIndex: l2 = 9999, numberOfSearchResults: h2 = 10, language: w2 = "eng", enableFactualConsistencyScore: v2, summaryPromptName: E2, rerankerId: p2, lambda: H2, enableStreaming: k2 = true }) => {
-    let [V2, F2] = (0, import_react4.useState)(c2 != null ? c2 : false), [m2, _2] = (0, import_react4.useState)(""), { sendMessage: y2, startNewConversation: G2, messageHistory: M2, isLoading: A2, hasError: z2, activeMessage: b2, isStreamingResponse: P2 } = dt({ customerId: e2, corpusKey: r2, apiKey: t2, numberOfSearchResults: h2, language: w2, enableFactualConsistencyScore: v2, summaryPromptName: E2, rerankerId: p2, lambda: H2, enableStreaming: k2 }), d2 = (0, import_react4.useRef)(null), U2 = (0, import_react4.useRef)(true), L2 = () => {
+  var wt = ({ customerId: e2, corpusKeys: r2, apiKey: t2, title: n2 = "My Chatbot", placeholder: o2 = "Chat with your AI Assistant", exampleQuestions: i2, inputSize: s2 = "large", emptyStateDisplay: a2, isInitiallyOpen: c2, zIndex: l2 = 9999, numberOfSearchResults: h2 = 10, language: w2 = "eng", enableFactualConsistencyScore: v2, summaryPromptName: E2, rerankerId: p2, lambda: H2, enableStreaming: k2 = true }) => {
+    let [V2, F2] = (0, import_react4.useState)(c2 != null ? c2 : false), [m2, _2] = (0, import_react4.useState)(""), { sendMessage: y2, startNewConversation: G2, messageHistory: M2, isLoading: A2, hasError: z2, activeMessage: b2, isStreamingResponse: P2 } = dt({ customerId: e2, corpusKeys: r2, apiKey: t2, numberOfSearchResults: h2, language: w2, enableFactualConsistencyScore: v2, summaryPromptName: E2, rerankerId: p2, lambda: H2, enableStreaming: k2 }), d2 = (0, import_react4.useRef)(null), U2 = (0, import_react4.useRef)(true), L2 = () => {
       setTimeout(() => {
         var R2, Q2;
         U2.current && ((Q2 = d2.current) == null || Q2.scrollTo({ left: 0, top: (R2 = d2.current) == null ? void 0 : R2.scrollHeight, behavior: "smooth" }));
@@ -36808,7 +36808,7 @@ fieldset {
 }`;
   var Me2 = class extends HTMLElement {
     static get observedAttributes() {
-      return ["customerid", "corpuskey", "apikey", "title", "placeholder", "examplequestions", "inputsize", "isinitiallyopen", "zindex", "emptystatedisplayupdatetime", "numberofsearchresults", "language", "enablefactualconsistencyscore", "summarypromptname", "rerankerId", "lambda", "enablestreaming"];
+      return ["customerid", "corpuskeys", "apikey", "title", "placeholder", "examplequestions", "inputsize", "isinitiallyopen", "zindex", "emptystatedisplayupdatetime", "numberofsearchresults", "language", "enablefactualconsistencyscore", "summarypromptname", "rerankerId", "lambda", "enablestreaming"];
     }
     constructor() {
       super(), this.sr = this.attachShadow({ mode: "open" });
@@ -36826,14 +36826,14 @@ fieldset {
     connectedCallback() {
       var m2, _2, y2, G2, M2, A2, z2, b2, P2, d2;
       let r2 = (m2 = this.getAttribute("customerId")) != null ? m2 : "", t2 = (_2 = this.getAttribute("corpuskey")) != null ? _2 : "", n2 = (y2 = this.getAttribute("apiKey")) != null ? y2 : "", o2 = (G2 = this.getAttribute("title")) != null ? G2 : void 0, i2 = (M2 = this.getAttribute("placeholder")) != null ? M2 : void 0, s2 = this.getAttribute("exampleQuestions"), a2 = s2 ? s2.split(",") : void 0, c2 = (A2 = this.getAttribute("inputSize")) != null ? A2 : void 0, l2 = this.getAttribute("isInitiallyOpen") === "true", h2 = (z2 = this.emptyStateDisplay) != null ? z2 : void 0, w2 = this.getAttribute("zIndex") !== null ? parseInt(this.getAttribute("zIndex")) : void 0, v2 = (b2 = parseInt(this.getAttribute("numberofsearchresults"), 10)) != null ? b2 : 15, E2 = (P2 = this.getAttribute("language")) != null ? P2 : void 0, p2 = this.getAttribute("enableFactualConsistencyScore") === "true", H2 = (d2 = this.getAttribute("summaryPromptName")) != null ? d2 : void 0, k2 = this.getAttribute("rerankerId") !== null ? parseInt(this.getAttribute("rerankerId"), 10) : void 0, V2 = this.getAttribute("lambda") !== null ? parseFloat(this.getAttribute("lambda")) : void 0, F2 = this.getAttribute("enableStreaming") !== null ? this.getAttribute("enableStreaming") == "true" : void 0;
-      kt.render((0, import_jsx_runtime27.jsx)("div", { children: (0, import_jsx_runtime27.jsx)(wt, { customerId: r2, corpusKey: t2, apiKey: n2, title: o2, placeholder: i2, exampleQuestions: a2, inputSize: c2, emptyStateDisplay: h2, isInitiallyOpen: l2, zIndex: w2, enableStreaming: F2, numberOfSearchResults: v2, language: E2, enableFactualConsistencyScore: p2, summaryPromptName: H2, rerankerId: k2, lambda: V2 }) }), this.mountPoint);
+      kt.render((0, import_jsx_runtime27.jsx)("div", { children: (0, import_jsx_runtime27.jsx)(wt, { customerId: r2, corpusKeys: t2, apiKey: n2, title: o2, placeholder: i2, exampleQuestions: a2, inputSize: c2, emptyStateDisplay: h2, isInitiallyOpen: l2, zIndex: w2, enableStreaming: F2, numberOfSearchResults: v2, language: E2, enableFactualConsistencyScore: p2, summaryPromptName: H2, rerankerId: k2, lambda: V2 }) }), this.mountPoint);
     }
     attributeChangedCallback() {
       this.connectedCallback();
     }
   };
   window.customElements.get("react-chatbot") || window.customElements.define("react-chatbot", Me2);
-  var ms = (e2) => {
+  var ds = (e2) => {
     let r2 = (0, import_react3.useRef)(null);
     (0, import_react3.useEffect)(() => {
       r2.current && e2.emptyStateDisplay && r2.current.setEmptyStateDisplay(e2.emptyStateDisplay);
@@ -42278,8 +42278,8 @@ pre[class*="language-"] {
   var ConfigurationDrawer = ({
     isOpen,
     onClose,
-    corpusKey,
-    onUpdateCorpusKey,
+    corpusKeys,
+    onUpdateCorpusKeys,
     customerId,
     onUpdateCustomerId,
     apiKey,
@@ -42323,7 +42323,7 @@ pre[class*="language-"] {
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "m" }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiFormGroup, { label: "Customer ID", labelFor: "customerId", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiTextInput, { value: customerId, onChange: onUpdateCustomerId }) }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "m" }),
-          /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiFormGroup, { label: "Corpus Key", labelFor: "corpusId", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiTextInput, { value: corpusKey, onChange: onUpdateCorpusKey }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiFormGroup, { label: "Corpus Key", labelFor: "corpusId", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiTextInput, { value: corpusKeys, onChange: onUpdateCorpusKeys }) }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "m" }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiFormGroup, { label: "API key", labelFor: "apiKey", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiTextInput, { value: apiKey, onChange: onUpdateApiKey, fullWidth: true }) }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "l" }),
@@ -45476,10 +45476,10 @@ fieldset {
     }
     return value.match('"') ? `'${value}'` : `"${value}"`;
   };
-  var generateCodeSnippet = (customerId, corpusKey, apiKey, title, placeholder, inputSize, emptyStateDisplay, numberOfSearchResults, language, exampleQuestions, rerankerId, lambda, isStreamingEnabled) => {
+  var generateCodeSnippet = (customerId, corpusKeys, apiKey, title, placeholder, inputSize, emptyStateDisplay, numberOfSearchResults, language, exampleQuestions, rerankerId, lambda, isStreamingEnabled) => {
     const props = [
       `customerId="${customerId === "" ? "<Your Vectara customer ID>" : customerId}"`,
-      `corpusIds="${corpusKey === "" ? "<Your Vectara Corpus key>" : corpusKey}"`,
+      `corpusKeys="${corpusKeys === "" ? "<Your Vectara Corpus key>" : corpusKeys}"`,
       `apiKey="${apiKey === "" ? "<Your Vectara API key>" : apiKey}"`
     ];
     if (title) {
@@ -45524,7 +45524,7 @@ export const App = () => (
   var App = () => {
     const [isConfigurationDrawerOpen, setIsConfigurationDrawerOpen] = (0, import_react50.useState)(false);
     const [isChatbotForcedOpen, setIsChatbotForcedOpen] = (0, import_react50.useState)(true);
-    const [corpusKey, setCorpusKey] = (0, import_react50.useState)("");
+    const [corpusKeys, setCorpusKeys] = (0, import_react50.useState)("");
     const [customerId, setCustomerId] = (0, import_react50.useState)("");
     const [apiKey, setApiKey] = (0, import_react50.useState)("");
     const [title, setTitle] = (0, import_react50.useState)(DEFAULT_TITLE);
@@ -45539,8 +45539,8 @@ export const App = () => (
     const [summaryPromptName, setSummaryPromptName] = (0, import_react50.useState)(lt);
     const [rerankerId, setRerankerId] = (0, import_react50.useState)(ut);
     const [lambda, setLambda] = (0, import_react50.useState)(pt);
-    const onUpdateCorpusKey = (0, import_react50.useCallback)((e2) => {
-      setCorpusKey(e2.target.value);
+    const onUpdateCorpusKeys = (0, import_react50.useCallback)((e2) => {
+      setCorpusKeys(e2.target.value);
     }, []);
     const onUpdateCustomerId = (0, import_react50.useCallback)((e2) => {
       setCustomerId(e2.target.value);
@@ -45591,9 +45591,9 @@ export const App = () => (
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(VuiText, { children: /* @__PURE__ */ (0, import_jsx_runtime108.jsx)("p", { children: "React-Chatbot instantly adds a Vectara-powered chatbot to your React applications." }) }),
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(VuiSpacer, { size: "m" }),
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(
-          ms,
+          ds,
           {
-            corpusKey: corpusKey === "" ? DEFAULT_CORPUS_KEY : corpusKey,
+            corpusKey: corpusKeys === "" ? DEFAULT_CORPUS_KEY : corpusKeys,
             customerId: customerId === "" ? DEFAULT_CUSTOMER_ID : customerId,
             apiKey: apiKey === "" ? DEFAULT_API_KEY : apiKey,
             title: title === "" ? void 0 : title,
@@ -45637,7 +45637,7 @@ export const App = () => (
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(VuiSpacer, { size: "s" }),
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(VuiCode, { language: "tsx", children: generateCodeSnippet(
           customerId,
-          corpusKey,
+          corpusKeys,
           apiKey,
           title,
           placeholder,
@@ -45672,7 +45672,7 @@ export const App = () => {
     startNewConversation
   } = useChat({
     customerId: DEFAULT_CUSTOMER_ID,
-    corpusKey: DEFAULT_CORPUS_KEY,
+    corpusKeys: DEFAULT_CORPUS_KEY,
     apiKey: DEFAULT_API_KEY,
     enableStreaming: true, // Enable streaming, false otherwise. Defaults to true.
     numberOfSearchResults: 15, // Number of search results to use for summary.
@@ -45708,8 +45708,8 @@ export const App = () => {
           {
             isOpen: isConfigurationDrawerOpen,
             onClose: () => setIsConfigurationDrawerOpen(false),
-            corpusKey,
-            onUpdateCorpusKey,
+            corpusKeys,
+            onUpdateCorpusKeys,
             customerId,
             onUpdateCustomerId,
             apiKey,
