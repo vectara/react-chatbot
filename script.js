@@ -1790,8 +1790,8 @@
                 setTimeout(_flushCallback, 0);
               }
             };
-            requestHostTimeout = function(cb, ms) {
-              _timeoutID = setTimeout(cb, ms);
+            requestHostTimeout = function(cb, ms2) {
+              _timeoutID = setTimeout(cb, ms2);
             };
             cancelHostTimeout = function() {
               clearTimeout(_timeoutID);
@@ -1868,10 +1868,10 @@
                 port.postMessage(null);
               }
             };
-            requestHostTimeout = function(callback, ms) {
+            requestHostTimeout = function(callback, ms2) {
               taskTimeoutID = _setTimeout(function() {
                 callback(exports.unstable_now());
-              }, ms);
+              }, ms2);
             };
             cancelHostTimeout = function() {
               _clearTimeout(taskTimeoutID);
@@ -1950,7 +1950,7 @@
           var NormalPriority = 3;
           var LowPriority = 4;
           var IdlePriority = 5;
-          function markTaskErrored(task, ms) {
+          function markTaskErrored(task, ms2) {
           }
           var maxSigned31BitInt = 1073741823;
           var IMMEDIATE_PRIORITY_TIMEOUT = -1;
@@ -4438,7 +4438,7 @@
             var warnedForNaNValue = false;
             var warnedForInfinityValue = false;
             var camelize = function(string2) {
-              return string2.replace(hyphenPattern, function(_3, character) {
+              return string2.replace(hyphenPattern, function(_2, character) {
                 return character.toUpperCase();
               });
             };
@@ -7995,8 +7995,8 @@
             }
             accumulateEnterLeaveTwoPhaseListeners(dispatchQueue, leave, enter, from, to);
           }
-          function is(x3, y3) {
-            return x3 === y3 && (x3 !== 0 || 1 / x3 === 1 / y3) || x3 !== x3 && y3 !== y3;
+          function is(x3, y2) {
+            return x3 === y2 && (x3 !== 0 || 1 / x3 === 1 / y2) || x3 !== x3 && y2 !== y2;
           }
           var objectIs = typeof Object.is === "function" ? Object.is : is;
           var hasOwnProperty$2 = Object.prototype.hasOwnProperty;
@@ -21129,7 +21129,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             t3.exports = function(t4) {
               return t4 = t4 || {}, function(e4) {
                 return function(t5, e5) {
-                  const n3 = e5.acorn || i3(234), p2 = o2(n3), c2 = n3.tokTypes, l2 = p2.tokTypes, u2 = n3.tokContexts, d2 = p2.tokContexts.tc_oTag, f3 = p2.tokContexts.tc_cTag, m3 = p2.tokContexts.tc_expr, g2 = n3.isNewLine, x3 = n3.isIdentifierStart, y3 = n3.isIdentifierChar;
+                  const n3 = e5.acorn || i3(234), p2 = o2(n3), c2 = n3.tokTypes, l2 = p2.tokTypes, u2 = n3.tokContexts, d2 = p2.tokContexts.tc_oTag, f3 = p2.tokContexts.tc_cTag, m2 = p2.tokContexts.tc_expr, g3 = n3.isNewLine, x3 = n3.isIdentifierStart, y2 = n3.isIdentifierChar;
                   return class extends e5 {
                     static get acornJsx() {
                       return p2;
@@ -21150,7 +21150,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                           case 125:
                             this.raise(this.pos, "Unexpected token `" + this.input[this.pos] + "`. Did you mean `" + (62 === i4 ? "&gt;" : "&rbrace;") + '` or `{"' + this.input[this.pos] + '"}`?');
                           default:
-                            g2(i4) ? (t6 += this.input.slice(e6, this.pos), t6 += this.jsx_readNewLine(true), e6 = this.pos) : ++this.pos;
+                            g3(i4) ? (t6 += this.input.slice(e6, this.pos), t6 += this.jsx_readNewLine(true), e6 = this.pos) : ++this.pos;
                         }
                       }
                     }
@@ -21165,7 +21165,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                         let s4 = this.input.charCodeAt(this.pos);
                         if (s4 === t6)
                           break;
-                        38 === s4 ? (e6 += this.input.slice(i4, this.pos), e6 += this.jsx_readEntity(), i4 = this.pos) : g2(s4) ? (e6 += this.input.slice(i4, this.pos), e6 += this.jsx_readNewLine(false), i4 = this.pos) : ++this.pos;
+                        38 === s4 ? (e6 += this.input.slice(i4, this.pos), e6 += this.jsx_readEntity(), i4 = this.pos) : g3(s4) ? (e6 += this.input.slice(i4, this.pos), e6 += this.jsx_readNewLine(false), i4 = this.pos) : ++this.pos;
                       }
                       return e6 += this.input.slice(i4, this.pos++), this.finishToken(c2.string, e6);
                     }
@@ -21186,7 +21186,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                       let t6, e6 = this.pos;
                       do {
                         t6 = this.input.charCodeAt(++this.pos);
-                      } while (y3(t6) || 45 === t6);
+                      } while (y2(t6) || 45 === t6);
                       return this.finishToken(l2.jsxName, this.input.slice(e6, this.pos));
                     }
                     jsx_parseIdentifier() {
@@ -21288,7 +21288,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     }
                     readToken(t6) {
                       let e6 = this.curContext();
-                      if (e6 === m3)
+                      if (e6 === m2)
                         return this.jsx_readToken();
                       if (e6 === d2 || e6 === f3) {
                         if (x3(t6))
@@ -21303,7 +21303,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     updateContext(t6) {
                       if (this.type == c2.braceL) {
                         var e6 = this.curContext();
-                        e6 == d2 ? this.context.push(u2.b_expr) : e6 == m3 ? this.context.push(u2.b_tmpl) : super.updateContext(t6), this.exprAllowed = true;
+                        e6 == d2 ? this.context.push(u2.b_expr) : e6 == m2 ? this.context.push(u2.b_tmpl) : super.updateContext(t6), this.exprAllowed = true;
                       } else {
                         if (this.type !== c2.slash || t6 !== l2.jsxTagStart)
                           return super.updateContext(t6);
@@ -21341,25 +21341,25 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var f3 = function(t5, e5) {
                 void 0 === e5 && (e5 = {}), this.label = t5, this.keyword = e5.keyword, this.beforeExpr = !!e5.beforeExpr, this.startsExpr = !!e5.startsExpr, this.isLoop = !!e5.isLoop, this.isAssign = !!e5.isAssign, this.prefix = !!e5.prefix, this.postfix = !!e5.postfix, this.binop = e5.binop || null, this.updateContext = null;
               };
-              function m3(t5, e5) {
+              function m2(t5, e5) {
                 return new f3(t5, { beforeExpr: true, binop: e5 });
               }
-              var g2 = { beforeExpr: true }, x3 = { startsExpr: true }, y3 = {};
+              var g3 = { beforeExpr: true }, x3 = { startsExpr: true }, y2 = {};
               function v2(t5, e5) {
-                return void 0 === e5 && (e5 = {}), e5.keyword = t5, y3[t5] = new f3(t5, e5);
+                return void 0 === e5 && (e5 = {}), e5.keyword = t5, y2[t5] = new f3(t5, e5);
               }
-              var b2 = { num: new f3("num", x3), regexp: new f3("regexp", x3), string: new f3("string", x3), name: new f3("name", x3), eof: new f3("eof"), bracketL: new f3("[", { beforeExpr: true, startsExpr: true }), bracketR: new f3("]"), braceL: new f3("{", { beforeExpr: true, startsExpr: true }), braceR: new f3("}"), parenL: new f3("(", { beforeExpr: true, startsExpr: true }), parenR: new f3(")"), comma: new f3(",", g2), semi: new f3(";", g2), colon: new f3(":", g2), dot: new f3("."), question: new f3("?", g2), questionDot: new f3("?."), arrow: new f3("=>", g2), template: new f3("template"), invalidTemplate: new f3("invalidTemplate"), ellipsis: new f3("...", g2), backQuote: new f3("`", x3), dollarBraceL: new f3("${", { beforeExpr: true, startsExpr: true }), eq: new f3("=", { beforeExpr: true, isAssign: true }), assign: new f3("_=", { beforeExpr: true, isAssign: true }), incDec: new f3("++/--", { prefix: true, postfix: true, startsExpr: true }), prefix: new f3("!/~", { beforeExpr: true, prefix: true, startsExpr: true }), logicalOR: m3("||", 1), logicalAND: m3("&&", 2), bitwiseOR: m3("|", 3), bitwiseXOR: m3("^", 4), bitwiseAND: m3("&", 5), equality: m3("==/!=/===/!==", 6), relational: m3("</>/<=/>=", 7), bitShift: m3("<</>>/>>>", 8), plusMin: new f3("+/-", { beforeExpr: true, binop: 9, prefix: true, startsExpr: true }), modulo: m3("%", 10), star: m3("*", 10), slash: m3("/", 10), starstar: new f3("**", { beforeExpr: true }), coalesce: m3("??", 1), _break: v2("break"), _case: v2("case", g2), _catch: v2("catch"), _continue: v2("continue"), _debugger: v2("debugger"), _default: v2("default", g2), _do: v2("do", { isLoop: true, beforeExpr: true }), _else: v2("else", g2), _finally: v2("finally"), _for: v2("for", { isLoop: true }), _function: v2("function", x3), _if: v2("if"), _return: v2("return", g2), _switch: v2("switch"), _throw: v2("throw", g2), _try: v2("try"), _var: v2("var"), _const: v2("const"), _while: v2("while", { isLoop: true }), _with: v2("with"), _new: v2("new", { beforeExpr: true, startsExpr: true }), _this: v2("this", x3), _super: v2("super", x3), _class: v2("class", x3), _extends: v2("extends", g2), _export: v2("export"), _import: v2("import", x3), _null: v2("null", x3), _true: v2("true", x3), _false: v2("false", x3), _in: v2("in", { beforeExpr: true, binop: 7 }), _instanceof: v2("instanceof", { beforeExpr: true, binop: 7 }), _typeof: v2("typeof", { beforeExpr: true, prefix: true, startsExpr: true }), _void: v2("void", { beforeExpr: true, prefix: true, startsExpr: true }), _delete: v2("delete", { beforeExpr: true, prefix: true, startsExpr: true }) }, _3 = /\r\n?|\n|\u2028|\u2029/, k2 = new RegExp(_3.source, "g");
-              function S2(t5, e5) {
+              var b2 = { num: new f3("num", x3), regexp: new f3("regexp", x3), string: new f3("string", x3), name: new f3("name", x3), eof: new f3("eof"), bracketL: new f3("[", { beforeExpr: true, startsExpr: true }), bracketR: new f3("]"), braceL: new f3("{", { beforeExpr: true, startsExpr: true }), braceR: new f3("}"), parenL: new f3("(", { beforeExpr: true, startsExpr: true }), parenR: new f3(")"), comma: new f3(",", g3), semi: new f3(";", g3), colon: new f3(":", g3), dot: new f3("."), question: new f3("?", g3), questionDot: new f3("?."), arrow: new f3("=>", g3), template: new f3("template"), invalidTemplate: new f3("invalidTemplate"), ellipsis: new f3("...", g3), backQuote: new f3("`", x3), dollarBraceL: new f3("${", { beforeExpr: true, startsExpr: true }), eq: new f3("=", { beforeExpr: true, isAssign: true }), assign: new f3("_=", { beforeExpr: true, isAssign: true }), incDec: new f3("++/--", { prefix: true, postfix: true, startsExpr: true }), prefix: new f3("!/~", { beforeExpr: true, prefix: true, startsExpr: true }), logicalOR: m2("||", 1), logicalAND: m2("&&", 2), bitwiseOR: m2("|", 3), bitwiseXOR: m2("^", 4), bitwiseAND: m2("&", 5), equality: m2("==/!=/===/!==", 6), relational: m2("</>/<=/>=", 7), bitShift: m2("<</>>/>>>", 8), plusMin: new f3("+/-", { beforeExpr: true, binop: 9, prefix: true, startsExpr: true }), modulo: m2("%", 10), star: m2("*", 10), slash: m2("/", 10), starstar: new f3("**", { beforeExpr: true }), coalesce: m2("??", 1), _break: v2("break"), _case: v2("case", g3), _catch: v2("catch"), _continue: v2("continue"), _debugger: v2("debugger"), _default: v2("default", g3), _do: v2("do", { isLoop: true, beforeExpr: true }), _else: v2("else", g3), _finally: v2("finally"), _for: v2("for", { isLoop: true }), _function: v2("function", x3), _if: v2("if"), _return: v2("return", g3), _switch: v2("switch"), _throw: v2("throw", g3), _try: v2("try"), _var: v2("var"), _const: v2("const"), _while: v2("while", { isLoop: true }), _with: v2("with"), _new: v2("new", { beforeExpr: true, startsExpr: true }), _this: v2("this", x3), _super: v2("super", x3), _class: v2("class", x3), _extends: v2("extends", g3), _export: v2("export"), _import: v2("import", x3), _null: v2("null", x3), _true: v2("true", x3), _false: v2("false", x3), _in: v2("in", { beforeExpr: true, binop: 7 }), _instanceof: v2("instanceof", { beforeExpr: true, binop: 7 }), _typeof: v2("typeof", { beforeExpr: true, prefix: true, startsExpr: true }), _void: v2("void", { beforeExpr: true, prefix: true, startsExpr: true }), _delete: v2("delete", { beforeExpr: true, prefix: true, startsExpr: true }) }, _2 = /\r\n?|\n|\u2028|\u2029/, k2 = new RegExp(_2.source, "g");
+              function S3(t5, e5) {
                 return 10 === t5 || 13 === t5 || !e5 && (8232 === t5 || 8233 === t5);
               }
-              var w3 = /[\u1680\u2000-\u200a\u202f\u205f\u3000\ufeff]/, C3 = /(?:\s|\/\/.*|\/\*[^]*?\*\/)*/g, E2 = Object.prototype, A3 = E2.hasOwnProperty, I2 = E2.toString;
-              function P3(t5, e5) {
-                return A3.call(t5, e5);
+              var w2 = /[\u1680\u2000-\u200a\u202f\u205f\u3000\ufeff]/, C3 = /(?:\s|\/\/.*|\/\*[^]*?\*\/)*/g, E2 = Object.prototype, A2 = E2.hasOwnProperty, I2 = E2.toString;
+              function P2(t5, e5) {
+                return A2.call(t5, e5);
               }
               var T2 = Array.isArray || function(t5) {
                 return "[object Array]" === I2.call(t5);
               };
-              function N2(t5) {
+              function N3(t5) {
                 return new RegExp("^(?:" + t5.replace(/ /g, "|") + ")$");
               }
               var L2 = function(t5, e5) {
@@ -21371,7 +21371,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var V2 = function(t5, e5, i4) {
                 this.start = e5, this.end = i4, null !== t5.sourceFile && (this.source = t5.sourceFile);
               };
-              function O2(t5, e5) {
+              function O3(t5, e5) {
                 for (var i4 = 1, s4 = 0; ; ) {
                   k2.lastIndex = s4;
                   var r3 = k2.exec(t5);
@@ -21381,10 +21381,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 }
               }
               var R2 = { ecmaVersion: null, sourceType: "script", onInsertedSemicolon: null, onTrailingComma: null, allowReserved: null, allowReturnOutsideFunction: false, allowImportExportEverywhere: false, allowAwaitOutsideFunction: false, allowHashBang: false, locations: false, onToken: null, onComment: null, ranges: false, program: null, sourceFile: null, directSourceFile: null, preserveParens: false }, M2 = false;
-              function B2(t5) {
+              function B3(t5) {
                 var e5 = {};
                 for (var i4 in R2)
-                  e5[i4] = t5 && P3(t5, i4) ? t5[i4] : R2[i4];
+                  e5[i4] = t5 && P2(t5, i4) ? t5[i4] : R2[i4];
                 if ("latest" === e5.ecmaVersion ? e5.ecmaVersion = 1e8 : null == e5.ecmaVersion ? (!M2 && "object" == typeof console && console.warn && (M2 = true, console.warn("Since Acorn 8.0.0, options.ecmaVersion is required.\nDefaulting to 2020, but this will stop working in the future.")), e5.ecmaVersion = 11) : e5.ecmaVersion >= 2015 && (e5.ecmaVersion -= 2009), null == e5.allowReserved && (e5.allowReserved = e5.ecmaVersion < 5), T2(e5.onToken)) {
                   var s4 = e5.onToken;
                   e5.onToken = function(t6) {
@@ -21399,16 +21399,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   t5.locations && (h3.loc = new V2(this, n3, o3)), t5.ranges && (h3.range = [r3, a3]), e5.push(h3);
                 };
               }
-              var j3 = 1, U2 = 2, F2 = j3 | U2, q3 = 4, G3 = 8, H2 = 16, W2 = 32, z2 = 64, K2 = 128;
+              var j3 = 1, U2 = 2, F2 = j3 | U2, q3 = 4, G2 = 8, H2 = 16, W2 = 32, z2 = 64, K3 = 128;
               function X3(t5, e5) {
-                return U2 | (t5 ? q3 : 0) | (e5 ? G3 : 0);
+                return U2 | (t5 ? q3 : 0) | (e5 ? G2 : 0);
               }
-              var Q3 = 0, J2 = 1, Y2 = 2, Z3 = 3, $3 = 4, tt2 = 5, et2 = function(t5, i4, r3) {
-                this.options = t5 = B2(t5), this.sourceFile = t5.sourceFile, this.keywords = N2(s3[t5.ecmaVersion >= 6 ? 6 : "module" === t5.sourceType ? "5module" : 5]);
+              var Q2 = 0, J3 = 1, Y3 = 2, Z3 = 3, $3 = 4, tt2 = 5, et2 = function(t5, i4, r3) {
+                this.options = t5 = B3(t5), this.sourceFile = t5.sourceFile, this.keywords = N3(s3[t5.ecmaVersion >= 6 ? 6 : "module" === t5.sourceType ? "5module" : 5]);
                 var a3 = "";
-                true !== t5.allowReserved && (a3 = e4[t5.ecmaVersion >= 6 ? 6 : 5 === t5.ecmaVersion ? 5 : 3], "module" === t5.sourceType && (a3 += " await")), this.reservedWords = N2(a3);
+                true !== t5.allowReserved && (a3 = e4[t5.ecmaVersion >= 6 ? 6 : 5 === t5.ecmaVersion ? 5 : 3], "module" === t5.sourceType && (a3 += " await")), this.reservedWords = N3(a3);
                 var n3 = (a3 ? a3 + " " : "") + e4.strict;
-                this.reservedWordsStrict = N2(n3), this.reservedWordsStrictBind = N2(n3 + " " + e4.strictBind), this.input = String(i4), this.containsEsc = false, r3 ? (this.pos = r3, this.lineStart = this.input.lastIndexOf("\n", r3 - 1) + 1, this.curLine = this.input.slice(0, this.lineStart).split(_3).length) : (this.pos = this.lineStart = 0, this.curLine = 1), this.type = b2.eof, this.value = null, this.start = this.end = this.pos, this.startLoc = this.endLoc = this.curPosition(), this.lastTokEndLoc = this.lastTokStartLoc = null, this.lastTokStart = this.lastTokEnd = this.pos, this.context = this.initialContext(), this.exprAllowed = true, this.inModule = "module" === t5.sourceType, this.strict = this.inModule || this.strictDirective(this.pos), this.potentialArrowAt = -1, this.yieldPos = this.awaitPos = this.awaitIdentPos = 0, this.labels = [], this.undefinedExports = /* @__PURE__ */ Object.create(null), 0 === this.pos && t5.allowHashBang && "#!" === this.input.slice(0, 2) && this.skipLineComment(2), this.scopeStack = [], this.enterScope(j3), this.regexpState = null;
+                this.reservedWordsStrict = N3(n3), this.reservedWordsStrictBind = N3(n3 + " " + e4.strictBind), this.input = String(i4), this.containsEsc = false, r3 ? (this.pos = r3, this.lineStart = this.input.lastIndexOf("\n", r3 - 1) + 1, this.curLine = this.input.slice(0, this.lineStart).split(_2).length) : (this.pos = this.lineStart = 0, this.curLine = 1), this.type = b2.eof, this.value = null, this.start = this.end = this.pos, this.startLoc = this.endLoc = this.curPosition(), this.lastTokEndLoc = this.lastTokStartLoc = null, this.lastTokStart = this.lastTokEnd = this.pos, this.context = this.initialContext(), this.exprAllowed = true, this.inModule = "module" === t5.sourceType, this.strict = this.inModule || this.strictDirective(this.pos), this.potentialArrowAt = -1, this.yieldPos = this.awaitPos = this.awaitIdentPos = 0, this.labels = [], this.undefinedExports = /* @__PURE__ */ Object.create(null), 0 === this.pos && t5.allowHashBang && "#!" === this.input.slice(0, 2) && this.skipLineComment(2), this.scopeStack = [], this.enterScope(j3), this.regexpState = null;
               }, it2 = { inFunction: { configurable: true }, inGenerator: { configurable: true }, inAsync: { configurable: true }, allowSuper: { configurable: true }, allowDirectSuper: { configurable: true }, treatFunctionsAsVar: { configurable: true }, inNonArrowFunction: { configurable: true } };
               et2.prototype.parse = function() {
                 var t5 = this.options.program || this.startNode();
@@ -21416,13 +21416,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }, it2.inFunction.get = function() {
                 return (this.currentVarScope().flags & U2) > 0;
               }, it2.inGenerator.get = function() {
-                return (this.currentVarScope().flags & G3) > 0;
+                return (this.currentVarScope().flags & G2) > 0;
               }, it2.inAsync.get = function() {
                 return (this.currentVarScope().flags & q3) > 0;
               }, it2.allowSuper.get = function() {
                 return (this.currentThisScope().flags & z2) > 0;
               }, it2.allowDirectSuper.get = function() {
-                return (this.currentThisScope().flags & K2) > 0;
+                return (this.currentThisScope().flags & K3) > 0;
               }, it2.treatFunctionsAsVar.get = function() {
                 return this.treatFunctionsAsVarInScope(this.currentScope());
               }, it2.inNonArrowFunction.get = function() {
@@ -21454,7 +21454,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   if ("use strict" === (e5[1] || e5[2])) {
                     C3.lastIndex = t5 + e5[0].length;
                     var i4 = C3.exec(this.input), s4 = i4.index + i4[0].length, r3 = this.input.charAt(s4);
-                    return ";" === r3 || "}" === r3 || _3.test(i4[0]) && !(/[(`.[+\-/*%<>=,?^&]/.test(r3) || "!" === r3 && "=" === this.input.charAt(s4 + 1));
+                    return ";" === r3 || "}" === r3 || _2.test(i4[0]) && !(/[(`.[+\-/*%<>=,?^&]/.test(r3) || "!" === r3 && "=" === this.input.charAt(s4 + 1));
                   }
                   t5 += e5[0].length, C3.lastIndex = t5, t5 += C3.exec(this.input)[0].length, ";" === this.input[t5] && t5++;
                 }
@@ -21467,7 +21467,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }, st2.expectContextual = function(t5) {
                 this.eatContextual(t5) || this.unexpected();
               }, st2.canInsertSemicolon = function() {
-                return this.type === b2.eof || this.type === b2.braceR || _3.test(this.input.slice(this.lastTokEnd, this.start));
+                return this.type === b2.eof || this.type === b2.braceR || _2.test(this.input.slice(this.lastTokEnd, this.start));
               }, st2.insertSemicolon = function() {
                 if (this.canInsertSemicolon())
                   return this.options.onInsertedSemicolon && this.options.onInsertedSemicolon(this.lastTokEnd, this.lastTokEndLoc), true;
@@ -21537,7 +21537,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   return false;
                 C3.lastIndex = this.pos;
                 var t5 = C3.exec(this.input), e5 = this.pos + t5[0].length;
-                return !(_3.test(this.input.slice(this.pos, e5)) || "function" !== this.input.slice(e5, e5 + 8) || e5 + 8 !== this.input.length && d2(this.input.charAt(e5 + 8)));
+                return !(_2.test(this.input.slice(this.pos, e5)) || "function" !== this.input.slice(e5, e5 + 8) || e5 + 8 !== this.input.length && d2(this.input.charAt(e5 + 8)));
               }, nt2.parseStatement = function(t5, e5, i4) {
                 var s4, r3 = this.type, a3 = this.startNode();
                 switch (this.isLet(t5) && (r3 = b2._var, s4 = "let"), r3) {
@@ -21620,7 +21620,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 var a3 = new at2(), n3 = this.parseExpression(true, a3);
                 return this.type === b2._in || this.options.ecmaVersion >= 6 && this.isContextual("of") ? (this.options.ecmaVersion >= 9 && (this.type === b2._in ? e5 > -1 && this.unexpected(e5) : t5.await = e5 > -1), this.toAssignable(n3, false, a3), this.checkLValPattern(n3), this.parseForIn(t5, n3)) : (this.checkExpressionErrors(a3, true), e5 > -1 && this.unexpected(e5), this.parseFor(t5, n3));
               }, nt2.parseFunctionStatement = function(t5, e5, i4) {
-                return this.next(), this.parseFunction(t5, ct2 | (i4 ? 0 : lt2), false, e5);
+                return this.next(), this.parseFunction(t5, ct | (i4 ? 0 : lt2), false, e5);
               }, nt2.parseIfStatement = function(t5) {
                 return this.next(), t5.test = this.parseParenExpression(), t5.consequent = this.parseStatement("if"), t5.alternate = this.eat(b2._else) ? this.parseStatement("if") : null, this.finishNode(t5, "IfStatement");
               }, nt2.parseReturnStatement = function(t5) {
@@ -21636,7 +21636,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     e5 || this.unexpected(), e5.consequent.push(this.parseStatement(null));
                 return this.exitScope(), e5 && this.finishNode(e5, "SwitchCase"), this.next(), this.labels.pop(), this.finishNode(t5, "SwitchStatement");
               }, nt2.parseThrowStatement = function(t5) {
-                return this.next(), _3.test(this.input.slice(this.lastTokEnd, this.start)) && this.raise(this.lastTokEnd, "Illegal newline after throw"), t5.argument = this.parseExpression(), this.semicolon(), this.finishNode(t5, "ThrowStatement");
+                return this.next(), _2.test(this.input.slice(this.lastTokEnd, this.start)) && this.raise(this.lastTokEnd, "Illegal newline after throw"), t5.argument = this.parseExpression(), this.semicolon(), this.finishNode(t5, "ThrowStatement");
               };
               var pt2 = [];
               nt2.parseTryStatement = function(t5) {
@@ -21645,7 +21645,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   if (this.next(), this.eat(b2.parenL)) {
                     e5.param = this.parseBindingAtom();
                     var i4 = "Identifier" === e5.param.type;
-                    this.enterScope(i4 ? W2 : 0), this.checkLValPattern(e5.param, i4 ? $3 : Y2), this.expect(b2.parenR);
+                    this.enterScope(i4 ? W2 : 0), this.checkLValPattern(e5.param, i4 ? $3 : Y3), this.expect(b2.parenR);
                   } else
                     this.options.ecmaVersion < 10 && this.unexpected(), e5.param = null, this.enterScope(0);
                   e5.body = this.parseBlock(false), this.exitScope(), t5.handler = this.finishNode(e5, "CatchClause");
@@ -21690,13 +21690,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 }
                 return t5;
               }, nt2.parseVarId = function(t5, e5) {
-                t5.id = this.parseBindingAtom(), this.checkLValPattern(t5.id, "var" === e5 ? J2 : Y2, false);
+                t5.id = this.parseBindingAtom(), this.checkLValPattern(t5.id, "var" === e5 ? J3 : Y3, false);
               };
-              var ct2 = 1, lt2 = 2, ut2 = 4;
+              var ct = 1, lt2 = 2, ut2 = 4;
               nt2.parseFunction = function(t5, e5, i4, s4) {
-                this.initFunction(t5), (this.options.ecmaVersion >= 9 || this.options.ecmaVersion >= 6 && !s4) && (this.type === b2.star && e5 & lt2 && this.unexpected(), t5.generator = this.eat(b2.star)), this.options.ecmaVersion >= 8 && (t5.async = !!s4), e5 & ct2 && (t5.id = e5 & ut2 && this.type !== b2.name ? null : this.parseIdent(), !t5.id || e5 & lt2 || this.checkLValSimple(t5.id, this.strict || t5.generator || t5.async ? this.treatFunctionsAsVar ? J2 : Y2 : Z3));
+                this.initFunction(t5), (this.options.ecmaVersion >= 9 || this.options.ecmaVersion >= 6 && !s4) && (this.type === b2.star && e5 & lt2 && this.unexpected(), t5.generator = this.eat(b2.star)), this.options.ecmaVersion >= 8 && (t5.async = !!s4), e5 & ct && (t5.id = e5 & ut2 && this.type !== b2.name ? null : this.parseIdent(), !t5.id || e5 & lt2 || this.checkLValSimple(t5.id, this.strict || t5.generator || t5.async ? this.treatFunctionsAsVar ? J3 : Y3 : Z3));
                 var r3 = this.yieldPos, a3 = this.awaitPos, n3 = this.awaitIdentPos;
-                return this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(X3(t5.async, t5.generator)), e5 & ct2 || (t5.id = this.type === b2.name ? this.parseIdent() : null), this.parseFunctionParams(t5), this.parseFunctionBody(t5, i4, false), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(t5, e5 & ct2 ? "FunctionDeclaration" : "FunctionExpression");
+                return this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(X3(t5.async, t5.generator)), e5 & ct || (t5.id = this.type === b2.name ? this.parseIdent() : null), this.parseFunctionParams(t5), this.parseFunctionBody(t5, i4, false), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(t5, e5 & ct ? "FunctionDeclaration" : "FunctionExpression");
               }, nt2.parseFunctionParams = function(t5) {
                 this.expect(b2.parenL), t5.params = this.parseBindingList(b2.parenR, false, this.options.ecmaVersion >= 8), this.checkYieldAwaitInDefaultParams();
               }, nt2.parseClass = function(t5, e5) {
@@ -21726,7 +21726,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }, nt2.parseClassMethod = function(t5, e5, i4, s4) {
                 return t5.value = this.parseMethod(e5, i4, s4), this.finishNode(t5, "MethodDefinition");
               }, nt2.parseClassId = function(t5, e5) {
-                this.type === b2.name ? (t5.id = this.parseIdent(), e5 && this.checkLValSimple(t5.id, Y2, false)) : (true === e5 && this.unexpected(), t5.id = null);
+                this.type === b2.name ? (t5.id = this.parseIdent(), e5 && this.checkLValSimple(t5.id, Y3, false)) : (true === e5 && this.unexpected(), t5.id = null);
               }, nt2.parseClassSuper = function(t5) {
                 t5.superClass = this.eat(b2._extends) ? this.parseExprSubscripts() : null;
               }, nt2.parseExport = function(t5, e5) {
@@ -21736,7 +21736,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   var i4;
                   if (this.checkExport(e5, "default", this.lastTokStart), this.type === b2._function || (i4 = this.isAsyncFunction())) {
                     var s4 = this.startNode();
-                    this.next(), i4 && this.next(), t5.declaration = this.parseFunction(s4, ct2 | ut2, false, i4);
+                    this.next(), i4 && this.next(), t5.declaration = this.parseFunction(s4, ct | ut2, false, i4);
                   } else if (this.type === b2._class) {
                     var r3 = this.startNode();
                     t5.declaration = this.parseClass(r3, "nullableID");
@@ -21760,7 +21760,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 }
                 return this.finishNode(t5, "ExportNamedDeclaration");
               }, nt2.checkExport = function(t5, e5, i4) {
-                t5 && (P3(t5, e5) && this.raiseRecoverable(i4, "Duplicate export '" + e5 + "'"), t5[e5] = true);
+                t5 && (P2(t5, e5) && this.raiseRecoverable(i4, "Duplicate export '" + e5 + "'"), t5[e5] = true);
               }, nt2.checkPatternExport = function(t5, e5) {
                 var i4 = e5.type;
                 if ("Identifier" === i4)
@@ -21802,12 +21802,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 var t5 = [], e5 = true;
                 if (this.type === b2.name) {
                   var i4 = this.startNode();
-                  if (i4.local = this.parseIdent(), this.checkLValSimple(i4.local, Y2), t5.push(this.finishNode(i4, "ImportDefaultSpecifier")), !this.eat(b2.comma))
+                  if (i4.local = this.parseIdent(), this.checkLValSimple(i4.local, Y3), t5.push(this.finishNode(i4, "ImportDefaultSpecifier")), !this.eat(b2.comma))
                     return t5;
                 }
                 if (this.type === b2.star) {
                   var s4 = this.startNode();
-                  return this.next(), this.expectContextual("as"), s4.local = this.parseIdent(), this.checkLValSimple(s4.local, Y2), t5.push(this.finishNode(s4, "ImportNamespaceSpecifier")), t5;
+                  return this.next(), this.expectContextual("as"), s4.local = this.parseIdent(), this.checkLValSimple(s4.local, Y3), t5.push(this.finishNode(s4, "ImportNamespaceSpecifier")), t5;
                 }
                 for (this.expect(b2.braceL); !this.eat(b2.braceR); ) {
                   if (e5)
@@ -21815,7 +21815,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   else if (this.expect(b2.comma), this.afterTrailingComma(b2.braceR))
                     break;
                   var r3 = this.startNode();
-                  r3.imported = this.parseIdent(true), this.eatContextual("as") ? r3.local = this.parseIdent() : (this.checkUnreserved(r3.imported), r3.local = r3.imported), this.checkLValSimple(r3.local, Y2), t5.push(this.finishNode(r3, "ImportSpecifier"));
+                  r3.imported = this.parseIdent(true), this.eatContextual("as") ? r3.local = this.parseIdent() : (this.checkUnreserved(r3.imported), r3.local = r3.imported), this.checkLValSimple(r3.local, Y3), t5.push(this.finishNode(r3, "ImportSpecifier"));
                 }
                 return t5;
               }, nt2.adaptDirectivePrologue = function(t5) {
@@ -21920,11 +21920,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 var s4 = this.startNodeAt(t5, e5);
                 return s4.left = i4, s4.right = this.parseMaybeAssign(), this.finishNode(s4, "AssignmentPattern");
               }, dt2.checkLValSimple = function(t5, e5, i4) {
-                void 0 === e5 && (e5 = Q3);
-                var s4 = e5 !== Q3;
+                void 0 === e5 && (e5 = Q2);
+                var s4 = e5 !== Q2;
                 switch (t5.type) {
                   case "Identifier":
-                    this.strict && this.reservedWordsStrictBind.test(t5.name) && this.raiseRecoverable(t5.start, (s4 ? "Binding " : "Assigning to ") + t5.name + " in strict mode"), s4 && (e5 === Y2 && "let" === t5.name && this.raiseRecoverable(t5.start, "let is disallowed as a lexically bound name"), i4 && (P3(i4, t5.name) && this.raiseRecoverable(t5.start, "Argument name clash"), i4[t5.name] = true), e5 !== tt2 && this.declareName(t5.name, e5, t5.start));
+                    this.strict && this.reservedWordsStrictBind.test(t5.name) && this.raiseRecoverable(t5.start, (s4 ? "Binding " : "Assigning to ") + t5.name + " in strict mode"), s4 && (e5 === Y3 && "let" === t5.name && this.raiseRecoverable(t5.start, "let is disallowed as a lexically bound name"), i4 && (P2(i4, t5.name) && this.raiseRecoverable(t5.start, "Argument name clash"), i4[t5.name] = true), e5 !== tt2 && this.declareName(t5.name, e5, t5.start));
                     break;
                   case "ChainExpression":
                     this.raiseRecoverable(t5.start, "Optional chaining cannot appear in left-hand side");
@@ -21938,7 +21938,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     this.raise(t5.start, (s4 ? "Binding" : "Assigning to") + " rvalue");
                 }
               }, dt2.checkLValPattern = function(t5, e5, i4) {
-                switch (void 0 === e5 && (e5 = Q3), t5.type) {
+                switch (void 0 === e5 && (e5 = Q2), t5.type) {
                   case "ObjectPattern":
                     for (var s4 = 0, r3 = t5.properties; s4 < r3.length; s4 += 1) {
                       var a3 = r3[s4];
@@ -21955,7 +21955,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     this.checkLValSimple(t5, e5, i4);
                 }
               }, dt2.checkLValInnerPattern = function(t5, e5, i4) {
-                switch (void 0 === e5 && (e5 = Q3), t5.type) {
+                switch (void 0 === e5 && (e5 = Q2), t5.type) {
                   case "Property":
                     this.checkLValInnerPattern(t5.value, e5, i4);
                     break;
@@ -22090,12 +22090,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   if (r3 && !o3 && !this.canInsertSemicolon() && this.eat(b2.arrow))
                     return this.checkPatternErrors(c3, false), this.checkYieldAwaitInDefaultParams(), this.awaitIdentPos > 0 && this.raise(this.awaitIdentPos, "Cannot use 'await' as identifier inside an async function"), this.yieldPos = l3, this.awaitPos = u3, this.awaitIdentPos = d3, this.parseArrowExpression(this.startNodeAt(e5, i4), f4, true);
                   this.checkExpressionErrors(c3, true), this.yieldPos = l3 || this.yieldPos, this.awaitPos = u3 || this.awaitPos, this.awaitIdentPos = d3 || this.awaitIdentPos;
-                  var m4 = this.startNodeAt(e5, i4);
-                  m4.callee = t5, m4.arguments = f4, n3 && (m4.optional = o3), t5 = this.finishNode(m4, "CallExpression");
+                  var m3 = this.startNodeAt(e5, i4);
+                  m3.callee = t5, m3.arguments = f4, n3 && (m3.optional = o3), t5 = this.finishNode(m3, "CallExpression");
                 } else if (this.type === b2.backQuote) {
                   (o3 || a3) && this.raise(this.start, "Optional chaining cannot appear in the tag of tagged template expressions");
-                  var g3 = this.startNodeAt(e5, i4);
-                  g3.tag = t5, g3.quasi = this.parseTemplate({ isTagged: true }), t5 = this.finishNode(g3, "TaggedTemplateExpression");
+                  var g4 = this.startNodeAt(e5, i4);
+                  g4.tag = t5, g4.quasi = this.parseTemplate({ isTagged: true }), t5 = this.finishNode(g4, "TaggedTemplateExpression");
                 }
                 return t5;
               }, ft2.parseExprAtom = function(t5) {
@@ -22192,15 +22192,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     }
                     h3.push(this.parseMaybeAssign(false, l3, this.parseParenItem));
                   }
-                  var f4 = this.start, m4 = this.startLoc;
+                  var f4 = this.start, m3 = this.startLoc;
                   if (this.expect(b2.parenR), t5 && !this.canInsertSemicolon() && this.eat(b2.arrow))
                     return this.checkPatternErrors(l3, false), this.checkYieldAwaitInDefaultParams(), this.yieldPos = u3, this.awaitPos = d3, this.parseParenArrowList(i4, s4, h3);
-                  h3.length && !c3 || this.unexpected(this.lastTokStart), a3 && this.unexpected(a3), this.checkExpressionErrors(l3, true), this.yieldPos = u3 || this.yieldPos, this.awaitPos = d3 || this.awaitPos, h3.length > 1 ? ((e5 = this.startNodeAt(n3, o3)).expressions = h3, this.finishNodeAt(e5, "SequenceExpression", f4, m4)) : e5 = h3[0];
+                  h3.length && !c3 || this.unexpected(this.lastTokStart), a3 && this.unexpected(a3), this.checkExpressionErrors(l3, true), this.yieldPos = u3 || this.yieldPos, this.awaitPos = d3 || this.awaitPos, h3.length > 1 ? ((e5 = this.startNodeAt(n3, o3)).expressions = h3, this.finishNodeAt(e5, "SequenceExpression", f4, m3)) : e5 = h3[0];
                 } else
                   e5 = this.parseParenExpression();
                 if (this.options.preserveParens) {
-                  var g3 = this.startNodeAt(i4, s4);
-                  return g3.expression = e5, this.finishNode(g3, "ParenthesizedExpression");
+                  var g4 = this.startNodeAt(i4, s4);
+                  return g4.expression = e5, this.finishNode(g4, "ParenthesizedExpression");
                 }
                 return e5;
               }, ft2.parseParenItem = function(t5) {
@@ -22233,7 +22233,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   this.type === b2.eof && this.raise(this.pos, "Unterminated template literal"), this.expect(b2.dollarBraceL), i4.expressions.push(this.parseExpression()), this.expect(b2.braceR), i4.quasis.push(s4 = this.parseTemplateElement({ isTagged: e5 }));
                 return this.next(), this.finishNode(i4, "TemplateLiteral");
               }, ft2.isAsyncProp = function(t5) {
-                return !t5.computed && "Identifier" === t5.key.type && "async" === t5.key.name && (this.type === b2.name || this.type === b2.num || this.type === b2.string || this.type === b2.bracketL || this.type.keyword || this.options.ecmaVersion >= 9 && this.type === b2.star) && !_3.test(this.input.slice(this.lastTokEnd, this.start));
+                return !t5.computed && "Identifier" === t5.key.type && "async" === t5.key.name && (this.type === b2.name || this.type === b2.num || this.type === b2.string || this.type === b2.bracketL || this.type.keyword || this.options.ecmaVersion >= 9 && this.type === b2.star) && !_2.test(this.input.slice(this.lastTokEnd, this.start));
               }, ft2.parseObj = function(t5, e5) {
                 var i4 = this.startNode(), s4 = true, r3 = {};
                 for (i4.properties = [], this.next(); !this.eat(b2.braceR); ) {
@@ -22279,7 +22279,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 t5.id = null, this.options.ecmaVersion >= 6 && (t5.generator = t5.expression = false), this.options.ecmaVersion >= 8 && (t5.async = false);
               }, ft2.parseMethod = function(t5, e5, i4) {
                 var s4 = this.startNode(), r3 = this.yieldPos, a3 = this.awaitPos, n3 = this.awaitIdentPos;
-                return this.initFunction(s4), this.options.ecmaVersion >= 6 && (s4.generator = t5), this.options.ecmaVersion >= 8 && (s4.async = !!e5), this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(X3(e5, s4.generator) | z2 | (i4 ? K2 : 0)), this.expect(b2.parenL), s4.params = this.parseBindingList(b2.parenR, false, this.options.ecmaVersion >= 8), this.checkYieldAwaitInDefaultParams(), this.parseFunctionBody(s4, false, true), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(s4, "FunctionExpression");
+                return this.initFunction(s4), this.options.ecmaVersion >= 6 && (s4.generator = t5), this.options.ecmaVersion >= 8 && (s4.async = !!e5), this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(X3(e5, s4.generator) | z2 | (i4 ? K3 : 0)), this.expect(b2.parenL), s4.params = this.parseBindingList(b2.parenR, false, this.options.ecmaVersion >= 8), this.checkYieldAwaitInDefaultParams(), this.parseFunctionBody(s4, false, true), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(s4, "FunctionExpression");
               }, ft2.parseArrowExpression = function(t5, e5, i4) {
                 var s4 = this.yieldPos, r3 = this.awaitPos, a3 = this.awaitIdentPos;
                 return this.enterScope(X3(i4, false) | H2), this.initFunction(t5), this.options.ecmaVersion >= 8 && (t5.async = !!i4), this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, t5.params = this.toAssignableList(e5, true), this.parseFunctionBody(t5, true, false), this.yieldPos = s4, this.awaitPos = r3, this.awaitIdentPos = a3, this.finishNode(t5, "ArrowFunctionExpression");
@@ -22302,7 +22302,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }, ft2.checkParams = function(t5, e5) {
                 for (var i4 = /* @__PURE__ */ Object.create(null), s4 = 0, r3 = t5.params; s4 < r3.length; s4 += 1) {
                   var a3 = r3[s4];
-                  this.checkLValInnerPattern(a3, J2, e5 ? null : i4);
+                  this.checkLValInnerPattern(a3, J3, e5 ? null : i4);
                 }
               }, ft2.parseExprList = function(t5, e5, i4, s4) {
                 for (var r3 = [], a3 = true; !this.eat(t5); ) {
@@ -22331,7 +22331,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               };
               var gt2 = et2.prototype;
               gt2.raise = function(t5, e5) {
-                var i4 = O2(this.input, t5);
+                var i4 = O3(this.input, t5);
                 e5 += " (" + i4.line + ":" + i4.column + ")";
                 var s4 = new SyntaxError(e5);
                 throw s4.pos = t5, s4.loc = i4, s4.raisedAt = this.pos, s4;
@@ -22350,7 +22350,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 return t5.flags & U2 || !this.inModule && t5.flags & j3;
               }, xt2.declareName = function(t5, e5, i4) {
                 var s4 = false;
-                if (e5 === Y2) {
+                if (e5 === Y3) {
                   var r3 = this.currentScope();
                   s4 = r3.lexical.indexOf(t5) > -1 || r3.functions.indexOf(t5) > -1 || r3.var.indexOf(t5) > -1, r3.lexical.push(t5), this.inModule && r3.flags & j3 && delete this.undefinedExports[t5];
                 } else if (e5 === $3)
@@ -22389,7 +22389,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var vt2 = function(t5, e5, i4) {
                 this.type = "", this.start = e5, this.end = 0, t5.options.locations && (this.loc = new V2(t5, i4)), t5.options.directSourceFile && (this.sourceFile = t5.options.directSourceFile), t5.options.ranges && (this.range = [e5, 0]);
               }, bt2 = et2.prototype;
-              function _t2(t5, e5, i4, s4) {
+              function _t(t5, e5, i4, s4) {
                 return t5.type = e5, t5.end = i4, this.options.locations && (t5.loc.end = s4), this.options.ranges && (t5.range[1] = i4), t5;
               }
               bt2.startNode = function() {
@@ -22397,9 +22397,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }, bt2.startNodeAt = function(t5, e5) {
                 return new vt2(this, t5, e5);
               }, bt2.finishNode = function(t5, e5) {
-                return _t2.call(this, t5, e5, this.lastTokEnd, this.lastTokEndLoc);
+                return _t.call(this, t5, e5, this.lastTokEnd, this.lastTokEndLoc);
               }, bt2.finishNodeAt = function(t5, e5, i4, s4) {
-                return _t2.call(this, t5, e5, i4, s4);
+                return _t.call(this, t5, e5, i4, s4);
               }, bt2.copyNode = function(t5) {
                 var e5 = new vt2(this, t5.start, this.startLoc);
                 for (var i4 in t5)
@@ -22408,59 +22408,59 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               };
               var kt2 = function(t5, e5, i4, s4, r3) {
                 this.token = t5, this.isExpr = !!e5, this.preserveSpace = !!i4, this.override = s4, this.generator = !!r3;
-              }, St = { b_stat: new kt2("{", false), b_expr: new kt2("{", true), b_tmpl: new kt2("${", false), p_stat: new kt2("(", false), p_expr: new kt2("(", true), q_tmpl: new kt2("`", true, true, function(t5) {
+              }, St2 = { b_stat: new kt2("{", false), b_expr: new kt2("{", true), b_tmpl: new kt2("${", false), p_stat: new kt2("(", false), p_expr: new kt2("(", true), q_tmpl: new kt2("`", true, true, function(t5) {
                 return t5.tryReadTemplateToken();
-              }), f_stat: new kt2("function", false), f_expr: new kt2("function", true), f_expr_gen: new kt2("function", true, false, null, true), f_gen: new kt2("function", false, false, null, true) }, wt = et2.prototype;
-              wt.initialContext = function() {
-                return [St.b_stat];
-              }, wt.braceIsBlock = function(t5) {
+              }), f_stat: new kt2("function", false), f_expr: new kt2("function", true), f_expr_gen: new kt2("function", true, false, null, true), f_gen: new kt2("function", false, false, null, true) }, wt2 = et2.prototype;
+              wt2.initialContext = function() {
+                return [St2.b_stat];
+              }, wt2.braceIsBlock = function(t5) {
                 var e5 = this.curContext();
-                return e5 === St.f_expr || e5 === St.f_stat || (t5 !== b2.colon || e5 !== St.b_stat && e5 !== St.b_expr ? t5 === b2._return || t5 === b2.name && this.exprAllowed ? _3.test(this.input.slice(this.lastTokEnd, this.start)) : t5 === b2._else || t5 === b2.semi || t5 === b2.eof || t5 === b2.parenR || t5 === b2.arrow || (t5 === b2.braceL ? e5 === St.b_stat : t5 !== b2._var && t5 !== b2._const && t5 !== b2.name && !this.exprAllowed) : !e5.isExpr);
-              }, wt.inGeneratorContext = function() {
+                return e5 === St2.f_expr || e5 === St2.f_stat || (t5 !== b2.colon || e5 !== St2.b_stat && e5 !== St2.b_expr ? t5 === b2._return || t5 === b2.name && this.exprAllowed ? _2.test(this.input.slice(this.lastTokEnd, this.start)) : t5 === b2._else || t5 === b2.semi || t5 === b2.eof || t5 === b2.parenR || t5 === b2.arrow || (t5 === b2.braceL ? e5 === St2.b_stat : t5 !== b2._var && t5 !== b2._const && t5 !== b2.name && !this.exprAllowed) : !e5.isExpr);
+              }, wt2.inGeneratorContext = function() {
                 for (var t5 = this.context.length - 1; t5 >= 1; t5--) {
                   var e5 = this.context[t5];
                   if ("function" === e5.token)
                     return e5.generator;
                 }
                 return false;
-              }, wt.updateContext = function(t5) {
+              }, wt2.updateContext = function(t5) {
                 var e5, i4 = this.type;
                 i4.keyword && t5 === b2.dot ? this.exprAllowed = false : (e5 = i4.updateContext) ? e5.call(this, t5) : this.exprAllowed = i4.beforeExpr;
               }, b2.parenR.updateContext = b2.braceR.updateContext = function() {
                 if (1 !== this.context.length) {
                   var t5 = this.context.pop();
-                  t5 === St.b_stat && "function" === this.curContext().token && (t5 = this.context.pop()), this.exprAllowed = !t5.isExpr;
+                  t5 === St2.b_stat && "function" === this.curContext().token && (t5 = this.context.pop()), this.exprAllowed = !t5.isExpr;
                 } else
                   this.exprAllowed = true;
               }, b2.braceL.updateContext = function(t5) {
-                this.context.push(this.braceIsBlock(t5) ? St.b_stat : St.b_expr), this.exprAllowed = true;
+                this.context.push(this.braceIsBlock(t5) ? St2.b_stat : St2.b_expr), this.exprAllowed = true;
               }, b2.dollarBraceL.updateContext = function() {
-                this.context.push(St.b_tmpl), this.exprAllowed = true;
+                this.context.push(St2.b_tmpl), this.exprAllowed = true;
               }, b2.parenL.updateContext = function(t5) {
                 var e5 = t5 === b2._if || t5 === b2._for || t5 === b2._with || t5 === b2._while;
-                this.context.push(e5 ? St.p_stat : St.p_expr), this.exprAllowed = true;
+                this.context.push(e5 ? St2.p_stat : St2.p_expr), this.exprAllowed = true;
               }, b2.incDec.updateContext = function() {
               }, b2._function.updateContext = b2._class.updateContext = function(t5) {
-                !t5.beforeExpr || t5 === b2._else || t5 === b2.semi && this.curContext() !== St.p_stat || t5 === b2._return && _3.test(this.input.slice(this.lastTokEnd, this.start)) || (t5 === b2.colon || t5 === b2.braceL) && this.curContext() === St.b_stat ? this.context.push(St.f_stat) : this.context.push(St.f_expr), this.exprAllowed = false;
+                !t5.beforeExpr || t5 === b2._else || t5 === b2.semi && this.curContext() !== St2.p_stat || t5 === b2._return && _2.test(this.input.slice(this.lastTokEnd, this.start)) || (t5 === b2.colon || t5 === b2.braceL) && this.curContext() === St2.b_stat ? this.context.push(St2.f_stat) : this.context.push(St2.f_expr), this.exprAllowed = false;
               }, b2.backQuote.updateContext = function() {
-                this.curContext() === St.q_tmpl ? this.context.pop() : this.context.push(St.q_tmpl), this.exprAllowed = false;
+                this.curContext() === St2.q_tmpl ? this.context.pop() : this.context.push(St2.q_tmpl), this.exprAllowed = false;
               }, b2.star.updateContext = function(t5) {
                 if (t5 === b2._function) {
                   var e5 = this.context.length - 1;
-                  this.context[e5] === St.f_expr ? this.context[e5] = St.f_expr_gen : this.context[e5] = St.f_gen;
+                  this.context[e5] === St2.f_expr ? this.context[e5] = St2.f_expr_gen : this.context[e5] = St2.f_gen;
                 }
                 this.exprAllowed = true;
               }, b2.name.updateContext = function(t5) {
                 var e5 = false;
                 this.options.ecmaVersion >= 6 && t5 !== b2.dot && ("of" === this.value && !this.exprAllowed || "yield" === this.value && this.inGeneratorContext()) && (e5 = true), this.exprAllowed = e5;
               };
-              var Ct2 = "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS", Et2 = Ct2 + " Extended_Pictographic", At2 = { 9: Ct2, 10: Et2, 11: Et2, 12: Et2 + " EBase EComp EMod EPres ExtPict" }, It = "Cased_Letter LC Close_Punctuation Pe Connector_Punctuation Pc Control Cc cntrl Currency_Symbol Sc Dash_Punctuation Pd Decimal_Number Nd digit Enclosing_Mark Me Final_Punctuation Pf Format Cf Initial_Punctuation Pi Letter L Letter_Number Nl Line_Separator Zl Lowercase_Letter Ll Mark M Combining_Mark Math_Symbol Sm Modifier_Letter Lm Modifier_Symbol Sk Nonspacing_Mark Mn Number N Open_Punctuation Ps Other C Other_Letter Lo Other_Number No Other_Punctuation Po Other_Symbol So Paragraph_Separator Zp Private_Use Co Punctuation P punct Separator Z Space_Separator Zs Spacing_Mark Mc Surrogate Cs Symbol S Titlecase_Letter Lt Unassigned Cn Uppercase_Letter Lu", Pt2 = "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb", Tt2 = Pt2 + " Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd", Nt2 = Tt2 + " Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho", Lt2 = { 9: Pt2, 10: Tt2, 11: Nt2, 12: Nt2 + " Chorasmian Chrs Diak Dives_Akuru Khitan_Small_Script Kits Yezi Yezidi" }, Vt2 = {};
+              var Ct2 = "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS", Et2 = Ct2 + " Extended_Pictographic", At2 = { 9: Ct2, 10: Et2, 11: Et2, 12: Et2 + " EBase EComp EMod EPres ExtPict" }, It = "Cased_Letter LC Close_Punctuation Pe Connector_Punctuation Pc Control Cc cntrl Currency_Symbol Sc Dash_Punctuation Pd Decimal_Number Nd digit Enclosing_Mark Me Final_Punctuation Pf Format Cf Initial_Punctuation Pi Letter L Letter_Number Nl Line_Separator Zl Lowercase_Letter Ll Mark M Combining_Mark Math_Symbol Sm Modifier_Letter Lm Modifier_Symbol Sk Nonspacing_Mark Mn Number N Open_Punctuation Ps Other C Other_Letter Lo Other_Number No Other_Punctuation Po Other_Symbol So Paragraph_Separator Zp Private_Use Co Punctuation P punct Separator Z Space_Separator Zs Spacing_Mark Mc Surrogate Cs Symbol S Titlecase_Letter Lt Unassigned Cn Uppercase_Letter Lu", Pt2 = "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb", Tt = Pt2 + " Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd", Nt2 = Tt + " Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho", Lt2 = { 9: Pt2, 10: Tt, 11: Nt2, 12: Nt2 + " Chorasmian Chrs Diak Dives_Akuru Khitan_Small_Script Kits Yezi Yezidi" }, Vt2 = {};
               function Ot2(t5) {
-                var e5 = Vt2[t5] = { binary: N2(At2[t5] + " " + It), nonBinary: { General_Category: N2(It), Script: N2(Lt2[t5]) } };
+                var e5 = Vt2[t5] = { binary: N3(At2[t5] + " " + It), nonBinary: { General_Category: N3(It), Script: N3(Lt2[t5]) } };
                 e5.nonBinary.Script_Extensions = e5.nonBinary.Script, e5.nonBinary.gc = e5.nonBinary.General_Category, e5.nonBinary.sc = e5.nonBinary.Script, e5.nonBinary.scx = e5.nonBinary.Script_Extensions;
               }
               Ot2(9), Ot2(10), Ot2(11), Ot2(12);
-              var Rt2 = et2.prototype, Mt2 = function(t5) {
+              var Rt = et2.prototype, Mt2 = function(t5) {
                 this.parser = t5, this.validFlags = "gim" + (t5.options.ecmaVersion >= 6 ? "uy" : "") + (t5.options.ecmaVersion >= 9 ? "s" : ""), this.unicodeProperties = Vt2[t5.options.ecmaVersion >= 12 ? 12 : t5.options.ecmaVersion], this.source = "", this.flags = "", this.start = 0, this.switchU = false, this.switchN = false, this.pos = 0, this.lastIntValue = 0, this.lastStringValue = "", this.lastAssertionIsQuantifiable = false, this.numCapturingParens = 0, this.maxBackReference = 0, this.groupNames = [], this.backReferenceNames = [];
               };
               function Bt(t5) {
@@ -22475,7 +22475,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               function Ut2(t5) {
                 return d2(t5, true) || 36 === t5 || 95 === t5 || 8204 === t5 || 8205 === t5;
               }
-              function Ft2(t5) {
+              function Ft(t5) {
                 return t5 >= 65 && t5 <= 90 || t5 >= 97 && t5 <= 122;
               }
               function qt2(t5) {
@@ -22485,7 +22485,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 return 100 === t5 || 68 === t5 || 115 === t5 || 83 === t5 || 119 === t5 || 87 === t5;
               }
               function Ht2(t5) {
-                return Ft2(t5) || 95 === t5;
+                return Ft(t5) || 95 === t5;
               }
               function Wt2(t5) {
                 return Ht2(t5) || zt2(t5);
@@ -22532,29 +22532,29 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 void 0 === t5 && (t5 = false), this.pos = this.nextIndex(this.pos, t5);
               }, Mt2.prototype.eat = function(t5, e5) {
                 return void 0 === e5 && (e5 = false), this.current(e5) === t5 && (this.advance(e5), true);
-              }, Rt2.validateRegExpFlags = function(t5) {
+              }, Rt.validateRegExpFlags = function(t5) {
                 for (var e5 = t5.validFlags, i4 = t5.flags, s4 = 0; s4 < i4.length; s4++) {
                   var r3 = i4.charAt(s4);
                   -1 === e5.indexOf(r3) && this.raise(t5.start, "Invalid regular expression flag"), i4.indexOf(r3, s4 + 1) > -1 && this.raise(t5.start, "Duplicate regular expression flag");
                 }
-              }, Rt2.validateRegExpPattern = function(t5) {
+              }, Rt.validateRegExpPattern = function(t5) {
                 this.regexp_pattern(t5), !t5.switchN && this.options.ecmaVersion >= 9 && t5.groupNames.length > 0 && (t5.switchN = true, this.regexp_pattern(t5));
-              }, Rt2.regexp_pattern = function(t5) {
+              }, Rt.regexp_pattern = function(t5) {
                 t5.pos = 0, t5.lastIntValue = 0, t5.lastStringValue = "", t5.lastAssertionIsQuantifiable = false, t5.numCapturingParens = 0, t5.maxBackReference = 0, t5.groupNames.length = 0, t5.backReferenceNames.length = 0, this.regexp_disjunction(t5), t5.pos !== t5.source.length && (t5.eat(41) && t5.raise("Unmatched ')'"), (t5.eat(93) || t5.eat(125)) && t5.raise("Lone quantifier brackets")), t5.maxBackReference > t5.numCapturingParens && t5.raise("Invalid escape");
                 for (var e5 = 0, i4 = t5.backReferenceNames; e5 < i4.length; e5 += 1) {
                   var s4 = i4[e5];
                   -1 === t5.groupNames.indexOf(s4) && t5.raise("Invalid named capture referenced");
                 }
-              }, Rt2.regexp_disjunction = function(t5) {
+              }, Rt.regexp_disjunction = function(t5) {
                 for (this.regexp_alternative(t5); t5.eat(124); )
                   this.regexp_alternative(t5);
                 this.regexp_eatQuantifier(t5, true) && t5.raise("Nothing to repeat"), t5.eat(123) && t5.raise("Lone quantifier brackets");
-              }, Rt2.regexp_alternative = function(t5) {
+              }, Rt.regexp_alternative = function(t5) {
                 for (; t5.pos < t5.source.length && this.regexp_eatTerm(t5); )
                   ;
-              }, Rt2.regexp_eatTerm = function(t5) {
+              }, Rt.regexp_eatTerm = function(t5) {
                 return this.regexp_eatAssertion(t5) ? (t5.lastAssertionIsQuantifiable && this.regexp_eatQuantifier(t5) && t5.switchU && t5.raise("Invalid quantifier"), true) : !!(t5.switchU ? this.regexp_eatAtom(t5) : this.regexp_eatExtendedAtom(t5)) && (this.regexp_eatQuantifier(t5), true);
-              }, Rt2.regexp_eatAssertion = function(t5) {
+              }, Rt.regexp_eatAssertion = function(t5) {
                 var e5 = t5.pos;
                 if (t5.lastAssertionIsQuantifiable = false, t5.eat(94) || t5.eat(36))
                   return true;
@@ -22569,11 +22569,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     return this.regexp_disjunction(t5), t5.eat(41) || t5.raise("Unterminated group"), t5.lastAssertionIsQuantifiable = !i4, true;
                 }
                 return t5.pos = e5, false;
-              }, Rt2.regexp_eatQuantifier = function(t5, e5) {
+              }, Rt.regexp_eatQuantifier = function(t5, e5) {
                 return void 0 === e5 && (e5 = false), !!this.regexp_eatQuantifierPrefix(t5, e5) && (t5.eat(63), true);
-              }, Rt2.regexp_eatQuantifierPrefix = function(t5, e5) {
+              }, Rt.regexp_eatQuantifierPrefix = function(t5, e5) {
                 return t5.eat(42) || t5.eat(43) || t5.eat(63) || this.regexp_eatBracedQuantifier(t5, e5);
-              }, Rt2.regexp_eatBracedQuantifier = function(t5, e5) {
+              }, Rt.regexp_eatBracedQuantifier = function(t5, e5) {
                 var i4 = t5.pos;
                 if (t5.eat(123)) {
                   var s4 = 0, r3 = -1;
@@ -22582,9 +22582,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   t5.switchU && !e5 && t5.raise("Incomplete quantifier"), t5.pos = i4;
                 }
                 return false;
-              }, Rt2.regexp_eatAtom = function(t5) {
+              }, Rt.regexp_eatAtom = function(t5) {
                 return this.regexp_eatPatternCharacters(t5) || t5.eat(46) || this.regexp_eatReverseSolidusAtomEscape(t5) || this.regexp_eatCharacterClass(t5) || this.regexp_eatUncapturingGroup(t5) || this.regexp_eatCapturingGroup(t5);
-              }, Rt2.regexp_eatReverseSolidusAtomEscape = function(t5) {
+              }, Rt.regexp_eatReverseSolidusAtomEscape = function(t5) {
                 var e5 = t5.pos;
                 if (t5.eat(92)) {
                   if (this.regexp_eatAtomEscape(t5))
@@ -22592,7 +22592,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   t5.pos = e5;
                 }
                 return false;
-              }, Rt2.regexp_eatUncapturingGroup = function(t5) {
+              }, Rt.regexp_eatUncapturingGroup = function(t5) {
                 var e5 = t5.pos;
                 if (t5.eat(40)) {
                   if (t5.eat(63) && t5.eat(58)) {
@@ -22603,56 +22603,56 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   t5.pos = e5;
                 }
                 return false;
-              }, Rt2.regexp_eatCapturingGroup = function(t5) {
+              }, Rt.regexp_eatCapturingGroup = function(t5) {
                 if (t5.eat(40)) {
                   if (this.options.ecmaVersion >= 9 ? this.regexp_groupSpecifier(t5) : 63 === t5.current() && t5.raise("Invalid group"), this.regexp_disjunction(t5), t5.eat(41))
                     return t5.numCapturingParens += 1, true;
                   t5.raise("Unterminated group");
                 }
                 return false;
-              }, Rt2.regexp_eatExtendedAtom = function(t5) {
+              }, Rt.regexp_eatExtendedAtom = function(t5) {
                 return t5.eat(46) || this.regexp_eatReverseSolidusAtomEscape(t5) || this.regexp_eatCharacterClass(t5) || this.regexp_eatUncapturingGroup(t5) || this.regexp_eatCapturingGroup(t5) || this.regexp_eatInvalidBracedQuantifier(t5) || this.regexp_eatExtendedPatternCharacter(t5);
-              }, Rt2.regexp_eatInvalidBracedQuantifier = function(t5) {
+              }, Rt.regexp_eatInvalidBracedQuantifier = function(t5) {
                 return this.regexp_eatBracedQuantifier(t5, true) && t5.raise("Nothing to repeat"), false;
-              }, Rt2.regexp_eatSyntaxCharacter = function(t5) {
+              }, Rt.regexp_eatSyntaxCharacter = function(t5) {
                 var e5 = t5.current();
                 return !!Dt2(e5) && (t5.lastIntValue = e5, t5.advance(), true);
-              }, Rt2.regexp_eatPatternCharacters = function(t5) {
+              }, Rt.regexp_eatPatternCharacters = function(t5) {
                 for (var e5 = t5.pos, i4 = 0; -1 !== (i4 = t5.current()) && !Dt2(i4); )
                   t5.advance();
                 return t5.pos !== e5;
-              }, Rt2.regexp_eatExtendedPatternCharacter = function(t5) {
+              }, Rt.regexp_eatExtendedPatternCharacter = function(t5) {
                 var e5 = t5.current();
                 return !(-1 === e5 || 36 === e5 || e5 >= 40 && e5 <= 43 || 46 === e5 || 63 === e5 || 91 === e5 || 94 === e5 || 124 === e5 || (t5.advance(), 0));
-              }, Rt2.regexp_groupSpecifier = function(t5) {
+              }, Rt.regexp_groupSpecifier = function(t5) {
                 if (t5.eat(63)) {
                   if (this.regexp_eatGroupName(t5))
                     return -1 !== t5.groupNames.indexOf(t5.lastStringValue) && t5.raise("Duplicate capture group name"), void t5.groupNames.push(t5.lastStringValue);
                   t5.raise("Invalid group");
                 }
-              }, Rt2.regexp_eatGroupName = function(t5) {
+              }, Rt.regexp_eatGroupName = function(t5) {
                 if (t5.lastStringValue = "", t5.eat(60)) {
                   if (this.regexp_eatRegExpIdentifierName(t5) && t5.eat(62))
                     return true;
                   t5.raise("Invalid capture group name");
                 }
                 return false;
-              }, Rt2.regexp_eatRegExpIdentifierName = function(t5) {
+              }, Rt.regexp_eatRegExpIdentifierName = function(t5) {
                 if (t5.lastStringValue = "", this.regexp_eatRegExpIdentifierStart(t5)) {
                   for (t5.lastStringValue += Bt(t5.lastIntValue); this.regexp_eatRegExpIdentifierPart(t5); )
                     t5.lastStringValue += Bt(t5.lastIntValue);
                   return true;
                 }
                 return false;
-              }, Rt2.regexp_eatRegExpIdentifierStart = function(t5) {
+              }, Rt.regexp_eatRegExpIdentifierStart = function(t5) {
                 var e5 = t5.pos, i4 = this.options.ecmaVersion >= 11, s4 = t5.current(i4);
                 return t5.advance(i4), 92 === s4 && this.regexp_eatRegExpUnicodeEscapeSequence(t5, i4) && (s4 = t5.lastIntValue), jt2(s4) ? (t5.lastIntValue = s4, true) : (t5.pos = e5, false);
-              }, Rt2.regexp_eatRegExpIdentifierPart = function(t5) {
+              }, Rt.regexp_eatRegExpIdentifierPart = function(t5) {
                 var e5 = t5.pos, i4 = this.options.ecmaVersion >= 11, s4 = t5.current(i4);
                 return t5.advance(i4), 92 === s4 && this.regexp_eatRegExpUnicodeEscapeSequence(t5, i4) && (s4 = t5.lastIntValue), Ut2(s4) ? (t5.lastIntValue = s4, true) : (t5.pos = e5, false);
-              }, Rt2.regexp_eatAtomEscape = function(t5) {
+              }, Rt.regexp_eatAtomEscape = function(t5) {
                 return !!(this.regexp_eatBackReference(t5) || this.regexp_eatCharacterClassEscape(t5) || this.regexp_eatCharacterEscape(t5) || t5.switchN && this.regexp_eatKGroupName(t5)) || (t5.switchU && (99 === t5.current() && t5.raise("Invalid unicode escape"), t5.raise("Invalid escape")), false);
-              }, Rt2.regexp_eatBackReference = function(t5) {
+              }, Rt.regexp_eatBackReference = function(t5) {
                 var e5 = t5.pos;
                 if (this.regexp_eatDecimalEscape(t5)) {
                   var i4 = t5.lastIntValue;
@@ -22663,16 +22663,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   t5.pos = e5;
                 }
                 return false;
-              }, Rt2.regexp_eatKGroupName = function(t5) {
+              }, Rt.regexp_eatKGroupName = function(t5) {
                 if (t5.eat(107)) {
                   if (this.regexp_eatGroupName(t5))
                     return t5.backReferenceNames.push(t5.lastStringValue), true;
                   t5.raise("Invalid named reference");
                 }
                 return false;
-              }, Rt2.regexp_eatCharacterEscape = function(t5) {
+              }, Rt.regexp_eatCharacterEscape = function(t5) {
                 return this.regexp_eatControlEscape(t5) || this.regexp_eatCControlLetter(t5) || this.regexp_eatZero(t5) || this.regexp_eatHexEscapeSequence(t5) || this.regexp_eatRegExpUnicodeEscapeSequence(t5, false) || !t5.switchU && this.regexp_eatLegacyOctalEscapeSequence(t5) || this.regexp_eatIdentityEscape(t5);
-              }, Rt2.regexp_eatCControlLetter = function(t5) {
+              }, Rt.regexp_eatCControlLetter = function(t5) {
                 var e5 = t5.pos;
                 if (t5.eat(99)) {
                   if (this.regexp_eatControlLetter(t5))
@@ -22680,15 +22680,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   t5.pos = e5;
                 }
                 return false;
-              }, Rt2.regexp_eatZero = function(t5) {
+              }, Rt.regexp_eatZero = function(t5) {
                 return 48 === t5.current() && !zt2(t5.lookahead()) && (t5.lastIntValue = 0, t5.advance(), true);
-              }, Rt2.regexp_eatControlEscape = function(t5) {
+              }, Rt.regexp_eatControlEscape = function(t5) {
                 var e5 = t5.current();
                 return 116 === e5 ? (t5.lastIntValue = 9, t5.advance(), true) : 110 === e5 ? (t5.lastIntValue = 10, t5.advance(), true) : 118 === e5 ? (t5.lastIntValue = 11, t5.advance(), true) : 102 === e5 ? (t5.lastIntValue = 12, t5.advance(), true) : 114 === e5 && (t5.lastIntValue = 13, t5.advance(), true);
-              }, Rt2.regexp_eatControlLetter = function(t5) {
+              }, Rt.regexp_eatControlLetter = function(t5) {
                 var e5 = t5.current();
-                return !!Ft2(e5) && (t5.lastIntValue = e5 % 32, t5.advance(), true);
-              }, Rt2.regexp_eatRegExpUnicodeEscapeSequence = function(t5, e5) {
+                return !!Ft(e5) && (t5.lastIntValue = e5 % 32, t5.advance(), true);
+              }, Rt.regexp_eatRegExpUnicodeEscapeSequence = function(t5, e5) {
                 void 0 === e5 && (e5 = false);
                 var i4 = t5.pos, s4 = e5 || t5.switchU;
                 if (t5.eat(117)) {
@@ -22710,12 +22710,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   s4 && t5.raise("Invalid unicode escape"), t5.pos = i4;
                 }
                 return false;
-              }, Rt2.regexp_eatIdentityEscape = function(t5) {
+              }, Rt.regexp_eatIdentityEscape = function(t5) {
                 if (t5.switchU)
                   return !!this.regexp_eatSyntaxCharacter(t5) || !!t5.eat(47) && (t5.lastIntValue = 47, true);
                 var e5 = t5.current();
                 return !(99 === e5 || t5.switchN && 107 === e5 || (t5.lastIntValue = e5, t5.advance(), 0));
-              }, Rt2.regexp_eatDecimalEscape = function(t5) {
+              }, Rt.regexp_eatDecimalEscape = function(t5) {
                 t5.lastIntValue = 0;
                 var e5 = t5.current();
                 if (e5 >= 49 && e5 <= 57) {
@@ -22725,7 +22725,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   return true;
                 }
                 return false;
-              }, Rt2.regexp_eatCharacterClassEscape = function(t5) {
+              }, Rt.regexp_eatCharacterClassEscape = function(t5) {
                 var e5 = t5.current();
                 if (Gt2(e5))
                   return t5.lastIntValue = -1, t5.advance(), true;
@@ -22735,7 +22735,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   t5.raise("Invalid property name");
                 }
                 return false;
-              }, Rt2.regexp_eatUnicodePropertyValueExpression = function(t5) {
+              }, Rt.regexp_eatUnicodePropertyValueExpression = function(t5) {
                 var e5 = t5.pos;
                 if (this.regexp_eatUnicodePropertyName(t5) && t5.eat(61)) {
                   var i4 = t5.lastStringValue;
@@ -22749,30 +22749,30 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   return this.regexp_validateUnicodePropertyNameOrValue(t5, r3), true;
                 }
                 return false;
-              }, Rt2.regexp_validateUnicodePropertyNameAndValue = function(t5, e5, i4) {
-                P3(t5.unicodeProperties.nonBinary, e5) || t5.raise("Invalid property name"), t5.unicodeProperties.nonBinary[e5].test(i4) || t5.raise("Invalid property value");
-              }, Rt2.regexp_validateUnicodePropertyNameOrValue = function(t5, e5) {
+              }, Rt.regexp_validateUnicodePropertyNameAndValue = function(t5, e5, i4) {
+                P2(t5.unicodeProperties.nonBinary, e5) || t5.raise("Invalid property name"), t5.unicodeProperties.nonBinary[e5].test(i4) || t5.raise("Invalid property value");
+              }, Rt.regexp_validateUnicodePropertyNameOrValue = function(t5, e5) {
                 t5.unicodeProperties.binary.test(e5) || t5.raise("Invalid property name");
-              }, Rt2.regexp_eatUnicodePropertyName = function(t5) {
+              }, Rt.regexp_eatUnicodePropertyName = function(t5) {
                 var e5 = 0;
                 for (t5.lastStringValue = ""; Ht2(e5 = t5.current()); )
                   t5.lastStringValue += Bt(e5), t5.advance();
                 return "" !== t5.lastStringValue;
-              }, Rt2.regexp_eatUnicodePropertyValue = function(t5) {
+              }, Rt.regexp_eatUnicodePropertyValue = function(t5) {
                 var e5 = 0;
                 for (t5.lastStringValue = ""; Wt2(e5 = t5.current()); )
                   t5.lastStringValue += Bt(e5), t5.advance();
                 return "" !== t5.lastStringValue;
-              }, Rt2.regexp_eatLoneUnicodePropertyNameOrValue = function(t5) {
+              }, Rt.regexp_eatLoneUnicodePropertyNameOrValue = function(t5) {
                 return this.regexp_eatUnicodePropertyValue(t5);
-              }, Rt2.regexp_eatCharacterClass = function(t5) {
+              }, Rt.regexp_eatCharacterClass = function(t5) {
                 if (t5.eat(91)) {
                   if (t5.eat(94), this.regexp_classRanges(t5), t5.eat(93))
                     return true;
                   t5.raise("Unterminated character class");
                 }
                 return false;
-              }, Rt2.regexp_classRanges = function(t5) {
+              }, Rt.regexp_classRanges = function(t5) {
                 for (; this.regexp_eatClassAtom(t5); ) {
                   var e5 = t5.lastIntValue;
                   if (t5.eat(45) && this.regexp_eatClassAtom(t5)) {
@@ -22780,7 +22780,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     !t5.switchU || -1 !== e5 && -1 !== i4 || t5.raise("Invalid character class"), -1 !== e5 && -1 !== i4 && e5 > i4 && t5.raise("Range out of order in character class");
                   }
                 }
-              }, Rt2.regexp_eatClassAtom = function(t5) {
+              }, Rt.regexp_eatClassAtom = function(t5) {
                 var e5 = t5.pos;
                 if (t5.eat(92)) {
                   if (this.regexp_eatClassEscape(t5))
@@ -22793,7 +22793,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 }
                 var s4 = t5.current();
                 return 93 !== s4 && (t5.lastIntValue = s4, t5.advance(), true);
-              }, Rt2.regexp_eatClassEscape = function(t5) {
+              }, Rt.regexp_eatClassEscape = function(t5) {
                 var e5 = t5.pos;
                 if (t5.eat(98))
                   return t5.lastIntValue = 8, true;
@@ -22805,10 +22805,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   t5.pos = e5;
                 }
                 return this.regexp_eatCharacterClassEscape(t5) || this.regexp_eatCharacterEscape(t5);
-              }, Rt2.regexp_eatClassControlLetter = function(t5) {
+              }, Rt.regexp_eatClassControlLetter = function(t5) {
                 var e5 = t5.current();
                 return !(!zt2(e5) && 95 !== e5 || (t5.lastIntValue = e5 % 32, t5.advance(), 0));
-              }, Rt2.regexp_eatHexEscapeSequence = function(t5) {
+              }, Rt.regexp_eatHexEscapeSequence = function(t5) {
                 var e5 = t5.pos;
                 if (t5.eat(120)) {
                   if (this.regexp_eatFixedHexDigits(t5, 2))
@@ -22816,17 +22816,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   t5.switchU && t5.raise("Invalid escape"), t5.pos = e5;
                 }
                 return false;
-              }, Rt2.regexp_eatDecimalDigits = function(t5) {
+              }, Rt.regexp_eatDecimalDigits = function(t5) {
                 var e5 = t5.pos, i4 = 0;
                 for (t5.lastIntValue = 0; zt2(i4 = t5.current()); )
                   t5.lastIntValue = 10 * t5.lastIntValue + (i4 - 48), t5.advance();
                 return t5.pos !== e5;
-              }, Rt2.regexp_eatHexDigits = function(t5) {
+              }, Rt.regexp_eatHexDigits = function(t5) {
                 var e5 = t5.pos, i4 = 0;
                 for (t5.lastIntValue = 0; Kt2(i4 = t5.current()); )
                   t5.lastIntValue = 16 * t5.lastIntValue + Xt2(i4), t5.advance();
                 return t5.pos !== e5;
-              }, Rt2.regexp_eatLegacyOctalEscapeSequence = function(t5) {
+              }, Rt.regexp_eatLegacyOctalEscapeSequence = function(t5) {
                 if (this.regexp_eatOctalDigit(t5)) {
                   var e5 = t5.lastIntValue;
                   if (this.regexp_eatOctalDigit(t5)) {
@@ -22837,10 +22837,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   return true;
                 }
                 return false;
-              }, Rt2.regexp_eatOctalDigit = function(t5) {
+              }, Rt.regexp_eatOctalDigit = function(t5) {
                 var e5 = t5.current();
                 return Qt2(e5) ? (t5.lastIntValue = e5 - 48, t5.advance(), true) : (t5.lastIntValue = 0, false);
-              }, Rt2.regexp_eatFixedHexDigits = function(t5, e5) {
+              }, Rt.regexp_eatFixedHexDigits = function(t5, e5) {
                 var i4 = t5.pos;
                 t5.lastIntValue = 0;
                 for (var s4 = 0; s4 < e5; ++s4) {
@@ -22890,7 +22890,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     ++this.curLine, this.lineStart = t5.index + t5[0].length;
                 this.options.onComment && this.options.onComment(true, this.input.slice(i4 + 2, s4), i4, this.pos, e5, this.curPosition());
               }, Yt2.skipLineComment = function(t5) {
-                for (var e5 = this.pos, i4 = this.options.onComment && this.curPosition(), s4 = this.input.charCodeAt(this.pos += t5); this.pos < this.input.length && !S2(s4); )
+                for (var e5 = this.pos, i4 = this.options.onComment && this.curPosition(), s4 = this.input.charCodeAt(this.pos += t5); this.pos < this.input.length && !S3(s4); )
                   s4 = this.input.charCodeAt(++this.pos);
                 this.options.onComment && this.options.onComment(false, this.input.slice(e5 + t5, this.pos), e5, this.pos, i4, this.curPosition());
               }, Yt2.skipSpace = function() {
@@ -22922,7 +22922,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                         }
                         break;
                       default:
-                        if (!(t5 > 8 && t5 < 14 || t5 >= 5760 && w3.test(String.fromCharCode(t5))))
+                        if (!(t5 > 8 && t5 < 14 || t5 >= 5760 && w2.test(String.fromCharCode(t5))))
                           break t;
                         ++this.pos;
                     }
@@ -22950,7 +22950,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 return 61 === this.input.charCodeAt(this.pos + 1) ? this.finishOp(b2.assign, 2) : this.finishOp(b2.bitwiseXOR, 1);
               }, Yt2.readToken_plus_min = function(t5) {
                 var e5 = this.input.charCodeAt(this.pos + 1);
-                return e5 === t5 ? 45 !== e5 || this.inModule || 62 !== this.input.charCodeAt(this.pos + 2) || 0 !== this.lastTokEnd && !_3.test(this.input.slice(this.lastTokEnd, this.pos)) ? this.finishOp(b2.incDec, 2) : (this.skipLineComment(3), this.skipSpace(), this.nextToken()) : 61 === e5 ? this.finishOp(b2.assign, 2) : this.finishOp(b2.plusMin, 1);
+                return e5 === t5 ? 45 !== e5 || this.inModule || 62 !== this.input.charCodeAt(this.pos + 2) || 0 !== this.lastTokEnd && !_2.test(this.input.slice(this.lastTokEnd, this.pos)) ? this.finishOp(b2.incDec, 2) : (this.skipLineComment(3), this.skipSpace(), this.nextToken()) : 61 === e5 ? this.finishOp(b2.assign, 2) : this.finishOp(b2.plusMin, 1);
               }, Yt2.readToken_lt_gt = function(t5) {
                 var e5 = this.input.charCodeAt(this.pos + 1), i4 = 1;
                 return e5 === t5 ? (i4 = 62 === t5 && 62 === this.input.charCodeAt(this.pos + 2) ? 3 : 2, 61 === this.input.charCodeAt(this.pos + i4) ? this.finishOp(b2.assign, i4 + 1) : this.finishOp(b2.bitShift, i4)) : 33 !== e5 || 60 !== t5 || this.inModule || 45 !== this.input.charCodeAt(this.pos + 2) || 45 !== this.input.charCodeAt(this.pos + 3) ? (61 === e5 && (i4 = 2), this.finishOp(b2.relational, i4)) : (this.skipLineComment(4), this.skipSpace(), this.nextToken());
@@ -23051,7 +23051,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 for (var t5, e5, i4 = this.pos; ; ) {
                   this.pos >= this.input.length && this.raise(i4, "Unterminated regular expression");
                   var s4 = this.input.charAt(this.pos);
-                  if (_3.test(s4) && this.raise(i4, "Unterminated regular expression"), t5)
+                  if (_2.test(s4) && this.raise(i4, "Unterminated regular expression"), t5)
                     t5 = false;
                   else {
                     if ("[" === s4)
@@ -23121,24 +23121,24 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   var s4 = this.input.charCodeAt(this.pos);
                   if (s4 === t5)
                     break;
-                  92 === s4 ? (e5 += this.input.slice(i4, this.pos), e5 += this.readEscapedChar(false), i4 = this.pos) : (S2(s4, this.options.ecmaVersion >= 10) && this.raise(this.start, "Unterminated string constant"), ++this.pos);
+                  92 === s4 ? (e5 += this.input.slice(i4, this.pos), e5 += this.readEscapedChar(false), i4 = this.pos) : (S3(s4, this.options.ecmaVersion >= 10) && this.raise(this.start, "Unterminated string constant"), ++this.pos);
                 }
                 return e5 += this.input.slice(i4, this.pos++), this.finishToken(b2.string, e5);
               };
-              var ee2 = {};
+              var ee3 = {};
               Yt2.tryReadTemplateToken = function() {
                 this.inTemplateElement = true;
                 try {
                   this.readTmplToken();
                 } catch (t5) {
-                  if (t5 !== ee2)
+                  if (t5 !== ee3)
                     throw t5;
                   this.readInvalidTemplateToken();
                 }
                 this.inTemplateElement = false;
               }, Yt2.invalidStringToken = function(t5, e5) {
                 if (this.inTemplateElement && this.options.ecmaVersion >= 9)
-                  throw ee2;
+                  throw ee3;
                 this.raise(t5, e5);
               }, Yt2.readTmplToken = function() {
                 for (var t5 = "", e5 = this.pos; ; ) {
@@ -23148,7 +23148,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     return this.pos !== this.start || this.type !== b2.template && this.type !== b2.invalidTemplate ? (t5 += this.input.slice(e5, this.pos), this.finishToken(b2.template, t5)) : 36 === i4 ? (this.pos += 2, this.finishToken(b2.dollarBraceL)) : (++this.pos, this.finishToken(b2.backQuote));
                   if (92 === i4)
                     t5 += this.input.slice(e5, this.pos), t5 += this.readEscapedChar(true), e5 = this.pos;
-                  else if (S2(i4)) {
+                  else if (S3(i4)) {
                     switch (t5 += this.input.slice(e5, this.pos), ++this.pos, i4) {
                       case 13:
                         10 === this.input.charCodeAt(this.pos) && ++this.pos;
@@ -23209,7 +23209,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                       var s4 = this.input.substr(this.pos - 1, 3).match(/^[0-7]+/)[0], r3 = parseInt(s4, 8);
                       return r3 > 255 && (s4 = s4.slice(0, -1), r3 = parseInt(s4, 8)), this.pos += s4.length - 1, e5 = this.input.charCodeAt(this.pos), "0" === s4 && 56 !== e5 && 57 !== e5 || !this.strict && !t5 || this.invalidStringToken(this.pos - 1 - s4.length, t5 ? "Octal literal in template string" : "Octal literal in strict mode"), String.fromCharCode(r3);
                     }
-                    return S2(e5) ? "" : String.fromCharCode(e5);
+                    return S3(e5) ? "" : String.fromCharCode(e5);
                 }
               }, Yt2.readHexChar = function(t5) {
                 var e5 = this.pos, i4 = this.readInt(16, t5);
@@ -23234,19 +23234,19 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 return t5 + this.input.slice(i4, this.pos);
               }, Yt2.readWord = function() {
                 var t5 = this.readWord1(), e5 = b2.name;
-                return this.keywords.test(t5) && (e5 = y3[t5]), this.finishToken(e5, t5);
+                return this.keywords.test(t5) && (e5 = y2[t5]), this.finishToken(e5, t5);
               };
               var ie3 = "8.0.5";
-              function se2(t5, e5) {
+              function se3(t5, e5) {
                 return et2.parse(t5, e5);
               }
               function re3(t5, e5, i4) {
                 return et2.parseExpressionAt(t5, e5, i4);
               }
-              function ae3(t5, e5) {
+              function ae2(t5, e5) {
                 return et2.tokenizer(t5, e5);
               }
-              et2.acorn = { Parser: et2, version: ie3, defaultOptions: R2, Position: L2, SourceLocation: V2, getLineInfo: O2, Node: vt2, TokenType: f3, tokTypes: b2, keywordTypes: y3, TokContext: kt2, tokContexts: St, isIdentifierChar: d2, isIdentifierStart: u2, Token: Jt2, isNewLine: S2, lineBreak: _3, lineBreakG: k2, nonASCIIwhitespace: w3 }, t4.Node = vt2, t4.Parser = et2, t4.Position = L2, t4.SourceLocation = V2, t4.TokContext = kt2, t4.Token = Jt2, t4.TokenType = f3, t4.defaultOptions = R2, t4.getLineInfo = O2, t4.isIdentifierChar = d2, t4.isIdentifierStart = u2, t4.isNewLine = S2, t4.keywordTypes = y3, t4.lineBreak = _3, t4.lineBreakG = k2, t4.nonASCIIwhitespace = w3, t4.parse = se2, t4.parseExpressionAt = re3, t4.tokContexts = St, t4.tokTypes = b2, t4.tokenizer = ae3, t4.version = ie3, Object.defineProperty(t4, "__esModule", { value: true });
+              et2.acorn = { Parser: et2, version: ie3, defaultOptions: R2, Position: L2, SourceLocation: V2, getLineInfo: O3, Node: vt2, TokenType: f3, tokTypes: b2, keywordTypes: y2, TokContext: kt2, tokContexts: St2, isIdentifierChar: d2, isIdentifierStart: u2, Token: Jt2, isNewLine: S3, lineBreak: _2, lineBreakG: k2, nonASCIIwhitespace: w2 }, t4.Node = vt2, t4.Parser = et2, t4.Position = L2, t4.SourceLocation = V2, t4.TokContext = kt2, t4.Token = Jt2, t4.TokenType = f3, t4.defaultOptions = R2, t4.getLineInfo = O3, t4.isIdentifierChar = d2, t4.isIdentifierStart = u2, t4.isNewLine = S3, t4.keywordTypes = y2, t4.lineBreak = _2, t4.lineBreakG = k2, t4.nonASCIIwhitespace = w2, t4.parse = se3, t4.parseExpressionAt = re3, t4.tokContexts = St2, t4.tokTypes = b2, t4.tokenizer = ae2, t4.version = ie3, Object.defineProperty(t4, "__esModule", { value: true });
             }(e3);
           }, 272: (t3, e3, i3) => {
             "use strict";
@@ -23265,26 +23265,26 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             function f3(t4, e4) {
               return t4 < 65 ? 36 === t4 : t4 < 91 || (t4 < 97 ? 95 === t4 : t4 < 123 || (t4 <= 65535 ? t4 >= 170 && p2.test(String.fromCharCode(t4)) : false !== e4 && d2(t4, l2)));
             }
-            function m3(t4, e4) {
+            function m2(t4, e4) {
               return t4 < 48 ? 36 === t4 : t4 < 58 || !(t4 < 65) && (t4 < 91 || (t4 < 97 ? 95 === t4 : t4 < 123 || (t4 <= 65535 ? t4 >= 170 && c2.test(String.fromCharCode(t4)) : false !== e4 && (d2(t4, l2) || d2(t4, u2)))));
             }
-            var g2 = function(t4, e4) {
+            var g3 = function(t4, e4) {
               void 0 === e4 && (e4 = {}), this.label = t4, this.keyword = e4.keyword, this.beforeExpr = !!e4.beforeExpr, this.startsExpr = !!e4.startsExpr, this.isLoop = !!e4.isLoop, this.isAssign = !!e4.isAssign, this.prefix = !!e4.prefix, this.postfix = !!e4.postfix, this.binop = e4.binop || null, this.updateContext = null;
             };
             function x3(t4, e4) {
-              return new g2(t4, { beforeExpr: true, binop: e4 });
+              return new g3(t4, { beforeExpr: true, binop: e4 });
             }
-            var y3 = { beforeExpr: true }, v2 = { startsExpr: true }, b2 = {};
-            function _3(t4, e4) {
-              return void 0 === e4 && (e4 = {}), e4.keyword = t4, b2[t4] = new g2(t4, e4);
+            var y2 = { beforeExpr: true }, v2 = { startsExpr: true }, b2 = {};
+            function _2(t4, e4) {
+              return void 0 === e4 && (e4 = {}), e4.keyword = t4, b2[t4] = new g3(t4, e4);
             }
-            var k2 = { num: new g2("num", v2), regexp: new g2("regexp", v2), string: new g2("string", v2), name: new g2("name", v2), eof: new g2("eof"), bracketL: new g2("[", { beforeExpr: true, startsExpr: true }), bracketR: new g2("]"), braceL: new g2("{", { beforeExpr: true, startsExpr: true }), braceR: new g2("}"), parenL: new g2("(", { beforeExpr: true, startsExpr: true }), parenR: new g2(")"), comma: new g2(",", y3), semi: new g2(";", y3), colon: new g2(":", y3), dot: new g2("."), question: new g2("?", y3), questionDot: new g2("?."), arrow: new g2("=>", y3), template: new g2("template"), invalidTemplate: new g2("invalidTemplate"), ellipsis: new g2("...", y3), backQuote: new g2("`", v2), dollarBraceL: new g2("${", { beforeExpr: true, startsExpr: true }), eq: new g2("=", { beforeExpr: true, isAssign: true }), assign: new g2("_=", { beforeExpr: true, isAssign: true }), incDec: new g2("++/--", { prefix: true, postfix: true, startsExpr: true }), prefix: new g2("!/~", { beforeExpr: true, prefix: true, startsExpr: true }), logicalOR: x3("||", 1), logicalAND: x3("&&", 2), bitwiseOR: x3("|", 3), bitwiseXOR: x3("^", 4), bitwiseAND: x3("&", 5), equality: x3("==/!=/===/!==", 6), relational: x3("</>/<=/>=", 7), bitShift: x3("<</>>/>>>", 8), plusMin: new g2("+/-", { beforeExpr: true, binop: 9, prefix: true, startsExpr: true }), modulo: x3("%", 10), star: x3("*", 10), slash: x3("/", 10), starstar: new g2("**", { beforeExpr: true }), coalesce: x3("??", 1), _break: _3("break"), _case: _3("case", y3), _catch: _3("catch"), _continue: _3("continue"), _debugger: _3("debugger"), _default: _3("default", y3), _do: _3("do", { isLoop: true, beforeExpr: true }), _else: _3("else", y3), _finally: _3("finally"), _for: _3("for", { isLoop: true }), _function: _3("function", v2), _if: _3("if"), _return: _3("return", y3), _switch: _3("switch"), _throw: _3("throw", y3), _try: _3("try"), _var: _3("var"), _const: _3("const"), _while: _3("while", { isLoop: true }), _with: _3("with"), _new: _3("new", { beforeExpr: true, startsExpr: true }), _this: _3("this", v2), _super: _3("super", v2), _class: _3("class", v2), _extends: _3("extends", y3), _export: _3("export"), _import: _3("import", v2), _null: _3("null", v2), _true: _3("true", v2), _false: _3("false", v2), _in: _3("in", { beforeExpr: true, binop: 7 }), _instanceof: _3("instanceof", { beforeExpr: true, binop: 7 }), _typeof: _3("typeof", { beforeExpr: true, prefix: true, startsExpr: true }), _void: _3("void", { beforeExpr: true, prefix: true, startsExpr: true }), _delete: _3("delete", { beforeExpr: true, prefix: true, startsExpr: true }) }, S2 = /\r\n?|\n|\u2028|\u2029/, w3 = new RegExp(S2.source, "g");
+            var k2 = { num: new g3("num", v2), regexp: new g3("regexp", v2), string: new g3("string", v2), name: new g3("name", v2), eof: new g3("eof"), bracketL: new g3("[", { beforeExpr: true, startsExpr: true }), bracketR: new g3("]"), braceL: new g3("{", { beforeExpr: true, startsExpr: true }), braceR: new g3("}"), parenL: new g3("(", { beforeExpr: true, startsExpr: true }), parenR: new g3(")"), comma: new g3(",", y2), semi: new g3(";", y2), colon: new g3(":", y2), dot: new g3("."), question: new g3("?", y2), questionDot: new g3("?."), arrow: new g3("=>", y2), template: new g3("template"), invalidTemplate: new g3("invalidTemplate"), ellipsis: new g3("...", y2), backQuote: new g3("`", v2), dollarBraceL: new g3("${", { beforeExpr: true, startsExpr: true }), eq: new g3("=", { beforeExpr: true, isAssign: true }), assign: new g3("_=", { beforeExpr: true, isAssign: true }), incDec: new g3("++/--", { prefix: true, postfix: true, startsExpr: true }), prefix: new g3("!/~", { beforeExpr: true, prefix: true, startsExpr: true }), logicalOR: x3("||", 1), logicalAND: x3("&&", 2), bitwiseOR: x3("|", 3), bitwiseXOR: x3("^", 4), bitwiseAND: x3("&", 5), equality: x3("==/!=/===/!==", 6), relational: x3("</>/<=/>=", 7), bitShift: x3("<</>>/>>>", 8), plusMin: new g3("+/-", { beforeExpr: true, binop: 9, prefix: true, startsExpr: true }), modulo: x3("%", 10), star: x3("*", 10), slash: x3("/", 10), starstar: new g3("**", { beforeExpr: true }), coalesce: x3("??", 1), _break: _2("break"), _case: _2("case", y2), _catch: _2("catch"), _continue: _2("continue"), _debugger: _2("debugger"), _default: _2("default", y2), _do: _2("do", { isLoop: true, beforeExpr: true }), _else: _2("else", y2), _finally: _2("finally"), _for: _2("for", { isLoop: true }), _function: _2("function", v2), _if: _2("if"), _return: _2("return", y2), _switch: _2("switch"), _throw: _2("throw", y2), _try: _2("try"), _var: _2("var"), _const: _2("const"), _while: _2("while", { isLoop: true }), _with: _2("with"), _new: _2("new", { beforeExpr: true, startsExpr: true }), _this: _2("this", v2), _super: _2("super", v2), _class: _2("class", v2), _extends: _2("extends", y2), _export: _2("export"), _import: _2("import", v2), _null: _2("null", v2), _true: _2("true", v2), _false: _2("false", v2), _in: _2("in", { beforeExpr: true, binop: 7 }), _instanceof: _2("instanceof", { beforeExpr: true, binop: 7 }), _typeof: _2("typeof", { beforeExpr: true, prefix: true, startsExpr: true }), _void: _2("void", { beforeExpr: true, prefix: true, startsExpr: true }), _delete: _2("delete", { beforeExpr: true, prefix: true, startsExpr: true }) }, S3 = /\r\n?|\n|\u2028|\u2029/, w2 = new RegExp(S3.source, "g");
             function C3(t4, e4) {
               return 10 === t4 || 13 === t4 || !e4 && (8232 === t4 || 8233 === t4);
             }
-            var E2 = /[\u1680\u2000-\u200a\u202f\u205f\u3000\ufeff]/, A3 = /(?:\s|\/\/.*|\/\*[^]*?\*\/)*/g, I2 = Object.prototype, P3 = I2.hasOwnProperty, T2 = I2.toString;
-            function N2(t4, e4) {
-              return P3.call(t4, e4);
+            var E2 = /[\u1680\u2000-\u200a\u202f\u205f\u3000\ufeff]/, A2 = /(?:\s|\/\/.*|\/\*[^]*?\*\/)*/g, I2 = Object.prototype, P2 = I2.hasOwnProperty, T2 = I2.toString;
+            function N3(t4, e4) {
+              return P2.call(t4, e4);
             }
             var L2 = Array.isArray || function(t4) {
               return "[object Array]" === T2.call(t4);
@@ -23292,29 +23292,29 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             function V2(t4) {
               return new RegExp("^(?:" + t4.replace(/ /g, "|") + ")$");
             }
-            var O2 = function(t4, e4) {
+            var O3 = function(t4, e4) {
               this.line = t4, this.column = e4;
             };
-            O2.prototype.offset = function(t4) {
-              return new O2(this.line, this.column + t4);
+            O3.prototype.offset = function(t4) {
+              return new O3(this.line, this.column + t4);
             };
             var R2 = function(t4, e4, i4) {
               this.start = e4, this.end = i4, null !== t4.sourceFile && (this.source = t4.sourceFile);
             };
             function M2(t4, e4) {
               for (var i4 = 1, s4 = 0; ; ) {
-                w3.lastIndex = s4;
-                var r3 = w3.exec(t4);
+                w2.lastIndex = s4;
+                var r3 = w2.exec(t4);
                 if (!(r3 && r3.index < e4))
-                  return new O2(i4, e4 - s4);
+                  return new O3(i4, e4 - s4);
                 ++i4, s4 = r3.index + r3[0].length;
               }
             }
-            var B2 = { ecmaVersion: null, sourceType: "script", onInsertedSemicolon: null, onTrailingComma: null, allowReserved: null, allowReturnOutsideFunction: false, allowImportExportEverywhere: false, allowAwaitOutsideFunction: false, allowHashBang: false, locations: false, onToken: null, onComment: null, ranges: false, program: null, sourceFile: null, directSourceFile: null, preserveParens: false }, D3 = false;
+            var B3 = { ecmaVersion: null, sourceType: "script", onInsertedSemicolon: null, onTrailingComma: null, allowReserved: null, allowReturnOutsideFunction: false, allowImportExportEverywhere: false, allowAwaitOutsideFunction: false, allowHashBang: false, locations: false, onToken: null, onComment: null, ranges: false, program: null, sourceFile: null, directSourceFile: null, preserveParens: false }, D3 = false;
             function j3(t4) {
               var e4 = {};
-              for (var i4 in B2)
-                e4[i4] = t4 && N2(t4, i4) ? t4[i4] : B2[i4];
+              for (var i4 in B3)
+                e4[i4] = t4 && N3(t4, i4) ? t4[i4] : B3[i4];
               if ("latest" === e4.ecmaVersion ? e4.ecmaVersion = 1e8 : null == e4.ecmaVersion ? (!D3 && "object" == typeof console && console.warn && (D3 = true, console.warn("Since Acorn 8.0.0, options.ecmaVersion is required.\nDefaulting to 2020, but this will stop working in the future.")), e4.ecmaVersion = 11) : e4.ecmaVersion >= 2015 && (e4.ecmaVersion -= 2009), null == e4.allowReserved && (e4.allowReserved = e4.ecmaVersion < 5), L2(e4.onToken)) {
                 var s4 = e4.onToken;
                 e4.onToken = function(t5) {
@@ -23336,7 +23336,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var r3 = "";
               true !== t4.allowReserved && (r3 = s3[t4.ecmaVersion >= 6 ? 6 : 5 === t4.ecmaVersion ? 5 : 3], "module" === t4.sourceType && (r3 += " await")), this.reservedWords = V2(r3);
               var n3 = (r3 ? r3 + " " : "") + s3.strict;
-              this.reservedWordsStrict = V2(n3), this.reservedWordsStrictBind = V2(n3 + " " + s3.strictBind), this.input = String(e4), this.containsEsc = false, i4 ? (this.pos = i4, this.lineStart = this.input.lastIndexOf("\n", i4 - 1) + 1, this.curLine = this.input.slice(0, this.lineStart).split(S2).length) : (this.pos = this.lineStart = 0, this.curLine = 1), this.type = k2.eof, this.value = null, this.start = this.end = this.pos, this.startLoc = this.endLoc = this.curPosition(), this.lastTokEndLoc = this.lastTokStartLoc = null, this.lastTokStart = this.lastTokEnd = this.pos, this.context = this.initialContext(), this.exprAllowed = true, this.inModule = "module" === t4.sourceType, this.strict = this.inModule || this.strictDirective(this.pos), this.potentialArrowAt = -1, this.yieldPos = this.awaitPos = this.awaitIdentPos = 0, this.labels = [], this.undefinedExports = /* @__PURE__ */ Object.create(null), 0 === this.pos && t4.allowHashBang && "#!" === this.input.slice(0, 2) && this.skipLineComment(2), this.scopeStack = [], this.enterScope(1), this.regexpState = null;
+              this.reservedWordsStrict = V2(n3), this.reservedWordsStrictBind = V2(n3 + " " + s3.strictBind), this.input = String(e4), this.containsEsc = false, i4 ? (this.pos = i4, this.lineStart = this.input.lastIndexOf("\n", i4 - 1) + 1, this.curLine = this.input.slice(0, this.lineStart).split(S3).length) : (this.pos = this.lineStart = 0, this.curLine = 1), this.type = k2.eof, this.value = null, this.start = this.end = this.pos, this.startLoc = this.endLoc = this.curPosition(), this.lastTokEndLoc = this.lastTokStartLoc = null, this.lastTokStart = this.lastTokEnd = this.pos, this.context = this.initialContext(), this.exprAllowed = true, this.inModule = "module" === t4.sourceType, this.strict = this.inModule || this.strictDirective(this.pos), this.potentialArrowAt = -1, this.yieldPos = this.awaitPos = this.awaitIdentPos = 0, this.labels = [], this.undefinedExports = /* @__PURE__ */ Object.create(null), 0 === this.pos && t4.allowHashBang && "#!" === this.input.slice(0, 2) && this.skipLineComment(2), this.scopeStack = [], this.enterScope(1), this.regexpState = null;
             }, q3 = { inFunction: { configurable: true }, inGenerator: { configurable: true }, inAsync: { configurable: true }, allowSuper: { configurable: true }, allowDirectSuper: { configurable: true }, treatFunctionsAsVar: { configurable: true }, inNonArrowFunction: { configurable: true } };
             F2.prototype.parse = function() {
               var t4 = this.options.program || this.startNode();
@@ -23369,61 +23369,61 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, F2.tokenizer = function(t4, e4) {
               return new this(e4, t4);
             }, Object.defineProperties(F2.prototype, q3);
-            var G3 = F2.prototype, H2 = /^(?:'((?:\\.|[^'\\])*?)'|"((?:\\.|[^"\\])*?)")/;
+            var G2 = F2.prototype, H2 = /^(?:'((?:\\.|[^'\\])*?)'|"((?:\\.|[^"\\])*?)")/;
             function W2() {
               this.shorthandAssign = this.trailingComma = this.parenthesizedAssign = this.parenthesizedBind = this.doubleProto = -1;
             }
-            G3.strictDirective = function(t4) {
+            G2.strictDirective = function(t4) {
               for (; ; ) {
-                A3.lastIndex = t4, t4 += A3.exec(this.input)[0].length;
+                A2.lastIndex = t4, t4 += A2.exec(this.input)[0].length;
                 var e4 = H2.exec(this.input.slice(t4));
                 if (!e4)
                   return false;
                 if ("use strict" === (e4[1] || e4[2])) {
-                  A3.lastIndex = t4 + e4[0].length;
-                  var i4 = A3.exec(this.input), s4 = i4.index + i4[0].length, r3 = this.input.charAt(s4);
-                  return ";" === r3 || "}" === r3 || S2.test(i4[0]) && !(/[(`.[+\-/*%<>=,?^&]/.test(r3) || "!" === r3 && "=" === this.input.charAt(s4 + 1));
+                  A2.lastIndex = t4 + e4[0].length;
+                  var i4 = A2.exec(this.input), s4 = i4.index + i4[0].length, r3 = this.input.charAt(s4);
+                  return ";" === r3 || "}" === r3 || S3.test(i4[0]) && !(/[(`.[+\-/*%<>=,?^&]/.test(r3) || "!" === r3 && "=" === this.input.charAt(s4 + 1));
                 }
-                t4 += e4[0].length, A3.lastIndex = t4, t4 += A3.exec(this.input)[0].length, ";" === this.input[t4] && t4++;
+                t4 += e4[0].length, A2.lastIndex = t4, t4 += A2.exec(this.input)[0].length, ";" === this.input[t4] && t4++;
               }
-            }, G3.eat = function(t4) {
+            }, G2.eat = function(t4) {
               return this.type === t4 && (this.next(), true);
-            }, G3.isContextual = function(t4) {
+            }, G2.isContextual = function(t4) {
               return this.type === k2.name && this.value === t4 && !this.containsEsc;
-            }, G3.eatContextual = function(t4) {
+            }, G2.eatContextual = function(t4) {
               return !!this.isContextual(t4) && (this.next(), true);
-            }, G3.expectContextual = function(t4) {
+            }, G2.expectContextual = function(t4) {
               this.eatContextual(t4) || this.unexpected();
-            }, G3.canInsertSemicolon = function() {
-              return this.type === k2.eof || this.type === k2.braceR || S2.test(this.input.slice(this.lastTokEnd, this.start));
-            }, G3.insertSemicolon = function() {
+            }, G2.canInsertSemicolon = function() {
+              return this.type === k2.eof || this.type === k2.braceR || S3.test(this.input.slice(this.lastTokEnd, this.start));
+            }, G2.insertSemicolon = function() {
               if (this.canInsertSemicolon())
                 return this.options.onInsertedSemicolon && this.options.onInsertedSemicolon(this.lastTokEnd, this.lastTokEndLoc), true;
-            }, G3.semicolon = function() {
+            }, G2.semicolon = function() {
               this.eat(k2.semi) || this.insertSemicolon() || this.unexpected();
-            }, G3.afterTrailingComma = function(t4, e4) {
+            }, G2.afterTrailingComma = function(t4, e4) {
               if (this.type === t4)
                 return this.options.onTrailingComma && this.options.onTrailingComma(this.lastTokStart, this.lastTokStartLoc), e4 || this.next(), true;
-            }, G3.expect = function(t4) {
+            }, G2.expect = function(t4) {
               this.eat(t4) || this.unexpected();
-            }, G3.unexpected = function(t4) {
+            }, G2.unexpected = function(t4) {
               this.raise(null != t4 ? t4 : this.start, "Unexpected token");
-            }, G3.checkPatternErrors = function(t4, e4) {
+            }, G2.checkPatternErrors = function(t4, e4) {
               if (t4) {
                 t4.trailingComma > -1 && this.raiseRecoverable(t4.trailingComma, "Comma is not permitted after the rest element");
                 var i4 = e4 ? t4.parenthesizedAssign : t4.parenthesizedBind;
                 i4 > -1 && this.raiseRecoverable(i4, "Parenthesized pattern");
               }
-            }, G3.checkExpressionErrors = function(t4, e4) {
+            }, G2.checkExpressionErrors = function(t4, e4) {
               if (!t4)
                 return false;
               var i4 = t4.shorthandAssign, s4 = t4.doubleProto;
               if (!e4)
                 return i4 >= 0 || s4 >= 0;
               i4 >= 0 && this.raise(i4, "Shorthand property assignments are valid only in destructuring patterns"), s4 >= 0 && this.raiseRecoverable(s4, "Redefinition of __proto__ property");
-            }, G3.checkYieldAwaitInDefaultParams = function() {
+            }, G2.checkYieldAwaitInDefaultParams = function() {
               this.yieldPos && (!this.awaitPos || this.yieldPos < this.awaitPos) && this.raise(this.yieldPos, "Yield expression cannot be a default value"), this.awaitPos && this.raise(this.awaitPos, "Await expression cannot be a default value");
-            }, G3.isSimpleAssignTarget = function(t4) {
+            }, G2.isSimpleAssignTarget = function(t4) {
               return "ParenthesizedExpression" === t4.type ? this.isSimpleAssignTarget(t4.expression) : "Identifier" === t4.type || "MemberExpression" === t4.type;
             };
             var z2 = F2.prototype;
@@ -23440,12 +23440,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 }
               return this.adaptDirectivePrologue(t4.body), this.next(), t4.sourceType = this.options.sourceType, this.finishNode(t4, "Program");
             };
-            var K2 = { kind: "loop" }, X3 = { kind: "switch" };
+            var K3 = { kind: "loop" }, X3 = { kind: "switch" };
             z2.isLet = function(t4) {
               if (this.options.ecmaVersion < 6 || !this.isContextual("let"))
                 return false;
-              A3.lastIndex = this.pos;
-              var e4 = A3.exec(this.input), i4 = this.pos + e4[0].length, s4 = this.input.charCodeAt(i4);
+              A2.lastIndex = this.pos;
+              var e4 = A2.exec(this.input), i4 = this.pos + e4[0].length, s4 = this.input.charCodeAt(i4);
               if (91 === s4)
                 return true;
               if (t4)
@@ -23453,7 +23453,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               if (123 === s4)
                 return true;
               if (f3(s4, true)) {
-                for (var r3 = i4 + 1; m3(this.input.charCodeAt(r3), true); )
+                for (var r3 = i4 + 1; m2(this.input.charCodeAt(r3), true); )
                   ++r3;
                 var a3 = this.input.slice(i4, r3);
                 if (!n2.test(a3))
@@ -23463,9 +23463,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, z2.isAsyncFunction = function() {
               if (this.options.ecmaVersion < 8 || !this.isContextual("async"))
                 return false;
-              A3.lastIndex = this.pos;
-              var t4 = A3.exec(this.input), e4 = this.pos + t4[0].length;
-              return !(S2.test(this.input.slice(this.pos, e4)) || "function" !== this.input.slice(e4, e4 + 8) || e4 + 8 !== this.input.length && m3(this.input.charAt(e4 + 8)));
+              A2.lastIndex = this.pos;
+              var t4 = A2.exec(this.input), e4 = this.pos + t4[0].length;
+              return !(S3.test(this.input.slice(this.pos, e4)) || "function" !== this.input.slice(e4, e4 + 8) || e4 + 8 !== this.input.length && m2(this.input.charAt(e4 + 8)));
             }, z2.parseStatement = function(t4, e4, i4) {
               var s4, r3 = this.type, a3 = this.startNode();
               switch (this.isLet(t4) && (r3 = k2._var, s4 = "let"), r3) {
@@ -23506,8 +23506,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 case k2._export:
                 case k2._import:
                   if (this.options.ecmaVersion > 10 && r3 === k2._import) {
-                    A3.lastIndex = this.pos;
-                    var n3 = A3.exec(this.input), o3 = this.pos + n3[0].length, h3 = this.input.charCodeAt(o3);
+                    A2.lastIndex = this.pos;
+                    var n3 = A2.exec(this.input), o3 = this.pos + n3[0].length, h3 = this.input.charCodeAt(o3);
                     if (40 === h3 || 46 === h3)
                       return this.parseExpressionStatement(a3, this.parseExpression());
                   }
@@ -23534,11 +23534,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, z2.parseDebuggerStatement = function(t4) {
               return this.next(), this.semicolon(), this.finishNode(t4, "DebuggerStatement");
             }, z2.parseDoStatement = function(t4) {
-              return this.next(), this.labels.push(K2), t4.body = this.parseStatement("do"), this.labels.pop(), this.expect(k2._while), t4.test = this.parseParenExpression(), this.options.ecmaVersion >= 6 ? this.eat(k2.semi) : this.semicolon(), this.finishNode(t4, "DoWhileStatement");
+              return this.next(), this.labels.push(K3), t4.body = this.parseStatement("do"), this.labels.pop(), this.expect(k2._while), t4.test = this.parseParenExpression(), this.options.ecmaVersion >= 6 ? this.eat(k2.semi) : this.semicolon(), this.finishNode(t4, "DoWhileStatement");
             }, z2.parseForStatement = function(t4) {
               this.next();
               var e4 = this.options.ecmaVersion >= 9 && (this.inAsync || !this.inFunction && this.options.allowAwaitOutsideFunction) && this.eatContextual("await") ? this.lastTokStart : -1;
-              if (this.labels.push(K2), this.enterScope(0), this.expect(k2.parenL), this.type === k2.semi)
+              if (this.labels.push(K3), this.enterScope(0), this.expect(k2.parenL), this.type === k2.semi)
                 return e4 > -1 && this.unexpected(e4), this.parseFor(t4, null);
               var i4 = this.isLet();
               if (this.type === k2._var || this.type === k2._const || i4) {
@@ -23548,7 +23548,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var a3 = new W2(), n3 = this.parseExpression(true, a3);
               return this.type === k2._in || this.options.ecmaVersion >= 6 && this.isContextual("of") ? (this.options.ecmaVersion >= 9 && (this.type === k2._in ? e4 > -1 && this.unexpected(e4) : t4.await = e4 > -1), this.toAssignable(n3, false, a3), this.checkLValPattern(n3), this.parseForIn(t4, n3)) : (this.checkExpressionErrors(a3, true), e4 > -1 && this.unexpected(e4), this.parseFor(t4, n3));
             }, z2.parseFunctionStatement = function(t4, e4, i4) {
-              return this.next(), this.parseFunction(t4, J2 | (i4 ? 0 : Y2), false, e4);
+              return this.next(), this.parseFunction(t4, J3 | (i4 ? 0 : Y3), false, e4);
             }, z2.parseIfStatement = function(t4) {
               return this.next(), t4.test = this.parseParenExpression(), t4.consequent = this.parseStatement("if"), t4.alternate = this.eat(k2._else) ? this.parseStatement("if") : null, this.finishNode(t4, "IfStatement");
             }, z2.parseReturnStatement = function(t4) {
@@ -23564,9 +23564,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   e4 || this.unexpected(), e4.consequent.push(this.parseStatement(null));
               return this.exitScope(), e4 && this.finishNode(e4, "SwitchCase"), this.next(), this.labels.pop(), this.finishNode(t4, "SwitchStatement");
             }, z2.parseThrowStatement = function(t4) {
-              return this.next(), S2.test(this.input.slice(this.lastTokEnd, this.start)) && this.raise(this.lastTokEnd, "Illegal newline after throw"), t4.argument = this.parseExpression(), this.semicolon(), this.finishNode(t4, "ThrowStatement");
+              return this.next(), S3.test(this.input.slice(this.lastTokEnd, this.start)) && this.raise(this.lastTokEnd, "Illegal newline after throw"), t4.argument = this.parseExpression(), this.semicolon(), this.finishNode(t4, "ThrowStatement");
             };
-            var Q3 = [];
+            var Q2 = [];
             z2.parseTryStatement = function(t4) {
               if (this.next(), t4.block = this.parseBlock(), t4.handler = null, this.type === k2._catch) {
                 var e4 = this.startNode();
@@ -23582,7 +23582,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, z2.parseVarStatement = function(t4, e4) {
               return this.next(), this.parseVar(t4, false, e4), this.semicolon(), this.finishNode(t4, "VariableDeclaration");
             }, z2.parseWhileStatement = function(t4) {
-              return this.next(), t4.test = this.parseParenExpression(), this.labels.push(K2), t4.body = this.parseStatement("while"), this.labels.pop(), this.finishNode(t4, "WhileStatement");
+              return this.next(), t4.test = this.parseParenExpression(), this.labels.push(K3), t4.body = this.parseStatement("while"), this.labels.pop(), this.finishNode(t4, "WhileStatement");
             }, z2.parseWithStatement = function(t4) {
               return this.strict && this.raise(this.start, "'with' in strict mode"), this.next(), t4.object = this.parseParenExpression(), t4.body = this.parseStatement("with"), this.finishNode(t4, "WithStatement");
             }, z2.parseEmptyStatement = function(t4) {
@@ -23621,11 +23621,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, z2.parseVarId = function(t4, e4) {
               t4.id = this.parseBindingAtom(), this.checkLValPattern(t4.id, "var" === e4 ? 1 : 2, false);
             };
-            var J2 = 1, Y2 = 2;
+            var J3 = 1, Y3 = 2;
             z2.parseFunction = function(t4, e4, i4, s4) {
-              this.initFunction(t4), (this.options.ecmaVersion >= 9 || this.options.ecmaVersion >= 6 && !s4) && (this.type === k2.star && e4 & Y2 && this.unexpected(), t4.generator = this.eat(k2.star)), this.options.ecmaVersion >= 8 && (t4.async = !!s4), e4 & J2 && (t4.id = 4 & e4 && this.type !== k2.name ? null : this.parseIdent(), !t4.id || e4 & Y2 || this.checkLValSimple(t4.id, this.strict || t4.generator || t4.async ? this.treatFunctionsAsVar ? 1 : 2 : 3));
+              this.initFunction(t4), (this.options.ecmaVersion >= 9 || this.options.ecmaVersion >= 6 && !s4) && (this.type === k2.star && e4 & Y3 && this.unexpected(), t4.generator = this.eat(k2.star)), this.options.ecmaVersion >= 8 && (t4.async = !!s4), e4 & J3 && (t4.id = 4 & e4 && this.type !== k2.name ? null : this.parseIdent(), !t4.id || e4 & Y3 || this.checkLValSimple(t4.id, this.strict || t4.generator || t4.async ? this.treatFunctionsAsVar ? 1 : 2 : 3));
               var r3 = this.yieldPos, a3 = this.awaitPos, n3 = this.awaitIdentPos;
-              return this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(U2(t4.async, t4.generator)), e4 & J2 || (t4.id = this.type === k2.name ? this.parseIdent() : null), this.parseFunctionParams(t4), this.parseFunctionBody(t4, i4, false), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(t4, e4 & J2 ? "FunctionDeclaration" : "FunctionExpression");
+              return this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(U2(t4.async, t4.generator)), e4 & J3 || (t4.id = this.type === k2.name ? this.parseIdent() : null), this.parseFunctionParams(t4), this.parseFunctionBody(t4, i4, false), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(t4, e4 & J3 ? "FunctionDeclaration" : "FunctionExpression");
             }, z2.parseFunctionParams = function(t4) {
               this.expect(k2.parenL), t4.params = this.parseBindingList(k2.parenR, false, this.options.ecmaVersion >= 8), this.checkYieldAwaitInDefaultParams();
             }, z2.parseClass = function(t4, e4) {
@@ -23665,7 +23665,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 var i4;
                 if (this.checkExport(e4, "default", this.lastTokStart), this.type === k2._function || (i4 = this.isAsyncFunction())) {
                   var s4 = this.startNode();
-                  this.next(), i4 && this.next(), t4.declaration = this.parseFunction(s4, 4 | J2, false, i4);
+                  this.next(), i4 && this.next(), t4.declaration = this.parseFunction(s4, 4 | J3, false, i4);
                 } else if (this.type === k2._class) {
                   var r3 = this.startNode();
                   t4.declaration = this.parseClass(r3, "nullableID");
@@ -23689,7 +23689,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }
               return this.finishNode(t4, "ExportNamedDeclaration");
             }, z2.checkExport = function(t4, e4, i4) {
-              t4 && (N2(t4, e4) && this.raiseRecoverable(i4, "Duplicate export '" + e4 + "'"), t4[e4] = true);
+              t4 && (N3(t4, e4) && this.raiseRecoverable(i4, "Duplicate export '" + e4 + "'"), t4[e4] = true);
             }, z2.checkPatternExport = function(t4, e4) {
               var i4 = e4.type;
               if ("Identifier" === i4)
@@ -23726,7 +23726,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }
               return e4;
             }, z2.parseImport = function(t4) {
-              return this.next(), this.type === k2.string ? (t4.specifiers = Q3, t4.source = this.parseExprAtom()) : (t4.specifiers = this.parseImportSpecifiers(), this.expectContextual("from"), t4.source = this.type === k2.string ? this.parseExprAtom() : this.unexpected()), this.semicolon(), this.finishNode(t4, "ImportDeclaration");
+              return this.next(), this.type === k2.string ? (t4.specifiers = Q2, t4.source = this.parseExprAtom()) : (t4.specifiers = this.parseImportSpecifiers(), this.expectContextual("from"), t4.source = this.type === k2.string ? this.parseExprAtom() : this.unexpected()), this.semicolon(), this.finishNode(t4, "ImportDeclaration");
             }, z2.parseImportSpecifiers = function() {
               var t4 = [], e4 = true;
               if (this.type === k2.name) {
@@ -23853,7 +23853,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var s4 = 0 !== e4;
               switch (t4.type) {
                 case "Identifier":
-                  this.strict && this.reservedWordsStrictBind.test(t4.name) && this.raiseRecoverable(t4.start, (s4 ? "Binding " : "Assigning to ") + t4.name + " in strict mode"), s4 && (2 === e4 && "let" === t4.name && this.raiseRecoverable(t4.start, "let is disallowed as a lexically bound name"), i4 && (N2(i4, t4.name) && this.raiseRecoverable(t4.start, "Argument name clash"), i4[t4.name] = true), 5 !== e4 && this.declareName(t4.name, e4, t4.start));
+                  this.strict && this.reservedWordsStrictBind.test(t4.name) && this.raiseRecoverable(t4.start, (s4 ? "Binding " : "Assigning to ") + t4.name + " in strict mode"), s4 && (2 === e4 && "let" === t4.name && this.raiseRecoverable(t4.start, "let is disallowed as a lexically bound name"), i4 && (N3(i4, t4.name) && this.raiseRecoverable(t4.start, "Argument name clash"), i4[t4.name] = true), 5 !== e4 && this.declareName(t4.name, e4, t4.start));
                   break;
                 case "ChainExpression":
                   this.raiseRecoverable(t4.start, "Optional chaining cannot appear in left-hand side");
@@ -24023,12 +24023,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 if (r3 && !o3 && !this.canInsertSemicolon() && this.eat(k2.arrow))
                   return this.checkPatternErrors(c3, false), this.checkYieldAwaitInDefaultParams(), this.awaitIdentPos > 0 && this.raise(this.awaitIdentPos, "Cannot use 'await' as identifier inside an async function"), this.yieldPos = l3, this.awaitPos = u3, this.awaitIdentPos = d3, this.parseArrowExpression(this.startNodeAt(e4, i4), f4, true);
                 this.checkExpressionErrors(c3, true), this.yieldPos = l3 || this.yieldPos, this.awaitPos = u3 || this.awaitPos, this.awaitIdentPos = d3 || this.awaitIdentPos;
-                var m4 = this.startNodeAt(e4, i4);
-                m4.callee = t4, m4.arguments = f4, n3 && (m4.optional = o3), t4 = this.finishNode(m4, "CallExpression");
+                var m3 = this.startNodeAt(e4, i4);
+                m3.callee = t4, m3.arguments = f4, n3 && (m3.optional = o3), t4 = this.finishNode(m3, "CallExpression");
               } else if (this.type === k2.backQuote) {
                 (o3 || a3) && this.raise(this.start, "Optional chaining cannot appear in the tag of tagged template expressions");
-                var g3 = this.startNodeAt(e4, i4);
-                g3.tag = t4, g3.quasi = this.parseTemplate({ isTagged: true }), t4 = this.finishNode(g3, "TaggedTemplateExpression");
+                var g4 = this.startNodeAt(e4, i4);
+                g4.tag = t4, g4.quasi = this.parseTemplate({ isTagged: true }), t4 = this.finishNode(g4, "TaggedTemplateExpression");
               }
               return t4;
             }, $3.parseExprAtom = function(t4) {
@@ -24125,15 +24125,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   }
                   h3.push(this.parseMaybeAssign(false, l3, this.parseParenItem));
                 }
-                var f4 = this.start, m4 = this.startLoc;
+                var f4 = this.start, m3 = this.startLoc;
                 if (this.expect(k2.parenR), t4 && !this.canInsertSemicolon() && this.eat(k2.arrow))
                   return this.checkPatternErrors(l3, false), this.checkYieldAwaitInDefaultParams(), this.yieldPos = u3, this.awaitPos = d3, this.parseParenArrowList(i4, s4, h3);
-                h3.length && !c3 || this.unexpected(this.lastTokStart), a3 && this.unexpected(a3), this.checkExpressionErrors(l3, true), this.yieldPos = u3 || this.yieldPos, this.awaitPos = d3 || this.awaitPos, h3.length > 1 ? ((e4 = this.startNodeAt(n3, o3)).expressions = h3, this.finishNodeAt(e4, "SequenceExpression", f4, m4)) : e4 = h3[0];
+                h3.length && !c3 || this.unexpected(this.lastTokStart), a3 && this.unexpected(a3), this.checkExpressionErrors(l3, true), this.yieldPos = u3 || this.yieldPos, this.awaitPos = d3 || this.awaitPos, h3.length > 1 ? ((e4 = this.startNodeAt(n3, o3)).expressions = h3, this.finishNodeAt(e4, "SequenceExpression", f4, m3)) : e4 = h3[0];
               } else
                 e4 = this.parseParenExpression();
               if (this.options.preserveParens) {
-                var g3 = this.startNodeAt(i4, s4);
-                return g3.expression = e4, this.finishNode(g3, "ParenthesizedExpression");
+                var g4 = this.startNodeAt(i4, s4);
+                return g4.expression = e4, this.finishNode(g4, "ParenthesizedExpression");
               }
               return e4;
             }, $3.parseParenItem = function(t4) {
@@ -24166,7 +24166,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 this.type === k2.eof && this.raise(this.pos, "Unterminated template literal"), this.expect(k2.dollarBraceL), i4.expressions.push(this.parseExpression()), this.expect(k2.braceR), i4.quasis.push(s4 = this.parseTemplateElement({ isTagged: e4 }));
               return this.next(), this.finishNode(i4, "TemplateLiteral");
             }, $3.isAsyncProp = function(t4) {
-              return !t4.computed && "Identifier" === t4.key.type && "async" === t4.key.name && (this.type === k2.name || this.type === k2.num || this.type === k2.string || this.type === k2.bracketL || this.type.keyword || this.options.ecmaVersion >= 9 && this.type === k2.star) && !S2.test(this.input.slice(this.lastTokEnd, this.start));
+              return !t4.computed && "Identifier" === t4.key.type && "async" === t4.key.name && (this.type === k2.name || this.type === k2.num || this.type === k2.string || this.type === k2.bracketL || this.type.keyword || this.options.ecmaVersion >= 9 && this.type === k2.star) && !S3.test(this.input.slice(this.lastTokEnd, this.start));
             }, $3.parseObj = function(t4, e4) {
               var i4 = this.startNode(), s4 = true, r3 = {};
               for (i4.properties = [], this.next(); !this.eat(k2.braceR); ) {
@@ -24271,7 +24271,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               throw s4.pos = t4, s4.loc = i4, s4.raisedAt = this.pos, s4;
             }, et2.raiseRecoverable = et2.raise, et2.curPosition = function() {
               if (this.options.locations)
-                return new O2(this.curLine, this.pos - this.lineStart);
+                return new O3(this.curLine, this.pos - this.lineStart);
             };
             var it2 = F2.prototype, st2 = function(t4) {
               this.flags = t4, this.var = [], this.lexical = [], this.functions = [];
@@ -24349,7 +24349,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return [ht2.b_stat];
             }, pt2.braceIsBlock = function(t4) {
               var e4 = this.curContext();
-              return e4 === ht2.f_expr || e4 === ht2.f_stat || (t4 !== k2.colon || e4 !== ht2.b_stat && e4 !== ht2.b_expr ? t4 === k2._return || t4 === k2.name && this.exprAllowed ? S2.test(this.input.slice(this.lastTokEnd, this.start)) : t4 === k2._else || t4 === k2.semi || t4 === k2.eof || t4 === k2.parenR || t4 === k2.arrow || (t4 === k2.braceL ? e4 === ht2.b_stat : t4 !== k2._var && t4 !== k2._const && t4 !== k2.name && !this.exprAllowed) : !e4.isExpr);
+              return e4 === ht2.f_expr || e4 === ht2.f_stat || (t4 !== k2.colon || e4 !== ht2.b_stat && e4 !== ht2.b_expr ? t4 === k2._return || t4 === k2.name && this.exprAllowed ? S3.test(this.input.slice(this.lastTokEnd, this.start)) : t4 === k2._else || t4 === k2.semi || t4 === k2.eof || t4 === k2.parenR || t4 === k2.arrow || (t4 === k2.braceL ? e4 === ht2.b_stat : t4 !== k2._var && t4 !== k2._const && t4 !== k2.name && !this.exprAllowed) : !e4.isExpr);
             }, pt2.inGeneratorContext = function() {
               for (var t4 = this.context.length - 1; t4 >= 1; t4--) {
                 var e4 = this.context[t4];
@@ -24375,7 +24375,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               this.context.push(e4 ? ht2.p_stat : ht2.p_expr), this.exprAllowed = true;
             }, k2.incDec.updateContext = function() {
             }, k2._function.updateContext = k2._class.updateContext = function(t4) {
-              !t4.beforeExpr || t4 === k2._else || t4 === k2.semi && this.curContext() !== ht2.p_stat || t4 === k2._return && S2.test(this.input.slice(this.lastTokEnd, this.start)) || (t4 === k2.colon || t4 === k2.braceL) && this.curContext() === ht2.b_stat ? this.context.push(ht2.f_stat) : this.context.push(ht2.f_expr), this.exprAllowed = false;
+              !t4.beforeExpr || t4 === k2._else || t4 === k2.semi && this.curContext() !== ht2.p_stat || t4 === k2._return && S3.test(this.input.slice(this.lastTokEnd, this.start)) || (t4 === k2.colon || t4 === k2.braceL) && this.curContext() === ht2.b_stat ? this.context.push(ht2.f_stat) : this.context.push(ht2.f_expr), this.exprAllowed = false;
             }, k2.backQuote.updateContext = function() {
               this.curContext() === ht2.q_tmpl ? this.context.pop() : this.context.push(ht2.q_tmpl), this.exprAllowed = false;
             }, k2.star.updateContext = function(t4) {
@@ -24388,26 +24388,26 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var e4 = false;
               this.options.ecmaVersion >= 6 && t4 !== k2.dot && ("of" === this.value && !this.exprAllowed || "yield" === this.value && this.inGeneratorContext()) && (e4 = true), this.exprAllowed = e4;
             };
-            var ct2 = "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS", lt2 = ct2 + " Extended_Pictographic", ut2 = { 9: ct2, 10: lt2, 11: lt2, 12: "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS Extended_Pictographic EBase EComp EMod EPres ExtPict" }, dt2 = "Cased_Letter LC Close_Punctuation Pe Connector_Punctuation Pc Control Cc cntrl Currency_Symbol Sc Dash_Punctuation Pd Decimal_Number Nd digit Enclosing_Mark Me Final_Punctuation Pf Format Cf Initial_Punctuation Pi Letter L Letter_Number Nl Line_Separator Zl Lowercase_Letter Ll Mark M Combining_Mark Math_Symbol Sm Modifier_Letter Lm Modifier_Symbol Sk Nonspacing_Mark Mn Number N Open_Punctuation Ps Other C Other_Letter Lo Other_Number No Other_Punctuation Po Other_Symbol So Paragraph_Separator Zp Private_Use Co Punctuation P punct Separator Z Space_Separator Zs Spacing_Mark Mc Surrogate Cs Symbol S Titlecase_Letter Lt Unassigned Cn Uppercase_Letter Lu", ft2 = "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb", mt2 = ft2 + " Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd", gt2 = mt2 + " Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho", xt2 = { 9: ft2, 10: mt2, 11: gt2, 12: "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho Chorasmian Chrs Diak Dives_Akuru Khitan_Small_Script Kits Yezi Yezidi" }, yt2 = {};
+            var ct = "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS", lt2 = ct + " Extended_Pictographic", ut2 = { 9: ct, 10: lt2, 11: lt2, 12: "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS Extended_Pictographic EBase EComp EMod EPres ExtPict" }, dt2 = "Cased_Letter LC Close_Punctuation Pe Connector_Punctuation Pc Control Cc cntrl Currency_Symbol Sc Dash_Punctuation Pd Decimal_Number Nd digit Enclosing_Mark Me Final_Punctuation Pf Format Cf Initial_Punctuation Pi Letter L Letter_Number Nl Line_Separator Zl Lowercase_Letter Ll Mark M Combining_Mark Math_Symbol Sm Modifier_Letter Lm Modifier_Symbol Sk Nonspacing_Mark Mn Number N Open_Punctuation Ps Other C Other_Letter Lo Other_Number No Other_Punctuation Po Other_Symbol So Paragraph_Separator Zp Private_Use Co Punctuation P punct Separator Z Space_Separator Zs Spacing_Mark Mc Surrogate Cs Symbol S Titlecase_Letter Lt Unassigned Cn Uppercase_Letter Lu", ft2 = "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb", mt2 = ft2 + " Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd", gt2 = mt2 + " Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho", xt2 = { 9: ft2, 10: mt2, 11: gt2, 12: "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho Chorasmian Chrs Diak Dives_Akuru Khitan_Small_Script Kits Yezi Yezidi" }, yt2 = {};
             function vt2(t4) {
               var e4 = yt2[t4] = { binary: V2(ut2[t4] + " " + dt2), nonBinary: { General_Category: V2(dt2), Script: V2(xt2[t4]) } };
               e4.nonBinary.Script_Extensions = e4.nonBinary.Script, e4.nonBinary.gc = e4.nonBinary.General_Category, e4.nonBinary.sc = e4.nonBinary.Script, e4.nonBinary.scx = e4.nonBinary.Script_Extensions;
             }
             vt2(9), vt2(10), vt2(11), vt2(12);
-            var bt2 = F2.prototype, _t2 = function(t4) {
+            var bt2 = F2.prototype, _t = function(t4) {
               this.parser = t4, this.validFlags = "gim" + (t4.options.ecmaVersion >= 6 ? "uy" : "") + (t4.options.ecmaVersion >= 9 ? "s" : ""), this.unicodeProperties = yt2[t4.options.ecmaVersion >= 12 ? 12 : t4.options.ecmaVersion], this.source = "", this.flags = "", this.start = 0, this.switchU = false, this.switchN = false, this.pos = 0, this.lastIntValue = 0, this.lastStringValue = "", this.lastAssertionIsQuantifiable = false, this.numCapturingParens = 0, this.maxBackReference = 0, this.groupNames = [], this.backReferenceNames = [];
             };
             function kt2(t4) {
               return t4 <= 65535 ? String.fromCharCode(t4) : (t4 -= 65536, String.fromCharCode(55296 + (t4 >> 10), 56320 + (1023 & t4)));
             }
-            function St(t4) {
+            function St2(t4) {
               return 36 === t4 || t4 >= 40 && t4 <= 43 || 46 === t4 || 63 === t4 || t4 >= 91 && t4 <= 94 || t4 >= 123 && t4 <= 125;
             }
-            function wt(t4) {
+            function wt2(t4) {
               return t4 >= 65 && t4 <= 90 || t4 >= 97 && t4 <= 122;
             }
             function Ct2(t4) {
-              return wt(t4) || 95 === t4;
+              return wt2(t4) || 95 === t4;
             }
             function Et2(t4) {
               return Ct2(t4) || At2(t4);
@@ -24421,15 +24421,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             function Pt2(t4) {
               return t4 >= 65 && t4 <= 70 ? t4 - 65 + 10 : t4 >= 97 && t4 <= 102 ? t4 - 97 + 10 : t4 - 48;
             }
-            function Tt2(t4) {
+            function Tt(t4) {
               return t4 >= 48 && t4 <= 55;
             }
-            _t2.prototype.reset = function(t4, e4, i4) {
+            _t.prototype.reset = function(t4, e4, i4) {
               var s4 = -1 !== i4.indexOf("u");
               this.start = 0 | t4, this.source = e4 + "", this.flags = i4, this.switchU = s4 && this.parser.options.ecmaVersion >= 6, this.switchN = s4 && this.parser.options.ecmaVersion >= 9;
-            }, _t2.prototype.raise = function(t4) {
+            }, _t.prototype.raise = function(t4) {
               this.parser.raiseRecoverable(this.start, "Invalid regular expression: /" + this.source + "/: " + t4);
-            }, _t2.prototype.at = function(t4, e4) {
+            }, _t.prototype.at = function(t4, e4) {
               void 0 === e4 && (e4 = false);
               var i4 = this.source, s4 = i4.length;
               if (t4 >= s4)
@@ -24439,20 +24439,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 return r3;
               var a3 = i4.charCodeAt(t4 + 1);
               return a3 >= 56320 && a3 <= 57343 ? (r3 << 10) + a3 - 56613888 : r3;
-            }, _t2.prototype.nextIndex = function(t4, e4) {
+            }, _t.prototype.nextIndex = function(t4, e4) {
               void 0 === e4 && (e4 = false);
               var i4 = this.source, s4 = i4.length;
               if (t4 >= s4)
                 return s4;
               var r3, a3 = i4.charCodeAt(t4);
               return !e4 && !this.switchU || a3 <= 55295 || a3 >= 57344 || t4 + 1 >= s4 || (r3 = i4.charCodeAt(t4 + 1)) < 56320 || r3 > 57343 ? t4 + 1 : t4 + 2;
-            }, _t2.prototype.current = function(t4) {
+            }, _t.prototype.current = function(t4) {
               return void 0 === t4 && (t4 = false), this.at(this.pos, t4);
-            }, _t2.prototype.lookahead = function(t4) {
+            }, _t.prototype.lookahead = function(t4) {
               return void 0 === t4 && (t4 = false), this.at(this.nextIndex(this.pos, t4), t4);
-            }, _t2.prototype.advance = function(t4) {
+            }, _t.prototype.advance = function(t4) {
               void 0 === t4 && (t4 = false), this.pos = this.nextIndex(this.pos, t4);
-            }, _t2.prototype.eat = function(t4, e4) {
+            }, _t.prototype.eat = function(t4, e4) {
               return void 0 === e4 && (e4 = false), this.current(e4) === t4 && (this.advance(e4), true);
             }, bt2.validateRegExpFlags = function(t4) {
               for (var e4 = t4.validFlags, i4 = t4.flags, s4 = 0; s4 < i4.length; s4++) {
@@ -24538,9 +24538,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return this.regexp_eatBracedQuantifier(t4, true) && t4.raise("Nothing to repeat"), false;
             }, bt2.regexp_eatSyntaxCharacter = function(t4) {
               var e4 = t4.current();
-              return !!St(e4) && (t4.lastIntValue = e4, t4.advance(), true);
+              return !!St2(e4) && (t4.lastIntValue = e4, t4.advance(), true);
             }, bt2.regexp_eatPatternCharacters = function(t4) {
-              for (var e4 = t4.pos, i4 = 0; -1 !== (i4 = t4.current()) && !St(i4); )
+              for (var e4 = t4.pos, i4 = 0; -1 !== (i4 = t4.current()) && !St2(i4); )
                 t4.advance();
               return t4.pos !== e4;
             }, bt2.regexp_eatExtendedPatternCharacter = function(t4) {
@@ -24574,7 +24574,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, bt2.regexp_eatRegExpIdentifierPart = function(t4) {
               var e4 = t4.pos, i4 = this.options.ecmaVersion >= 11, s4 = t4.current(i4);
               return t4.advance(i4), 92 === s4 && this.regexp_eatRegExpUnicodeEscapeSequence(t4, i4) && (s4 = t4.lastIntValue), function(t5) {
-                return m3(t5, true) || 36 === t5 || 95 === t5 || 8204 === t5 || 8205 === t5;
+                return m2(t5, true) || 36 === t5 || 95 === t5 || 8204 === t5 || 8205 === t5;
               }(s4) ? (t4.lastIntValue = s4, true) : (t4.pos = e4, false);
             }, bt2.regexp_eatAtomEscape = function(t4) {
               return !!(this.regexp_eatBackReference(t4) || this.regexp_eatCharacterClassEscape(t4) || this.regexp_eatCharacterEscape(t4) || t4.switchN && this.regexp_eatKGroupName(t4)) || (t4.switchU && (99 === t4.current() && t4.raise("Invalid unicode escape"), t4.raise("Invalid escape")), false);
@@ -24613,7 +24613,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return 116 === e4 ? (t4.lastIntValue = 9, t4.advance(), true) : 110 === e4 ? (t4.lastIntValue = 10, t4.advance(), true) : 118 === e4 ? (t4.lastIntValue = 11, t4.advance(), true) : 102 === e4 ? (t4.lastIntValue = 12, t4.advance(), true) : 114 === e4 && (t4.lastIntValue = 13, t4.advance(), true);
             }, bt2.regexp_eatControlLetter = function(t4) {
               var e4 = t4.current();
-              return !!wt(e4) && (t4.lastIntValue = e4 % 32, t4.advance(), true);
+              return !!wt2(e4) && (t4.lastIntValue = e4 % 32, t4.advance(), true);
             }, bt2.regexp_eatRegExpUnicodeEscapeSequence = function(t4, e4) {
               void 0 === e4 && (e4 = false);
               var i4, s4 = t4.pos, r3 = e4 || t4.switchU;
@@ -24678,7 +24678,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }
               return false;
             }, bt2.regexp_validateUnicodePropertyNameAndValue = function(t4, e4, i4) {
-              N2(t4.unicodeProperties.nonBinary, e4) || t4.raise("Invalid property name"), t4.unicodeProperties.nonBinary[e4].test(i4) || t4.raise("Invalid property value");
+              N3(t4.unicodeProperties.nonBinary, e4) || t4.raise("Invalid property name"), t4.unicodeProperties.nonBinary[e4].test(i4) || t4.raise("Invalid property value");
             }, bt2.regexp_validateUnicodePropertyNameOrValue = function(t4, e4) {
               t4.unicodeProperties.binary.test(e4) || t4.raise("Invalid property name");
             }, bt2.regexp_eatUnicodePropertyName = function(t4) {
@@ -24715,7 +24715,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   return true;
                 if (t4.switchU) {
                   var i4 = t4.current();
-                  (99 === i4 || Tt2(i4)) && t4.raise("Invalid class escape"), t4.raise("Invalid escape");
+                  (99 === i4 || Tt(i4)) && t4.raise("Invalid class escape"), t4.raise("Invalid escape");
                 }
                 t4.pos = e4;
               }
@@ -24767,7 +24767,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return false;
             }, bt2.regexp_eatOctalDigit = function(t4) {
               var e4 = t4.current();
-              return Tt2(e4) ? (t4.lastIntValue = e4 - 48, t4.advance(), true) : (t4.lastIntValue = 0, false);
+              return Tt(e4) ? (t4.lastIntValue = e4 - 48, t4.advance(), true) : (t4.lastIntValue = 0, false);
             }, bt2.regexp_eatFixedHexDigits = function(t4, e4) {
               var i4 = t4.pos;
               t4.lastIntValue = 0;
@@ -24811,7 +24811,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, Lt2.skipBlockComment = function() {
               var t4, e4 = this.options.onComment && this.curPosition(), i4 = this.pos, s4 = this.input.indexOf("*/", this.pos += 2);
               if (-1 === s4 && this.raise(this.pos - 2, "Unterminated comment"), this.pos = s4 + 2, this.options.locations)
-                for (w3.lastIndex = i4; (t4 = w3.exec(this.input)) && t4.index < this.pos; )
+                for (w2.lastIndex = i4; (t4 = w2.exec(this.input)) && t4.index < this.pos; )
                   ++this.curLine, this.lineStart = t4.index + t4[0].length;
               this.options.onComment && this.options.onComment(true, this.input.slice(i4 + 2, s4), i4, this.pos, e4, this.curPosition());
             }, Lt2.skipLineComment = function(t4) {
@@ -24882,7 +24882,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return 61 === this.input.charCodeAt(this.pos + 1) ? this.finishOp(k2.assign, 2) : this.finishOp(k2.bitwiseXOR, 1);
             }, Lt2.readToken_plus_min = function(t4) {
               var e4 = this.input.charCodeAt(this.pos + 1);
-              return e4 === t4 ? 45 !== e4 || this.inModule || 62 !== this.input.charCodeAt(this.pos + 2) || 0 !== this.lastTokEnd && !S2.test(this.input.slice(this.lastTokEnd, this.pos)) ? this.finishOp(k2.incDec, 2) : (this.skipLineComment(3), this.skipSpace(), this.nextToken()) : 61 === e4 ? this.finishOp(k2.assign, 2) : this.finishOp(k2.plusMin, 1);
+              return e4 === t4 ? 45 !== e4 || this.inModule || 62 !== this.input.charCodeAt(this.pos + 2) || 0 !== this.lastTokEnd && !S3.test(this.input.slice(this.lastTokEnd, this.pos)) ? this.finishOp(k2.incDec, 2) : (this.skipLineComment(3), this.skipSpace(), this.nextToken()) : 61 === e4 ? this.finishOp(k2.assign, 2) : this.finishOp(k2.plusMin, 1);
             }, Lt2.readToken_lt_gt = function(t4) {
               var e4 = this.input.charCodeAt(this.pos + 1), i4 = 1;
               return e4 === t4 ? (i4 = 62 === t4 && 62 === this.input.charCodeAt(this.pos + 2) ? 3 : 2, 61 === this.input.charCodeAt(this.pos + i4) ? this.finishOp(k2.assign, i4 + 1) : this.finishOp(k2.bitShift, i4)) : 33 !== e4 || 60 !== t4 || this.inModule || 45 !== this.input.charCodeAt(this.pos + 2) || 45 !== this.input.charCodeAt(this.pos + 3) ? (61 === e4 && (i4 = 2), this.finishOp(k2.relational, i4)) : (this.skipLineComment(4), this.skipSpace(), this.nextToken());
@@ -24988,7 +24988,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               for (var t4, e4, i4 = this.pos; ; ) {
                 this.pos >= this.input.length && this.raise(i4, "Unterminated regular expression");
                 var s4 = this.input.charAt(this.pos);
-                if (S2.test(s4) && this.raise(i4, "Unterminated regular expression"), t4)
+                if (S3.test(s4) && this.raise(i4, "Unterminated regular expression"), t4)
                   t4 = false;
                 else {
                   if ("[" === s4)
@@ -25005,7 +25005,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               ++this.pos;
               var a3 = this.pos, n3 = this.readWord1();
               this.containsEsc && this.unexpected(a3);
-              var o3 = this.regexpState || (this.regexpState = new _t2(this));
+              var o3 = this.regexpState || (this.regexpState = new _t(this));
               o3.reset(i4, r3, n3), this.validateRegExpFlags(o3), this.validateRegExpPattern(o3);
               var h3 = null;
               try {
@@ -25062,20 +25062,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }
               return e4 += this.input.slice(i4, this.pos++), this.finishToken(k2.string, e4);
             };
-            var Rt2 = {};
+            var Rt = {};
             Lt2.tryReadTemplateToken = function() {
               this.inTemplateElement = true;
               try {
                 this.readTmplToken();
               } catch (t4) {
-                if (t4 !== Rt2)
+                if (t4 !== Rt)
                   throw t4;
                 this.readInvalidTemplateToken();
               }
               this.inTemplateElement = false;
             }, Lt2.invalidStringToken = function(t4, e4) {
               if (this.inTemplateElement && this.options.ecmaVersion >= 9)
-                throw Rt2;
+                throw Rt;
               this.raise(t4, e4);
             }, Lt2.readTmplToken = function() {
               for (var t4 = "", e4 = this.pos; ; ) {
@@ -25155,7 +25155,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               this.containsEsc = false;
               for (var t4 = "", e4 = true, i4 = this.pos, s4 = this.options.ecmaVersion >= 6; this.pos < this.input.length; ) {
                 var r3 = this.fullCharCodeAtPos();
-                if (m3(r3, s4))
+                if (m2(r3, s4))
                   this.pos += r3 <= 65535 ? 1 : 2;
                 else {
                   if (92 !== r3)
@@ -25164,7 +25164,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   var a3 = this.pos;
                   117 !== this.input.charCodeAt(++this.pos) && this.invalidStringToken(this.pos, "Expecting Unicode escape sequence \\uXXXX"), ++this.pos;
                   var n3 = this.readCodePoint();
-                  (e4 ? f3 : m3)(n3, s4) || this.invalidStringToken(a3, "Invalid Unicode escape"), t4 += Ot2(n3), i4 = this.pos;
+                  (e4 ? f3 : m2)(n3, s4) || this.invalidStringToken(a3, "Invalid Unicode escape"), t4 += Ot2(n3), i4 = this.pos;
                 }
                 e4 = false;
               }
@@ -25173,12 +25173,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var t4 = this.readWord1(), e4 = k2.name;
               return this.keywords.test(t4) && (e4 = b2[t4]), this.finishToken(e4, t4);
             };
-            F2.acorn = { Parser: F2, version: "8.0.5", defaultOptions: B2, Position: O2, SourceLocation: R2, getLineInfo: M2, Node: rt2, TokenType: g2, tokTypes: k2, keywordTypes: b2, TokContext: ot2, tokContexts: ht2, isIdentifierChar: m3, isIdentifierStart: f3, Token: Nt2, isNewLine: C3, lineBreak: S2, lineBreakG: w3, nonASCIIwhitespace: E2 };
+            F2.acorn = { Parser: F2, version: "8.0.5", defaultOptions: B3, Position: O3, SourceLocation: R2, getLineInfo: M2, Node: rt2, TokenType: g3, tokTypes: k2, keywordTypes: b2, TokContext: ot2, tokContexts: ht2, isIdentifierChar: m2, isIdentifierStart: f3, Token: Nt2, isNewLine: C3, lineBreak: S3, lineBreakG: w2, nonASCIIwhitespace: E2 };
             var Mt2 = i3(977), Bt = i3.n(Mt2), Dt2 = i3(297), jt2 = i3.n(Dt2);
             const Ut2 = { class: "className", for: "htmlFor", maxlength: "maxLength", colspan: "colSpan", rowspan: "rowSpan" };
-            var Ft2 = ["area", "base", "br", "col", "embed", "hr", "img", "input", "keygen", "link", "menuitem", "meta", "param", "source", "track", "wbr"], qt2 = ["table", "tbody", "tfoot", "thead", "tr"];
+            var Ft = ["area", "base", "br", "col", "embed", "hr", "img", "input", "keygen", "link", "menuitem", "meta", "param", "source", "track", "wbr"], qt2 = ["table", "tbody", "tfoot", "thead", "tr"];
             function Gt2(t4) {
-              return -1 === Ft2.indexOf(t4.toLowerCase());
+              return -1 === Ft.indexOf(t4.toLowerCase());
             }
             function Ht2(t4) {
               return -1 !== qt2.indexOf(t4.toLowerCase());
@@ -25278,8 +25278,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 return null == t5 || "" === t5 ? [] : t5.split(".");
               }(e4));
             };
-            function ee2(t4) {
-              return (ee2 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t5) {
+            function ee3(t4) {
+              return (ee3 = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(t5) {
                 return typeof t5;
               } : function(t5) {
                 return t5 && "function" == typeof Symbol && t5.constructor === Symbol && t5 !== Symbol.prototype ? "symbol" : typeof t5;
@@ -25295,7 +25295,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }
               return i4;
             }
-            function se2(t4) {
+            function se3(t4) {
               for (var e4 = 1; e4 < arguments.length; e4++) {
                 var i4 = null != arguments[e4] ? arguments[e4] : {};
                 e4 % 2 ? ie3(Object(i4), true).forEach(function(e5) {
@@ -25332,7 +25332,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
               }();
             }
-            function ae3(t4) {
+            function ae2(t4) {
               return function(t5) {
                 if (Array.isArray(t5))
                   return oe3(t5);
@@ -25392,7 +25392,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               };
             }
             function le3(t4, e4) {
-              return !e4 || "object" !== ee2(e4) && "function" != typeof e4 ? ue3(t4) : e4;
+              return !e4 || "object" !== ee3(e4) && "function" != typeof e4 ? ue3(t4) : e4;
             }
             function ue3(t4) {
               if (void 0 === t4)
@@ -25485,7 +25485,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                       return;
                     case "CallExpression":
                       var r4 = me3(ue3(t5), xe3).call(ue3(t5), e5.callee);
-                      return void 0 === r4 ? void t5.props.onError(new Error("The expression '".concat(e5.callee, "' could not be resolved, resulting in an undefined return value."))) : r4.apply(void 0, ae3(e5.arguments.map(function(i6) {
+                      return void 0 === r4 ? void t5.props.onError(new Error("The expression '".concat(e5.callee, "' could not be resolved, resulting in an undefined return value."))) : r4.apply(void 0, ae2(e5.arguments.map(function(i6) {
                         return me3(ue3(t5), xe3).call(ue3(t5), i6, e5.callee);
                       })));
                     case "ConditionalExpression":
@@ -25509,7 +25509,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     case "TemplateElement":
                       return e5.value.cooked;
                     case "TemplateLiteral":
-                      return [].concat(ae3(e5.expressions), ae3(e5.quasis)).sort(function(t6, e6) {
+                      return [].concat(ae2(e5.expressions), ae2(e5.quasis)).sort(function(t6, e6) {
                         return t6.start < e6.start ? -1 : 1;
                       }).map(function(e6) {
                         return me3(ue3(t5), xe3).call(ue3(t5), e6);
@@ -25550,12 +25550,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     }
                   var d3 = me3(ue3(t5), xe3).call(ue3(t5), o3, i5);
                   try {
-                    var f4 = d3, m4 = h3.reduce(function(t6, e6) {
+                    var f4 = d3, m3 = h3.reduce(function(t6, e6) {
                       return f4 = t6, t6[e6];
                     }, d3);
-                    return "function" == typeof m4 ? m4.bind(f4) : m4;
+                    return "function" == typeof m3 ? m3.bind(f4) : m3;
                   } catch (e6) {
-                    var g3, x4 = (null === (g3 = o3) || void 0 === g3 ? void 0 : g3.name) || "unknown";
+                    var g4, x4 = (null === (g4 = o3) || void 0 === g4 ? void 0 : g4.name) || "unknown";
                     t5.props.onError(new Error("Unable to parse ".concat(x4, '["').concat(h3.join('"]["'), '"]}')));
                   }
                 } }), ve3.set(ue3(t5), { writable: true, value: function(e5) {
@@ -25563,15 +25563,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 } }), be3.set(ue3(t5), { writable: true, value: function(e5, i5) {
                   var s5 = t5.props, r4 = s5.allowUnknownElements, a4 = s5.components, n3 = s5.componentsOnly, o3 = s5.onError, h3 = e5.children, p3 = void 0 === h3 ? [] : h3, c3 = "JSXElement" === e5.type ? e5.openingElement : e5.openingFragment, l3 = c3.attributes, u3 = void 0 === l3 ? [] : l3, d3 = "JSXElement" === e5.type ? me3(ue3(t5), ve3).call(ue3(t5), c3.name) : "", f4 = (t5.props.blacklistedAttrs || []).map(function(t6) {
                     return t6 instanceof RegExp ? t6 : new RegExp(t6, "i");
-                  }), m4 = (t5.props.blacklistedTags || []).map(function(t6) {
+                  }), m3 = (t5.props.blacklistedTags || []).map(function(t6) {
                     return t6.trim().toLowerCase();
                   }).filter(Boolean);
                   if (/^(html|head|body)$/i.test(d3))
                     return p3.map(function(e6) {
                       return me3(ue3(t5), be3).call(ue3(t5), e6, i5);
                     });
-                  var g3, x4 = d3.trim().toLowerCase();
-                  if (-1 !== m4.indexOf(x4))
+                  var g4, x4 = d3.trim().toLowerCase();
+                  if (-1 !== m3.indexOf(x4))
                     return o3(new Error("The tag <".concat(d3, "> is blacklisted, and will not be rendered."))), null;
                   if ("" !== d3 && !te3(a4, d3)) {
                     if (n3)
@@ -25579,19 +25579,19 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     if (!r4 && document.createElement(d3) instanceof HTMLUnknownElement)
                       return o3(new Error("The tag <".concat(d3, "> is unrecognized in this browser, and will not be rendered."))), t5.props.renderUnrecognized(d3);
                   }
-                  var y4 = "JSXElement" === e5.type ? te3(a4, d3) : Dt2.Fragment;
-                  if (y4 || Gt2(d3))
-                    if (g3 = p3.map(function(e6) {
+                  var y3 = "JSXElement" === e5.type ? te3(a4, d3) : Dt2.Fragment;
+                  if (y3 || Gt2(d3))
+                    if (g4 = p3.map(function(e6) {
                       return me3(ue3(t5), xe3).call(ue3(t5), e6, i5);
-                    }), y4 || Ht2(d3) || (g3 = g3.filter(function(t6) {
+                    }), y3 || Ht2(d3) || (g4 = g4.filter(function(t6) {
                       return "string" != typeof t6 || !/^\s*$/.test(t6);
-                    })), 0 === g3.length)
-                      g3 = void 0;
-                    else if (1 === g3.length) {
-                      g3 = re3(g3, 1)[0];
+                    })), 0 === g4.length)
+                      g4 = void 0;
+                    else if (1 === g4.length) {
+                      g4 = re3(g4, 1)[0];
                     } else
-                      g3.length > 1 && !t5.props.disableKeyGeneration && (g3 = g3.map(function(t6, e6) {
-                        return null == t6 || !t6.type || null != t6 && t6.key ? t6 : se2(se2({}, t6), {}, { key: t6.key || e6 });
+                      g4.length > 1 && !t5.props.disableKeyGeneration && (g4 = g4.map(function(t6, e6) {
+                        return null == t6 || !t6.type || null != t6 && t6.key ? t6 : se3(se3({}, t6), {}, { key: t6.key || e6 });
                       }));
                   var v3 = { key: t5.props.disableKeyGeneration ? void 0 : Wt2() };
                   u3.forEach(function(e6) {
@@ -25602,7 +25602,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                       }).length && (v3[r5] = a5);
                     } else if ("JSXSpreadAttribute" === e6.type && "Identifier" === e6.argument.type || "MemberExpression" === e6.argument.type) {
                       var n4 = me3(ue3(t5), xe3).call(ue3(t5), e6.argument, i5);
-                      "object" === ee2(n4) && Object.keys(n4).forEach(function(t6) {
+                      "object" === ee3(n4) && Object.keys(n4).forEach(function(t6) {
                         var e7 = Ut2[t6] || t6;
                         0 === f4.filter(function(t7) {
                           return t7.test(e7);
@@ -25611,11 +25611,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     }
                   }), "string" == typeof v3.style && (v3.style = Jt2(v3.style));
                   var b3 = d3.toLowerCase();
-                  return "option" === b3 && (g3 = g3.props.children), jt2().createElement(y4 || b3, v3, g3);
+                  return "option" === b3 && (g4 = g4.props.children), jt2().createElement(y3 || b3, v3, g4);
                 } }), fe3(ue3(t5), "render", function() {
                   var e5 = (t5.props.jsx || "").trim().replace(/<!DOCTYPE([^>]*)>/g, "");
                   t5.ParsedChildren = me3(ue3(t5), ge3).call(ue3(t5), e5);
-                  var i5 = ae3(new Set(["jsx-parser"].concat(ae3(String(t5.props.className).split(" "))))).filter(Boolean).join(" ");
+                  var i5 = ae2(new Set(["jsx-parser"].concat(ae2(String(t5.props.className).split(" "))))).filter(Boolean).join(" ");
                   return t5.props.renderInWrapper ? jt2().createElement("div", { className: i5 }, t5.ParsedChildren) : jt2().createElement(jt2().Fragment, null, t5.ParsedChildren);
                 }), t5;
               }
@@ -26573,111 +26573,230 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var require_lib = __commonJS({
     "../node_modules/@vectara/stream-query-client/lib/index.js"(exports, module) {
       "use strict";
-      var A3 = Object.defineProperty;
-      var w3 = Object.getOwnPropertyDescriptor;
-      var M2 = Object.getOwnPropertyNames;
-      var z2 = Object.prototype.hasOwnProperty;
-      var Q3 = (e2, t2) => {
-        for (var r2 in t2)
-          A3(e2, r2, { get: t2[r2], enumerable: true });
+      var U2 = Object.defineProperty;
+      var K3 = Object.getOwnPropertyDescriptor;
+      var $3 = Object.getOwnPropertyNames;
+      var V2 = Object.prototype.hasOwnProperty;
+      var J3 = (e2, t2) => {
+        for (var s2 in t2)
+          U2(e2, s2, { get: t2[s2], enumerable: true });
       };
-      var G3 = (e2, t2, r2, a2) => {
+      var j3 = (e2, t2, s2, r2) => {
         if (t2 && typeof t2 == "object" || typeof t2 == "function")
-          for (let s2 of M2(t2))
-            !z2.call(e2, s2) && s2 !== r2 && A3(e2, s2, { get: () => t2[s2], enumerable: !(a2 = w3(t2, s2)) || a2.enumerable });
+          for (let n2 of $3(t2))
+            !V2.call(e2, n2) && n2 !== s2 && U2(e2, n2, { get: () => t2[n2], enumerable: !(r2 = K3(t2, n2)) || r2.enumerable });
         return e2;
       };
-      var L2 = (e2) => G3(A3({}, "__esModule", { value: true }), e2);
-      var Y2 = {};
-      Q3(Y2, { streamQuery: () => U2 });
-      module.exports = L2(Y2);
-      var o2 = "%START_SNIPPET%";
-      var u2 = "%END_SNIPPET%";
-      var v2 = (e2) => {
+      var W2 = (e2) => j3(U2({}, "__esModule", { value: true }), e2);
+      var ie3 = {};
+      J3(ie3, { ApiV1: () => O3, ApiV2: () => F2, streamQueryV1: () => M2, streamQueryV2: () => z2 });
+      module.exports = W2(ie3);
+      var O3 = {};
+      var F2 = {};
+      var A2 = "%START_SNIPPET%";
+      var w2 = "%END_SNIPPET%";
+      var H2 = (e2) => {
         if (!e2)
           return;
-        let t2 = [], { response: r2, document: a2 } = e2;
-        return r2.forEach((s2) => {
-          let { documentIndex: m3, text: f3 } = s2, { pre: x3, post: i2, text: c2 } = F2(f3), d2 = a2[Number(m3)], { id: p2, metadata: y3 } = d2, { source: l2, url: S2, title: g2, metadata: h2 } = O2(y3);
-          t2.push({ id: p2, snippet: { pre: x3, text: c2, post: i2 }, source: l2, url: S2, title: g2, metadata: h2 });
+        let t2 = [], { response: s2, document: r2 } = e2;
+        return s2.forEach((n2) => {
+          let { documentIndex: u2, text: m2 } = n2, { pre: f3, post: y2, text: l2 } = Y3(m2), h2 = r2[Number(u2)], { id: v2, metadata: x3 } = h2, { source: E2, url: b2, title: a2, metadata: I2 } = X3(x3);
+          t2.push({ id: v2, snippet: { pre: f3, text: l2, post: y2 }, source: E2, url: b2, title: a2, metadata: I2 });
         }), t2;
       };
-      var O2 = (e2) => {
-        let t2 = q3(e2);
+      var X3 = (e2) => {
+        let t2 = Z3(e2);
         return { source: t2.source, url: t2.url, title: t2.title || "Untitled", metadata: t2 };
       };
-      var F2 = (e2) => {
-        let [t2, r2] = e2.indexOf(o2) !== -1 ? e2.split(o2) : ["", e2], [a2, s2] = r2.indexOf(u2) !== -1 ? r2.split(u2) : [r2, ""];
-        return { pre: t2, post: s2, text: a2 };
+      var Y3 = (e2) => {
+        let [t2, s2] = e2.indexOf(A2) !== -1 ? e2.split(A2) : ["", e2], [r2, n2] = s2.indexOf(w2) !== -1 ? s2.split(w2) : [s2, ""];
+        return { pre: t2, post: n2, text: r2 };
       };
-      var q3 = (e2) => {
+      var Z3 = (e2) => {
         let t2 = {};
-        return e2.forEach((r2) => {
-          t2[r2.name] = r2.value;
+        return e2.forEach((s2) => {
+          t2[s2.name] = s2.value;
         }), t2;
       };
-      var K2 = "api.vectara.io";
-      var U2 = async (e2, t2) => {
-        var c2, d2, p2, y3, l2, S2, g2, h2;
-        let r2 = { "x-api-key": e2.apiKey, "customer-id": e2.customerId, "Content-Type": "application/json" }, a2 = (c2 = e2.lambda) != null ? c2 : 0.025;
-        a2 > 1 ? a2 = 1 : a2 < 0 && (a2 = 0);
-        let s2 = e2.corpusIds.map((I2) => ({ customerId: e2.customerId, corpusId: I2, lexicalInterpolationConfig: { lambda: a2 }, metadataFilter: e2.filter ? `doc.source = '${e2.filter}'` : void 0 })), m3 = e2.rerank ? { rerankingConfig: { rerankerId: e2.rerankerId, ...e2.rerankerId === 272725718 ? { mmrConfig: { diversityBias: e2.rerankDiversityBias } } : {} } } : {}, f3 = JSON.stringify({ query: [{ query: e2.queryValue, start: 0, numResults: e2.rerank ? e2.rerankNumResults : 10, corpusKey: s2, contextConfig: { sentencesBefore: (d2 = e2.summaryNumSentences) != null ? d2 : 2, sentencesAfter: (p2 = e2.summaryNumSentences) != null ? p2 : 2, startTag: o2, endTag: u2 }, summary: [{ responseLang: e2.language, debug: e2.debug, maxSummarizedResults: e2.summaryNumResults, summarizerPromptName: e2.summaryPromptName, factualConsistencyScore: (y3 = e2.enableFactualConsistencyScore) != null ? y3 : false, chat: { store: (S2 = (l2 = e2.chat) == null ? void 0 : l2.store) != null ? S2 : false, conversationId: (g2 = e2.chat) == null ? void 0 : g2.conversationId } }], ...m3 }] }), x3 = await J2(r2, f3, (h2 = e2.endpoint) != null ? h2 : K2), i2 = "";
-        for await (let I2 of x3)
+      var L2 = (e2, t2) => {
+        e2.split(`
+`).filter((r2) => r2 !== "").forEach(t2);
+      };
+      var D3 = "https://api.vectara.io";
+      var N3 = async (e2, t2, s2) => {
+        let r2 = new AbortController(), n2 = await fetch(s2, { method: "POST", headers: e2, body: t2, signal: r2.signal });
+        if (!n2.ok)
+          throw new Error(`Request failed (${n2.statusText})`, { cause: n2.status });
+        if (!n2.body)
+          throw new Error("Response body does not exist");
+        return { stream: ee3(n2.body), cancelStream: () => r2.abort(), status: n2.status, responseHeaders: n2.headers };
+      };
+      async function* ee3(e2) {
+        let t2 = e2.getReader(), s2 = new TextDecoder();
+        for (; ; ) {
+          let { value: r2, done: n2 } = await t2.read();
+          if (n2)
+            break;
+          yield s2.decode(r2, { stream: true });
+        }
+      }
+      var M2 = async (e2, t2) => {
+        var h2, v2, x3, E2, b2, a2, I2, C3;
+        let s2 = { "x-api-key": e2.apiKey, "customer-id": e2.customerId, "Content-Type": "application/json" }, r2 = (h2 = e2.lambda) != null ? h2 : 0.025;
+        r2 > 1 ? r2 = 1 : r2 < 0 && (r2 = 0);
+        let n2 = e2.corpusIds.map((p2) => ({ customerId: e2.customerId, corpusId: p2, lexicalInterpolationConfig: { lambda: r2 }, metadataFilter: e2.filter ? `doc.source = '${e2.filter}'` : void 0 })), u2 = e2.rerank ? { rerankingConfig: { rerankerId: e2.rerankerId, ...e2.rerankerId === 272725718 ? { mmrConfig: { diversityBias: e2.rerankDiversityBias } } : {} } } : {}, m2 = JSON.stringify({ query: [{ query: e2.queryValue, start: 0, numResults: e2.rerank ? e2.rerankNumResults : 10, corpusKey: n2, contextConfig: { sentencesBefore: (v2 = e2.summaryNumSentences) != null ? v2 : 2, sentencesAfter: (x3 = e2.summaryNumSentences) != null ? x3 : 2, startTag: A2, endTag: w2 }, summary: [{ responseLang: e2.language, debug: e2.debug, maxSummarizedResults: e2.summaryNumResults, summarizerPromptName: e2.summaryPromptName, factualConsistencyScore: (E2 = e2.enableFactualConsistencyScore) != null ? E2 : false, chat: { store: (a2 = (b2 = e2.chat) == null ? void 0 : b2.store) != null ? a2 : false, conversationId: (I2 = e2.chat) == null ? void 0 : I2.conversationId } }], ...u2 }] }), f3 = (C3 = e2.endpoint) != null ? C3 : `${D3}/v1/stream-query`, { stream: y2 } = await N3(s2, m2, f3), l2 = "";
+        for await (let p2 of y2)
           try {
-            I2.split(`
-`).filter((T2) => T2 !== "").forEach((T2) => {
-              var P3, k2, E2;
-              let n2 = JSON.parse(T2);
-              if (!n2.result)
+            L2(p2, (g3) => {
+              var S3, R2, P2;
+              let o2 = JSON.parse(g3);
+              if (!o2.result)
                 return;
-              let b2 = {}, C3 = j3(e2, n2.result);
-              C3 && (b2.summary = C3);
-              let R2 = B2(e2, n2.result);
-              R2 && (b2.chat = R2);
-              let D3 = H2(n2.result);
-              D3 && (b2.factualConsistency = D3);
-              let N2 = { references: v2(n2.result.responseSet), details: b2, updatedText: $3(n2.result, i2), isDone: (k2 = (P3 = n2.result.summary) == null ? void 0 : P3.done) != null ? k2 : false };
-              i2 = (E2 = N2.updatedText) != null ? E2 : "", t2(N2);
+              let d2 = {}, T2 = te3(e2, o2.result);
+              T2 && (d2.summary = T2);
+              let k2 = re3(e2, o2.result);
+              k2 && (d2.chat = k2);
+              let c2 = se3(o2.result);
+              c2 && (d2.factualConsistency = c2);
+              let _2 = { references: H2(o2.result.responseSet), details: d2, updatedText: ne3(o2.result, l2), isDone: (R2 = (S3 = o2.result.summary) == null ? void 0 : S3.done) != null ? R2 : false };
+              l2 = (P2 = _2.updatedText) != null ? P2 : "", t2(_2);
             });
-          } catch {
+          } catch (g3) {
+            console.log(g3);
           }
       };
-      var j3 = (e2, t2) => {
+      var te3 = (e2, t2) => {
         if (t2.summary && e2.debug && t2.summary.prompt)
           return { prompt: t2.summary.prompt };
       };
-      var B2 = (e2, t2) => {
-        var a2;
-        if (!((a2 = t2.summary) != null && a2.chat))
+      var re3 = (e2, t2) => {
+        var r2;
+        if (!((r2 = t2.summary) != null && r2.chat))
           return;
-        let r2 = { conversationId: t2.summary.chat.conversationId, turnId: t2.summary.chat.turnId };
-        return e2.debug && t2.summary.chat.rephrasedQuery && (r2.rephrasedQuery = t2.summary.chat.rephrasedQuery), r2;
+        let s2 = { conversationId: t2.summary.chat.conversationId, turnId: t2.summary.chat.turnId };
+        return e2.debug && t2.summary.chat.rephrasedQuery && (s2.rephrasedQuery = t2.summary.chat.rephrasedQuery), s2;
       };
-      var H2 = (e2) => {
+      var se3 = (e2) => {
         if (!(!e2.summary || !e2.summary.factualConsistency))
           return { score: e2.summary.factualConsistency.score };
       };
-      var $3 = (e2, t2) => {
+      var ne3 = (e2, t2) => {
         if (e2.summary)
           return `${t2}${e2.summary.text}`;
       };
-      var J2 = async (e2, t2, r2) => {
-        let a2 = await fetch(`https://${r2}/v1/stream-query`, { method: "POST", headers: e2, body: t2 });
-        if (a2.status !== 200)
-          throw new Error(a2.status.toString());
-        if (!a2.body)
-          throw new Error("Response body does not exist");
-        return V2(a2.body);
-      };
-      async function* V2(e2) {
-        let t2 = e2.getReader(), r2 = new TextDecoder();
-        for (; ; ) {
-          let { value: a2, done: s2 } = await t2.read();
-          if (s2)
-            break;
-          yield r2.decode(a2, { stream: true });
+      var Q2 = class {
+        constructor(t2, s2 = false, r2 = 200) {
+          this.eventInProgress = "";
+          this.updatedText = "";
+          this.events = [], this.onStreamEvent = t2, this.includeRaw = s2, this.status = r2;
         }
-      }
+        consumeChunk(t2) {
+          t2.split(`
+`).forEach((r2) => {
+            if (r2.trim().length !== 0 && r2.indexOf("event:") !== 0) {
+              r2.indexOf("data:") === 0 ? this.eventInProgress = r2.slice(5, r2.length) : this.eventInProgress += r2;
+              try {
+                let n2 = JSON.parse(this.eventInProgress);
+                this.enqueueEvent(n2), this.eventInProgress = "";
+              } catch (n2) {
+                n2.stack.includes("at JSON.parse") || console.error(n2);
+              }
+            }
+          }), this.drainEvents();
+        }
+        enqueueEvent(t2) {
+          let { type: s2, messages: r2, search_results: n2, chat_id: u2, turn_id: m2, factual_consistency_score: f3, generation_chunk: y2, rendered_prompt: l2, rephrased_query: h2 } = t2;
+          switch (s2) {
+            case "error":
+              this.events.push({ type: "error", messages: r2, ...this.includeRaw && { raw: t2 } });
+              break;
+            case "search_results":
+              this.events.push({ type: "searchResults", searchResults: n2, ...this.includeRaw && { raw: t2 } });
+              break;
+            case "chat_info":
+              this.events.push({ type: "chatInfo", chatId: u2, turnId: m2, ...this.includeRaw && { raw: t2 } });
+              break;
+            case "generation_chunk":
+              this.updatedText += y2, this.events.push({ type: "generationChunk", updatedText: this.updatedText, generationChunk: y2, ...this.includeRaw && { raw: t2 } });
+              break;
+            case "generation_info":
+              this.events.push({ type: "generationInfo", renderedPrompt: l2, rephrasedQuery: h2, ...this.includeRaw && { raw: t2 } });
+              break;
+            case "generation_end":
+              this.events.push({ type: "generationEnd", ...this.includeRaw && { raw: t2 } });
+              break;
+            case "factual_consistency_score":
+              this.events.push({ type: "factualConsistencyScore", factualConsistencyScore: f3, ...this.includeRaw && { raw: t2 } });
+              break;
+            case "end":
+              this.events.push({ type: "end", ...this.includeRaw && { raw: t2 } });
+              break;
+            default:
+              s2 ? this.events.push({ type: "unexpectedEvent", rawType: s2, raw: t2 }) : this.status !== 200 ? this.events.push({ type: "requestError", status: this.status, raw: t2 }) : this.events.push({ type: "unexpectedError", raw: t2 });
+          }
+        }
+        drainEvents() {
+          this.events.forEach((t2) => {
+            this.onStreamEvent(t2);
+          }), this.events = [];
+        }
+      };
+      var ae2 = (e2) => {
+        if (e2) {
+          if (e2.type === "none")
+            return { type: e2.type };
+          if (e2.type === "customer_reranker")
+            return { type: e2.type, reranker_id: e2.rerankerId };
+          if (e2.type === "mmr")
+            return { type: e2.type, diversity_bias: e2.diversityBias };
+        }
+      };
+      var oe3 = (e2) => {
+        if (e2) {
+          if (e2.style === "none" || e2.style === "numeric")
+            return { style: e2.style };
+          if (e2.style === "html" || e2.style === "markdown")
+            return { style: e2.style, url_pattern: e2.urlPattern, text_pattern: e2.textPattern };
+        }
+      };
+      var z2 = async ({ streamQueryConfig: e2, onStreamEvent: t2, includeRawEvents: s2 = false }) => {
+        let { customerId: r2, apiKey: n2, authToken: u2, domain: m2, corpusKey: f3, query: y2, search: { metadataFilter: l2, lexicalInterpolation: h2, customDimensions: v2, semantics: x3, offset: E2, limit: b2, contextConfiguration: a2, reranker: I2 }, generation: C3, chat: p2 } = e2, g3 = { query: y2, search: { corpora: f3.split(",").map((c2) => ({ corpus_key: c2, metadata_filter: l2, lexical_interpolation: h2, custom_dimensions: v2, semantics: x3 })), offset: E2, limit: b2, context_configuration: { characters_before: a2 == null ? void 0 : a2.charactersBefore, characters_after: a2 == null ? void 0 : a2.charactersAfter, sentences_before: a2 == null ? void 0 : a2.sentencesBefore, sentences_after: a2 == null ? void 0 : a2.sentencesAfter, start_tag: a2 == null ? void 0 : a2.startTag, end_tag: a2 == null ? void 0 : a2.endTag }, reranker: ae2(I2) }, stream_response: true };
+        if (C3) {
+          let { promptName: c2, maxUsedSearchResults: _2, promptText: S3, maxResponseCharacters: R2, responseLanguage: P2, modelParameters: i2, citations: q3, enableFactualConsistencyScore: B3 } = C3;
+          g3.generation = { prompt_name: c2, max_used_search_results: _2, prompt_text: S3, max_response_characters: R2, response_language: P2, model_parameters: i2 && { max_tokens: i2.maxTokens, temperature: i2.temperature, frequency_penalty: i2.frequencyPenalty, presence_penalty: i2.presencePenalty }, citations: oe3(q3), enable_factual_consistency_score: B3 };
+        }
+        p2 && (g3.chat = { store: p2.store });
+        let o2;
+        p2 ? p2.conversationId ? o2 = `/v2/chats/${p2.conversationId}/turns` : o2 = "/v2/chats" : o2 = "/v2/query";
+        let d2 = { "customer-id": r2, "Content-Type": "application/json" };
+        n2 && (d2["x-api-key"] = n2), u2 && (d2.Authorization = `Bearer ${u2}`);
+        let T2 = `${m2 != null ? m2 : D3}${o2}`, k2 = { method: "POST", url: T2, headers: d2, body: g3 };
+        try {
+          let { cancelStream: c2, stream: _2, status: S3, responseHeaders: R2 } = await N3(d2, JSON.stringify(g3), T2);
+          return (async () => {
+            try {
+              let i2 = new Q2(t2, s2, S3);
+              for await (let q3 of _2)
+                try {
+                  i2.consumeChunk(q3);
+                } catch (B3) {
+                  G2(B3, t2);
+                }
+            } catch (i2) {
+              i2 instanceof DOMException && i2.name == "AbortError" || G2(i2, t2);
+            }
+          })(), { cancelStream: c2, request: k2, status: S3, responseHeaders: R2 };
+        } catch (c2) {
+          G2(c2, t2);
+        }
+        return { request: k2 };
+      };
+      var G2 = (e2, t2) => {
+        if (e2 instanceof Error)
+          t2({ type: "genericError", error: e2 });
+        else
+          throw e2;
+      };
     }
   });
 
@@ -26987,11 +27106,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           shape: createShapeTypeChecker,
           exact: createStrictShapeTypeChecker
         };
-        function is(x3, y3) {
-          if (x3 === y3) {
-            return x3 !== 0 || 1 / x3 === 1 / y3;
+        function is(x3, y2) {
+          if (x3 === y2) {
+            return x3 !== 0 || 1 / x3 === 1 / y2;
           } else {
-            return x3 !== x3 && y3 !== y3;
+            return x3 !== x3 && y2 !== y2;
           }
         }
         function PropTypeError(message, data) {
@@ -27396,7 +27515,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         var lang = /(?:^|\s)lang(?:uage)?-([\w-]+)(?=\s|$)/i;
         var uniqueId = 0;
         var plainTextGrammar = {};
-        var _3 = {
+        var _2 = {
           /**
            * By default, Prism will attempt to highlight all code elements (by calling {@link Prism.highlightAll}) on the
            * current page after the page finished loading. This might be a problem if e.g. you wanted to asynchronously load
@@ -27505,9 +27624,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               visited = visited || {};
               var clone;
               var id2;
-              switch (_3.util.type(o2)) {
+              switch (_2.util.type(o2)) {
                 case "Object":
-                  id2 = _3.util.objId(o2);
+                  id2 = _2.util.objId(o2);
                   if (visited[id2]) {
                     return visited[id2];
                   }
@@ -27524,7 +27643,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     clone
                   );
                 case "Array":
-                  id2 = _3.util.objId(o2);
+                  id2 = _2.util.objId(o2);
                   if (visited[id2]) {
                     return visited[id2];
                   }
@@ -27553,9 +27672,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
              */
             getLanguage: function(element) {
               while (element) {
-                var m3 = lang.exec(element.className);
-                if (m3) {
-                  return m3[1].toLowerCase();
+                var m2 = lang.exec(element.className);
+                if (m2) {
+                  return m2[1].toLowerCase();
                 }
                 element = element.parentElement;
               }
@@ -27682,7 +27801,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
              * });
              */
             extend: function(id2, redef) {
-              var lang2 = _3.util.clone(_3.languages[id2]);
+              var lang2 = _2.util.clone(_2.languages[id2]);
               for (var key in redef) {
                 lang2[key] = redef[key];
               }
@@ -27765,7 +27884,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
              */
             insertBefore: function(inside, before, insert, root) {
               root = root || /** @type {any} */
-              _3.languages;
+              _2.languages;
               var grammar = root[inside];
               var ret = {};
               for (var token in grammar) {
@@ -27784,7 +27903,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }
               var old = root[inside];
               root[inside] = ret;
-              _3.languages.DFS(_3.languages, function(key, value) {
+              _2.languages.DFS(_2.languages, function(key, value) {
                 if (value === old && key != inside) {
                   this[key] = ret;
                 }
@@ -27794,12 +27913,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             // Traverse a language definition with Depth First Search
             DFS: function DFS(o2, callback, type, visited) {
               visited = visited || {};
-              var objId = _3.util.objId;
+              var objId = _2.util.objId;
               for (var i2 in o2) {
                 if (o2.hasOwnProperty(i2)) {
                   callback.call(o2, i2, o2[i2], type || i2);
                   var property = o2[i2];
-                  var propertyType = _3.util.type(property);
+                  var propertyType = _2.util.type(property);
                   if (propertyType === "Object" && !visited[objId(property)]) {
                     visited[objId(property)] = true;
                     DFS(property, callback, null, visited);
@@ -27825,7 +27944,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
            * @public
            */
           highlightAll: function(async, callback) {
-            _3.highlightAllUnder(document, async, callback);
+            _2.highlightAllUnder(document, async, callback);
           },
           /**
            * Fetches all the descendants of `container` that have a `.language-xxxx` class and then calls
@@ -27848,11 +27967,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               container,
               selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
             };
-            _3.hooks.run("before-highlightall", env);
+            _2.hooks.run("before-highlightall", env);
             env.elements = Array.prototype.slice.apply(env.container.querySelectorAll(env.selector));
-            _3.hooks.run("before-all-elements-highlight", env);
+            _2.hooks.run("before-all-elements-highlight", env);
             for (var i2 = 0, element; element = env.elements[i2++]; ) {
-              _3.highlightElement(element, async === true, env.callback);
+              _2.highlightElement(element, async === true, env.callback);
             }
           },
           /**
@@ -27884,12 +28003,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
            * @public
            */
           highlightElement: function(element, async, callback) {
-            var language = _3.util.getLanguage(element);
-            var grammar = _3.languages[language];
-            _3.util.setLanguage(element, language);
+            var language = _2.util.getLanguage(element);
+            var grammar = _2.languages[language];
+            _2.util.setLanguage(element, language);
             var parent = element.parentElement;
             if (parent && parent.nodeName.toLowerCase() === "pre") {
-              _3.util.setLanguage(parent, language);
+              _2.util.setLanguage(parent, language);
             }
             var code = element.textContent;
             var env = {
@@ -27900,29 +28019,29 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             };
             function insertHighlightedCode(highlightedCode) {
               env.highlightedCode = highlightedCode;
-              _3.hooks.run("before-insert", env);
+              _2.hooks.run("before-insert", env);
               env.element.innerHTML = env.highlightedCode;
-              _3.hooks.run("after-highlight", env);
-              _3.hooks.run("complete", env);
+              _2.hooks.run("after-highlight", env);
+              _2.hooks.run("complete", env);
               callback && callback.call(env.element);
             }
-            _3.hooks.run("before-sanity-check", env);
+            _2.hooks.run("before-sanity-check", env);
             parent = env.element.parentElement;
             if (parent && parent.nodeName.toLowerCase() === "pre" && !parent.hasAttribute("tabindex")) {
               parent.setAttribute("tabindex", "0");
             }
             if (!env.code) {
-              _3.hooks.run("complete", env);
+              _2.hooks.run("complete", env);
               callback && callback.call(env.element);
               return;
             }
-            _3.hooks.run("before-highlight", env);
+            _2.hooks.run("before-highlight", env);
             if (!env.grammar) {
-              insertHighlightedCode(_3.util.encode(env.code));
+              insertHighlightedCode(_2.util.encode(env.code));
               return;
             }
             if (async && _self2.Worker) {
-              var worker = new Worker(_3.filename);
+              var worker = new Worker(_2.filename);
               worker.onmessage = function(evt) {
                 insertHighlightedCode(evt.data);
               };
@@ -27932,7 +28051,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 immediateClose: true
               }));
             } else {
-              insertHighlightedCode(_3.highlight(env.code, env.grammar, env.language));
+              insertHighlightedCode(_2.highlight(env.code, env.grammar, env.language));
             }
           },
           /**
@@ -27961,13 +28080,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               grammar,
               language
             };
-            _3.hooks.run("before-tokenize", env);
+            _2.hooks.run("before-tokenize", env);
             if (!env.grammar) {
               throw new Error('The language "' + env.language + '" has no grammar.');
             }
-            env.tokens = _3.tokenize(env.code, env.grammar);
-            _3.hooks.run("after-tokenize", env);
-            return Token.stringify(_3.util.encode(env.tokens), env.language);
+            env.tokens = _2.tokenize(env.code, env.grammar);
+            _2.hooks.run("after-tokenize", env);
+            return Token.stringify(_2.util.encode(env.tokens), env.language);
           },
           /**
            * This is the heart of Prism, and the most low-level function you can use. It accepts a string of text as input
@@ -28026,7 +28145,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
              * @public
              */
             add: function(name, callback) {
-              var hooks = _3.hooks.all;
+              var hooks = _2.hooks.all;
               hooks[name] = hooks[name] || [];
               hooks[name].push(callback);
             },
@@ -28040,7 +28159,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
              * @public
              */
             run: function(name, env) {
-              var callbacks = _3.hooks.all[name];
+              var callbacks = _2.hooks.all[name];
               if (!callbacks || !callbacks.length) {
                 return;
               }
@@ -28051,7 +28170,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           },
           Token
         };
-        _self2.Prism = _3;
+        _self2.Prism = _2;
         function Token(type, content, alias, matchedStr) {
           this.type = type;
           this.content = content;
@@ -28085,7 +28204,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               env.classes.push(aliases);
             }
           }
-          _3.hooks.run("wrap", env);
+          _2.hooks.run("wrap", env);
           var attributes = "";
           for (var name in env.attributes) {
             attributes += " " + name + '="' + (env.attributes[name] || "").replace(/"/g, "&quot;") + '"';
@@ -28181,7 +28300,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   pos += before.length;
                 }
                 removeRange(tokenList, removeFrom, removeCount);
-                var wrapped = new Token(token, inside ? _3.tokenize(matchStr, inside) : matchStr, alias, matchStr);
+                var wrapped = new Token(token, inside ? _2.tokenize(matchStr, inside) : matchStr, alias, matchStr);
                 currentNode = addAfter(tokenList, removeFrom, wrapped);
                 if (after) {
                   addAfter(tokenList, currentNode, after);
@@ -28236,35 +28355,35 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         }
         if (!_self2.document) {
           if (!_self2.addEventListener) {
-            return _3;
+            return _2;
           }
-          if (!_3.disableWorkerMessageHandler) {
+          if (!_2.disableWorkerMessageHandler) {
             _self2.addEventListener("message", function(evt) {
               var message = JSON.parse(evt.data);
               var lang2 = message.language;
               var code = message.code;
               var immediateClose = message.immediateClose;
-              _self2.postMessage(_3.highlight(code, _3.languages[lang2], lang2));
+              _self2.postMessage(_2.highlight(code, _2.languages[lang2], lang2));
               if (immediateClose) {
                 _self2.close();
               }
             }, false);
           }
-          return _3;
+          return _2;
         }
-        var script = _3.util.currentScript();
+        var script = _2.util.currentScript();
         if (script) {
-          _3.filename = script.src;
+          _2.filename = script.src;
           if (script.hasAttribute("data-manual")) {
-            _3.manual = true;
+            _2.manual = true;
           }
         }
         function highlightAutomaticallyCallback() {
-          if (!_3.manual) {
-            _3.highlightAll();
+          if (!_2.manual) {
+            _2.highlightAll();
           }
         }
-        if (!_3.manual) {
+        if (!_2.manual) {
           var readyState = document.readyState;
           if (readyState === "loading" || readyState === "interactive" && script && script.defer) {
             document.addEventListener("DOMContentLoaded", highlightAutomaticallyCallback);
@@ -28276,7 +28395,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }
           }
         }
-        return _3;
+        return _2;
       }(_self);
       if (typeof module !== "undefined" && module.exports) {
         module.exports = Prism3;
@@ -28738,11 +28857,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           xhr.send(null);
         }
         function parseRange(range) {
-          var m3 = /^\s*(\d+)\s*(?:(,)\s*(?:(\d+)\s*)?)?$/.exec(range || "");
-          if (m3) {
-            var start = Number(m3[1]);
-            var comma = m3[2];
-            var end = m3[3];
+          var m2 = /^\s*(\d+)\s*(?:(,)\s*(?:(\d+)\s*)?)?$/.exec(range || "");
+          if (m2) {
+            var start = Number(m2[1]);
+            var comma = m2[2];
+            var end = m2[3];
             if (!comma) {
               return [start, start];
             }
@@ -29527,7 +29646,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           return string2.match(reUnicodeWord) || [];
         }
         var runInContext = function runInContext2(context) {
-          context = context == null ? root : _3.defaults(root.Object(), context, _3.pick(root, contextProps));
+          context = context == null ? root : _2.defaults(root.Object(), context, _2.pick(root, contextProps));
           var Array2 = context.Array, Date2 = context.Date, Error2 = context.Error, Function2 = context.Function, Math2 = context.Math, Object2 = context.Object, RegExp2 = context.RegExp, String2 = context.String, TypeError2 = context.TypeError;
           var arrayProto = Array2.prototype, funcProto = Function2.prototype, objectProto = Object2.prototype;
           var coreJsData = context["__core-js_shared__"];
@@ -34301,17 +34420,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           }
           return lodash;
         };
-        var _3 = runInContext();
+        var _2 = runInContext();
         if (typeof define == "function" && typeof define.amd == "object" && define.amd) {
-          root._ = _3;
+          root._ = _2;
           define(function() {
-            return _3;
+            return _2;
           });
         } else if (freeModule) {
-          (freeModule.exports = _3)._ = _3;
-          freeExports._ = _3;
+          (freeModule.exports = _2)._ = _2;
+          freeExports._ = _2;
         } else {
-          root._ = _3;
+          root._ = _2;
         }
       }).call(exports);
     }
@@ -34500,7 +34619,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // ../lib/index.js
   var import_react3 = __toESM(require_react());
-  var yt = __toESM(require_react_dom());
+  var kt = __toESM(require_react_dom());
   var import_react4 = __toESM(require_react());
   var import_classnames = __toESM(require_classnames());
   var import_jsx_runtime = __toESM(require_jsx_runtime());
@@ -34655,8 +34774,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         const p2 = r3.inline, f3 = r3.list;
         let h2;
         r3.list = true, u2 ? (r3.inline = false, h2 = s2.replace(le, "\n\n")) : (r3.inline = true, h2 = s2.replace(le, ""));
-        const m3 = n3(h2, r3);
-        return r3.inline = p2, r3.list = f3, m3;
+        const m2 = n3(h2, r3);
+        return r3.inline = p2, r3.list = f3, m2;
       }), ordered: t2, start: o2 };
     }, render: (n3, t3, r3) => e2(n3.ordered ? "ol" : "ul", { key: r3.key, start: "20" === n3.type ? n3.start : void 0 }, n3.items.map(function(n4, i3) {
       return e2("li", { key: i3 }, t3(n4, r3));
@@ -34778,7 +34897,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         return t4 ? "function" == typeof t4 || "object" == typeof t4 && "render" in t4 ? t4 : Ge(n2, `${e3}.component`, e3) : e3;
       }(e2, r2.overrides), n({}, t3, o2, { className: We(null == t3 ? void 0 : t3.className, o2.className) || void 0 }), ...l2);
     }
-    function G3(n2) {
+    function G2(n2) {
       let t3 = false;
       r2.forceInline ? t3 = true : r2.forceBlock || (t3 = false === _.test(n2));
       const i3 = le3(ie3(t3 ? n2 : `${n2.trimEnd().replace(te, "")}
@@ -34817,7 +34936,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return e3[t5.replace(/(-[a-z])/g, (e4) => e4[1].toUpperCase())] = n5.slice(t5.length + 1).trim(), e3;
             }, {}) : "href" === e2 || "src" === e2 ? je(n4) : (n4.match(M) && (n4 = n4.slice(1, n4.length - 1)), "true" === n4 || "false" !== n4 && n4);
           }(o2, c2);
-          "string" == typeof s2 && (A.test(s2) || z.test(s2)) && (n3[a2] = e.cloneElement(G3(s2.trim()), { key: r3 }));
+          "string" == typeof s2 && (A.test(s2) || z.test(s2)) && (n3[a2] = e.cloneElement(G2(s2.trim()), { key: r3 }));
         } else
           "style" !== t4 && (n3[l[t4] || t4] = true);
         return n3;
@@ -34890,7 +35009,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       return oe3(n2, e2, t3);
     });
     var oe3;
-    const ce3 = G3(t2);
+    const ce3 = G2(t2);
     return q3.length ? d2("div", null, ce3, d2("footer", { key: "footer" }, q3.map(function(e2) {
       return d2("div", { id: r2.slugify(e2.identifier), key: e2.identifier }, e2.identifier, le3(ie3(e2.footnote, { inline: true })));
     }))) : ce3;
@@ -34920,283 +35039,325 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var import_jsx_runtime25 = __toESM(require_jsx_runtime());
   var import_jsx_runtime26 = __toESM(require_jsx_runtime());
   var import_jsx_runtime27 = __toESM(require_jsx_runtime());
-  var Tt = { baseline: "vuiFlexContainer--alignItemsBaseline", center: "vuiFlexContainer--alignItemsCenter", end: "vuiFlexContainer--alignItemsEnd", start: "vuiFlexContainer--alignItemsStart", stretch: "vuiFlexContainer--alignItemsStretch" };
-  var Ft = { column: "vuiFlexContainer--directionColumn", columnReverse: "vuiFlexContainer--directionColumnReverse", row: "vuiFlexContainer--directionRow", rowReverse: "vuiFlexContainer--directionRowReverse" };
-  var Rt = { center: "vuiFlexContainer--justifyContentCenter", end: "vuiFlexContainer--justifyContentEnd", start: "vuiFlexContainer--justifyContentStart", spaceAround: "vuiFlexContainer--justifyContentSpaceAround", spaceBetween: "vuiFlexContainer--justifyContentSpaceBetween", spaceEvenly: "vuiFlexContainer--justifyContentSpaceEvenly" };
-  var Pt = { none: "vuiFlexContainer--spacingNone", xxs: "vuiFlexContainer--spacingXxs", xs: "vuiFlexContainer--spacingXs", s: "vuiFlexContainer--spacingS", m: "vuiFlexContainer--spacingM", l: "vuiFlexContainer--spacingL", xl: "vuiFlexContainer--spacingXl", xxl: "vuiFlexContainer--spacingXxl" };
-  var C2 = ({ children: e2, alignItems: t2 = "stretch", direction: r2 = "row", justifyContent: o2 = "start", spacing: n2 = "m", wrap: i2, className: s2, fullWidth: a2, ...l2 }) => {
-    let c2 = (0, import_classnames.default)(s2, "vuiFlexContainer", Tt[t2], Ft[r2], Rt[o2], Pt[n2], { "vuiFlexContainer--wrap": i2, "vuiFlexContainer--fullWidth": a2 });
-    return (0, import_jsx_runtime.jsx)("div", { className: c2, ...l2, children: e2 });
+  var Nt = { baseline: "vuiFlexContainer--alignItemsBaseline", center: "vuiFlexContainer--alignItemsCenter", end: "vuiFlexContainer--alignItemsEnd", start: "vuiFlexContainer--alignItemsStart", stretch: "vuiFlexContainer--alignItemsStretch" };
+  var Et = { column: "vuiFlexContainer--directionColumn", columnReverse: "vuiFlexContainer--directionColumnReverse", row: "vuiFlexContainer--directionRow", rowReverse: "vuiFlexContainer--directionRowReverse" };
+  var Vt = { center: "vuiFlexContainer--justifyContentCenter", end: "vuiFlexContainer--justifyContentEnd", start: "vuiFlexContainer--justifyContentStart", spaceAround: "vuiFlexContainer--justifyContentSpaceAround", spaceBetween: "vuiFlexContainer--justifyContentSpaceBetween", spaceEvenly: "vuiFlexContainer--justifyContentSpaceEvenly" };
+  var Lt = { none: "vuiFlexContainer--spacingNone", xxs: "vuiFlexContainer--spacingXxs", xs: "vuiFlexContainer--spacingXs", s: "vuiFlexContainer--spacingS", m: "vuiFlexContainer--spacingM", l: "vuiFlexContainer--spacingL", xl: "vuiFlexContainer--spacingXl", xxl: "vuiFlexContainer--spacingXxl" };
+  var C2 = ({ children: e2, alignItems: r2 = "stretch", direction: t2 = "row", justifyContent: n2 = "start", spacing: o2 = "m", wrap: i2, className: s2, fullWidth: a2, ...c2 }) => {
+    let l2 = (0, import_classnames.default)(s2, "vuiFlexContainer", Nt[r2], Et[t2], Vt[n2], Lt[o2], { "vuiFlexContainer--wrap": i2, "vuiFlexContainer--fullWidth": a2 });
+    return (0, import_jsx_runtime.jsx)("div", { className: l2, ...c2, children: e2 });
   };
-  var Vt = { baseline: "vuiFlexItem--alignItemsBaseline", center: "vuiFlexItem--alignItemsCenter", end: "vuiFlexItem--alignItemsEnd", start: "vuiFlexItem--alignItemsStart", stretch: "vuiFlexItem--alignItemsStretch" };
-  var y2 = ({ children: e2, grow: t2, shrink: r2, basis: o2 = "auto", alignItems: n2 = "stretch", className: i2, truncate: s2, ...a2 }) => {
-    let l2 = t2 === false, c2 = r2 === false, d2 = (0, import_classnames2.default)("vuiFlexItem", `vuiFlexItem--${o2}`, Vt[n2], { [`vuiFlexItem--flexGrow${t2}`]: typeof t2 == "number", "vuiFlexItem--flexGrowNone": l2, [`vuiFlexItem--flexShrink${r2}`]: typeof r2 == "number", "vuiFlexItem--flexShrinkNone": c2, "vuiFlexItem--truncate": s2 }, i2);
-    return (0, import_jsx_runtime2.jsx)("div", { className: d2, ...a2, children: e2 });
+  var zt = { baseline: "vuiFlexItem--alignItemsBaseline", center: "vuiFlexItem--alignItemsCenter", end: "vuiFlexItem--alignItemsEnd", start: "vuiFlexItem--alignItemsStart", stretch: "vuiFlexItem--alignItemsStretch" };
+  var S2 = ({ children: e2, grow: r2, shrink: t2, basis: n2 = "auto", alignItems: o2 = "stretch", className: i2, truncate: s2, ...a2 }) => {
+    let c2 = r2 === false, l2 = t2 === false, h2 = (0, import_classnames2.default)("vuiFlexItem", `vuiFlexItem--${n2}`, zt[o2], { [`vuiFlexItem--flexGrow${r2}`]: typeof r2 == "number", "vuiFlexItem--flexGrowNone": c2, [`vuiFlexItem--flexShrink${t2}`]: typeof t2 == "number", "vuiFlexItem--flexShrinkNone": l2, "vuiFlexItem--truncate": s2 }, i2);
+    return (0, import_jsx_runtime2.jsx)("div", { className: h2, ...a2, children: e2 });
   };
-  var le2 = 0;
-  var ve2 = () => (le2 === Number.MAX_SAFE_INTEGER ? le2 = 0 : le2++, le2.toString());
-  var Ge2 = ({ size: e2, color: t2 }) => (0, import_jsx_runtime3.jsx)("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 329.26933 329", width: e2, height: e2, fill: t2, children: (0, import_jsx_runtime3.jsx)("path", { d: "m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0" }) });
-  var He2 = ({ size: e2 = "16px", color: t2 = "#ffffff" }) => (0, import_jsx_runtime3.jsxs)("svg", { fill: t2, version: "1.1", id: "Capa_1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", width: e2, height: e2, viewBox: "0 0 29.75 29.75", xmlSpace: "preserve", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M26.573,4.026H5.163c-1.884,0-3.413,1.707-3.413,3.321v12.976c0,0.001,0,0.002,0,0.003l-0.004-0.003L0,25.724l4.913-2.717 c0.084,0.004,0.164,0.02,0.25,0.02h21.41c1.884,0,3.177-1.09,3.177-2.703V7.347C29.75,5.733,28.457,4.026,26.573,4.026z M27.75,20.323c0,0.538-0.548,0.703-1.177,0.703H5.163c-0.629,0-1.413-0.165-1.413-0.703V7.347c0-0.539,0.784-1.321,1.413-1.321 h21.41c0.629,0,1.177,0.782,1.177,1.321V20.323z" }), " ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsx)("circle", { cx: "9.274", cy: "13.526", r: "1.874" }), " ", (0, import_jsx_runtime3.jsx)("circle", { cx: "15.657", cy: "13.526", r: "1.874" }), " ", (0, import_jsx_runtime3.jsx)("circle", { cx: "22.04", cy: "13.526", r: "1.874" }), " "] }), " "] }), " "] }), " "] })] });
-  var Oe2 = () => (0, import_jsx_runtime3.jsxs)("svg", { fill: "#c41535", width: "16px", height: "16px", viewBox: "0 0 1024 1024", xmlns: "http://www.w3.org/2000/svg", stroke: "#c41535", strokeWidth: "20", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_iconCarrier", children: (0, import_jsx_runtime3.jsx)("path", { d: "M520.741 163.801a10.234 10.234 0 00-3.406-3.406c-4.827-2.946-11.129-1.421-14.075 3.406L80.258 856.874a10.236 10.236 0 00-1.499 5.335c0 5.655 4.585 10.24 10.24 10.24h846.004c1.882 0 3.728-.519 5.335-1.499 4.827-2.946 6.352-9.248 3.406-14.075L520.742 163.802zm43.703-26.674L987.446 830.2c17.678 28.964 8.528 66.774-20.436 84.452a61.445 61.445 0 01-32.008 8.996H88.998c-33.932 0-61.44-27.508-61.44-61.44a61.445 61.445 0 018.996-32.008l423.002-693.073c17.678-28.964 55.488-38.113 84.452-20.436a61.438 61.438 0 0120.436 20.436zM512 778.24c22.622 0 40.96-18.338 40.96-40.96s-18.338-40.96-40.96-40.96-40.96 18.338-40.96 40.96 18.338 40.96 40.96 40.96zm0-440.32c-22.622 0-40.96 18.338-40.96 40.96v225.28c0 22.622 18.338 40.96 40.96 40.96s40.96-18.338 40.96-40.96V378.88c0-22.622-18.338-40.96-40.96-40.96z" }) })] });
+  var ce2 = 0;
+  var fe2 = () => (ce2 === Number.MAX_SAFE_INTEGER ? ce2 = 0 : ce2++, ce2.toString());
+  var De2 = ({ size: e2, color: r2 }) => (0, import_jsx_runtime3.jsx)("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 329.26933 329", width: e2, height: e2, fill: r2, children: (0, import_jsx_runtime3.jsx)("path", { d: "m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0" }) });
+  var qe = ({ size: e2 = "16px", color: r2 = "#ffffff" }) => (0, import_jsx_runtime3.jsxs)("svg", { fill: r2, version: "1.1", id: "Capa_1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", width: e2, height: e2, viewBox: "0 0 29.75 29.75", xmlSpace: "preserve", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M26.573,4.026H5.163c-1.884,0-3.413,1.707-3.413,3.321v12.976c0,0.001,0,0.002,0,0.003l-0.004-0.003L0,25.724l4.913-2.717 c0.084,0.004,0.164,0.02,0.25,0.02h21.41c1.884,0,3.177-1.09,3.177-2.703V7.347C29.75,5.733,28.457,4.026,26.573,4.026z M27.75,20.323c0,0.538-0.548,0.703-1.177,0.703H5.163c-0.629,0-1.413-0.165-1.413-0.703V7.347c0-0.539,0.784-1.321,1.413-1.321 h21.41c0.629,0,1.177,0.782,1.177,1.321V20.323z" }), " ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsx)("circle", { cx: "9.274", cy: "13.526", r: "1.874" }), " ", (0, import_jsx_runtime3.jsx)("circle", { cx: "15.657", cy: "13.526", r: "1.874" }), " ", (0, import_jsx_runtime3.jsx)("circle", { cx: "22.04", cy: "13.526", r: "1.874" }), " "] }), " "] }), " "] }), " "] })] });
+  var He2 = () => (0, import_jsx_runtime3.jsxs)("svg", { fill: "#c41535", width: "16px", height: "16px", viewBox: "0 0 1024 1024", xmlns: "http://www.w3.org/2000/svg", stroke: "#c41535", strokeWidth: "20", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_iconCarrier", children: (0, import_jsx_runtime3.jsx)("path", { d: "M520.741 163.801a10.234 10.234 0 00-3.406-3.406c-4.827-2.946-11.129-1.421-14.075 3.406L80.258 856.874a10.236 10.236 0 00-1.499 5.335c0 5.655 4.585 10.24 10.24 10.24h846.004c1.882 0 3.728-.519 5.335-1.499 4.827-2.946 6.352-9.248 3.406-14.075L520.742 163.802zm43.703-26.674L987.446 830.2c17.678 28.964 8.528 66.774-20.436 84.452a61.445 61.445 0 01-32.008 8.996H88.998c-33.932 0-61.44-27.508-61.44-61.44a61.445 61.445 0 018.996-32.008l423.002-693.073c17.678-28.964 55.488-38.113 84.452-20.436a61.438 61.438 0 0120.436 20.436zM512 778.24c22.622 0 40.96-18.338 40.96-40.96s-18.338-40.96-40.96-40.96-40.96 18.338-40.96 40.96 18.338 40.96 40.96 40.96zm0-440.32c-22.622 0-40.96 18.338-40.96 40.96v225.28c0 22.622 18.338 40.96 40.96 40.96s40.96-18.338 40.96-40.96V378.88c0-22.622-18.338-40.96-40.96-40.96z" }) })] });
   var We2 = () => (0, import_jsx_runtime3.jsxs)("svg", { width: "10px", height: "10px", viewBox: "-5.5 0 26 26", version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", fill: "#2c313a", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsx)("title", { children: "chevron-right" }), " ", (0, import_jsx_runtime3.jsx)("desc", { children: "Created with Sketch Beta." }), " ", (0, import_jsx_runtime3.jsx)("defs", { children: " " }), " ", (0, import_jsx_runtime3.jsxs)("g", { id: "Page-1", stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { id: "Icon-Set-Filled", transform: "translate(-474.000000, -1196.000000)", fill: "#2c313a", children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M488.404,1207.36 L477.637,1197.6 C476.806,1196.76 475.459,1196.76 474.629,1197.6 C473.798,1198.43 473.798,1199.77 474.629,1200.6 L483.885,1209 L474.629,1217.4 C473.798,1218.23 473.798,1219.57 474.629,1220.4 C475.459,1221.24 476.806,1221.24 477.637,1220.4 L488.404,1210.64 C488.854,1210.19 489.052,1209.59 489.015,1209 C489.052,1208.41 488.854,1207.81 488.404,1207.36", id: "chevron-right", children: " " }), " "] }), " "] }), " "] })] });
-  var qe = () => (0, import_jsx_runtime3.jsxs)("svg", { width: "10px", height: "10px", viewBox: "0 -4.5 24 24", version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", fill: "#2c313a", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsx)("title", { children: "chevron-down" }), " ", (0, import_jsx_runtime3.jsx)("desc", { children: "Created with Sketch Beta." }), " ", (0, import_jsx_runtime3.jsx)("defs", { children: " " }), " ", (0, import_jsx_runtime3.jsxs)("g", { id: "Page-1", stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { id: "Icon-Set-Filled", transform: "translate(-574.000000, -1201.000000)", fill: "#2c313a", children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M597.405,1201.63 C596.576,1200.8 595.23,1200.8 594.401,1201.63 L586.016,1210.88 L577.63,1201.63 C576.801,1200.8 575.455,1200.8 574.626,1201.63 C573.797,1202.46 573.797,1203.81 574.626,1204.64 L584.381,1215.4 C584.83,1215.85 585.429,1216.05 586.016,1216.01 C586.603,1216.05 587.201,1215.85 587.65,1215.4 L597.405,1204.64 C598.234,1203.81 598.234,1202.46 597.405,1201.63", id: "chevron-down", children: " " }), " "] }), " "] }), " "] })] });
-  var be2 = ({ header: e2, children: t2, isOpen: r2, setIsOpen: o2, ...n2 }) => {
-    let i2 = ve2(), s2 = ve2();
-    return (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [(0, import_jsx_runtime4.jsx)("button", { className: "vuiAccordionHeader", onClick: () => o2(!r2), id: i2, "aria-controls": s2, "aria-expanded": r2, ...n2, children: (0, import_jsx_runtime4.jsxs)(C2, { alignItems: "center", justifyContent: "start", spacing: "xxs", children: [(0, import_jsx_runtime4.jsx)(y2, { grow: false, shrink: false, children: r2 ? (0, import_jsx_runtime4.jsx)(qe, {}) : (0, import_jsx_runtime4.jsx)(We2, {}) }), (0, import_jsx_runtime4.jsx)(y2, { className: "vuiAccordionHeader__title", grow: 1, children: e2 })] }) }), r2 && (0, import_jsx_runtime4.jsx)("div", { id: s2, "aria-labelledby": i2, children: t2 })] });
+  var Oe2 = () => (0, import_jsx_runtime3.jsxs)("svg", { width: "10px", height: "10px", viewBox: "0 -4.5 24 24", version: "1.1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", fill: "#2c313a", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsx)("title", { children: "chevron-down" }), " ", (0, import_jsx_runtime3.jsx)("desc", { children: "Created with Sketch Beta." }), " ", (0, import_jsx_runtime3.jsx)("defs", { children: " " }), " ", (0, import_jsx_runtime3.jsxs)("g", { id: "Page-1", stroke: "none", strokeWidth: "1", fill: "none", fillRule: "evenodd", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { id: "Icon-Set-Filled", transform: "translate(-574.000000, -1201.000000)", fill: "#2c313a", children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M597.405,1201.63 C596.576,1200.8 595.23,1200.8 594.401,1201.63 L586.016,1210.88 L577.63,1201.63 C576.801,1200.8 575.455,1200.8 574.626,1201.63 C573.797,1202.46 573.797,1203.81 574.626,1204.64 L584.381,1215.4 C584.83,1215.85 585.429,1216.05 586.016,1216.01 C586.603,1216.05 587.201,1215.85 587.65,1215.4 L597.405,1204.64 C598.234,1203.81 598.234,1202.46 597.405,1201.63", id: "chevron-down", children: " " }), " "] }), " "] }), " "] })] });
+  var he2 = ({ header: e2, children: r2, isOpen: t2, setIsOpen: n2, ...o2 }) => {
+    let i2 = fe2(), s2 = fe2();
+    return (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [(0, import_jsx_runtime4.jsx)("button", { className: "vuiAccordionHeader", onClick: () => n2(!t2), id: i2, "aria-controls": s2, "aria-expanded": t2, ...o2, children: (0, import_jsx_runtime4.jsxs)(C2, { alignItems: "center", justifyContent: "start", spacing: "xxs", children: [(0, import_jsx_runtime4.jsx)(S2, { grow: false, shrink: false, children: t2 ? (0, import_jsx_runtime4.jsx)(Oe2, {}) : (0, import_jsx_runtime4.jsx)(We2, {}) }), (0, import_jsx_runtime4.jsx)(S2, { className: "vuiAccordionHeader__title", grow: 1, children: e2 })] }) }), t2 && (0, import_jsx_runtime4.jsx)("div", { id: s2, "aria-labelledby": i2, children: r2 })] });
   };
-  var X2 = (e2) => e2 ? { rel: "noopener", referrerpolicy: "no-referrer-when-downgrade" } : { rel: "noopener" };
-  var Xe = (0, import_react5.createContext)(void 0);
-  var Ce2 = ({ children: e2, linkProvider: t2, pathProvider: r2, drawerTitle: o2 = "h2" }) => {
-    let n2 = (a2) => {
-      if (t2)
-        return t2(a2);
-      let { className: l2, href: c2, onClick: d2, children: h2, ...S2 } = a2;
-      return (0, import_jsx_runtime5.jsx)("a", { className: l2, href: c2, onClick: d2, ...S2, children: h2 });
-    }, i2 = () => r2 ? r2() : window.location.pathname, s2 = o2;
-    return (0, import_jsx_runtime5.jsx)(Xe.Provider, { value: { createLink: n2, getPath: i2, DrawerTitle: s2 }, children: e2 });
+  var Z2 = (e2) => e2 ? { rel: "noopener", referrerpolicy: "no-referrer-when-downgrade" } : { rel: "noopener" };
+  var $e2 = (0, import_react5.createContext)(void 0);
+  var be2 = ({ children: e2, linkProvider: r2, pathProvider: t2, drawerTitle: n2 = "h2" }) => {
+    let o2 = (a2) => {
+      if (r2)
+        return r2(a2);
+      let { className: c2, href: l2, onClick: h2, children: w2, ...v2 } = a2;
+      return (0, import_jsx_runtime5.jsx)("a", { className: c2, href: l2, onClick: h2, ...v2, children: w2 });
+    }, i2 = () => t2 ? t2() : window.location.pathname, s2 = n2;
+    return (0, import_jsx_runtime5.jsx)($e2.Provider, { value: { createLink: o2, getPath: i2, DrawerTitle: s2 }, children: e2 });
   };
-  var j2 = () => {
-    let e2 = (0, import_react5.useContext)(Xe);
+  var K2 = () => {
+    let e2 = (0, import_react5.useContext)($e2);
     if (e2 === void 0)
       throw new Error("useVuiContext must be used within a VuiContextProvider");
     return e2;
   };
-  var ce2 = ({ children: e2, className: t2, color: r2, onClick: o2, href: n2, target: i2, track: s2, ...a2 }) => {
-    let { createLink: l2 } = j2(), c2 = (0, import_classnames3.default)(t2, "vuiBadge", `vuiBadge--${r2}`, { "vuiBadge--clickable": o2 != null ? o2 : n2 });
-    return o2 ? (0, import_jsx_runtime6.jsx)("button", { className: c2, onClick: o2, ...a2, children: e2 }) : n2 ? l2({ className: c2, href: n2, onClick: o2, children: e2, target: i2, ...X2(s2) }) : (0, import_jsx_runtime6.jsx)("div", { className: c2, ...a2, children: e2 });
+  var le2 = ({ children: e2, className: r2, color: t2, onClick: n2, href: o2, target: i2, track: s2, ...a2 }) => {
+    let { createLink: c2 } = K2(), l2 = (0, import_classnames3.default)(r2, "vuiBadge", `vuiBadge--${t2}`, { "vuiBadge--clickable": n2 != null ? n2 : o2 });
+    return n2 ? (0, import_jsx_runtime6.jsx)("button", { className: l2, onClick: n2, ...a2, children: e2 }) : o2 ? c2({ className: l2, href: o2, onClick: n2, children: e2, target: i2, ...Z2(s2) }) : (0, import_jsx_runtime6.jsx)("div", { className: l2, ...a2, children: e2 });
   };
-  var Gt = { left: "vuiBaseButton--alignLeft", center: "vuiBaseButton--alignCenter", right: "vuiBaseButton--alignRight" };
-  var ue2 = (0, import_react7.forwardRef)(({ children: e2, icon: t2, iconSide: r2 = "left", align: o2 = "center", className: n2, size: i2, fullWidth: s2, onClick: a2, tabIndex: l2, isInert: c2, isDisabled: d2, href: h2, target: S2, track: I2, htmlFor: N2, isSubmit: T2, ...k2 }, R2) => {
-    let v2 = (0, import_classnames5.default)("vuiBaseButton", n2, `vuiBaseButton--${i2}`, Gt[o2], { "vuiBaseButton-isInert": c2, "vuiBaseButton-isDisabled": d2, "vuiBaseButton--fullWidth": s2, [`vuiBaseButton--${r2}`]: !!t2 && !!e2 }), B2 = t2 ? (0, import_jsx_runtime7.jsx)("span", { className: "vuiBaseButtonIconContainer", children: t2 }) : null;
-    if (N2)
-      return (0, import_jsx_runtime7.jsxs)("label", { htmlFor: N2, className: v2, tabIndex: l2, ...k2, children: [B2, e2] });
-    if (h2) {
-      let V2 = (0, import_classnames5.default)("vuiBaseButtonLinkWrapper", { "vuiBaseButtonLinkWrapper--fullWidth": s2 });
-      return (0, import_jsx_runtime7.jsx)("a", { className: V2, href: h2, onClick: a2, target: S2, tabIndex: l2, ...k2, ...X2(I2), children: (0, import_jsx_runtime7.jsxs)("button", { className: v2, tabIndex: -1, ref: R2, children: [B2, e2] }) });
+  var Ut = { left: "vuiBaseButton--alignLeft", center: "vuiBaseButton--alignCenter", right: "vuiBaseButton--alignRight" };
+  var ue2 = (0, import_react7.forwardRef)(({ children: e2, icon: r2, iconSide: t2 = "left", align: n2 = "center", className: o2, size: i2, fullWidth: s2, onClick: a2, tabIndex: c2, isInert: l2, isDisabled: h2, href: w2, target: v2, track: E2, htmlFor: p2, isSubmit: H2, ...k2 }, V2) => {
+    let F2 = (0, import_classnames5.default)("vuiBaseButton", o2, `vuiBaseButton--${i2}`, Ut[n2], { "vuiBaseButton-isInert": l2, "vuiBaseButton-isDisabled": h2, "vuiBaseButton--fullWidth": s2, [`vuiBaseButton--${t2}`]: !!r2 && !!e2 }), m2 = r2 ? (0, import_jsx_runtime7.jsx)("span", { className: "vuiBaseButtonIconContainer", children: r2 }) : null;
+    if (p2)
+      return (0, import_jsx_runtime7.jsxs)("label", { htmlFor: p2, className: F2, tabIndex: c2, ...k2, children: [m2, e2] });
+    if (w2) {
+      let y2 = (0, import_classnames5.default)("vuiBaseButtonLinkWrapper", { "vuiBaseButtonLinkWrapper--fullWidth": s2 });
+      return (0, import_jsx_runtime7.jsx)("a", { className: y2, href: w2, onClick: a2, target: v2, tabIndex: c2, ...k2, ...Z2(E2), children: (0, import_jsx_runtime7.jsxs)("button", { className: F2, tabIndex: -1, ref: V2, children: [m2, e2] }) });
     }
-    let E2 = { onClick: a2, tabIndex: l2, type: T2 ? "submit" : "button", ...k2 };
-    return (0, import_jsx_runtime7.jsxs)("button", { className: v2, ...E2, ref: R2, children: [B2, e2] });
+    let _2 = { onClick: a2, tabIndex: c2, type: H2 ? "submit" : "button", ...k2 };
+    return (0, import_jsx_runtime7.jsxs)("button", { className: F2, ..._2, ref: V2, children: [m2, e2] });
   });
-  var Ot = { xs: "xs", s: "xs", m: "s", l: "m" };
-  var Wt = { accent: "accent", primary: "primary", success: "success", danger: "danger", warning: "warning", neutral: "neutral", subdued: "subdued" };
-  var pe2 = (e2, t2, r2, o2 = Wt) => e2 ? (0, import_react8.cloneElement)(e2, { size: t2 ? Ot[t2] : "s", color: e2.props.color === "inherit" ? o2[r2] : e2.props.color }) : null;
-  var $t = { accent: "empty", primary: "empty", success: "empty", danger: "empty", warning: "empty", neutral: "neutral", subdued: "subdued" };
-  var Se2 = (0, import_react6.forwardRef)(({ children: e2, icon: t2, color: r2, size: o2 = "m", className: n2, isSelected: i2, isDisabled: s2, ...a2 }, l2) => {
-    let c2 = (0, import_classnames4.default)(n2, "vuiButtonPrimary", `vuiButtonPrimary--${r2}`, { "vuiButtonPrimary-isSelected": i2 }), d2 = pe2(t2, o2, r2, $t);
-    return (0, import_jsx_runtime8.jsx)(ue2, { ref: l2, className: c2, icon: d2, size: o2, isDisabled: s2, ...a2, children: e2 });
+  var $t = { xs: "xs", s: "xs", m: "s", l: "m" };
+  var Xt = { accent: "accent", primary: "primary", success: "success", danger: "danger", warning: "warning", neutral: "neutral", subdued: "subdued" };
+  var pe2 = (e2, r2, t2, n2 = Xt) => e2 ? (0, import_react8.cloneElement)(e2, { size: r2 ? $t[r2] : "s", color: e2.props.color === "inherit" ? n2[t2] : e2.props.color }) : null;
+  var Kt = { accent: "empty", primary: "empty", success: "empty", danger: "empty", warning: "empty", neutral: "neutral", subdued: "subdued" };
+  var ye2 = (0, import_react6.forwardRef)(({ children: e2, icon: r2, color: t2, size: n2 = "m", className: o2, isSelected: i2, isDisabled: s2, ...a2 }, c2) => {
+    let l2 = (0, import_classnames4.default)(o2, "vuiButtonPrimary", `vuiButtonPrimary--${t2}`, { "vuiButtonPrimary-isSelected": i2 }), h2 = pe2(r2, n2, t2, Kt);
+    return (0, import_jsx_runtime8.jsx)(ue2, { ref: c2, className: l2, icon: h2, size: n2, isDisabled: s2, ...a2, children: e2 });
   });
-  var Zt = { accent: "accent", primary: "primary", success: "success", danger: "danger", warning: "warning", neutral: "neutral", subdued: "subdued" };
-  var we2 = (0, import_react9.forwardRef)(({ children: e2, icon: t2, color: r2, size: o2 = "m", className: n2, isSelected: i2, isDisabled: s2, solid: a2, ...l2 }, c2) => {
-    let d2 = (0, import_classnames6.default)(n2, "vuiButtonSecondary", `vuiButtonSecondary--${r2}`, { "vuiButtonSecondary-isSelected": i2, "vuiButtonSecondary--solid": a2 }), h2 = pe2(t2, o2, r2, Zt);
-    return (0, import_jsx_runtime9.jsx)(ue2, { ref: c2, className: d2, icon: h2, size: o2, isDisabled: s2, ...l2, children: e2 });
+  var tr = { accent: "accent", primary: "primary", success: "success", danger: "danger", warning: "warning", neutral: "neutral", subdued: "subdued" };
+  var Ce2 = (0, import_react9.forwardRef)(({ children: e2, icon: r2, color: t2, size: n2 = "m", className: o2, isSelected: i2, isDisabled: s2, solid: a2, ...c2 }, l2) => {
+    let h2 = (0, import_classnames6.default)(o2, "vuiButtonSecondary", `vuiButtonSecondary--${t2}`, { "vuiButtonSecondary-isSelected": i2, "vuiButtonSecondary--solid": a2 }), w2 = pe2(r2, n2, t2, tr);
+    return (0, import_jsx_runtime9.jsx)(ue2, { ref: l2, className: h2, icon: w2, size: n2, isDisabled: s2, ...c2, children: e2 });
   });
-  var Ie2 = ({ children: e2, columns: t2 = 2, spacing: r2 = "m", className: o2, ...n2 }) => {
-    let i2 = (0, import_classnames7.default)("vuiGridContainer", o2), s2 = (0, import_classnames7.default)("vuiGrid", `vuiGrid--${r2}`, `vuiGrid--columns${t2}`);
-    return (0, import_jsx_runtime10.jsx)("div", { className: i2, ...n2, children: (0, import_jsx_runtime10.jsx)("div", { className: s2, children: e2 }) });
+  var Se2 = ({ children: e2, columns: r2 = 2, spacing: t2 = "m", className: n2, ...o2 }) => {
+    let i2 = (0, import_classnames7.default)("vuiGridContainer", n2), s2 = (0, import_classnames7.default)("vuiGrid", `vuiGrid--${t2}`, `vuiGrid--columns${r2}`);
+    return (0, import_jsx_runtime10.jsx)("div", { className: i2, ...o2, children: (0, import_jsx_runtime10.jsx)("div", { className: s2, children: e2 }) });
   };
-  var ke2 = ({ children: e2, href: t2, target: r2, onClick: o2, className: n2, track: i2, isAnchor: s2, ...a2 }) => {
-    let { createLink: l2 } = j2();
-    if (!t2)
-      return (0, import_jsx_runtime11.jsx)("button", { className: (0, import_classnames8.default)("vuiLink", "vuiLink--button", n2), onClick: o2, ...a2, children: e2 });
-    let c2 = { ...a2, ...X2(i2) };
-    return r2 === "_blank" && (c2.target = r2), s2 ? (0, import_jsx_runtime11.jsx)("a", { className: (0, import_classnames8.default)("vuiLink", n2), href: t2, onClick: o2, ...c2, children: e2 }) : l2({ className: (0, import_classnames8.default)("vuiLink", n2), href: t2, onClick: o2, children: e2, ...c2 });
+  var ke2 = ({ children: e2, href: r2, target: t2, onClick: n2, className: o2, track: i2, isAnchor: s2, ...a2 }) => {
+    let { createLink: c2 } = K2();
+    if (!r2)
+      return (0, import_jsx_runtime11.jsx)("button", { className: (0, import_classnames8.default)("vuiLink", "vuiLink--button", o2), onClick: n2, ...a2, children: e2 });
+    let l2 = { ...a2, ...Z2(i2) };
+    return t2 === "_blank" && (l2.target = t2), s2 ? (0, import_jsx_runtime11.jsx)("a", { className: (0, import_classnames8.default)("vuiLink", o2), href: r2, onClick: n2, ...l2, children: e2 }) : c2({ className: (0, import_classnames8.default)("vuiLink", o2), href: r2, onClick: n2, children: e2, ...l2 });
   };
-  var Fe2 = ({ className: e2, size: t2 = "m", value: r2, onChange: o2, placeholder: n2, autoFocus: i2, onSubmit: s2, ...a2 }) => {
-    let l2 = (0, import_classnames9.default)("vuiSearchInput", `vuiSearchInput--${t2}`, e2);
-    return (0, import_jsx_runtime12.jsx)("form", { onSubmit: s2, children: (0, import_jsx_runtime12.jsx)("div", { className: l2, children: (0, import_jsx_runtime12.jsx)("input", { className: "vuiSearchInput__input", type: "text", autoComplete: "off", autoCapitalize: "off", spellCheck: "false", autoFocus: i2, placeholder: n2, value: r2, onChange: o2, ...a2 }) }) });
+  var Ie2 = ({ className: e2, size: r2 = "m", value: t2, onChange: n2, placeholder: o2, autoFocus: i2, onSubmit: s2, ...a2 }) => {
+    let c2 = (0, import_classnames9.default)("vuiSearchInput", `vuiSearchInput--${r2}`, e2);
+    return (0, import_jsx_runtime12.jsx)("form", { onSubmit: s2, children: (0, import_jsx_runtime12.jsx)("div", { className: c2, children: (0, import_jsx_runtime12.jsx)("input", { className: "vuiSearchInput__input", type: "text", autoComplete: "off", autoCapitalize: "off", spellCheck: "false", autoFocus: i2, placeholder: o2, value: t2, onChange: n2, ...a2 }) }) });
   };
   var f2 = ({ size: e2 = "m" }) => {
-    let t2 = (0, import_classnames10.default)("vuiSpacer", { [`vuiSpacer--${e2}`]: e2 });
-    return (0, import_jsx_runtime13.jsx)("div", { className: t2 });
+    let r2 = (0, import_classnames10.default)("vuiSpacer", { [`vuiSpacer--${e2}`]: e2 });
+    return (0, import_jsx_runtime13.jsx)("div", { className: r2 });
   };
-  var rr = { xs: "vuiSpinner--xs", s: "vuiSpinner--s", m: "vuiSpinner--m", l: "vuiSpinner--l", xl: "vuiSpinner--xl", xxl: "vuiSpinner--xxl", xxxl: "vuiSpinner--xxxl" };
-  var te2 = ({ color: e2 = "accent", size: t2 = "m" }) => {
-    let r2 = (0, import_classnames11.default)("vuiSpinner", rr[t2], `vuiSpinner--${e2}`);
-    return (0, import_jsx_runtime14.jsx)("span", { className: r2, children: (0, import_jsx_runtime14.jsx)("svg", { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 50 50", children: (0, import_jsx_runtime14.jsx)("path", { fill: "#000", d: "M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z", children: (0, import_jsx_runtime14.jsx)("animateTransform", { attributeType: "xml", attributeName: "transform", type: "rotate", from: "0 25 25", to: "360 25 25", dur: "0.6s", repeatCount: "indefinite" }) }) }) });
+  var ar = { xs: "vuiSpinner--xs", s: "vuiSpinner--s", m: "vuiSpinner--m", l: "vuiSpinner--l", xl: "vuiSpinner--xl", xxl: "vuiSpinner--xxl", xxxl: "vuiSpinner--xxxl" };
+  var ee2 = ({ color: e2 = "accent", size: r2 = "m" }) => {
+    let t2 = (0, import_classnames11.default)("vuiSpinner", ar[r2], `vuiSpinner--${e2}`);
+    return (0, import_jsx_runtime14.jsx)("span", { className: t2, children: (0, import_jsx_runtime14.jsx)("svg", { version: "1.1", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 50 50", children: (0, import_jsx_runtime14.jsx)("path", { fill: "#000", d: "M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z", children: (0, import_jsx_runtime14.jsx)("animateTransform", { attributeType: "xml", attributeName: "transform", type: "rotate", from: "0 25 25", to: "360 25 25", dur: "0.6s", repeatCount: "indefinite" }) }) }) });
   };
-  var A2 = ({ children: e2, className: t2, id: r2, truncate: o2, size: n2 = "s", align: i2, ...s2 }) => {
-    let a2 = (0, import_classnames12.default)("vuiText", `vuiText--${n2}`, { [`vuiText--${i2}`]: i2, "vuiText--truncate": o2 }, t2);
-    return (0, import_jsx_runtime15.jsx)("div", { className: a2, id: r2, ...s2, children: e2 });
+  var D2 = ({ children: e2, className: r2, id: t2, truncate: n2, size: o2 = "s", align: i2, ...s2 }) => {
+    let a2 = (0, import_classnames12.default)("vuiText", `vuiText--${o2}`, { [`vuiText--${i2}`]: i2, "vuiText--truncate": n2 }, r2);
+    return (0, import_jsx_runtime15.jsx)("div", { className: a2, id: t2, ...s2, children: e2 });
   };
-  var G2 = ({ children: e2, color: t2, className: r2 }) => {
-    let o2 = (0, import_classnames13.default)(r2, "vuiTextColor", `vuiTextColor--${t2}`);
-    return (0, import_jsx_runtime16.jsx)("span", { className: o2, children: e2 });
+  var $2 = ({ children: e2, color: r2, className: t2 }) => {
+    let n2 = (0, import_classnames13.default)(t2, "vuiTextColor", `vuiTextColor--${r2}`);
+    return (0, import_jsx_runtime16.jsx)("span", { className: n2, children: e2 });
   };
-  var re2 = ({ children: e2, className: t2, size: r2, align: o2, ...n2 }) => (0, import_react10.cloneElement)(e2, { className: (0, import_classnames14.default)("vuiTitle", `vuiTitle--${r2}`, { [`vuiTitle--${o2}`]: o2 }, t2, e2.props.className), ...n2 });
-  var Re2 = ({ children: e2, className: t2, href: r2, onClick: o2, title: n2, fullWidth: i2, ...s2 }) => {
-    let { createLink: a2 } = j2(), l2 = (0, import_classnames15.default)("vuiTopicButton", t2, { "vuiTopicButton--fullWidth": i2 }), c2 = (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [n2 && (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [(0, import_jsx_runtime17.jsx)(re2, { size: "s", children: (0, import_jsx_runtime17.jsx)("p", { children: (0, import_jsx_runtime17.jsx)(G2, { color: "primary", children: n2 }) }) }), e2 && (0, import_jsx_runtime17.jsx)(f2, { size: "xxs" })] }), e2] });
-    return r2 ? a2({ className: l2, href: r2, onClick: o2, children: c2, ...s2 }) : (0, import_jsx_runtime17.jsx)("button", { className: l2, onClick: o2, ...s2, children: c2 });
+  var te2 = ({ children: e2, className: r2, size: t2, align: n2, ...o2 }) => (0, import_react10.cloneElement)(e2, { className: (0, import_classnames14.default)("vuiTitle", `vuiTitle--${t2}`, { [`vuiTitle--${n2}`]: n2 }, r2, e2.props.className), ...o2 });
+  var Te2 = ({ children: e2, className: r2, href: t2, onClick: n2, title: o2, fullWidth: i2, ...s2 }) => {
+    let { createLink: a2 } = K2(), c2 = (0, import_classnames15.default)("vuiTopicButton", r2, { "vuiTopicButton--fullWidth": i2 }), l2 = (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [o2 && (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [(0, import_jsx_runtime17.jsx)(te2, { size: "s", children: (0, import_jsx_runtime17.jsx)("p", { children: (0, import_jsx_runtime17.jsx)($2, { color: "primary", children: o2 }) }) }), e2 && (0, import_jsx_runtime17.jsx)(f2, { size: "xxs" })] }), e2] });
+    return t2 ? a2({ className: c2, href: t2, onClick: n2, children: l2, ...s2 }) : (0, import_jsx_runtime17.jsx)("button", { className: c2, onClick: n2, ...s2, children: l2 });
   };
-  var rt = ({ query: e2, setQuery: t2, onSubmit: r2, placeholder: o2, buttonLabel: n2, isButtonDisabled: i2, size: s2 }) => (0, import_jsx_runtime18.jsxs)(C2, { alignItems: "center", spacing: "xs", children: [(0, import_jsx_runtime18.jsx)(y2, { grow: 1, children: (0, import_jsx_runtime18.jsx)(Fe2, { size: s2, value: e2, onChange: (c2) => {
-    t2(c2.target.value);
-  }, onSubmit: (c2) => {
-    c2.preventDefault(), r2();
-  }, placeholder: o2, autoFocus: true, "data-testid": "queryInput" }) }), (0, import_jsx_runtime18.jsx)(y2, { children: (0, import_jsx_runtime18.jsx)(Se2, { color: "primary", size: s2, onClick: () => r2(), isDisabled: i2, children: n2 }) })] });
-  var Pe2 = (e2, t2) => {
-    let r2 = [], o2 = t2.match(/\[\d+\]/g) || [], n2 = /* @__PURE__ */ new Set();
-    for (let i2 = 0; i2 < o2.length; i2++) {
-      let s2 = o2[i2], a2 = Number(s2.slice(1, s2.length - 1)) - 1;
-      n2.has(a2) || (r2.push(e2[a2]), n2.add(a2));
+  var rt = ({ query: e2, setQuery: r2, onSubmit: t2, placeholder: n2, buttonLabel: o2, isButtonDisabled: i2, size: s2 }) => (0, import_jsx_runtime18.jsxs)(C2, { alignItems: "center", spacing: "xs", children: [(0, import_jsx_runtime18.jsx)(S2, { grow: 1, children: (0, import_jsx_runtime18.jsx)(Ie2, { size: s2, value: e2, onChange: (l2) => {
+    r2(l2.target.value);
+  }, onSubmit: (l2) => {
+    l2.preventDefault(), t2();
+  }, placeholder: n2, autoFocus: true, "data-testid": "queryInput" }) }), (0, import_jsx_runtime18.jsx)(S2, { children: (0, import_jsx_runtime18.jsx)(ye2, { color: "primary", size: s2, onClick: () => t2(), isDisabled: i2, children: o2 }) })] });
+  var Re2 = (e2, r2) => {
+    let t2 = [], n2 = r2.match(/\[\d+\]/g) || [], o2 = /* @__PURE__ */ new Set();
+    for (let i2 = 0; i2 < n2.length; i2++) {
+      let s2 = n2[i2], a2 = Number(s2.slice(1, s2.length - 1)) - 1;
+      o2.has(a2) || (t2.push(e2[a2]), o2.add(a2));
     }
-    return r2;
+    return t2;
   };
-  var Ne2 = (e2) => {
-    let t2 = /\[(\d+(,*\s*\d*)*)\]/g, r2 = [], o2, n2 = 0;
-    for (; (o2 = t2.exec(e2)) !== null; ) {
-      let s2 = o2.index, a2 = o2[1], l2 = e2.slice(n2, s2).trim();
-      r2.push({ text: l2, references: a2.replace(/\s/g, "").split(",") }), n2 = s2 + o2[0].length;
+  var Fe2 = (e2) => {
+    let r2 = /\[(\d+(,*\s*\d*)*)\]/g, t2 = [], n2, o2 = 0;
+    for (; (n2 = r2.exec(e2)) !== null; ) {
+      let s2 = n2.index, a2 = n2[1], c2 = e2.slice(o2, s2).trim();
+      t2.push({ text: c2, references: a2.replace(/\s/g, "").split(",") }), o2 = s2 + n2[0].length;
     }
-    let i2 = e2.slice(n2).trim();
-    return i2.length > 0 && r2.push({ text: i2 }), r2;
+    let i2 = e2.slice(o2).trim();
+    return i2.length > 0 && t2.push({ text: i2 }), t2;
   };
-  var Ee2 = (e2) => {
-    let t2 = e2.match(/\[\d+\]/g) || [], r2 = [...new Set(t2)], o2 = {};
-    return r2.forEach((n2, i2) => {
-      o2[n2] = `[${i2 + 1}]`;
-    }), e2.replace(/\[\d+\]/g, (n2) => o2[n2]);
+  var _e2 = (e2) => {
+    let r2 = e2.match(/\[\d+\]/g) || [], t2 = [...new Set(r2)], n2 = {};
+    return t2.forEach((o2, i2) => {
+      n2[o2] = `[${i2 + 1}]`;
+    }), e2.replace(/\[\d+\]/g, (o2) => n2[o2]);
   };
-  var ot = ({ searchResults: e2, isOpen: t2 = false, setIsOpen: r2 = () => {
-  } }) => (0, import_jsx_runtime19.jsxs)(be2, { header: `Based on ${e2.length} ${e2.length === 1 ? "fact" : "facts"}`, isOpen: t2, setIsOpen: r2, children: [(0, import_jsx_runtime19.jsx)(f2, { size: "s" }), e2.map((o2, n2) => (0, import_jsx_runtime19.jsxs)("div", { children: [(0, import_jsx_runtime19.jsx)(pr, { result: o2, position: n2 }), n2 < e2.length - 1 && (0, import_jsx_runtime19.jsx)(f2, { size: "s" })] }, n2))] });
-  var pr = ({ result: e2, position: t2 }) => {
-    var n2;
-    let r2 = (n2 = e2 == null ? void 0 : e2.snippet) == null ? void 0 : n2.text, o2 = e2 == null ? void 0 : e2.url;
-    return (0, import_jsx_runtime19.jsx)(import_jsx_runtime19.Fragment, { children: (0, import_jsx_runtime19.jsxs)(C2, { alignItems: "start", spacing: "s", children: [(0, import_jsx_runtime19.jsx)(y2, { grow: false, shrink: false, children: (0, import_jsx_runtime19.jsx)("div", { className: "vrcbChatSearchResultPosition", children: t2 + 1 }) }), (0, import_jsx_runtime19.jsx)(y2, { grow: 1, shrink: 1, children: (0, import_jsx_runtime19.jsx)(A2, { size: "s", children: (0, import_jsx_runtime19.jsx)("p", { children: o2 ? (0, import_jsx_runtime19.jsx)("a", { href: o2, target: "_blank", children: r2 }) : r2 }) }) })] }) });
+  var nt = "%START_SNIPPET%";
+  var ot = "%END_SNIPPET%";
+  var ne2 = (e2) => {
+    let [r2, t2] = e2.indexOf(nt) !== -1 ? e2.split(nt) : ["", e2], [n2, o2] = t2.indexOf(ot) !== -1 ? t2.split(ot) : [t2, ""];
+    return { pre: r2, post: o2, text: n2 };
   };
-  var gr = (e2) => Ne2(e2).reduce((r2, { text: o2, references: n2 }) => (n2 ? (r2.push(o2), o2 && o2[o2.length - 1] !== " " && r2.push(" "), n2.forEach((s2, a2) => {
-    a2 > 0 && r2.push(" "), r2.push(`<SummaryCitation reference={${s2}} />`);
-  })) : r2.push(o2), r2), []).join(" ");
-  var Le2 = ({ question: e2, answer: t2, searchResults: r2, factualConsistencyScore: o2, onRetry: n2, isStreaming: i2 }) => {
-    let [s2, a2] = (0, import_react11.useState)(false), l2;
-    if (n2)
-      l2 = (0, import_jsx_runtime20.jsxs)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--error", children: [(0, import_jsx_runtime20.jsx)(f2, { size: "m" }), (0, import_jsx_runtime20.jsxs)(C2, { alignItems: "center", spacing: "none", children: [(0, import_jsx_runtime20.jsxs)(C2, { alignItems: "center", spacing: "xxs", children: [(0, import_jsx_runtime20.jsx)(y2, { grow: false, shrink: true, children: (0, import_jsx_runtime20.jsx)(Oe2, {}) }), (0, import_jsx_runtime20.jsx)(y2, { grow: false, children: "Message not sent." })] }), n2 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "s" }), (0, import_jsx_runtime20.jsx)(C2, { alignItems: "center", spacing: "none", children: (0, import_jsx_runtime20.jsx)("button", { className: "vrcbRetryButton", onClick: () => n2(), children: "Try again" }) })] })] })] });
-    else if (t2) {
-      let c2 = (r2 ? Pe2(r2, t2) : []).slice(0, 7), d2 = r2 ? Ee2(t2) : t2, h2 = gr(d2);
-      l2 = (0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--answer", children: (0, import_jsx_runtime20.jsxs)("div", { className: "vrcbChatMessage", children: [(0, import_jsx_runtime20.jsxs)(A2, { size: "s", children: [(0, import_jsx_runtime20.jsx)(index_modern_default, { children: h2, options: { forceInline: true, overrides: { SummaryCitation: { component: ({ reference: I2 }) => (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [" ", (0, import_jsx_runtime20.jsx)("button", { onClick: () => a2(true), children: (0, import_jsx_runtime20.jsx)("span", { className: "vrcbChatSummaryCitation", children: I2 }) })] }) } } } }), i2 && (0, import_jsx_runtime20.jsxs)("span", { children: [" ", (0, import_jsx_runtime20.jsx)(te2, { size: "xs" })] })] }), o2 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "xs" }), o2] }), c2 && c2.length > 0 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "s" }), (0, import_jsx_runtime20.jsx)(ot, { searchResults: c2, isOpen: s2, setIsOpen: a2 })] })] }) });
+  var it = ({ searchResults: e2, isOpen: r2 = false, setIsOpen: t2 = () => {
+  } }) => (0, import_jsx_runtime19.jsxs)(he2, { header: `Based on ${e2.length} ${e2.length === 1 ? "fact" : "facts"}`, isOpen: r2, setIsOpen: t2, children: [(0, import_jsx_runtime19.jsx)(f2, { size: "s" }), e2.map((n2, o2) => (0, import_jsx_runtime19.jsxs)("div", { children: [(0, import_jsx_runtime19.jsx)(fr, { result: n2, position: o2 }), o2 < e2.length - 1 && (0, import_jsx_runtime19.jsx)(f2, { size: "s" })] }, o2))] });
+  var fr = ({ result: e2, position: r2 }) => {
+    var o2;
+    let t2 = e2.document_metadata.url, { text: n2 } = ne2((o2 = e2 == null ? void 0 : e2.snippet) == null ? void 0 : o2.text);
+    return (0, import_jsx_runtime19.jsx)(import_jsx_runtime19.Fragment, { children: (0, import_jsx_runtime19.jsxs)(C2, { alignItems: "start", spacing: "s", children: [(0, import_jsx_runtime19.jsx)(S2, { grow: false, shrink: false, children: (0, import_jsx_runtime19.jsx)("div", { className: "vrcbChatSearchResultPosition", children: r2 + 1 }) }), (0, import_jsx_runtime19.jsx)(S2, { grow: 1, shrink: 1, children: (0, import_jsx_runtime19.jsx)(D2, { size: "s", children: (0, import_jsx_runtime19.jsx)("p", { children: t2 ? (0, import_jsx_runtime19.jsx)("a", { href: t2, target: "_blank", children: n2 }) : n2 }) }) })] }) });
+  };
+  var yr = (e2) => Fe2(e2).reduce((t2, { text: n2, references: o2 }) => (o2 ? (t2.push(n2), n2 && n2[n2.length - 1] !== " " && t2.push(" "), o2.forEach((s2, a2) => {
+    a2 > 0 && t2.push(" "), t2.push(`<SummaryCitation reference={${s2}} />`);
+  })) : t2.push(n2), t2), []).join(" ");
+  var Ne2 = ({ question: e2, answer: r2, searchResults: t2, factualConsistencyScore: n2, onRetry: o2, isStreaming: i2 }) => {
+    let [s2, a2] = (0, import_react11.useState)(false), c2;
+    if (o2)
+      c2 = (0, import_jsx_runtime20.jsxs)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--error", children: [(0, import_jsx_runtime20.jsx)(f2, { size: "m" }), (0, import_jsx_runtime20.jsxs)(C2, { alignItems: "center", spacing: "none", children: [(0, import_jsx_runtime20.jsxs)(C2, { alignItems: "center", spacing: "xxs", children: [(0, import_jsx_runtime20.jsx)(S2, { grow: false, shrink: true, children: (0, import_jsx_runtime20.jsx)(He2, {}) }), (0, import_jsx_runtime20.jsx)(S2, { grow: false, children: "Message not sent." })] }), o2 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "s" }), (0, import_jsx_runtime20.jsx)(C2, { alignItems: "center", spacing: "none", children: (0, import_jsx_runtime20.jsx)("button", { className: "vrcbRetryButton", onClick: () => o2(), children: "Try again" }) })] })] })] });
+    else if (r2) {
+      let l2 = (t2 ? Re2(t2, r2) : []).slice(0, 7), h2 = t2 ? _e2(r2) : r2, w2 = yr(h2);
+      c2 = (0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--answer", children: (0, import_jsx_runtime20.jsxs)("div", { className: "vrcbChatMessage", children: [(0, import_jsx_runtime20.jsxs)(D2, { size: "s", children: [(0, import_jsx_runtime20.jsx)(index_modern_default, { children: w2, options: { forceInline: true, overrides: { SummaryCitation: { component: ({ reference: E2 }) => (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [" ", (0, import_jsx_runtime20.jsx)("button", { onClick: () => a2(true), children: (0, import_jsx_runtime20.jsx)("span", { className: "vrcbChatSummaryCitation", children: E2 }) })] }) } } } }), i2 && (0, import_jsx_runtime20.jsxs)("span", { children: [" ", (0, import_jsx_runtime20.jsx)(ee2, { size: "xs" })] })] }), n2 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "xs" }), n2] }), l2 && l2.length > 0 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "s" }), (0, import_jsx_runtime20.jsx)(it, { searchResults: l2, isOpen: s2, setIsOpen: a2 })] })] }) });
     }
-    return (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--question", children: (0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessage", children: e2 }) }), (0, import_jsx_runtime20.jsx)(f2, { size: "xs" }), l2] });
+    return (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--question", children: (0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessage", children: e2 }) }), (0, import_jsx_runtime20.jsx)(f2, { size: "xs" }), c2] });
   };
-  var nt = async ({ customerId: e2, corpusId: t2, endpoint: r2, apiKey: o2, filter: n2, queryValue: i2, language: s2, summaryMode: a2, rerank: l2, rerankNumResults: c2, rerankerId: d2, rerankDiversityBias: h2, hybridNumWords: S2, hybridLambdaShort: I2, hybridLambdaLong: N2, summaryNumResults: T2, summaryNumSentences: k2, summaryPromptName: R2, enableFactualConsistencyScore: v2, chat: B2 }) => {
-    let E2 = typeof i2 > "u" || i2.trim().split(" ").length > S2 ? N2 : I2, V2 = t2.split(",").map((u2) => ({ customerId: e2, corpusId: u2, lexicalInterpolationConfig: { lambda: E2 }, metadataFilter: n2 ? `doc.source = '${n2}'` : void 0 })), L2 = { query: [{ query: i2, start: 0, numResults: l2 ? c2 : 10, corpusKey: V2, contextConfig: { sentencesBefore: a2 ? k2 : 2, sentencesAfter: a2 ? k2 : 2, startTag: xe2, endTag: ge2 }, ...a2 ? { summary: [{ factualConsistencyScore: v2, responseLang: s2, maxSummarizedResults: T2, summarizerPromptName: R2, chat: { store: true, conversationId: B2 == null ? void 0 : B2.conversationId } }] } : {}, ...l2 ? { rerankingConfig: { rerankerId: d2, ...d2 === 272725718 ? { mmrConfig: { diversityBias: h2 } } : {} } } : {} }] }, z2 = `https://${r2}/v1/query`, g2 = await fetch(z2, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json", "customer-id": e2, "x-api-key": o2, "grpc-timeout": "60S", "x-source": "react-chatbot" }, body: JSON.stringify(L2) });
-    if (g2.status !== 200)
-      throw new Error(g2.status.toString());
-    let F2 = await g2.json(), p2 = F2.responseSet[0].status;
-    if (p2.length > 0 && p2[0].code === "UNAUTHORIZED" && console.log("UNAUTHORIZED access; check your API key and customer ID"), a2) {
-      let u2 = F2.responseSet[0].summary[0].status;
-      if (u2.length > 0 && u2[0].code === "BAD_REQUEST")
-        throw new Error("BAD REQUEST: Too much text for the summarizer to summarize. Please try reducing the number of search results to summarize, or the context of each result by adjusting the 'summary_num_sentences', and 'summary_num_results' parameters respectively.");
-      if (u2.length > 0 && u2[0].code === "NOT_FOUND" && u2[0].statusDetail === "Failed to retrieve summarizer.")
-        throw new Error(`BAD REQUEST: summarizer ${R2} is invalid for this account.`);
+  var st = "https://api.vectara.io";
+  var Ee2 = "%START_SNIPPET%";
+  var Ve = "%END_SNIPPET%";
+  var Cr = (e2) => {
+    if (e2) {
+      if (e2.type === "none")
+        return { type: e2.type };
+      if (e2.type === "customer_reranker")
+        return { type: e2.type, reranker_id: e2.rerankerId };
+      if (e2.type === "mmr")
+        return { type: e2.type, diversity_bias: e2.diversityBias };
     }
-    return F2.responseSet[0];
   };
-  var xe2 = "%START_SNIPPET%";
-  var ge2 = "%END_SNIPPET%";
-  var it = (e2) => {
-    if (!e2)
-      return;
-    let t2 = [], { response: r2, document: o2 } = e2;
-    return r2.forEach((n2) => {
-      let { documentIndex: i2, text: s2 } = n2, { pre: a2, post: l2, text: c2 } = hr(s2), d2 = o2[Number(i2)], { id: h2, metadata: S2 } = d2, { source: I2, url: N2, title: T2, metadata: k2 } = fr(S2);
-      t2.push({ id: h2, snippet: { pre: a2, text: c2, post: l2 }, source: I2, url: N2, title: T2, metadata: k2 });
-    }), t2;
+  var Sr = (e2) => {
+    if (e2) {
+      if (e2.style === "none" || e2.style === "numeric")
+        return { style: e2.style };
+      if (e2.style === "html" || e2.style === "markdown")
+        return { style: e2.style, url_pattern: e2.urlPattern, text_pattern: e2.textPattern };
+    }
   };
-  var fr = (e2) => {
-    let t2 = vr(e2);
-    return { source: t2.source, url: t2.url, title: t2.title || "Untitled", metadata: t2 };
+  var at = async ({ customerId: e2, corpusKeys: r2, apiKey: t2, query: n2, domain: o2, search: i2, generation: s2, chat: a2 }) => {
+    var _2;
+    let { metadataFilter: c2, lexicalInterpolation: l2, customDimensions: h2, semantics: w2, offset: v2, limit: E2, contextConfiguration: p2, reranker: H2 } = i2, k2 = { query: n2, search: { corpora: r2.split(",").map((y2) => ({ corpus_key: y2, metadata_filter: c2, lexical_interpolation: l2, custom_dimensions: h2, semantics: w2 })), offset: v2, limit: E2, context_configuration: { characters_before: p2 == null ? void 0 : p2.charactersBefore, characters_after: p2 == null ? void 0 : p2.charactersAfter, sentences_before: p2 == null ? void 0 : p2.sentencesBefore, sentences_after: p2 == null ? void 0 : p2.sentencesAfter, start_tag: p2 == null ? void 0 : p2.startTag, end_tag: p2 == null ? void 0 : p2.endTag }, reranker: Cr(H2) } };
+    if (s2) {
+      let { promptName: y2, maxUsedSearchResults: G2, promptText: M2, maxResponseCharacters: A2, responseLanguage: z2, modelParameters: b2, citations: P2, enableFactualConsistencyScore: d2 } = s2;
+      k2.generation = { prompt_name: y2, max_used_search_results: G2, prompt_text: M2, max_response_characters: A2, response_language: z2, model_parameters: b2 && { max_tokens: b2.maxTokens, temperature: b2.temperature, frequency_penalty: b2.frequencyPenalty, presence_penalty: b2.presencePenalty }, citations: Sr(P2), enable_factual_consistency_score: d2 };
+    }
+    a2 && (k2.chat = { store: a2.store });
+    let V2 = { "customer-id": e2, "Content-Type": "application/json" };
+    t2 && (V2["x-api-key"] = t2);
+    let F2 = `${o2 != null ? o2 : st}/v2/chats`, m2 = await fetch(F2, { method: "POST", headers: V2, body: JSON.stringify(k2) });
+    if (m2.status === 400 || m2.status === 403 || m2.status === 404) {
+      let y2 = await m2.json();
+      throw new Error(`BAD REQUEST: ${(_2 = y2 == null ? void 0 : y2.messages[0]) != null ? _2 : y2.field_errors}`);
+    }
+    if (m2.status !== 200)
+      throw new Error(m2.status.toString());
+    return await m2.json();
   };
-  var hr = (e2) => {
-    let [t2, r2] = e2.indexOf(xe2) !== -1 ? e2.split(xe2) : ["", e2], [o2, n2] = r2.indexOf(ge2) !== -1 ? r2.split(ge2) : [r2, ""];
-    return { pre: t2, post: n2, text: o2 };
-  };
-  var vr = (e2) => {
-    let t2 = {};
-    return e2.forEach((r2) => {
-      t2[r2.name] = r2.value;
-    }), t2;
-  };
-  var at = "vectara-summary-ext-v1.2.0";
-  var st = 272725718;
-  var lt = 0.025;
-  var ct = ({ customerId: e2, corpusIds: t2, apiKey: r2, enableStreaming: o2 = true, language: n2 = "eng", enableFactualConsistencyScore: i2, summaryPromptName: s2 = at, rerankerId: a2 = st, lambda: l2 = lt }) => {
-    let [c2, d2] = (0, import_react12.useState)([]), h2 = (0, import_react12.useRef)(""), [S2, I2] = (0, import_react12.useState)(null), [N2, T2] = (0, import_react12.useState)(false), [k2, R2] = (0, import_react12.useState)(false), [v2, B2] = (0, import_react12.useState)(null), [E2, V2] = (0, import_react12.useState)(false), L2 = async ({ query: g2, isRetry: F2 = false }) => {
-      if (N2)
+  var lt = "vectara-summary-ext-v1.2.0";
+  var ut = 272725718;
+  var pt = 5e-3;
+  var dt = ({ customerId: e2, corpusKeys: r2, apiKey: t2, numberOfSearchResults: n2 = 10, language: o2 = "eng", enableFactualConsistencyScore: i2, summaryPromptName: s2 = lt, rerankerId: a2 = ut, lambda: c2 = pt, enableStreaming: l2 = true }) => {
+    let [h2, w2] = (0, import_react12.useState)([]), v2 = (0, import_react12.useRef)(""), [E2, p2] = (0, import_react12.useState)(null), [H2, k2] = (0, import_react12.useState)(false), [V2, F2] = (0, import_react12.useState)(false), [m2, _2] = (0, import_react12.useState)(null), [y2, G2] = (0, import_react12.useState)(false), M2 = async ({ query: z2, isRetry: b2 = false }) => {
+      if (H2)
         return;
-      F2 && V2(false), I2(null), h2.current = g2, I2({ id: "placeholder-message-id", question: g2, answer: "", results: [] });
-      let p2 = { filter: "", queryValue: g2, rerank: true, rerankNumResults: 7, rerankerId: a2, rerankDiversityBias: 0.3, customerId: e2, corpusId: t2.join(","), endpoint: "api.vectara.io", apiKey: r2 };
-      if (T2(true), o2)
+      b2 && G2(false), p2(null), v2.current = z2, p2({ id: "placeholder-message-id", question: z2, answer: "", results: [], factualConsistencyScore: void 0 }), k2(true);
+      let P2;
+      if (l2)
         try {
-          await (0, import_stream_query_client.streamQuery)({ ...p2, corpusIds: t2, summaryNumResults: 7, summaryNumSentences: 3, summaryPromptName: s2, language: n2, rerankerId: a2, enableFactualConsistencyScore: i2, chat: { store: true, conversationId: v2 != null ? v2 : void 0 }, lambda: l2 }, (u2) => H2(u2));
-        } catch (u2) {
-          console.log("Summary error", u2), T2(false), V2(true);
+          let d2 = (L2) => {
+            switch (L2.type) {
+              case "requestError":
+              case "genericError":
+              case "error":
+                G2(true), k2(false);
+                break;
+              case "chatInfo":
+                _2(L2.chatId), p2((u2) => {
+                  var I2, T2;
+                  return { id: L2.chatId, question: v2.current, answer: (I2 = u2 == null ? void 0 : u2.answer) != null ? I2 : "", results: (T2 = u2 == null ? void 0 : u2.results) != null ? T2 : [] };
+                });
+                break;
+              case "searchResults":
+                P2 = L2.searchResults.map((u2) => {
+                  let { pre: I2, text: T2, post: W2 } = ne2(u2.text);
+                  return { ...u2, snippet: { pre: I2, text: T2, post: W2 } };
+                }), p2((u2) => {
+                  var I2, T2;
+                  return { id: (I2 = u2 == null ? void 0 : u2.id) != null ? I2 : "", question: v2.current, answer: (T2 = u2 == null ? void 0 : u2.answer) != null ? T2 : "", results: P2 };
+                });
+                break;
+              case "generationChunk":
+                F2(true), k2(false), p2((u2) => {
+                  var I2, T2, W2;
+                  return { id: (I2 = u2 == null ? void 0 : u2.id) != null ? I2 : "", question: v2.current, answer: (T2 = L2.updatedText) != null ? T2 : "", results: (W2 = u2 == null ? void 0 : u2.results) != null ? W2 : [] };
+                });
+                break;
+              case "factualConsistencyScore":
+                p2((u2) => {
+                  var I2, T2, W2;
+                  return { id: (I2 = u2 == null ? void 0 : u2.id) != null ? I2 : "", question: v2.current, answer: (T2 = u2 == null ? void 0 : u2.answer) != null ? T2 : "", results: (W2 = u2 == null ? void 0 : u2.results) != null ? W2 : [], factualConsistencyScore: L2.factualConsistencyScore };
+                });
+                break;
+              case "end":
+                F2(false);
+                break;
+            }
+          }, U2 = { apiKey: t2, customerId: e2, query: z2, corpusKey: r2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: c2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2, startTag: Ee2, endTag: Ve } }, chat: { store: true, conversationId: m2 != null ? m2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } };
+          await (0, import_stream_query_client.streamQueryV2)({ streamQueryConfig: U2, onStreamEvent: d2 });
+        } catch (d2) {
+          console.log("Summary error", d2), G2(true), k2(false);
           return;
         }
       else
         try {
-          let u2 = await nt({ ...p2, hybridNumWords: 2, hybridLambdaLong: 0, hybridLambdaShort: 0.1, summaryMode: true, summaryNumResults: 7, summaryNumSentences: 3, rerankerId: a2, summaryPromptName: s2, language: n2, enableFactualConsistencyScore: i2, chat: { conversationId: v2 != null ? v2 : void 0 } });
-          B2(u2.summary[0].chat.conversationId), d2((K2) => {
-            var O2, J2, U2;
-            return [...K2, { id: u2.summary[0].chat.turnId, question: h2.current, answer: (O2 = u2 == null ? void 0 : u2.summary[0].text) != null ? O2 : "", results: (J2 = it(u2)) != null ? J2 : [], factualConsistencyScore: (U2 = u2.summary[0].factualConsistency) == null ? void 0 : U2.score }];
-          }), I2(null), T2(false);
-        } catch (u2) {
-          console.log("Summary error", u2), V2(true), T2(false);
+          let d2 = await at({ apiKey: t2, customerId: e2, query: z2, corpusKeys: r2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: c2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2, startTag: Ee2, endTag: Ve } }, chat: { store: true, conversationId: m2 != null ? m2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } });
+          P2 = d2.search_results.map((U2) => {
+            let { pre: L2, text: u2, post: I2 } = ne2(U2.text);
+            return { ...U2, snippet: { pre: L2, text: u2, post: I2 } };
+          }), _2(d2.chat_id), w2((U2) => {
+            var L2;
+            return [...U2, { id: d2.chat_id, question: v2.current, answer: (L2 = d2 == null ? void 0 : d2.answer) != null ? L2 : "", results: P2 != null ? P2 : [], factualConsistencyScore: d2.factual_consistency_score }];
+          }), p2(null), k2(false);
+        } catch (d2) {
+          console.log("Summary error", d2), G2(true), k2(false);
           return;
         }
-    }, z2 = () => {
-      d2([]), B2(null);
-    }, H2 = (g2) => {
-      var Y2, se2;
-      let { references: F2, details: p2, updatedText: u2, isDone: K2 } = g2, O2 = (Y2 = p2 == null ? void 0 : p2.factualConsistency) == null ? void 0 : Y2.score;
-      u2 && (R2(true), T2(false)), p2 != null && p2.chat && B2((se2 = p2.chat.conversationId) != null ? se2 : null), I2((ee2) => {
-        var b2, M2, W2;
-        return { id: (M2 = (b2 = p2 == null ? void 0 : p2.chat) == null ? void 0 : b2.turnId) != null ? M2 : "", question: h2.current, answer: u2 != null ? u2 : "", results: [...(W2 = ee2 == null ? void 0 : ee2.results) != null ? W2 : [], ...F2 != null ? F2 : []], factualConsistencyScore: O2 };
-      }), K2 && (i2 ? O2 !== void 0 : true) && R2(false);
+    }, A2 = () => {
+      w2([]), _2(null);
     };
     return (0, import_react12.useEffect)(() => {
-      !k2 && S2 && (d2([...c2, S2]), I2(null));
-    }, [k2]), { sendMessage: L2, activeMessage: S2, messageHistory: c2, isLoading: N2, isStreamingResponse: k2, startNewConversation: z2, hasError: E2 };
+      !V2 && E2 && (w2([...h2, E2]), p2(null));
+    }, [V2]), { sendMessage: M2, activeMessage: E2, messageHistory: h2, isLoading: H2, isStreamingResponse: V2, startNewConversation: A2, hasError: y2 };
   };
-  var ut = () => (0, import_jsx_runtime21.jsx)(import_jsx_runtime21.Fragment, { children: (0, import_jsx_runtime21.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--thinking", children: (0, import_jsx_runtime21.jsx)("div", { className: "vrcbChatMessage", children: (0, import_jsx_runtime21.jsx)("div", { className: "vrcbLoader" }) }) }) });
-  var ze2 = ({ score: e2 }) => {
-    let t2;
+  var mt = () => (0, import_jsx_runtime21.jsx)(import_jsx_runtime21.Fragment, { children: (0, import_jsx_runtime21.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--thinking", children: (0, import_jsx_runtime21.jsx)("div", { className: "vrcbChatMessage", children: (0, import_jsx_runtime21.jsx)("div", { className: "vrcbLoader" }) }) }) });
+  var Le2 = ({ score: e2 }) => {
+    let r2;
     if (e2 === void 0)
-      t2 = (0, import_jsx_runtime22.jsx)(ce2, { color: "accent", children: "Calculating Factual Consistency Score\u2026" });
+      r2 = (0, import_jsx_runtime22.jsx)(le2, { color: "accent", children: "Calculating Factual Consistency Score\u2026" });
     else {
-      let r2 = parseFloat(e2.toFixed(2)), o2 = "neutral";
-      r2 === 0 ? o2 = "danger" : r2 === 1 && (o2 = "success"), t2 = (0, import_jsx_runtime22.jsxs)(ce2, { color: o2, children: ["Factual Consistency Score: ", r2] });
+      let t2 = parseFloat(e2.toFixed(2)), n2 = "neutral";
+      t2 === 0 ? n2 = "danger" : t2 === 1 && (n2 = "success"), r2 = (0, import_jsx_runtime22.jsxs)(le2, { color: n2, children: ["Factual Consistency Score: ", t2] });
     }
-    return (0, import_jsx_runtime22.jsxs)(C2, { alignItems: "center", "data-testid": "factualConsistencyBadge", children: [e2 === void 0 && (0, import_jsx_runtime22.jsx)(te2, { size: "s" }), t2, (0, import_jsx_runtime22.jsx)(A2, { size: "xs", children: (0, import_jsx_runtime22.jsx)("p", { children: (0, import_jsx_runtime22.jsx)(ke2, { href: "https://docs.vectara.com/docs/api-reference/search-apis/search?#factual-consistency-score", target: "_blank", children: "What's this?" }) }) })] });
+    return (0, import_jsx_runtime22.jsxs)(C2, { alignItems: "center", "data-testid": "factualConsistencyBadge", children: [e2 === void 0 && (0, import_jsx_runtime22.jsx)(ee2, { size: "s" }), r2, (0, import_jsx_runtime22.jsx)(D2, { size: "xs", children: (0, import_jsx_runtime22.jsx)("p", { children: (0, import_jsx_runtime22.jsx)(ke2, { href: "https://docs.vectara.com/docs/api-reference/search-apis/search?#factual-consistency-score", target: "_blank", children: "What's this?" }) }) })] });
   };
-  var xt = ({ children: e2, onClick: t2, title: r2 }) => (0, import_jsx_runtime23.jsx)(Re2, { onClick: t2, "data-testid": "exampleQuestion", children: (0, import_jsx_runtime23.jsxs)(import_jsx_runtime23.Fragment, { children: [r2 && (0, import_jsx_runtime23.jsxs)(import_jsx_runtime23.Fragment, { children: [(0, import_jsx_runtime23.jsx)(re2, { size: "s", children: (0, import_jsx_runtime23.jsx)("p", { children: (0, import_jsx_runtime23.jsx)(G2, { color: "primary", children: r2 }) }) }), e2 && (0, import_jsx_runtime23.jsx)(f2, { size: "xxs" })] }), e2] }) });
-  var gt = () => (0, import_jsx_runtime24.jsxs)(C2, { className: "vrcbEmptyMessages", spacing: "none", alignItems: "center", justifyContent: "center", direction: "column", children: [(0, import_jsx_runtime24.jsx)(He2, { size: "80px", color: "#cbcdde" }), (0, import_jsx_runtime24.jsx)(A2, { children: (0, import_jsx_runtime24.jsx)("p", { children: (0, import_jsx_runtime24.jsx)(G2, { color: "subdued", children: "Ask anything." }) }) })] });
-  var ft = ({ exampleQuestions: e2, onSubmitChat: t2 }) => e2.length > 0 ? (0, import_jsx_runtime25.jsxs)("div", { className: "vrcbExampleQuestionsContainer", children: [(0, import_jsx_runtime25.jsx)(A2, { children: (0, import_jsx_runtime25.jsx)("p", { children: (0, import_jsx_runtime25.jsx)(G2, { color: "subdued", children: "Try out these example questions" }) }) }), (0, import_jsx_runtime25.jsx)(f2, { size: "m" }), (0, import_jsx_runtime25.jsx)(Ie2, { columns: 3, children: e2.map((o2) => (0, import_jsx_runtime25.jsx)(xt, { onClick: () => t2(o2), title: o2 }, o2)) })] }) : (0, import_jsx_runtime25.jsx)(gt, {});
-  var Tr = { large: "l", medium: "m" };
-  var Ct = ({ customerId: e2, corpusIds: t2, apiKey: r2, title: o2 = "My Chatbot", placeholder: n2 = "Chat with your AI Assistant", exampleQuestions: i2, inputSize: s2 = "large", emptyStateDisplay: a2, isInitiallyOpen: l2, zIndex: c2 = 9999, enableStreaming: d2 = true, language: h2 = "eng", enableFactualConsistencyScore: S2, summaryPromptName: I2, rerankerId: N2, lambda: T2 }) => {
-    let [k2, R2] = (0, import_react4.useState)(l2 != null ? l2 : false), [v2, B2] = (0, import_react4.useState)(""), { sendMessage: E2, startNewConversation: V2, messageHistory: L2, isLoading: z2, hasError: H2, activeMessage: g2, isStreamingResponse: F2 } = ct({ customerId: e2, corpusIds: t2, apiKey: r2, enableStreaming: d2, language: h2, enableFactualConsistencyScore: S2, summaryPromptName: I2, rerankerId: N2, lambda: T2 }), p2 = (0, import_react4.useRef)(null), u2 = (0, import_react4.useRef)(true), K2 = () => {
+  var ht = ({ children: e2, onClick: r2, title: t2 }) => (0, import_jsx_runtime23.jsx)(Te2, { onClick: r2, "data-testid": "exampleQuestion", children: (0, import_jsx_runtime23.jsxs)(import_jsx_runtime23.Fragment, { children: [t2 && (0, import_jsx_runtime23.jsxs)(import_jsx_runtime23.Fragment, { children: [(0, import_jsx_runtime23.jsx)(te2, { size: "s", children: (0, import_jsx_runtime23.jsx)("p", { children: (0, import_jsx_runtime23.jsx)($2, { color: "primary", children: t2 }) }) }), e2 && (0, import_jsx_runtime23.jsx)(f2, { size: "xxs" })] }), e2] }) });
+  var bt = () => (0, import_jsx_runtime24.jsxs)(C2, { className: "vrcbEmptyMessages", spacing: "none", alignItems: "center", justifyContent: "center", direction: "column", children: [(0, import_jsx_runtime24.jsx)(qe, { size: "80px", color: "#cbcdde" }), (0, import_jsx_runtime24.jsx)(D2, { children: (0, import_jsx_runtime24.jsx)("p", { children: (0, import_jsx_runtime24.jsx)($2, { color: "subdued", children: "Ask anything." }) }) })] });
+  var vt = ({ exampleQuestions: e2, onSubmitChat: r2 }) => e2.length > 0 ? (0, import_jsx_runtime25.jsxs)("div", { className: "vrcbExampleQuestionsContainer", children: [(0, import_jsx_runtime25.jsx)(D2, { children: (0, import_jsx_runtime25.jsx)("p", { children: (0, import_jsx_runtime25.jsx)($2, { color: "subdued", children: "Try out these example questions" }) }) }), (0, import_jsx_runtime25.jsx)(f2, { size: "m" }), (0, import_jsx_runtime25.jsx)(Se2, { columns: 3, children: e2.map((n2) => (0, import_jsx_runtime25.jsx)(ht, { onClick: () => r2(n2), title: n2 }, n2)) })] }) : (0, import_jsx_runtime25.jsx)(bt, {});
+  var Pr = { large: "l", medium: "m" };
+  var wt = ({ customerId: e2, corpusKeys: r2, apiKey: t2, title: n2 = "My Chatbot", placeholder: o2 = "Chat with your AI Assistant", exampleQuestions: i2, inputSize: s2 = "large", emptyStateDisplay: a2, isInitiallyOpen: c2, zIndex: l2 = 9999, numberOfSearchResults: h2 = 10, language: w2 = "eng", enableFactualConsistencyScore: v2, summaryPromptName: E2, rerankerId: p2, lambda: H2, enableStreaming: k2 = true }) => {
+    let [V2, F2] = (0, import_react4.useState)(c2 != null ? c2 : false), [m2, _2] = (0, import_react4.useState)(""), { sendMessage: y2, startNewConversation: G2, messageHistory: M2, isLoading: A2, hasError: z2, activeMessage: b2, isStreamingResponse: P2 } = dt({ customerId: e2, corpusKeys: r2, apiKey: t2, numberOfSearchResults: h2, language: w2, enableFactualConsistencyScore: v2, summaryPromptName: E2, rerankerId: p2, lambda: H2, enableStreaming: k2 }), d2 = (0, import_react4.useRef)(null), U2 = (0, import_react4.useRef)(true), L2 = () => {
       setTimeout(() => {
-        var b2, M2;
-        u2.current && ((M2 = p2.current) == null || M2.scrollTo({ left: 0, top: (b2 = p2.current) == null ? void 0 : b2.scrollHeight, behavior: "smooth" }));
+        var R2, Q2;
+        U2.current && ((Q2 = d2.current) == null || Q2.scrollTo({ left: 0, top: (R2 = d2.current) == null ? void 0 : R2.scrollHeight, behavior: "smooth" }));
       }, 0);
     };
     (0, import_react4.useEffect)(() => {
-      l2 !== void 0 && R2(l2);
-    }, [l2]), (0, import_react4.useEffect)(() => {
-      let b2 = p2.current, M2 = () => {
-        let W2 = p2.current ? Math.abs(p2.current.scrollHeight - p2.current.clientHeight - p2.current.scrollTop) < 50 : true;
-        u2.current = W2;
+      c2 !== void 0 && F2(c2);
+    }, [c2]), (0, import_react4.useEffect)(() => {
+      let R2 = d2.current, Q2 = () => {
+        let ae2 = d2.current ? Math.abs(d2.current.scrollHeight - d2.current.clientHeight - d2.current.scrollTop) < 50 : true;
+        U2.current = ae2;
       };
-      return b2 == null || b2.addEventListener("scroll", M2), () => {
-        b2 == null || b2.removeEventListener("scroll", M2);
+      return R2 == null || R2.addEventListener("scroll", Q2), () => {
+        R2 == null || R2.removeEventListener("scroll", Q2);
       };
     }, []);
-    let O2 = (0, import_react4.useMemo)(() => L2.map((b2, M2) => {
-      let { question: W2, answer: St, results: wt, factualConsistencyScore: It } = b2, Bt = H2 && M2 === L2.length - 1 ? () => E2({ query: W2, isRetry: true }) : void 0;
-      return (0, import_jsx_runtime26.jsxs)(import_react4.Fragment, { children: [(0, import_jsx_runtime26.jsx)(Le2, { question: W2, answer: St, searchResults: wt, factualConsistencyScore: S2 && (0, import_jsx_runtime26.jsx)(ze2, { score: It }), onRetry: Bt }), M2 < L2.length - 1 && (0, import_jsx_runtime26.jsx)(f2, { size: "m" })] }, M2);
-    }), [L2]), J2 = z2 || L2.length > 0 || g2, U2 = z2 || F2 || v2.trim().length === 0, Y2 = (b2) => {
-      U2 && !b2 || (E2({ query: b2 != null ? b2 : v2 }), B2(""));
-    }, se2 = O2.length === 0 ? null : (0, import_jsx_runtime26.jsx)(f2, { size: g2 ? "m" : "l" });
-    (0, import_react4.useEffect)(K2, [z2, g2]);
-    let ee2 = k2 ? (0, import_jsx_runtime26.jsxs)("div", { className: "vrcbChatbotWrapper", style: { zIndex: c2 }, children: [(0, import_jsx_runtime26.jsxs)(C2, { className: "vrcbHeader", spacing: "none", direction: "row", children: [(0, import_jsx_runtime26.jsx)(y2, { grow: 1, alignItems: "center", children: o2 }), (0, import_jsx_runtime26.jsx)(y2, { alignItems: "center", children: (0, import_jsx_runtime26.jsx)("button", { onClick: () => R2(false), children: (0, import_jsx_runtime26.jsx)(Ge2, { size: "12px", color: "#2c313a" }) }) })] }), (0, import_jsx_runtime26.jsxs)(C2, { direction: "column", spacing: "none", className: "vrcbChatbotInnerWrapper", children: [(0, import_jsx_runtime26.jsx)(y2, { className: "vrcbMessagesWrapper", basis: "fill", children: (0, import_jsx_runtime26.jsx)("div", { ref: p2, children: J2 ? (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(f2, { size: "xs" }), O2, se2, g2 && (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(Le2, { question: g2.question, answer: g2.answer, searchResults: g2.results, factualConsistencyScore: S2 && (0, import_jsx_runtime26.jsx)(ze2, { score: g2.factualConsistencyScore }), onRetry: H2 ? () => E2({ query: g2.question, isRetry: true }) : void 0, isStreaming: F2 }), (0, import_jsx_runtime26.jsx)(f2, { size: "l" })] }), z2 && (0, import_jsx_runtime26.jsx)(ut, {}), (0, import_jsx_runtime26.jsx)(C2, { fullWidth: true, justifyContent: "center", children: (0, import_jsx_runtime26.jsx)(y2, { children: (0, import_jsx_runtime26.jsx)(we2, { color: "neutral", size: "xs", onClick: V2, isDisabled: z2, children: "Start new conversation" }) }) }), (0, import_jsx_runtime26.jsx)(f2, { size: "l" })] }) : a2 != null ? a2 : (0, import_jsx_runtime26.jsx)(ft, { exampleQuestions: i2 != null ? i2 : [], onSubmitChat: Y2 }) }) }), (0, import_jsx_runtime26.jsx)(y2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime26.jsx)(rt, { placeholder: n2, buttonLabel: "Send", query: v2, setQuery: B2, isButtonDisabled: U2, onSubmit: Y2, size: Tr[s2] }) })] })] }) : (0, import_jsx_runtime26.jsx)("button", { className: "vrcbChatbotButton", onClick: () => R2(true), style: { zIndex: c2 }, children: o2 });
-    return (0, import_jsx_runtime26.jsx)(Ce2, { children: ee2 });
+    let u2 = (0, import_react4.useMemo)(() => M2.map((R2, Q2) => {
+      let { question: ae2, answer: Tt, results: Rt, factualConsistencyScore: Ft } = R2, _t = z2 && Q2 === M2.length - 1 ? () => y2({ query: ae2, isRetry: true }) : void 0;
+      return (0, import_jsx_runtime26.jsxs)(import_react4.Fragment, { children: [(0, import_jsx_runtime26.jsx)(Ne2, { question: ae2, answer: Tt, searchResults: Rt, factualConsistencyScore: v2 && (0, import_jsx_runtime26.jsx)(Le2, { score: Ft }), onRetry: _t }), Q2 < M2.length - 1 && (0, import_jsx_runtime26.jsx)(f2, { size: "m" })] }, Q2);
+    }), [M2]), I2 = A2 || M2.length > 0 || b2, T2 = A2 || P2 || m2.trim().length === 0, W2 = (R2) => {
+      T2 && !R2 || (y2({ query: R2 != null ? R2 : m2 }), _2(""));
+    }, Bt = u2.length === 0 ? null : (0, import_jsx_runtime26.jsx)(f2, { size: b2 ? "m" : "l" });
+    (0, import_react4.useEffect)(L2, [A2, b2]);
+    let It = V2 ? (0, import_jsx_runtime26.jsxs)("div", { className: "vrcbChatbotWrapper", style: { zIndex: l2 }, children: [(0, import_jsx_runtime26.jsxs)(C2, { className: "vrcbHeader", spacing: "none", direction: "row", children: [(0, import_jsx_runtime26.jsx)(S2, { grow: 1, alignItems: "center", children: n2 }), (0, import_jsx_runtime26.jsx)(S2, { alignItems: "center", children: (0, import_jsx_runtime26.jsx)("button", { onClick: () => F2(false), children: (0, import_jsx_runtime26.jsx)(De2, { size: "12px", color: "#2c313a" }) }) })] }), (0, import_jsx_runtime26.jsxs)(C2, { direction: "column", spacing: "none", className: "vrcbChatbotInnerWrapper", children: [(0, import_jsx_runtime26.jsx)(S2, { className: "vrcbMessagesWrapper", basis: "fill", children: (0, import_jsx_runtime26.jsx)("div", { ref: d2, children: I2 ? (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(f2, { size: "xs" }), u2, Bt, b2 && (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(Ne2, { question: b2.question, answer: b2.answer, searchResults: b2.results, factualConsistencyScore: v2 && (0, import_jsx_runtime26.jsx)(Le2, { score: b2.factualConsistencyScore }), onRetry: z2 ? () => y2({ query: b2.question, isRetry: true }) : void 0, isStreaming: P2 }), (0, import_jsx_runtime26.jsx)(f2, { size: "l" })] }), A2 && (0, import_jsx_runtime26.jsx)(mt, {}), (0, import_jsx_runtime26.jsx)(C2, { fullWidth: true, justifyContent: "center", children: (0, import_jsx_runtime26.jsx)(S2, { children: (0, import_jsx_runtime26.jsx)(Ce2, { color: "neutral", size: "xs", onClick: G2, isDisabled: A2, children: "Start new conversation" }) }) }), (0, import_jsx_runtime26.jsx)(f2, { size: "l" })] }) : a2 != null ? a2 : (0, import_jsx_runtime26.jsx)(vt, { exampleQuestions: i2 != null ? i2 : [], onSubmitChat: W2 }) }) }), (0, import_jsx_runtime26.jsx)(S2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime26.jsx)(rt, { placeholder: o2, buttonLabel: "Send", query: m2, setQuery: _2, isButtonDisabled: T2, onSubmit: W2, size: Pr[s2] }) })] })] }) : (0, import_jsx_runtime26.jsx)("button", { className: "vrcbChatbotButton", onClick: () => F2(true), style: { zIndex: l2 }, children: n2 });
+    return (0, import_jsx_runtime26.jsx)(be2, { children: It });
   };
   var Ae2 = `:host {
   all: initial;
@@ -36645,40 +36806,40 @@ fieldset {
 .vuiTextColor--neutral {
   color: #2c313a !important;
 }`;
-  var _e2 = class extends HTMLElement {
+  var ze2 = class extends HTMLElement {
     static get observedAttributes() {
-      return ["customerid", "corpusids", "apikey", "title", "placeholder", "examplequestions", "inputsize", "isinitiallyopen", "zindex", "emptystatedisplayupdatetime", "enablestreaming", "language", "enablefactualconsistencyscore", "summarypromptname", "rerankerId", "lambda"];
+      return ["customerid", "corpuskeys", "apikey", "title", "placeholder", "examplequestions", "inputsize", "isinitiallyopen", "zindex", "emptystatedisplayupdatetime", "numberofsearchresults", "language", "enablefactualconsistencyscore", "summarypromptname", "rerankerId", "lambda", "enablestreaming"];
     }
     constructor() {
       super(), this.sr = this.attachShadow({ mode: "open" });
       try {
         this.sheet = new CSSStyleSheet(), this.sheet.replaceSync(Ae2), this.sr.adoptedStyleSheets = [this.sheet];
       } catch {
-        let t2 = document.createElement("style");
-        t2.innerText = Ae2, this.sr.appendChild(t2);
+        let r2 = document.createElement("style");
+        r2.innerText = Ae2, this.sr.appendChild(r2);
       }
       this.mountPoint = document.createElement("div"), this.sr.appendChild(this.mountPoint);
     }
-    setEmptyStateDisplay(t2) {
-      this.emptyStateDisplay = t2, this.setAttribute("emptystatedisplayupdatetime", Date.now().toString());
+    setEmptyStateDisplay(r2) {
+      this.emptyStateDisplay = r2, this.setAttribute("emptystatedisplayupdatetime", Date.now().toString());
     }
     connectedCallback() {
-      var v2, B2, E2, V2, L2, z2, H2, g2, F2;
-      let t2 = (v2 = this.getAttribute("customerId")) != null ? v2 : "", r2 = ((B2 = this.getAttribute("corpusIds")) != null ? B2 : "").split(" "), o2 = (E2 = this.getAttribute("apiKey")) != null ? E2 : "", n2 = (V2 = this.getAttribute("title")) != null ? V2 : void 0, i2 = (L2 = this.getAttribute("placeholder")) != null ? L2 : void 0, s2 = this.getAttribute("exampleQuestions"), a2 = s2 ? s2.split(",") : void 0, l2 = (z2 = this.getAttribute("inputSize")) != null ? z2 : void 0, c2 = this.getAttribute("isInitiallyOpen") === "true", d2 = (H2 = this.emptyStateDisplay) != null ? H2 : void 0, h2 = this.getAttribute("zIndex") !== null ? parseInt(this.getAttribute("zIndex")) : void 0, S2 = this.getAttribute("enableStreaming") !== null ? this.getAttribute("enableStreaming") == "true" : void 0, I2 = (g2 = this.getAttribute("language")) != null ? g2 : void 0, N2 = this.getAttribute("enableFactualConsistencyScore") === "true", T2 = (F2 = this.getAttribute("summaryPromptName")) != null ? F2 : void 0, k2 = this.getAttribute("rerankerId") !== null ? parseInt(this.getAttribute("rerankerId"), 10) : void 0, R2 = this.getAttribute("lambda") !== null ? parseFloat(this.getAttribute("lambda")) : void 0;
-      yt.render((0, import_jsx_runtime27.jsx)("div", { children: (0, import_jsx_runtime27.jsx)(Ct, { customerId: t2, corpusIds: r2, apiKey: o2, title: n2, placeholder: i2, exampleQuestions: a2, inputSize: l2, emptyStateDisplay: d2, isInitiallyOpen: c2, zIndex: h2, enableStreaming: S2, language: I2, enableFactualConsistencyScore: N2, summaryPromptName: T2, rerankerId: k2, lambda: R2 }) }), this.mountPoint);
+      var m2, _2, y2, G2, M2, A2, z2, b2, P2, d2;
+      let r2 = (m2 = this.getAttribute("customerId")) != null ? m2 : "", t2 = (_2 = this.getAttribute("corpuskey")) != null ? _2 : "", n2 = (y2 = this.getAttribute("apiKey")) != null ? y2 : "", o2 = (G2 = this.getAttribute("title")) != null ? G2 : void 0, i2 = (M2 = this.getAttribute("placeholder")) != null ? M2 : void 0, s2 = this.getAttribute("exampleQuestions"), a2 = s2 ? s2.split(",") : void 0, c2 = (A2 = this.getAttribute("inputSize")) != null ? A2 : void 0, l2 = this.getAttribute("isInitiallyOpen") === "true", h2 = (z2 = this.emptyStateDisplay) != null ? z2 : void 0, w2 = this.getAttribute("zIndex") !== null ? parseInt(this.getAttribute("zIndex")) : void 0, v2 = (b2 = parseInt(this.getAttribute("numberofsearchresults"), 10)) != null ? b2 : 15, E2 = (P2 = this.getAttribute("language")) != null ? P2 : void 0, p2 = this.getAttribute("enableFactualConsistencyScore") === "true", H2 = (d2 = this.getAttribute("summaryPromptName")) != null ? d2 : void 0, k2 = this.getAttribute("rerankerId") !== null ? parseInt(this.getAttribute("rerankerId"), 10) : void 0, V2 = this.getAttribute("lambda") !== null ? parseFloat(this.getAttribute("lambda")) : void 0, F2 = this.getAttribute("enableStreaming") !== null ? this.getAttribute("enableStreaming") == "true" : void 0;
+      kt.render((0, import_jsx_runtime27.jsx)("div", { children: (0, import_jsx_runtime27.jsx)(wt, { customerId: r2, corpusKeys: t2, apiKey: n2, title: o2, placeholder: i2, exampleQuestions: a2, inputSize: c2, emptyStateDisplay: h2, isInitiallyOpen: l2, zIndex: w2, enableStreaming: F2, numberOfSearchResults: v2, language: E2, enableFactualConsistencyScore: p2, summaryPromptName: H2, rerankerId: k2, lambda: V2 }) }), this.mountPoint);
     }
     attributeChangedCallback() {
       this.connectedCallback();
     }
   };
-  window.customElements.get("react-chatbot") || window.customElements.define("react-chatbot", _e2);
-  var Ji = (e2) => {
-    let t2 = (0, import_react3.useRef)(null);
+  window.customElements.get("react-chatbot") || window.customElements.define("react-chatbot", ze2);
+  var ms = (e2) => {
+    let r2 = (0, import_react3.useRef)(null);
     (0, import_react3.useEffect)(() => {
-      t2.current && e2.emptyStateDisplay && t2.current.setEmptyStateDisplay(e2.emptyStateDisplay);
+      r2.current && e2.emptyStateDisplay && r2.current.setEmptyStateDisplay(e2.emptyStateDisplay);
     }, [e2]);
-    let r2 = e2, o2 = Object.keys(e2).reduce((n2, i2) => (i2 === "emptyStateDisplay" || (i2 === "corpusIds" ? n2[i2] = r2.corpusIds.join(" ") : n2[i2] = r2[i2]), n2), {});
-    return (0, import_jsx_runtime27.jsx)("react-chatbot", { ref: t2, ...o2 });
+    let t2 = e2, n2 = Object.keys(e2).reduce((o2, i2) => (i2 === "emptyStateDisplay" || (i2 === "corpusIds" ? o2[i2] = t2.corpusIds.join(" ") : o2[i2] = t2[i2]), o2), {});
+    return (0, import_jsx_runtime27.jsx)("react-chatbot", { ref: r2, ...n2 });
   };
 
   // src/ui/components/flex/FlexContainer.tsx
@@ -37754,7 +37915,7 @@ fieldset {
         }
       }
     }
-    return nodes.filter(function(_3, index) {
+    return nodes.filter(function(_2, index) {
       return !contained.has(index);
     });
   };
@@ -38585,8 +38746,8 @@ fieldset {
   var extractRef3 = function(ref) {
     return ref && "current" in ref ? ref.current : ref;
   };
-  var deltaCompare = function(x3, y3) {
-    return x3[0] === y3[0] && x3[1] === y3[1];
+  var deltaCompare = function(x3, y2) {
+    return x3[0] === y2[0] && x3[1] === y2[1];
   };
   var generateStyle = function(id2) {
     return "\n  .block-interactivity-".concat(id2, " {pointer-events: none;}\n  .allow-interactivity-").concat(id2, " {pointer-events: all;}\n");
@@ -39183,7 +39344,7 @@ fieldset {
     }
     warning(path === "*" || !path.endsWith("*") || path.endsWith("/*"), 'Route path "' + path + '" will be treated as if it were ' + ('"' + path.replace(/\*$/, "/*") + '" because the `*` character must ') + "always follow a `/` in the pattern. To get rid of this warning, " + ('please change the route path to "' + path.replace(/\*$/, "/*") + '".'));
     let params = [];
-    let regexpSource = "^" + path.replace(/\/*\*?$/, "").replace(/^\/*/, "/").replace(/[\\.*+^${}|()[\]]/g, "\\$&").replace(/\/:([\w-]+)(\?)?/g, (_3, paramName, isOptional) => {
+    let regexpSource = "^" + path.replace(/\/*\*?$/, "").replace(/^\/*/, "/").replace(/[\\.*+^${}|()[\]]/g, "\\$&").replace(/\/:([\w-]+)(\?)?/g, (_2, paramName, isOptional) => {
       params.push({
         paramName,
         isOptional: isOptional != null
@@ -39531,7 +39692,7 @@ fieldset {
       matches,
       loaderData
     } = useDataRouterState(DataRouterStateHook.UseMatches);
-    return React18.useMemo(() => matches.map((m3) => convertRouteMatchToUiMatch(m3, loaderData)), [matches, loaderData]);
+    return React18.useMemo(() => matches.map((m2) => convertRouteMatchToUiMatch(m2, loaderData)), [matches, loaderData]);
   }
   function useNavigateStable() {
     let {
@@ -42117,8 +42278,8 @@ pre[class*="language-"] {
   var ConfigurationDrawer = ({
     isOpen,
     onClose,
-    corpusIds,
-    onUpdateCorpusIds,
+    corpusKeys,
+    onUpdateCorpusKeys,
     customerId,
     onUpdateCustomerId,
     apiKey,
@@ -42131,8 +42292,8 @@ pre[class*="language-"] {
     onUpdateInputSize,
     emptyMessagesContent,
     onUpdateEmptyMessagesContent,
-    isStreamingEnabled,
-    onUpdateIsStreamingEnabled,
+    numberOfSearchResults,
+    onUpdateNumberOfSearchResults,
     language,
     onUpdateLanguage,
     exampleQuestions,
@@ -42144,7 +42305,9 @@ pre[class*="language-"] {
     rerankerId,
     onUpdateRerankerId,
     lambda,
-    onUpdateLambda
+    onUpdateLambda,
+    isStreamingEnabled,
+    onUpdateIsStreamingEnabled
   }) => {
     return /* @__PURE__ */ (0, import_jsx_runtime107.jsxs)(
       VuiDrawer,
@@ -42160,7 +42323,7 @@ pre[class*="language-"] {
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "m" }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiFormGroup, { label: "Customer ID", labelFor: "customerId", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiTextInput, { value: customerId, onChange: onUpdateCustomerId }) }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "m" }),
-          /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiFormGroup, { label: "Corpus IDs (comma-separated)", labelFor: "corpusId", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiTextInput, { value: corpusIds.join(","), onChange: onUpdateCorpusIds }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiFormGroup, { label: "Corpus Key", labelFor: "corpusId", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiTextInput, { value: corpusKeys, onChange: onUpdateCorpusKeys }) }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "m" }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiFormGroup, { label: "API key", labelFor: "apiKey", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiTextInput, { value: apiKey, onChange: onUpdateApiKey, fullWidth: true }) }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "l" }),
@@ -42173,7 +42336,6 @@ pre[class*="language-"] {
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiFormGroup, { label: "Example questions", labelFor: "exampleQuestions", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiTextInput, { value: exampleQuestions, onChange: onUpdateExampleQuestions, fullWidth: true }) }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "m" }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiLabel, { children: "Enable streaming" }),
-          /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "xs" }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(
             VuiToggle,
             {
@@ -42183,6 +42345,8 @@ pre[class*="language-"] {
               checked: isStreamingEnabled
             }
           ),
+          /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "m" }),
+          /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiFormGroup, { label: "Number of search results to summarize", labelFor: "numberOfSearchResults", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiNumberInput, { value: numberOfSearchResults, onChange: (numberOfSearchResults2) => onUpdateNumberOfSearchResults(numberOfSearchResults2), step: 1 }) }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "m" }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiFormGroup, { label: "Response language", labelFor: "responseLanguage", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(
             VuiSelect,
@@ -45312,10 +45476,10 @@ fieldset {
     }
     return value.match('"') ? `'${value}'` : `"${value}"`;
   };
-  var generateCodeSnippet = (customerId, corpusIds, apiKey, title, placeholder, inputSize, emptyStateDisplay, isStreamingEnabled, language, exampleQuestions, rerankerId, lambda) => {
+  var generateCodeSnippet = (customerId, corpusKeys, apiKey, title, placeholder, inputSize, emptyStateDisplay, numberOfSearchResults, language, exampleQuestions, rerankerId, lambda, isStreamingEnabled) => {
     const props = [
       `customerId="${customerId === "" ? "<Your Vectara customer ID>" : customerId}"`,
-      `corpusIds=${corpusIds?.length === 0 ? '"<Your Vectara corpus IDs>"' : `{["${corpusIds?.join('","').replace(/\s/g, "")}"]}`}`,
+      `corpusKeys="${corpusKeys === "" ? "<Your Vectara Corpus key>" : corpusKeys}"`,
       `apiKey="${apiKey === "" ? "<Your Vectara API key>" : apiKey}"`
     ];
     if (title) {
@@ -45336,6 +45500,7 @@ fieldset {
       props.push(`emptyStateDisplay={${emptyStateDisplay.replace(/\n/g, "").replace(/\s+/g, " ")}}`);
     }
     props.push(`enableStreaming={${isStreamingEnabled}}`);
+    props.push(`numberOfSearchResultsForSummary={${numberOfSearchResults}}`);
     props.push(`language="${language}"`);
     props.push(`rerankerId=${rerankerId}`);
     props.push(`lambda=${lambda}`);
@@ -45351,7 +45516,7 @@ export const App = () => (
   </div>
 );`;
   };
-  var DEFAULT_CORPUS_IDS = ["1"];
+  var DEFAULT_CORPUS_KEY = "vectara-docs_1";
   var DEFAULT_CUSTOMER_ID = "1366999410";
   var DEFAULT_API_KEY = "zqt_UXrBcnI2UXINZkrv4g1tQPhzj02vfdtqYJIDiA";
   var DEFAULT_TITLE = "Vectara Docs Chatbot";
@@ -45359,27 +45524,23 @@ export const App = () => (
   var App = () => {
     const [isConfigurationDrawerOpen, setIsConfigurationDrawerOpen] = (0, import_react50.useState)(false);
     const [isChatbotForcedOpen, setIsChatbotForcedOpen] = (0, import_react50.useState)(true);
-    const [corpusIds, setCorpusIds] = (0, import_react50.useState)([]);
+    const [corpusKeys, setCorpusKeys] = (0, import_react50.useState)("");
     const [customerId, setCustomerId] = (0, import_react50.useState)("");
     const [apiKey, setApiKey] = (0, import_react50.useState)("");
     const [title, setTitle] = (0, import_react50.useState)(DEFAULT_TITLE);
     const [placeholder, setPlaceholder] = (0, import_react50.useState)(DEFAULT_PLACEHOLDER);
     const [inputSize, setInputSize] = (0, import_react50.useState)("large");
     const [isStreamingEnabled, setIsStreamingEnabled] = (0, import_react50.useState)(true);
+    const [numberOfSearchResults, setNumberOfSearchResults] = (0, import_react50.useState)(15);
     const [language, setLanguage] = (0, import_react50.useState)("eng");
     const [emptyStateJsx, setEmptyStateJsx] = (0, import_react50.useState)("");
     const [exampleQuestions, setExampleQuestions] = (0, import_react50.useState)("What is Vectara?, How does RAG work?");
     const [enableFactualConsistencyScore, setEnableFactualConsistencyScore] = (0, import_react50.useState)(false);
-    const [summaryPromptName, setSummaryPromptName] = (0, import_react50.useState)(at);
-    const [rerankerId, setRerankerId] = (0, import_react50.useState)(st);
-    const [lambda, setLambda] = (0, import_react50.useState)(lt);
-    const onUpdateCorpusIds = (0, import_react50.useCallback)((e2) => {
-      const sanitizedValue = e2.target.value.trim();
-      if (sanitizedValue === "") {
-        setCorpusIds([]);
-        return;
-      }
-      setCorpusIds(sanitizedValue.split(","));
+    const [summaryPromptName, setSummaryPromptName] = (0, import_react50.useState)(lt);
+    const [rerankerId, setRerankerId] = (0, import_react50.useState)(ut);
+    const [lambda, setLambda] = (0, import_react50.useState)(pt);
+    const onUpdateCorpusKeys = (0, import_react50.useCallback)((e2) => {
+      setCorpusKeys(e2.target.value);
     }, []);
     const onUpdateCustomerId = (0, import_react50.useCallback)((e2) => {
       setCustomerId(e2.target.value);
@@ -45430,9 +45591,9 @@ export const App = () => (
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(VuiText, { children: /* @__PURE__ */ (0, import_jsx_runtime108.jsx)("p", { children: "React-Chatbot instantly adds a Vectara-powered chatbot to your React applications." }) }),
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(VuiSpacer, { size: "m" }),
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(
-          Ji,
+          ms,
           {
-            corpusIds: corpusIds.length === 0 ? DEFAULT_CORPUS_IDS : corpusIds,
+            corpusKey: corpusKeys === "" ? DEFAULT_CORPUS_KEY : corpusKeys,
             customerId: customerId === "" ? DEFAULT_CUSTOMER_ID : customerId,
             apiKey: apiKey === "" ? DEFAULT_API_KEY : apiKey,
             title: title === "" ? void 0 : title,
@@ -45442,12 +45603,13 @@ export const App = () => (
             emptyStateDisplay: emptyStateJsx === "" ? void 0 : /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(CustomEmptyStateDisplay, {}),
             isInitiallyOpen: isChatbotForcedOpen,
             zIndex: 9,
-            enableStreaming: isStreamingEnabled,
+            numberOfSearchResults,
             language,
             enableFactualConsistencyScore,
             summaryPromptName,
             rerankerId,
-            lambda
+            lambda,
+            enableStreaming: isStreamingEnabled
           }
         ),
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(VuiSpacer, { size: "m" }),
@@ -45475,17 +45637,18 @@ export const App = () => (
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(VuiSpacer, { size: "s" }),
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(VuiCode, { language: "tsx", children: generateCodeSnippet(
           customerId,
-          corpusIds,
+          corpusKeys,
           apiKey,
           title,
           placeholder,
           inputSize,
           emptyStateJsx,
-          isStreamingEnabled,
+          numberOfSearchResults,
           language,
           exampleQuestions,
           rerankerId,
-          lambda
+          lambda,
+          isStreamingEnabled
         ) }),
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(VuiSpacer, { size: "xxl" }),
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(VuiTitle, { size: "m", children: /* @__PURE__ */ (0, import_jsx_runtime108.jsx)("h2", { children: "Create your own view" }) }),
@@ -45509,9 +45672,10 @@ export const App = () => {
     startNewConversation
   } = useChat({
     customerId: DEFAULT_CUSTOMER_ID,
-    corpusIds: DEFAULT_CORPUS_IDS,
+    corpusKeys: DEFAULT_CORPUS_KEY,
     apiKey: DEFAULT_API_KEY,
     enableStreaming: true, // Enable streaming, false otherwise. Defaults to true.
+    numberOfSearchResults: 15, // Number of search results to use for summary.
     language: "fra" // Response language. Defaults to "eng" for English.
   });
 
@@ -45544,8 +45708,8 @@ export const App = () => {
           {
             isOpen: isConfigurationDrawerOpen,
             onClose: () => setIsConfigurationDrawerOpen(false),
-            corpusIds,
-            onUpdateCorpusIds,
+            corpusKeys,
+            onUpdateCorpusKeys,
             customerId,
             onUpdateCustomerId,
             apiKey,
@@ -45558,8 +45722,8 @@ export const App = () => {
             onUpdateInputSize: setInputSize,
             emptyMessagesContent: emptyStateJsx,
             onUpdateEmptyMessagesContent,
-            isStreamingEnabled,
-            onUpdateIsStreamingEnabled: setIsStreamingEnabled,
+            numberOfSearchResults,
+            onUpdateNumberOfSearchResults: setNumberOfSearchResults,
             language,
             onUpdateLanguage: setLanguage,
             exampleQuestions,
@@ -45571,7 +45735,9 @@ export const App = () => {
             rerankerId,
             onUpdateRerankerId: setRerankerId,
             lambda,
-            onUpdateLambda: setLambda
+            onUpdateLambda: setLambda,
+            isStreamingEnabled,
+            onUpdateIsStreamingEnabled: setIsStreamingEnabled
           }
         )
       ] }) }) })
