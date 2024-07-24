@@ -21620,7 +21620,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 var a3 = new at2(), n3 = this.parseExpression(true, a3);
                 return this.type === b2._in || this.options.ecmaVersion >= 6 && this.isContextual("of") ? (this.options.ecmaVersion >= 9 && (this.type === b2._in ? e5 > -1 && this.unexpected(e5) : t5.await = e5 > -1), this.toAssignable(n3, false, a3), this.checkLValPattern(n3), this.parseForIn(t5, n3)) : (this.checkExpressionErrors(a3, true), e5 > -1 && this.unexpected(e5), this.parseFor(t5, n3));
               }, nt2.parseFunctionStatement = function(t5, e5, i4) {
-                return this.next(), this.parseFunction(t5, ct | (i4 ? 0 : lt2), false, e5);
+                return this.next(), this.parseFunction(t5, ct2 | (i4 ? 0 : lt), false, e5);
               }, nt2.parseIfStatement = function(t5) {
                 return this.next(), t5.test = this.parseParenExpression(), t5.consequent = this.parseStatement("if"), t5.alternate = this.eat(b2._else) ? this.parseStatement("if") : null, this.finishNode(t5, "IfStatement");
               }, nt2.parseReturnStatement = function(t5) {
@@ -21692,11 +21692,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               }, nt2.parseVarId = function(t5, e5) {
                 t5.id = this.parseBindingAtom(), this.checkLValPattern(t5.id, "var" === e5 ? J3 : Y3, false);
               };
-              var ct = 1, lt2 = 2, ut2 = 4;
+              var ct2 = 1, lt = 2, ut2 = 4;
               nt2.parseFunction = function(t5, e5, i4, s4) {
-                this.initFunction(t5), (this.options.ecmaVersion >= 9 || this.options.ecmaVersion >= 6 && !s4) && (this.type === b2.star && e5 & lt2 && this.unexpected(), t5.generator = this.eat(b2.star)), this.options.ecmaVersion >= 8 && (t5.async = !!s4), e5 & ct && (t5.id = e5 & ut2 && this.type !== b2.name ? null : this.parseIdent(), !t5.id || e5 & lt2 || this.checkLValSimple(t5.id, this.strict || t5.generator || t5.async ? this.treatFunctionsAsVar ? J3 : Y3 : Z3));
+                this.initFunction(t5), (this.options.ecmaVersion >= 9 || this.options.ecmaVersion >= 6 && !s4) && (this.type === b2.star && e5 & lt && this.unexpected(), t5.generator = this.eat(b2.star)), this.options.ecmaVersion >= 8 && (t5.async = !!s4), e5 & ct2 && (t5.id = e5 & ut2 && this.type !== b2.name ? null : this.parseIdent(), !t5.id || e5 & lt || this.checkLValSimple(t5.id, this.strict || t5.generator || t5.async ? this.treatFunctionsAsVar ? J3 : Y3 : Z3));
                 var r3 = this.yieldPos, a3 = this.awaitPos, n3 = this.awaitIdentPos;
-                return this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(X3(t5.async, t5.generator)), e5 & ct || (t5.id = this.type === b2.name ? this.parseIdent() : null), this.parseFunctionParams(t5), this.parseFunctionBody(t5, i4, false), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(t5, e5 & ct ? "FunctionDeclaration" : "FunctionExpression");
+                return this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(X3(t5.async, t5.generator)), e5 & ct2 || (t5.id = this.type === b2.name ? this.parseIdent() : null), this.parseFunctionParams(t5), this.parseFunctionBody(t5, i4, false), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(t5, e5 & ct2 ? "FunctionDeclaration" : "FunctionExpression");
               }, nt2.parseFunctionParams = function(t5) {
                 this.expect(b2.parenL), t5.params = this.parseBindingList(b2.parenR, false, this.options.ecmaVersion >= 8), this.checkYieldAwaitInDefaultParams();
               }, nt2.parseClass = function(t5, e5) {
@@ -21736,7 +21736,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   var i4;
                   if (this.checkExport(e5, "default", this.lastTokStart), this.type === b2._function || (i4 = this.isAsyncFunction())) {
                     var s4 = this.startNode();
-                    this.next(), i4 && this.next(), t5.declaration = this.parseFunction(s4, ct | ut2, false, i4);
+                    this.next(), i4 && this.next(), t5.declaration = this.parseFunction(s4, ct2 | ut2, false, i4);
                   } else if (this.type === b2._class) {
                     var r3 = this.startNode();
                     t5.declaration = this.parseClass(r3, "nullableID");
@@ -24388,7 +24388,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               var e4 = false;
               this.options.ecmaVersion >= 6 && t4 !== k2.dot && ("of" === this.value && !this.exprAllowed || "yield" === this.value && this.inGeneratorContext()) && (e4 = true), this.exprAllowed = e4;
             };
-            var ct = "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS", lt2 = ct + " Extended_Pictographic", ut2 = { 9: ct, 10: lt2, 11: lt2, 12: "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS Extended_Pictographic EBase EComp EMod EPres ExtPict" }, dt2 = "Cased_Letter LC Close_Punctuation Pe Connector_Punctuation Pc Control Cc cntrl Currency_Symbol Sc Dash_Punctuation Pd Decimal_Number Nd digit Enclosing_Mark Me Final_Punctuation Pf Format Cf Initial_Punctuation Pi Letter L Letter_Number Nl Line_Separator Zl Lowercase_Letter Ll Mark M Combining_Mark Math_Symbol Sm Modifier_Letter Lm Modifier_Symbol Sk Nonspacing_Mark Mn Number N Open_Punctuation Ps Other C Other_Letter Lo Other_Number No Other_Punctuation Po Other_Symbol So Paragraph_Separator Zp Private_Use Co Punctuation P punct Separator Z Space_Separator Zs Spacing_Mark Mc Surrogate Cs Symbol S Titlecase_Letter Lt Unassigned Cn Uppercase_Letter Lu", ft2 = "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb", mt2 = ft2 + " Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd", gt2 = mt2 + " Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho", xt2 = { 9: ft2, 10: mt2, 11: gt2, 12: "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho Chorasmian Chrs Diak Dives_Akuru Khitan_Small_Script Kits Yezi Yezidi" }, yt2 = {};
+            var ct2 = "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS", lt = ct2 + " Extended_Pictographic", ut2 = { 9: ct2, 10: lt, 11: lt, 12: "ASCII ASCII_Hex_Digit AHex Alphabetic Alpha Any Assigned Bidi_Control Bidi_C Bidi_Mirrored Bidi_M Case_Ignorable CI Cased Changes_When_Casefolded CWCF Changes_When_Casemapped CWCM Changes_When_Lowercased CWL Changes_When_NFKC_Casefolded CWKCF Changes_When_Titlecased CWT Changes_When_Uppercased CWU Dash Default_Ignorable_Code_Point DI Deprecated Dep Diacritic Dia Emoji Emoji_Component Emoji_Modifier Emoji_Modifier_Base Emoji_Presentation Extender Ext Grapheme_Base Gr_Base Grapheme_Extend Gr_Ext Hex_Digit Hex IDS_Binary_Operator IDSB IDS_Trinary_Operator IDST ID_Continue IDC ID_Start IDS Ideographic Ideo Join_Control Join_C Logical_Order_Exception LOE Lowercase Lower Math Noncharacter_Code_Point NChar Pattern_Syntax Pat_Syn Pattern_White_Space Pat_WS Quotation_Mark QMark Radical Regional_Indicator RI Sentence_Terminal STerm Soft_Dotted SD Terminal_Punctuation Term Unified_Ideograph UIdeo Uppercase Upper Variation_Selector VS White_Space space XID_Continue XIDC XID_Start XIDS Extended_Pictographic EBase EComp EMod EPres ExtPict" }, dt2 = "Cased_Letter LC Close_Punctuation Pe Connector_Punctuation Pc Control Cc cntrl Currency_Symbol Sc Dash_Punctuation Pd Decimal_Number Nd digit Enclosing_Mark Me Final_Punctuation Pf Format Cf Initial_Punctuation Pi Letter L Letter_Number Nl Line_Separator Zl Lowercase_Letter Ll Mark M Combining_Mark Math_Symbol Sm Modifier_Letter Lm Modifier_Symbol Sk Nonspacing_Mark Mn Number N Open_Punctuation Ps Other C Other_Letter Lo Other_Number No Other_Punctuation Po Other_Symbol So Paragraph_Separator Zp Private_Use Co Punctuation P punct Separator Z Space_Separator Zs Spacing_Mark Mc Surrogate Cs Symbol S Titlecase_Letter Lt Unassigned Cn Uppercase_Letter Lu", ft2 = "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb", mt2 = ft2 + " Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd", gt2 = mt2 + " Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho", xt2 = { 9: ft2, 10: mt2, 11: gt2, 12: "Adlam Adlm Ahom Ahom Anatolian_Hieroglyphs Hluw Arabic Arab Armenian Armn Avestan Avst Balinese Bali Bamum Bamu Bassa_Vah Bass Batak Batk Bengali Beng Bhaiksuki Bhks Bopomofo Bopo Brahmi Brah Braille Brai Buginese Bugi Buhid Buhd Canadian_Aboriginal Cans Carian Cari Caucasian_Albanian Aghb Chakma Cakm Cham Cham Cherokee Cher Common Zyyy Coptic Copt Qaac Cuneiform Xsux Cypriot Cprt Cyrillic Cyrl Deseret Dsrt Devanagari Deva Duployan Dupl Egyptian_Hieroglyphs Egyp Elbasan Elba Ethiopic Ethi Georgian Geor Glagolitic Glag Gothic Goth Grantha Gran Greek Grek Gujarati Gujr Gurmukhi Guru Han Hani Hangul Hang Hanunoo Hano Hatran Hatr Hebrew Hebr Hiragana Hira Imperial_Aramaic Armi Inherited Zinh Qaai Inscriptional_Pahlavi Phli Inscriptional_Parthian Prti Javanese Java Kaithi Kthi Kannada Knda Katakana Kana Kayah_Li Kali Kharoshthi Khar Khmer Khmr Khojki Khoj Khudawadi Sind Lao Laoo Latin Latn Lepcha Lepc Limbu Limb Linear_A Lina Linear_B Linb Lisu Lisu Lycian Lyci Lydian Lydi Mahajani Mahj Malayalam Mlym Mandaic Mand Manichaean Mani Marchen Marc Masaram_Gondi Gonm Meetei_Mayek Mtei Mende_Kikakui Mend Meroitic_Cursive Merc Meroitic_Hieroglyphs Mero Miao Plrd Modi Modi Mongolian Mong Mro Mroo Multani Mult Myanmar Mymr Nabataean Nbat New_Tai_Lue Talu Newa Newa Nko Nkoo Nushu Nshu Ogham Ogam Ol_Chiki Olck Old_Hungarian Hung Old_Italic Ital Old_North_Arabian Narb Old_Permic Perm Old_Persian Xpeo Old_South_Arabian Sarb Old_Turkic Orkh Oriya Orya Osage Osge Osmanya Osma Pahawh_Hmong Hmng Palmyrene Palm Pau_Cin_Hau Pauc Phags_Pa Phag Phoenician Phnx Psalter_Pahlavi Phlp Rejang Rjng Runic Runr Samaritan Samr Saurashtra Saur Sharada Shrd Shavian Shaw Siddham Sidd SignWriting Sgnw Sinhala Sinh Sora_Sompeng Sora Soyombo Soyo Sundanese Sund Syloti_Nagri Sylo Syriac Syrc Tagalog Tglg Tagbanwa Tagb Tai_Le Tale Tai_Tham Lana Tai_Viet Tavt Takri Takr Tamil Taml Tangut Tang Telugu Telu Thaana Thaa Thai Thai Tibetan Tibt Tifinagh Tfng Tirhuta Tirh Ugaritic Ugar Vai Vaii Warang_Citi Wara Yi Yiii Zanabazar_Square Zanb Dogra Dogr Gunjala_Gondi Gong Hanifi_Rohingya Rohg Makasar Maka Medefaidrin Medf Old_Sogdian Sogo Sogdian Sogd Elymaic Elym Nandinagari Nand Nyiakeng_Puachue_Hmong Hmnp Wancho Wcho Chorasmian Chrs Diak Dives_Akuru Khitan_Small_Script Kits Yezi Yezidi" }, yt2 = {};
             function vt2(t4) {
               var e4 = yt2[t4] = { binary: V2(ut2[t4] + " " + dt2), nonBinary: { General_Category: V2(dt2), Script: V2(xt2[t4]) } };
               e4.nonBinary.Script_Extensions = e4.nonBinary.Script, e4.nonBinary.gc = e4.nonBinary.General_Category, e4.nonBinary.sc = e4.nonBinary.Script, e4.nonBinary.scx = e4.nonBinary.Script_Extensions;
@@ -33135,7 +33135,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           function isWeakSet(value) {
             return isObjectLike(value) && baseGetTag(value) == weakSetTag;
           }
-          var lt2 = createRelationalOperation(baseLt);
+          var lt = createRelationalOperation(baseLt);
           var lte = createRelationalOperation(function(value, other) {
             return value <= other;
           });
@@ -34185,7 +34185,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           lodash.lastIndexOf = lastIndexOf;
           lodash.lowerCase = lowerCase;
           lodash.lowerFirst = lowerFirst;
-          lodash.lt = lt2;
+          lodash.lt = lt;
           lodash.lte = lte;
           lodash.max = max;
           lodash.maxBy = maxBy;
@@ -35043,17 +35043,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var Et = { column: "vuiFlexContainer--directionColumn", columnReverse: "vuiFlexContainer--directionColumnReverse", row: "vuiFlexContainer--directionRow", rowReverse: "vuiFlexContainer--directionRowReverse" };
   var Vt = { center: "vuiFlexContainer--justifyContentCenter", end: "vuiFlexContainer--justifyContentEnd", start: "vuiFlexContainer--justifyContentStart", spaceAround: "vuiFlexContainer--justifyContentSpaceAround", spaceBetween: "vuiFlexContainer--justifyContentSpaceBetween", spaceEvenly: "vuiFlexContainer--justifyContentSpaceEvenly" };
   var Lt = { none: "vuiFlexContainer--spacingNone", xxs: "vuiFlexContainer--spacingXxs", xs: "vuiFlexContainer--spacingXs", s: "vuiFlexContainer--spacingS", m: "vuiFlexContainer--spacingM", l: "vuiFlexContainer--spacingL", xl: "vuiFlexContainer--spacingXl", xxl: "vuiFlexContainer--spacingXxl" };
-  var C2 = ({ children: e2, alignItems: r2 = "stretch", direction: t2 = "row", justifyContent: n2 = "start", spacing: o2 = "m", wrap: i2, className: s2, fullWidth: a2, ...c2 }) => {
-    let l2 = (0, import_classnames.default)(s2, "vuiFlexContainer", Nt[r2], Et[t2], Vt[n2], Lt[o2], { "vuiFlexContainer--wrap": i2, "vuiFlexContainer--fullWidth": a2 });
-    return (0, import_jsx_runtime.jsx)("div", { className: l2, ...c2, children: e2 });
+  var C2 = ({ children: e2, alignItems: r2 = "stretch", direction: t2 = "row", justifyContent: n2 = "start", spacing: o2 = "m", wrap: i2, className: s2, fullWidth: a2, ...l2 }) => {
+    let c2 = (0, import_classnames.default)(s2, "vuiFlexContainer", Nt[r2], Et[t2], Vt[n2], Lt[o2], { "vuiFlexContainer--wrap": i2, "vuiFlexContainer--fullWidth": a2 });
+    return (0, import_jsx_runtime.jsx)("div", { className: c2, ...l2, children: e2 });
   };
   var zt = { baseline: "vuiFlexItem--alignItemsBaseline", center: "vuiFlexItem--alignItemsCenter", end: "vuiFlexItem--alignItemsEnd", start: "vuiFlexItem--alignItemsStart", stretch: "vuiFlexItem--alignItemsStretch" };
   var S2 = ({ children: e2, grow: r2, shrink: t2, basis: n2 = "auto", alignItems: o2 = "stretch", className: i2, truncate: s2, ...a2 }) => {
-    let c2 = r2 === false, l2 = t2 === false, h2 = (0, import_classnames2.default)("vuiFlexItem", `vuiFlexItem--${n2}`, zt[o2], { [`vuiFlexItem--flexGrow${r2}`]: typeof r2 == "number", "vuiFlexItem--flexGrowNone": c2, [`vuiFlexItem--flexShrink${t2}`]: typeof t2 == "number", "vuiFlexItem--flexShrinkNone": l2, "vuiFlexItem--truncate": s2 }, i2);
+    let l2 = r2 === false, c2 = t2 === false, h2 = (0, import_classnames2.default)("vuiFlexItem", `vuiFlexItem--${n2}`, zt[o2], { [`vuiFlexItem--flexGrow${r2}`]: typeof r2 == "number", "vuiFlexItem--flexGrowNone": l2, [`vuiFlexItem--flexShrink${t2}`]: typeof t2 == "number", "vuiFlexItem--flexShrinkNone": c2, "vuiFlexItem--truncate": s2 }, i2);
     return (0, import_jsx_runtime2.jsx)("div", { className: h2, ...a2, children: e2 });
   };
-  var ce2 = 0;
-  var fe2 = () => (ce2 === Number.MAX_SAFE_INTEGER ? ce2 = 0 : ce2++, ce2.toString());
+  var le2 = 0;
+  var fe2 = () => (le2 === Number.MAX_SAFE_INTEGER ? le2 = 0 : le2++, le2.toString());
   var De2 = ({ size: e2, color: r2 }) => (0, import_jsx_runtime3.jsx)("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 329.26933 329", width: e2, height: e2, fill: r2, children: (0, import_jsx_runtime3.jsx)("path", { d: "m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0" }) });
   var qe = ({ size: e2 = "16px", color: r2 = "#ffffff" }) => (0, import_jsx_runtime3.jsxs)("svg", { fill: r2, version: "1.1", id: "Capa_1", xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", width: e2, height: e2, viewBox: "0 0 29.75 29.75", xmlSpace: "preserve", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsxs)("g", { id: "SVGRepo_iconCarrier", children: [" ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsx)("path", { d: "M26.573,4.026H5.163c-1.884,0-3.413,1.707-3.413,3.321v12.976c0,0.001,0,0.002,0,0.003l-0.004-0.003L0,25.724l4.913-2.717 c0.084,0.004,0.164,0.02,0.25,0.02h21.41c1.884,0,3.177-1.09,3.177-2.703V7.347C29.75,5.733,28.457,4.026,26.573,4.026z M27.75,20.323c0,0.538-0.548,0.703-1.177,0.703H5.163c-0.629,0-1.413-0.165-1.413-0.703V7.347c0-0.539,0.784-1.321,1.413-1.321 h21.41c0.629,0,1.177,0.782,1.177,1.321V20.323z" }), " ", (0, import_jsx_runtime3.jsxs)("g", { children: [" ", (0, import_jsx_runtime3.jsx)("circle", { cx: "9.274", cy: "13.526", r: "1.874" }), " ", (0, import_jsx_runtime3.jsx)("circle", { cx: "15.657", cy: "13.526", r: "1.874" }), " ", (0, import_jsx_runtime3.jsx)("circle", { cx: "22.04", cy: "13.526", r: "1.874" }), " "] }), " "] }), " "] }), " "] })] });
   var He2 = () => (0, import_jsx_runtime3.jsxs)("svg", { fill: "#c41535", width: "16px", height: "16px", viewBox: "0 0 1024 1024", xmlns: "http://www.w3.org/2000/svg", stroke: "#c41535", strokeWidth: "20", children: [(0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_bgCarrier", strokeWidth: "0" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_tracerCarrier", strokeLinecap: "round", strokeLinejoin: "round" }), (0, import_jsx_runtime3.jsx)("g", { id: "SVGRepo_iconCarrier", children: (0, import_jsx_runtime3.jsx)("path", { d: "M520.741 163.801a10.234 10.234 0 00-3.406-3.406c-4.827-2.946-11.129-1.421-14.075 3.406L80.258 856.874a10.236 10.236 0 00-1.499 5.335c0 5.655 4.585 10.24 10.24 10.24h846.004c1.882 0 3.728-.519 5.335-1.499 4.827-2.946 6.352-9.248 3.406-14.075L520.742 163.802zm43.703-26.674L987.446 830.2c17.678 28.964 8.528 66.774-20.436 84.452a61.445 61.445 0 01-32.008 8.996H88.998c-33.932 0-61.44-27.508-61.44-61.44a61.445 61.445 0 018.996-32.008l423.002-693.073c17.678-28.964 55.488-38.113 84.452-20.436a61.438 61.438 0 0120.436 20.436zM512 778.24c22.622 0 40.96-18.338 40.96-40.96s-18.338-40.96-40.96-40.96-40.96 18.338-40.96 40.96 18.338 40.96 40.96 40.96zm0-440.32c-22.622 0-40.96 18.338-40.96 40.96v225.28c0 22.622 18.338 40.96 40.96 40.96s40.96-18.338 40.96-40.96V378.88c0-22.622-18.338-40.96-40.96-40.96z" }) })] });
@@ -35063,14 +35063,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     let i2 = fe2(), s2 = fe2();
     return (0, import_jsx_runtime4.jsxs)(import_jsx_runtime4.Fragment, { children: [(0, import_jsx_runtime4.jsx)("button", { className: "vuiAccordionHeader", onClick: () => n2(!t2), id: i2, "aria-controls": s2, "aria-expanded": t2, ...o2, children: (0, import_jsx_runtime4.jsxs)(C2, { alignItems: "center", justifyContent: "start", spacing: "xxs", children: [(0, import_jsx_runtime4.jsx)(S2, { grow: false, shrink: false, children: t2 ? (0, import_jsx_runtime4.jsx)(Oe2, {}) : (0, import_jsx_runtime4.jsx)(We2, {}) }), (0, import_jsx_runtime4.jsx)(S2, { className: "vuiAccordionHeader__title", grow: 1, children: e2 })] }) }), t2 && (0, import_jsx_runtime4.jsx)("div", { id: s2, "aria-labelledby": i2, children: r2 })] });
   };
-  var Z2 = (e2) => e2 ? { rel: "noopener", referrerpolicy: "no-referrer-when-downgrade" } : { rel: "noopener" };
+  var j2 = (e2) => e2 ? { rel: "noopener", referrerpolicy: "no-referrer-when-downgrade" } : { rel: "noopener" };
   var $e2 = (0, import_react5.createContext)(void 0);
   var be2 = ({ children: e2, linkProvider: r2, pathProvider: t2, drawerTitle: n2 = "h2" }) => {
     let o2 = (a2) => {
       if (r2)
         return r2(a2);
-      let { className: c2, href: l2, onClick: h2, children: w2, ...v2 } = a2;
-      return (0, import_jsx_runtime5.jsx)("a", { className: c2, href: l2, onClick: h2, ...v2, children: w2 });
+      let { className: l2, href: c2, onClick: h2, children: w2, ...v2 } = a2;
+      return (0, import_jsx_runtime5.jsx)("a", { className: l2, href: c2, onClick: h2, ...v2, children: w2 });
     }, i2 = () => t2 ? t2() : window.location.pathname, s2 = n2;
     return (0, import_jsx_runtime5.jsx)($e2.Provider, { value: { createLink: o2, getPath: i2, DrawerTitle: s2 }, children: e2 });
   };
@@ -35080,49 +35080,49 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       throw new Error("useVuiContext must be used within a VuiContextProvider");
     return e2;
   };
-  var le2 = ({ children: e2, className: r2, color: t2, onClick: n2, href: o2, target: i2, track: s2, ...a2 }) => {
-    let { createLink: c2 } = K2(), l2 = (0, import_classnames3.default)(r2, "vuiBadge", `vuiBadge--${t2}`, { "vuiBadge--clickable": n2 != null ? n2 : o2 });
-    return n2 ? (0, import_jsx_runtime6.jsx)("button", { className: l2, onClick: n2, ...a2, children: e2 }) : o2 ? c2({ className: l2, href: o2, onClick: n2, children: e2, target: i2, ...Z2(s2) }) : (0, import_jsx_runtime6.jsx)("div", { className: l2, ...a2, children: e2 });
+  var ce2 = ({ children: e2, className: r2, color: t2, onClick: n2, href: o2, target: i2, track: s2, ...a2 }) => {
+    let { createLink: l2 } = K2(), c2 = (0, import_classnames3.default)(r2, "vuiBadge", `vuiBadge--${t2}`, { "vuiBadge--clickable": n2 != null ? n2 : o2 });
+    return n2 ? (0, import_jsx_runtime6.jsx)("button", { className: c2, onClick: n2, ...a2, children: e2 }) : o2 ? l2({ className: c2, href: o2, onClick: n2, children: e2, target: i2, ...j2(s2) }) : (0, import_jsx_runtime6.jsx)("div", { className: c2, ...a2, children: e2 });
   };
   var Ut = { left: "vuiBaseButton--alignLeft", center: "vuiBaseButton--alignCenter", right: "vuiBaseButton--alignRight" };
-  var ue2 = (0, import_react7.forwardRef)(({ children: e2, icon: r2, iconSide: t2 = "left", align: n2 = "center", className: o2, size: i2, fullWidth: s2, onClick: a2, tabIndex: c2, isInert: l2, isDisabled: h2, href: w2, target: v2, track: E2, htmlFor: p2, isSubmit: H2, ...k2 }, V2) => {
-    let F2 = (0, import_classnames5.default)("vuiBaseButton", o2, `vuiBaseButton--${i2}`, Ut[n2], { "vuiBaseButton-isInert": l2, "vuiBaseButton-isDisabled": h2, "vuiBaseButton--fullWidth": s2, [`vuiBaseButton--${t2}`]: !!r2 && !!e2 }), m2 = r2 ? (0, import_jsx_runtime7.jsx)("span", { className: "vuiBaseButtonIconContainer", children: r2 }) : null;
+  var ue2 = (0, import_react7.forwardRef)(({ children: e2, icon: r2, iconSide: t2 = "left", align: n2 = "center", className: o2, size: i2, fullWidth: s2, onClick: a2, tabIndex: l2, isInert: c2, isDisabled: h2, href: w2, target: v2, track: E2, htmlFor: p2, isSubmit: H2, ...k2 }, V2) => {
+    let F2 = (0, import_classnames5.default)("vuiBaseButton", o2, `vuiBaseButton--${i2}`, Ut[n2], { "vuiBaseButton-isInert": c2, "vuiBaseButton-isDisabled": h2, "vuiBaseButton--fullWidth": s2, [`vuiBaseButton--${t2}`]: !!r2 && !!e2 }), m2 = r2 ? (0, import_jsx_runtime7.jsx)("span", { className: "vuiBaseButtonIconContainer", children: r2 }) : null;
     if (p2)
-      return (0, import_jsx_runtime7.jsxs)("label", { htmlFor: p2, className: F2, tabIndex: c2, ...k2, children: [m2, e2] });
+      return (0, import_jsx_runtime7.jsxs)("label", { htmlFor: p2, className: F2, tabIndex: l2, ...k2, children: [m2, e2] });
     if (w2) {
       let y2 = (0, import_classnames5.default)("vuiBaseButtonLinkWrapper", { "vuiBaseButtonLinkWrapper--fullWidth": s2 });
-      return (0, import_jsx_runtime7.jsx)("a", { className: y2, href: w2, onClick: a2, target: v2, tabIndex: c2, ...k2, ...Z2(E2), children: (0, import_jsx_runtime7.jsxs)("button", { className: F2, tabIndex: -1, ref: V2, children: [m2, e2] }) });
+      return (0, import_jsx_runtime7.jsx)("a", { className: y2, href: w2, onClick: a2, target: v2, tabIndex: l2, ...k2, ...j2(E2), children: (0, import_jsx_runtime7.jsxs)("button", { className: F2, tabIndex: -1, ref: V2, children: [m2, e2] }) });
     }
-    let _2 = { onClick: a2, tabIndex: c2, type: H2 ? "submit" : "button", ...k2 };
+    let _2 = { onClick: a2, tabIndex: l2, type: H2 ? "submit" : "button", ...k2 };
     return (0, import_jsx_runtime7.jsxs)("button", { className: F2, ..._2, ref: V2, children: [m2, e2] });
   });
   var $t = { xs: "xs", s: "xs", m: "s", l: "m" };
   var Xt = { accent: "accent", primary: "primary", success: "success", danger: "danger", warning: "warning", neutral: "neutral", subdued: "subdued" };
   var pe2 = (e2, r2, t2, n2 = Xt) => e2 ? (0, import_react8.cloneElement)(e2, { size: r2 ? $t[r2] : "s", color: e2.props.color === "inherit" ? n2[t2] : e2.props.color }) : null;
   var Kt = { accent: "empty", primary: "empty", success: "empty", danger: "empty", warning: "empty", neutral: "neutral", subdued: "subdued" };
-  var ye2 = (0, import_react6.forwardRef)(({ children: e2, icon: r2, color: t2, size: n2 = "m", className: o2, isSelected: i2, isDisabled: s2, ...a2 }, c2) => {
-    let l2 = (0, import_classnames4.default)(o2, "vuiButtonPrimary", `vuiButtonPrimary--${t2}`, { "vuiButtonPrimary-isSelected": i2 }), h2 = pe2(r2, n2, t2, Kt);
-    return (0, import_jsx_runtime8.jsx)(ue2, { ref: c2, className: l2, icon: h2, size: n2, isDisabled: s2, ...a2, children: e2 });
+  var ye2 = (0, import_react6.forwardRef)(({ children: e2, icon: r2, color: t2, size: n2 = "m", className: o2, isSelected: i2, isDisabled: s2, ...a2 }, l2) => {
+    let c2 = (0, import_classnames4.default)(o2, "vuiButtonPrimary", `vuiButtonPrimary--${t2}`, { "vuiButtonPrimary-isSelected": i2 }), h2 = pe2(r2, n2, t2, Kt);
+    return (0, import_jsx_runtime8.jsx)(ue2, { ref: l2, className: c2, icon: h2, size: n2, isDisabled: s2, ...a2, children: e2 });
   });
   var tr = { accent: "accent", primary: "primary", success: "success", danger: "danger", warning: "warning", neutral: "neutral", subdued: "subdued" };
-  var Ce2 = (0, import_react9.forwardRef)(({ children: e2, icon: r2, color: t2, size: n2 = "m", className: o2, isSelected: i2, isDisabled: s2, solid: a2, ...c2 }, l2) => {
+  var Ce2 = (0, import_react9.forwardRef)(({ children: e2, icon: r2, color: t2, size: n2 = "m", className: o2, isSelected: i2, isDisabled: s2, solid: a2, ...l2 }, c2) => {
     let h2 = (0, import_classnames6.default)(o2, "vuiButtonSecondary", `vuiButtonSecondary--${t2}`, { "vuiButtonSecondary-isSelected": i2, "vuiButtonSecondary--solid": a2 }), w2 = pe2(r2, n2, t2, tr);
-    return (0, import_jsx_runtime9.jsx)(ue2, { ref: l2, className: h2, icon: w2, size: n2, isDisabled: s2, ...c2, children: e2 });
+    return (0, import_jsx_runtime9.jsx)(ue2, { ref: c2, className: h2, icon: w2, size: n2, isDisabled: s2, ...l2, children: e2 });
   });
   var Se2 = ({ children: e2, columns: r2 = 2, spacing: t2 = "m", className: n2, ...o2 }) => {
     let i2 = (0, import_classnames7.default)("vuiGridContainer", n2), s2 = (0, import_classnames7.default)("vuiGrid", `vuiGrid--${t2}`, `vuiGrid--columns${r2}`);
     return (0, import_jsx_runtime10.jsx)("div", { className: i2, ...o2, children: (0, import_jsx_runtime10.jsx)("div", { className: s2, children: e2 }) });
   };
   var ke2 = ({ children: e2, href: r2, target: t2, onClick: n2, className: o2, track: i2, isAnchor: s2, ...a2 }) => {
-    let { createLink: c2 } = K2();
+    let { createLink: l2 } = K2();
     if (!r2)
       return (0, import_jsx_runtime11.jsx)("button", { className: (0, import_classnames8.default)("vuiLink", "vuiLink--button", o2), onClick: n2, ...a2, children: e2 });
-    let l2 = { ...a2, ...Z2(i2) };
-    return t2 === "_blank" && (l2.target = t2), s2 ? (0, import_jsx_runtime11.jsx)("a", { className: (0, import_classnames8.default)("vuiLink", o2), href: r2, onClick: n2, ...l2, children: e2 }) : c2({ className: (0, import_classnames8.default)("vuiLink", o2), href: r2, onClick: n2, children: e2, ...l2 });
+    let c2 = { ...a2, ...j2(i2) };
+    return t2 === "_blank" && (c2.target = t2), s2 ? (0, import_jsx_runtime11.jsx)("a", { className: (0, import_classnames8.default)("vuiLink", o2), href: r2, onClick: n2, ...c2, children: e2 }) : l2({ className: (0, import_classnames8.default)("vuiLink", o2), href: r2, onClick: n2, children: e2, ...c2 });
   };
   var Ie2 = ({ className: e2, size: r2 = "m", value: t2, onChange: n2, placeholder: o2, autoFocus: i2, onSubmit: s2, ...a2 }) => {
-    let c2 = (0, import_classnames9.default)("vuiSearchInput", `vuiSearchInput--${r2}`, e2);
-    return (0, import_jsx_runtime12.jsx)("form", { onSubmit: s2, children: (0, import_jsx_runtime12.jsx)("div", { className: c2, children: (0, import_jsx_runtime12.jsx)("input", { className: "vuiSearchInput__input", type: "text", autoComplete: "off", autoCapitalize: "off", spellCheck: "false", autoFocus: i2, placeholder: o2, value: t2, onChange: n2, ...a2 }) }) });
+    let l2 = (0, import_classnames9.default)("vuiSearchInput", `vuiSearchInput--${r2}`, e2);
+    return (0, import_jsx_runtime12.jsx)("form", { onSubmit: s2, children: (0, import_jsx_runtime12.jsx)("div", { className: l2, children: (0, import_jsx_runtime12.jsx)("input", { className: "vuiSearchInput__input", type: "text", autoComplete: "off", autoCapitalize: "off", spellCheck: "false", autoFocus: i2, placeholder: o2, value: t2, onChange: n2, ...a2 }) }) });
   };
   var f2 = ({ size: e2 = "m" }) => {
     let r2 = (0, import_classnames10.default)("vuiSpacer", { [`vuiSpacer--${e2}`]: e2 });
@@ -35143,13 +35143,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
   var te2 = ({ children: e2, className: r2, size: t2, align: n2, ...o2 }) => (0, import_react10.cloneElement)(e2, { className: (0, import_classnames14.default)("vuiTitle", `vuiTitle--${t2}`, { [`vuiTitle--${n2}`]: n2 }, r2, e2.props.className), ...o2 });
   var Te2 = ({ children: e2, className: r2, href: t2, onClick: n2, title: o2, fullWidth: i2, ...s2 }) => {
-    let { createLink: a2 } = K2(), c2 = (0, import_classnames15.default)("vuiTopicButton", r2, { "vuiTopicButton--fullWidth": i2 }), l2 = (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [o2 && (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [(0, import_jsx_runtime17.jsx)(te2, { size: "s", children: (0, import_jsx_runtime17.jsx)("p", { children: (0, import_jsx_runtime17.jsx)($2, { color: "primary", children: o2 }) }) }), e2 && (0, import_jsx_runtime17.jsx)(f2, { size: "xxs" })] }), e2] });
-    return t2 ? a2({ className: c2, href: t2, onClick: n2, children: l2, ...s2 }) : (0, import_jsx_runtime17.jsx)("button", { className: c2, onClick: n2, ...s2, children: l2 });
+    let { createLink: a2 } = K2(), l2 = (0, import_classnames15.default)("vuiTopicButton", r2, { "vuiTopicButton--fullWidth": i2 }), c2 = (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [o2 && (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [(0, import_jsx_runtime17.jsx)(te2, { size: "s", children: (0, import_jsx_runtime17.jsx)("p", { children: (0, import_jsx_runtime17.jsx)($2, { color: "primary", children: o2 }) }) }), e2 && (0, import_jsx_runtime17.jsx)(f2, { size: "xxs" })] }), e2] });
+    return t2 ? a2({ className: l2, href: t2, onClick: n2, children: c2, ...s2 }) : (0, import_jsx_runtime17.jsx)("button", { className: l2, onClick: n2, ...s2, children: c2 });
   };
-  var rt = ({ query: e2, setQuery: r2, onSubmit: t2, placeholder: n2, buttonLabel: o2, isButtonDisabled: i2, size: s2 }) => (0, import_jsx_runtime18.jsxs)(C2, { alignItems: "center", spacing: "xs", children: [(0, import_jsx_runtime18.jsx)(S2, { grow: 1, children: (0, import_jsx_runtime18.jsx)(Ie2, { size: s2, value: e2, onChange: (l2) => {
-    r2(l2.target.value);
-  }, onSubmit: (l2) => {
-    l2.preventDefault(), t2();
+  var rt = ({ query: e2, setQuery: r2, onSubmit: t2, placeholder: n2, buttonLabel: o2, isButtonDisabled: i2, size: s2 }) => (0, import_jsx_runtime18.jsxs)(C2, { alignItems: "center", spacing: "xs", children: [(0, import_jsx_runtime18.jsx)(S2, { grow: 1, children: (0, import_jsx_runtime18.jsx)(Ie2, { size: s2, value: e2, onChange: (c2) => {
+    r2(c2.target.value);
+  }, onSubmit: (c2) => {
+    c2.preventDefault(), t2();
   }, placeholder: n2, autoFocus: true, "data-testid": "queryInput" }) }), (0, import_jsx_runtime18.jsx)(S2, { children: (0, import_jsx_runtime18.jsx)(ye2, { color: "primary", size: s2, onClick: () => t2(), isDisabled: i2, children: o2 }) })] });
   var Re2 = (e2, r2) => {
     let t2 = [], n2 = r2.match(/\[\d+\]/g) || [], o2 = /* @__PURE__ */ new Set();
@@ -35162,8 +35162,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var Fe2 = (e2) => {
     let r2 = /\[(\d+(,*\s*\d*)*)\]/g, t2 = [], n2, o2 = 0;
     for (; (n2 = r2.exec(e2)) !== null; ) {
-      let s2 = n2.index, a2 = n2[1], c2 = e2.slice(o2, s2).trim();
-      t2.push({ text: c2, references: a2.replace(/\s/g, "").split(",") }), o2 = s2 + n2[0].length;
+      let s2 = n2.index, a2 = n2[1], l2 = e2.slice(o2, s2).trim();
+      t2.push({ text: l2, references: a2.replace(/\s/g, "").split(",") }), o2 = s2 + n2[0].length;
     }
     let i2 = e2.slice(o2).trim();
     return i2.length > 0 && t2.push({ text: i2 }), t2;
@@ -35191,14 +35191,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     a2 > 0 && t2.push(" "), t2.push(`<SummaryCitation reference={${s2}} />`);
   })) : t2.push(n2), t2), []).join(" ");
   var Ne2 = ({ question: e2, answer: r2, searchResults: t2, factualConsistencyScore: n2, onRetry: o2, isStreaming: i2 }) => {
-    let [s2, a2] = (0, import_react11.useState)(false), c2;
+    let [s2, a2] = (0, import_react11.useState)(false), l2;
     if (o2)
-      c2 = (0, import_jsx_runtime20.jsxs)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--error", children: [(0, import_jsx_runtime20.jsx)(f2, { size: "m" }), (0, import_jsx_runtime20.jsxs)(C2, { alignItems: "center", spacing: "none", children: [(0, import_jsx_runtime20.jsxs)(C2, { alignItems: "center", spacing: "xxs", children: [(0, import_jsx_runtime20.jsx)(S2, { grow: false, shrink: true, children: (0, import_jsx_runtime20.jsx)(He2, {}) }), (0, import_jsx_runtime20.jsx)(S2, { grow: false, children: "Message not sent." })] }), o2 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "s" }), (0, import_jsx_runtime20.jsx)(C2, { alignItems: "center", spacing: "none", children: (0, import_jsx_runtime20.jsx)("button", { className: "vrcbRetryButton", onClick: () => o2(), children: "Try again" }) })] })] })] });
+      l2 = (0, import_jsx_runtime20.jsxs)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--error", children: [(0, import_jsx_runtime20.jsx)(f2, { size: "m" }), (0, import_jsx_runtime20.jsxs)(C2, { alignItems: "center", spacing: "none", children: [(0, import_jsx_runtime20.jsxs)(C2, { alignItems: "center", spacing: "xxs", children: [(0, import_jsx_runtime20.jsx)(S2, { grow: false, shrink: true, children: (0, import_jsx_runtime20.jsx)(He2, {}) }), (0, import_jsx_runtime20.jsx)(S2, { grow: false, children: "Message not sent." })] }), o2 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "s" }), (0, import_jsx_runtime20.jsx)(C2, { alignItems: "center", spacing: "none", children: (0, import_jsx_runtime20.jsx)("button", { className: "vrcbRetryButton", onClick: () => o2(), children: "Try again" }) })] })] })] });
     else if (r2) {
-      let l2 = (t2 ? Re2(t2, r2) : []).slice(0, 7), h2 = t2 ? _e2(r2) : r2, w2 = yr(h2);
-      c2 = (0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--answer", children: (0, import_jsx_runtime20.jsxs)("div", { className: "vrcbChatMessage", children: [(0, import_jsx_runtime20.jsxs)(D2, { size: "s", children: [(0, import_jsx_runtime20.jsx)(index_modern_default, { children: w2, options: { forceInline: true, overrides: { SummaryCitation: { component: ({ reference: E2 }) => (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [" ", (0, import_jsx_runtime20.jsx)("button", { onClick: () => a2(true), children: (0, import_jsx_runtime20.jsx)("span", { className: "vrcbChatSummaryCitation", children: E2 }) })] }) } } } }), i2 && (0, import_jsx_runtime20.jsxs)("span", { children: [" ", (0, import_jsx_runtime20.jsx)(ee2, { size: "xs" })] })] }), n2 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "xs" }), n2] }), l2 && l2.length > 0 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "s" }), (0, import_jsx_runtime20.jsx)(it, { searchResults: l2, isOpen: s2, setIsOpen: a2 })] })] }) });
+      let c2 = (t2 ? Re2(t2, r2) : []).slice(0, 7), h2 = t2 ? _e2(r2) : r2, w2 = yr(h2);
+      l2 = (0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--answer", children: (0, import_jsx_runtime20.jsxs)("div", { className: "vrcbChatMessage", children: [(0, import_jsx_runtime20.jsxs)(D2, { size: "s", children: [(0, import_jsx_runtime20.jsx)(index_modern_default, { children: w2, options: { forceInline: true, overrides: { SummaryCitation: { component: ({ reference: E2 }) => (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [" ", (0, import_jsx_runtime20.jsx)("button", { onClick: () => a2(true), children: (0, import_jsx_runtime20.jsx)("span", { className: "vrcbChatSummaryCitation", children: E2 }) })] }) } } } }), i2 && (0, import_jsx_runtime20.jsxs)("span", { children: [" ", (0, import_jsx_runtime20.jsx)(ee2, { size: "xs" })] })] }), n2 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "xs" }), n2] }), c2 && c2.length > 0 && (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)(f2, { size: "s" }), (0, import_jsx_runtime20.jsx)(it, { searchResults: c2, isOpen: s2, setIsOpen: a2 })] })] }) });
     }
-    return (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--question", children: (0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessage", children: e2 }) }), (0, import_jsx_runtime20.jsx)(f2, { size: "xs" }), c2] });
+    return (0, import_jsx_runtime20.jsxs)(import_jsx_runtime20.Fragment, { children: [(0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--question", children: (0, import_jsx_runtime20.jsx)("div", { className: "vrcbChatMessage", children: e2 }) }), (0, import_jsx_runtime20.jsx)(f2, { size: "xs" }), l2] });
   };
   var st = "https://api.vectara.io";
   var Ee2 = "%START_SNIPPET%";
@@ -35223,7 +35223,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
   var at = async ({ customerId: e2, corpusKeys: r2, apiKey: t2, query: n2, domain: o2, search: i2, generation: s2, chat: a2 }) => {
     var _2;
-    let { metadataFilter: c2, lexicalInterpolation: l2, customDimensions: h2, semantics: w2, offset: v2, limit: E2, contextConfiguration: p2, reranker: H2 } = i2, k2 = { query: n2, search: { corpora: r2.split(",").map((y2) => ({ corpus_key: y2, metadata_filter: c2, lexical_interpolation: l2, custom_dimensions: h2, semantics: w2 })), offset: v2, limit: E2, context_configuration: { characters_before: p2 == null ? void 0 : p2.charactersBefore, characters_after: p2 == null ? void 0 : p2.charactersAfter, sentences_before: p2 == null ? void 0 : p2.sentencesBefore, sentences_after: p2 == null ? void 0 : p2.sentencesAfter, start_tag: p2 == null ? void 0 : p2.startTag, end_tag: p2 == null ? void 0 : p2.endTag }, reranker: Cr(H2) } };
+    let { metadataFilter: l2, lexicalInterpolation: c2, customDimensions: h2, semantics: w2, offset: v2, limit: E2, contextConfiguration: p2, reranker: H2 } = i2, k2 = { query: n2, search: { corpora: r2.split(",").map((y2) => ({ corpus_key: y2, metadata_filter: l2, lexical_interpolation: c2, custom_dimensions: h2, semantics: w2 })), offset: v2, limit: E2, context_configuration: { characters_before: p2 == null ? void 0 : p2.charactersBefore, characters_after: p2 == null ? void 0 : p2.charactersAfter, sentences_before: p2 == null ? void 0 : p2.sentencesBefore, sentences_after: p2 == null ? void 0 : p2.sentencesAfter, start_tag: p2 == null ? void 0 : p2.startTag, end_tag: p2 == null ? void 0 : p2.endTag }, reranker: Cr(H2) } };
     if (s2) {
       let { promptName: y2, maxUsedSearchResults: G2, promptText: M2, maxResponseCharacters: A2, responseLanguage: z2, modelParameters: b2, citations: P2, enableFactualConsistencyScore: d2 } = s2;
       k2.generation = { prompt_name: y2, max_used_search_results: G2, prompt_text: M2, max_response_characters: A2, response_language: z2, model_parameters: b2 && { max_tokens: b2.maxTokens, temperature: b2.temperature, frequency_penalty: b2.frequencyPenalty, presence_penalty: b2.presencePenalty }, citations: Sr(P2), enable_factual_consistency_score: d2 };
@@ -35240,16 +35240,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       throw new Error(m2.status.toString());
     return await m2.json();
   };
-  var lt = "vectara-summary-ext-v1.2.0";
+  var ct = "vectara-summary-ext-v1.2.0";
   var ut = 272725718;
   var pt = 5e-3;
-  var dt = ({ customerId: e2, corpusKeys: r2, apiKey: t2, numberOfSearchResults: n2 = 10, language: o2 = "eng", enableFactualConsistencyScore: i2, summaryPromptName: s2 = lt, rerankerId: a2 = ut, lambda: c2 = pt, enableStreaming: l2 = true }) => {
+  var dt = ({ customerId: e2, corpusKeys: r2, apiKey: t2, numberOfSearchResults: n2 = 10, language: o2 = "eng", enableFactualConsistencyScore: i2, summaryPromptName: s2 = ct, rerankerId: a2 = ut, lambda: l2 = pt, enableStreaming: c2 = true }) => {
     let [h2, w2] = (0, import_react12.useState)([]), v2 = (0, import_react12.useRef)(""), [E2, p2] = (0, import_react12.useState)(null), [H2, k2] = (0, import_react12.useState)(false), [V2, F2] = (0, import_react12.useState)(false), [m2, _2] = (0, import_react12.useState)(null), [y2, G2] = (0, import_react12.useState)(false), M2 = async ({ query: z2, isRetry: b2 = false }) => {
       if (H2)
         return;
       b2 && G2(false), p2(null), v2.current = z2, p2({ id: "placeholder-message-id", question: z2, answer: "", results: [], factualConsistencyScore: void 0 }), k2(true);
       let P2;
-      if (l2)
+      if (c2)
         try {
           let d2 = (L2) => {
             switch (L2.type) {
@@ -35289,7 +35289,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 F2(false);
                 break;
             }
-          }, U2 = { apiKey: t2, customerId: e2, query: z2, corpusKey: r2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: c2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2, startTag: Ee2, endTag: Ve } }, chat: { store: true, conversationId: m2 != null ? m2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } };
+          }, U2 = { apiKey: t2, customerId: e2, query: z2, corpusKey: r2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: l2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2, startTag: Ee2, endTag: Ve } }, chat: { store: true, conversationId: m2 != null ? m2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } };
           await (0, import_stream_query_client.streamQueryV2)({ streamQueryConfig: U2, onStreamEvent: d2 });
         } catch (d2) {
           console.log("Summary error", d2), G2(true), k2(false);
@@ -35297,7 +35297,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         }
       else
         try {
-          let d2 = await at({ apiKey: t2, customerId: e2, query: z2, corpusKeys: r2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: c2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2, startTag: Ee2, endTag: Ve } }, chat: { store: true, conversationId: m2 != null ? m2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } });
+          let d2 = await at({ apiKey: t2, customerId: e2, query: z2, corpusKeys: r2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: l2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2, startTag: Ee2, endTag: Ve } }, chat: { store: true, conversationId: m2 != null ? m2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } });
           P2 = d2.search_results.map((U2) => {
             let { pre: L2, text: u2, post: I2 } = ne2(U2.text);
             return { ...U2, snippet: { pre: L2, text: u2, post: I2 } };
@@ -35320,10 +35320,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var Le2 = ({ score: e2 }) => {
     let r2;
     if (e2 === void 0)
-      r2 = (0, import_jsx_runtime22.jsx)(le2, { color: "accent", children: "Calculating Factual Consistency Score\u2026" });
+      r2 = (0, import_jsx_runtime22.jsx)(ce2, { color: "accent", children: "Calculating Factual Consistency Score\u2026" });
     else {
       let t2 = parseFloat(e2.toFixed(2)), n2 = "neutral";
-      t2 === 0 ? n2 = "danger" : t2 === 1 && (n2 = "success"), r2 = (0, import_jsx_runtime22.jsxs)(le2, { color: n2, children: ["Factual Consistency Score: ", t2] });
+      t2 === 0 ? n2 = "danger" : t2 === 1 && (n2 = "success"), r2 = (0, import_jsx_runtime22.jsxs)(ce2, { color: n2, children: ["Factual Consistency Score: ", t2] });
     }
     return (0, import_jsx_runtime22.jsxs)(C2, { alignItems: "center", "data-testid": "factualConsistencyBadge", children: [e2 === void 0 && (0, import_jsx_runtime22.jsx)(ee2, { size: "s" }), r2, (0, import_jsx_runtime22.jsx)(D2, { size: "xs", children: (0, import_jsx_runtime22.jsx)("p", { children: (0, import_jsx_runtime22.jsx)(ke2, { href: "https://docs.vectara.com/docs/api-reference/search-apis/search?#factual-consistency-score", target: "_blank", children: "What's this?" }) }) })] });
   };
@@ -35331,16 +35331,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var bt = () => (0, import_jsx_runtime24.jsxs)(C2, { className: "vrcbEmptyMessages", spacing: "none", alignItems: "center", justifyContent: "center", direction: "column", children: [(0, import_jsx_runtime24.jsx)(qe, { size: "80px", color: "#cbcdde" }), (0, import_jsx_runtime24.jsx)(D2, { children: (0, import_jsx_runtime24.jsx)("p", { children: (0, import_jsx_runtime24.jsx)($2, { color: "subdued", children: "Ask anything." }) }) })] });
   var vt = ({ exampleQuestions: e2, onSubmitChat: r2 }) => e2.length > 0 ? (0, import_jsx_runtime25.jsxs)("div", { className: "vrcbExampleQuestionsContainer", children: [(0, import_jsx_runtime25.jsx)(D2, { children: (0, import_jsx_runtime25.jsx)("p", { children: (0, import_jsx_runtime25.jsx)($2, { color: "subdued", children: "Try out these example questions" }) }) }), (0, import_jsx_runtime25.jsx)(f2, { size: "m" }), (0, import_jsx_runtime25.jsx)(Se2, { columns: 3, children: e2.map((n2) => (0, import_jsx_runtime25.jsx)(ht, { onClick: () => r2(n2), title: n2 }, n2)) })] }) : (0, import_jsx_runtime25.jsx)(bt, {});
   var Pr = { large: "l", medium: "m" };
-  var wt = ({ customerId: e2, corpusKeys: r2, apiKey: t2, title: n2 = "My Chatbot", placeholder: o2 = "Chat with your AI Assistant", exampleQuestions: i2, inputSize: s2 = "large", emptyStateDisplay: a2, isInitiallyOpen: c2, zIndex: l2 = 9999, numberOfSearchResults: h2 = 10, language: w2 = "eng", enableFactualConsistencyScore: v2, summaryPromptName: E2, rerankerId: p2, lambda: H2, enableStreaming: k2 = true }) => {
-    let [V2, F2] = (0, import_react4.useState)(c2 != null ? c2 : false), [m2, _2] = (0, import_react4.useState)(""), { sendMessage: y2, startNewConversation: G2, messageHistory: M2, isLoading: A2, hasError: z2, activeMessage: b2, isStreamingResponse: P2 } = dt({ customerId: e2, corpusKeys: r2, apiKey: t2, numberOfSearchResults: h2, language: w2, enableFactualConsistencyScore: v2, summaryPromptName: E2, rerankerId: p2, lambda: H2, enableStreaming: k2 }), d2 = (0, import_react4.useRef)(null), U2 = (0, import_react4.useRef)(true), L2 = () => {
+  var wt = ({ customerId: e2, corpusKeys: r2, apiKey: t2, title: n2 = "My Chatbot", placeholder: o2 = "Chat with your AI Assistant", exampleQuestions: i2, inputSize: s2 = "large", emptyStateDisplay: a2, isInitiallyOpen: l2, zIndex: c2 = 9999, numberOfSearchResults: h2 = 10, language: w2 = "eng", enableFactualConsistencyScore: v2, summaryPromptName: E2, rerankerId: p2, lambda: H2, enableStreaming: k2 = true }) => {
+    let [V2, F2] = (0, import_react4.useState)(l2 != null ? l2 : false), [m2, _2] = (0, import_react4.useState)(""), { sendMessage: y2, startNewConversation: G2, messageHistory: M2, isLoading: A2, hasError: z2, activeMessage: b2, isStreamingResponse: P2 } = dt({ customerId: e2, corpusKeys: r2, apiKey: t2, numberOfSearchResults: h2, language: w2, enableFactualConsistencyScore: v2, summaryPromptName: E2, rerankerId: p2, lambda: H2, enableStreaming: k2 }), d2 = (0, import_react4.useRef)(null), U2 = (0, import_react4.useRef)(true), L2 = () => {
       setTimeout(() => {
         var R2, Q2;
         U2.current && ((Q2 = d2.current) == null || Q2.scrollTo({ left: 0, top: (R2 = d2.current) == null ? void 0 : R2.scrollHeight, behavior: "smooth" }));
       }, 0);
     };
     (0, import_react4.useEffect)(() => {
-      c2 !== void 0 && F2(c2);
-    }, [c2]), (0, import_react4.useEffect)(() => {
+      l2 !== void 0 && F2(l2);
+    }, [l2]), (0, import_react4.useEffect)(() => {
       let R2 = d2.current, Q2 = () => {
         let ae2 = d2.current ? Math.abs(d2.current.scrollHeight - d2.current.clientHeight - d2.current.scrollTop) < 50 : true;
         U2.current = ae2;
@@ -35356,7 +35356,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       T2 && !R2 || (y2({ query: R2 != null ? R2 : m2 }), _2(""));
     }, Bt = u2.length === 0 ? null : (0, import_jsx_runtime26.jsx)(f2, { size: b2 ? "m" : "l" });
     (0, import_react4.useEffect)(L2, [A2, b2]);
-    let It = V2 ? (0, import_jsx_runtime26.jsxs)("div", { className: "vrcbChatbotWrapper", style: { zIndex: l2 }, children: [(0, import_jsx_runtime26.jsxs)(C2, { className: "vrcbHeader", spacing: "none", direction: "row", children: [(0, import_jsx_runtime26.jsx)(S2, { grow: 1, alignItems: "center", children: n2 }), (0, import_jsx_runtime26.jsx)(S2, { alignItems: "center", children: (0, import_jsx_runtime26.jsx)("button", { onClick: () => F2(false), children: (0, import_jsx_runtime26.jsx)(De2, { size: "12px", color: "#2c313a" }) }) })] }), (0, import_jsx_runtime26.jsxs)(C2, { direction: "column", spacing: "none", className: "vrcbChatbotInnerWrapper", children: [(0, import_jsx_runtime26.jsx)(S2, { className: "vrcbMessagesWrapper", basis: "fill", children: (0, import_jsx_runtime26.jsx)("div", { ref: d2, children: I2 ? (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(f2, { size: "xs" }), u2, Bt, b2 && (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(Ne2, { question: b2.question, answer: b2.answer, searchResults: b2.results, factualConsistencyScore: v2 && (0, import_jsx_runtime26.jsx)(Le2, { score: b2.factualConsistencyScore }), onRetry: z2 ? () => y2({ query: b2.question, isRetry: true }) : void 0, isStreaming: P2 }), (0, import_jsx_runtime26.jsx)(f2, { size: "l" })] }), A2 && (0, import_jsx_runtime26.jsx)(mt, {}), (0, import_jsx_runtime26.jsx)(C2, { fullWidth: true, justifyContent: "center", children: (0, import_jsx_runtime26.jsx)(S2, { children: (0, import_jsx_runtime26.jsx)(Ce2, { color: "neutral", size: "xs", onClick: G2, isDisabled: A2, children: "Start new conversation" }) }) }), (0, import_jsx_runtime26.jsx)(f2, { size: "l" })] }) : a2 != null ? a2 : (0, import_jsx_runtime26.jsx)(vt, { exampleQuestions: i2 != null ? i2 : [], onSubmitChat: W2 }) }) }), (0, import_jsx_runtime26.jsx)(S2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime26.jsx)(rt, { placeholder: o2, buttonLabel: "Send", query: m2, setQuery: _2, isButtonDisabled: T2, onSubmit: W2, size: Pr[s2] }) })] })] }) : (0, import_jsx_runtime26.jsx)("button", { className: "vrcbChatbotButton", onClick: () => F2(true), style: { zIndex: l2 }, children: n2 });
+    let It = V2 ? (0, import_jsx_runtime26.jsxs)("div", { className: "vrcbChatbotWrapper", style: { zIndex: c2 }, children: [(0, import_jsx_runtime26.jsxs)(C2, { className: "vrcbHeader", spacing: "none", direction: "row", children: [(0, import_jsx_runtime26.jsx)(S2, { grow: 1, alignItems: "center", children: n2 }), (0, import_jsx_runtime26.jsx)(S2, { alignItems: "center", children: (0, import_jsx_runtime26.jsx)("button", { onClick: () => F2(false), children: (0, import_jsx_runtime26.jsx)(De2, { size: "12px", color: "#2c313a" }) }) })] }), (0, import_jsx_runtime26.jsxs)(C2, { direction: "column", spacing: "none", className: "vrcbChatbotInnerWrapper", children: [(0, import_jsx_runtime26.jsx)(S2, { className: "vrcbMessagesWrapper", basis: "fill", children: (0, import_jsx_runtime26.jsx)("div", { ref: d2, children: I2 ? (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(f2, { size: "xs" }), u2, Bt, b2 && (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(Ne2, { question: b2.question, answer: b2.answer, searchResults: b2.results, factualConsistencyScore: v2 && (0, import_jsx_runtime26.jsx)(Le2, { score: b2.factualConsistencyScore }), onRetry: z2 ? () => y2({ query: b2.question, isRetry: true }) : void 0, isStreaming: P2 }), (0, import_jsx_runtime26.jsx)(f2, { size: "l" })] }), A2 && (0, import_jsx_runtime26.jsx)(mt, {}), (0, import_jsx_runtime26.jsx)(C2, { fullWidth: true, justifyContent: "center", children: (0, import_jsx_runtime26.jsx)(S2, { children: (0, import_jsx_runtime26.jsx)(Ce2, { color: "neutral", size: "xs", onClick: G2, isDisabled: A2, children: "Start new conversation" }) }) }), (0, import_jsx_runtime26.jsx)(f2, { size: "l" })] }) : a2 != null ? a2 : (0, import_jsx_runtime26.jsx)(vt, { exampleQuestions: i2 != null ? i2 : [], onSubmitChat: W2 }) }) }), (0, import_jsx_runtime26.jsx)(S2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime26.jsx)(rt, { placeholder: o2, buttonLabel: "Send", query: m2, setQuery: _2, isButtonDisabled: T2, onSubmit: W2, size: Pr[s2] }) })] })] }) : (0, import_jsx_runtime26.jsx)("button", { className: "vrcbChatbotButton", onClick: () => F2(true), style: { zIndex: c2 }, children: n2 });
     return (0, import_jsx_runtime26.jsx)(be2, { children: It });
   };
   var Ae2 = `:host {
@@ -36825,8 +36825,8 @@ fieldset {
     }
     connectedCallback() {
       var m2, _2, y2, G2, M2, A2, z2, b2, P2, d2;
-      let r2 = (m2 = this.getAttribute("customerId")) != null ? m2 : "", t2 = (_2 = this.getAttribute("corpuskey")) != null ? _2 : "", n2 = (y2 = this.getAttribute("apiKey")) != null ? y2 : "", o2 = (G2 = this.getAttribute("title")) != null ? G2 : void 0, i2 = (M2 = this.getAttribute("placeholder")) != null ? M2 : void 0, s2 = this.getAttribute("exampleQuestions"), a2 = s2 ? s2.split(",") : void 0, c2 = (A2 = this.getAttribute("inputSize")) != null ? A2 : void 0, l2 = this.getAttribute("isInitiallyOpen") === "true", h2 = (z2 = this.emptyStateDisplay) != null ? z2 : void 0, w2 = this.getAttribute("zIndex") !== null ? parseInt(this.getAttribute("zIndex")) : void 0, v2 = (b2 = parseInt(this.getAttribute("numberofsearchresults"), 10)) != null ? b2 : 15, E2 = (P2 = this.getAttribute("language")) != null ? P2 : void 0, p2 = this.getAttribute("enableFactualConsistencyScore") === "true", H2 = (d2 = this.getAttribute("summaryPromptName")) != null ? d2 : void 0, k2 = this.getAttribute("rerankerId") !== null ? parseInt(this.getAttribute("rerankerId"), 10) : void 0, V2 = this.getAttribute("lambda") !== null ? parseFloat(this.getAttribute("lambda")) : void 0, F2 = this.getAttribute("enableStreaming") !== null ? this.getAttribute("enableStreaming") == "true" : void 0;
-      kt.render((0, import_jsx_runtime27.jsx)("div", { children: (0, import_jsx_runtime27.jsx)(wt, { customerId: r2, corpusKeys: t2, apiKey: n2, title: o2, placeholder: i2, exampleQuestions: a2, inputSize: c2, emptyStateDisplay: h2, isInitiallyOpen: l2, zIndex: w2, enableStreaming: F2, numberOfSearchResults: v2, language: E2, enableFactualConsistencyScore: p2, summaryPromptName: H2, rerankerId: k2, lambda: V2 }) }), this.mountPoint);
+      let r2 = (m2 = this.getAttribute("customerId")) != null ? m2 : "", t2 = (_2 = this.getAttribute("corpuskeys")) != null ? _2 : "", n2 = (y2 = this.getAttribute("apiKey")) != null ? y2 : "", o2 = (G2 = this.getAttribute("title")) != null ? G2 : void 0, i2 = (M2 = this.getAttribute("placeholder")) != null ? M2 : void 0, s2 = this.getAttribute("exampleQuestions"), a2 = s2 ? s2.split(",") : void 0, l2 = (A2 = this.getAttribute("inputSize")) != null ? A2 : void 0, c2 = this.getAttribute("isInitiallyOpen") === "true", h2 = (z2 = this.emptyStateDisplay) != null ? z2 : void 0, w2 = this.getAttribute("zIndex") !== null ? parseInt(this.getAttribute("zIndex")) : void 0, v2 = (b2 = parseInt(this.getAttribute("numberofsearchresults"), 10)) != null ? b2 : 15, E2 = (P2 = this.getAttribute("language")) != null ? P2 : void 0, p2 = this.getAttribute("enableFactualConsistencyScore") === "true", H2 = (d2 = this.getAttribute("summaryPromptName")) != null ? d2 : void 0, k2 = this.getAttribute("rerankerId") !== null ? parseInt(this.getAttribute("rerankerId"), 10) : void 0, V2 = this.getAttribute("lambda") !== null ? parseFloat(this.getAttribute("lambda")) : void 0, F2 = this.getAttribute("enableStreaming") !== null ? this.getAttribute("enableStreaming") == "true" : void 0;
+      console.log(t2), kt.render((0, import_jsx_runtime27.jsx)("div", { children: (0, import_jsx_runtime27.jsx)(wt, { customerId: r2, corpusKeys: t2, apiKey: n2, title: o2, placeholder: i2, exampleQuestions: a2, inputSize: l2, emptyStateDisplay: h2, isInitiallyOpen: c2, zIndex: w2, enableStreaming: F2, numberOfSearchResults: v2, language: E2, enableFactualConsistencyScore: p2, summaryPromptName: H2, rerankerId: k2, lambda: V2 }) }), this.mountPoint);
     }
     attributeChangedCallback() {
       this.connectedCallback();
@@ -36838,7 +36838,7 @@ fieldset {
     (0, import_react3.useEffect)(() => {
       r2.current && e2.emptyStateDisplay && r2.current.setEmptyStateDisplay(e2.emptyStateDisplay);
     }, [e2]);
-    let t2 = e2, n2 = Object.keys(e2).reduce((o2, i2) => (i2 === "emptyStateDisplay" || (i2 === "corpusIds" ? o2[i2] = t2.corpusIds.join(" ") : o2[i2] = t2[i2]), o2), {});
+    let t2 = e2, n2 = Object.keys(e2).reduce((o2, i2) => (i2 === "emptyStateDisplay" || (o2[i2] = t2[i2]), o2), {});
     return (0, import_jsx_runtime27.jsx)("react-chatbot", { ref: r2, ...n2 });
   };
 
@@ -42323,7 +42323,7 @@ pre[class*="language-"] {
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "m" }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiFormGroup, { label: "Customer ID", labelFor: "customerId", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiTextInput, { value: customerId, onChange: onUpdateCustomerId }) }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "m" }),
-          /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiFormGroup, { label: "Corpus Key", labelFor: "corpusId", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiTextInput, { value: corpusKeys, onChange: onUpdateCorpusKeys }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiFormGroup, { label: "Corpus Key", labelFor: "corpusKey", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiTextInput, { value: corpusKeys, onChange: onUpdateCorpusKeys }) }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "m" }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiFormGroup, { label: "API key", labelFor: "apiKey", children: /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiTextInput, { value: apiKey, onChange: onUpdateApiKey, fullWidth: true }) }),
           /* @__PURE__ */ (0, import_jsx_runtime107.jsx)(VuiSpacer, { size: "l" }),
@@ -45531,12 +45531,12 @@ export const App = () => (
     const [placeholder, setPlaceholder] = (0, import_react50.useState)(DEFAULT_PLACEHOLDER);
     const [inputSize, setInputSize] = (0, import_react50.useState)("large");
     const [isStreamingEnabled, setIsStreamingEnabled] = (0, import_react50.useState)(true);
-    const [numberOfSearchResults, setNumberOfSearchResults] = (0, import_react50.useState)(15);
+    const [numberOfSearchResults, setNumberOfSearchResults] = (0, import_react50.useState)(10);
     const [language, setLanguage] = (0, import_react50.useState)("eng");
     const [emptyStateJsx, setEmptyStateJsx] = (0, import_react50.useState)("");
     const [exampleQuestions, setExampleQuestions] = (0, import_react50.useState)("What is Vectara?, How does RAG work?");
     const [enableFactualConsistencyScore, setEnableFactualConsistencyScore] = (0, import_react50.useState)(false);
-    const [summaryPromptName, setSummaryPromptName] = (0, import_react50.useState)(lt);
+    const [summaryPromptName, setSummaryPromptName] = (0, import_react50.useState)(ct);
     const [rerankerId, setRerankerId] = (0, import_react50.useState)(ut);
     const [lambda, setLambda] = (0, import_react50.useState)(pt);
     const onUpdateCorpusKeys = (0, import_react50.useCallback)((e2) => {
@@ -45675,7 +45675,7 @@ export const App = () => {
     corpusKeys: DEFAULT_CORPUS_KEY,
     apiKey: DEFAULT_API_KEY,
     enableStreaming: true, // Enable streaming, false otherwise. Defaults to true.
-    numberOfSearchResults: 15, // Number of search results to use for summary.
+    numberOfSearchResults: 10, // Number of search results to use for summary.
     language: "fra" // Response language. Defaults to "eng" for English.
   });
 
