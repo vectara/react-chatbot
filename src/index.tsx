@@ -69,7 +69,7 @@ class ReactChatbotWebComponent extends HTMLElement {
 
   public connectedCallback() {
     const customerId = this.getAttribute("customerId") ?? "";
-    const corpusKeys = (this.getAttribute("corpuskey") ?? "");
+    const corpusKeys = (this.getAttribute("corpuskeys") ?? "");
     const apiKey = this.getAttribute("apiKey") ?? "";
     const title = this.getAttribute("title") ?? undefined;
     const placeholder = this.getAttribute("placeholder") ?? undefined;
@@ -88,6 +88,7 @@ class ReactChatbotWebComponent extends HTMLElement {
     const enableStreaming =
         this.getAttribute("enableStreaming") !== null ? this.getAttribute("enableStreaming") == "true" : undefined;
 
+    console.log(corpusKeys)
     ReactDOM.render(
       <div>
         <ChatView
