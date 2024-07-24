@@ -21,8 +21,8 @@ import { SUMMARY_LANGUAGES, RerankerId } from "../../../src/types";
 type Props = {
   isOpen: boolean;
   onClose: () => void;
-  corpusIds: string[];
-  onUpdateCorpusIds: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  corpusKeys: string;
+  onUpdateCorpusKeys: (event: React.ChangeEvent<HTMLInputElement>) => void;
   customerId: string;
   onUpdateCustomerId: (event: React.ChangeEvent<HTMLInputElement>) => void;
   apiKey: string;
@@ -35,8 +35,8 @@ type Props = {
   onUpdateInputSize: (inputSize: "large" | "medium") => void;
   emptyMessagesContent: string;
   onUpdateEmptyMessagesContent: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  isStreamingEnabled: boolean;
-  onUpdateIsStreamingEnabled: (isStreamingEnabled: boolean) => void;
+  numberOfSearchResults: number;
+  onUpdateNumberOfSearchResults: (isStreamingEnabled: number) => void;
   language: SummaryLanguage;
   onUpdateLanguage: (language: SummaryLanguage) => void;
   exampleQuestions: string;
@@ -49,13 +49,15 @@ type Props = {
   onUpdateRerankerId: (rerankerId: RerankerId) => void;
   lambda: number;
   onUpdateLambda: (lamda: number) => void;
+  isStreamingEnabled: boolean;
+  onUpdateIsStreamingEnabled: (isStreamingEnabled: boolean) => void;
 };
 
 export const ConfigurationDrawer = ({
   isOpen,
   onClose,
-  corpusIds,
-  onUpdateCorpusIds,
+  corpusKeys,
+  onUpdateCorpusKeys,
   customerId,
   onUpdateCustomerId,
   apiKey,
@@ -68,8 +70,8 @@ export const ConfigurationDrawer = ({
   onUpdateInputSize,
   emptyMessagesContent,
   onUpdateEmptyMessagesContent,
-  isStreamingEnabled,
-  onUpdateIsStreamingEnabled,
+  numberOfSearchResults,
+  onUpdateNumberOfSearchResults,
   language,
   onUpdateLanguage,
   exampleQuestions,
@@ -81,7 +83,9 @@ export const ConfigurationDrawer = ({
   rerankerId,
   onUpdateRerankerId,
   lambda,
-  onUpdateLambda
+  onUpdateLambda,
+  isStreamingEnabled,
+  onUpdateIsStreamingEnabled,
 }: Props) => {
   return (
     <VuiDrawer
@@ -116,8 +120,8 @@ export const ConfigurationDrawer = ({
 
       <VuiSpacer size="m" />
 
-      <VuiFormGroup label="Corpus IDs (comma-separated)" labelFor="corpusId">
-        <VuiTextInput value={corpusIds.join(",")} onChange={onUpdateCorpusIds} />
+      <VuiFormGroup label="Corpus Key" labelFor="corpusId">
+        <VuiTextInput value={corpusKeys} onChange={onUpdateCorpusKeys} />
       </VuiFormGroup>
 
       <VuiSpacer size="m" />
@@ -153,15 +157,18 @@ export const ConfigurationDrawer = ({
       <VuiSpacer size="m" />
 
       <VuiLabel>Enable streaming</VuiLabel>
-
-      <VuiSpacer size="xs" />
-
       <VuiToggle
-        onChange={(e) => {
-          onUpdateIsStreamingEnabled(e.target.checked);
-        }}
-        checked={isStreamingEnabled}
+          onChange={(e) => {
+            onUpdateIsStreamingEnabled(e.target.checked);
+          }}
+          checked={isStreamingEnabled}
       />
+
+      <VuiSpacer size="m" />
+
+      <VuiFormGroup label="Number of search results to summarize" labelFor="numberOfSearchResults">
+        <VuiNumberInput value={numberOfSearchResults} onChange={(numberOfSearchResults) => onUpdateNumberOfSearchResults(numberOfSearchResults as number)} step={1} />
+      </VuiFormGroup>
 
       <VuiSpacer size="m" />
 

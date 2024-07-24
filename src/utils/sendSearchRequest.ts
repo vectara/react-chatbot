@@ -1,158 +1,213 @@
-import { SummaryLanguage } from "../types";
+import {ChatQueryBody, DEFAULT_DOMAIN, ChatQueryRequestHeaders, SummaryLanguage} from "../types";
 
+type GenerationConfig = {
+  promptName?: string;
+  maxUsedSearchResults?: number;
+  promptText?: string;
+  maxResponseCharacters?: number;
+  responseLanguage?: SummaryLanguage;
+  modelParameters?: {
+      maxTokens: number;
+      temperature: number;
+      frequencyPenalty: number;
+      presencePenalty: number;
+  };
+  citations?: {
+      style: "none" | "numeric";
+  } | {
+      style: "html" | "markdown";
+      urlPattern: string;
+      textPattern: string;
+  };
+  enableFactualConsistencyScore?: boolean;
+};
 type Config = {
   customerId: string;
-  corpusId: string;
-  endpoint: string;
-  apiKey: string;
-  filter: string;
-  queryValue?: string;
-  language?: SummaryLanguage;
-  summaryMode?: boolean;
-  rerank?: boolean;
-  rerankNumResults?: number;
-  rerankerId?: number;
-  rerankDiversityBias?: number;
-  hybridNumWords: number;
-  hybridLambdaShort?: number;
-  hybridLambdaLong?: number;
-  summaryNumResults?: number;
-  summaryNumSentences?: number;
-  summaryPromptName?: string;
-  enableFactualConsistencyScore?: boolean;
+  apiKey?: string;
+  authToken?: string;
+  domain?: string;
+  query: string;
+  corpusKeys: string;
+  search: {
+      metadataFilter: string;
+      lexicalInterpolation?: number;
+      customDimensions?: Record<string, number>;
+      semantics?: "default" | "query" | "response";
+      offset: number;
+      limit?: number;
+      contextConfiguration?: {
+          charactersBefore?: number;
+          charactersAfter?: number;
+          sentencesBefore?: number;
+          sentencesAfter?: number;
+          startTag?: string;
+          endTag?: string;
+      };
+      reranker?: {
+          type: "none";
+      } | {
+          type: "customer_reranker";
+          rerankerId: string;
+      } | {
+          type: "mmr";
+          diversityBias: number;
+      };
+  };
+  generation?: GenerationConfig;
   chat?: {
-    conversationId?: string;
+      store?: boolean;
+      conversationId?: string;
   };
 };
+
+const convertReranker = (reranker?: Config["search"]["reranker"]) => {
+  if (!reranker) return;
+
+  if (reranker.type === "none") {
+      return {
+          type: reranker.type
+      };
+  }
+
+  if (reranker.type === "customer_reranker") {
+      return {
+          type: reranker.type,
+          reranker_id: reranker.rerankerId
+      };
+  }
+
+  if (reranker.type === "mmr") {
+      return {
+          type: reranker.type,
+          diversity_bias: reranker.diversityBias
+      };
+  }
+};
+
+const convertCitations = (citations?: GenerationConfig["citations"]) => {
+  if (!citations) return;
+
+  if (citations.style === "none" || citations.style === "numeric") {
+      return {
+          style: citations.style
+      };
+  }
+
+  if (citations.style === "html" || citations.style === "markdown") {
+      return {
+          style: citations.style,
+          url_pattern: citations.urlPattern,
+          text_pattern: citations.textPattern
+      };
+  }
+};
+
 
 /**
  * Send a request to the query API.
  */
 export const sendSearchRequest = async ({
-  customerId,
-  corpusId,
-  endpoint,
-  apiKey,
-  filter,
-  queryValue,
-  language,
-  summaryMode,
-  rerank,
-  rerankNumResults,
-  rerankerId,
-  rerankDiversityBias,
-  hybridNumWords,
-  hybridLambdaShort,
-  hybridLambdaLong,
-  summaryNumResults,
-  summaryNumSentences,
-  summaryPromptName,
-  enableFactualConsistencyScore,
-  chat
+    customerId,
+    corpusKeys,
+    apiKey,
+    query,
+    domain,
+    search,
+    generation,
+    chat
 }: Config) => {
-  const lambda =
-    typeof queryValue === "undefined" || queryValue.trim().split(" ").length > hybridNumWords
-      ? hybridLambdaLong
-      : hybridLambdaShort;
-  const corpusKeyList = corpusId.split(",").map((id) => {
-    return {
-      customerId,
-      corpusId: id,
-      lexicalInterpolationConfig: {
-        lambda: lambda
-      },
-      metadataFilter: filter ? `doc.source = '${filter}'` : undefined
-    };
-  });
+  const {
+      metadataFilter,
+      lexicalInterpolation,
+      customDimensions,
+      semantics,
+      offset,
+      limit,
+      contextConfiguration,
+      reranker
+  } = search
 
-  const body = {
-    query: [
-      {
-        query: queryValue,
-        start: 0,
-        numResults: rerank ? rerankNumResults : 10,
-        corpusKey: corpusKeyList,
-        contextConfig: {
-          sentencesBefore: summaryMode ? summaryNumSentences : 2,
-          sentencesAfter: summaryMode ? summaryNumSentences : 2,
-          startTag: START_TAG,
-          endTag: END_TAG
-        },
-        ...(summaryMode
-          ? {
-              summary: [
-                {
-                  factualConsistencyScore: enableFactualConsistencyScore,
-                  responseLang: language,
-                  maxSummarizedResults: summaryNumResults,
-                  summarizerPromptName: summaryPromptName,
-                  chat: {
-                    store: true,
-                    conversationId: chat?.conversationId
-                  }
-                }
-              ]
+  const body: ChatQueryBody = {
+      query,
+      search: {
+          corpora: corpusKeys.split(",").map((key) => (
+            {
+                corpus_key: key,
+                metadata_filter: metadataFilter,
+                lexical_interpolation: lexicalInterpolation,
+                custom_dimensions: customDimensions,
+                semantics
             }
-          : {}),
-        ...(rerank
-          ? {
-              rerankingConfig: {
-                rerankerId: rerankerId,
-                ...(rerankerId === 272725718
-                  ? {
-                      mmrConfig: {
-                        diversityBias: rerankDiversityBias
-                      }
-                    }
-                  : {})
-              }
-            }
-          : {})
+          )),
+          offset,
+          limit,
+          context_configuration: {
+              characters_before: contextConfiguration?.charactersBefore,
+              characters_after: contextConfiguration?.charactersAfter,
+              sentences_before: contextConfiguration?.sentencesBefore,
+              sentences_after: contextConfiguration?.sentencesAfter,
+              start_tag: contextConfiguration?.startTag,
+              end_tag: contextConfiguration?.endTag
+          },
+          reranker: convertReranker(reranker)
       }
-    ]
   };
 
-  const url = `https://${endpoint}/v1/query`;
-  const headers = {
-    "Content-Type": "application/json",
-    Accept: "application/json",
-    "customer-id": customerId,
-    "x-api-key": apiKey,
-    "grpc-timeout": "60S",
-    "x-source": "react-chatbot"
+  if (generation) {
+      const {
+          promptName,
+          maxUsedSearchResults,
+          promptText,
+          maxResponseCharacters,
+          responseLanguage,
+          modelParameters,
+          citations,
+          enableFactualConsistencyScore
+      } = generation;
+
+      body.generation = {
+          prompt_name: promptName,
+          max_used_search_results: maxUsedSearchResults,
+          prompt_text: promptText,
+          max_response_characters: maxResponseCharacters,
+          response_language: responseLanguage,
+          model_parameters: modelParameters && {
+              max_tokens: modelParameters.maxTokens,
+              temperature: modelParameters.temperature,
+              frequency_penalty: modelParameters.frequencyPenalty,
+              presence_penalty: modelParameters.presencePenalty
+          },
+          citations: convertCitations(citations),
+          enable_factual_consistency_score: enableFactualConsistencyScore
+      };
+  }
+
+  if (chat) {
+      body.chat = {
+          store: chat.store
+      };
+  }
+
+  const headers: ChatQueryRequestHeaders = {
+      "customer-id": customerId,
+      "Content-Type": "application/json"
   };
+
+  if (apiKey) headers["x-api-key"] = apiKey;
+
+  const url = `${domain ?? DEFAULT_DOMAIN}/v2/chats`;
   const response = await fetch(url, {
-    method: "POST",
-    headers: headers,
-    body: JSON.stringify(body)
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(body)
   });
+
+  if (response.status === 400 || response.status === 403 || response.status === 404) {
+      const result = await response.json();
+      throw new Error(`BAD REQUEST: ${result?.messages[0] ?? result.field_errors}`);
+  }
 
   if (response.status !== 200) throw new Error(response.status.toString());
 
-  const result = await response.json();
-  const status = result["responseSet"][0]["status"];
-  if (status.length > 0 && status[0]["code"] === "UNAUTHORIZED") {
-    console.log("UNAUTHORIZED access; check your API key and customer ID");
-  }
-
-  if (summaryMode) {
-    const summaryStatus = result["responseSet"][0]["summary"][0]["status"];
-    if (summaryStatus.length > 0 && summaryStatus[0]["code"] === "BAD_REQUEST") {
-      throw new Error(
-        `BAD REQUEST: Too much text for the summarizer to summarize. Please try reducing the number of search results to summarize, or the context of each result by adjusting the 'summary_num_sentences', and 'summary_num_results' parameters respectively.`
-      );
-    }
-    if (
-      summaryStatus.length > 0 &&
-      summaryStatus[0]["code"] === "NOT_FOUND" &&
-      summaryStatus[0]["statusDetail"] === "Failed to retrieve summarizer."
-    ) {
-      throw new Error(`BAD REQUEST: summarizer ${summaryPromptName} is invalid for this account.`);
-    }
-  }
-
-  return result["responseSet"][0];
+  return await response.json()
 };
-
-export const START_TAG = "%START_SNIPPET%";
-export const END_TAG = "%END_SNIPPET%";

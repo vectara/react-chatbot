@@ -35,8 +35,8 @@ export const FactualConsistencyBadge = ({ score }: Props) => {
       <VuiText size="xs">
         <p>
           <VuiLink
-            href="https://docs.vectara.com/docs/api-reference/search-apis/search?#factual-consistency-score"
-            target="_blank"
+              href="https://docs.vectara.com/docs/api-reference/search-apis/search?#factual-consistency-score"
+              target="_blank"
           >
             What's this?
           </VuiLink>

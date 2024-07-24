@@ -19,7 +19,7 @@ class ReactChatbotWebComponent extends HTMLElement {
   static get observedAttributes() {
     return [
       "customerid",
-      "corpusids",
+      "corpuskeys",
       "apikey",
       "title",
       "placeholder",
@@ -28,12 +28,13 @@ class ReactChatbotWebComponent extends HTMLElement {
       "isinitiallyopen",
       "zindex",
       "emptystatedisplayupdatetime",
-      "enablestreaming",
+      "numberofsearchresults",
       "language",
       "enablefactualconsistencyscore",
       "summarypromptname",
       "rerankerId",
-      "lambda"
+      "lambda",
+      "enablestreaming",
     ];
   }
 
@@ -68,7 +69,7 @@ class ReactChatbotWebComponent extends HTMLElement {
 
   public connectedCallback() {
     const customerId = this.getAttribute("customerId") ?? "";
-    const corpusIds = (this.getAttribute("corpusIds") ?? "").split(" ");
+    const corpusKeys = (this.getAttribute("corpuskey") ?? "");
     const apiKey = this.getAttribute("apiKey") ?? "";
     const title = this.getAttribute("title") ?? undefined;
     const placeholder = this.getAttribute("placeholder") ?? undefined;
@@ -78,19 +79,20 @@ class ReactChatbotWebComponent extends HTMLElement {
     const isInitiallyOpen = this.getAttribute("isInitiallyOpen") === "true";
     const emptyStateDisplay = this.emptyStateDisplay ?? undefined;
     const zIndex = this.getAttribute("zIndex") !== null ? parseInt(this.getAttribute("zIndex")!) : undefined;
-    const enableStreaming =
-      this.getAttribute("enableStreaming") !== null ? this.getAttribute("enableStreaming") == "true" : undefined;
+    const numberOfSearchResults = parseInt(this.getAttribute("numberofsearchresults")!, 10) ?? 15;
     const language = (this.getAttribute("language") as SummaryLanguage) ?? undefined;
     const enableFactualConsistencyScore = this.getAttribute("enableFactualConsistencyScore") === "true";
     const summaryPromptName = this.getAttribute("summaryPromptName") ?? undefined;
     const rerankerId = this.getAttribute("rerankerId") !== null ? parseInt(this.getAttribute("rerankerId")!, 10) : undefined;
     const lambda = this.getAttribute("lambda") !== null ? parseFloat(this.getAttribute("lambda")!) : undefined;
+    const enableStreaming =
+        this.getAttribute("enableStreaming") !== null ? this.getAttribute("enableStreaming") == "true" : undefined;
 
     ReactDOM.render(
       <div>
         <ChatView
           customerId={customerId}
-          corpusIds={corpusIds}
+          corpusKeys={corpusKeys}
           apiKey={apiKey}
           title={title}
           placeholder={placeholder}
@@ -100,6 +102,7 @@ class ReactChatbotWebComponent extends HTMLElement {
           isInitiallyOpen={isInitiallyOpen}
           zIndex={zIndex}
           enableStreaming={enableStreaming}
+          numberOfSearchResults={numberOfSearchResults}
           language={language}
           enableFactualConsistencyScore={enableFactualConsistencyScore}
           summaryPromptName={summaryPromptName}

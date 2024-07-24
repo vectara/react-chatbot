@@ -12,31 +12,16 @@ jest.mock("@vectara/stream-query-client", () => {
 });
 
 const MOCK_API_RESPONSE = {
-  document: [
+  chat_id: "mock-conversation-id",
+  answer: "mock-answer",
+  turn_id: "mock-turn-id",
+  search_results: [
     {
-      id: "mock-doc-id",
-      metadata: [{ name: "mock-name", value: "mock-value" }]
-    }
-  ],
-  response: [
-    {
-      corpusKey: {
-        customerId: 0,
-        corpusId: 1
-      },
-      documentIndex: 0,
-      metadata: [],
       score: 0.8,
-      text: "mock-text"
-    }
-  ],
-  summary: [
-    {
-      chat: {
-        conversationId: "mock-conversation-id",
-        turnId: "mock-turn-id",
-        text: "mock-answer"
-      }
+      text: "mock-text",
+      document_id: "mock-doc-id",
+      document_metadata: [{ name: "mock-name", value: "mock-value" }],
+      part_metadata: []
     }
   ]
 };
@@ -47,7 +32,7 @@ describe("useChat", () => {
 
   beforeEach(() => {
     sendSearchRequestSpy = jest.spyOn(sendSearchRequestInterface, "sendSearchRequest");
-    streamQuerySpy = jest.spyOn(streamQueryInterface, "streamQuery");
+    streamQuerySpy = jest.spyOn(streamQueryInterface, "streamQueryV2");
   });
 
   afterEach(() => {
@@ -57,15 +42,13 @@ describe("useChat", () => {
   describe("streaming", () => {
     it("should send messages and update hook values", async () => {
       const { result } = renderHook(() =>
-        useChat({ customerId: "mock-customer-id", corpusIds: ["1"], apiKey: "mock-api-key" })
+          useChat({ customerId: "mock-customer-id", corpusKeys: "1", apiKey: "mock-api-key" })
       );
 
-      streamQuerySpy.mockImplementation(async (_, onStreamUpdate) => {
-        await onStreamUpdate({
-          references: [],
-          detail: null,
+      streamQuerySpy.mockImplementation(async ({onStreamEvent}) => {
+        await onStreamEvent({
+          type: "generationChunk",
           updatedText: "mock-updated-text",
-          isDone: false
         });
       });
 
@@ -75,7 +58,7 @@ describe("useChat", () => {
 
       expect(result.current.activeMessage).toEqual({
         answer: "mock-updated-text",
-        id: "",
+        id: "placeholder-message-id",
         question: "mock-query",
         results: []
       });
@@ -83,12 +66,9 @@ describe("useChat", () => {
       expect(result.current.isStreamingResponse).toEqual(true);
       expect(result.current.messageHistory).toEqual([]);
 
-      streamQuerySpy.mockImplementation(async (_, onStreamUpdate) => {
-        await onStreamUpdate({
-          references: [],
-          detail: null,
-          updatedText: "",
-          isDone: true
+      streamQuerySpy.mockImplementation(async ({onStreamEvent}) => {
+        await onStreamEvent({
+          type: "end"
         });
       });
 
@@ -105,7 +85,7 @@ describe("useChat", () => {
   describe("non-streaming", () => {
     it("should send messages and update message history", async () => {
       const { result } = renderHook(() =>
-        useChat({ customerId: "mock-customer-id", corpusIds: ["1"], apiKey: "mock-api-key", enableStreaming: false })
+          useChat({ customerId: "mock-customer-id", corpusKeys: "1", apiKey: "mock-api-key", enableStreaming: false })
       );
 
       sendSearchRequestSpy.mockImplementation(() => Promise.resolve(MOCK_API_RESPONSE));
@@ -115,9 +95,9 @@ describe("useChat", () => {
       });
 
       expect(sendSearchRequestSpy).toHaveBeenCalledWith(
-        expect.objectContaining({
-          queryValue: "mock-query"
-        })
+          expect.objectContaining({
+            query: "mock-query"
+          })
       );
 
       expect(result.current.messageHistory.length).toEqual(1);
@@ -125,7 +105,7 @@ describe("useChat", () => {
 
     it("should reflect error state", async () => {
       const { result } = renderHook(() =>
-        useChat({ customerId: "mock-customer-id", corpusIds: ["1"], apiKey: "mock-api-key", enableStreaming: false })
+          useChat({ customerId: "mock-customer-id", corpusKeys: "1", apiKey: "mock-api-key", enableStreaming: false })
       );
       sendSearchRequestSpy.mockImplementation(() => {
         throw "error";
@@ -140,7 +120,7 @@ describe("useChat", () => {
 
     it("should reflect loading state", async () => {
       const { result } = renderHook(() =>
-        useChat({ customerId: "mock-customer-id", corpusIds: ["1"], apiKey: "mock-api-key" })
+          useChat({ customerId: "mock-customer-id", corpusKeys: "1", apiKey: "mock-api-key" })
       );
       sendSearchRequestSpy.mockImplementation(() => {
         return new Promise(() => {});
@@ -156,7 +136,7 @@ describe("useChat", () => {
 
   it("should be able to reset the conversation", async () => {
     const { result } = renderHook(() =>
-      useChat({ customerId: "mock-customer-id", corpusIds: ["1"], apiKey: "mock-api-key", enableStreaming: false })
+        useChat({ customerId: "mock-customer-id", corpusKeys: "1", apiKey: "mock-api-key", enableStreaming: false })
     );
     sendSearchRequestSpy.mockImplementation(() => Promise.resolve(MOCK_API_RESPONSE));
 
@@ -167,26 +147,18 @@ describe("useChat", () => {
 
     // Assert that the second request uses the current conversation id.
     expect(sendSearchRequestSpy).toHaveBeenCalledWith(
-      expect.objectContaining({
-        chat: {
-          conversationId: "mock-conversation-id"
-        }
-      })
+        expect.objectContaining({
+          chat: { store: true, conversationId: "mock-conversation-id" }
+        })
     );
 
     sendSearchRequestSpy.mockImplementation(() =>
-      Promise.resolve({
-        ...MOCK_API_RESPONSE,
-        summary: [
-          {
-            chat: {
-              conversationId: "mock-conversation-id-2",
-              turnId: "mock-turn-id",
-              text: "mock-answer"
-            }
-          }
-        ]
-      })
+        Promise.resolve({
+          ...MOCK_API_RESPONSE,
+          chat_id: "mock-conversation-id-2",
+          turn_id: "mock-turn-id",
+          answer: "mock-answer"
+        })
     );
 
     await act(async () => {

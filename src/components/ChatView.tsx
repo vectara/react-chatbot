@@ -21,8 +21,8 @@ export interface Props {
   // Vectara API key
   apiKey: string;
 
-  // Vectara corpus IDs
-  corpusIds: string[];
+  // Vectara corpus keys
+  corpusKeys: string;
 
   // Title to be shown in the UI header
   title?: string;
@@ -45,8 +45,8 @@ export interface Props {
   // Defines the component's z-index. Defaults to 9999.
   zIndex?: number;
 
-  // Enables streaming responses from the API. Defaults to true.
-  enableStreaming?: boolean;
+  // Number of search results to summarize.
+  numberOfSearchResults?: number;
 
   // The language the responses should be in. Defaults to English.
   language?: SummaryLanguage;
@@ -60,7 +60,12 @@ export interface Props {
   // Define the reranker Id to be used , Defaults to "272725718"
   rerankerId?: RerankerId;
 
-  lambda?: number
+  // How much to weigh lexical scores compared to the embedding score. 0 means lexical search is not used at all,
+  // and 1 means only lexical search is used.
+  lambda?: number;
+
+  // Enables streaming responses from the API. Defaults to true.
+  enableStreaming?: boolean;
 }
 
 /**
@@ -70,7 +75,7 @@ export interface Props {
  */
 export const ChatView = ({
   customerId,
-  corpusIds,
+  corpusKeys,
   apiKey,
   title = "My Chatbot",
   placeholder = "Chat with your AI Assistant",
@@ -79,26 +84,28 @@ export const ChatView = ({
   emptyStateDisplay,
   isInitiallyOpen,
   zIndex = 9999,
-  enableStreaming = true,
+  numberOfSearchResults = 10,
   language = "eng",
   enableFactualConsistencyScore,
   summaryPromptName,
   rerankerId,
-  lambda
+  lambda,
+  enableStreaming = true,
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(isInitiallyOpen ?? false);
   const [query, setQuery] = useState<string>("");
   const { sendMessage, startNewConversation, messageHistory, isLoading, hasError, activeMessage, isStreamingResponse } =
     useChat({
       customerId,
-      corpusIds,
+      corpusKeys,
       apiKey,
-      enableStreaming,
+      numberOfSearchResults,
       language,
       enableFactualConsistencyScore,
       summaryPromptName,
       rerankerId,
-      lambda
+      lambda,
+      enableStreaming
     });
 
   const appLayoutRef = useRef<HTMLDivElement>(null);

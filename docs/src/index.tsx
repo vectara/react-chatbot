@@ -34,23 +34,22 @@ const formatStringProp = (value?: string) => {
 
 const generateCodeSnippet = (
   customerId?: string,
-  corpusIds?: string[],
+  corpusKeys?: string,
   apiKey?: string,
   title?: string,
   placeholder?: string,
   inputSize?: string,
   emptyStateDisplay?: string,
-  isStreamingEnabled?: boolean,
+  numberOfSearchResults?: number,
   language?: SummaryLanguage,
   exampleQuestions?: string,
   rerankerId?: RerankerId,
-  lambda?: number
+  lambda?: number,
+  isStreamingEnabled?: boolean,
 ) => {
   const props = [
     `customerId="${customerId === "" ? "<Your Vectara customer ID>" : customerId}"`,
-    `corpusIds=${
-      corpusIds?.length === 0 ? '"<Your Vectara corpus IDs>"' : `{["${corpusIds?.join('","').replace(/\s/g, "")}"]}`
-    }`,
+    `corpusKeys="${corpusKeys === "" ? "<Your Vectara Corpus key>" : corpusKeys}"`,
     `apiKey="${apiKey === "" ? "<Your Vectara API key>" : apiKey}"`
   ];
 
@@ -80,6 +79,7 @@ const generateCodeSnippet = (
   }
 
   props.push(`enableStreaming={${isStreamingEnabled}}`);
+  props.push(`numberOfSearchResultsForSummary={${numberOfSearchResults}}`);
 
   props.push(`language="${language}"`);
   props.push(`rerankerId=${rerankerId}`);
@@ -99,7 +99,7 @@ export const App = () => (
 );`;
 };
 
-const DEFAULT_CORPUS_IDS = ["1"];
+const DEFAULT_CORPUS_KEY = "vectara-docs_1";
 const DEFAULT_CUSTOMER_ID = "1366999410";
 const DEFAULT_API_KEY = "zqt_UXrBcnI2UXINZkrv4g1tQPhzj02vfdtqYJIDiA";
 const DEFAULT_TITLE = "Vectara Docs Chatbot";
@@ -108,13 +108,14 @@ const DEFAULT_PLACEHOLDER = 'Try "What is Vectara?" or "How does RAG work?"';
 const App = () => {
   const [isConfigurationDrawerOpen, setIsConfigurationDrawerOpen] = useState(false);
   const [isChatbotForcedOpen, setIsChatbotForcedOpen] = useState(true);
-  const [corpusIds, setCorpusIds] = useState<string[]>([]);
+  const [corpusKeys, setCorpusKeys] = useState<string>("");
   const [customerId, setCustomerId] = useState<string>("");
   const [apiKey, setApiKey] = useState<string>("");
   const [title, setTitle] = useState<string>(DEFAULT_TITLE);
   const [placeholder, setPlaceholder] = useState<string>(DEFAULT_PLACEHOLDER);
   const [inputSize, setInputSize] = useState<"large" | "medium">("large");
   const [isStreamingEnabled, setIsStreamingEnabled] = useState<boolean>(true);
+  const [numberOfSearchResults, setNumberOfSearchResults] = useState<number>(15);
   const [language, setLanguage] = useState<SummaryLanguage>("eng");
   const [emptyStateJsx, setEmptyStateJsx] = useState<string>("");
   const [exampleQuestions, setExampleQuestions] = useState<string>("What is Vectara?, How does RAG work?");
@@ -123,14 +124,8 @@ const App = () => {
   const [rerankerId, setRerankerId] = useState<RerankerId>(DEFAULT_RERANKER_ID);
   const [lambda, setLambda] = useState<number>(DEFAULT_LAMBDA_VALUE);
 
-  const onUpdateCorpusIds = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    const sanitizedValue = e.target.value.trim();
-
-    if (sanitizedValue === "") {
-      setCorpusIds([]);
-      return;
-    }
-    setCorpusIds(sanitizedValue.split(","));
+  const onUpdateCorpusKeys = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+    setCorpusKeys(e.target.value);
   }, []);
 
   const onUpdateCustomerId = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -217,7 +212,7 @@ const App = () => {
              * This ensures that we don't voluntarily display the docs corpus details in the text fields.
              */}
             <ReactChatbot
-              corpusIds={corpusIds.length === 0 ? DEFAULT_CORPUS_IDS : corpusIds}
+              corpusKey={corpusKeys === "" ? DEFAULT_CORPUS_KEY : corpusKeys}
               customerId={customerId === "" ? DEFAULT_CUSTOMER_ID : customerId}
               apiKey={apiKey === "" ? DEFAULT_API_KEY : apiKey}
               title={title === "" ? undefined : title}
@@ -227,12 +222,13 @@ const App = () => {
               emptyStateDisplay={emptyStateJsx === "" ? undefined : <CustomEmptyStateDisplay />}
               isInitiallyOpen={isChatbotForcedOpen}
               zIndex={9}
-              enableStreaming={isStreamingEnabled}
+              numberOfSearchResults={numberOfSearchResults}
               language={language}
               enableFactualConsistencyScore={enableFactualConsistencyScore}
               summaryPromptName={summaryPromptName}
               rerankerId={rerankerId}
               lambda={lambda}
+              enableStreaming={isStreamingEnabled}
             />
 
             <VuiSpacer size="m" />
@@ -265,17 +261,18 @@ const App = () => {
             <VuiCode language="tsx">
               {generateCodeSnippet(
                 customerId,
-                corpusIds,
+                corpusKeys,
                 apiKey,
                 title,
                 placeholder,
                 inputSize,
                 emptyStateJsx,
-                isStreamingEnabled,
+                numberOfSearchResults,
                 language,
                 exampleQuestions,
                 rerankerId,
-                lambda
+                lambda,
+                isStreamingEnabled
               )}
             </VuiCode>
 
@@ -308,9 +305,10 @@ export const App = () => {
     startNewConversation
   } = useChat({
     customerId: DEFAULT_CUSTOMER_ID,
-    corpusIds: DEFAULT_CORPUS_IDS,
+    corpusKeys: DEFAULT_CORPUS_KEY,
     apiKey: DEFAULT_API_KEY,
     enableStreaming: true, // Enable streaming, false otherwise. Defaults to true.
+    numberOfSearchResults: 15, // Number of search results to use for summary.
     language: "fra" // Response language. Defaults to "eng" for English.
   });
 
@@ -350,8 +348,8 @@ export const App = () => {
             <ConfigurationDrawer
               isOpen={isConfigurationDrawerOpen}
               onClose={() => setIsConfigurationDrawerOpen(false)}
-              corpusIds={corpusIds}
-              onUpdateCorpusIds={onUpdateCorpusIds}
+              corpusKeys={corpusKeys}
+              onUpdateCorpusKeys={onUpdateCorpusKeys}
               customerId={customerId}
               onUpdateCustomerId={onUpdateCustomerId}
               apiKey={apiKey}
@@ -364,8 +362,8 @@ export const App = () => {
               onUpdateInputSize={setInputSize}
               emptyMessagesContent={emptyStateJsx}
               onUpdateEmptyMessagesContent={onUpdateEmptyMessagesContent}
-              isStreamingEnabled={isStreamingEnabled}
-              onUpdateIsStreamingEnabled={setIsStreamingEnabled}
+              numberOfSearchResults={numberOfSearchResults}
+              onUpdateNumberOfSearchResults={setNumberOfSearchResults}
               language={language}
               onUpdateLanguage={setLanguage}
               exampleQuestions={exampleQuestions}
@@ -378,6 +376,8 @@ export const App = () => {
               onUpdateRerankerId={setRerankerId}
               lambda={lambda}
               onUpdateLambda={setLambda}
+              isStreamingEnabled={isStreamingEnabled}
+              onUpdateIsStreamingEnabled={setIsStreamingEnabled}
             />
           </div>
         </VuiAppContent>

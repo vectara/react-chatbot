@@ -60,7 +60,7 @@ import { ReactChatbot } from "@vectara/react-chatbot";
 
 <ReactChatbot
   customerId="CUSTOMER_ID"
-  corpusIds={["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"]}
+  corpusKeys={["CORPUS_KEY_1", "CORPUS_KEY_2", "CORPUS_KEY_N"]}
   apiKey="API_KEY"
   title="My Chatbot"
   placeholder="Chat with your AI assistant"
@@ -79,9 +79,10 @@ import { ReactChatbot } from "@vectara/react-chatbot";
 
 Every Vectara account is associated with a customer ID. You can find your customer ID by logging into the [Vectara Console](https://console.vectara.com/) and opening your account dropdown in the top-right corner.
 
-##### `corpusIds` (required)
+##### `corpuskeys` (required)
 
-After you [create a corpus](https://docs.vectara.com/docs/console-ui/creating-a-corpus), you can find its ID by navigating to the corpus and looking in the top-left corner, next to the corpus name.
+After you [create a corpus](https://docs.vectara.com/docs/console-ui/creating-a-corpus), you can find its Key by navigating to the corpus and looking in the top-left corner, next to the corpus name.
+To run queries against multiple corpora, use a comma-separated list of corpus keys. For example: "corpus_1,corpus_2".
 
 ##### `apiKey` (required)
 
@@ -131,6 +132,18 @@ When set, this will calculate the [Factual Consistency Score (FCS)](https://docs
 ##### `summaryPromptName` (optional)
 
 Define the [summarizer and prompt](https://docs.vectara.com/docs/learn/grounded-generation/select-a-summarizer) to use to generate the chat response.
+
+##### `numberOfSearchResults` (optional)
+
+Define the number of search results to be used to generate summary. Default is set to 15.
+
+##### `rerankerId` (optional)
+
+Define the reranker Id to be used , Defaults to 272725718.
+
+##### `lambda` (optional)
+
+How much to weigh lexical scores compared to the embedding score. 0 means lexical search is not used at all, and 1 means only lexical search is used.
 
 ### Use your own views with the useChat hook
 
@@ -218,7 +231,7 @@ export const App = (props: Props): ReactNode => {
       setChatWidget(
         <ReactChatbot
           customerId="CUSTOMER_ID"
-          corpusIds={["CORPUS_ID_1", "CORPUS_ID_2", "CORPUS_ID_N"]}
+          corpusKeys={["CORPUS_KEY_1", "CORPUS_KEY_2", "CORPUS_KEY_N"]}
           apiKey="API_KEY"
         />
       );

@@ -1,7 +1,7 @@
 import Markdown from "markdown-to-jsx";
 import { VuiFlexContainer, VuiFlexItem, VuiSpacer, VuiSpinner, VuiText } from "../vui";
 import { applyCitationOrder, extractCitations, reorderCitations } from "../vui/utils/citations";
-import { DeserializedSearchResult } from "../types";
+import { SearchResultWithSnippet } from "../types";
 import { ChatReferences } from "./ChatReferences";
 import { Error } from "./Icons";
 import { useState } from "react";
@@ -37,7 +37,7 @@ const markDownCitations = (summary: string) => {
 type Props = {
   question?: string;
   answer?: string;
-  searchResults?: DeserializedSearchResult[];
+  searchResults?: SearchResultWithSnippet[];
   factualConsistencyScore?: React.ReactNode;
   onRetry?: () => void;
   isStreaming?: boolean;
