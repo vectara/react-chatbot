@@ -25,7 +25,7 @@ import {sendSearchRequest} from "./utils/sendSearchRequest";
 export const DEFAULT_SUMMARIZER = "vectara-summary-ext-v1.2.0";
 export const DEFAULT_RERANKER_ID = 272725718
 
-export const DEFAULT_LAMBDA_VALUE = 0.025
+export const DEFAULT_LAMBDA_VALUE = 0.005
 
 type UseChatConfig = {
   customerId: string;
@@ -274,7 +274,6 @@ export const useChat = ({
   const startNewConversation = () => {
     setMessageHistory([]);
     setConversationId(null);
-    setActiveMessage(null)
   };
 
   // Handle this in an effect instead of directly in the onStreamEvent callback
