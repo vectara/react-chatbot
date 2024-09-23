@@ -45563,7 +45563,7 @@ export const App = () => (
     const CustomEmptyStateDisplay = (0, import_react50.useCallback)(() => {
       return /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(import_react_jsx_parser.default, { jsx: emptyStateJsx });
     }, [emptyStateJsx]);
-    const parsedExampleQuestions = exampleQuestions && exampleQuestions.split(",");
+    const parsedExampleQuestions = exampleQuestions ? exampleQuestions.split(",") : void 0;
     return /* @__PURE__ */ (0, import_jsx_runtime108.jsxs)(import_jsx_runtime108.Fragment, { children: [
       /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(
         VuiAppHeader,
@@ -45593,7 +45593,7 @@ export const App = () => (
         /* @__PURE__ */ (0, import_jsx_runtime108.jsx)(
           ms,
           {
-            corpusKey: corpusKeys === "" ? DEFAULT_CORPUS_KEY : corpusKeys,
+            corpusKeys: corpusKeys === "" ? DEFAULT_CORPUS_KEY : corpusKeys,
             customerId: customerId === "" ? DEFAULT_CUSTOMER_ID : customerId,
             apiKey: apiKey === "" ? DEFAULT_API_KEY : apiKey,
             title: title === "" ? void 0 : title,
