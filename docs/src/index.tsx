@@ -2,7 +2,13 @@ import { ChangeEvent, useCallback, useState } from "react";
 import ReactDOM from "react-dom";
 import { BiLogoGithub } from "react-icons/bi";
 import JsxParser from "react-jsx-parser";
-import { ReactChatbot, SummaryLanguage, DEFAULT_SUMMARIZER, DEFAULT_RERANKER_ID, DEFAULT_LAMBDA_VALUE } from "@vectara/react-chatbot";
+import {
+  ReactChatbot,
+  SummaryLanguage,
+  DEFAULT_SUMMARIZER,
+  DEFAULT_RERANKER_ID,
+  DEFAULT_LAMBDA_VALUE
+} from "@vectara/react-chatbot";
 import {
   VuiAppContent,
   VuiAppHeader,
@@ -22,7 +28,7 @@ import { HeaderLogo } from "./components/HeaderLogo";
 import { ConfigurationDrawer } from "components/ConfigurationDrawer";
 import "./ui/_index.scss";
 import "./index.scss";
-import {RerankerId} from "../../src/types";
+import { RerankerId } from "../../src/types";
 
 const formatStringProp = (value?: string) => {
   if (!value) {
@@ -45,7 +51,7 @@ const generateCodeSnippet = (
   exampleQuestions?: string,
   rerankerId?: RerankerId,
   lambda?: number,
-  isStreamingEnabled?: boolean,
+  isStreamingEnabled?: boolean
 ) => {
   const props = [
     `customerId="${customerId === "" ? "<Your Vectara customer ID>" : customerId}"`,
@@ -159,7 +165,7 @@ const App = () => {
     );
   }, [emptyStateJsx]);
 
-  const parsedExampleQuestions = exampleQuestions && exampleQuestions.split(",");
+  const parsedExampleQuestions = exampleQuestions ? exampleQuestions.split(",") : undefined;
 
   return (
     <>
@@ -212,7 +218,7 @@ const App = () => {
              * This ensures that we don't voluntarily display the docs corpus details in the text fields.
              */}
             <ReactChatbot
-              corpusKey={corpusKeys === "" ? DEFAULT_CORPUS_KEY : corpusKeys}
+              corpusKeys={corpusKeys === "" ? DEFAULT_CORPUS_KEY : corpusKeys}
               customerId={customerId === "" ? DEFAULT_CUSTOMER_ID : customerId}
               apiKey={apiKey === "" ? DEFAULT_API_KEY : apiKey}
               title={title === "" ? undefined : title}
