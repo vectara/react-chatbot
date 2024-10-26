@@ -253,7 +253,7 @@ export const App = (props: Props): ReactNode => {
 
 React-Chatbot uses the data in your Vectara corpus to provide factual responses. To set this up:
 
-1. [Create a free Vectara account](https://console.vectara.com/signup).
+1. [Create a Vectara account](https://console.vectara.com/signup).
 2. [Create a corpus and add data to it](https://docs.vectara.com/docs/console-ui/creating-a-corpus).
 3. [Create a **QueryService** API key](https://docs.vectara.com/docs/console-ui/manage-api-access#create-an-api-key).
 
