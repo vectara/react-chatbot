@@ -165,7 +165,7 @@ export type ChatQueryResponse = {
   rephrased_query: string
 }
 
-export type RerankerId = 272725717 | 272725719 | 272725718
+export type RerankerId = 272725719 | 272725718
 export const mmrRerankerId = 272725718;
 export const DEFAULT_DOMAIN = "https://api.vectara.io";
 
