@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useRef } from "react";
 import * as ReactDOM from "react-dom";
 import { Props, ChatView } from "./components/ChatView";
-import type {RerankerId, SummaryLanguage} from "./types";
+import type { AgenticConfiguration, RerankerId, SummaryLanguage } from "./types";
 export type { Props } from "components/ChatView";
 export { DEFAULT_SUMMARIZER, DEFAULT_RERANKER_ID, DEFAULT_LAMBDA_VALUE } from "./useChat";
 
@@ -15,6 +15,7 @@ class ReactChatbotWebComponent extends HTMLElement {
 
   // References
   emptyStateDisplay!: ReactNode;
+  agenticConfiguration!: AgenticConfiguration;
 
   static get observedAttributes() {
     return [
@@ -35,6 +36,8 @@ class ReactChatbotWebComponent extends HTMLElement {
       "rerankerId",
       "lambda",
       "enablestreaming",
+      "agenticconfigurationupdatetime",
+      "requestsource"
     ];
   }
 
@@ -67,9 +70,15 @@ class ReactChatbotWebComponent extends HTMLElement {
     this.setAttribute("emptystatedisplayupdatetime", Date.now().toString());
   }
 
+  public setAgenticConfiguration(agenticConfiguration: AgenticConfiguration) {
+    this.agenticConfiguration = agenticConfiguration;
+
+    this.setAttribute("agenticconfigurationupdatetime", Date.now().toString());
+  }
+
   public connectedCallback() {
     const customerId = this.getAttribute("customerId") ?? "";
-    const corpusKeys = (this.getAttribute("corpuskeys") ?? "");
+    const corpusKeys = this.getAttribute("corpuskeys") ?? "";
     const apiKey = this.getAttribute("apiKey") ?? "";
     const title = this.getAttribute("title") ?? undefined;
     const placeholder = this.getAttribute("placeholder") ?? undefined;
@@ -83,12 +92,14 @@ class ReactChatbotWebComponent extends HTMLElement {
     const language = (this.getAttribute("language") as SummaryLanguage) ?? undefined;
     const enableFactualConsistencyScore = this.getAttribute("enableFactualConsistencyScore") === "true";
     const summaryPromptName = this.getAttribute("summaryPromptName") ?? undefined;
-    const rerankerId = this.getAttribute("rerankerId") !== null ? parseInt(this.getAttribute("rerankerId")!, 10) : undefined;
+    const rerankerId =
+      this.getAttribute("rerankerId") !== null ? parseInt(this.getAttribute("rerankerId")!, 10) : undefined;
     const lambda = this.getAttribute("lambda") !== null ? parseFloat(this.getAttribute("lambda")!) : undefined;
     const enableStreaming =
-        this.getAttribute("enableStreaming") !== null ? this.getAttribute("enableStreaming") == "true" : undefined;
+      this.getAttribute("enableStreaming") !== null ? this.getAttribute("enableStreaming") == "true" : undefined;
+    const agenticConfiguration = this.agenticConfiguration ?? undefined;
+    const requestSource = this.getAttribute("requestsource") ?? undefined;
 
-    console.log(corpusKeys)
     ReactDOM.render(
       <div>
         <ChatView
@@ -109,6 +120,8 @@ class ReactChatbotWebComponent extends HTMLElement {
           summaryPromptName={summaryPromptName}
           rerankerId={rerankerId as RerankerId}
           lambda={lambda}
+          agenticConfiguration={agenticConfiguration}
+          requestSource={requestSource}
         />
       </div>,
       this.mountPoint
@@ -133,6 +146,11 @@ export const ReactChatbot = (props: Props) => {
     if (props.emptyStateDisplay) {
       // @ts-ignore
       (ref.current as ReactChatbotWebComponent).setEmptyStateDisplay(props.emptyStateDisplay);
+    }
+
+    if (props.agenticConfiguration) {
+      // @ts-ignore
+      (ref.current as ReactChatbotWebComponent).setAgenticConfiguration(props.agenticConfiguration);
     }
   }, [props]);
 

@@ -28,7 +28,7 @@ import { HeaderLogo } from "./components/HeaderLogo";
 import { ConfigurationDrawer } from "components/ConfigurationDrawer";
 import "./ui/_index.scss";
 import "./index.scss";
-import { RerankerId } from "../../src/types";
+import { AgenticResponse, RerankerId } from "../../src/types";
 
 const formatStringProp = (value?: string) => {
   if (!value) {
@@ -235,6 +235,33 @@ const App = () => {
               rerankerId={rerankerId}
               lambda={lambda}
               enableStreaming={isStreamingEnabled}
+              agenticConfiguration={{
+                url: "https://vectara-com-chatbot-agent-server.onrender.com/verify-prospect",
+                onAgenticResponse: (response: AgenticResponse) => {
+                  if (response.event === "prompt_schedule_sales") {
+                    return {
+                      message: response.message,
+                      userActionOptions: [
+                        {
+                          label: "Schedule a demo",
+                          message: "I'd like to connect with sales"
+                        }
+                      ]
+                    };
+                  }
+
+                  if (response.event === "handle_prospect_decline") {
+                    return {
+                      message: response.message
+                    };
+                  }
+
+                  if (response.event === "schedule_sales") {
+                    return { message: "In a live context, this would connect you to the Vectara Sales team." };
+                  }
+                }
+              }}
+              requestSource="react-chatbot-docs"
             />
 
             <VuiSpacer size="m" />
