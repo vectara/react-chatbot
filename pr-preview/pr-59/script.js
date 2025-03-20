@@ -21400,10 +21400,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 };
               }
               var j3 = 1, U3 = 2, F2 = j3 | U3, q2 = 4, G2 = 8, H2 = 16, W2 = 32, z2 = 64, K2 = 128;
-              function X3(t5, e5) {
+              function X2(t5, e5) {
                 return U3 | (t5 ? q2 : 0) | (e5 ? G2 : 0);
               }
-              var Q3 = 0, J3 = 1, Y3 = 2, Z2 = 3, $2 = 4, tt2 = 5, et2 = function(t5, i4, r3) {
+              var Q3 = 0, J3 = 1, Y3 = 2, Z3 = 3, $2 = 4, tt2 = 5, et2 = function(t5, i4, r3) {
                 this.options = t5 = B2(t5), this.sourceFile = t5.sourceFile, this.keywords = N2(s3[t5.ecmaVersion >= 6 ? 6 : "module" === t5.sourceType ? "5module" : 5]);
                 var a3 = "";
                 true !== t5.allowReserved && (a3 = e4[t5.ecmaVersion >= 6 ? 6 : 5 === t5.ecmaVersion ? 5 : 3], "module" === t5.sourceType && (a3 += " await")), this.reservedWords = N2(a3);
@@ -21694,9 +21694,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               };
               var ct2 = 1, lt2 = 2, ut2 = 4;
               nt2.parseFunction = function(t5, e5, i4, s4) {
-                this.initFunction(t5), (this.options.ecmaVersion >= 9 || this.options.ecmaVersion >= 6 && !s4) && (this.type === b2.star && e5 & lt2 && this.unexpected(), t5.generator = this.eat(b2.star)), this.options.ecmaVersion >= 8 && (t5.async = !!s4), e5 & ct2 && (t5.id = e5 & ut2 && this.type !== b2.name ? null : this.parseIdent(), !t5.id || e5 & lt2 || this.checkLValSimple(t5.id, this.strict || t5.generator || t5.async ? this.treatFunctionsAsVar ? J3 : Y3 : Z2));
+                this.initFunction(t5), (this.options.ecmaVersion >= 9 || this.options.ecmaVersion >= 6 && !s4) && (this.type === b2.star && e5 & lt2 && this.unexpected(), t5.generator = this.eat(b2.star)), this.options.ecmaVersion >= 8 && (t5.async = !!s4), e5 & ct2 && (t5.id = e5 & ut2 && this.type !== b2.name ? null : this.parseIdent(), !t5.id || e5 & lt2 || this.checkLValSimple(t5.id, this.strict || t5.generator || t5.async ? this.treatFunctionsAsVar ? J3 : Y3 : Z3));
                 var r3 = this.yieldPos, a3 = this.awaitPos, n3 = this.awaitIdentPos;
-                return this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(X3(t5.async, t5.generator)), e5 & ct2 || (t5.id = this.type === b2.name ? this.parseIdent() : null), this.parseFunctionParams(t5), this.parseFunctionBody(t5, i4, false), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(t5, e5 & ct2 ? "FunctionDeclaration" : "FunctionExpression");
+                return this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(X2(t5.async, t5.generator)), e5 & ct2 || (t5.id = this.type === b2.name ? this.parseIdent() : null), this.parseFunctionParams(t5), this.parseFunctionBody(t5, i4, false), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(t5, e5 & ct2 ? "FunctionDeclaration" : "FunctionExpression");
               }, nt2.parseFunctionParams = function(t5) {
                 this.expect(b2.parenL), t5.params = this.parseBindingList(b2.parenR, false, this.options.ecmaVersion >= 8), this.checkYieldAwaitInDefaultParams();
               }, nt2.parseClass = function(t5, e5) {
@@ -22279,10 +22279,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 t5.id = null, this.options.ecmaVersion >= 6 && (t5.generator = t5.expression = false), this.options.ecmaVersion >= 8 && (t5.async = false);
               }, ft2.parseMethod = function(t5, e5, i4) {
                 var s4 = this.startNode(), r3 = this.yieldPos, a3 = this.awaitPos, n3 = this.awaitIdentPos;
-                return this.initFunction(s4), this.options.ecmaVersion >= 6 && (s4.generator = t5), this.options.ecmaVersion >= 8 && (s4.async = !!e5), this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(X3(e5, s4.generator) | z2 | (i4 ? K2 : 0)), this.expect(b2.parenL), s4.params = this.parseBindingList(b2.parenR, false, this.options.ecmaVersion >= 8), this.checkYieldAwaitInDefaultParams(), this.parseFunctionBody(s4, false, true), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(s4, "FunctionExpression");
+                return this.initFunction(s4), this.options.ecmaVersion >= 6 && (s4.generator = t5), this.options.ecmaVersion >= 8 && (s4.async = !!e5), this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, this.enterScope(X2(e5, s4.generator) | z2 | (i4 ? K2 : 0)), this.expect(b2.parenL), s4.params = this.parseBindingList(b2.parenR, false, this.options.ecmaVersion >= 8), this.checkYieldAwaitInDefaultParams(), this.parseFunctionBody(s4, false, true), this.yieldPos = r3, this.awaitPos = a3, this.awaitIdentPos = n3, this.finishNode(s4, "FunctionExpression");
               }, ft2.parseArrowExpression = function(t5, e5, i4) {
                 var s4 = this.yieldPos, r3 = this.awaitPos, a3 = this.awaitIdentPos;
-                return this.enterScope(X3(i4, false) | H2), this.initFunction(t5), this.options.ecmaVersion >= 8 && (t5.async = !!i4), this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, t5.params = this.toAssignableList(e5, true), this.parseFunctionBody(t5, true, false), this.yieldPos = s4, this.awaitPos = r3, this.awaitIdentPos = a3, this.finishNode(t5, "ArrowFunctionExpression");
+                return this.enterScope(X2(i4, false) | H2), this.initFunction(t5), this.options.ecmaVersion >= 8 && (t5.async = !!i4), this.yieldPos = 0, this.awaitPos = 0, this.awaitIdentPos = 0, t5.params = this.toAssignableList(e5, true), this.parseFunctionBody(t5, true, false), this.yieldPos = s4, this.awaitPos = r3, this.awaitIdentPos = a3, this.finishNode(t5, "ArrowFunctionExpression");
               }, ft2.parseFunctionBody = function(t5, e5, i4) {
                 var s4 = e5 && this.type !== b2.braceL, r3 = this.strict, a3 = false;
                 if (s4)
@@ -22355,7 +22355,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   s4 = r3.lexical.indexOf(t5) > -1 || r3.functions.indexOf(t5) > -1 || r3.var.indexOf(t5) > -1, r3.lexical.push(t5), this.inModule && r3.flags & j3 && delete this.undefinedExports[t5];
                 } else if (e5 === $2)
                   this.currentScope().lexical.push(t5);
-                else if (e5 === Z2) {
+                else if (e5 === Z3) {
                   var a3 = this.currentScope();
                   s4 = this.treatFunctionsAsVar ? a3.lexical.indexOf(t5) > -1 : a3.lexical.indexOf(t5) > -1 || a3.var.indexOf(t5) > -1, a3.functions.push(t5);
                 } else
@@ -23440,7 +23440,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 }
               return this.adaptDirectivePrologue(t4.body), this.next(), t4.sourceType = this.options.sourceType, this.finishNode(t4, "Program");
             };
-            var K2 = { kind: "loop" }, X3 = { kind: "switch" };
+            var K2 = { kind: "loop" }, X2 = { kind: "switch" };
             z2.isLet = function(t4) {
               if (this.options.ecmaVersion < 6 || !this.isContextual("let"))
                 return false;
@@ -23555,7 +23555,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return this.inFunction || this.options.allowReturnOutsideFunction || this.raise(this.start, "'return' outside of function"), this.next(), this.eat(k3.semi) || this.insertSemicolon() ? t4.argument = null : (t4.argument = this.parseExpression(), this.semicolon()), this.finishNode(t4, "ReturnStatement");
             }, z2.parseSwitchStatement = function(t4) {
               var e4;
-              this.next(), t4.discriminant = this.parseParenExpression(), t4.cases = [], this.expect(k3.braceL), this.labels.push(X3), this.enterScope(0);
+              this.next(), t4.discriminant = this.parseParenExpression(), t4.cases = [], this.expect(k3.braceL), this.labels.push(X2), this.enterScope(0);
               for (var i4 = false; this.type !== k3.braceR; )
                 if (this.type === k3._case || this.type === k3._default) {
                   var s4 = this.type === k3._case;
@@ -23753,8 +23753,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
             }, z2.isDirectiveCandidate = function(t4) {
               return "ExpressionStatement" === t4.type && "Literal" === t4.expression.type && "string" == typeof t4.expression.value && ('"' === this.input[t4.start] || "'" === this.input[t4.start]);
             };
-            var Z2 = F2.prototype;
-            Z2.toAssignable = function(t4, e4, i4) {
+            var Z3 = F2.prototype;
+            Z3.toAssignable = function(t4, e4, i4) {
               if (this.options.ecmaVersion >= 6 && t4)
                 switch (t4.type) {
                   case "Identifier":
@@ -23799,7 +23799,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               else
                 i4 && this.checkPatternErrors(i4, true);
               return t4;
-            }, Z2.toAssignableList = function(t4, e4) {
+            }, Z3.toAssignableList = function(t4, e4) {
               for (var i4 = t4.length, s4 = 0; s4 < i4; s4++) {
                 var r3 = t4[s4];
                 r3 && this.toAssignable(r3, e4);
@@ -23809,13 +23809,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 6 === this.options.ecmaVersion && e4 && a3 && "RestElement" === a3.type && "Identifier" !== a3.argument.type && this.unexpected(a3.argument.start);
               }
               return t4;
-            }, Z2.parseSpread = function(t4) {
+            }, Z3.parseSpread = function(t4) {
               var e4 = this.startNode();
               return this.next(), e4.argument = this.parseMaybeAssign(false, t4), this.finishNode(e4, "SpreadElement");
-            }, Z2.parseRestBinding = function() {
+            }, Z3.parseRestBinding = function() {
               var t4 = this.startNode();
               return this.next(), 6 === this.options.ecmaVersion && this.type !== k3.name && this.unexpected(), t4.argument = this.parseBindingAtom(), this.finishNode(t4, "RestElement");
-            }, Z2.parseBindingAtom = function() {
+            }, Z3.parseBindingAtom = function() {
               if (this.options.ecmaVersion >= 6)
                 switch (this.type) {
                   case k3.bracketL:
@@ -23825,7 +23825,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     return this.parseObj(true);
                 }
               return this.parseIdent();
-            }, Z2.parseBindingList = function(t4, e4, i4) {
+            }, Z3.parseBindingList = function(t4, e4, i4) {
               for (var s4 = [], r3 = true; !this.eat(t4); )
                 if (r3 ? r3 = false : this.expect(k3.comma), e4 && this.type === k3.comma)
                   s4.push(null);
@@ -23841,14 +23841,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                   this.parseBindingListItem(n3), s4.push(n3);
                 }
               return s4;
-            }, Z2.parseBindingListItem = function(t4) {
+            }, Z3.parseBindingListItem = function(t4) {
               return t4;
-            }, Z2.parseMaybeDefault = function(t4, e4, i4) {
+            }, Z3.parseMaybeDefault = function(t4, e4, i4) {
               if (i4 = i4 || this.parseBindingAtom(), this.options.ecmaVersion < 6 || !this.eat(k3.eq))
                 return i4;
               var s4 = this.startNodeAt(t4, e4);
               return s4.left = i4, s4.right = this.parseMaybeAssign(), this.finishNode(s4, "AssignmentPattern");
-            }, Z2.checkLValSimple = function(t4, e4, i4) {
+            }, Z3.checkLValSimple = function(t4, e4, i4) {
               void 0 === e4 && (e4 = 0);
               var s4 = 0 !== e4;
               switch (t4.type) {
@@ -23866,7 +23866,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 default:
                   this.raise(t4.start, (s4 ? "Binding" : "Assigning to") + " rvalue");
               }
-            }, Z2.checkLValPattern = function(t4, e4, i4) {
+            }, Z3.checkLValPattern = function(t4, e4, i4) {
               switch (void 0 === e4 && (e4 = 0), t4.type) {
                 case "ObjectPattern":
                   for (var s4 = 0, r3 = t4.properties; s4 < r3.length; s4 += 1) {
@@ -23883,7 +23883,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 default:
                   this.checkLValSimple(t4, e4, i4);
               }
-            }, Z2.checkLValInnerPattern = function(t4, e4, i4) {
+            }, Z3.checkLValInnerPattern = function(t4, e4, i4) {
               switch (void 0 === e4 && (e4 = 0), t4.type) {
                 case "Property":
                   this.checkLValInnerPattern(t4.value, e4, i4);
@@ -26600,19 +26600,19 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           return;
         let t2 = [], { response: s2, document: r2 } = e2;
         return s2.forEach((n2) => {
-          let { documentIndex: u2, text: m2 } = n2, { pre: f2, post: y2, text: l2 } = Y3(m2), h2 = r2[Number(u2)], { id: v3, metadata: x3 } = h2, { source: E2, url: b2, title: a2, metadata: I2 } = X3(x3);
+          let { documentIndex: u2, text: m2 } = n2, { pre: f2, post: y2, text: l2 } = Y3(m2), h2 = r2[Number(u2)], { id: v3, metadata: x3 } = h2, { source: E2, url: b2, title: a2, metadata: I2 } = X2(x3);
           t2.push({ id: v3, snippet: { pre: f2, text: l2, post: y2 }, source: E2, url: b2, title: a2, metadata: I2 });
         }), t2;
       };
-      var X3 = (e2) => {
-        let t2 = Z2(e2);
+      var X2 = (e2) => {
+        let t2 = Z3(e2);
         return { source: t2.source, url: t2.url, title: t2.title || "Untitled", metadata: t2 };
       };
       var Y3 = (e2) => {
         let [t2, s2] = e2.indexOf(A2) !== -1 ? e2.split(A2) : ["", e2], [r2, n2] = s2.indexOf(w3) !== -1 ? s2.split(w3) : [s2, ""];
         return { pre: t2, post: n2, text: r2 };
       };
-      var Z2 = (e2) => {
+      var Z3 = (e2) => {
         let t2 = {};
         return e2.forEach((s2) => {
           t2[s2.name] = s2.value;
@@ -34918,7 +34918,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       }
       return e.createElement(l2, { key: "outer" }, o2);
     }
-    function Z2(n2) {
+    function Z3(n2) {
       const t3 = n2.match(a);
       return t3 ? t3.reduce(function(n3, t4, r3) {
         const i3 = t4.indexOf("=");
@@ -34942,12 +34942,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         return n3;
       }, {}) : null;
     }
-    const q2 = [], V2 = {}, X3 = { 0: { match: Ie(u), order: 1, parse: (e2, n2, t3) => ({ children: n2(e2[0].replace(p, ""), t3) }), render: (e2, n2, t3) => d3("blockquote", { key: t3.key }, n2(e2.children, t3)) }, 1: { match: Re(f), order: 1, parse: _e, render: (e2, n2, t3) => d3("br", { key: t3.key }) }, 2: { match: Ie(h), order: 1, parse: _e, render: (e2, n2, t3) => d3("hr", { key: t3.key }) }, 3: { match: Ie(g), order: 0, parse: (e2) => ({ lang: void 0, text: e2[0].replace(/^ {4}/gm, "").replace(/\n+$/, "") }), render: (e2, t3, r3) => d3("pre", { key: r3.key }, d3("code", n({}, e2.attrs, { className: e2.lang ? `lang-${e2.lang}` : "" }), e2.text)) }, 4: { match: Ie(m), order: 0, parse: (e2) => ({ attrs: Z2(e2[3] || ""), lang: e2[2] || void 0, text: e2[4], type: "3" }) }, 5: { match: Me(y), order: 3, parse: (e2) => ({ text: e2[2] }), render: (e2, n2, t3) => d3("code", { key: t3.key }, e2.text) }, 6: { match: Ie(v), order: 0, parse: (e2) => (q2.push({ footnote: e2[2], identifier: e2[1] }), {}), render: Fe }, 7: { match: ze(b), order: 1, parse: (e2) => ({ target: `#${r2.slugify(e2[1])}`, text: e2[1] }), render: (e2, n2, t3) => d3("a", { key: t3.key, href: je(e2.target) }, d3("sup", { key: t3.key }, e2.text)) }, 8: { match: ze(S), order: 1, parse: (e2) => ({ completed: "x" === e2[1].toLowerCase() }), render: (e2, n2, t3) => d3("input", { checked: e2.completed, key: t3.key, readOnly: true, type: "checkbox" }) }, 9: { match: Ie(r2.enforceAtxHeadings ? C : w), order: 1, parse: (e2, n2, t3) => ({ children: Ne(n2, e2[2], t3), id: r2.slugify(e2[2]), level: e2[1].length }), render: (e2, n2, t3) => d3(`h${e2.level}`, { id: e2.id, key: t3.key }, n2(e2.children, t3)) }, 10: { match: Ie(E), order: 0, parse: (e2, n2, t3) => ({ children: Ne(n2, e2[1], t3), level: "=" === e2[2] ? 1 : 2, type: "9" }) }, 11: { match: Re(A), order: 1, parse(e2, n2, t3) {
+    const q2 = [], V2 = {}, X2 = { 0: { match: Ie(u), order: 1, parse: (e2, n2, t3) => ({ children: n2(e2[0].replace(p, ""), t3) }), render: (e2, n2, t3) => d3("blockquote", { key: t3.key }, n2(e2.children, t3)) }, 1: { match: Re(f), order: 1, parse: _e, render: (e2, n2, t3) => d3("br", { key: t3.key }) }, 2: { match: Ie(h), order: 1, parse: _e, render: (e2, n2, t3) => d3("hr", { key: t3.key }) }, 3: { match: Ie(g), order: 0, parse: (e2) => ({ lang: void 0, text: e2[0].replace(/^ {4}/gm, "").replace(/\n+$/, "") }), render: (e2, t3, r3) => d3("pre", { key: r3.key }, d3("code", n({}, e2.attrs, { className: e2.lang ? `lang-${e2.lang}` : "" }), e2.text)) }, 4: { match: Ie(m), order: 0, parse: (e2) => ({ attrs: Z3(e2[3] || ""), lang: e2[2] || void 0, text: e2[4], type: "3" }) }, 5: { match: Me(y), order: 3, parse: (e2) => ({ text: e2[2] }), render: (e2, n2, t3) => d3("code", { key: t3.key }, e2.text) }, 6: { match: Ie(v), order: 0, parse: (e2) => (q2.push({ footnote: e2[2], identifier: e2[1] }), {}), render: Fe }, 7: { match: ze(b), order: 1, parse: (e2) => ({ target: `#${r2.slugify(e2[1])}`, text: e2[1] }), render: (e2, n2, t3) => d3("a", { key: t3.key, href: je(e2.target) }, d3("sup", { key: t3.key }, e2.text)) }, 8: { match: ze(S), order: 1, parse: (e2) => ({ completed: "x" === e2[1].toLowerCase() }), render: (e2, n2, t3) => d3("input", { checked: e2.completed, key: t3.key, readOnly: true, type: "checkbox" }) }, 9: { match: Ie(r2.enforceAtxHeadings ? C : w), order: 1, parse: (e2, n2, t3) => ({ children: Ne(n2, e2[2], t3), id: r2.slugify(e2[2]), level: e2[1].length }), render: (e2, n2, t3) => d3(`h${e2.level}`, { id: e2.id, key: t3.key }, n2(e2.children, t3)) }, 10: { match: Ie(E), order: 0, parse: (e2, n2, t3) => ({ children: Ne(n2, e2[1], t3), level: "=" === e2[2] ? 1 : 2, type: "9" }) }, 11: { match: Re(A), order: 1, parse(e2, n2, t3) {
       const [, r3] = e2[3].match(re), i3 = new RegExp(`^${r3}`, "gm"), l2 = e2[3].replace(i3, ""), o2 = (a2 = l2, Ce.some((e3) => e3.test(a2)) ? De : Ne);
       var a2;
-      const s2 = e2[1].toLowerCase(), d4 = -1 !== c.indexOf(s2), u2 = { attrs: Z2(e2[2]), noInnerParse: d4, tag: d4 ? s2 : e2[1] };
+      const s2 = e2[1].toLowerCase(), d4 = -1 !== c.indexOf(s2), u2 = { attrs: Z3(e2[2]), noInnerParse: d4, tag: d4 ? s2 : e2[1] };
       return t3.inAnchor = t3.inAnchor || "a" === s2, d4 ? u2.text = e2[3] : u2.children = o2(n2, l2, t3), t3.inAnchor = false, u2;
-    }, render: (e2, t3, r3) => d3(e2.tag, n({ key: r3.key }, e2.attrs), e2.text || t3(e2.children, r3)) }, 13: { match: Re(z), order: 1, parse: (e2) => ({ attrs: Z2(e2[2] || ""), tag: e2[1] }), render: (e2, t3, r3) => d3(e2.tag, n({}, e2.attrs, { key: r3.key })) }, 12: { match: Re(T), order: 1, parse: () => ({}), render: Fe }, 14: { match: Me(Se), order: 1, parse: (e2) => ({ alt: e2[1], target: Be(e2[2]), title: e2[3] }), render: (e2, n2, t3) => d3("img", { key: t3.key, alt: e2.alt || void 0, title: e2.title || void 0, src: je(e2.target) }) }, 15: { match: ze($e), order: 3, parse: (e2, n2, t3) => ({ children: He(n2, e2[1], t3), target: Be(e2[2]), title: e2[3] }), render: (e2, n2, t3) => d3("a", { key: t3.key, href: je(e2.target), title: e2.title }, n2(e2.children, t3)) }, 16: { match: ze(U), order: 0, parse: (e2) => ({ children: [{ text: e2[1], type: "27" }], target: e2[1], type: "15" }) }, 17: { match: (e2, n2) => n2.inAnchor ? null : ze(I)(e2, n2), order: 0, parse: (e2) => ({ children: [{ text: e2[1], type: "27" }], target: e2[1], title: void 0, type: "15" }) }, 18: { match: ze(R), order: 0, parse(e2) {
+    }, render: (e2, t3, r3) => d3(e2.tag, n({ key: r3.key }, e2.attrs), e2.text || t3(e2.children, r3)) }, 13: { match: Re(z), order: 1, parse: (e2) => ({ attrs: Z3(e2[2] || ""), tag: e2[1] }), render: (e2, t3, r3) => d3(e2.tag, n({}, e2.attrs, { key: r3.key })) }, 12: { match: Re(T), order: 1, parse: () => ({}), render: Fe }, 14: { match: Me(Se), order: 1, parse: (e2) => ({ alt: e2[1], target: Be(e2[2]), title: e2[3] }), render: (e2, n2, t3) => d3("img", { key: t3.key, alt: e2.alt || void 0, title: e2.title || void 0, src: je(e2.target) }) }, 15: { match: ze($e), order: 3, parse: (e2, n2, t3) => ({ children: He(n2, e2[1], t3), target: Be(e2[2]), title: e2[3] }), render: (e2, n2, t3) => d3("a", { key: t3.key, href: je(e2.target), title: e2.title }, n2(e2.children, t3)) }, 16: { match: ze(U), order: 0, parse: (e2) => ({ children: [{ text: e2[1], type: "27" }], target: e2[1], type: "15" }) }, 17: { match: (e2, n2) => n2.inAnchor ? null : ze(I)(e2, n2), order: 0, parse: (e2) => ({ children: [{ text: e2[1], type: "27" }], target: e2[1], title: void 0, type: "15" }) }, 18: { match: ze(R), order: 0, parse(e2) {
       let n2 = e2[1], t3 = e2[1];
       return s.test(t3) || (t3 = "mailto:" + t3), { children: [{ text: n2.replace("mailto:", ""), type: "27" }], target: t3, type: "15" };
     } }, 20: be(d3, 1), 33: be(d3, 2), 19: { match: Ie(k), order: 3, parse: _e, render: () => "\n" }, 21: { match: Ue, order: 3, parse: Pe, render: (e2, n2, t3) => d3("p", { key: t3.key }, n2(e2.children, t3)) }, 22: { match: ze(N), order: 0, parse: (e2) => (V2[e2[1]] = { target: e2[2], title: e2[4] }, {}), render: Fe }, 23: { match: Me(H), order: 0, parse: (e2) => ({ alt: e2[1] || void 0, ref: e2[2] }), render: (e2, n2, t3) => d3("img", { key: t3.key, alt: e2.alt, src: je(V2[e2.ref].target), title: V2[e2.ref].title }) }, 24: { match: ze(D), order: 0, parse: (e2, n2, t3) => ({ children: n2(e2[1], t3), fallbackChildren: n2(e2[0].replace(P, "\\$1"), t3), ref: e2[2] }), render: (e2, n2, t3) => V2[e2.ref] ? d3("a", { key: t3.key, href: je(V2[e2.ref].target), title: V2[e2.ref].title }, n2(e2.children, t3)) : d3("span", { key: t3.key }, n2(e2.fallbackChildren, t3)) }, 25: { match: Ie(B), order: 1, parse: Te, render: (e2, n2, t3) => d3("table", { key: t3.key }, d3("thead", null, d3("tr", null, e2.header.map(function(r3, i3) {
@@ -34961,7 +34961,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, order: 1, parse: function() {
       return { type: "26" };
     }, render: () => " | " }, 27: { match: Re(ne), order: 4, parse: (e2) => ({ text: e2[0].replace(O, (e3, n2) => r2.namedCodesToUnicode[n2] ? r2.namedCodesToUnicode[n2] : e3) }), render: (e2) => e2.text }, 28: { match: Me(Q), order: 2, parse: (e2, n2, t3) => ({ children: n2(e2[2], t3) }), render: (e2, n2, t3) => d3("strong", { key: t3.key }, n2(e2.children, t3)) }, 29: { match: Me(J), order: 3, parse: (e2, n2, t3) => ({ children: n2(e2[2], t3) }), render: (e2, n2, t3) => d3("em", { key: t3.key }, n2(e2.children, t3)) }, 30: { match: Me(ee), order: 1, parse: (e2) => ({ text: e2[1], type: "27" }) }, 31: { match: Me(K), order: 3, parse: Pe, render: (e2, n2, t3) => d3("mark", { key: t3.key }, n2(e2.children, t3)) }, 32: { match: Me(Y), order: 3, parse: Pe, render: (e2, n2, t3) => d3("del", { key: t3.key }, n2(e2.children, t3)) } };
-    true === r2.disableParsingRawHTML && (delete X3[11], delete X3[13]);
+    true === r2.disableParsingRawHTML && (delete X2[11], delete X2[13]);
     const ie3 = function(e2) {
       let n2 = Object.keys(e2);
       function t3(r3, i3) {
@@ -34990,12 +34990,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           return e4.replace(x, "\n").replace($, "").replace(F, "    ");
         }(e3), n3);
       };
-    }(X3), le3 = (oe3 = /* @__PURE__ */ function(e2, n2) {
+    }(X2), le3 = (oe3 = /* @__PURE__ */ function(e2, n2) {
       return function(t3, r3, i3) {
         const l2 = e2[t3.type].render;
         return n2 ? n2(() => l2(t3, r3, i3), t3, r3, i3) : l2(t3, r3, i3);
       };
-    }(X3, r2.renderRule), function e2(n2, t3 = {}) {
+    }(X2, r2.renderRule), function e2(n2, t3 = {}) {
       if (Array.isArray(n2)) {
         const r3 = t3.key, i3 = [];
         let l2 = false;
@@ -35137,13 +35137,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     let a2 = (0, import_classnames12.default)("vuiText", `vuiText--${o2}`, { [`vuiText--${i2}`]: i2, "vuiText--truncate": n2 }, t2);
     return (0, import_jsx_runtime15.jsx)("div", { className: a2, id: r2, ...s2, children: e2 });
   };
-  var j2 = ({ children: e2, color: t2, className: r2 }) => {
+  var Z2 = ({ children: e2, color: t2, className: r2 }) => {
     let n2 = (0, import_classnames13.default)(r2, "vuiTextColor", `vuiTextColor--${t2}`);
     return (0, import_jsx_runtime16.jsx)("span", { className: n2, children: e2 });
   };
   var ie2 = ({ children: e2, className: t2, size: r2, align: n2, ...o2 }) => (0, import_react10.cloneElement)(e2, { className: (0, import_classnames14.default)("vuiTitle", `vuiTitle--${r2}`, { [`vuiTitle--${n2}`]: n2 }, t2, e2.props.className), ...o2 });
   var ae2 = ({ children: e2, className: t2, href: r2, onClick: n2, title: o2, fullWidth: i2, ...s2 }) => {
-    let { createLink: a2 } = te2(), c2 = (0, import_classnames15.default)("vuiTopicButton", t2, { "vuiTopicButton--fullWidth": i2 }), u2 = (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [o2 && (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [(0, import_jsx_runtime17.jsx)(ie2, { size: "s", children: (0, import_jsx_runtime17.jsx)("p", { children: (0, import_jsx_runtime17.jsx)(j2, { color: "primary", children: o2 }) }) }), e2 && (0, import_jsx_runtime17.jsx)(v2, { size: "xxs" })] }), e2] });
+    let { createLink: a2 } = te2(), c2 = (0, import_classnames15.default)("vuiTopicButton", t2, { "vuiTopicButton--fullWidth": i2 }), u2 = (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [o2 && (0, import_jsx_runtime17.jsxs)(import_jsx_runtime17.Fragment, { children: [(0, import_jsx_runtime17.jsx)(ie2, { size: "s", children: (0, import_jsx_runtime17.jsx)("p", { children: (0, import_jsx_runtime17.jsx)(Z2, { color: "primary", children: o2 }) }) }), e2 && (0, import_jsx_runtime17.jsx)(v2, { size: "xxs" })] }), e2] });
     return r2 ? a2({ className: c2, href: r2, onClick: n2, children: u2, ...s2 }) : (0, import_jsx_runtime17.jsx)("button", { className: c2, onClick: n2, ...s2, children: u2 });
   };
   var st = ({ query: e2, setQuery: t2, onSubmit: r2, placeholder: n2, buttonLabel: o2, isButtonDisabled: i2, size: s2 }) => (0, import_jsx_runtime18.jsxs)(w2, { alignItems: "center", spacing: "xs", children: [(0, import_jsx_runtime18.jsx)(k2, { grow: 1, children: (0, import_jsx_runtime18.jsx)(Pe2, { size: s2, value: e2, onChange: (u2) => {
@@ -35248,9 +35248,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       if (V2)
         return;
       if (W2 && O2(false), N2(null), I2.current = b2, A2(true), N2({ id: "placeholder-message-id", type: "turn", question: b2, answer: "", results: [], factualConsistencyScore: void 0 }), y2) {
-        let m2 = B2.reduce((g2, E2) => (E2.type === "turn" && g2.push(E2), g2), []);
-        console.log("### message history: ", m2), console.log("### chat turns: ", m2);
-        let G2 = m2.reduce((g2, E2) => (g2.push({ role: "user", message: E2.question }), E2.answer && g2.push({ role: "chatbot", message: E2.answer }), g2), []);
+        let G2 = B2.reduce((m2, E2) => (E2.type === "turn" && m2.push(E2), m2), []).reduce((m2, E2) => (m2.push({ role: "user", message: E2.question }), E2.answer && m2.push({ role: "chatbot", message: E2.answer }), m2), []);
         G2.push({ role: "user", message: I2.current });
         let l2 = await (await fetch(y2.url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ messages: G2 }) })).json(), f2 = y2.onAgenticResponse(l2);
         if (f2) {
@@ -35261,7 +35259,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       let C2;
       if (u2)
         try {
-          let m2 = (R2) => {
+          let g2 = (R2) => {
             switch (R2.type) {
               case "requestError":
               case "genericError":
@@ -35270,29 +35268,29 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 break;
               case "chatInfo":
                 S2(R2.chatId), N2((l2) => {
-                  var f2, g2;
-                  return { id: R2.chatId, type: "turn", question: I2.current, answer: (f2 = l2 == null ? void 0 : l2.answer) != null ? f2 : "", results: (g2 = l2 == null ? void 0 : l2.results) != null ? g2 : [] };
+                  var f2, m2;
+                  return { id: R2.chatId, type: "turn", question: I2.current, answer: (f2 = l2 == null ? void 0 : l2.answer) != null ? f2 : "", results: (m2 = l2 == null ? void 0 : l2.results) != null ? m2 : [] };
                 });
                 break;
               case "searchResults":
                 C2 = R2.searchResults.map((l2) => {
-                  let { pre: f2, text: g2, post: E2 } = ce2(l2.text);
-                  return { ...l2, snippet: { pre: f2, text: g2, post: E2 } };
+                  let { pre: f2, text: m2, post: E2 } = ce2(l2.text);
+                  return { ...l2, snippet: { pre: f2, text: m2, post: E2 } };
                 }), N2((l2) => {
-                  var f2, g2;
-                  return { id: (f2 = l2 == null ? void 0 : l2.id) != null ? f2 : "", type: "turn", question: I2.current, answer: (g2 = l2 == null ? void 0 : l2.answer) != null ? g2 : "", results: C2 };
+                  var f2, m2;
+                  return { id: (f2 = l2 == null ? void 0 : l2.id) != null ? f2 : "", type: "turn", question: I2.current, answer: (m2 = l2 == null ? void 0 : l2.answer) != null ? m2 : "", results: C2 };
                 });
                 break;
               case "generationChunk":
                 h2(true), A2(false), N2((l2) => {
-                  var f2, g2, E2;
-                  return { id: (f2 = l2 == null ? void 0 : l2.id) != null ? f2 : "", type: "turn", question: I2.current, answer: (g2 = R2.updatedText) != null ? g2 : "", results: (E2 = l2 == null ? void 0 : l2.results) != null ? E2 : [] };
+                  var f2, m2, E2;
+                  return { id: (f2 = l2 == null ? void 0 : l2.id) != null ? f2 : "", type: "turn", question: I2.current, answer: (m2 = R2.updatedText) != null ? m2 : "", results: (E2 = l2 == null ? void 0 : l2.results) != null ? E2 : [] };
                 });
                 break;
               case "factualConsistencyScore":
                 N2((l2) => {
-                  var f2, g2, E2;
-                  return { id: (f2 = l2 == null ? void 0 : l2.id) != null ? f2 : "", type: "turn", question: I2.current, answer: (g2 = l2 == null ? void 0 : l2.answer) != null ? g2 : "", results: (E2 = l2 == null ? void 0 : l2.results) != null ? E2 : [], factualConsistencyScore: R2.factualConsistencyScore };
+                  var f2, m2, E2;
+                  return { id: (f2 = l2 == null ? void 0 : l2.id) != null ? f2 : "", type: "turn", question: I2.current, answer: (m2 = l2 == null ? void 0 : l2.answer) != null ? m2 : "", results: (E2 = l2 == null ? void 0 : l2.results) != null ? E2 : [], factualConsistencyScore: R2.factualConsistencyScore };
                 });
                 break;
               case "end":
@@ -35300,23 +35298,23 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                 break;
             }
           }, G2 = { apiKey: r2, customerId: e2, query: b2, corpusKey: t2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: c2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2, startTag: Me2, endTag: ze2 } }, chat: { store: true, conversationId: T2 != null ? T2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } };
-          await (0, import_stream_query_client.streamQueryV2)({ streamQueryConfig: G2, onStreamEvent: m2 });
-        } catch (m2) {
-          console.log("Summary error", m2), O2(true), A2(false);
+          await (0, import_stream_query_client.streamQueryV2)({ streamQueryConfig: G2, onStreamEvent: g2 });
+        } catch (g2) {
+          console.log("Summary error", g2), O2(true), A2(false);
           return;
         }
       else
         try {
-          let m2 = await pt({ apiKey: r2, customerId: e2, query: b2, corpusKeys: t2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: c2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2, startTag: Me2, endTag: ze2 } }, chat: { store: true, conversationId: T2 != null ? T2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } });
-          C2 = m2.search_results.map((G2) => {
+          let g2 = await pt({ apiKey: r2, customerId: e2, query: b2, corpusKeys: t2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: c2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2, startTag: Me2, endTag: ze2 } }, chat: { store: true, conversationId: T2 != null ? T2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } });
+          C2 = g2.search_results.map((G2) => {
             let { pre: R2, text: l2, post: f2 } = ce2(G2.text);
             return { ...G2, snippet: { pre: R2, text: l2, post: f2 } };
-          }), S2(m2.chat_id), P2((G2) => {
+          }), S2(g2.chat_id), P2((G2) => {
             var R2;
-            return [...G2, { id: m2.chat_id, type: "turn", question: I2.current, answer: (R2 = m2 == null ? void 0 : m2.answer) != null ? R2 : "", results: C2 != null ? C2 : [], factualConsistencyScore: m2.factual_consistency_score }];
+            return [...G2, { id: g2.chat_id, type: "turn", question: I2.current, answer: (R2 = g2 == null ? void 0 : g2.answer) != null ? R2 : "", results: C2 != null ? C2 : [], factualConsistencyScore: g2.factual_consistency_score }];
           }), N2(null), A2(false);
-        } catch (m2) {
-          console.log("Summary error", m2), O2(true), A2(false);
+        } catch (g2) {
+          console.log("Summary error", g2), O2(true), A2(false);
           return;
         }
     }, q2 = () => {
@@ -35324,12 +35322,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, z2 = (b2) => {
       let W2 = b2.message, C2 = b2.userActionOptions;
       h2(true);
-      let m2 = W2.split(""), G2 = m2.length * 10 + 50, R2 = "", l2, f2 = window.setInterval(() => {
-        let g2 = m2.shift();
-        R2 += g2, l2 = { id: "placeholder-message-id", type: "turn", question: I2.current, answer: R2, results: [], factualConsistencyScore: void 0 }, N2(l2), m2.length === 0 && (clearInterval(f2), h2(false));
+      let g2 = W2.split(""), G2 = g2.length * 10 + 50, R2 = "", l2, f2 = window.setInterval(() => {
+        let m2 = g2.shift();
+        R2 += m2, l2 = { id: "placeholder-message-id", type: "turn", question: I2.current, answer: R2, results: [], factualConsistencyScore: void 0 }, N2(l2), g2.length === 0 && (clearInterval(f2), h2(false));
       }, 10);
       setTimeout(() => {
-        C2 && P2((g2) => [...g2, { id: Date.now().toString(), type: "action", options: C2 }]);
+        C2 && P2((m2) => [...m2, { id: Date.now().toString(), type: "action", options: C2 }]);
       }, G2);
     };
     return (0, import_react12.useEffect)(() => {
@@ -35347,23 +35345,23 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }
     return (0, import_jsx_runtime22.jsxs)(w2, { alignItems: "center", "data-testid": "factualConsistencyBadge", children: [e2 === void 0 && (0, import_jsx_runtime22.jsx)(oe2, { size: "s" }), t2, (0, import_jsx_runtime22.jsx)(U2, { size: "xs", children: (0, import_jsx_runtime22.jsx)("p", { children: (0, import_jsx_runtime22.jsx)(Fe2, { href: "https://docs.vectara.com/docs/api-reference/search-apis/search?#factual-consistency-score", target: "_blank", children: "What's this?" }) }) })] });
   };
-  var Ct = ({ children: e2, onClick: t2, title: r2 }) => (0, import_jsx_runtime23.jsx)(ae2, { onClick: t2, "data-testid": "exampleQuestion", children: (0, import_jsx_runtime23.jsxs)(import_jsx_runtime23.Fragment, { children: [r2 && (0, import_jsx_runtime23.jsxs)(import_jsx_runtime23.Fragment, { children: [(0, import_jsx_runtime23.jsx)(ie2, { size: "s", children: (0, import_jsx_runtime23.jsx)("p", { children: (0, import_jsx_runtime23.jsx)(j2, { color: "primary", children: r2 }) }) }), e2 && (0, import_jsx_runtime23.jsx)(v2, { size: "xxs" })] }), e2] }) });
-  var St = () => (0, import_jsx_runtime24.jsxs)(w2, { className: "vrcbEmptyMessages", spacing: "none", alignItems: "center", justifyContent: "center", direction: "column", children: [(0, import_jsx_runtime24.jsx)(Ue2, { size: "80px", color: "#cbcdde" }), (0, import_jsx_runtime24.jsx)(U2, { children: (0, import_jsx_runtime24.jsx)("p", { children: (0, import_jsx_runtime24.jsx)(j2, { color: "subdued", children: "Ask anything." }) }) })] });
-  var wt = ({ exampleQuestions: e2, onSubmitChat: t2 }) => e2.length > 0 ? (0, import_jsx_runtime25.jsxs)("div", { className: "vrcbExampleQuestionsContainer", children: [(0, import_jsx_runtime25.jsx)(U2, { children: (0, import_jsx_runtime25.jsx)("p", { children: (0, import_jsx_runtime25.jsx)(j2, { color: "subdued", children: "Try out these example questions" }) }) }), (0, import_jsx_runtime25.jsx)(v2, { size: "m" }), (0, import_jsx_runtime25.jsx)(Te2, { columns: 3, children: e2.map((n2) => (0, import_jsx_runtime25.jsx)(Ct, { onClick: () => t2(n2), title: n2 }, n2)) })] }) : (0, import_jsx_runtime25.jsx)(St, {});
+  var Ct = ({ children: e2, onClick: t2, title: r2 }) => (0, import_jsx_runtime23.jsx)(ae2, { onClick: t2, "data-testid": "exampleQuestion", children: (0, import_jsx_runtime23.jsxs)(import_jsx_runtime23.Fragment, { children: [r2 && (0, import_jsx_runtime23.jsxs)(import_jsx_runtime23.Fragment, { children: [(0, import_jsx_runtime23.jsx)(ie2, { size: "s", children: (0, import_jsx_runtime23.jsx)("p", { children: (0, import_jsx_runtime23.jsx)(Z2, { color: "primary", children: r2 }) }) }), e2 && (0, import_jsx_runtime23.jsx)(v2, { size: "xxs" })] }), e2] }) });
+  var St = () => (0, import_jsx_runtime24.jsxs)(w2, { className: "vrcbEmptyMessages", spacing: "none", alignItems: "center", justifyContent: "center", direction: "column", children: [(0, import_jsx_runtime24.jsx)(Ue2, { size: "80px", color: "#cbcdde" }), (0, import_jsx_runtime24.jsx)(U2, { children: (0, import_jsx_runtime24.jsx)("p", { children: (0, import_jsx_runtime24.jsx)(Z2, { color: "subdued", children: "Ask anything." }) }) })] });
+  var wt = ({ exampleQuestions: e2, onSubmitChat: t2 }) => e2.length > 0 ? (0, import_jsx_runtime25.jsxs)("div", { className: "vrcbExampleQuestionsContainer", children: [(0, import_jsx_runtime25.jsx)(U2, { children: (0, import_jsx_runtime25.jsx)("p", { children: (0, import_jsx_runtime25.jsx)(Z2, { color: "subdued", children: "Try out these example questions" }) }) }), (0, import_jsx_runtime25.jsx)(v2, { size: "m" }), (0, import_jsx_runtime25.jsx)(Te2, { columns: 3, children: e2.map((n2) => (0, import_jsx_runtime25.jsx)(Ct, { onClick: () => t2(n2), title: n2 }, n2)) })] }) : (0, import_jsx_runtime25.jsx)(St, {});
   var Nr = { large: "l", medium: "m" };
   var Rt = ({ customerId: e2, corpusKeys: t2, apiKey: r2, title: n2 = "My Chatbot", placeholder: o2 = "Chat with your AI Assistant", exampleQuestions: i2, inputSize: s2 = "large", emptyStateDisplay: a2, isInitiallyOpen: c2, zIndex: u2 = 9999, numberOfSearchResults: y2 = 10, language: B2 = "eng", enableFactualConsistencyScore: P2, summaryPromptName: I2, rerankerId: p2, lambda: N2, enableStreaming: V2 = true, agenticConfiguration: A2 }) => {
-    let [M2, h2] = (0, import_react4.useState)(c2 != null ? c2 : false), [T2, S2] = (0, import_react4.useState)(""), { sendMessage: H2, startNewConversation: O2, messageHistory: D2, isLoading: q2, hasError: z2, activeMessage: b2, isStreamingResponse: W2 } = ft({ customerId: e2, corpusKeys: t2, apiKey: r2, numberOfSearchResults: y2, language: B2, enableFactualConsistencyScore: P2, summaryPromptName: I2, rerankerId: p2, lambda: N2, enableStreaming: V2, agenticConfiguration: A2 }), C2 = (0, import_react4.useRef)(null), m2 = (0, import_react4.useRef)(true), G2 = () => {
+    let [M2, h2] = (0, import_react4.useState)(c2 != null ? c2 : false), [T2, S2] = (0, import_react4.useState)(""), { sendMessage: H2, startNewConversation: O2, messageHistory: D2, isLoading: q2, hasError: z2, activeMessage: b2, isStreamingResponse: W2 } = ft({ customerId: e2, corpusKeys: t2, apiKey: r2, numberOfSearchResults: y2, language: B2, enableFactualConsistencyScore: P2, summaryPromptName: I2, rerankerId: p2, lambda: N2, enableStreaming: V2, agenticConfiguration: A2 }), C2 = (0, import_react4.useRef)(null), g2 = (0, import_react4.useRef)(true), G2 = () => {
       setTimeout(() => {
         var F2, $2;
-        m2.current && (($2 = C2.current) == null || $2.scrollTo({ left: 0, top: (F2 = C2.current) == null ? void 0 : F2.scrollHeight, behavior: "smooth" }));
+        g2.current && (($2 = C2.current) == null || $2.scrollTo({ left: 0, top: (F2 = C2.current) == null ? void 0 : F2.scrollHeight, behavior: "smooth" }));
       }, 0);
     };
     (0, import_react4.useEffect)(() => {
       c2 !== void 0 && h2(c2);
     }, [c2]), (0, import_react4.useEffect)(() => {
       let F2 = C2.current, $2 = () => {
-        let Z2 = C2.current ? Math.abs(C2.current.scrollHeight - C2.current.clientHeight - C2.current.scrollTop) < 50 : true;
-        m2.current = Z2;
+        let K2 = C2.current ? Math.abs(C2.current.scrollHeight - C2.current.clientHeight - C2.current.scrollTop) < 50 : true;
+        g2.current = K2;
       };
       return F2 == null || F2.addEventListener("scroll", $2), () => {
         F2 == null || F2.removeEventListener("scroll", $2);
@@ -35371,20 +35369,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, []);
     let R2 = (0, import_react4.useMemo)(() => D2.map((F2, $2) => {
       if (F2.type === "action") {
-        let { options: Z2 } = F2;
-        return (0, import_jsx_runtime26.jsx)(import_react4.Fragment, { children: (0, import_jsx_runtime26.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--actionResponse", children: (0, import_jsx_runtime26.jsx)(w2, { spacing: "m", children: Z2 == null ? void 0 : Z2.map((K2) => (0, import_jsx_runtime26.jsx)(ae2, { onClick: () => {
+        let { options: K2 } = F2;
+        return (0, import_jsx_runtime26.jsx)(import_react4.Fragment, { children: (0, import_jsx_runtime26.jsx)("div", { className: "vrcbChatMessageContainer vrcbChatMessageContainer--actionResponse", children: (0, import_jsx_runtime26.jsx)(w2, { spacing: "m", children: K2 == null ? void 0 : K2.map((X2) => (0, import_jsx_runtime26.jsx)(ae2, { href: X2.url, title: X2.label, onClick: () => {
           var de2;
-          K2.message && H2({ query: K2.message }), (de2 = K2.onSelect) == null || de2.call(K2);
-        }, children: K2.label })) }) }) }, $2);
+          X2.message && H2({ query: X2.message }), (de2 = X2.onSelect) == null || de2.call(X2);
+        }, children: X2.label })) }) }) }, $2);
       } else {
-        let { question: Z2, answer: K2, results: de2, factualConsistencyScore: Pt } = F2, Nt = z2 && $2 === D2.length - 1 ? () => H2({ query: Z2, isRetry: true }) : void 0;
-        return (0, import_jsx_runtime26.jsxs)(import_react4.Fragment, { children: [(0, import_jsx_runtime26.jsx)(Le2, { question: Z2, answer: K2, searchResults: de2, factualConsistencyScore: P2 && (0, import_jsx_runtime26.jsx)(Ge2, { score: Pt }), onRetry: Nt }), $2 < D2.length - 1 && (0, import_jsx_runtime26.jsx)(v2, { size: "m" })] }, $2);
+        let { question: K2, answer: X2, results: de2, factualConsistencyScore: Pt } = F2, Nt = z2 && $2 === D2.length - 1 ? () => H2({ query: K2, isRetry: true }) : void 0;
+        return (0, import_jsx_runtime26.jsxs)(import_react4.Fragment, { children: [(0, import_jsx_runtime26.jsx)(Le2, { question: K2, answer: X2, searchResults: de2, factualConsistencyScore: P2 && (0, import_jsx_runtime26.jsx)(Ge2, { score: Pt }), onRetry: Nt }), $2 < D2.length - 1 && (0, import_jsx_runtime26.jsx)(v2, { size: "m" })] }, $2);
       }
-    }), [D2]), l2 = q2 || D2.length > 0 || b2, f2 = q2 || W2 || T2.trim().length === 0, g2 = async (F2) => {
+    }), [D2]), l2 = q2 || D2.length > 0 || b2, f2 = q2 || W2 || T2.trim().length === 0, m2 = async (F2) => {
       f2 && !F2 || (S2(""), H2({ query: F2 != null ? F2 : T2 }));
     }, E2 = R2.length === 0 ? null : (0, import_jsx_runtime26.jsx)(v2, { size: b2 ? "m" : "l" });
     (0, import_react4.useEffect)(G2, [q2, b2]);
-    let _t = M2 ? (0, import_jsx_runtime26.jsxs)("div", { className: "vrcbChatbotWrapper", style: { zIndex: u2 }, children: [(0, import_jsx_runtime26.jsxs)(w2, { className: "vrcbHeader", spacing: "none", direction: "row", children: [(0, import_jsx_runtime26.jsx)(k2, { grow: 1, alignItems: "center", children: n2 }), (0, import_jsx_runtime26.jsx)(k2, { alignItems: "center", children: (0, import_jsx_runtime26.jsx)("button", { onClick: () => h2(false), children: (0, import_jsx_runtime26.jsx)(We2, { size: "12px", color: "#2c313a" }) }) })] }), (0, import_jsx_runtime26.jsxs)(w2, { direction: "column", spacing: "none", className: "vrcbChatbotInnerWrapper", children: [(0, import_jsx_runtime26.jsx)(k2, { className: "vrcbMessagesWrapper", basis: "fill", children: (0, import_jsx_runtime26.jsx)("div", { ref: C2, children: l2 ? (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(v2, { size: "xs" }), R2, E2, b2 && (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(Le2, { question: b2.question, answer: b2.answer, searchResults: b2.results, factualConsistencyScore: P2 && (0, import_jsx_runtime26.jsx)(Ge2, { score: b2.factualConsistencyScore }), onRetry: z2 ? () => H2({ query: b2.question, isRetry: true }) : void 0, isStreaming: W2 }), (0, import_jsx_runtime26.jsx)(v2, { size: "l" })] }), q2 && (0, import_jsx_runtime26.jsx)(ht, {}), (0, import_jsx_runtime26.jsx)(w2, { fullWidth: true, justifyContent: "center", children: (0, import_jsx_runtime26.jsx)(k2, { children: (0, import_jsx_runtime26.jsx)(Ie2, { color: "neutral", size: "xs", onClick: O2, isDisabled: q2, children: "Start new conversation" }) }) }), (0, import_jsx_runtime26.jsx)(v2, { size: "l" })] }) : a2 != null ? a2 : (0, import_jsx_runtime26.jsx)(wt, { exampleQuestions: i2 != null ? i2 : [], onSubmitChat: g2 }) }) }), (0, import_jsx_runtime26.jsx)(k2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime26.jsx)(st, { placeholder: o2, buttonLabel: "Send", query: T2, setQuery: S2, isButtonDisabled: f2, onSubmit: g2, size: Nr[s2] }) })] })] }) : (0, import_jsx_runtime26.jsx)("button", { className: "vrcbChatbotButton", onClick: () => h2(true), style: { zIndex: u2 }, children: n2 });
+    let _t = M2 ? (0, import_jsx_runtime26.jsxs)("div", { className: "vrcbChatbotWrapper", style: { zIndex: u2 }, children: [(0, import_jsx_runtime26.jsxs)(w2, { className: "vrcbHeader", spacing: "none", direction: "row", children: [(0, import_jsx_runtime26.jsx)(k2, { grow: 1, alignItems: "center", children: n2 }), (0, import_jsx_runtime26.jsx)(k2, { alignItems: "center", children: (0, import_jsx_runtime26.jsx)("button", { onClick: () => h2(false), children: (0, import_jsx_runtime26.jsx)(We2, { size: "12px", color: "#2c313a" }) }) })] }), (0, import_jsx_runtime26.jsxs)(w2, { direction: "column", spacing: "none", className: "vrcbChatbotInnerWrapper", children: [(0, import_jsx_runtime26.jsx)(k2, { className: "vrcbMessagesWrapper", basis: "fill", children: (0, import_jsx_runtime26.jsx)("div", { ref: C2, children: l2 ? (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(v2, { size: "xs" }), R2, E2, b2 && (0, import_jsx_runtime26.jsxs)(import_jsx_runtime26.Fragment, { children: [(0, import_jsx_runtime26.jsx)(Le2, { question: b2.question, answer: b2.answer, searchResults: b2.results, factualConsistencyScore: P2 && (0, import_jsx_runtime26.jsx)(Ge2, { score: b2.factualConsistencyScore }), onRetry: z2 ? () => H2({ query: b2.question, isRetry: true }) : void 0, isStreaming: W2 }), (0, import_jsx_runtime26.jsx)(v2, { size: "l" })] }), q2 && (0, import_jsx_runtime26.jsx)(ht, {}), (0, import_jsx_runtime26.jsx)(w2, { fullWidth: true, justifyContent: "center", children: (0, import_jsx_runtime26.jsx)(k2, { children: (0, import_jsx_runtime26.jsx)(Ie2, { color: "neutral", size: "xs", onClick: O2, isDisabled: q2, children: "Start new conversation" }) }) }), (0, import_jsx_runtime26.jsx)(v2, { size: "l" })] }) : a2 != null ? a2 : (0, import_jsx_runtime26.jsx)(wt, { exampleQuestions: i2 != null ? i2 : [], onSubmitChat: m2 }) }) }), (0, import_jsx_runtime26.jsx)(k2, { grow: false, shrink: false, className: "vrcbChatInputContainer", children: (0, import_jsx_runtime26.jsx)(st, { placeholder: o2, buttonLabel: "Send", query: T2, setQuery: S2, isButtonDisabled: f2, onSubmit: m2, size: Nr[s2] }) })] })] }) : (0, import_jsx_runtime26.jsx)("button", { className: "vrcbChatbotButton", onClick: () => h2(true), style: { zIndex: u2 }, children: n2 });
     return (0, import_jsx_runtime26.jsx)(we2, { children: _t });
   };
   var qe = `:host {
@@ -36872,8 +36870,8 @@ fieldset {
       this.agenticConfiguration = t2, this.setAttribute("agenticconfigurationupdatetime", Date.now().toString());
     }
     connectedCallback() {
-      var T2, S2, H2, O2, D2, q2, z2, b2, W2, C2, m2;
-      let t2 = (T2 = this.getAttribute("customerId")) != null ? T2 : "", r2 = (S2 = this.getAttribute("corpuskeys")) != null ? S2 : "", n2 = (H2 = this.getAttribute("apiKey")) != null ? H2 : "", o2 = (O2 = this.getAttribute("title")) != null ? O2 : void 0, i2 = (D2 = this.getAttribute("placeholder")) != null ? D2 : void 0, s2 = this.getAttribute("exampleQuestions"), a2 = s2 ? s2.split(",") : void 0, c2 = (q2 = this.getAttribute("inputSize")) != null ? q2 : void 0, u2 = this.getAttribute("isInitiallyOpen") === "true", y2 = (z2 = this.emptyStateDisplay) != null ? z2 : void 0, B2 = this.getAttribute("zIndex") !== null ? parseInt(this.getAttribute("zIndex")) : void 0, P2 = (b2 = parseInt(this.getAttribute("numberofsearchresults"), 10)) != null ? b2 : 15, I2 = (W2 = this.getAttribute("language")) != null ? W2 : void 0, p2 = this.getAttribute("enableFactualConsistencyScore") === "true", N2 = (C2 = this.getAttribute("summaryPromptName")) != null ? C2 : void 0, V2 = this.getAttribute("rerankerId") !== null ? parseInt(this.getAttribute("rerankerId"), 10) : void 0, A2 = this.getAttribute("lambda") !== null ? parseFloat(this.getAttribute("lambda")) : void 0, M2 = this.getAttribute("enableStreaming") !== null ? this.getAttribute("enableStreaming") == "true" : void 0, h2 = (m2 = this.agenticConfiguration) != null ? m2 : void 0;
+      var T2, S2, H2, O2, D2, q2, z2, b2, W2, C2, g2;
+      let t2 = (T2 = this.getAttribute("customerId")) != null ? T2 : "", r2 = (S2 = this.getAttribute("corpuskeys")) != null ? S2 : "", n2 = (H2 = this.getAttribute("apiKey")) != null ? H2 : "", o2 = (O2 = this.getAttribute("title")) != null ? O2 : void 0, i2 = (D2 = this.getAttribute("placeholder")) != null ? D2 : void 0, s2 = this.getAttribute("exampleQuestions"), a2 = s2 ? s2.split(",") : void 0, c2 = (q2 = this.getAttribute("inputSize")) != null ? q2 : void 0, u2 = this.getAttribute("isInitiallyOpen") === "true", y2 = (z2 = this.emptyStateDisplay) != null ? z2 : void 0, B2 = this.getAttribute("zIndex") !== null ? parseInt(this.getAttribute("zIndex")) : void 0, P2 = (b2 = parseInt(this.getAttribute("numberofsearchresults"), 10)) != null ? b2 : 15, I2 = (W2 = this.getAttribute("language")) != null ? W2 : void 0, p2 = this.getAttribute("enableFactualConsistencyScore") === "true", N2 = (C2 = this.getAttribute("summaryPromptName")) != null ? C2 : void 0, V2 = this.getAttribute("rerankerId") !== null ? parseInt(this.getAttribute("rerankerId"), 10) : void 0, A2 = this.getAttribute("lambda") !== null ? parseFloat(this.getAttribute("lambda")) : void 0, M2 = this.getAttribute("enableStreaming") !== null ? this.getAttribute("enableStreaming") == "true" : void 0, h2 = (g2 = this.agenticConfiguration) != null ? g2 : void 0;
       Ft.render((0, import_jsx_runtime27.jsx)("div", { children: (0, import_jsx_runtime27.jsx)(Rt, { customerId: t2, corpusKeys: r2, apiKey: n2, title: o2, placeholder: i2, exampleQuestions: a2, inputSize: c2, emptyStateDisplay: y2, isInitiallyOpen: u2, zIndex: B2, enableStreaming: M2, numberOfSearchResults: P2, language: I2, enableFactualConsistencyScore: p2, summaryPromptName: N2, rerankerId: V2, lambda: A2, agenticConfiguration: h2 }) }), this.mountPoint);
     }
     attributeChangedCallback() {
