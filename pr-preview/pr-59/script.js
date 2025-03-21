@@ -35579,12 +35579,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   padding: 2px 4px;
 }
 
-.quickActions {
-  z-index: 1;
-  overflow: auto;
-  padding: 2px 0;
-}
-
 @media (max-width: 700px) {
   .vrcbChatbotWrapper {
     right: 0;
