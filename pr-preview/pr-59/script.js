@@ -35192,7 +35192,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     return { pre: t2, post: o2, text: n2 };
   };
   var gt = ({ searchResults: e2, isOpen: t2 = false, setIsOpen: r2 = () => {
-  } }) => (console.log("### SR: ", e2), (0, import_jsx_runtime19.jsxs)(Te2, { header: `Based on ${e2.length} ${e2.length === 1 ? "fact" : "facts"}`, isOpen: t2, setIsOpen: r2, children: [(0, import_jsx_runtime19.jsx)(v2, { size: "s" }), e2.map((n2, o2) => (0, import_jsx_runtime19.jsxs)("div", { children: [(0, import_jsx_runtime19.jsx)(Cr, { result: n2, position: o2 }), o2 < e2.length - 1 && (0, import_jsx_runtime19.jsx)(v2, { size: "s" })] }, o2))] }));
+  } }) => (0, import_jsx_runtime19.jsxs)(Te2, { header: `Based on ${e2.length} ${e2.length === 1 ? "fact" : "facts"}`, isOpen: t2, setIsOpen: r2, children: [(0, import_jsx_runtime19.jsx)(v2, { size: "s" }), e2.map((n2, o2) => (0, import_jsx_runtime19.jsxs)("div", { children: [(0, import_jsx_runtime19.jsx)(Cr, { result: n2, position: o2 }), o2 < e2.length - 1 && (0, import_jsx_runtime19.jsx)(v2, { size: "s" })] }, o2))] });
   var Cr = ({ result: e2, position: t2 }) => {
     var o2;
     let r2 = e2.document_metadata.url, { text: n2 } = ge2((o2 = e2 == null ? void 0 : e2.snippet) == null ? void 0 : o2.text);
@@ -35321,7 +35321,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       else
         try {
           if (O2)
-            V2((u2) => [...u2, { id: `agentic-response-${Date.now()}`, type: "turn", question: d2.current, answer: O2 + (M2 ? `<br><br>${M2}` : ""), results: D2 != null ? D2 : [], factualConsistencyScore: void 0 }]);
+            V2((u2) => [...u2, { id: `agentic-query-${Date.now()}`, type: "turn", question: d2.current, answer: O2 + (M2 ? `<br><br>${M2}` : ""), results: D2 != null ? D2 : [], factualConsistencyScore: void 0 }]);
           else {
             let u2 = await ft({ apiKey: r2, customerId: e2, query: w2, corpusKeys: t2, search: { offset: 0, metadataFilter: "", lexicalInterpolation: l2, reranker: a2 === 272725718 ? { type: "mmr", diversityBias: 0 } : { type: "customer_reranker", rerankerId: `rnk_${a2}` }, contextConfiguration: { sentencesBefore: 2, sentencesAfter: 2, startTag: He2, endTag: Oe2 } }, chat: { store: true, conversationId: f2 != null ? f2 : void 0 }, generation: { promptName: s2, maxUsedSearchResults: n2, enableFactualConsistencyScore: i2, responseLanguage: o2 } });
             D2 = u2.search_results.map((g2) => {
