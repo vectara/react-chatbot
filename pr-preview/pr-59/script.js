@@ -35402,7 +35402,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         let { question: S2, answer: E2, results: c2, factualConsistencyScore: x2 } = u2, z2 = J2 && g2 === G2.length - 1 ? () => U2({ query: S2, isRetry: true }) : void 0;
         return (0, import_jsx_runtime26.jsxs)(import_react4.Fragment, { children: [(0, import_jsx_runtime26.jsx)(qe, { question: S2, answer: E2, searchResults: c2, factualConsistencyScore: N2 && (0, import_jsx_runtime26.jsx)(We2, { score: x2 }), onRetry: z2 }), g2 < G2.length - 1 && (0, import_jsx_runtime26.jsx)(v2, { size: "m" })] }, g2);
       }
-    }), [G2]), C2 = I2 || G2.length > 0 || A2, D2 = I2 || X2 || f2.trim().length === 0, te2 = async (u2) => {
+    }), [G2]), C2 = I2 || G2.length > 0 || A2, D2 = I2 || X2 || f2.trim().length === 0, te2 = (u2) => {
       D2 && !u2 || ($2(""), U2({ query: u2 != null ? u2 : f2 }));
     }, re2 = M2.length === 0 ? null : (0, import_jsx_runtime26.jsx)(v2, { size: A2 ? "m" : "l" });
     (0, import_react4.useEffect)(O2, [I2, A2]);
@@ -45683,7 +45683,7 @@ export const App = () => (
                     userActionOptions: [
                       {
                         label: "Schedule a demo",
-                        message: "I'd like to connect with sales"
+                        onSelect: () => console.log("In a live context, this would connect you to the Vectara Sales team.")
                       }
                     ]
                   };
@@ -45694,7 +45694,11 @@ export const App = () => (
                   };
                 }
                 if (response.event === "schedule_sales") {
-                  return { message: "In a live context, this would connect you to the Vectara Sales team." };
+                  return {
+                    message: {
+                      content: "In a live context, this would connect you to the Vectara Sales team."
+                    }
+                  };
                 }
               }
             },
