@@ -222,7 +222,7 @@ export const ChatView = ({
   const hasContent = isLoading || messageHistory.length > 0 || activeMessage;
   const isRequestDisabled = isLoading || isStreamingResponse || query.trim().length === 0;
 
-  const onSendQuery = async (queryOverride?: string) => {
+  const onSendQuery = (queryOverride?: string) => {
     if (isRequestDisabled && !queryOverride) return;
 
     setQuery("");

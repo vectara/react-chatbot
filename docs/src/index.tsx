@@ -244,7 +244,8 @@ const App = () => {
                       userActionOptions: [
                         {
                           label: "Schedule a demo",
-                          message: "I'd like to connect with sales"
+                          onSelect: () =>
+                            console.log("In a live context, this would connect you to the Vectara Sales team.")
                         }
                       ]
                     };
@@ -257,7 +258,11 @@ const App = () => {
                   }
 
                   if (response.event === "schedule_sales") {
-                    return { message: "In a live context, this would connect you to the Vectara Sales team." };
+                    return {
+                      message: {
+                        content: "In a live context, this would connect you to the Vectara Sales team."
+                      }
+                    };
                   }
                 }
               }}
