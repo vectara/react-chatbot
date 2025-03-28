@@ -1,6 +1,6 @@
-import {VuiFlexContainer, VuiFlexItem, VuiText, VuiAccordion, VuiSpacer} from "../vui";
+import { VuiFlexContainer, VuiFlexItem, VuiText, VuiAccordion, VuiSpacer } from "../vui";
 import { SearchResultWithSnippet } from "../types";
-import {parseSnippet} from "../utils/parseSnippet";
+import { parseSnippet } from "../utils/parseSnippet";
 
 type Props = {
   searchResults: SearchResultWithSnippet[];
@@ -32,7 +32,7 @@ export const ChatReferences = ({ searchResults, isOpen = false, setIsOpen = () =
 
 const ChatReference = ({ result, position }: { result: SearchResultWithSnippet; position: number }) => {
   const url = result.document_metadata.url as string;
-  const { text } =  parseSnippet(result?.snippet?.text)
+  const { text } = parseSnippet(result?.snippet?.text);
   return (
     <>
       <VuiFlexContainer alignItems="start" spacing="s">
@@ -48,7 +48,7 @@ const ChatReference = ({ result, position }: { result: SearchResultWithSnippet; 
                   {text}
                 </a>
               ) : (
-                  text
+                text
               )}
             </p>
           </VuiText>

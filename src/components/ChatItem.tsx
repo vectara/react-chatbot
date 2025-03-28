@@ -114,14 +114,12 @@ export const ChatItem = ({ question, answer, searchResults, factualConsistencySc
               </span>
             )}
           </VuiText>
-
           {factualConsistencyScore && (
             <>
               <VuiSpacer size="xs" />
               {factualConsistencyScore}
             </>
           )}
-
           {reorderedSearchResults && reorderedSearchResults.length > 0 && (
             <>
               <VuiSpacer size="s" />
@@ -140,9 +138,11 @@ export const ChatItem = ({ question, answer, searchResults, factualConsistencySc
 
   return (
     <>
-      <div className="vrcbChatMessageContainer vrcbChatMessageContainer--question">
-        <div className="vrcbChatMessage">{question}</div>
-      </div>
+      {question && (
+        <div className="vrcbChatMessageContainer vrcbChatMessageContainer--question">
+          <div className="vrcbChatMessage">{question}</div>
+        </div>
+      )}
 
       <VuiSpacer size="xs" />
 

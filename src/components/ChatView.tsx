@@ -1,5 +1,12 @@
 import { Fragment, ReactNode, useEffect, useMemo, useRef, useState } from "react";
-import { VuiButtonSecondary, VuiContextProvider, VuiFlexContainer, VuiFlexItem, VuiSpacer } from "../vui";
+import {
+  VuiButtonSecondary,
+  VuiContextProvider,
+  VuiFlexContainer,
+  VuiFlexItem,
+  VuiSpacer,
+  VuiTopicButton
+} from "../vui";
 import { QueryInput } from "./QueryInput";
 import { ChatItem } from "./ChatItem";
 import { useChat } from "../useChat";
@@ -7,7 +14,7 @@ import { Loader } from "./Loader";
 import { MinimizeIcon } from "./Icons";
 import { FactualConsistencyBadge } from "./FactualConsistencyBadge";
 import { ExampleQuestions } from "./exampleQuestions/ExampleQuestions";
-import {RerankerId, SummaryLanguage} from "types";
+import { AgenticConfiguration, ChatActionOption, RerankerId, SummaryLanguage } from "types";
 
 const inputSizeToQueryInputSize = {
   large: "l",
@@ -66,6 +73,13 @@ export interface Props {
 
   // Enables streaming responses from the API. Defaults to true.
   enableStreaming?: boolean;
+
+  // Enables the chatbot to modify its behavior by sending requests to an agentic service.
+  agenticConfiguration?: AgenticConfiguration;
+
+  // A string that allows the Vectara platform to track where chat requests are coming from.
+  // This could be an application name, for example.
+  requestSource?: string;
 }
 
 /**
@@ -91,6 +105,8 @@ export const ChatView = ({
   rerankerId,
   lambda,
   enableStreaming = true,
+  agenticConfiguration,
+  requestSource
 }: Props) => {
   const [isOpen, setIsOpen] = useState<boolean>(isInitiallyOpen ?? false);
   const [query, setQuery] = useState<string>("");
@@ -105,7 +121,9 @@ export const ChatView = ({
       summaryPromptName,
       rerankerId,
       lambda,
-      enableStreaming
+      enableStreaming,
+      agenticConfiguration,
+      requestSource
     });
 
   const appLayoutRef = useRef<HTMLDivElement>(null);
@@ -150,27 +168,53 @@ export const ChatView = ({
 
   const historyItems = useMemo(
     () =>
-      messageHistory.map((turn, index) => {
-        const { question, answer, results, factualConsistencyScore } = turn;
-        const onRetry =
-          hasError && index === messageHistory.length - 1
-            ? () => sendMessage({ query: question, isRetry: true })
-            : undefined;
+      messageHistory.map((messageHistoryItem, index) => {
+        if (messageHistoryItem.type === "action") {
+          const { options } = messageHistoryItem;
 
-        return (
-          <Fragment key={index}>
-            <ChatItem
-              question={question}
-              answer={answer}
-              searchResults={results}
-              factualConsistencyScore={
-                enableFactualConsistencyScore && <FactualConsistencyBadge score={factualConsistencyScore} />
-              }
-              onRetry={onRetry}
-            />
-            {index < messageHistory.length - 1 && <VuiSpacer size="m" />}
-          </Fragment>
-        );
+          return (
+            <Fragment key={index}>
+              <div className="vrcbChatMessageContainer vrcbChatMessageContainer--actionResponse">
+                <VuiFlexContainer spacing="m">
+                  {options?.map((option: ChatActionOption, optionIndex: number) => (
+                    <VuiTopicButton
+                      key={`messageHistoryItem-${index}-actionOption-${optionIndex}`}
+                      href={option.url}
+                      title={option.label}
+                      onClick={() => {
+                        if (option.message) {
+                          sendMessage({ query: option.message });
+                        }
+                        option.onSelect?.();
+                      }}
+                    />
+                  ))}
+                </VuiFlexContainer>
+              </div>
+            </Fragment>
+          );
+        } else {
+          const { question, answer, results, factualConsistencyScore } = messageHistoryItem;
+          const onRetry =
+            hasError && index === messageHistory.length - 1
+              ? () => sendMessage({ query: question, isRetry: true })
+              : undefined;
+
+          return (
+            <Fragment key={index}>
+              <ChatItem
+                question={question}
+                answer={answer}
+                searchResults={results}
+                factualConsistencyScore={
+                  enableFactualConsistencyScore && <FactualConsistencyBadge score={factualConsistencyScore} />
+                }
+                onRetry={onRetry}
+              />
+              {index < messageHistory.length - 1 && <VuiSpacer size="m" />}
+            </Fragment>
+          );
+        }
       }),
     [messageHistory]
   );
@@ -180,8 +224,10 @@ export const ChatView = ({
 
   const onSendQuery = (queryOverride?: string) => {
     if (isRequestDisabled && !queryOverride) return;
-    sendMessage({ query: queryOverride ?? query });
+
     setQuery("");
+
+    sendMessage({ query: queryOverride ?? query });
   };
 
   const spacer = historyItems.length === 0 ? null : <VuiSpacer size={activeMessage ? "m" : "l"} />;

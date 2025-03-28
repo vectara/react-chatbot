@@ -49,6 +49,18 @@ $chatbotPosition: $sizeS;
   }
 }
 
+.vrcbChatMessageContainer--actionResponse {
+  justify-content: flex-start;
+  padding: $sizeM $sizeXxl $sizeM $sizeS;
+
+  .vrcbChatMessage {
+    color: $colorText;
+    font-weight: $fontWeightBold;
+    font-size: $fontSizeStandard;
+    padding-left: 0;
+  }
+}
+
 .vrcbChatMessageContainer--thinking,
 .vrcbChatMessageContainer--answer {
   padding: 0 $sizeXxl;
