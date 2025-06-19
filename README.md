@@ -133,6 +133,10 @@ When set, this will calculate the [Factual Consistency Score (FCS)](https://docs
 
 Define the [summarizer and prompt](https://docs.vectara.com/docs/learn/grounded-generation/select-a-summarizer) to use to generate the chat response.
 
+##### `customPrompt` (optional)
+
+Define the [custom prompt](https://docs.vectara.com/docs/prompts/vectara-prompt-engine) to use to generate the chat response.
+
 ##### `numberOfSearchResults` (optional)
 
 Define the number of search results to be used to generate summary. Default is set to 15.

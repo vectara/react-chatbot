@@ -45,6 +45,8 @@ type Props = {
   onUpdateEnableFactualConsistencyScore: (enableFactualConsistencyScore: boolean) => void;
   summaryPromptName: string;
   onUpdateSummaryPromptName: (summaryPromptName: string) => void;
+  customPrompt: string;
+  onUpdateCustomPrompt: (customPrompt: string) => void;
   rerankerId: RerankerId;
   onUpdateRerankerId: (rerankerId: RerankerId) => void;
   lambda: number;
@@ -80,6 +82,8 @@ export const ConfigurationDrawer = ({
   onUpdateEnableFactualConsistencyScore,
   summaryPromptName,
   onUpdateSummaryPromptName,
+  customPrompt,
+  onUpdateCustomPrompt,
   rerankerId,
   onUpdateRerankerId,
   lambda,
@@ -230,6 +234,12 @@ export const ConfigurationDrawer = ({
 
       <VuiFormGroup label="Summary prompt name" labelFor="summaryPromptName">
         <VuiTextInput value={summaryPromptName} onChange={(e) => onUpdateSummaryPromptName(e.target.value)} fullWidth />
+      </VuiFormGroup>
+
+      <VuiSpacer size="m" />
+
+      <VuiFormGroup label="Custom prompt" labelFor="customPrompt">
+        <VuiTextArea value={customPrompt} onChange={(e) => onUpdateCustomPrompt(e.target.value)} fullWidth />
       </VuiFormGroup>
 
       <VuiSpacer size="m" />
