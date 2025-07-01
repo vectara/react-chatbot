@@ -92,6 +92,7 @@ class ReactChatbotWebComponent extends HTMLElement {
     const language = (this.getAttribute("language") as SummaryLanguage) ?? undefined;
     const enableFactualConsistencyScore = this.getAttribute("enableFactualConsistencyScore") === "true";
     const summaryPromptName = this.getAttribute("summaryPromptName") ?? undefined;
+    const customPrompt = this.getAttribute("customPrompt") ?? undefined;
     const rerankerId =
       this.getAttribute("rerankerId") !== null ? parseInt(this.getAttribute("rerankerId")!, 10) : undefined;
     const lambda = this.getAttribute("lambda") !== null ? parseFloat(this.getAttribute("lambda")!) : undefined;
@@ -118,6 +119,7 @@ class ReactChatbotWebComponent extends HTMLElement {
           language={language}
           enableFactualConsistencyScore={enableFactualConsistencyScore}
           summaryPromptName={summaryPromptName}
+          customPrompt={customPrompt}
           rerankerId={rerankerId as RerankerId}
           lambda={lambda}
           agenticConfiguration={agenticConfiguration}

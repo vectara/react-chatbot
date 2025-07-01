@@ -51,7 +51,8 @@ const generateCodeSnippet = (
   exampleQuestions?: string,
   rerankerId?: RerankerId,
   lambda?: number,
-  isStreamingEnabled?: boolean
+  isStreamingEnabled?: boolean,
+  customPrompt?: string,
 ) => {
   const props = [
     `customerId="${customerId === "" ? "<Your Vectara customer ID>" : customerId}"`,
@@ -87,6 +88,7 @@ const generateCodeSnippet = (
   props.push(`enableStreaming={${isStreamingEnabled}}`);
   props.push(`numberOfSearchResultsForSummary={${numberOfSearchResults}}`);
 
+  props.push(`customPrompt="${customPrompt}"`)
   props.push(`language="${language}"`);
   props.push(`rerankerId=${rerankerId}`);
   props.push(`lambda=${lambda}`);
@@ -127,6 +129,7 @@ const App = () => {
   const [exampleQuestions, setExampleQuestions] = useState<string>("What is Vectara?, How does RAG work?");
   const [enableFactualConsistencyScore, setEnableFactualConsistencyScore] = useState<boolean>(false);
   const [summaryPromptName, setSummaryPromptName] = useState<string>(DEFAULT_SUMMARIZER);
+  const [customPrompt, setCustomPrompt] = useState<string>("");
   const [rerankerId, setRerankerId] = useState<RerankerId>(DEFAULT_RERANKER_ID);
   const [lambda, setLambda] = useState<number>(DEFAULT_LAMBDA_VALUE);
 
@@ -232,6 +235,7 @@ const App = () => {
               language={language}
               enableFactualConsistencyScore={enableFactualConsistencyScore}
               summaryPromptName={summaryPromptName}
+              customPrompt={customPrompt}
               rerankerId={rerankerId}
               lambda={lambda}
               enableStreaming={isStreamingEnabled}
@@ -410,6 +414,8 @@ export const App = () => {
               onUpdateEnableFactualConsistencyScore={setEnableFactualConsistencyScore}
               summaryPromptName={summaryPromptName}
               onUpdateSummaryPromptName={setSummaryPromptName}
+              customPrompt={customPrompt}
+              onUpdateCustomPrompt={setCustomPrompt}
               rerankerId={rerankerId}
               onUpdateRerankerId={setRerankerId}
               lambda={lambda}

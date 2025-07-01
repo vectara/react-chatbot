@@ -64,6 +64,9 @@ export interface Props {
   // Defines the name of the summary prompt. Defaults to "vectara-summary-ext-v1.2.0".
   summaryPromptName?: string;
 
+  // Define custom prompt
+  customPrompt?: string;
+
   // Define the reranker Id to be used , Defaults to "272725718"
   rerankerId?: RerankerId;
 
@@ -102,6 +105,7 @@ export const ChatView = ({
   language = "eng",
   enableFactualConsistencyScore,
   summaryPromptName,
+  customPrompt,
   rerankerId,
   lambda,
   enableStreaming = true,
@@ -119,6 +123,7 @@ export const ChatView = ({
       language,
       enableFactualConsistencyScore,
       summaryPromptName,
+      customPrompt,
       rerankerId,
       lambda,
       enableStreaming,

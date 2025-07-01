@@ -42,6 +42,7 @@ type UseChatConfig = {
   language?: SummaryLanguage;
   enableFactualConsistencyScore?: boolean;
   summaryPromptName?: string;
+  customPrompt?: string
   rerankerId?: number;
   lambda?: number;
   enableStreaming?: boolean;
@@ -60,6 +61,7 @@ export const useChat = ({
   language = "eng",
   enableFactualConsistencyScore,
   summaryPromptName = DEFAULT_SUMMARIZER,
+  customPrompt = undefined,
   rerankerId = DEFAULT_RERANKER_ID,
   lambda = DEFAULT_LAMBDA_VALUE,
   enableStreaming = true,
@@ -296,7 +298,8 @@ export const useChat = ({
               generationPresetName: summaryPromptName,
               maxUsedSearchResults: numberOfSearchResults,
               enableFactualConsistencyScore: enableFactualConsistencyScore,
-              responseLanguage: language
+              responseLanguage: language,
+              promptTemplate: customPrompt
             }
           };
 
